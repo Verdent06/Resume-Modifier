@@ -25,8 +25,8 @@
 \pagestyle{empty}
 
 \geometry{
-	top=0.3in, % Top margin
-	bottom=0.3in, % Bottom margin
+	top=0.45in, % Top margin
+	bottom=0.45in, % Bottom margin
 	left=0.4in, % Left margin
 	right=0.4in, % Right margin
 	% showframe, % Uncomment to show how the type block is set on the page
@@ -75,7 +75,7 @@
 	\item[]
 }{
 	\end{list}
-	\vspace{0.1em}
+	\vspace{0em}
 }
 
 \newenvironment{rSectionEntry}[5]{ % 5 parameters: name, dates, tagline, technologies, location
@@ -98,11 +98,11 @@
     }
     % --- BULLET LIST ---
     \begin{list}{$\bullet\hspace{0.2em}$}{\leftmargin=2.5em}
-        \setlength{\itemsep}{-0.5em}
-        \vspace{-0.45em}
+        \setlength{\itemsep}{-0.4em}
+        \vspace{-0.5em}
 }{
     \end{list}
-    \vspace{-0.3em}
+	\vspace{0.1em}
 }
 
 \newenvironment{rSet}[2] % 2 Parameters: title, items

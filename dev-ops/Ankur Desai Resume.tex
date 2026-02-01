@@ -8,8 +8,14 @@
 \begin{document}
 
 	\begin{rSection}{E}{ducation}
-		\begin{rSectionEntry}{Michigan State University}{Expected, May 2028}{B.S. in Computer Science}{}{East Lansing, MI}
-			% \item \textbf{GPA:} 3.5 / 4.0
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected, May 2028}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
 			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
 		\end{rSectionEntry}
 	\end{rSection}
@@ -22,9 +28,9 @@
 			{}
 			{East Lansing, MI}
 
-			\item Engineered serverless automation pipeline integrating GitHub API and Slack SDK to provision team access and workspace invitations, reducing manual onboarding from 15 minutes to $<$30 seconds for 120+ members.
-			\item Created QR code generation service with AWS S3 storage, CloudFront CDN distribution, and time-based presigned URLs, achieving $<$100ms global delivery latency with automatic expiration for security.
-			\item Established open source development workflow with GitHub Actions CI/CD, enforcing 85\% code coverage via automated test suites and strict linting standards, maintaining comprehensive documentation and contributor guidelines to enable community contributions.
+			\item Streamlined member onboarding by automating GitHub team access and Slack workspace invitations, reducing setup time from 15 minutes to under 30 seconds.
+			\item Built QR code event check-in system with AWS S3 bucket caching and unique token generation for automated attendance tracking.
+			\item Established open source development workflow with GitHub Actions CI/CD, enforcing 85\% code coverage; maintained comprehensive documentation and contributor guidelines to reduce development friction.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -34,23 +40,24 @@
 			{}
 			{East Lansing, MI}
 
-			\item Directed team of 6 to build full-stack note-taking app with chapter-and-page model, layered Markdown editing, and visual concept mapping via annotated links.
-			\item Architected containerized microservice deployment using Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Neo4j across isolated containers; established CI/CD pipelines for automated testing and linting to maintain 94\% code coverage.
-			\item Integrated PostgreSQL with Neo4j, adding compound B-tree indexes (user\_id, created\_at) to reduce note search latency from 850ms to 440ms and cut database CPU utilization by 30\% under 50 concurrent queries.
+			\item Led team of 6 to deliver a production-ready full-stack note-taking application featuring a flexible chapter/page model and OAuth2.0 authentication via Google and GitHub providers.
+			\item Implemented dual-database architecture (PostgreSQL + Neo4j) with compound B-tree indexes (user\_id, created\_at) to reduce note search latency from 850ms to 440ms.
+			\item Designed interactive concept mapping, allowing users to connect chapters and pages with labeled arrows.
+			% \item Architected containerized environment with FastAPI, configuring Docker networks and volumes for persistent storage and microservice communication; integrated CI/CD piplines, building and testing container images.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- Distributed Intelligence Tool}
+			{Mira --- AI Assistant}
 			{May 2025 -- Nov. 2025}
-			{Multi-client intelligence system, analyzing real-time audio streams to execute context-aware automation}
-			{FastAPI, Next.js, Docker, WebSockets}
+			{Distributed audio analysis platform enabling intelligent background processing, and smart task execution}
+			{Next.js, Electron, FastAPI, PostgreSQL, WebHook}
 			{}
 
-			\item Implemented thread-safe multi-tenant service registry using LRU eviction and TTL-based resource cleanup to manage lifecycle for 100+ concurrent networks, preventing memory leaks in long-running server instances.
-			\item Built production hybrid search pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim), implementing 5-minute conversation boundary detection to optimize context retrieval accuracy.
-			\item Developed Electron desktop client with optimized IPC architecture to stream real-time audio data to the backend, implementing optimistic UI updates and local state management to handle network latency.
+			\item Built RAG pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim) enabling context-aware automation.
+			\item Implemented thread-safe multi-tenant service registry using LRU eviction and TTL-based resource cleanup to manage lifecycle for 100+ concurrent networks.
+			\item Developed Electron desktop client with optimized IPC architecture to stream real-time audio data to the backend, utilizing webhook notifications to synchronize backend processing results in real-time.
 			% \item Architected containerized microservice deployment with Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Redis cache across isolated containers with shared Docker network and persistent volume mounts, integrating Electron desktop client with bi-directional IPC for real-time audio streaming.
 			% \item Engineered real-time Digital Signal Processing (DSP) engine utilizing Welch's PSD and windowed variance analysis to score audio quality across 10+ concurrent streams with $<$100ms latency.
 		\end{rSectionEntry}
