@@ -22,20 +22,20 @@
 			{}
 			{East Lansing, MI}
 
-			\item Developed member portal for hosting projects, classes and events, generating attendance QR codes stored in S3 with CloudFront CDN for low-latency delivery, and fully automating GitHub Teams assignment and Slack invitations for 120+ members, reducing manual setup time from 15 minutes to $<$30 seconds per member.
-			\item Built the platform with open source best practices, implementing zero-downtime database migrations and maintaining strict 85\% code coverage and linting standards via CI/CD (GitHub Actions) and testing suites.
-			\item Optimized infrastructure for horizontal scaling, implementing connection pooling (PgBouncer) and stateless API design to support 100+ concurrent users with consistent sub-200ms response times.
+			\item Engineered serverless automation pipeline integrating GitHub API and Slack SDK to provision team access and workspace invitations, reducing manual onboarding from 15 minutes to $<$30 seconds for 120+ members.
+			\item Created QR code generation service with AWS S3 storage, CloudFront CDN distribution, and time-based presigned URLs, achieving $<$100ms global delivery latency with automatic expiration for security.
+			\item Established open source development workflow with GitHub Actions CI/CD, enforcing 85\% code coverage via automated test suites and strict linting standards, maintaining comprehensive documentation and contributor guidelines to enable community contributions.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{MindMosaic}
 			{Aug. 2025 -- Nov. 2025}
-			{Product Manager}
-			{React, Vite, FastAPI, PostgreSQL, Neo4j}
+			{Software Engineer}
+			{}
 			{East Lansing, MI}
 
-			\item Implemented OAuth 2.0 authentication with Google and GitHub providers, enforcing 15-minute access token and 7-day refresh token rotation with httpOnly cookie session management.
-			\item Architected attribute-based access control (ABAC) with PostgreSQL-backed permission store supporting 3-tier role hierarchy (admin/member/viewer), implementing middleware-based authorization checks.
+			\item Implemented OAuth 2.0 authentication with Google and GitHub providers, enforcing 15-minute access token and 7-day refresh token rotation with httpOnly cookie session management to prevent XSS attacks.
+			\item Developed attribute-based access control (ABAC) with PostgreSQL-backed permission store supporting 3-tier role hierarchy (admin/member/viewer), implementing middleware-based authorization checks.
 			\item Optimized PostgreSQL schema with compound B-tree indexes on (user\_id, created\_at), reducing note search latency from 850ms to 440ms and cutting database CPU utilization by 30\% under 50 concurrent queries.
 		\end{rSectionEntry}
 	\end{rSection}
@@ -45,11 +45,11 @@
 			{Mira}
 			{May 2025 -- Nov. 2025}
 			{End-to-end voice intelligence system, aggregating real-time audio streams to execute context-aware automation}
-			{Next.js, Electron, FastAPI, Redis, PostgreSQL}
+			{Next.js, Electron, FastAPI, PostgreSQL, PyTorch, Sentence-Transformers}
 			{}
 
 			\item Architected containerized microservice deployment with Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Redis cache across isolated containers with shared Docker network and persistent volume mounts, integrating Electron desktop client with bi-directional IPC for real-time audio streaming.
-			\item Built production hybrid search pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim), implementing 5-minute conversation boundary detection across multi-stream audio ingestion to optimize context retrieval accuracy for RAG system.
+			\item Built production hybrid search pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim), implementing 5-minute conversation boundary detection across multi-stream audio ingestion to optimize context retrieval accuracy for RAG pipeline.
 			\item Designed RESTful API with FastAPI using Pydantic schema validation and OpenAPI 3.0 documentation, implementing lazy-loaded dependency injection for heavy ML models and centralized logging with custom exception middleware for consistent error handling.
 		\end{rSectionEntry}
 
@@ -57,7 +57,7 @@
 			{WizViz --- SpartaHack X}
 			{Feb. 2025}
 			{Won Interactive Media Track with real-time computer vision game utilizing pose-estimation and gesture-detection}
-			{Python, MediaPipe, OpenCV, NumPy}
+			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
 			{}
 
 			\item Engineered a low-latency gesture pipeline using MediaPipe Pose to map 33-point skeletal landmarks to game actions, achieving 60 FPS with sub-20ms input lag by optimizing the inference loop.
@@ -74,8 +74,8 @@
 		\end{rSet}
 		\begin{rSet}{Languages}{Python, C++, Java, JavaScript/TypeScript, SQL, Bash}
 		\end{rSet}
-		\begin{rSet}{AI \& Computer Vision}{PyTorch, TensorFlow, MediaPipe, Pyannote.audio, Sentence-Transformers}
-		\end{rSet}
+		% \begin{rSet}{AI \& Computer Vision}{PyTorch, TensorFlow, MediaPipe, Pyannote.audio, Sentence-Transformers}
+		% \end{rSet}
 	\end{rSection}
 
 \end{document}
