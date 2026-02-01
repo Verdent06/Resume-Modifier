@@ -102,7 +102,7 @@
         \vspace{-0.5em}
 }{
     \end{list}
-	\vspace{0.1em}
+	\vspace{-0.05em}
 }
 
 \newenvironment{rSet}[2] % 2 Parameters: title, items
