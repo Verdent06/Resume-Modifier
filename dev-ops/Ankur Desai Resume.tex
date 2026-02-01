@@ -30,27 +30,29 @@
 		\begin{rSectionEntry}
 			{MindMosaic}
 			{Aug. 2025 -- Nov. 2025}
-			{Software Engineer}
+			{Product Manager}
 			{}
 			{East Lansing, MI}
 
-			\item Implemented OAuth 2.0 authentication with Google and GitHub providers, enforcing 15-minute access token and 7-day refresh token rotation with httpOnly cookie session management to prevent XSS attacks.
-			\item Architected attribute-based access control (ABAC) with PostgreSQL-backed permission store supporting 3-tier role hierarchy (admin/member/viewer), implementing middleware-based authorization checks.
+			\item Directed team of 6 to build full-stack note-taking app with chapter-and-page model, layered Markdown editing, and visual concept mapping via annotated links.
+			\item Architected containerized microservice deployment using Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Neo4j across isolated containers; established CI/CD pipelines for automated testing and linting to maintain 94\% code coverage.
 			\item Integrated PostgreSQL with Neo4j, adding compound B-tree indexes (user\_id, created\_at) to reduce note search latency from 850ms to 440ms and cut database CPU utilization by 30\% under 50 concurrent queries.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira}
+			{Mira --- Distributed Intelligence Tool}
 			{May 2025 -- Nov. 2025}
 			{Multi-client intelligence system, analyzing real-time audio streams to execute context-aware automation}
-			{Next.js, Electron, FastAPI, PostgreSQL, PyTorch, Sentence-Transformers}
+			{FastAPI, Next.js, Docker, WebSockets}
 			{}
 
-			\item Architected containerized microservice deployment with Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Redis cache across isolated containers with shared Docker network and persistent volume mounts, integrating Electron desktop client with bi-directional IPC for real-time audio streaming.
-			\item Built production hybrid search pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim), implementing 5-minute conversation boundary detection across multi-stream audio ingestion to optimize context retrieval accuracy for RAG pipeline.
-			\item Developed RESTful API with FastAPI using Pydantic schema validation and OpenAPI 3.0 documentation, implementing lazy-loaded dependency injection for heavy ML models and centralized logging with custom exception middleware for consistent error handling.
+			\item Implemented thread-safe multi-tenant service registry using LRU eviction and TTL-based resource cleanup to manage lifecycle for 100+ concurrent networks, preventing memory leaks in long-running server instances.
+			\item Built production hybrid search pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim), implementing 5-minute conversation boundary detection to optimize context retrieval accuracy.
+			\item Developed Electron desktop client with optimized IPC architecture to stream real-time audio data to the backend, implementing optimistic UI updates and local state management to handle network latency.
+			% \item Architected containerized microservice deployment with Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Redis cache across isolated containers with shared Docker network and persistent volume mounts, integrating Electron desktop client with bi-directional IPC for real-time audio streaming.
+			% \item Engineered real-time Digital Signal Processing (DSP) engine utilizing Welch's PSD and windowed variance analysis to score audio quality across 10+ concurrent streams with $<$100ms latency.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -66,13 +68,13 @@
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, C++, Java, JavaScript/TypeScript, SQL, Bash}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitHub Actions, PostgreSQL, Neo4j}
 		\end{rSet}
 		\begin{rSet}{Backend Frameworks}{FastAPI, SQLAlchemy, Redis, Alembic, Node.js}
 		\end{rSet}
 		\begin{rSet}{Frontend Development}{React, Next.js, Tailwind CSS, Electron, Vite}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitHub Actions, PostgreSQL, Neo4j}
+		\begin{rSet}{Languages}{Python, C++, Java, JavaScript/TypeScript, SQL, Bash}
 		\end{rSet}
 		% \begin{rSet}{AI \& Computer Vision}{PyTorch, TensorFlow, MediaPipe, Pyannote.audio, Sentence-Transformers}
 		% \end{rSet}
