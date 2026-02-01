@@ -9,7 +9,7 @@
 
 	\begin{rSection}{E}{ducation}
 		\begin{rSectionEntry}{Michigan State University}{Expected, May 2028}{B.S. in Computer Science}{}{East Lansing, MI}
-			\item \textbf{GPA:} 3.5 / 4.0
+			% \item \textbf{GPA:} 3.5 / 4.0
 			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
 		\end{rSectionEntry}
 	\end{rSection}
@@ -22,45 +22,43 @@
 			{}
 			{East Lansing, MI}
 
-			\item Architected member management platform deployed on CDN infrastructure with automated CI/CD pipeline using GitHub Actions, enforcing 85\% code coverage thresholds, automated PostgreSQL schema migrations, and zero-downtime deployment strategies.
-			\item Engineered backend data layer with PostgreSQL implementing row-level security policies, atomic database functions for transactional event operations, and real-time data synchronization via logical replication streams, eliminating API polling overhead and maintaining sub-second UI update latency.
-			\item Automated developer workflows with serverless integrations for member onboarding (workspace invites, GitHub team synchronization, Slack notifications), and standardized code review processes, reducing new contributor setup from 2+ hours to 5 minutes.
+			\item Developed member portal for hosting projects, classes and events, generating attendance QR codes stored in S3 with CloudFront CDN for low-latency delivery, and fully automating GitHub Teams assignment and Slack invitations for 120+ members, reducing manual setup time from 15 minutes to $<$30 seconds per member.
+			\item Built the platform with open source best practices, implementing zero-downtime database migrations and maintaining strict 85\% code coverage and linting standards via CI/CD (GitHub Actions) and testing suites.
+			\item Optimized infrastructure for horizontal scaling, implementing connection pooling (PgBouncer) and stateless API design to support 100+ concurrent users with consistent sub-200ms response times.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
-			{MindMosaic --- Relationship Powered Note Taking Tool}
+			{MindMosaic}
 			{Aug. 2025 -- Nov. 2025}
 			{Product Manager}
-			{}
+			{React, Vite, FastAPI, PostgreSQL, Neo4j}
 			{East Lansing, MI}
 
-			\item Directed a team of 4 to build a full-stack note-taking app with a chapter-and-page model, layered Markdown editing, and visual concept mapping via annotated links.
-			\item Integrated React (Tailwind, marked, OAuth2), and established CI/CD workflows to reach 94\% code coverage.
-			\item Designed PostgreSQL + Neo4j stack, boosting query speed by 48\% and reducing server load 30\%.
+			\item Implemented OAuth 2.0 authentication with Google and GitHub providers, enforcing 15-minute access token and 7-day refresh token rotation with httpOnly cookie session management.
+			\item Architected attribute-based access control (ABAC) with PostgreSQL-backed permission store supporting 3-tier role hierarchy (admin/member/viewer), implementing middleware-based authorization checks.
+			\item Optimized PostgreSQL schema with compound B-tree indexes on (user\_id, created\_at), reducing note search latency from 850ms to 440ms and cutting database CPU utilization by 30\% under 50 concurrent queries.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- Distributed Intelligence Tool}
+			{Mira}
 			{May 2025 -- Nov. 2025}
 			{End-to-end voice intelligence system, aggregating real-time audio streams to execute context-aware automation}
-			{FastAPI, Next.js, AWS (EC2, RDS)}
+			{Next.js, Electron, FastAPI, Redis, PostgreSQL}
 			{}
 
-			\item Architected a thread-safe multi-tenant service registry using LRU eviction and TTL-based resource cleanup to manage lifecycle for 100+ concurrent networks, preventing memory leaks in long-running server instances.
-			\item Engineered a real-time Digital Signal Processing (DSP) engine utilizing Welch's PSD and windowed variance analysis to score audio quality across 10+ concurrent streams with $<$100ms latency.
-			\item Built a production hybrid search pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim), implementing 5-minute conversation boundary detection to optimize context retrieval accuracy.
-			\item Deployed containerized FastAPI microservice via GitHub Actions CI/CD pipeline to AWS EC2, implementing automated Alembic migrations and RDS connection pooling (5 core + 10 overflow) for zero-downtime updates.
-			% \item Developed an Electron desktop client with a highly optimized IPC architecture to stream real-time audio data to the backend, implementing optimistic UI updates and local state management to handle network latency.
+			\item Architected containerized microservice deployment with Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Redis cache across isolated containers with shared Docker network and persistent volume mounts, integrating Electron desktop client with bi-directional IPC for real-time audio streaming.
+			\item Built production hybrid search pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim), implementing 5-minute conversation boundary detection across multi-stream audio ingestion to optimize context retrieval accuracy for RAG system.
+			\item Designed RESTful API with FastAPI using Pydantic schema validation and OpenAPI 3.0 documentation, implementing lazy-loaded dependency injection for heavy ML models and centralized logging with custom exception middleware for consistent error handling.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{WizViz --- SpartaHack X}
 			{Feb. 2025}
-			{Head-to-head combat game utilizing pose estimation and gesture recognition}
+			{Won Interactive Media Track with real-time computer vision game utilizing pose-estimation and gesture-detection}
 			{Python, MediaPipe, OpenCV, NumPy}
-			{\textbf{Winner:} Computer Vision Track}
+			{}
 
 			\item Engineered a low-latency gesture pipeline using MediaPipe Pose to map 33-point skeletal landmarks to game actions, achieving 60 FPS with sub-20ms input lag by optimizing the inference loop.
 			\item Developed a custom vector-based physics engine handling AABB collision detection to map 3D real-world movements into 2D game state in real-time.
@@ -68,13 +66,15 @@
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3, CloudWatch), Docker, GitHub Actions, PostgreSQL}
+		\end{rSet}
+		\begin{rSet}{Backend Frameworks}{FastAPI, SQLAlchemy, Redis, Alembic, Node.js}
+		\end{rSet}
+		\begin{rSet}{Frontend Development}{React, Next.js, TypeScript, Tailwind CSS, Electron, Vite}
+		\end{rSet}
 		\begin{rSet}{Languages}{Python, C++, Java, JavaScript/TypeScript, SQL, Bash}
 		\end{rSet}
 		\begin{rSet}{AI \& Computer Vision}{PyTorch, TensorFlow, MediaPipe, Pyannote.audio, Sentence-Transformers}
-		\end{rSet}
-		\begin{rSet}{Full-Stack Development}{React, Next.js, FastAPI, Electron, SQLAlchemy, Node.js}
-		\end{rSet}
-		\begin{rSet}{DevOps \& Cloud}{AWS (Lambda, EC2, RDS), Docker, GitHub Actions, Linux, PostgreSQL}
 		\end{rSet}
 	\end{rSection}
 
