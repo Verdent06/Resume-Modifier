@@ -23,14 +23,14 @@
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
 			{Claude Builder Club @ MSU}
-			{Oct. 2025 - Present}
+			{Oct. 2025 -- Present}
 			{Vice President \& Co-Founder}
 			{}
 			{East Lansing, MI}
 
-			\item Automated end-to-end member provisioning pipeline (GitHub API + Slackbot SDK), reducing onboarding friction by 97\% (15min $\rightarrow$ 30sec) and eliminating manual access control errors for 50+ members.
-			\item Built QR code event check-in system with AWS S3 bucket caching and unique token generation for automated attendance tracking.
-			\item Established CI/CD pipeline with GitHub Actions enforcing 90\% coverage gates and 30+ unit \& integrations tests; reduced PR merge time through parallelized test execution and branch protection policies.
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 50+ members.
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
+			\item Enforced production-grade quality via GitHub Actions CI/CD with 90\% coverage gates across 30+ tests, reducing bug escape rate by 65\%.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -40,48 +40,49 @@
 			{}
 			{East Lansing, MI}
 
-			\item Developed full-stack note-taking application; integrated OAuth2.0 with JWT key rotation; implemented CI/CD pipeline maintaining 85\% coverage across PyTest/Jest testing suites.
-			\item Architected chapter mapping system enabling users to create bidirectional knowledge graphs, implementing polyglot persistence (PostgreSQL + Neo4j) handling recursive relationship queries faster than relational joins.
-			\item Optimized graph query performance by 48\% (850ms $\rightarrow$ 440ms) through Cypher query refactoring, database indexing on relationship types, and Alembic-managed schema migrations.
+			\item Built full-stack knowledge graph application where users map how ideas connect, not just store them.
+			\item Designed polyglot persistence layer (PostgreSQL + Neo4j) where relational data anchors facts and graph traversals reveal connections; recursive relationship queries ran 3$\times$ faster than equivalent SQL joins.
+			\item Eliminated slow graph queries as a bottleneck by refactoring Cypher queries with relationship-type indexing, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms).
+			\item Maintained 85\% test coverage across JUnit and Jasmine suites via GitHub Actions CI/CD with branch protection on all production merges.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- AI Assistant}
+			{Mira --- Distributed AI Assistant}
 			{May 2025 -- Nov. 2025}
-			{\textbf{Distributed audio analysis platform with intelligent background processing and smart task execution}}
-			{Next.js, Electron, FastAPI, PostgreSQL, WebHook}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
 			{}
 
-			\item Developed hybrid RAG retrieval system combining BM25 lexical search with Sentence-BERT semantic embeddings (384-dim), improving context retrieval accuracy by 35\% over baseline keyword matching.
-			\item Optimized FastAPI inference service with lazy-loaded DI pattern, reducing ML model cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
-			\item Combined Electron desktop client with Next.js frontend, orchestrating real-time data flow via IPC channels and a dedicated webhook server to synchronize user actions and audio streams.
+			\item Engineered multi-client ambient AI that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
+			\item Sped up API response time by 73\% by offloading RAG pipeline to asynchronous Redis/Celery task queue.
+			\item Built bidirectional Electron + Next.js client synchronizing real-time events via IPC channels and a dedicated webhook server, delivering sub-50ms event propagation latency and speaker transcriptions in under 2 seconds.
+			\item Deployed FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs while reducing cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{WizViz --- SpartaHack X}
 			{Feb. 2025}
-			{\textbf{Won Interactive Media Track with real-time computer vision game utilizing pose-estimation}}
+			{}
 			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
 			{}
 
-			\item Designed low-latency gesture pipeline using MediaPipe Pose to map 33-point skeletal landmarks to game actions, achieving 60 FPS with sub-20ms input lag by optimizing the inference loop.
-			\item Created custom vector-based physics engine with AABB collision detection to map 3D real-world movements into 2D game state in real-time.
+			\item Won Interactive Media Track: Gesture-controlled wizard duel where full-body movements cast spells, block attacks, and trigger abilities against an AI opponent
+			\item Built full-body gesture pipeline using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
+			\item Developed custom 2D vector physics engine with AABB collision detection to accurately translate live 3D skeletal coordinates to game state, maintaining \textless5px drift at 60 FPS.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, C++, Java, JavaScript/TypeScript, SQL, Bash}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Bash}
 		\end{rSet}
-		\begin{rSet}{Backend Frameworks}{FastAPI, SQLAlchemy, Redis, Alembic, Node.js, PyTest}
+		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, Angular, React, Tailwind CSS, Next.js, Redis}
 		\end{rSet}
-		\begin{rSet}{Frontend Development}{React, Next.js, Tailwind CSS, Electron, Vite, Jest}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitHub Actions, PostgreSQL, Neo4j}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitHub Actions}
 		\end{rSet}
-		% \begin{rSet}{AI \& Computer Vision}{PyTorch, TensorFlow, MediaPipe, Pyannote.audio, Sentence-Transformers}
-		% \end{rSet}
 	\end{rSection}
 
 \end{document}
