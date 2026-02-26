@@ -75,7 +75,6 @@
 	\item[]
 }{
 	\end{list}
-	\vspace{0em}
 }
 
 \newenvironment{rSectionEntry}[5]{ % 5 parameters: name, dates, tagline, technologies, location
@@ -98,11 +97,11 @@
     }
     % --- BULLET LIST ---
     \begin{list}{$\bullet\hspace{0.2em}$}{\leftmargin=2.5em}
-        \setlength{\itemsep}{-0.4em}
+        \setlength{\itemsep}{-0.6em}
         \vspace{-0.5em}
 }{
     \end{list}
-	\vspace{-0.05em}
+	\vspace{-0.12em}
 }
 
 \newenvironment{rSet}[2] % 2 Parameters: title, items
