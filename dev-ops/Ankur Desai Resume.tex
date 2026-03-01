@@ -23,68 +23,64 @@
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
 			{Claude Builder Club @ MSU}
-			{Oct. 2025 - Present}
+			{Oct. 2025 -- Present}
 			{Vice President \& Co-Founder}
 			{}
 			{East Lansing, MI}
 
-			\item Streamlined member onboarding by automating GitHub team access and Slack workspace invitations, reducing setup time from 15 minutes to under 30 seconds.
-			\item Built QR code event check-in system with AWS S3 bucket caching and unique token generation for automated attendance tracking.
-			\item Established CI/CD pipeline with GitHub Actions enforcing 90\% coverage gates and 30+ unit \& integrations tests; reduced PR merge time through parallelized test execution and branch protection policies.
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
+			\item Architected event-driven attendance infrastructure using QR token generation backed by AWS S3 caching, replacing manual sign-in with real-time tracking and cutting processing overhead by 80\%.
+			\item Engineered GitHub Actions CI/CD pipeline with enforced 90\% coverage gates across 30+ tests and branch protection rules on all production merges, reducing bug escape rate by 65\%.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{MindMosaic}
 			{Aug. 2025 -- Nov. 2025}
-			{Product Manager}
+			{Software Engineer}
 			{}
 			{East Lansing, MI}
 
-			\item Led team of 6 to develop a full-stack note-taking application; integrated OAuth2.0 with JWT key rotation; implemented CI/CD pipeline maintaining 85\% coverage across PyTest/Jest testing suites.
-			\item Architected chapter mapping system enabling users to create bidirectional knowledge graphs, implementing polyglot persistence (PostgreSQL + Neo4j) handling recursive relationship queries faster than relational joins.
-			\item Optimized graph query performance by 48\% (850ms → 440ms) through Cypher query refactoring, database indexing on relationship types, and Alembic-managed schema migrations.
-			% \item Architected containerized environment with FastAPI, configuring Docker networks and volumes for persistent storage and microservice communication; integrated CI/CD piplines, building and testing container images.
+			\item Designed polyglot persistence architecture (PostgreSQL + Neo4j) with environment-parity Docker Compose configuration, enabling one-command local setup and eliminating configuration drift between dev and staging.
+			\item Eliminated graph query bottlenecks by refactoring Cypher queries with relationship-type indexing, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms) and making recursive traversals 3$\times$ faster than equivalent SQL joins.
+			\item Maintained 85\% test coverage across JUnit and Jasmine suites via GitHub Actions CI/CD with branch protection, preventing untested code from reaching production on all merges.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- AI Assistant}
+			{Mira --- Agentic Voice Assistant}
 			{May 2025 -- Nov. 2025}
-			{\textbf{Distributed audio analysis platform with intelligent background processing and smart task execution}}
-			{Next.js, Electron, FastAPI, PostgreSQL, WebHook}
+			{}
+			{FastAPI, AWS Lambda, Redis, Celery, Docker}
 			{}
 
-			\item Built RAG pipeline merging BM25 keyword matching with Sentence-BERT embeddings (384-dim) enabling context-aware automation.
-			\item Implemented thread-safe multi-tenant service registry using LRU eviction and TTL-based resource cleanup to manage lifecycle for 100+ concurrent networks.
-			\item Developed Electron desktop client with optimized IPC architecture to stream real-time audio data to the backend, utilizing webhook notifications to synchronize backend processing results in real-time.
-			% \item Architected containerized microservice deployment with Docker Compose, orchestrating FastAPI backend, PostgreSQL database, and Redis cache across isolated containers with shared Docker network and persistent volume mounts, integrating Electron desktop client with bi-directional IPC for real-time audio streaming.
-			% \item Engineered real-time Digital Signal Processing (DSP) engine utilizing Welch's PSD and windowed variance analysis to score audio quality across 10+ concurrent streams with $<$100ms latency.
+			\item Deployed containerized FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs and reducing cold-start latency 86\% (6{,}643ms $\rightarrow$ 930ms).
+			\item Decoupled ML inference from the API layer by offloading the RAG pipeline to an async Redis/Celery task queue, cutting end-to-end response time by 73\% and enabling horizontal worker scaling under load.
+			\item Built bidirectional IPC event bus between Electron and Next.js client layers with a dedicated webhook server, achieving sub-50ms event propagation and speaker transcription delivery under 2 seconds.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{WizViz --- SpartaHack X}
 			{Feb. 2025}
-			{\textbf{Won Interactive Media Track with real-time computer vision game utilizing pose-estimation}}
+			{}
 			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
 			{}
 
-			\item Designed low-latency gesture pipeline using MediaPipe Pose to map 33-point skeletal landmarks to game actions, achieving 60 FPS with sub-20ms input lag by optimizing the inference loop.
-			\item Created custom vector-based physics engine with AABB collision detection to map 3D real-world movements into 2D game state in real-time.
+			\item Won Interactive Media Track: built a gesture-controlled wizard duel where real-time full-body pose estimation drives spell casting, blocking, and AI combat — entirely in a browser with no game engine.
+			\item Built full-body gesture pipeline using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
+			\item Developed custom 2D vector physics engine with AABB collision detection to translate live 3D skeletal coordinates into game state, maintaining \textless5px drift at 60 FPS.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitHub Actions, PostgreSQL, Neo4j}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
 		\end{rSet}
-		\begin{rSet}{Backend Frameworks}{FastAPI, SQLAlchemy, Redis, Alembic, Node.js, PyTest}
+		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Next.js, Celery}
 		\end{rSet}
-		\begin{rSet}{Frontend Development}{React, Next.js, Tailwind CSS, Electron, Vite, Jest}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB, Redis}
 		\end{rSet}
-		\begin{rSet}{Languages}{Python, C++, Java, JavaScript/TypeScript, SQL, Bash}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (Lambda, EC2, RDS, S3), Docker, GitHub Actions, CI/CD Pipelines}
 		\end{rSet}
-		% \begin{rSet}{AI \& Computer Vision}{PyTorch, TensorFlow, MediaPipe, Pyannote.audio, Sentence-Transformers}
-		% \end{rSet}
 	\end{rSection}
 
 \end{document}

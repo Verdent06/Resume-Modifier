@@ -28,7 +28,7 @@
 			{}
 			{East Lansing, MI}
 
-			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 50+ members.
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
 			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
 			\item Enforced production-grade quality via GitHub Actions CI/CD with 90\% coverage gates across 30+ tests, reducing bug escape rate by 65\%.
 		\end{rSectionEntry}
@@ -49,14 +49,14 @@
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- Distributed AI Assistant}
+			{Mira --- Agentic Voice Assistant}
 			{May 2025 -- Nov. 2025}
 			{}
 			{Next.js, FastAPI, MongoDB, Redis, Celery}
 			{}
 
 			\item Engineered multi-client agentic voice assistant that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
-			\item Sped up API response time by 73\% by offloading RAG pipeline to asynchronous Redis/Celery task queue.
+			\item Reduced RESTful API response time by 73\% by offloading RAG pipeline to async Redis/Celery task queue.
 			\item Built bidirectional Electron + Next.js client synchronizing real-time events via IPC channels and a dedicated webhook server, delivering sub-50ms event propagation latency and speaker transcriptions in under 2 seconds.
 			\item Deployed FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs while reducing cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
 		\end{rSectionEntry}
