@@ -1,0 +1,232 @@
+---
+description: Triggered when the user pastes a job listing and asks to build or tailor a resume for a specific role.
+globs:
+alwaysApply: false
+---
+
+# Resume Application Pipeline
+
+## Project Structure Reference
+
+```
+resume/
+├── resume.cls
+├── INTERNSHIPS.md
+├── full-stack/
+│   ├── Ankur Desai Resume.tex
+│   └── Ankur Desai Resume.pdf
+├── ai-ml/
+│   ├── Ankur Desai Resume.tex
+│   └── Ankur Desai Resume.pdf
+├── dev-ops/
+│   ├── Ankur Desai Resume.tex
+│   └── Ankur Desai Resume.pdf
+└── {company}/
+    ├── company.md
+    └── {position}/
+        ├── job.md
+        └── Ankur Desai Resume.tex
+```
+
+---
+
+## Pipeline — Execute Every Step in Order
+
+### Step 1 — Parse the Job Description
+
+Read the full job listing the user provided. Extract:
+
+- **Company name** (official, properly cased)
+- **Role title** (properly cased)
+- **company_slug** (lowercase, hyphens, e.g. `amazon`)
+- **position_slug** (lowercase, hyphens, e.g. `software-development-intern`)
+- **Work type** (Internship / Co-op / Full-time)
+- **Location + remote/hybrid/onsite**
+- **Compensation** (if listed, else null)
+- **Core responsibilities** (max 6, one sentence each)
+- **Required skills** (exact phrases from the JD)
+- **Preferred skills** (nice-to-haves)
+- **ATS keywords** (15-20 exact terms an ATS scanner would match — pull from responsibilities, qualifications, and team descriptions)
+- **Template decision** (`full-stack` | `ai-ml` | `dev-ops`) — base this on where the role's primary weight falls. When in doubt, `full-stack`.
+
+---
+
+### Step 2 — Create Company Folder and company.md
+
+Check if `resume/{company_slug}/` exists.
+
+If it does not exist, create it and write `resume/{company_slug}/company.md`:
+
+```markdown
+# {Company Name}
+
+## What They Do
+{2-3 sentences: core product or service, scale, market position}
+
+## Why This Company
+{3-5 sentences written in first person from Ankur's perspective. This should directly answer "What do you want to do at {Company}?" — connect the company's technical work to Ankur's interests in full-stack, AI/ML, distributed systems, or infrastructure. Be specific, not generic.}
+
+## Engineering Culture
+{What is the company known for technically? Stack, scale challenges, open source contributions, engineering blog themes, notable systems they've built. Use your knowledge and web search if needed.}
+
+## Relevant Teams / Orgs
+{If the JD mentions a specific team or org, describe it. Otherwise list 1-2 teams that align with Ankur's background.}
+```
+
+If the folder already exists, read the existing `company.md` — do not overwrite it.
+
+---
+
+### Step 3 — Copy Template Folder to Position Folder
+
+Create `resume/{company_slug}/{position_slug}/`.
+
+Copy the entire contents of `resume/{template_decision}/` into this new folder. This becomes the working resume for this application. Never touch the template originals again.
+
+---
+
+### Step 4 — Create job.md
+
+Write `resume/{company_slug}/{position_slug}/job.md`:
+
+```markdown
+# {Role Title} — {Company Name}
+
+## Quick Facts
+- **Type:** {Internship / Co-op / Full-time}
+- **Location:** {location}
+- **Compensation:** {pay or "Not listed"}
+- **Template Used:** {full-stack | ai-ml | dev-ops}
+- **ATS Keywords:** {comma-separated list}
+
+## Role Summary
+{3-4 sentences synthesizing what this role actually does day-to-day, who you'd work with, and what success looks like. Go beyond the JD — use knowledge of the company to add context.}
+
+## What They're Really Looking For
+{Not a restatement of the JD. Interpret it. What does "strong CS fundamentals" mean at this company specifically? What does "works well on ambiguous problems" signal about the team? 3-5 bullet points of interpreted signal.}
+
+## Required Skills
+{bulleted list}
+
+## Preferred Skills
+{bulleted list}
+
+## Keyword Map
+{Table: Keyword | Already in Resume (Y/N) | Where / Notes}
+
+## Gaps
+{Honest list of things the JD wants that Ankur's current resume doesn't cover. Be specific.}
+```
+
+---
+
+### Step 5 — Grade the Resume Against This Role
+
+Before editing anything, internally run this grading pass. Do not show it to the user unless asked — use it to decide what to change.
+
+**Grade each entry (A/B/C/D):**
+- Does the first bullet hook a recruiter who has 7 seconds?
+- Are the technologies in this entry relevant to the JD's required or preferred skills?
+- Are the metrics real impact metrics (latency, throughput, scale, coverage) vs. vanity metrics (uptime, LOC)?
+- Is every technology mentioned with an architectural reason, not just named?
+
+**Then identify:**
+- Which ATS keywords from job.md are missing from the resume
+- Which bullets should be rewritten to embed a missing keyword naturally
+- Which technologies should be swapped (e.g. swap a framework mention for one that appears in the JD)
+- Whether section order should change (for AI/ML roles, Projects should come before Experience)
+- Whether any entry should be cut entirely to make room for tighter, more relevant content
+
+Also read `resume/INTERNSHIPS.md` if it exists — use it to understand how competitive previous applications have been and calibrate the grading accordingly.
+
+---
+
+### Step 6 — Edit the Resume
+
+Edit `resume/{company_slug}/{position_slug}/Ankur Desai Resume.tex`.
+
+**Resume writing rules — non-negotiable:**
+
+**AR format, not STAR.** Every bullet: strong past-tense verb that implies the problem, close with a metric that proves the outcome. The situation lives inside the verb. Never write a bullet that starts with "Worked on" or "Helped with" or "Responsible for."
+
+**The first bullet of every entry is the hook.** It must describe what was built in human-readable, outcome-first language. Not the technology — the problem solved or the result achieved. If someone reads only the first bullet of each entry, they should walk away with a complete and compelling picture. Remaining bullets are technical evidence, going progressively deeper.
+
+**Narrative over specification.** "Replaced paper sign-in sheets with a QR-driven check-in system" hits harder than "built attendance system using QR codes" because the reader feels the before-state. Every bullet should answer: what was broken or missing, what was built, what measurably changed.
+
+**Metrics standard:**
+- Keep: latency improvements with before/after (850ms → 440ms), throughput, concurrent scale, coverage percentages, onboarding time reductions
+- Cut: uptime, lines of code, "improved performance" without a number, vague scale
+- Placeholder metrics are acceptable scaffolding — make them conservative and defensible, Ankur will verify them later
+
+**Technology placement:** Technologies must appear with the architectural reason they were chosen. Redis appears because it decoupled the RAG pipeline from the API layer. Not "used Redis for caching."
+
+**Economy of language:** 2 tight lines per bullet maximum. Three-line bullets always contain a restated clause — find it and cut it.
+
+**One page — hard constraint.** After edits, compile the `.tex` and check the resulting PDF. If it overflows one page, cut the weakest bullets (lowest-grade entries from Step 5) until it fits. Do not shrink font size or margins.
+
+---
+
+### Step 7 — Output to the User
+
+After completing all steps, respond with exactly this structure:
+
+```
+SESSION CREATED
+───────────────
+Folder:    resume/{company_slug}/{position_slug}/
+Template:  {full-stack | ai-ml | dev-ops}
+
+GRADING SUMMARY
+───────────────
+Relevance Score:  {0-100}
+Assessment:       {2 sentences, brutally honest}
+
+ATS Coverage:     {n}/{total} keywords present
+Critical Gaps:    {2-3 gaps, one line each}
+
+TOP 3 CHANGES MADE
+───────────────────
+1. {Change + which JD requirement it targets}
+2. {Change + which JD requirement it targets}
+3. {Change + which JD requirement it targets}
+
+LIKELIHOOD ESTIMATE
+───────────────────
+Resume Screen:    {Low / Medium / High} — {1 sentence rationale}
+Overall Odds:     {1-2 sentences honest assessment factoring in competition, role level, and Ankur's current profile}
+
+───────────────────
+Ask me anything: interview prep, cover letter, application questions, or behavioral prep for this role.
+```
+
+---
+
+### Step 8 — Add to INTERNSHIPS.md
+
+Append a new row to the INTERNSHIPS.md Application Log table using the extracted fields:
+
+- **Company**: The official, properly cased company name
+- **Role**: The precise title of the position
+- **Date Applied**: The current date (in YYYY-MM-DD format)
+- **Status**: "Applied" (default when creating a new entry)
+- **Template Used**: The template chosen in Step 1 (`full-stack`, `ai-ml`, or `dev-ops`)
+- **Heard Back**: Leave blank initially
+
+Example row to add (replace values with parsed ones):
+
+```
+| Acme Corp | Software Engineer Intern | 2024-06-10 | Applied | full-stack | |
+```
+
+Append this *as a new line* directly under the last row of the Application Log table in INTERNSHIPS.md. Update any summary statistics (total applied, etc.) as appropriate.
+
+---
+
+## Constraints
+
+- Never edit files in `resume/full-stack/`, `resume/ai-ml/`, or `resume/dev-ops/` — those are templates
+- Never invent new experience entries or company names
+- Never add a new section to the resume — only add bullets or entries within existing sections
+- The resume must compile to exactly one page
+- `company.md` is written once per company — never overwrite an existing one
+- Every technology mentioned in the resume must appear with the context of why it was used
