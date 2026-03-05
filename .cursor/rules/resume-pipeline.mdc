@@ -10,22 +10,27 @@ alwaysApply: false
 
 ```
 resume/
-├── resume.cls
-├── INTERNSHIPS.md
-├── full-stack/
-│   ├── Ankur Desai Resume.tex
-│   └── Ankur Desai Resume.pdf
-├── ai-ml/
-│   ├── Ankur Desai Resume.tex
-│   └── Ankur Desai Resume.pdf
-├── dev-ops/
-│   ├── Ankur Desai Resume.tex
-│   └── Ankur Desai Resume.pdf
-└── {company}/
-    ├── company.md
-    └── {position}/
-        ├── job.md
-        └── Ankur Desai Resume.tex
+├── resume.cls                          # Shared LaTeX class — do not duplicate
+├── README.md
+│
+├── templates/
+│   ├── full-stack/
+│   │   ├── Ankur Desai Resume.tex      # Base template for product/full-stack SWE roles
+│   │   └── Ankur Desai Resume.pdf
+│   ├── ai-ml/
+│   │   ├── Ankur Desai Resume.tex      # Base template for ML/AI engineering roles
+│   │   └── Ankur Desai Resume.pdf
+│   └── dev-ops/
+│       ├── Ankur Desai Resume.tex      # Base template for DevOps/infra-focused roles
+│       └── Ankur Desai Resume.pdf
+│
+└── applications/
+    └── [Company]/
+        ├── company.md                  # Company description and research notes
+        └── [role]/                     # One folder per role applied to
+            ├── Ankur Desai Resume.tex  # Tailored copy of the relevant base template
+            ├── Ankur Desai Resume.pdf
+            └── job.md                  # Parsed job information + ATS information
 ```
 
 ---
@@ -53,9 +58,9 @@ Read the full job listing the user provided. Extract:
 
 ### Step 2 — Create Company Folder and company.md
 
-Check if `resume/{company_slug}/` exists.
+Check if `resume/applications/{company_slug}/` exists.
 
-If it does not exist, create it and write `resume/{company_slug}/company.md`:
+If it does not exist, create it and write `resume/applications/{company_slug}/company.md`:
 
 ```markdown
 # {Company Name}
@@ -79,15 +84,15 @@ If the folder already exists, read the existing `company.md` — do not overwrit
 
 ### Step 3 — Copy Template Folder to Position Folder
 
-Create `resume/{company_slug}/{position_slug}/`.
+Create `resume/applications/{company_slug}/{position_slug}/`.
 
-Copy the entire contents of `resume/{template_decision}/` into this new folder. This becomes the working resume for this application. Never touch the template originals again.
+Copy the entire contents of `resume/templates/{template_decision}/` into this new folder. This becomes the working resume for this application. Never touch the template originals again.
 
 ---
 
 ### Step 4 — Create job.md
 
-Write `resume/{company_slug}/{position_slug}/job.md`:
+Write `resume/applications/{company_slug}/{position_slug}/job.md`:
 
 ```markdown
 # {Role Title} — {Company Name}
@@ -137,13 +142,13 @@ Before editing anything, internally run this grading pass. Do not show it to the
 - Whether section order should change (for AI/ML roles, Projects should come before Experience)
 - Whether any entry should be cut entirely to make room for tighter, more relevant content
 
-Also read `resume/INTERNSHIPS.md` if it exists — use it to understand how competitive previous applications have been and calibrate the grading accordingly.
+Also read `resume/applications/INTERNSHIPS.md` if it exists — use it to understand how competitive previous applications have been and calibrate the grading accordingly.
 
 ---
 
 ### Step 6 — Edit the Resume
 
-Edit `resume/{company_slug}/{position_slug}/Ankur Desai Resume.tex`.
+Edit `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`.
 
 **Resume writing rules — non-negotiable:**
 
@@ -224,7 +229,7 @@ Append this *as a new line* directly under the last row of the Application Log t
 
 ## Constraints
 
-- Never edit files in `resume/full-stack/`, `resume/ai-ml/`, or `resume/dev-ops/` — those are templates
+- Never edit files in `resume/templates/full-stack/`, `resume/templates/ai-ml/`, or `resume/templates/dev-ops/` — those are templates
 - Never invent new experience entries or company names
 - Never add a new section to the resume — only add bullets or entries within existing sections
 - The resume must compile to exactly one page
