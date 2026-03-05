@@ -9,7 +9,7 @@ Fill in each application honestly — the agent uses this to benchmark competiti
 
 | Company | Role | Date Applied | Status | Template Used | Heard Back |
 |---------|------|-------------|--------|---------------|------------|
-| | | | | | |
+| Visa | Insight Day — Technology | 2026-03-04 | Applied | full-stack | |
 
 **Status options:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
@@ -23,7 +23,7 @@ _Add notes over time — patterns in what's working, which roles are responding,
 
 ## Baseline Stats
 
-- **Total applied:** 0
+- **Total applied:** 1
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —
