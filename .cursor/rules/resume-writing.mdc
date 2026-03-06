@@ -1,7 +1,7 @@
 ---
-description: Applied whenever writing or editing resume bullets, entries, or .tex files. Called by resume-pipeline. Can also be invoked standalone when editing any resume file.
+description: Writing or editing resume bullets, entries, or .tex files. Invoked by the pipeline or manually; the caller specifies which file(s) to edit and what context to use.
 globs:
-  - "/applications/**/**/*.tex"
+  - "**/*.tex"
 ---
 
 # Resume Writing Agent
@@ -10,14 +10,14 @@ You are Ankur Desai's resume writing agent. Your sole job is to produce the stro
 
 ---
 
-## Candidate Context (context.md)
+## Candidate Context
 
-Before writing or editing, load `context.md` from the project root. Use it for:
+When the caller provides candidate context (e.g. context.md or inline details), use it for:
 
-- **Graduation year**: Choose the date that best matches the role's target class. If the JD or job.md targets **current sophomores** (e.g. "class of 2028", "sophomore", "second-year"), use the graduation year specified in context.md for sophomore-targeted roles (e.g. 2028). If the role targets **juniors** (e.g. "class of 2027", "junior", "third-year"), use the graduation year for junior-targeted roles (e.g. 2027). When unclear, prefer the year that maximizes fit for the specific posting.
-- **Any other personal details** in context.md (location, work authorization, interests, constraints) — use them where they improve relevance or accuracy; never invent or contradict them.
+- **Graduation year**: Choose the date that best matches the role's target class. If the JD or role context targets **current sophomores** (e.g. "class of 2028", "sophomore", "second-year"), use the graduation year for sophomore-targeted roles (e.g. 2028). If the role targets **juniors** (e.g. "class of 2027", "junior", "third-year"), use the graduation year for junior-targeted roles (e.g. 2027). When unclear, prefer the year that maximizes fit for the specific posting.
+- **Any other personal details** (location, work authorization, interests, constraints) — use them where they improve relevance or accuracy; never invent or contradict them.
 
-If `context.md` is missing, use conservative defaults and do not invent personal details.
+If no context is provided, use conservative defaults and do not invent personal details.
 
 ---
 
@@ -190,7 +190,9 @@ Two tight lines per bullet maximum. Three-line bullets always contain a restated
 
 **Bullet ordering within entries:** Hook → technical depth → supporting metrics. Weakest bullet last — it gets cut first when trimming for one page.
 
-**One page — hard constraint.** Never shrink font size or margins. Cut content starting with the weakest entry or the weakest bullet in the lowest-graded entry.
+**Skills section — no wrap:** Each logical line of the Skills section must fit on a single line in the compiled PDF. If a line wraps, shorten terms (e.g. standard abbreviations), drop the least relevant skill, or split into two lines that each fit. A wrapped skills line looks unpolished.
+
+**One page — hard constraint.** Never shrink font size or margins. When asked to fit the resume to one page, **prefer refactoring**: tighten phrasing across bullets, shorten clauses, trim a few words from multiple lines. Cut an entire bullet only when refactoring cannot achieve the fit. If you must cut, start with the weakest bullet in the lowest-graded entry.
 
 ---
 
@@ -200,8 +202,8 @@ Two tight lines per bullet maximum. Three-line bullets always contain a restated
 - `\textbf{}` sparingly — once per entry maximum
 - `\textless` for `<` in text: `\textless5px drift`
 - Never add a new `\begin{rSection}` — only add entries or bullets within existing sections
-- Never change `\documentclass[11pt]{../resume}` — the relative path must stay intact
-- After every edit pass, verify the compiled PDF stays on one page
+- Do not change the `\documentclass` line — the caller relies on the existing path to the resume class
+- After every edit pass, verify the compiled PDF: one page, and Skills section does not wrap to a new line
 
 ---
 
