@@ -1,0 +1,87 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.github.io/}{ardusa.github.io} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Software Engineer}
+			{}
+			{East Lansing, MI}
+
+			\item Introduced Neo4j to offload recursive relational queries from PostgreSQL, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms) and eliminating SQL join overhead for multi-hop traversals.
+			\item Integrated dual-provider OAuth 2.0 (Google + GitHub) with httpOnly JWT cookies, refresh token rotation, and user-scoped graph access control.
+			\item Implemented GitLab CI/CD for backend services and REST APIs, automating build, unit testing, and containerized deployment with Dockerized services and branch-protected production merges, enforcing 85\% coverage across 35+ tests.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{React, Next.js, Python, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Engineered full-stack, multi-client agentic voice assistant (frontend + backend) that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
+			\item Reduced REST API response time by 73\% by offloading GenAI RAG/LLM pipeline with retrieval to async Redis/Celery task queue.
+			\item Built bidirectional frontend (React, Electron + Next.js) with embedded HTTP server for OAuth callback interception; real-time events via IPC and dedicated webhook server deliver sub-50ms propagation.
+			\item Deployed Python FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs while reducing cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{}
+
+			\item Won Interactive Media Track: Gesture-controlled wizard duel where full-body movements cast spells, block attacks, and trigger abilities against an AI opponent.
+			\item Built full-body gesture pipeline using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, React, Vue.js, Next.js, Redis, REST APIs}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB (NoSQL), SQL}
+		\end{rSet}
+		\begin{rSet}{AI \& GenAI}{LLM integration, RAG, prompt engineering}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (Lambda, EC2, S3, RDS), Docker, Git/GitHub, GitLab CI/CD, unit testing}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
