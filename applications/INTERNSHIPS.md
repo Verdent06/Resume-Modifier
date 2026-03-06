@@ -14,6 +14,8 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Mastercard | Software Engineer Intern | 2026-03-05 | Applied | full-stack | |
 | Serval | Software Engineer Intern | 2026-03-05 | Applied | full-stack | |
 | Global Relay | Co-op Java Developer | 2026-03-05 | Applied | full-stack | |
+| Cisco | Software Engineer 1 – Co-op | 2026-03-06 | Applied | full-stack | |
+| Visa | Software Engineer, Intern - Summer 2026 | 2026-03-06 | Applied | full-stack | |
 
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
@@ -28,7 +30,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 4
+- **Total applied:** 6
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —

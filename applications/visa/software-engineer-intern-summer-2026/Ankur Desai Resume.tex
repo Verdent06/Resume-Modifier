@@ -16,24 +16,11 @@
 			{East Lansing, MI}
 
 			\item \textbf{GPA:} 3.5 / 4.0
-			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design (Java), Computer Organization and Architecture, Data Structures \& Algorithms
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{E}{xperience}
-		\begin{rSectionEntry}
-			{MindMosaic}
-			{Aug. 2025 -- Nov. 2025}
-			{Software Engineer}
-			{}
-			{East Lansing, MI}
-
-			\item Introduced NoSQL (Neo4j) to offload recursive relational queries from PostgreSQL, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms) and eliminating SQL join overhead for multi-hop traversals.
-			\item Refactored Cypher with relationship-type indexing; indexed traversals ran 3$\times$ faster than equivalent SQL self-joins and removed full-table scans on relationship lookups.
-			\item Integrated dual-provider OAuth 2.0 (Google + GitHub) with httpOnly JWT cookies, refresh token rotation, and user-scoped graph access control.
-			\item Delivered features in an Agile cadence; implemented GitLab CI/CD pipeline with test-driven coverage gates (85\% across 35+ tests), automating build, test, and containerized deployment with Docker and branch-protected production merges.
-		\end{rSectionEntry}
-
 		\begin{rSectionEntry}
 			{Claude Builder Club @ MSU}
 			{Oct. 2025 -- Present}
@@ -42,7 +29,21 @@
 			{East Lansing, MI}
 
 			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
-			\item Enforced production-grade quality via GitHub Actions CI/CD with test-driven coverage gates (90\% across 20+ tests).
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
+			\item Enforced production-grade quality via GitHub Actions CI/CD with 90\% unit test coverage gates and test design review across 20+ tests.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Software Engineer}
+			{}
+			{East Lansing, MI}
+
+			\item Cut p95 latency 48\% (850ms $\rightarrow$ 440ms) by offloading recursive relational queries from PostgreSQL (RDBMS) to Neo4j (NoSQL), eliminating SQL join overhead for multi-hop traversals.
+			\item Refactored Cypher with relationship-type indexing; indexed traversals ran 3$\times$ faster than equivalent SQL self-joins and removed full-table scans on relationship lookups.
+			\item Implemented GitLab CI/CD pipeline to automate build, unit test, and containerized deployment workflows with Docker configuration; enforced branch protection and 85\%+ coverage on 35+ test cases.
+			\item Integrated Java Spring Boot testing suites for REST API and service layer quality; added suite to CI for repeatable regression runs and improved defect resolution speed.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -55,7 +56,7 @@
 			{}
 
 			\item Engineered multi-client agentic voice assistant that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
-			\item Reduced service-oriented REST/JSON API response time by 73\% by offloading RAG pipeline to async Redis/Celery task queue.
+			\item Reduced REST API response time by 73\% by offloading RAG pipeline to async Redis/Celery task queue.
 			\item Built bidirectional Electron + Next.js client with an embedded HTTP server for OAuth callback interception; real-time events via IPC and a dedicated webhook server deliver sub-50ms propagation.
 			\item Deployed FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs while reducing cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
 		\end{rSectionEntry}
@@ -73,13 +74,13 @@
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Java, Python, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Jenkins, Node.js, React, Next.js, Redis}
+		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, Angular, React, Next.js, Redis, REST}
 		\end{rSet}
-		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB, HBase}
+		\begin{rSet}{Databases}{PostgreSQL, MySQL, Neo4j, MongoDB, NoSQL}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitLab CI/CD, Jenkins, Kafka}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, Kubernetes, GitLab CI/CD, GitHub Actions}
 		\end{rSet}
 	\end{rSection}
 

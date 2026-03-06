@@ -1,0 +1,13 @@
+# Cisco
+
+## What They Do
+Cisco designs and sells networking hardware, software, and services that help organizations connect, protect, and manage data at scale. Its products include routing and switching, security solutions, cloud services, and collaboration tools like Webex. The company differentiates with an integrated stack—networking, security, cloud, and collaboration—that works together for enterprises. Cisco is investing heavily in Agentic AI and intelligent systems: AgenticOps, JARVIS-style platform automation, and data-driven operational efficiency across its portfolio.
+
+## Why This Company
+I want to work on systems that apply Agentic AI to real operational problems—automating workflows, processing diverse data sources, and improving decision-making—rather than only training models. Cisco’s co-op sits at that intersection: contributing to initiatives that use AI to accelerate decisions and automate workflows for business groups. The chance to build reliable, scalable platforms that support intelligent technology at Cisco’s scale, with exposure to Python/Java/C++, data structures, and tooling like Jenkins and Confluence, aligns with my experience in agentic systems (Mira), automation (Claude Builder Club CI/CD), and full-stack data pipelines (MindMosaic, Neo4j). I’m drawn to the concrete impact described in the JD: high-quality platforms that enable data-driven intelligence across the company.
+
+## Engineering Culture
+Cisco’s engineering is known for large-scale networking and infrastructure, security, and collaboration products. Recently the company has emphasized Agentic AI and “Connected Intelligence”—people and AI working together—with initiatives like AgenticOps for autonomous IT operations and internal tools such as JARVIS (multi-agent platform engineering) that automate CI/CD, provisioning, and infra. The culture values open standards and interoperability (e.g., LangGraph, agent protocols), practical automation, and reliability. Stack and tooling often include Python, Java, C/C++, Go, Git, Jenkins, JIRA, Confluence, Linux, and CI/CD pipelines.
+
+## Relevant Teams / Orgs
+The JD does not name a specific team. The role contributes to “critical initiatives aimed at improving operational efficiency and accelerating decision-making through the application of Agentic AI,” with work on processing/analyzing diverse data sources, automating workflows, and building reliable platforms. Teams that align with this include groups working on internal data/AI tooling, platform engineering, or operational automation that use Agentic AI, REST APIs, and standard dev tools (Jenkins, JIRA, Confluence).

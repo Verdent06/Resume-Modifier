@@ -16,6 +16,7 @@ You are the orchestrator. You do not write resume content directly — you deleg
 resume/
 ├── resume.cls                          ← Shared LaTeX class — never duplicate or modify
 ├── README.md
+├── context.md                          ← Candidate context for resume-writing (graduation year, personal info)
 │
 ├── templates/
 │   ├── full-stack/
@@ -34,6 +35,7 @@ resume/
         ├── company.md
         └── {position_slug}/
             ├── job.md
+            ├── grade.md                ← Final grading report only (written after loop exits; iteration reports stay in chat)
             ├── Ankur Desai Resume.tex  ← Working copy — the only file you edit
             └── Ankur Desai Resume.pdf  ← Compiled output — check for one-page constraint
 ```
@@ -141,7 +143,7 @@ Create `resume/applications/{company_slug}/{position_slug}/job.md`:
 
 Call `@resume-writing` with this exact instruction:
 
-> Read `resume/applications/{company_slug}/{position_slug}/job.md` and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Apply the full tailoring priority order from the writing rules. Focus first on tech swaps and ATS keyword injection. Do not change any existing metrics. Produce the edited .tex file. This is iteration 1.
+> Read `context.md`, `resume/applications/{company_slug}/{position_slug}/job.md`, and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Apply the full tailoring priority order from the writing rules. Use context.md for graduation year and any other candidate details. Focus first on tech swaps and ATS keyword injection. Do not change any existing metrics. Produce the edited .tex file. This is iteration 1.
 
 `@resume-writing` edits the working `.tex` file in place.
 
@@ -153,9 +155,11 @@ After each write pass, call `@resume-grading` with this exact instruction:
 
 > Read `resume/applications/{company_slug}/{position_slug}/job.md`, `resume/applications/{company_slug}/company.md`, `resume/applications/INTERNSHIPS.md` (if exists), and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Produce the full grading report. Output an iteration verdict: Pass to output or Needs another write pass.
 
+- **Do not write** `grade-iteration-1.md`, `grade-iteration-2.md`, or any intermediate grading files. Grading reports exist in the chat only so the next write pass can use them.
+
 If `@resume-grading` returns **Needs another write pass**, call `@resume-writing` again with:
 
-> Read the grading report just produced. Fix exactly and only what the grader flagged as Priority 1 and Priority 2 changes. Do not make changes the grader did not request. This is iteration {n}.
+> Read `context.md`, the grading report just produced, and the current `.tex`. Fix exactly and only what the grader flagged as Priority 1 and Priority 2 changes. Do not make changes the grader did not request. This is iteration {n}.
 
 **Loop exit conditions (all true triggers exit):**
 1. `@resume-grading` returns an overall grade of A or B+
@@ -164,7 +168,9 @@ If `@resume-grading` returns **Needs another write pass**, call `@resume-writing
 
 If 5 iterations have completed and the loop exit conditions are still false: output the best version reached, flag remaining gaps
 
-After exiting the loop, compile the `.tex` to PDF and verify one-page constraint. If it overflows, instruct `@resume-writing` to cut the weakest bullet from the lowest-graded entry until it fits. This does not count as an iteration.
+**After exiting the loop:**
+1. Write the **final** grading report (the last output from `@resume-grading`) to `applications/{company_slug}/{position_slug}/grade.md`. This is the only grading file the user sees on disk.
+2. Compile the `.tex` to PDF and verify one-page constraint. If it overflows, instruct `@resume-writing` to cut the weakest bullet from the lowest-graded entry until it fits. This does not count as an iteration.
 
 ---
 

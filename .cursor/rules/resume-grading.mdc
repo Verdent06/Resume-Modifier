@@ -155,15 +155,23 @@ If "Pass to output": confirm the resume is ready for the final likelihood estima
 
 ---
 
+## Where Grading Output Goes
+
+- **Iteration reports** (each pass): Stay in the chat only. Do not write `grade-iteration-1.md`, `grade-iteration-2.md`, or any intermediate files. The pipeline uses your report in-conversation to drive the next write pass.
+- **Final grade**: When the loop exits, the pipeline writes your final grading report (this same format) to `applications/{company_slug}/{position_slug}/grade.md`. You do not write that file — the pipeline does. The user sees only the final grade in `grade.md`; iteration detail exists only in the chat.
+
+---
+
 ## Recursive Loop Behavior
 
 This agent is called by `resume-pipeline` in a loop. After each write pass, this grading agent scores the result. The loop continues until one of these exit conditions is met:
 
-**Exit conditions:**
-1. Overall grade reaches **A** or **B+** across all dimensions
-2. ATS coverage reaches **80%+** of required keywords in bullets
-3. All hooks are graded **B or higher**
-4. Maximum of **3 iterations** — if not resolved by then, output the best version reached and flag remaining gaps
+**Loop exit conditions (all true triggers exit):**
+1. `@resume-grading` returns an overall grade of A or B+
+2. ATS coverage reaches 80%+ of required keywords present in bullets
+3. All entry hooks are graded B or higher
+
+If 5 iterations have completed and the loop exit conditions are still false: output the best version reached, flag remaining gaps
 
 On each iteration, the grading report feeds directly back to `@resume-writing`. The writer does not re-read the original JD — it reads the grading report and fixes exactly what the grader flagged. This keeps iterations tight and prevents the writer from making changes the grader didn't request.
 
