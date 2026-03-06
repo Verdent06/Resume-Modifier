@@ -1,0 +1,87 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.github.io/}{ardusa.github.io} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected, May 2028}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
+			\item Enforced code quality and maintainability via automated test suites achieving 90\% coverage across 20+ tests, gated behind GitHub Actions CI/CD with branch-protected deployments.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Software Engineer}
+			{}
+			{East Lansing, MI}
+
+			\item Diagnosed recursive SQL join bottlenecks via query profiling and introduced Neo4j to offload multi-hop graph traversals from PostgreSQL, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms).
+			\item Refactored Cypher with relationship-type indexing; indexed traversals ran 3$\times$ faster than equivalent SQL self-joins and removed full-table scans on relationship lookups.
+			\item Secured authentication layer with dual-provider OAuth 2.0 (Google + GitHub), implementing httpOnly JWT cookies, refresh token rotation, and user-scoped graph access control.
+			\item Implemented GitLab CI/CD pipeline covering the full software development lifecycle — automated build, test, and containerized deployment stages — with branch-protected merges enforcing 85\% coverage across 35+ tests.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Engineered multi-client agentic voice assistant that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
+			\item Reduced RESTful API response time by 73\% by offloading RAG pipeline to async Redis/Celery task queue.
+			\item Deployed FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs while reducing cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{}
+
+			\item Engineered real-time gesture recognition system (SpartaHack X, 1st place — Interactive Media) where full-body skeletal movements drive live game actions against an AI opponent with sub-20ms input lag.
+			\item Built full-body gesture pipeline using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
+			\item Developed custom 2D vector physics engine with AABB collision detection to accurately translate live 3D skeletal coordinates to game state, maintaining \textless5px drift at 60 FPS.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, Angular, React, Next.js, Redis}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitLab CI/CD, CI/CD Pipelines}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

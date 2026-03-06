@@ -157,11 +157,12 @@ If `@resume-grading` returns **Needs another write pass**, call `@resume-writing
 
 > Read the grading report just produced. Fix exactly and only what the grader flagged as Priority 1 and Priority 2 changes. Do not make changes the grader did not request. This is iteration {n}.
 
-**Loop exit conditions (any one triggers exit):**
+**Loop exit conditions (all true triggers exit):**
 1. `@resume-grading` returns an overall grade of A or B+
 2. ATS coverage reaches 80%+ of required keywords present in bullets
 3. All entry hooks are graded B or higher
-4. 3 iterations have completed — output the best version reached, flag remaining gaps
+
+If 5 iterations have completed and the loop exit conditions are still false: output the best version reached, flag remaining gaps
 
 After exiting the loop, compile the `.tex` to PDF and verify one-page constraint. If it overflows, instruct `@resume-writing` to cut the weakest bullet from the lowest-graded entry until it fits. This does not count as an iteration.
 
