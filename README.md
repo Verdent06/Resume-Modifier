@@ -70,10 +70,10 @@ Copy the appropriate base template into it. Never edit the base templates direct
 - Company context lives in `[Company].md` one level up — the pipeline reads this for research notes without needing a per-role file
 
 ### 4. Compile
+From the folder containing the `.tex` file:
 ```bash
-pdflatex [Company].tex
+xelatex "Ankur Desai Resume.tex"
 ```
-Ensure `resume.cls` is one directory up or update the `\documentclass` path accordingly.
 
 ---
 

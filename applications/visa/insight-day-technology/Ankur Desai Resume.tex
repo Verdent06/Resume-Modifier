@@ -1,6 +1,6 @@
 \documentclass[
 	11pt
-]{../../resume}
+]{../../../resume}
 
 \name{Ankur Desai}
 \contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.github.io/}{ardusa.github.io} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
@@ -24,13 +24,13 @@
 		\begin{rSectionEntry}
 			{Claude Builder Club @ MSU}
 			{Oct. 2025 -- Present}
-			{Vice President \& Co-Founder}
+			{Vice President}
 			{}
 			{East Lansing, MI}
 
 			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
 			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
-			\item Enforced production-grade quality via GitLab CI/CD with 90\% coverage gates across 30+ tests, reducing bug escape rate by 65\%.
+			\item Enforced production-grade quality via GitHub Actions CI/CD with 90\% coverage gates across 20+ tests.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -40,10 +40,10 @@
 			{}
 			{East Lansing, MI}
 
-			\item Built Spring Boot + Angular application where users can map \& visualize connections between ideas.
-			\item Designed polyglot persistence layer (PostgreSQL + Neo4j) where relational data anchors facts and graph traversals reveal connections; recursive relationship queries ran 3$\times$ faster than equivalent SQL joins.
-			\item Eliminated slow graph queries as a bottleneck by refactoring Cypher queries with relationship-type indexing, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms).
-			\item Maintained 85\% test coverage across JUnit and Jasmine suites for the Spring Boot backend and Angular frontend via GitLab CI/CD with branch protection on all production merges.
+			\item Introduced Neo4j to offload recursive relational queries from PostgreSQL, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms) and eliminating SQL join overhead for multi-hop traversals.
+			\item Refactored Cypher with relationship-type indexing; indexed traversals ran 3$\times$ faster than equivalent SQL self-joins and removed full-table scans on relationship lookups.
+			\item Integrated dual-provider OAuth 2.0 (Google + GitHub) with httpOnly JWT cookies, refresh token rotation, and user-scoped graph access control.
+			\item Implemented GitLab CI/CD pipeline on Linux runners automating build, test, and containerized deployment with Dockerized services and branch-protected production merges, enforcing 85\% coverage across 35+ tests.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -57,8 +57,8 @@
 
 			\item Engineered multi-client agentic voice assistant that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
 			\item Reduced RESTful API response time by 73\% by offloading RAG pipeline to async Redis/Celery task queue.
-			\item Built bidirectional Electron + Next.js client synchronizing real-time events via IPC and a dedicated webhook server; sub-50ms event propagation and transcriptions under 2s.
-			\item Deployed FastAPI on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), cutting cold-start 86\% (6{,}643ms $\rightarrow$ 930ms).
+			\item Built bidirectional Electron + Next.js client with an embedded HTTP server for OAuth callback interception; real-time events via IPC and a dedicated webhook server deliver sub-50ms propagation.
+			\item Deployed FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs while reducing cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -68,20 +68,20 @@
 			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
 			{}
 
-			\item Won Interactive Media Track: Gesture-controlled wizard duel (full-body spells, blocks, abilities) vs. AI opponent.
-			\item Built MediaPipe Pose pipeline mapping 33 landmarks to game actions; 60 FPS, sub-20ms input lag.
-			\item Developed custom 2D vector physics engine with AABB collision detection to translate 3D skeletal coordinates to game state, maintaining \textless5px drift at 60 FPS.
+			\item Won Interactive Media Track: Gesture-controlled wizard duel where full-body movements cast spells, block attacks, and trigger abilities against an AI opponent.
+			\item Built full-body gesture pipeline using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
+			\item Developed custom 2D vector physics engine with AABB collision detection to accurately translate live 3D skeletal coordinates to game state, maintaining \textless5px drift at 60 FPS.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
 		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, REST APIs, Node.js, Angular, React, Next.js, Redis, RabbitMQ}
+		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, Angular, React, Next.js, Redis}
 		\end{rSet}
 		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, Linux/Unix, GitLab CI/CD, CI/CD Pipelines}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, Git, GitLab CI/CD, Linux/Unix}
 		\end{rSet}
 	\end{rSection}
 

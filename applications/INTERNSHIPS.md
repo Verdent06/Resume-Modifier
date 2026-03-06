@@ -1,29 +1,32 @@
 # Internships Tracker
 
-This file is read by the resume grading agent to calibrate likelihood estimates.
-Fill in each application honestly — the agent uses this to benchmark competitiveness.
+Read by `@resume-grading` to calibrate likelihood estimates against historical performance.
+Fill in honestly — the more data here, the more accurate the grading agent's odds estimates.
 
 ---
 
 ## Application Log
 
-| Company | Role | Date Applied | Status | Template Used | Heard Back |
-|---------|------|-------------|--------|---------------|------------|
-| Visa | Insight Day — Technology | 2026-03-04 | Applied | full-stack | |
 
-**Status options:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
+| Company | Role | Date Applied | Status | Template Used | Heard Back |
+| ------- | ---- | ------------ | ------ | ------------- | ---------- |
+| Visa | Insight Day — Technology | 2026-03-05 | Applied | full-stack | |
+
+
+**Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
 ---
 
 ## Observations
 
-_Add notes over time — patterns in what's working, which roles are responding, what interviewers are asking._
+*Add notes over time — what's getting responses, what interviewers are asking, patterns in rejections.*
 
 ---
 
-## Baseline Stats
+## Summary Stats
 
 - **Total applied:** 1
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —
+

@@ -6,232 +6,227 @@ alwaysApply: false
 
 # Resume Application Pipeline
 
+You are the orchestrator. You do not write resume content directly — you delegate to `@resume-writing` and `@resume-grading` and manage the file system. Execute every step in order. Do not skip steps. Do not summarize steps you haven't done yet.
+
+---
+
 ## Project Structure Reference
 
 ```
 resume/
-├── resume.cls                          # Shared LaTeX class — do not duplicate
+├── resume.cls                          ← Shared LaTeX class — never duplicate or modify
 ├── README.md
 │
 ├── templates/
 │   ├── full-stack/
-│   │   ├── Ankur Desai Resume.tex      # Base template for product/full-stack SWE roles
+│   │   ├── Ankur Desai Resume.tex      ← Template for product/full-stack SWE roles
 │   │   └── Ankur Desai Resume.pdf
 │   ├── ai-ml/
-│   │   ├── Ankur Desai Resume.tex      # Base template for ML/AI engineering roles
+│   │   ├── Ankur Desai Resume.tex      ← Template for ML/AI engineering roles
 │   │   └── Ankur Desai Resume.pdf
 │   └── dev-ops/
-│       ├── Ankur Desai Resume.tex      # Base template for DevOps/infra-focused roles
+│       ├── Ankur Desai Resume.tex      ← Template for DevOps/infra-focused roles
 │       └── Ankur Desai Resume.pdf
 │
 └── applications/
-    └── [Company]/
-        ├── company.md                  # Company description and research notes
-        └── [role]/                     # One folder per role applied to
-            ├── Ankur Desai Resume.tex  # Tailored copy of the relevant base template
-            ├── Ankur Desai Resume.pdf
-            └── job.md                  # Parsed job information + ATS information
+    ├── INTERNSHIPS.md                  ← Application history — read by grading agent
+    └── {company_slug}/
+        ├── company.md
+        └── {position_slug}/
+            ├── job.md
+            ├── Ankur Desai Resume.tex  ← Working copy — the only file you edit
+            └── Ankur Desai Resume.pdf  ← Compiled output — check for one-page constraint
 ```
 
 ---
 
-## Pipeline — Execute Every Step in Order
+## Step 1 — Parse the Job Description
 
-### Step 1 — Parse the Job Description
+Read the full job listing the user provided. Extract and record:
 
-Read the full job listing the user provided. Extract:
+- **Company name** — official, properly cased
+- **Role title** — properly cased
+- **company_slug** — lowercase, hyphens only (e.g. `amazon`)
+- **position_slug** — lowercase, hyphens only (e.g. `software-development-intern`)
+- **Work type** — Internship / Co-op / Full-time
+- **Location** — include remote/hybrid/onsite signal
+- **Compensation** — exact if listed, else null
+- **Core responsibilities** — max 6, one sentence each, your words not the JD's
+- **Required skills** — exact phrases from the JD
+- **Preferred skills** — exact phrases from the JD
+- **ATS keywords** — 15-20 exact terms an ATS scanner would match, pulled from responsibilities, qualifications, and team descriptions sections
+- **Template decision** — `full-stack` | `ai-ml` | `dev-ops`
 
-- **Company name** (official, properly cased)
-- **Role title** (properly cased)
-- **company_slug** (lowercase, hyphens, e.g. `amazon`)
-- **position_slug** (lowercase, hyphens, e.g. `software-development-intern`)
-- **Work type** (Internship / Co-op / Full-time)
-- **Location + remote/hybrid/onsite**
-- **Compensation** (if listed, else null)
-- **Core responsibilities** (max 6, one sentence each)
-- **Required skills** (exact phrases from the JD)
-- **Preferred skills** (nice-to-haves)
-- **ATS keywords** (15-20 exact terms an ATS scanner would match — pull from responsibilities, qualifications, and team descriptions)
-- **Template decision** (`full-stack` | `ai-ml` | `dev-ops`) — base this on where the role's primary weight falls. When in doubt, `full-stack`.
+**Template selection logic:**
+- `ai-ml` → role explicitly requires ML frameworks, model training, inference, or data pipelines
+- `dev-ops` → role explicitly requires CI/CD, containerization, cloud infra, SRE, or observability
+- `full-stack` → everything else, and when in doubt
 
 ---
 
-### Step 2 — Create Company Folder and company.md
+## Step 2 — Create Company Folder and company.md
 
 Check if `resume/applications/{company_slug}/` exists.
 
-If it does not exist, create it and write `resume/applications/{company_slug}/company.md`:
+**If it does not exist**, create it. Then create `resume/applications/{company_slug}/company.md` using this exact structure:
 
 ```markdown
 # {Company Name}
 
 ## What They Do
-{2-3 sentences: core product or service, scale, market position}
+{2-3 sentences: core product or service, scale, market position. Be specific — not "they build software," but what software and for whom.}
 
 ## Why This Company
-{3-5 sentences written in first person from Ankur's perspective. This should directly answer "What do you want to do at {Company}?" — connect the company's technical work to Ankur's interests in full-stack, AI/ML, distributed systems, or infrastructure. Be specific, not generic.}
+{3-5 sentences written in first person from Ankur's perspective. Directly answers "What do you want to do at {Company}?" Connect the company's specific technical work to Ankur's actual interests: distributed systems, AI/ML, full-stack product engineering, real-time systems. Do not write generic enthusiasm — name a specific product, team, or technical challenge.}
 
 ## Engineering Culture
-{What is the company known for technically? Stack, scale challenges, open source contributions, engineering blog themes, notable systems they've built. Use your knowledge and web search if needed.}
+{What is this company known for technically? Stack, scale challenges, engineering blog themes, notable open-source work, famous systems they've built. Use web search if needed for accuracy.}
 
 ## Relevant Teams / Orgs
-{If the JD mentions a specific team or org, describe it. Otherwise list 1-2 teams that align with Ankur's background.}
+{If the JD mentions a specific team or org, describe it and its technical scope. Otherwise, list 1-2 teams that align most with Ankur's background.}
 ```
 
-If the folder already exists, read the existing `company.md` — do not overwrite it.
+**If the folder already exists**, read `resume/applications/{company_slug}/company.md` — do not overwrite it. Use it as context for later steps.
 
 ---
 
-### Step 3 — Copy Template Folder to Position Folder
+## Step 3 — Copy Template Folder to Position Folder
 
 Create `resume/applications/{company_slug}/{position_slug}/`.
 
-Copy the entire contents of `resume/templates/{template_decision}/` into this new folder. This becomes the working resume for this application. Never touch the template originals again.
+Copy the entire contents of `resume/templates/{template_decision}/` into this folder. This is now the **working copy**. Template originals are never touched again.
 
 ---
 
-### Step 4 — Create job.md
+## Step 4 — Create job.md
 
-Write `resume/applications/{company_slug}/{position_slug}/job.md`:
+Create `resume/applications/{company_slug}/{position_slug}/job.md`:
 
 ```markdown
 # {Role Title} — {Company Name}
 
 ## Quick Facts
-- **Type:** {Internship / Co-op / Full-time}
-- **Location:** {location}
-- **Compensation:** {pay or "Not listed"}
+- **Type:** {work type}
+- **Location:** {location + remote/hybrid/onsite}
+- **Compensation:** {exact amount or "Not listed"}
 - **Template Used:** {full-stack | ai-ml | dev-ops}
-- **ATS Keywords:** {comma-separated list}
+
+## ATS Keywords
+{comma-separated list of all 15-20 keywords identified in Step 1}
 
 ## Role Summary
-{3-4 sentences synthesizing what this role actually does day-to-day, who you'd work with, and what success looks like. Go beyond the JD — use knowledge of the company to add context.}
+{3-4 sentences synthesizing what this role does day-to-day. Go beyond the JD — use knowledge of the company to add real context about what the team works on, what success looks like at 3 months.}
 
 ## What They're Really Looking For
-{Not a restatement of the JD. Interpret it. What does "strong CS fundamentals" mean at this company specifically? What does "works well on ambiguous problems" signal about the team? 3-5 bullet points of interpreted signal.}
+{Not a restatement of the JD. Interpret the subtext. "Strong CS fundamentals" at Google means something specific. "Comfortable with ambiguity" signals a team without rigid specs. Write 4-6 interpreted signal bullets.}
 
 ## Required Skills
-{bulleted list}
+{bulleted list, exact JD phrases}
 
 ## Preferred Skills
-{bulleted list}
+{bulleted list, exact JD phrases}
 
 ## Keyword Map
-{Table: Keyword | Already in Resume (Y/N) | Where / Notes}
+| Keyword | In Resume? | Location / Notes |
+|---------|-----------|-----------------|
+{One row per ATS keyword. Fill In Resume? as Y or N. Notes: which bullet or section, or what would need to change to add it.}
 
 ## Gaps
-{Honest list of things the JD wants that Ankur's current resume doesn't cover. Be specific.}
+{Honest list of things the JD requires that Ankur's current resume doesn't cover. Be specific: not "lacks cloud experience" but "no mention of Kubernetes, which appears 3 times in JD responsibilities."}
 ```
 
 ---
 
-### Step 5 — Grade the Resume Against This Role
+## Step 5 — Initial Write Pass
 
-Before editing anything, internally run this grading pass. Do not show it to the user unless asked — use it to decide what to change.
+Call `@resume-writing` with this exact instruction:
 
-**Grade each entry (A/B/C/D):**
-- Does the first bullet hook a recruiter who has 7 seconds?
-- Are the technologies in this entry relevant to the JD's required or preferred skills?
-- Are the metrics real impact metrics (latency, throughput, scale, coverage) vs. vanity metrics (uptime, LOC)?
-- Is every technology mentioned with an architectural reason, not just named?
+> Read `resume/applications/{company_slug}/{position_slug}/job.md` and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Apply the full tailoring priority order from the writing rules. Focus first on tech swaps and ATS keyword injection. Do not change any existing metrics. Produce the edited .tex file. This is iteration 1.
 
-**Then identify:**
-- Which ATS keywords from job.md are missing from the resume
-- Which bullets should be rewritten to embed a missing keyword naturally
-- Which technologies should be swapped (e.g. swap a framework mention for one that appears in the JD)
-- Whether section order should change (for AI/ML roles, Projects should come before Experience)
-- Whether any entry should be cut entirely to make room for tighter, more relevant content
-
-Also read `resume/applications/INTERNSHIPS.md` if it exists — use it to understand how competitive previous applications have been and calibrate the grading accordingly.
+`@resume-writing` edits the working `.tex` file in place.
 
 ---
 
-### Step 6 — Edit the Resume
+## Step 6 — Recursive Grade → Write Loop
 
-Edit `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`.
+After each write pass, call `@resume-grading` with this exact instruction:
 
-**Resume writing rules — non-negotiable:**
+> Read `resume/applications/{company_slug}/{position_slug}/job.md`, `resume/applications/{company_slug}/company.md`, `resume/applications/INTERNSHIPS.md` (if exists), and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Produce the full grading report. Output an iteration verdict: Pass to output or Needs another write pass.
 
-**AR format, not STAR.** Every bullet: strong past-tense verb that implies the problem, close with a metric that proves the outcome. The situation lives inside the verb. Never write a bullet that starts with "Worked on" or "Helped with" or "Responsible for."
+If `@resume-grading` returns **Needs another write pass**, call `@resume-writing` again with:
 
-**The first bullet of every entry is the hook.** It must describe what was built in human-readable, outcome-first language. Not the technology — the problem solved or the result achieved. If someone reads only the first bullet of each entry, they should walk away with a complete and compelling picture. Remaining bullets are technical evidence, going progressively deeper.
+> Read the grading report just produced. Fix exactly and only what the grader flagged as Priority 1 and Priority 2 changes. Do not make changes the grader did not request. This is iteration {n}.
 
-**Narrative over specification.** "Replaced paper sign-in sheets with a QR-driven check-in system" hits harder than "built attendance system using QR codes" because the reader feels the before-state. Every bullet should answer: what was broken or missing, what was built, what measurably changed.
+**Loop exit conditions (any one triggers exit):**
+1. `@resume-grading` returns an overall grade of A or B+
+2. ATS coverage reaches 80%+ of required keywords present in bullets
+3. All entry hooks are graded B or higher
+4. 3 iterations have completed — output the best version reached, flag remaining gaps
 
-**Metrics standard:**
-- Keep: latency improvements with before/after (850ms → 440ms), throughput, concurrent scale, coverage percentages, onboarding time reductions
-- Cut: uptime, lines of code, "improved performance" without a number, vague scale
-- Placeholder metrics are acceptable scaffolding — make them conservative and defensible, Ankur will verify them later
-
-**Technology placement:** Technologies must appear with the architectural reason they were chosen. Redis appears because it decoupled the RAG pipeline from the API layer. Not "used Redis for caching."
-
-**Economy of language:** 2 tight lines per bullet maximum. Three-line bullets always contain a restated clause — find it and cut it.
-
-**One page — hard constraint.** After edits, compile the `.tex` and check the resulting PDF. If it overflows one page, cut the weakest bullets (lowest-grade entries from Step 5) until it fits. Do not shrink font size or margins.
+After exiting the loop, compile the `.tex` to PDF and verify one-page constraint. If it overflows, instruct `@resume-writing` to cut the weakest bullet from the lowest-graded entry until it fits. This does not count as an iteration.
 
 ---
 
-### Step 7 — Output to the User
+## Step 7 — Final Output to User
 
-After completing all steps, respond with exactly this structure:
+After the loop exits, output this summary to the user:
 
 ```
-SESSION CREATED
-───────────────
-Folder:    resume/{company_slug}/{position_slug}/
-Template:  {full-stack | ai-ml | dev-ops}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+APPLICATION SESSION READY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company:    {Company Name}
+Role:       {Role Title}
+Folder:     resume/applications/{company_slug}/{position_slug}/
+Template:   {full-stack | ai-ml | dev-ops}
+Iterations: {n} write/grade passes completed
 
-GRADING SUMMARY
-───────────────
-Relevance Score:  {0-100}
-Assessment:       {2 sentences, brutally honest}
-
-ATS Coverage:     {n}/{total} keywords present
-Critical Gaps:    {2-3 gaps, one line each}
+FINAL GRADE
+────────────
+Overall:           {A/B/C/D}
+ATS Coverage:      {n}/{total} keywords in bullets
+Hook Quality:      {A/B/C/D}
+Narrative:         {A/B/C/D}
 
 TOP 3 CHANGES MADE
-───────────────────
-1. {Change + which JD requirement it targets}
-2. {Change + which JD requirement it targets}
-3. {Change + which JD requirement it targets}
+────────────────────
+1. {change} → targets: {JD requirement}
+2. {change} → targets: {JD requirement}
+3. {change} → targets: {JD requirement}
+
+REMAINING GAPS (if any)
+────────────────────────
+{List anything the grader flagged that couldn't be resolved in 3 iterations}
 
 LIKELIHOOD ESTIMATE
-───────────────────
-Resume Screen:    {Low / Medium / High} — {1 sentence rationale}
-Overall Odds:     {1-2 sentences honest assessment factoring in competition, role level, and Ankur's current profile}
-
-───────────────────
-Ask me anything: interview prep, cover letter, application questions, or behavioral prep for this role.
+────────────────────
+Resume Screen:   {Low / Medium / High} — {1 sentence}
+Overall Odds:    {Low / Medium / High} — {2 sentences}
+What moves the needle: {1-2 non-resume actions — referral, OA prep, GitHub, etc.}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ask me anything: interview prep, behavioral questions, cover letter, or application strategy for this role.
 ```
 
 ---
 
-### Step 8 — Add to INTERNSHIPS.md
+## Step 8 — Append to INTERNSHIPS.md
 
-Append a new row to the INTERNSHIPS.md Application Log table using the extracted fields:
-
-- **Company**: The official, properly cased company name
-- **Role**: The precise title of the position
-- **Date Applied**: The current date (in YYYY-MM-DD format)
-- **Status**: "Applied" (default when creating a new entry)
-- **Template Used**: The template chosen in Step 1 (`full-stack`, `ai-ml`, or `dev-ops`)
-- **Heard Back**: Leave blank initially
-
-Example row to add (replace values with parsed ones):
+Append a new row to `resume/applications/INTERNSHIPS.md`:
 
 ```
-| Acme Corp | Software Engineer Intern | 2024-06-10 | Applied | full-stack | |
+| {Company} | {Role} | {YYYY-MM-DD} | Applied | {template} | |
 ```
 
-Append this *as a new line* directly under the last row of the Application Log table in INTERNSHIPS.md. Update any summary statistics (total applied, etc.) as appropriate.
+Update the total applied count in the summary stats section.
 
 ---
 
-## Constraints
+## Hard Constraints
 
-- Never edit files in `resume/templates/full-stack/`, `resume/templates/ai-ml/`, or `resume/templates/dev-ops/` — those are templates
-- Never invent new experience entries or company names
-- Never add a new section to the resume — only add bullets or entries within existing sections
-- The resume must compile to exactly one page
-- `company.md` is written once per company — never overwrite an existing one
-- Every technology mentioned in the resume must appear with the context of why it was used
+- **Never edit** `resume/templates/full-stack/`, `resume/templates/ai-ml/`, or `resume/templates/dev-ops/` — those are templates
+- **Never invent** experience entries or company names
+- **Never add** a new `\begin{rSection}` to the resume
+- **Never shrink** font size or margins to fit one page — cut content instead
+- **`company.md`** is written once per company and never overwritten
+- **`@resume-writing`** owns all `.tex` edits — the pipeline never edits resume content directly
+- **`@resume-grading`** owns all scoring — the pipeline never self-grades
