@@ -10,6 +10,24 @@ You are the orchestrator. You do not write resume content directly — you deleg
 
 ---
 
+## Agent Mode: One Todo per Step
+
+When running this pipeline in Cursor agent mode, **create one todo per pipeline step**. Do not batch multiple steps into a single todo (e.g. do not use "Step 1–2: Parse JD and create company folder"). Each step below is its own todo:
+
+1. **Step 1** — Parse the Job Description  
+2. **Step 2** — Create Company Folder and company.md  
+3. **Step 3** — Copy Template to Position Folder (and fix documentclass path)  
+4. **Step 4** — Create job.md  
+5. **Step 5** — Initial Write Pass  
+6. **Step 6** — Recursive Grade → Write Loop (until exit conditions or 7 iterations)  
+7. **After loop** — Skills line fit, page fit, write grade.md  
+8. **Step 7** — Final Output to User  
+9. **Step 8** — Append to INTERNSHIPS.md  
+
+Create the todo list at the start, then work through one step per todo. Mark each todo complete only when that step is fully done.
+
+---
+
 ## Project Structure Reference
 
 ```
@@ -79,13 +97,13 @@ Check if `resume/applications/{company_slug}/` exists.
 {2-3 sentences: core product or service, scale, market position. Be specific — not "they build software," but what software and for whom.}
 
 ## Why This Company
-{3-5 sentences written in first person from Ankur's perspective. Directly answers "What do you want to do at {Company}?" Connect the company's specific technical work to Ankur's actual interests: distributed systems, AI/ML, full-stack product engineering, real-time systems. Do not write generic enthusiasm — name a specific product, team, or technical challenge.}
+{3-5 sentences written in first person from the candidate's perspective. Use context.md for the candidate's interests and background. Directly answers "What do you want to do at {Company}?" Connect the company's specific technical work to the candidate's interests. Do not write generic enthusiasm — name a specific product, team, or technical challenge.}
 
 ## Engineering Culture
 {What is this company known for technically? Stack, scale challenges, engineering blog themes, notable open-source work, famous systems they've built. Use web search if needed for accuracy.}
 
 ## Relevant Teams / Orgs
-{If the JD mentions a specific team or org, describe it and its technical scope. Otherwise, list 1-2 teams that align most with Ankur's background.}
+{If the JD mentions a specific team or org, describe it and its technical scope. Otherwise, list 1-2 teams that align most with the candidate's background (from context.md).}
 ```
 
 **If the folder already exists**, read `resume/applications/{company_slug}/company.md` — do not overwrite it. Use it as context for later steps.
@@ -136,7 +154,7 @@ Create `resume/applications/{company_slug}/{position_slug}/job.md`:
 {One row per ATS keyword. Fill In Resume? as Y or N. Notes: which bullet or section, or what would need to change to add it.}
 
 ## Gaps
-{Honest list of things the JD requires that Ankur's current resume doesn't cover. Be specific: not "lacks cloud experience" but "no mention of Kubernetes, which appears 3 times in JD responsibilities."}
+{Honest list of things the JD requires that the current resume doesn't cover. Be specific: not "lacks cloud experience" but "no mention of Kubernetes, which appears 3 times in JD responsibilities."}
 ```
 
 ---
@@ -145,7 +163,7 @@ Create `resume/applications/{company_slug}/{position_slug}/job.md`:
 
 Call `@resume-writing` with this exact instruction:
 
-> Read `context.md`, `resume/applications/{company_slug}/{position_slug}/job.md`, and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Apply the full tailoring priority order from the writing rules. Use context.md for graduation year and any other candidate details. Focus first on tech swaps and ATS keyword injection. Do not change any existing metrics. Produce the edited .tex file. This is iteration 1.
+> Read `resume/applications/{company_slug}/{position_slug}/job.md`, and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Apply the full tailoring priority order from the writing rules. Focus first on tech swaps and ATS keyword injection. Do not change any existing metrics. Produce the edited .tex file. This is iteration 1.
 
 `@resume-writing` edits the working `.tex` file in place.
 
@@ -167,7 +185,7 @@ After each write pass, call `@resume-grading` with this exact instruction:
 
 If the report does not satisfy all four: call `@resume-writing` again with:
 
-> Read `context.md`, the grading report just produced, and the current `.tex`. Fix exactly and only what the grader flagged as Priority 1 and Priority 2 changes. Do not make changes the grader did not request. This is iteration {n}.
+> Read the grading report just produced, and the current `.tex`. Fix exactly and only what the grader flagged as Priority 1 and Priority 2 changes. Do not make changes the grader did not request. This is iteration {n}.
 
 Then grade again. Repeat until all four exit conditions are met **or** you have completed **7** write/grade iterations. If 7 iterations are done and the conditions are still not met: exit anyway, output the best version reached, and flag remaining gaps in the user summary.
 
