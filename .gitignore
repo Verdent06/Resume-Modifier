@@ -31,3 +31,25 @@
 *.backup
 *.bak
 *auto/*
+
+# macOS Finder system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon files
+Icon?
+
+# Thumbnails
+._*
+
+# Spotlight files
+.Spotlight-V100
+
+# Trash files
+.Trashes
+
+# macOS system files
+.DS_Store?
+.fseventsd
+.com.apple.timemachine.donotpresent
