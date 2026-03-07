@@ -1,0 +1,13 @@
+# Nokia
+
+## What They Do
+Nokia provides mobile, fixed, and cloud network solutions for service providers, enterprises, and consumers — hardware, software, and services to build and manage 5G, fixed, and cloud networks. Customers deploy Nokia equipment and software or subscribe to managed services; Nokia supplies base stations, switches, network management tools, and ongoing support, plus IP licensing. The company differentiates with an end-to-end mix of technologies, software, services, and IP licensing across mobile, fixed, and cloud, with a focus on scalability, security, and sustainability. Dallas hosts O-RAN collaboration and testing centers and 5G cybersecurity labs where engineers work on open RAN, interoperability testing, and network automation.
+
+## Why This Company
+I want to work on software that runs at the scale of carrier networks — automation, tooling, and features that directly affect how 5G and fixed networks are built and operated. Nokia’s Dallas presence in O-RAN and 5G infrastructure aligns with my experience in CI/CD, automation, and full-stack delivery: I’ve built provisioning pipelines, event-driven systems, and containerized deployments with clear metrics. I’m drawn to the blend of React/UI work, scripting and app development in Python/Java/JavaScript, and deployment/automation with Terraform and Ansible — it matches my range across full-stack and DevOps. Contributing to high code quality through reviews, testing, and debugging on real network software would sharpen my fundamentals while exposing me to IP networking and cloud-scale deployments (GCP/Azure) in a production environment.
+
+## Engineering Culture
+Nokia’s engineering emphasizes 5G protocol stacks, RF and signal processing, and cross-technology 3GPP radio products. Dallas teams focus on O-RAN interoperability, testing, and 5G cybersecurity. Development leans on Git, Jira, Confluence, Jenkins, and modern tooling (Docker, Kubernetes, Helm, Terraform, Ansible); interviews stress data structures, algorithms, and system/network architecture. The environment is described as respectful of work-life balance with human-centered management; strategic direction is largely set from Finland with local execution in the U.S.
+
+## Relevant Teams / Orgs
+The role supports software development across features, automation, and custom tools — likely aligned with network automation, O-RAN software, or internal platform/tooling teams in Dallas. Teams use React for UI, Python/Java/JavaScript/Go for scripting and apps, and Terraform/Ansible for deployment and automation, with exposure to test automation (e.g. Radish) and cloud (GCP, Azure).

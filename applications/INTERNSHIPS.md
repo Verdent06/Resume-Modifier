@@ -26,6 +26,9 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Skechers                    | Full Stack & GenAI Engineer Intern      | 2026-03-06   | Applied | full-stack    |            |
 | Rolls-Royce Motor Cars      | Innovations Software Developer Intern   | 2026-03-06   | Applied | full-stack    |            |
 | Guidewire                   | Front-End Developer Intern              | 2026-03-06   | Applied | full-stack    |            |
+| Axiom Space                 | Software Application Engineering Intern | 2026-03-07   | Applied | full-stack    |            |
+| Clockwork Systems           | Software Engineer Intern                | 2026-03-07   | Applied | full-stack    |            |
+| Nokia                       | Software Developer Intern/Co-op        | 2026-03-07   | Applied | full-stack    |            |
 
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
@@ -40,7 +43,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 16
+- **Total applied:** 19
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —
