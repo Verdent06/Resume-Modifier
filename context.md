@@ -40,6 +40,13 @@ When the JD is ambiguous, use **May 2028**.
 
 ---
 
+## Target Roles & Focus
+
+- **Primary:** Software engineering — all tracks (full-stack, backend, systems, infra).
+- Computer vision (CV) and DevOps.
+
+---
+
 ## Experience
 
 ### Claude Builder Club @ MSU

@@ -1,300 +1,281 @@
-# Software Engineering Internship Tier List
-## Targeted for Michigan State University CS Students
+# SWE Internship Tier List — 2026
+
+### MSU CS Students Targeting Big Tech
+
+> **How to read this:** Interview column format: `Rounds · LC Difficulty · OA Platform · System Design? · Primary Bottleneck · Est. Offer Rate`
 
 ---
 
-## S-TIER (Elite / Resume Gold)
-*Acceptance rate <5%, strongest brand recognition, best compensation ($50-70/hr+), top-tier mentorship*
+## S-TIER — Elite / Resume Gold
 
-| Company                    | Location                 | Notes                                       |
-| -------------------------- | ------------------------ | ------------------------------------------- |
-| Google                     | Mountain View, NYC, etc. | STEP for sophomores, SWE for juniors        |
-| Meta                       | Menlo Park, NYC, Seattle | Strong ML/Infra focus                       |
-| Apple                      | Cupertino                | Hardware + Software integration             |
-| Amazon                     | Seattle, multiple hubs   | High volume hiring, return offer culture    |
-| Netflix                    | Los Gatos                | Rare internships, extremely selective       |
-| Microsoft                  | Redmond, multiple        | Explore for freshmen/sophs, SWE for juniors |
-| NVIDIA                     | Santa Clara              | GPU/AI dominance, hot market                |
-| OpenAI                     | San Francisco            | AI frontier, extreme selectivity            |
-| Anthropic                  | San Francisco            | AI safety, extremely selective              |
-| Jane Street                | NYC                      | Quant, $60/hr+, brutal interviews           |
-| Citadel/Citadel Securities | Chicago, NYC             | Quant, top compensation                     |
-| Two Sigma                  | NYC                      | Quant, strong engineering culture           |
-| HRT (Hudson River Trading) | NYC, Chicago             | Quant, systems focus                        |
-| Stripe                     | San Francisco, Seattle   | Fintech, strong engineering bar             |
-| Databricks                 | San Francisco            | Data/AI infrastructure                      |
+*Sub-5% acceptance. Strongest brand. Best comp ($55–120+/hr). Apply to all of these regardless — they're lottery tickets, but you want every ticket.*
 
----
 
-## A-TIER (Excellent / Strong Signal)
-*Highly respected, excellent compensation ($40-55/hr), strong engineering culture*
+| Company                          | Location                 | Notes                                                      | Interview Process                                                                         |
+| -------------------------------- | ------------------------ | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Google**                       | Mountain View, NYC       | STEP (sophs), SWE (juniors)                                | 2–3 rds · Easy–Med · Google Docs (no OA) · No sys design · Bottleneck: host match · ~4–5% |
+| **Meta**                         | Menlo Park, NYC, Seattle | Meta University (sophs); ML/Infra strong                   | 1–2 rds + OA · Easy–Med · CodeSignal · No sys design · Bottleneck: resume · ~3–5%         |
+| **Apple**                        | Cupertino                | Hardware + software integration; niche team matching       | 3–4 rds · Medium · No standard OA · Light · Bottleneck: tech screen · ~2–3%               |
+| **Microsoft**                    | Redmond, multiple        | Explore (sophs), SWE (juniors); OA equalizes non-targets   | 2–3 rds · Easy–Med · Codility · No (interns) · Bottleneck: resume · ~5–7%                 |
+| **Netflix**                      | Los Gatos                | Extremely rare interns; senior-bar expectations            | 4–5 rds · Med–Hard · No OA · Yes (full) · Bottleneck: final loop · <1%                    |
+| **NVIDIA**                       | Santa Clara              | GPU/AI dominance; SWE roles limited but white-hot prestige | 3–4 rds · Med–Hard · No standard OA · Light · Bottleneck: tech rounds · ~2–4%             |
+| **OpenAI**                       | San Francisco            | AI frontier; practical eng bar; <0.5% acceptance           | 4–6 hr loop · Med–Hard · HackerRank · Yes (deep) · Bottleneck: all stages · <0.5%         |
+| **xAI**                          | San Francisco            | Musk AI lab; $200B+ val; Tier 1 Blind                      | 3–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · <1%                          |
+| **Jane Street**                  | NYC                      | Quant; $25K+/mo; OCaml; brutal math-first bar              | 4–5 rds · Hard · HackerRank · No (math-heavy) · Bottleneck: tech screen · <1%             |
+| **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                           | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |
+| **Two Sigma**                    | NYC                      | Quant; strong eng culture; Python/C++                      | 4–5 rds · Hard · CodeSignal · Yes (systems) · Bottleneck: resume · <1%                    |
+| **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                  | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
 
-| Company      | Location               | Notes                                     |
-| ------------ | ---------------------- | ----------------------------------------- |
-| Airbnb       | San Francisco          | Design-forward engineering                |
-| Uber         | San Francisco, NYC     | Scale systems                             |
-| Lyft         | San Francisco          | Smaller scale Uber, strong culture        |
-| Snap         | Santa Monica, Seattle  | AR/Camera focus                           |
-| Pinterest    | San Francisco          | ML-heavy                                  |
-| Palantir     | NYC, Denver, Palo Alto | Defense/Gov, polarizing but strong signal |
-| Bloomberg    | NYC                    | Terminal, strong intern program           |
-| Roblox       | San Mateo              | Gaming platform, hot stock                |
-| Discord      | San Francisco          | Real-time systems                         |
-| Figma        | San Francisco          | Design tools, Adobe acquisition           |
-| Notion       | San Francisco          | Productivity, strong brand                |
-| Coinbase     | Remote, San Francisco  | Crypto, volatile but strong eng           |
-| Robinhood    | Menlo Park             | Fintech, controversial but solid eng      |
-| Shopify      | Remote, Ottawa         | E-commerce infrastructure                 |
-| Twitch       | San Francisco          | Streaming, Amazon subsidiary              |
-| LinkedIn     | Sunnyvale              | Microsoft subsidiary, strong program      |
-| Salesforce   | San Francisco          | Enterprise, Futureforce program           |
-| Adobe        | San Jose, multiple     | Creative tools, solid program             |
-| VMware       | Palo Alto              | Enterprise/Cloud                          |
-| Splunk       | San Francisco          | Observability                             |
-| Cloudflare   | San Francisco          | Edge/Security                             |
-| Datadog      | NYC                    | Observability, strong growth              |
-| MongoDB      | NYC                    | Database, strong DevRel                   |
-| Snowflake    | San Mateo              | Data cloud                                |
-| DoorDash     | San Francisco          | Logistics, scale                          |
-| Instacart    | San Francisco          | Logistics                                 |
-| Plaid        | San Francisco          | Fintech infrastructure                    |
-| Square/Block | San Francisco          | Payments                                  |
-| PayPal       | San Jose               | Payments, large program                   |
-| Intuit       | Mountain View          | TurboTax, solid program                   |
-| AMD          | Austin, Santa Clara    | Chip competition with NVIDIA              |
-| Intel        | Santa Clara, multiple  | Chip, large program                       |
-| Qualcomm     | San Diego              | Mobile chips                              |
 
 ---
 
-## B-TIER (Strong / Solid Resume Addition)
-*Good companies, decent compensation ($30-45/hr), will open doors*
+## A-TIER — Excellent / Strong Signal
 
-| Company              | Location              | Notes                               |
-| -------------------- | --------------------- | ----------------------------------- |
-| IBM                  | Multiple              | Large, bureaucratic, but recognized |
-| Oracle               | Austin, multiple      | Enterprise, huge but slow           |
-| SAP                  | Multiple              | Enterprise software                 |
-| Cisco                | San Jose              | Networking                          |
-| Dell                 | Austin, Round Rock    | Hardware + software                 |
-| HP / HPE             | Palo Alto, Houston    | Split companies                     |
-| Workday              | Pleasanton            | HR software                         |
-| ServiceNow           | Santa Clara           | IT workflows                        |
-| Atlassian            | San Francisco, Sydney | Jira, Confluence                    |
-| Autodesk             | San Francisco         | CAD/Design software                 |
-| Zillow               | Seattle               | Real estate tech                    |
-| Redfin               | Seattle               | Real estate tech                    |
-| Expedia              | Seattle               | Travel                              |
-| Booking.com          | Multiple              | Travel                              |
-| eBay                 | San Jose              | E-commerce                          |
-| Wayfair              | Boston                | E-commerce                          |
-| Chegg                | Santa Clara           | EdTech                              |
-| Duolingo             | Pittsburgh            | EdTech, strong brand                |
-| Grammarly            | San Francisco, Kyiv   | Writing AI                          |
-| DocuSign             | San Francisco         | E-signature                         |
-| Okta                 | San Francisco         | Identity                            |
-| CrowdStrike          | Austin                | Security                            |
-| Palo Alto Networks   | Santa Clara           | Security                            |
-| Zscaler              | San Jose              | Security                            |
-| Epic Games           | Cary, NC              | Gaming, Unreal Engine               |
-| EA (Electronic Arts) | Redwood City          | Gaming                              |
-| Activision Blizzard  | Santa Monica          | Gaming                              |
-| Riot Games           | Los Angeles           | Gaming                              |
-| SpaceX               | Hawthorne             | Aerospace, brutal hours             |
-| Tesla                | Fremont, Austin       | EV, brutal hours                    |
-| Rivian               | Irvine, Normal IL     | EV startup                          |
-| Lucid Motors         | Newark CA             | EV                                  |
-| Cruise               | San Francisco         | Autonomous vehicles                 |
-| Waymo                | Mountain View         | Autonomous vehicles                 |
-| Aurora               | Pittsburgh            | Autonomous vehicles                 |
-| Nuro                 | Mountain View         | Delivery robots                     |
-| Boston Dynamics      | Waltham               | Robotics (your interest)            |
-| Capital One          | McLean, multiple      | Tech-forward bank                   |
-| JPMorgan Chase       | NYC, multiple         | Large tech investment               |
-| Goldman Sachs        | NYC                   | Strong engineering division         |
-| Morgan Stanley       | NYC                   | Tech division                       |
-| American Express     | NYC                   | Tech internships                    |
-| Visa                 | San Francisco         | Payments                            |
-| Mastercard           | Purchase NY           | Payments                            |
+*Strong brand, excellent comp ($45–70/hr), respected eng culture. Primary targets. Referrals move the needle significantly here for non-target students.*
+
+
+| Company                | Location               | Notes                                                                                                   | Interview Process                                                                                            |
+| ---------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Stripe**             | San Francisco, Seattle | Top fintech eng bar; no OA; best fintech name on a resume                                               | 4–5 rds · Med–Hard · No OA · Yes · Bottleneck: tech rounds · ~2–3%                                           |
+| **Anthropic**          | San Francisco          | AI safety; $183B val; ~1–5% acceptance                                                                  | 4–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · ~1–2%                                           |
+| **Databricks**         | San Francisco          | Data/AI infra; $134B val; IPO imminent; concurrency round is genuinely hard                             | 3–4 rds · Med–Hard · CodeSignal · Yes (single-machine) · Bottleneck: concurrency round · <3%                 |
+| **Amazon**             | Seattle, multiple      | Highest intern volume in Big Tech; OA equalizes non-targets; 30K+ layoffs hurt prestige but brand holds | OA + 1–3 rds · Easy–Med · Amazon custom · No (interns) · Bottleneck: OA · ~1–2% (large class)                |
+| **Palantir**           | NYC, Denver, Palo Alto | Defense/Gov; $60/hr; Karat interviews; Decomposition round is unique — not LC                           | 4 rds · Easy–Med · Karat · Yes (decomp) · Bottleneck: recruiter screen · <2–3%                               |
+| **Anduril Industries** | Costa Mesa, Seattle    | Defense tech; $14B+ val; CNBC #1 Disruptor; C++ for embedded/autonomy                                   | 3 rds · Medium · HackerRank · Yes (practical) · Bottleneck: 4-hr onsite · ~3–5%                              |
+| **Airbnb**             | San Francisco          | Design-forward eng; 85% target-school slots; DP coding is brutal                                        | 4 rds · Med–Hard · CodeSignal · Rare (interns) · Bottleneck: DP coding rounds · ~1–3%                        |
+| **Uber**               | San Francisco, NYC     | Scale systems; $67/hr; unique LLD round for interns                                                     | 3–4 rds · Medium · CodeSignal · Yes (LLD) · Bottleneck: OA/resume · ~1–3%                                    |
+| **Snap**               | Santa Monica, Seattle  | No OA — resume is the only gatekeeper; graph-heavy problems                                             | 2–3 rds · Medium · No OA · No · Bottleneck: resume · <3–5%                                                   |
+| **Discord**            | San Francisco          | Real-time systems; TCP chat server phone screen (known in advance, no AI)                               | 3–4 rds · Medium (practical) · None — TCP project · Yes (messaging) · Bottleneck: tiny cohort · Very low     |
+| **Figma**              | San Francisco          | Byteboard replaces OA; reading speed under pressure matters                                             | 3–4 rds · Easy–Med · Byteboard · Rare · Bottleneck: Byteboard reading crunch · Very low                      |
+| **Scale AI**           | San Francisco          | AI infra; $29B val; Meta investment; Tier 1 Blind                                                       | 3–4 rds · Med–Hard · HackerRank · Yes · Bottleneck: tech rounds · <3%                                        |
+| **Cloudflare**         | San Francisco          | Edge/security; 1,111 intern goal 2026; school-blind; Go/Rust valued                                     | 2–4 rds · Practical/Systems · HackerRank/take-home · Yes (pair prog) · Bottleneck: resume (250K+ apps) · <8% |
+| **Datadog**            | NYC                    | Observability; only 2 rounds; project deep-dive is real; Datadog-themed problems                        | 2 rds · Medium · CoderPad · No · Bottleneck: pre-tech screening · Selective                                  |
+| **Snowflake**          | San Mateo              | Data cloud; strong brand in data infra; competitive                                                     | 3–4 rds · Med–Hard · CodeSignal · Light · Bottleneck: tech rounds · ~3–5%                                    |
+| **DoorDash**           | San Francisco          | Logistics; vague problem statements are intentional; brute force penalized                              | 2–3 rds · Med–Hard · HackerRank · No (L4+ only) · Bottleneck: tech onsite · Selective                        |
+| **Plaid**              | San Francisco          | Fintech infra; API design focus; strong brand in the space                                              | 3–4 rds · Medium · CodeSignal · Light · Bottleneck: tech rounds · ~3–5%                                      |
+| **Perplexity AI**      | San Francisco          | AI search; $20B val; explosive growth                                                                   | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <2%                                         |
+| **Ramp**               | NYC                    | AI fintech; $514M raised; fast-growing; strong brand for its size                                       | 3 rds · Medium · CodeSignal · No · Bottleneck: tech rounds · ~3–5%                                           |
+| **Applied Intuition**  | Sunnyvale              | AV simulation; $6B+ val; C++ heavy; feeds into AV/robotics career                                       | 3–4 rds · Med–Hard · No OA · Yes (AV systems) · Bottleneck: tech rounds · ~3–5%                              |
+| **Waymo**              | Mountain View          | AV; Alphabet lineage; elite eng bar; strongest AV name                                                  | 4 rds · Med–Hard · HackerRank · Yes · Bottleneck: tech rounds · ~3–5%                                        |
+| **Anysphere (Cursor)** | San Francisco          | AI code editor; $20B val; $1B ARR in 24 months; white-hot signal                                        | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <2%                                         |
+
 
 ---
 
-## C-TIER (Decent / Good Experience)
-*Solid experience, moderate compensation ($25-35/hr), less brand power*
+## B-TIER — Good / Solid Resume Addition
 
-| Company                           | Location               | Notes                           |
-| --------------------------------- | ---------------------- | ------------------------------- |
-| Target                            | Minneapolis            | Retail tech                     |
-| Walmart Labs                      | Bentonville, Sunnyvale | Retail tech, scale              |
-| Best Buy                          | Minneapolis            | Retail tech                     |
-| Home Depot                        | Atlanta                | Retail tech                     |
-| Kroger                            | Cincinnati             | Retail tech                     |
-| Meijer                            | Grand Rapids, MI       | **Michigan-based**, retail tech |
-| Kohl's                            | Menomonee Falls        | Retail tech                     |
-| Progressive                       | Cleveland              | Insurance tech                  |
-| State Farm                        | Bloomington IL         | Insurance tech                  |
-| Allstate                          | Chicago                | Insurance tech                  |
-| Liberty Mutual                    | Boston                 | Insurance tech                  |
-| USAA                              | San Antonio            | Insurance/Banking               |
-| Fidelity                          | Boston                 | Finance                         |
-| Charles Schwab                    | San Francisco          | Finance                         |
-| T-Mobile                          | Bellevue               | Telecom                         |
-| Verizon                           | Multiple               | Telecom                         |
-| AT&T                              | Dallas                 | Telecom                         |
-| Comcast                           | Philadelphia           | Telecom/Media                   |
-| Disney (Parks & Experiences Tech) | Orlando, Glendale      | Theme park tech                 |
-| Warner Bros Discovery             | Multiple               | Media tech                      |
-| NBCUniversal                      | NYC, LA                | Media tech                      |
-| Thomson Reuters                   | Multiple               | Information services            |
-| Gartner                           | Stamford               | Research/Tech                   |
-| Accenture (Tech Division)         | Multiple               | Consulting, varies wildly       |
-| Deloitte (Tech Division)          | Multiple               | Consulting                      |
-| Booz Allen Hamilton               | McLean                 | Gov/Defense                     |
+*Respected names, decent comp ($32–55/hr), opens doors. Realistic targets for MSU with strong application. Mass apply here.*
 
----
 
-## MICHIGAN-SPECIFIC TIER (Regional Strong)
-*Local advantage, good for networking, proximity to MSU*
+| Company                       | Location                       | Notes                                                                               | Interview Process                                                                            |
+| ----------------------------- | ------------------------------ | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Lyft**                      | San Francisco                  | Smaller Uber; good culture; credible brand                                          | 3 rds · Medium · CodeSignal · Light · Bottleneck: tech rounds · ~3–5%                        |
+| **Pinterest**                 | San Francisco                  | ML-heavy; declining product relevance as a brand signal                             | 3–4 rds · Medium · HackerRank · Light · Bottleneck: tech rounds · ~3–5%                      |
+| **Notion**                    | San Francisco                  | Good product; small eng team; limited brand signal for SWE                          | 3–4 rds · Medium · CodeSignal · No · Bottleneck: tech rounds · ~3–5%                         |
+| **Coinbase**                  | Remote, SF                     | Crypto volatility; 95% resume rejection; CEO reviews every offer                    | 3–4 rds + OA · Easy–Med · CodeSignal · Light · Bottleneck: resume · Very selective           |
+| **Robinhood**                 | Menlo Park                     | Fintech; ~18K apps for ~75–85 spots; CodeSignal 800+ needed                         | 3 rds · Med–Hard · CodeSignal · No · Bottleneck: OA bar · <1%                                |
+| **Shopify**                   | Remote, Ottawa                 | E-commerce infra; remote-first; solid brand outside US                              | 3 rds · Medium · HackerRank · Light · Bottleneck: tech rounds · ~3–5%                        |
+| **Twitch**                    | San Francisco                  | Amazon subsidiary; declining product trajectory; brand fading                       | 3 rds · Medium · Amazon OA · No · Bottleneck: tech rounds · ~3–5%                            |
+| **LinkedIn**                  | Sunnyvale                      | Microsoft subsidiary; strong intern program; capped by parent co.                   | 3 rds · Medium · HackerRank · Light · Bottleneck: OA · ~5–7%                                 |
+| **Salesforce**                | San Francisco                  | Enterprise SaaS; Futureforce program; sliding hard as AI disrupts core business     | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~5–8%                         |
+| **Adobe**                     | San Jose, multiple             | Creative tools; solid program; not top-tier eng prestige                            | 3 rds · Medium · HackerRank · Light · Bottleneck: tech rounds · ~5–8%                        |
+| **MongoDB**                   | NYC                            | Database; good DevRel culture                                                       | 3 rds · Medium · HackerRank · No · Bottleneck: tech rounds · ~5–8%                           |
+| **Instacart**                 | San Francisco                  | Logistics; practical focus                                                          | 3 rds · Medium · HackerRank · No · Bottleneck: tech rounds · ~5–8%                           |
+| **PayPal**                    | San Jose                       | Payments; large program; prestige has declined sharply — no longer fintech's signal | 3 rds · Easy–Med · HackerRank · No · Bottleneck: OA · ~5–8%                                  |
+| **Intuit**                    | Mountain View                  | TurboTax/QuickBooks; solid program; not flashy                                      | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~5–8%                         |
+| **AMD**                       | Austin, Santa Clara            | Chip competition to NVIDIA; strong program; B for SWE, not chip engineering         | 3–4 rds · Medium · No standard OA · No · Bottleneck: tech rounds · ~5–8%                     |
+| **Intel**                     | Santa Clara, multiple          | Large program; 20% manufacturing layoffs 2025 significantly hurt signal             | 2–3 rds · Easy–Med · HackerRank · No · Bottleneck: resume · ~5–8%                            |
+| **Qualcomm**                  | San Diego                      | Mobile chips; strong DSP/signal processing focus                                    | 3 rds · Medium · HackerRank · No · Bottleneck: tech rounds · ~5–8%                           |
+| **Roblox**                    | San Mateo                      | Gaming platform; Lua/C++; gaming industry caps the tier                             | 3 rds · Medium · HackerRank · Light · Bottleneck: tech rounds · ~5–8%                        |
+| **Bloomberg**                 | NYC                            | Terminal; strong intern program; finance company first                              | 3–4 rds · Medium · CodeSignal · Yes (interns) · Bottleneck: tech screen · ~5–8%              |
+| **VMware (Broadcom)**         | Palo Alto                      | Broadcom acquisition 2023 gutted culture and prestige                               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–10%                        |
+| **Cohere**                    | Toronto, NYC                   | Enterprise NLP; IPO expected H2 2026; legitimate AI signal                          | 3–4 rds · Med–Hard · No standard OA · Yes (NLP) · Bottleneck: tech rounds · <3%              |
+| **Mistral AI**                | Paris, London                  | European AI leader; open-weight models; growing presence                            | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <3%                         |
+| **Duolingo**                  | Pittsburgh                     | EdTech; $52/hr; Karat screen is a real wall; very selective                         | 3 rds · Med–Hard · CodeSignal + Karat · No · Bottleneck: Karat phone screen · Very selective |
+| **SpaceX**                    | Hawthorne                      | Aerospace; brutal hours; C++/Python; brand is undeniably real                       | 3–4 rds · Med–Hard · HackerRank · Yes (embedded) · Bottleneck: tech rounds · ~5–8%           |
+| **Tesla**                     | Fremont, Austin                | EV; brand is strong; culture is brutal                                              | 3 rds · Medium · HackerRank · No · Bottleneck: tech rounds · ~5–8%                           |
+| **Rivian**                    | Irvine, Normal IL, Plymouth MI | EV startup; aggressive hiring; higher SWE signal than legacy OEMs                   | 3 rds · Easy–Med · No standard OA · No · Bottleneck: tech rounds · ~8–12%                    |
+| **Cruise**                    | San Francisco                  | AV; GM subsidiary; more selective than Ford/GM; real AV eng work                    | 3–4 rds · Med–Hard · HackerRank · Yes (AV) · Bottleneck: tech rounds · ~5–8%                 |
+| **Aurora**                    | Pittsburgh                     | AV; smaller market presence; real technical bar                                     | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: tech rounds · ~5–8%                  |
+| **Nuro**                      | Mountain View                  | Delivery robots; small but strong AV eng                                            | 3–4 rds · Med–Hard · No standard OA · Yes (robotics) · Bottleneck: tech rounds · ~5–8%       |
+| **Boston Dynamics**           | Waltham                        | Robotics; Hyundai subsidiary; elite work; very limited intern slots                 | 3–4 rds · Med–Hard · No standard OA · Yes (robotics) · Bottleneck: tech rounds · ~3–5%       |
+| **Toyota Research Institute** | Ann Arbor, Cambridge           | Research arm; AV/ML focus; real brand for robotics/AV track                         | 3 rds · Easy–Med · No OA · No · Bottleneck: tech rounds · ~10–15%                            |
+| **Shield AI**                 | San Diego                      | Defense AI; $61/hr; $5.6B val; C++ heavy; referrals near-essential                  | 3–4 rds · Medium · No standard OA · Possible · Bottleneck: tech + onsite combo · Moderate    |
+| **Northrop Grumman**          | Multiple                       | Best-paying traditional prime (~$40/hr); stealth/space programs                     | 2–3 rds · Easy–Med · No standard OA · No · Bottleneck: resume · ~15–20%                      |
+| **L3Harris**                  | Melbourne, FL                  | Strong intern reviews (4.1/5); 99% recommend; solid B for defense track             | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~15–20%                          |
+| **Capital One**               | McLean, multiple               | Tech-forward bank; school-blind OA; great for non-targets                           | 3 rds · Easy–Med · CodeSignal · No · Bottleneck: OA · ~8–12%                                 |
+| **JPMorgan Chase**            | NYC, multiple                  | Large tech investment; real SWE division; not a typical bank role                   | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Goldman Sachs**             | NYC                            | Strong eng division; finance-first culture limits pure SWE signal                   | 3–4 rds · Medium · HackerRank · No · Bottleneck: tech rounds · ~5–8%                         |
+| **Morgan Stanley**            | NYC                            | Tech division; finance company with a tech arm                                      | 3 rds · Easy–Med · HackerRank · No · Bottleneck: resume · ~8–12%                             |
+| **Visa**                      | San Francisco                  | Payments; large program; decent brand for fintech track                             | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Mastercard**                | Purchase, NY                   | Payments; similar profile to Visa                                                   | 3 rds · Easy–Med · HackerRank · No · Bottleneck: resume · ~8–12%                             |
+| **American Express**          | NYC                            | Tech internships; strong program for finance-adjacent roles                         | 2–3 rds · Easy · HackerRank · No · Bottleneck: resume · ~10–15%                              |
+| **IBM**                       | Multiple                       | Large but bureaucratic; Red Hat gives it cloud relevance                            | 2–3 rds · Easy · HackerRank · No · Bottleneck: resume · ~10–15%                              |
+| **Oracle**                    | Austin, multiple               | Enterprise; massive but slow-moving; cloud transition ongoing                       | 2–3 rds · Easy · HackerRank · No · Bottleneck: tech rounds · ~10–15%                         |
+| **SAP**                       | Multiple                       | Enterprise software; German company                                                 | 2–3 rds · Easy · HackerRank · No · Bottleneck: resume · ~10–15%                              |
+| **Cisco**                     | San Jose                       | Networking giant; large program                                                     | 3 rds · Easy–Med · HackerRank · No · Bottleneck: OA · ~8–12%                                 |
+| **Duo Security (Cisco)**      | Ann Arbor, MI                  | Security; Cisco's crown jewel in Ann Arbor; Python-heavy; real eng culture          | 3 rds · Easy–Med · No standard OA · No · Bottleneck: onsite · ~10–15%                        |
+| **Workday**                   | Pleasanton                     | HR software; good intern program; limited brand ceiling                             | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **ServiceNow**                | Santa Clara                    | IT workflows; SaaS                                                                  | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Atlassian**                 | San Francisco, Sydney          | Jira, Confluence; remote-friendly                                                   | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Zillow**                    | Seattle                        | Real estate tech                                                                    | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Expedia**                   | Seattle                        | Travel; large eng org                                                               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Booking.com**               | Multiple                       | Travel; large global eng team                                                       | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Grammarly**                 | San Francisco, Kyiv            | Writing AI; NLP focus                                                               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Okta**                      | San Francisco                  | Identity/security                                                                   | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **CrowdStrike**               | Austin                         | Security; fast-growing; 2024 outage hurt brand but company is still B               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Palo Alto Networks**        | Santa Clara                    | Security; strong B                                                                  | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Zscaler**                   | San Jose                       | Security; niche                                                                     | 3 rds · Easy–Med · No standard OA · No · Bottleneck: tech rounds · ~10–15%                   |
+| **Epic Games**                | Cary, NC                       | Gaming/Unreal Engine; C++ heavy; best brand in gaming SWE                           | 3 rds · Medium · No standard OA · No · Bottleneck: tech rounds · ~8–12%                      |
+| **EA (Electronic Arts)**      | Redwood City                   | Gaming; solid but declining product momentum                                        | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                        |
+| **Activision Blizzard**       | Santa Monica                   | Gaming; Microsoft acquisition dims standalone signal                                | 3 rds · Easy–Med · No standard OA · No · Bottleneck: tech rounds · ~8–12%                    |
+| **Riot Games**                | Los Angeles                    | Gaming; League of Legends; strong culture                                           | 3 rds · Easy–Med · No standard OA · No · Bottleneck: tech rounds · ~8–12%                    |
+| **Autodesk**                  | San Francisco                  | CAD/Design software; large program                                                  | 2–3 rds · Easy · HackerRank · No · Bottleneck: resume · ~10–15%                              |
+| **DocuSign**                  | San Francisco                  | E-signature; limited SWE prestige signal                                            | 2–3 rds · Easy · HackerRank · No · Bottleneck: resume · ~10–15%                              |
+| **eBay**                      | San Jose                       | E-commerce; declining relevance                                                     | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~10–15%                       |
+| **Redfin**                    | Seattle                        | Real estate tech; solid program                                                     | 2–3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~10–15%                     |
+| **Wayfair**                   | Boston                         | E-commerce; home goods; data-heavy                                                  | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~10–15%                       |
+| **Chegg**                     | Santa Clara                    | EdTech; limited upside                                                              | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~10–15%                                   |
+| **Qualtrics**                 | Multiple (Ann Arbor office)    | Experience management; SAP-backed SaaS; real engineering                            | 3 rds · Easy–Med · HackerRank · No · Bottleneck: OA · ~10–15%                                |
+| **Dell**                      | Austin, Round Rock             | Hardware + software; large program; not exciting signal                             | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~10–15%                          |
+| **HP / HPE**                  | Palo Alto, Houston             | Split companies; both have SWE programs                                             | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~10–15%                          |
 
-### Detroit Metro / Ann Arbor (High Value)
-
-| Company                       | Location                   | Notes                                            |
-| ----------------------------- | -------------------------- | ------------------------------------------------ |
-| **Ford Motor Company**        | Dearborn                   | Huge intern program, AV, EV, tech transformation |
-| **General Motors**            | Detroit, Warren            | Strong tech investment, Ultifi platform          |
-| **Stellantis (FCA)**          | Auburn Hills               | Jeep, Chrysler, Ram tech                         |
-| **Rivian**                    | Plymouth, MI               | EV startup, aggressive hiring                    |
-| **Waymo**                     | Detroit area               | AV testing                                       |
-| **Argo AI**                   | Detroit                    | (Shut down - REMOVE IF NEEDED)                   |
-| **May Mobility**              | Ann Arbor                  | Autonomous shuttles, startup                     |
-| **Refraction AI**             | Ann Arbor                  | Delivery robots (your robotics interest)         |
-| **Toyota Research Institute** | Ann Arbor                  | Research, AV                                     |
-| **Bosch**                     | Plymouth, Farmington Hills | Automotive tech, German company                  |
-| **Continental**               | Auburn Hills               | Automotive supplier                              |
-| **Aptiv**                     | Troy                       | Automotive tech, connectors                      |
-| **Magna**                     | Troy                       | Automotive supplier                              |
-| **ZF**                        | Livonia                    | Automotive supplier                              |
-| **Denso**                     | Southfield                 | Automotive supplier, Japanese                    |
-| **Harman (Samsung)**          | Novi                       | Automotive audio/connected car                   |
-| **Visteon**                   | Van Buren Township         | Automotive cockpit electronics                   |
-| **Yazaki**                    | Canton                     | Automotive wiring                                |
-| **Lear**                      | Southfield                 | Automotive seating/electrical                    |
-
-### Ann Arbor Tech Scene
-
-| Company                  | Location                | Notes                                       |
-| ------------------------ | ----------------------- | ------------------------------------------- |
-| **Duo Security (Cisco)** | Ann Arbor               | Security, acquired by Cisco, strong culture |
-| **Censys**               | Ann Arbor               | Security, UMich spinoff                     |
-| **Clinc**                | Ann Arbor               | Conversational AI                           |
-| **Llamasoft (Coupa)**    | Ann Arbor               | Supply chain AI                             |
-| **Atomic Object**        | Ann Arbor, Grand Rapids | Software consultancy                        |
-| **Qualtrics**            | Ann Arbor office        | Experience management                       |
-| **Google**               | Ann Arbor office        | Small presence                              |
-| **Amazon**               | Detroit area            | Delivery/logistics tech                     |
-| **Microsoft**            | Ann Arbor area          | Small presence                              |
-
-### Grand Rapids / West Michigan
-
-| Company                         | Location               | Notes                  |
-| ------------------------------- | ---------------------- | ---------------------- |
-| **Steelcase**                   | Grand Rapids           | Furniture tech         |
-| **Herman Miller (MillerKnoll)** | Zeeland                | Furniture tech         |
-| **Amway**                       | Ada                    | MLM but real tech team |
-| **Spectrum Health (Corewell)**  | Grand Rapids           | Healthcare IT          |
-| **Meijer**                      | Grand Rapids           | Retail tech            |
-| **Gordon Food Service**         | Grand Rapids (Wyoming) | Food distribution tech |
-| **Atomic Object**               | Grand Rapids           | Consultancy            |
-| **Open Systems Technologies**   | Grand Rapids           | IT services            |
-
-### Other Michigan
-
-| Company                                | Location     | Notes                                       |
-| -------------------------------------- | ------------ | ------------------------------------------- |
-| **Dow Chemical**                       | Midland      | Chemical/tech                               |
-| **Consumers Energy**                   | Jackson      | Utility tech                                |
-| **DTE Energy**                         | Detroit      | Utility tech                                |
-| **Blue Cross Blue Shield of Michigan** | Detroit      | Healthcare/insurance IT                     |
-| **Quicken Loans / Rocket Companies**   | Detroit      | Fintech, aggressive tech hiring             |
-| **StockX**                             | Detroit      | Sneaker marketplace, startup                |
-| **Benzinga**                           | Detroit      | Fintech/media                               |
-| **Ally Financial**                     | Detroit      | Digital bank                                |
-| **United Wholesale Mortgage**          | Pontiac      | Mortgage tech                               |
-| **TechSmith**                          | Okemos       | **Literally next to MSU**, Camtasia, Snagit |
-| **Dewpoint**                           | Lansing      | IT services, MSU pipeline                   |
-| **Niowave**                            | Lansing      | Particle accelerators                       |
-| **Auto-Owners Insurance**              | Lansing      | Insurance tech                              |
-| **Jackson National Life**              | Lansing      | Insurance/finance                           |
-| **MSU IT Services**                    | East Lansing | On-campus, easy access                      |
-| **Sparrow Health / McLaren**           | Lansing      | Healthcare IT                               |
 
 ---
 
-## D-TIER (Acceptable / Experience Building)
-*Lower prestige, lower pay ($18-28/hr), but real experience*
+## C-TIER — Decent / Real Experience
 
-| Company                                                    | Location | Notes                            |
-| ---------------------------------------------------------- | -------- | -------------------------------- |
-| Generic defense contractors (Lockheed, Raytheon, Northrop) | Multiple | Bureaucratic, clearance required |
-| Mid-size banks                                             | Multiple | IT departments                   |
-| Regional healthcare systems                                | Multiple | Healthcare IT                    |
-| Government agencies (federal, state)                       | Multiple | Slow, bureaucratic               |
-| Large non-tech enterprise companies                        | Multiple | IT departments                   |
-| Small local agencies/consultancies                         | Michigan | Real work, low prestige          |
+*Legitimate SWE work. Moderate comp ($22–38/hr). Limited national brand signal. Michigan C-tiers have a real pipeline advantage that partially compensates.*
 
----
 
-## F-TIER (Avoid / Last Resort)
-*Negative signal or wasted time*
+| Company                       | Location                      | Notes                                                                                 | Interview Process                                                                         |
+| ----------------------------- | ----------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Square / Block**            | San Francisco                 | ⚠️ Cutting ~50% of workforce 2026 — was A-tier; now C until stability returns         | 3 rds · Medium · HackerRank · No · Bottleneck: resume · ~5–8%                             |
+| **Splunk (Cisco)**            | San Francisco                 | Cisco acquisition 2024; enterprise observability; reduced from B                      | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                     |
+| **Lucid Motors**              | Newark, CA                    | EV; interesting eng; limited brand signal for SWE                                     | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~10–15%                       |
+| **Raytheon / RTX**            | Multiple                      | Traditional defense prime; ongoing restructuring; slow pace                           | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                |
+| **Lockheed Martin**           | Multiple                      | World's largest defense; 1,300+ interns/yr; bureaucratic; SWE signal is weak          | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                |
+| **Booz Allen Hamilton**       | McLean                        | Gov consulting; $52/hr advertised but role is often not pure SWE                      | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~20–25%                       |
+| **Leidos**                    | Reston, VA                    | Gov IT; ~$40/hr; cleared work                                                         | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                |
+| **Ford Motor Company**        | Dearborn, MI                  | Huge intern program; AV/EV software tracks; MSU research partnership                  | 1–2 rds · Easy · No OA · No · Bottleneck: resume · ~5–10%                                 |
+| **General Motors**            | Detroit, Warren, MI           | Top MSU employer; Ultifi platform; real embedded/platform work                        | 2 rds · Easy · HireVue · No · Bottleneck: HireVue · ~8–12%                                |
+| **Stellantis**                | Auburn Hills, MI              | Jeep/Ram/Chrysler platform work; large program                                        | 2 rds · Easy · No OA · No · Bottleneck: resume · ~10–15%                                  |
+| **Bosch**                     | Plymouth/Farmington Hills, MI | Automotive tech; German company; strong embedded work                                 | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–20%                                |
+| **Continental**               | Auburn Hills, MI              | Automotive supplier; ADAS and software teams                                          | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **Aptiv**                     | Troy, MI                      | Automotive tech; electrical architecture and software                                 | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **Harman (Samsung)**          | Novi, MI                      | Automotive audio / connected car; Samsung subsidiary                                  | 2–3 rds · Easy–Med · No OA · No · Bottleneck: resume · ~15–20%                            |
+| **Magna**                     | Troy, MI                      | Automotive supplier; real software teams                                              | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                  |
+| **Rocket / Quicken Loans**    | Detroit, MI                   | Fintech; aggressive tech hiring; ISMs culture is a real filter — cite them explicitly | 2–3 rds · Easy–Med · HackerRank · No · Bottleneck: phone screen · ~10–15%                 |
+| **StockX**                    | Detroit, MI                   | Sneaker/streetwear marketplace; startup environment; real full-stack work             | 2–3 rds · Easy–Med · No OA · No · Bottleneck: tech rounds · ~15–20%                       |
+| **Ally Financial**            | Detroit, MI                   | Digital bank; real SWE; fintech track                                                 | 2–3 rds · Easy–Med · HackerRank · No · Bottleneck: OA · ~10–15%                           |
+| **May Mobility**              | Ann Arbor, MI                 | Autonomous shuttles; UMich-heavy pipeline; tiny cohort                                | 3 rds · Low/Practical · No OA · No · Bottleneck: getting an interview · Very small cohort |
+| **Censys**                    | Ann Arbor, MI                 | Security; UMich spinoff; real eng work                                                | 2–3 rds · Easy–Med · No OA · No · Bottleneck: tech rounds · ~15–20%                       |
+| **Atomic Object**             | Ann Arbor / Grand Rapids, MI  | Software consultancy; real client work; good mentorship                               | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
+| **TechSmith**                 | Okemos, MI                    | Camtasia/Snagit; literally next to MSU; excellent first internship                    | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%                                  |
+| **Dow Chemical**              | Midland, MI                   | Fortune 500; real SWE for data/infra roles                                            | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
+| **State Farm**                | Bloomington, IL               | Insurance tech; strong MSU pipeline; real SWE work                                    | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–20%                                |
+| **Target (Tech)**             | Minneapolis                   | Retail tech; real SWE program; not a store job                                        | 2–3 rds · Easy · HackerRank · No · Bottleneck: OA · ~15–20%                               |
+| **Walmart Labs**              | Bentonville, Sunnyvale        | Scale is genuinely real; Sunnyvale office > Bentonville signal                        | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~10–15%                    |
+| **Fidelity**                  | Boston                        | Finance; large SWE team                                                               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: OA · ~10–15%                             |
+| **Progressive**               | Cleveland                     | Insurance tech; real engineering product                                              | 2–3 rds · Easy · HackerRank · No · Bottleneck: OA · ~15–20%                               |
+| **Allstate**                  | Chicago                       | Insurance tech                                                                        | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **Liberty Mutual**            | Boston                        | Insurance tech                                                                        | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **USAA**                      | San Antonio                   | Insurance/banking; strong program but regional                                        | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–20%                                |
+| **Charles Schwab**            | San Francisco                 | Finance; tech division                                                                | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–20%                                |
+| **T-Mobile**                  | Bellevue                      | Telecom; real SWE work on network software                                            | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **Comcast**                   | Philadelphia                  | Telecom/media                                                                         | 2–3 rds · Easy · HackerRank · No · Bottleneck: OA · ~15–20%                               |
+| **Verizon**                   | Multiple                      | Telecom                                                                               | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **AT&T**                      | Dallas                        | Telecom                                                                               | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **Accenture (Tech)**          | Multiple                      | Consulting; varies wildly by team; can be real SWE                                    | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
+| **Deloitte (Tech)**           | Multiple                      | Consulting; same caveats as Accenture                                                 | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
+| **Thomson Reuters**           | Multiple                      | Information services; real SWE                                                        | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **Best Buy**                  | Minneapolis                   | Retail tech                                                                           | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                  |
+| **Home Depot**                | Atlanta                       | Retail tech                                                                           | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
+| **Meijer (HQ)**               | Grand Rapids, MI              | Retail tech; Michigan-based; local advantage                                          | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%                                  |
+| **Blue Cross Blue Shield MI** | Detroit, MI                   | Healthcare IT                                                                         | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
 
-| Type                                            | Notes                                     |
-| ----------------------------------------------- | ----------------------------------------- |
-| Unpaid internships                              | Never. Your time has value.               |
-| "Internships" that are just sales roles         | Bait and switch scams                     |
-| Revature / similar training programs            | Not internships, lock-in contracts        |
-| Companies with no engineering product           | You'll do IT support, not SWE             |
-| Startups with no funding / pre-seed             | High risk, no mentorship, possible unpaid |
-| MLM tech arms                                   | Amway tech might be fine, but beware      |
-| Witch (Wipro, Infosys, TCS, Cognizant, HCL)     | Body shops, bad signal for top companies  |
-| Generic "IT intern" roles at non-tech companies | Help desk ≠ SWE                           |
-
----
-
-## STRATEGIC NOTES FOR MSU STUDENTS
-
-### Advantages You Have
-1. **Michigan auto industry pipeline** - Ford, GM, Stellantis recruit heavily from MSU
-2. **Proximity to Ann Arbor** - 60 min drive to strong tech scene
-3. **Detroit renaissance** - Rocket, StockX, startups emerging
-4. **Big Ten recruiting** - Many companies do Big Ten career fair circuits
-5. **TechSmith literally in Okemos** - Walking distance from campus
-
-### Your Weak Points (Be Honest)
-1. **Not a target school** for S-tier (unlike UMich, Stanford, MIT, CMU)
-2. **Must compensate** with projects, LeetCode, and networking
-3. **Location disadvantage** vs Bay Area/NYC students for tech networking
-
-### Priority Application Strategy
-1. **Apply S-tier anyway** - Lottery ticket, nothing to lose
-2. **Mass apply A/B tier** - Numbers game
-3. **Secure Michigan fallback** - Ford/GM/Duo are realistic and strong
-4. **Avoid F-tier** - Don't waste cycles
-
----
-
-## COMPENSATION REFERENCE (2024-2025)
-
-| Tier          | Hourly Range | Monthly Housing Stipend        |
-| ------------- | ------------ | ------------------------------ |
-| S-Tier        | $50-75/hr    | $2,000-3,500/mo                |
-| A-Tier        | $40-55/hr    | $1,500-2,500/mo                |
-| B-Tier        | $30-45/hr    | $1,000-2,000/mo                |
-| C-Tier        | $25-35/hr    | $0-1,500/mo                    |
-| Michigan Auto | $25-40/hr    | Often local, no stipend needed |
-| D-Tier        | $18-28/hr    | Rare                           |
-| F-Tier        | $0-20/hr     | LOL                            |
 
 ---
 
-*Last Updated: February 2026*
-*Version: 1.0*
+## D-TIER — Experience Building / Last Resort
+
+*Real work. Low brand signal. Low pay ($18–28/hr). Only if nothing else lands. Having an internship beats not having one.*
+
+
+| Company                           | Location               | Notes                                                       | Interview Process                                                   |
+| --------------------------------- | ---------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------- |
+| **General Dynamics**              | Multiple               | Gov IT; ~$31/hr                                             | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
+| **SAIC**                          | Multiple               | Gov IT; ~$26/hr                                             | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
+| **AeroVironment**                 | Simi Valley            | Switchblade/Puma drones; interesting work; low prestige     | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%          |
+| **ZF**                            | Livonia, MI            | Automotive supplier                                         | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%            |
+| **Denso**                         | Southfield, MI         | Automotive supplier; Japanese company                       | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%            |
+| **Visteon**                       | Van Buren Township, MI | Cockpit electronics                                         | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%            |
+| **Lear**                          | Southfield, MI         | Automotive seating/electrical                               | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
+| **United Wholesale Mortgage**     | Pontiac, MI            | Mortgage tech; real SWE                                     | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%            |
+| **Dewpoint**                      | Lansing, MI            | IT services; MSU pipeline                                   | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
+| **Auto-Owners Insurance**         | Lansing, MI            | Insurance tech                                              | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
+| **Jackson National Life**         | Lansing, MI            | Insurance/finance                                           | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
+| **DTE Energy**                    | Detroit, MI            | Utility tech                                                | 2 rds · Easy · No OA · No · Bottleneck: resume · ~30–40%            |
+| **Consumers Energy**              | Jackson, MI            | Utility tech                                                | 2 rds · Easy · No OA · No · Bottleneck: resume · ~30–40%            |
+| **Sparrow / McLaren**             | Lansing, MI            | Healthcare IT                                               | 2 rds · Easy · No OA · No · Bottleneck: resume · ~30–40%            |
+| **Clinc**                         | Ann Arbor, MI          | Conversational AI; tiny team                                | 2–3 rds · Easy–Med · No OA · No · Bottleneck: tech rounds · ~20–25% |
+| **Refraction AI**                 | Ann Arbor, MI          | Delivery robots; very small team                            | 2–3 rds · Low/Practical · No OA · No · Bottleneck: resume · ~15–20% |
+| **Llamasoft (Coupa)**             | Ann Arbor, MI          | Supply chain AI; Coupa acquisition                          | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%          |
+| **Benzinga**                      | Detroit, MI            | Fintech/media; small startup                                | 2 rds · Easy · No OA · No · Bottleneck: resume · ~30–40%            |
+| **MSU IT Services**               | East Lansing, MI       | On-campus; easiest access of anything on this list          | 1 rd · Easy · No OA · No · Bottleneck: resume · ~40–60%             |
+| Regional banks / local healthcare | Michigan               | IT departments; not always pure SWE                         | 1–2 rds · Easy · No OA · No · Bottleneck: resume · ~35–50%          |
+| Federal / state agencies          | Multiple               | Slow, clearance-heavy, bureaucratic. USDS is the exception. | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~25–40%          |
+
+
+---
+
+## F-TIER — Never Apply
+
+*Active signal damage or wasted time.*
+
+
+| Type                                                  | Why                                                       |
+| ----------------------------------------------------- | --------------------------------------------------------- |
+| Unpaid internships                                    | Non-negotiable. Your time has value.                      |
+| "Internships" that are sales roles                    | Bait-and-switch; you'll spend the summer cold-calling     |
+| Revature / training program lock-ins                  | Multi-year labor contracts disguised as training programs |
+| WITCH companies (Wipro, Infosys, TCS, Cognizant, HCL) | Body shops; active negative signal at top companies       |
+| Pre-seed startups with no product                     | No mentorship, likely unpaid, zero brand value            |
+| Generic IT intern at non-tech company                 | Help desk and ticket routing is not software engineering  |
+
+
+---
+
+## RECRUITING STRATEGY REFERENCE
+
+### Priority Application Order (MSU-Specific)
+
+
+| Priority | Target                             | Why                                    |
+| -------- | ---------------------------------- | -------------------------------------- |
+| 1        | Amazon, Capital One, Cloudflare    | School-blind; OA equalizes non-targets |
+| 2        | Ford, GM, Rocket, TechSmith        | MSU pipeline = legitimate path         |
+| 3        | Palantir, Databricks, Anduril      | Apply early + referral required        |
+| 4        | All A–B tier                       | Mass apply Sept–Nov; numbers game      |
+| 5        | S-tier (Google, Meta, OpenAI, xAI) | Always apply — nothing to lose         |
+
+
+### Prep Matrix by Interview Type
+
+
+| Type             | Companies                                   | Prep                                                          |
+| ---------------- | ------------------------------------------- | ------------------------------------------------------------- |
+| LeetCode Core    | All A/B-tier                                | NeetCode 150, Blind 75 — arrays, graphs, DP, trees, hash maps |
+| CodeSignal GCA   | Uber (725+), Robinhood (800+), Airbnb, Lyft | CodeSignal Practice Platform                                  |
+| Concurrency      | Databricks                                  | LeetCode concurrency section; threading in Python/Java        |
+| System Design    | Palantir, Anduril, Waymo, Cloudflare        | DDIA; Grokking System Design                                  |
+| C++              | Anduril, Shield AI, SpaceX, Aurora          | cppreference.com; LC in C++                                   |
+| Networking / TCP | Discord, Cloudflare, Duo Security           | Cloudflare blog; Tanenbaum "Computer Networks"                |
+| Behavioral / LP  | Amazon, Palantir (cultural hard filter)     | Write 2–3 STAR stories per Amazon LP; applies broadly         |
+| Palantir Decomp  | Palantir only                               | Pseudocode product design; Palantir blog case studies         |
+| Byteboard        | Figma                                       | Reading comprehension speed under time pressure               |
+
+
+---
+
+*Version 3.0 — March 2026*
