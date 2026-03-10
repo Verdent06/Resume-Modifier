@@ -25,6 +25,7 @@
 | **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                           | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |
 | **Two Sigma**                    | NYC                      | Quant; strong eng culture; Python/C++                      | 4–5 rds · Hard · CodeSignal · Yes (systems) · Bottleneck: resume · <1%                    |
 | **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                  | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
+| **IMC Trading**                 | Chicago, NYC             | Quant; low-latency/algo; C++/Java/Python; $83–121/hr; housing + $25K sign-on | 3–4 rds · Med–Hard · HackerRank · No · Bottleneck: OA + tech rounds · ~1–2%                 |
 
 
 ---
@@ -87,6 +88,7 @@
 | **Intel**                     | Santa Clara, multiple          | Large program; 20% manufacturing layoffs 2025 significantly hurt signal             | 2–3 rds · Easy–Med · HackerRank · No · Bottleneck: resume · ~5–8%                            |
 | **Qualcomm**                  | San Diego                      | Mobile chips; strong DSP/signal processing focus                                    | 3 rds · Medium · HackerRank · No · Bottleneck: tech rounds · ~5–8%                           |
 | **Roblox**                    | San Mateo                      | Gaming platform; Lua/C++; gaming industry caps the tier                             | 3 rds · Medium · HackerRank · Light · Bottleneck: tech rounds · ~5–8%                        |
+| **Roku**                      | San Jose, Austin               | Streaming/TV OS; C/C++/Linux; embedded; ~$45/hr San Jose; 12-wk program              | 2 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~5–8%                         |
 | **Bloomberg**                 | NYC                            | Terminal; strong intern program; finance company first                              | 3–4 rds · Medium · CodeSignal · Yes (interns) · Bottleneck: tech screen · ~5–8%              |
 | **VMware (Broadcom)**         | Palo Alto                      | Broadcom acquisition 2023 gutted culture and prestige                               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–10%                        |
 | **Cohere**                    | Toronto, NYC                   | Enterprise NLP; IPO expected H2 2026; legitimate AI signal                          | 3–4 rds · Med–Hard · No standard OA · Yes (NLP) · Bottleneck: tech rounds · <3%              |
