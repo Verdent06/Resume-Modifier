@@ -1,0 +1,88 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
+			\item Replaced paper sign-in with QR-driven check-in (AWS S3); event instrumentation and data collection for 150+ scans/event, delivering real-time usage metrics for analytics and cutting processing time 80\%.
+			\item Enforced production-grade quality via GitHub Actions CI/CD with 90\% coverage gates across 20+ tests for testing and validation.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Software Engineer}
+			{}
+			{East Lansing, MI}
+
+			\item Led cross-functional team of 6; introduced Neo4j to offload recursive queries from PostgreSQL, cutting p95 48\% (850ms $\rightarrow$ 440ms) and enabling multi-hop data analysis and analytics.
+			\item Refactored Cypher with relationship-type indexing; traversals 3$\times$ faster than SQL self-joins, removed full-table scans.
+			\item Implemented GitLab CI/CD (build, test, containerized deploy) with branch protection, 85\% coverage across 35+ tests for requirements validation.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Engineered data pipeline and multi-client voice assistant that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
+			\item Reduced API response time 73\% by offloading RAG pipeline for semantic data analysis to async Redis/Celery; deployed Python FastAPI on AWS Lambda (cloud), cutting cold-start 86\% (6{,}643ms $\rightarrow$ 930ms); key metrics and KPIs for pipeline health.
+			\item Built Electron + Next.js client with embedded HTTP server for OAuth and real-time IPC/webhook events (sub-50ms propagation).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{}
+
+			\item Won Interactive Media Track: Gesture-controlled wizard duel where full-body movements cast spells, block attacks, and trigger abilities against an AI opponent.
+			\item Built full-body gesture pipeline in Python using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
+			\item Developed custom 2D vector physics engine with AABB collision detection to accurately translate live 3D skeletal coordinates to game state, maintaining \textless5px drift at 60 FPS.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, Angular, React, Next.js, Redis}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitLab CI/CD, CI/CD Pipelines}
+		\end{rSet}
+		\begin{rSet}{Tools \& Data}{Grafana, Excel, Microsoft Office, data analysis, telematics}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

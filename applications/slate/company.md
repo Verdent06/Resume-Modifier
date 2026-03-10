@@ -1,0 +1,13 @@
+# Slate
+
+## What They Do
+Slate is an American EV startup building affordable, customizable electric pickup trucks and manufacturing them in the USA—part of a reindustrialization push. They are retrofitting a 1.4M sq ft facility in Warsaw, Indiana (former LSC Communications plant), targeting ~150K vehicles/year and up to 2,000 jobs. The flagship product is a sub-$20K barebones EV pickup with a 52.7 kWh battery (~240 mi range), minimal factory options (no paint shop, plastic body panels), and over 100 customer customization options so owners control how their trucks look and function.
+
+## Why This Company
+I want to work at Slate because it sits at the intersection of software, data, and real hardware: CAN instrumentation, telematics, and analytics on prototype vehicles. My background is in building data pipelines, dashboards, and automation (Claude Builder Club provisioning and event systems, MindMosaic dual-database analytics, Mira async inference and metrics). Slate’s Vehicle Integration role is a chance to apply that same mindset—instrumenting systems, mining data for root cause, and building tools that engineers and managers actually use—but on vehicles and fleet data instead of web apps. The start-up culture (fast, frugal, scrappy) and cross-functional work with Chassis, Electrical, and Powertrain align with how I’ve operated in student orgs and full-stack teams. I’m excited to help turn prototype data into actionable insights for a company that’s betting on American manufacturing and DIY customization.
+
+## Engineering Culture
+Slate emphasizes grit, determination, and attention to detail; start-up ingenuity and resourcefulness; and principles like Safety First, One Team, Relentless Improvement, and Fast, Frugal, and Scrappy. Technically, the company is building from the ground up: CAN networks, cloud data ingestion from vehicles, analytics dashboards (e.g., fleet performance, usage metrics, requirements validation), and close collaboration across Chassis, Electrical, and Powertrain. Tools mentioned include Python and Grafana; the stack is oriented toward instrumentation, telematics, and data analysis rather than consumer software.
+
+## Relevant Teams / Orgs
+The Vehicle Integration Engineering intern role sits at the intersection of multiple engineering groups. You will work with Chassis, Electrical, and Powertrain on instrumentation, signal selection, and data collection, and support vehicle-level testing and validation through the requirement management system. The day-to-day centers on CAN instrumentation on prototype vehicles, cloud data pipelines, dashboards for management (fleet performance, efficiency, open issues, requirements status), and helping engineers use those tools for KPIs and root cause analysis.

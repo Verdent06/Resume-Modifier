@@ -28,7 +28,16 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Guidewire                   | Front-End Developer Intern              | 2026-03-06   | Applied | full-stack    |            |
 | Axiom Space                 | Software Application Engineering Intern | 2026-03-07   | Applied | full-stack    |            |
 | Clockwork Systems           | Software Engineer Intern                | 2026-03-07   | Applied | full-stack    |            |
-| Nokia                       | Software Developer Intern/Co-op        | 2026-03-07   | Applied | full-stack    |            |
+| Nokia                       | Software Developer Intern/Co-op         | 2026-03-07   | Applied | full-stack    |            |
+| KIPP New Jersey             | Technology Intern                       | 2026-03-10   | Applied | full-stack    |            |
+| L&L Products                | Intern Information Technology           | 2026-03-10   | Applied | full-stack    |            |
+| Foam Factory                | AI Solutions Developer                  | 2026-03-10   | Applied | ai-ml         |            |
+| Bastian Solutions           | Software Developer Co-op                | 2026-03-10   | Applied | full-stack    |            |
+| Slate                       | Intern, Vehicle Integration Engineering | 2026-03-10   | Applied | full-stack    |            |
+| Blackstone LaunchPad        | Full Stack Developer – EHR Integration Intern | 2026-03-10 | Applied | full-stack  |            |
+| Toyota                      | OneTech Summer Intern                   | 2026-03-10   | Applied | full-stack    |            |
+| Apex Systems                | Technology Intern – AI                  | 2026-03-10   | Applied | ai-ml         |            |
+
 
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
@@ -43,7 +52,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 19
+- **Total applied:** 27
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —

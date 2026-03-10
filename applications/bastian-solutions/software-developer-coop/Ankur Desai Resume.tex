@@ -1,0 +1,88 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Seeking:} Co-op (May 2026--Dec 2027)
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Automated member provisioning from specifications and requirements (GitHub API + Slack SDK), granting repo and workspace access in 30 seconds and cutting setup time 97\% across 100+ members.
+			\item Replaced paper sign-in with QR-driven check-in backed by AWS S3 token caching, cutting processing time 80\%.
+			\item Enforced quality control and software validation via GitHub Actions CI/CD with test plans and 90\% coverage (20+ tests), supporting troubleshooting and bug triage.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Software Engineer}
+			{}
+			{East Lansing, MI}
+
+			\item Introduced Neo4j from design specs to offload recursive queries from PostgreSQL, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms).
+			\item Performed root-cause analysis and refactored Cypher with relationship-type indexing; traversals ran 3$\times$ faster than equivalent SQL self-joins.
+			\item Integrated OAuth 2.0 (Google + GitHub) with httpOnly JWT cookies, refresh rotation, and user-scoped graph access.
+			\item Implemented GitLab CI/CD for build, test, and containerized deployment; maintained test environments and enforced test plans with 85\% coverage (35+ tests), branch-protected merges.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Engineered multi-client voice assistant resolving implicit speaker intent and dispatching real tasks across concurrent streams.
+			\item Reduced RESTful API response time by 73\% by offloading RAG pipeline to async Redis/Celery task queue.
+			\item Built Electron + Next.js client with embedded HTTP server for OAuth callbacks; IPC and webhook server delivered sub-50ms event propagation.
+			\item Deployed FastAPI on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), reducing cold-start 86\% (6{,}643ms $\rightarrow$ 930ms).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{}
+
+			\item Won Interactive Media Track: Gesture-controlled wizard duel; full-body movements cast spells and trigger abilities against an AI opponent.
+			\item Built gesture pipeline with MediaPipe Pose (33 landmarks); sustained 60 FPS with sub-20ms input lag.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, C\#, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Visual Studio, Spring Boot, FastAPI, Node.js, Angular, React, Next.js, Redis}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, SQL Server, Neo4j, MongoDB}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitLab CI/CD, CI/CD Pipelines}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

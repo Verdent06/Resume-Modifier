@@ -1,0 +1,86 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President \& Co-Founder}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding by automating member provisioning via API integration (GitHub API + Slack SDK), cutting setup time 97\% across 100+ members.
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time dashboards and cutting processing time by 80\%.
+			\item Enforced production-grade quality via GitHub Actions CI/CD with 90\% coverage gates across 30+ tests, reducing bug escape rate by 65\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Technical Lead}
+			{}
+			{East Lansing, MI}
+
+			\item Led 6-engineer team on full-stack knowledge graph app; owned sprint planning, PR review, and architecture.
+			\item Authored CI/CD and Dockerfiles for Spring Boot + Angular + Neo4j with secure deployment and branch protection; 85\% coverage, 35+ tests.
+			\item Designed dual-database layer (PostgreSQL + Neo4j) for graph traversals; cut p95 latency 48\% (850ms $\rightarrow$ 440ms) via relationship-type indexing.
+		\end{rSectionEntry}
+
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Built multi-client agentic voice assistant that resolves implicit speaker intent and dispatches real tasks across voice streams for operational workflow automation.
+			\item Fine-tuned Sentence-BERT intent head (12-class) on 200 utterances, 91\% F1; replaced regex routing and eliminated a class of dispatch failures.
+			\item Trained spaCy NER (180 examples) for TASK/PERSON/TIME/APP; 34\% recall gain. Reduced diarization error 18.4\% $\rightarrow$ 9.1\%; Lambda API cold-start 86\% lower (6{,}643ms $\rightarrow$ 930ms).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, TensorFlow, NumPy}
+			{}
+
+			\item Won Interactive Media Track: gesture-controlled wizard duel where full-body pose estimation drives spell casting, blocking, and ability triggering against an AI opponent.
+			\item Built full-body pose pipeline (MediaPipe Pose, 33 landmarks) with inference optimized to 60 FPS and sub-20ms input latency.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{ML \& AI}{PyTorch, scikit-learn, Sentence-BERT, spaCy, MediaPipe, Whisper, OpenAI API, prompt engineering}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Next.js, Redis, Celery, HTML, CSS}
+		\end{rSet}
+		\begin{rSet}{Data \& Infra}{PostgreSQL, Neo4j, MongoDB, AWS Lambda/S3, GitHub Actions, secure dev, data privacy}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

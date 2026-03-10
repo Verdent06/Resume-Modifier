@@ -1,0 +1,87 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President \& Co-Founder}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding for a 100-member Generative AI engineering club by automating member provisioning (GitHub API + Slack SDK) to grant full access in 30 seconds, cutting setup time 97\%.
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
+			\item Enforced AI governance documentation and quality on AI accelerator/proof-of-concept tooling via GitHub Actions CI/CD: 90\% coverage, 30+ tests, reducing bug escape rate 65\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Technical Lead}
+			{}
+			{East Lansing, MI}
+
+			\item Led a 6-engineer team in agile delivery of a full-stack knowledge graph application; owned sprint planning, backlog refinement, PR review authority, and final architecture decisions.
+			\item Authored all CI/CD pipelines and Dockerfiles, containerizing the polyglot Spring Boot + Angular + Neo4j stack and enforcing branch protection with automated test gates on every production merge.
+			\item Designed dual-database persistence layer (PostgreSQL + Neo4j) for multi-hop graph traversals; achieved 3$\times$ faster performance than SQL self-joins and cut p95 query latency 48\% through relationship-type indexing.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Built multi-client agentic voice assistant using prompt design to resolve implicit speaker intent and dispatch real tasks across concurrent voice streams.
+			\item Fine-tuned a Sentence-BERT intent classifier (SVM, 12-class taxonomy) on 200 synthetic utterances; model evaluation achieved 91\% F1, replacing regex routing and eliminating an entire class of dispatch failures.
+			\item Trained a spaCy NER component on 180 annotated examples to extract TASK, PERSON, TIME, and APP entities, improving recall 34\% over the \texttt{en\_core\_web\_trf} baseline.
+			\item Built retrieval-augmented generation (RAG) pipeline with BM25 + Sentence-BERT hybrid search; offloaded machine learning inference to Redis/Celery task queue, reducing API response time 73\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, TensorFlow, NumPy}
+			{}
+
+			\item Won Interactive Media Track: gesture-controlled wizard duel where full-body pose estimation drives spell casting, blocking, and ability triggering against an AI opponent.
+			\item Built a full-body pose estimation pipeline using MediaPipe Pose to extract and classify 33 skeletal landmarks into discrete game actions; optimized the inference loop to sustain 60 FPS with sub-20ms input latency.
+			\item Implemented a custom 2D vector physics engine with AABB collision detection to project live 3D skeletal coordinates into game state, maintaining \textless5px positional drift at 60 FPS.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{ML \& AI}{PyTorch, scikit-learn, Sentence-BERT, spaCy, LLMs, MediaPipe, Whisper}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Next.js, Redis, Celery}
+		\end{rSet}
+		\begin{rSet}{Databases \& Infrastructure}{PostgreSQL, Neo4j, MongoDB, AWS (Lambda, S3), GitHub Actions}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
