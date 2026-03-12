@@ -1,0 +1,95 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, OOP, Computer Architecture, Linear Algebra, Discrete Math
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President \& Co-Founder}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding via REST API integration (GitHub API + Slack SDK), granting repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
+			\item Engineered GitHub Actions CI/CD with 90\% coverage and branch protection, reducing bug escape 65\%; documented procedures and reporting workflows.
+			\item Architected event-driven attendance with QR tokens and AWS S3 caching, replacing manual sign-in, cutting processing overhead 80\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Software Engineer}
+			{}
+			{East Lansing, MI}
+
+			\item Built GitLab CI/CD automation (build $\rightarrow$ test $\rightarrow$ deploy) with branch protection, 85\% coverage (35+ tests), and documented pipeline procedures.
+			\item Designed polyglot persistence (PostgreSQL + Neo4j) with Docker Compose for environment parity, eliminating dev/staging configuration drift.
+			\item Eliminated graph query bottlenecks via Cypher relationship-type indexing, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WFS Consulting}
+			{May 2025 -- Aug. 2025}
+			{Web Development Intern}
+			{}
+			{Plymouth, MI}
+
+			\item Delivered responsive company website in Vue.js with production-ready experience for end customers.
+			\item Implemented contact form with client-side validation and submission handling; iterated on Figma design with manager feedback.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{FastAPI, AWS Lambda, Redis, Celery, Docker}
+			{}
+
+			\item Deployed Python FastAPI on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), reducing cold-start 86\% (6{,}643ms $\rightarrow$ 930ms).
+			\item Decoupled inference from the API via async Redis/Celery queue, cutting response time 73\%; parsed JSON for pipeline orchestration and scaling.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{}
+
+			\item Won Interactive Media Track: built gesture-controlled wizard duel with real-time pose estimation (MediaPipe) driving spell casting and AI combat in-browser; Python pipeline at 60 FPS, sub-20ms lag.
+			\item Built full-body gesture pipeline mapping 33 landmarks to game actions; custom 2D physics with AABB collision, \textless5px drift at 60 FPS.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Bash}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Next.js, Celery}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB, Redis}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infra}{AWS (Lambda, S3), Docker, GitHub/GitLab CI/CD, REST APIs, Jira, Linux}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

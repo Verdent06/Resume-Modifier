@@ -11,21 +11,21 @@
 *Sub-5% acceptance. Strongest brand. Best comp ($55–120+/hr). Apply to all of these regardless — they're lottery tickets, but you want every ticket.*
 
 
-| Company                          | Location                 | Notes                                                      | Interview Process                                                                         |
-| -------------------------------- | ------------------------ | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Google**                       | Mountain View, NYC       | STEP (sophs), SWE (juniors)                                | 2–3 rds · Easy–Med · Google Docs (no OA) · No sys design · Bottleneck: host match · ~4–5% |
-| **Meta**                         | Menlo Park, NYC, Seattle | Meta University (sophs); ML/Infra strong                   | 1–2 rds + OA · Easy–Med · CodeSignal · No sys design · Bottleneck: resume · ~3–5%         |
-| **Apple**                        | Cupertino                | Hardware + software integration; niche team matching       | 3–4 rds · Medium · No standard OA · Light · Bottleneck: tech screen · ~2–3%               |
-| **Microsoft**                    | Redmond, multiple        | Explore (sophs), SWE (juniors); OA equalizes non-targets   | 2–3 rds · Easy–Med · Codility · No (interns) · Bottleneck: resume · ~5–7%                 |
-| **Netflix**                      | Los Gatos                | Extremely rare interns; senior-bar expectations            | 4–5 rds · Med–Hard · No OA · Yes (full) · Bottleneck: final loop · <1%                    |
-| **NVIDIA**                       | Santa Clara              | GPU/AI dominance; SWE roles limited but white-hot prestige | 3–4 rds · Med–Hard · No standard OA · Light · Bottleneck: tech rounds · ~2–4%             |
-| **OpenAI**                       | San Francisco            | AI frontier; practical eng bar; <0.5% acceptance           | 4–6 hr loop · Med–Hard · HackerRank · Yes (deep) · Bottleneck: all stages · <0.5%         |
-| **xAI**                          | San Francisco            | Musk AI lab; $200B+ val; Tier 1 Blind                      | 3–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · <1%                          |
-| **Jane Street**                  | NYC                      | Quant; $25K+/mo; OCaml; brutal math-first bar              | 4–5 rds · Hard · HackerRank · No (math-heavy) · Bottleneck: tech screen · <1%             |
-| **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                           | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |
-| **Two Sigma**                    | NYC                      | Quant; strong eng culture; Python/C++                      | 4–5 rds · Hard · CodeSignal · Yes (systems) · Bottleneck: resume · <1%                    |
-| **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                  | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
-| **IMC Trading**                 | Chicago, NYC             | Quant; low-latency/algo; C++/Java/Python; $83–121/hr; housing + $25K sign-on | 3–4 rds · Med–Hard · HackerRank · No · Bottleneck: OA + tech rounds · ~1–2%                 |
+| Company                          | Location                 | Notes                                                                        | Interview Process                                                                         |
+| -------------------------------- | ------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Google**                       | Mountain View, NYC       | STEP (sophs), SWE (juniors)                                                  | 2–3 rds · Easy–Med · Google Docs (no OA) · No sys design · Bottleneck: host match · ~4–5% |
+| **Meta**                         | Menlo Park, NYC, Seattle | Meta University (sophs); ML/Infra strong                                     | 1–2 rds + OA · Easy–Med · CodeSignal · No sys design · Bottleneck: resume · ~3–5%         |
+| **Apple**                        | Cupertino                | Hardware + software integration; niche team matching                         | 3–4 rds · Medium · No standard OA · Light · Bottleneck: tech screen · ~2–3%               |
+| **Microsoft**                    | Redmond, multiple        | Explore (sophs), SWE (juniors); OA equalizes non-targets                     | 2–3 rds · Easy–Med · Codility · No (interns) · Bottleneck: resume · ~5–7%                 |
+| **Netflix**                      | Los Gatos                | Extremely rare interns; senior-bar expectations                              | 4–5 rds · Med–Hard · No OA · Yes (full) · Bottleneck: final loop · <1%                    |
+| **NVIDIA**                       | Santa Clara              | GPU/AI dominance; SWE roles limited but white-hot prestige                   | 3–4 rds · Med–Hard · No standard OA · Light · Bottleneck: tech rounds · ~2–4%             |
+| **OpenAI**                       | San Francisco            | AI frontier; practical eng bar; <0.5% acceptance                             | 4–6 hr loop · Med–Hard · HackerRank · Yes (deep) · Bottleneck: all stages · <0.5%         |
+| **xAI**                          | San Francisco            | Musk AI lab; $200B+ val; Tier 1 Blind                                        | 3–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · <1%                          |
+| **Jane Street**                  | NYC                      | Quant; $25K+/mo; OCaml; brutal math-first bar                                | 4–5 rds · Hard · HackerRank · No (math-heavy) · Bottleneck: tech screen · <1%             |
+| **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                                             | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |
+| **Two Sigma**                    | NYC                      | Quant; strong eng culture; Python/C++                                        | 4–5 rds · Hard · CodeSignal · Yes (systems) · Bottleneck: resume · <1%                    |
+| **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                                    | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
+| **IMC Trading**                  | Chicago, NYC             | Quant; low-latency/algo; C++/Java/Python; $83–121/hr; housing + $25K sign-on | 3–4 rds · Med–Hard · HackerRank · No · Bottleneck: OA + tech rounds · ~1–2%               |
 
 
 ---
@@ -88,7 +88,7 @@
 | **Intel**                     | Santa Clara, multiple          | Large program; 20% manufacturing layoffs 2025 significantly hurt signal             | 2–3 rds · Easy–Med · HackerRank · No · Bottleneck: resume · ~5–8%                            |
 | **Qualcomm**                  | San Diego                      | Mobile chips; strong DSP/signal processing focus                                    | 3 rds · Medium · HackerRank · No · Bottleneck: tech rounds · ~5–8%                           |
 | **Roblox**                    | San Mateo                      | Gaming platform; Lua/C++; gaming industry caps the tier                             | 3 rds · Medium · HackerRank · Light · Bottleneck: tech rounds · ~5–8%                        |
-| **Roku**                      | San Jose, Austin               | Streaming/TV OS; C/C++/Linux; embedded; ~$45/hr San Jose; 12-wk program              | 2 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~5–8%                         |
+| **Roku**                      | San Jose, Austin               | Streaming/TV OS; C/C++/Linux; embedded; ~$45/hr San Jose; 12-wk program             | 2 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~5–8%                         |
 | **Bloomberg**                 | NYC                            | Terminal; strong intern program; finance company first                              | 3–4 rds · Medium · CodeSignal · Yes (interns) · Bottleneck: tech screen · ~5–8%              |
 | **VMware (Broadcom)**         | Palo Alto                      | Broadcom acquisition 2023 gutted culture and prestige                               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–10%                        |
 | **Cohere**                    | Toronto, NYC                   | Enterprise NLP; IPO expected H2 2026; legitimate AI signal                          | 3–4 rds · Med–Hard · No standard OA · Yes (NLP) · Bottleneck: tech rounds · <3%              |
@@ -152,7 +152,7 @@
 
 | Company                       | Location                      | Notes                                                                                 | Interview Process                                                                         |
 | ----------------------------- | ----------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Square / Block**            | San Francisco                 | ⚠️ Cutting ~50% of workforce 2026 — was A-tier; now C until stability returns         | 3 rds · Medium · HackerRank · No · Bottleneck: resume · ~5–8%                             |
+| **Square / Block**            | San Francisco                 | ⚠️ Cutting ~50% of workforce 2026 — was A-tier; now C until stability returns          | 3 rds · Medium · HackerRank · No · Bottleneck: resume · ~5–8%                             |
 | **Splunk (Cisco)**            | San Francisco                 | Cisco acquisition 2024; enterprise observability; reduced from B                      | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                     |
 | **Lucid Motors**              | Newark, CA                    | EV; interesting eng; limited brand signal for SWE                                     | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~10–15%                       |
 | **Raytheon / RTX**            | Multiple                      | Traditional defense prime; ongoing restructuring; slow pace                           | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                |

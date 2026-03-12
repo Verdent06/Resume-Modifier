@@ -1,0 +1,87 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Software Engineer}
+			{}
+			{East Lansing, MI}
+
+			\item Built Spring Boot backend and Angular frontend; introduced Neo4j to offload recursive relational queries from PostgreSQL, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms).
+			\item Refactored Cypher with relationship-type indexing; traversals 3$\times$ faster than SQL self-joins, removing full-table scans.
+			\item Integrated dual-provider OAuth 2.0 (Google + GitHub) with httpOnly JWT cookies and user-scoped graph access control.
+			\item Implemented GitLab CI/CD for Spring Boot services: build, test, containerized deploy, branch-protected merges, 85\% coverage across 35+ automated tests.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding by automating provisioning (GitHub API + Slack SDK), granting repo and workspace access in 30s, cutting setup time 97\% across 100+ members.
+			\item Replaced paper sign-in with QR-driven check-in backed by AWS S3 token caching, cutting processing time 80\%.
+			\item Enforced production quality via GitHub Actions CI/CD with 90\% coverage gates and 20+ automated tests.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Engineered multi-client agentic voice assistant that resolves implicit speaker intent and dispatches real tasks across concurrent voice streams.
+			\item Reduced RESTful API response time 73\% by offloading RAG pipeline to async Redis/Celery task queue (microservices-style decoupling).
+			\item Built Next.js + Electron client with OAuth callback interception and real-time IPC; webhook server for sub-50ms event propagation.
+			\item Deployed FastAPI on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), reducing cold-start 86\% (6{,}643ms $\rightarrow$ 930ms).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{}
+
+			\item Won Interactive Media Track: gesture-controlled wizard duel; full-body movements cast spells and trigger abilities against an AI opponent.
+			\item Built gesture pipeline with MediaPipe Pose (33 landmarks $\rightarrow$ game actions); optimized inference to 60 FPS, sub-20ms input lag.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, Angular, React, Next.js, Vue, Redis, HTML, CSS}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, MySQL, Neo4j, MongoDB}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, Kubernetes, GitLab CI/CD, DevOps}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

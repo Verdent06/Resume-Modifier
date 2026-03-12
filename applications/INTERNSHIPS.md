@@ -37,7 +37,9 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Blackstone LaunchPad        | Full Stack Developer – EHR Integration Intern | 2026-03-10 | Applied | full-stack  |            |
 | Toyota                      | OneTech Summer Intern                   | 2026-03-10   | Applied | full-stack    |            |
 | Apex Systems                | Technology Intern – AI                  | 2026-03-10   | Applied | ai-ml         |            |
-
+| SpotHero                    | Engineering Intern                      | 2026-03-10   | Applied | full-stack    |            |
+| SAP                         | SAP SuccessFactors iXp Intern – Software Developer, Learning | 2026-03-10 | Applied | full-stack |            |
+| Smiths Group                | Software Engineering Intern (Cyber focus)                    | 2026-03-12 | Applied | dev-ops    |            |
 
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
@@ -52,7 +54,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 27
+- **Total applied:** 30
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —
