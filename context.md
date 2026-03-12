@@ -106,26 +106,26 @@ When the JD is ambiguous, use **May 2028**.
 
 ### WFS Consulting
 
-**Title:** Freelance Web Developer
+**Title:** Web Development Intern
 **Dates:** May 2025 – August 2025
 **Location:** Plymouth, MI
 
-**What it is:** Freelance contract to design and deliver a client-facing website for a consulting firm. Primarily frontend work — static site with contact form functionality. Low technical depth relative to other experience entries.
+**What it is:** Web Development Internship at a consulting firm, focused on developing web-based solutions for client needs.
 
 **What Ankur built:**
 
-- Designed and deployed a responsive company website using React, Vite, and Tailwind CSS
-- Implemented contact form with client-side validation and submission handling
-- Delivered production build to client spec
+- As an intern, contributed to a responsive company website using Vue.js, delivering a polished, production-ready experience for end customers.
+- Implemented a user-facing contact form with robust client-side validation and smooth submission handling as part of the site's core feature set.
+- Iterated on a Figma design, collaborating closely with the manager and incorporating feedback to ensure the final product precisely matched requirements.
 
 **Pipeline guidance:**
 
-- This is the weakest experience entry. Include it when the resume needs a third experience line or when the role values client-facing delivery / freelance context.
+- This is the weakest experience entry. Include it when the resume needs a third experience line or when the role values client-facing delivery.
 - Do NOT lead with it or feature it prominently for engineering-heavy roles.
 - Drop it entirely for any FAANG/A-tier application where the two-entry experience section is tighter.
 - Never write more than 2 bullets for this entry.
 
-**Technologies:** React, Vite, Tailwind CSS, JavaScript
+**Technologies:** Vue.js, JavaScript
 
 ---
 

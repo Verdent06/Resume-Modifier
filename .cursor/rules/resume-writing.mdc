@@ -215,6 +215,7 @@ Two tight lines per bullet maximum. Three-line bullets always contain a restated
 - Never add a new `\begin{rSection}` — only add entries or bullets within existing sections
 - Do not change the `\documentclass` line — the caller relies on the existing path to the resume class
 - After every edit pass, verify the compiled PDF: one page, and Skills section does not wrap to a new line
+- Lastly, before finishing, clean up all auxiliary files: *.aux, *.out, *.log, *.synctext.gz
 
 ---
 
