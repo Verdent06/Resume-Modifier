@@ -40,6 +40,8 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | SpotHero                    | Engineering Intern                      | 2026-03-10   | Applied | full-stack    |            |
 | SAP                         | SAP SuccessFactors iXp Intern – Software Developer, Learning | 2026-03-10 | Applied | full-stack |            |
 | Smiths Group                | Software Engineering Intern (Cyber focus)                    | 2026-03-12 | Applied | dev-ops    |            |
+| SAP                         | SuccessFactors iXp Intern – AI Software Engineer (Summer 2026) | 2026-03-12 | Applied | ai-ml      |            |
+| Draper                      | Software Engineering Intern                                    | 2026-03-13 | Applied | full-stack |            |
 
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
@@ -54,7 +56,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 30
+- **Total applied:** 32
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —

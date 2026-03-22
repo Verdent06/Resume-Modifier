@@ -1,0 +1,86 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Math, OOP, Computer Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President \& Co-Founder}
+			{}
+			{East Lansing, MI}
+
+			\item Eliminated manual onboarding by automating member provisioning (GitHub API + Slack SDK) to grant repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
+			\item Replaced paper sign-in with QR-driven check-in backed by AWS S3 token caching, cutting processing time 80\% and enabling real-time attendance.
+			\item Enforced production quality via GitHub Actions CI/CD with 90\% coverage and automated testing (30+ tests), reducing bug escape 65\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug. 2025 -- Nov. 2025}
+			{Technical Lead}
+			{}
+			{East Lansing, MI}
+
+			\item Led 6-engineer team on full-stack knowledge graph app; owned sprint planning, PR review, and architecture decisions.
+			\item Authored CI/CD and Dockerfiles, containerizing Spring Boot + Angular + Neo4j and enforcing branch protection with automated test gates.
+			\item Optimized query performance with dual-database layer (PostgreSQL + Neo4j); 3$\times$ faster than SQL self-joins, p95 latency cut 48\% via relationship-type indexing.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Mira --- Agentic Voice Assistant}
+			{May 2025 -- Nov. 2025}
+			{}
+			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{}
+
+			\item Built multi-client agentic AI voice assistant that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
+			\item Fine-tuned a Sentence-BERT intent classification head (SVM, 12-class taxonomy) on 200 synthetic utterances, achieving 91\% F1; replaced regex-based task routing, eliminating an entire class of dispatch failures.
+			\item Trained a spaCy NER component on 180 annotated examples to extract TASK, PERSON, TIME, and APP entities, improving recall 34\% over the \texttt{en\_core\_web\_trf} baseline.
+			\item Reduced diarization error 18.4\% $\rightarrow$ 9.1\% via x-vector calibration; cloud-native Lambda performance optimization (lazy-loaded inference) cut cold-start 86\% (6{,}643ms $\rightarrow$ 930ms).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{Feb. 2025}
+			{}
+			{Python, MediaPipe, OpenCV, TensorFlow, NumPy}
+			{}
+
+			\item Won Interactive Media Track: gesture-controlled wizard duel where full-body pose estimation drives spell casting, blocking, and ability triggering against an AI opponent.
+			\item Built pose estimation pipeline (MediaPipe Pose) mapping 33 skeletal landmarks to game actions; optimized inference to sustain 60 FPS with sub-20ms input latency.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{ML \& AI}{PyTorch, scikit-learn, Sentence-BERT, spaCy, MediaPipe, Whisper, GenAI}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Next.js, Redis, Celery}
+		\end{rSet}
+		\begin{rSet}{Databases \& Infrastructure}{PostgreSQL, Neo4j, MongoDB, AWS (Lambda, S3), Docker, Kubernetes, GitHub Actions}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

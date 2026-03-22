@@ -88,17 +88,17 @@ When the JD is ambiguous, use **May 2028**.
 - Led a 6-engineer team: owned sprint planning, PR review and merge authority, architecture decisions, CI/CD authorship.
 - Dual-database persistence layer: PostgreSQL anchors relational/user data; Neo4j handles graph traversals. Chose Neo4j because recursive SQL self-joins on relationship queries were hitting 850ms p95. After migration: 440ms p95 (48% reduction). Cypher relationship-type indexing made traversals 3× faster than equivalent SQL self-joins.
 - Dual-provider OAuth 2.0: Google + GitHub login with httpOnly JWT cookies, refresh token rotation, and user-scoped ABAC (each user traverses only their own subgraph).
-- CI/CD: GitLab CI/CD pipeline with build → test → containerized deploy stages. Branch protection on production. 85% coverage, 35+ tests (JUnit + Jasmine).
+- CI/CD: GitHub Actions CI/CD pipeline with build → test → containerized deploy stages. Branch protection on production. 85% coverage, 35+ tests (JUnit + Jasmine).
 - Spring Boot backend + Angular frontend + Neo4j stack. Fully containerized with Docker Compose.
 
 **Strongest angles by role type:**
 
 - *Fintech / backend:* Spring Boot, OAuth 2.0, JWT, ABAC, PostgreSQL, test coverage, code review
 - *Full-stack:* end-to-end ownership, Angular + Spring Boot + Neo4j, Docker, CI/CD, team lead
-- *DevOps:* GitLab CI/CD, Docker Compose, environment parity, branch protection, coverage gates
+- *DevOps:* GitHub Actions CI/CD, Docker Compose, environment parity, branch protection, coverage gates
 - *Data / graph:* graph analysis, multi-hop traversals, polyglot persistence, p95 latency improvement
 
-**Technologies:** Spring Boot (Java), Angular, Neo4j, Cypher, PostgreSQL, OAuth 2.0, JWT, Docker, GitLab CI/CD, JUnit, Jasmine, Git
+**Technologies:** Spring Boot (Java), Angular, Neo4j, Cypher, PostgreSQL, OAuth 2.0, JWT, Docker, GitHub Actions CI/CD, JUnit, Jasmine, Git
 
 **Known gap:** Spring Boot appears in the stack but most resume versions don't surface a bullet proving Spring Boot ownership. For roles that require it (Fiserv, enterprise backend), use this hook: *"Built Spring Boot + Angular application where users map and visualize idea connections"* and surface the 850ms→440ms query latency story.
 
