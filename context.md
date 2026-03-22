@@ -61,7 +61,7 @@ When the JD is ambiguous, use **May 2028**.
 
 - Automated all member onboarding: GitHub API + Slack SDK integration provisions repo access and Slack workspace membership in under 30 seconds. Before: manual, took days. Result: 97% reduction in setup time across 100+ members.
 - QR-driven event check-in system: generates scoped tokens, caches them in AWS S3 via CloudFront CDN, handles real-time check-in. Replaced paper sign-in entirely. Processes 150+ scans/event; S3-backed token caching reduced redundant auth calls by 60%. Result: 80% reduction in processing time.
-- CI/CD infrastructure: GitHub Actions pipeline with 90%+ coverage gates and branch protection on all production merges. 20–30+ tests. Bug escape rate reduced 65%.
+- CI/CD infrastructure: GitHub Actions pipeline with 90%+ coverage gates and branch protection on all production merges. 60+ tests. Bug escape rate reduced 65%.
 - Enforces open source practices across the club: PR review process, branch naming conventions, contribution guidelines.
 
 **Strongest angles by role type:**

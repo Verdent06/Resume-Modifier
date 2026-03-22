@@ -42,8 +42,8 @@
 			{East Lansing, MI}
 
 			\item Refactored a relational query layer with a graph database (Neo4j) to model connected data natively; relationship-type indexing eliminated full-table scans and cut query latency 48\%, making traversals 3$\times$ faster than equivalent SQL joins.
-			\item Integrated Google and GitHub OAuth 2.0 so users authenticate without passwords; secured sessions with httpOnly JWT cookies and automatic token rotation to prevent credential exposure between requests.
-			\item Built a GitHub Actions CI/CD pipeline running integration test suites inside a Dockerized environment; every pull request triggers automated validation against 85\% coverage gates before merge is permitted.
+			\item Integrated Google and GitHub OAuth 2.0 authentication into Angular frontend, enabling passwordless sign-in; secured sessions with httpOnly JWT cookies and automated token rotation to prevent credential exposure between requests.
+			\item Built a GitHub Actions CI/CD pipeline that runs Spring Boot integration test suites (JUnit, Jasmine) inside a Dockerized environment; every pull request triggers automated validation with 85\%+ coverage gates enforced before merge.
 		\end{rSectionEntry}
 	\end{rSection}
 
