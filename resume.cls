@@ -1,4 +1,4 @@
-\ProvidesClass{resume}[03/22/2026 v9.0 Ankur's Resume Class]
+\ProvidesClass{resume}[03/22/2026 v9.1 Ankur's Resume Class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -45,7 +45,7 @@
 
 \newcommand{\printcontact}{
 	\begin{center}
-		\def \\ {\hspace{0.5em}|\hspace{0.7em}}
+		\def \\ {\hspace{0.3em}|\hspace{0.7em}}
 		{\fontsize{11pt}{13pt}\selectfont\@contact}
 	\end{center}
 }
@@ -81,8 +81,8 @@
     % --- LINE 1: Name | Tech | Dates ---
     \textbf{\fontsize{11pt}{13pt}\selectfont #1}
     \ifthenelse{\equal{#4}{}}{}{ % If Tech (#4) exists
-        \textbf{|}
-        \textit{#4}
+        \textbf{\hspace{0em}|}\hspace{0.4em}
+\textit{#4}
     }
     \hfill {#2}% <--- Percent prevents trailing space
 	\vspace{0.08em}
@@ -98,7 +98,7 @@
     % --- BULLET LIST ---
     \begin{list}{$\bullet\hspace{0.2em}$}{\leftmargin=2.5em}
         \fontsize{10pt}{12pt}\selectfont
-        \setlength{\itemsep}{-0.6em}
+        \setlength{\itemsep}{-0.5em}
         \vspace{-0.5em}
 }{
     \end{list}
