@@ -1,0 +1,74 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected Graduation, 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Math, OOP, Computer Organization, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct. 2025 -- Present}
+			{Vice President \& Co-Founder}
+			{}
+			{East Lansing, MI}
+
+			\item Replaced multi-day manual onboarding with one automated flow via GitHub + Slack APIs so contributors collaborate in the right software repositories and channels in under 30 seconds, cutting setup time an estimated 97\% across more than 100 members.
+			\item Retired paper attendance by issuing short-lived QR tokens cached at the edge with S3 and CloudFront, validating check-in in real time and sustaining 150+ scans per event without redundant authentication round-trips.
+			\item Hardened how the club ships software with GitHub Actions coverage gates above 90\%, branch protection on production merges, and review standards that reduced escaped defects by an estimated 65\%.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Dadei --- Ambient AI Assistant}
+			{May 2025 -- Nov. 2025}
+			{\href{https://dadei.app}{dadei.app}}
+			{Python, FastAPI, PostgreSQL, pgvector, Redis, RQ, Gemini API, faster-whisper, pyannote-audio, PyTorch, Docker}
+			{}
+
+			\item Shipped an ambient assistant where each conversation close runs an agentic AI agent with tool-calling on Gemini~2.5~Pro, proposing episodic memories and calendar-style actions with evidence quotes tied to a transcript manifest instead of brittle wake-word-only UX.
+			\item Ran local speech understanding on CPU using \texttt{faster-whisper} (\texttt{large-v3-turbo}, int8) for word-timed transcripts and machine learning models for diarization (\texttt{pyannote/speaker-diarization-3.1}) with an online centroid plus capped prototype bank and cosine gates so diarization-attributed turns stay stable across sessions.
+			\item Implemented hybrid retrieval over \texttt{pgvector} (Gemini \texttt{gemini-embedding-001}, IVFFlat cosine ANN) with semantic--lexical fusion, 30-day recency decay, and optional RRF before prompting---tightening context for validation-heavy extraction and supporting data analysis when tuning fusion weights.
+			\item Delivered integrated software pipelines under Docker with optional Redis/RQ workers, repeatable command-line builds, and CI that boots a real \texttt{pgvector} Postgres service for pytest---automated testing and validation alongside bounded duplicate delivery for 100+ registered personal networks after Redis dedupe claims.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{\href{https://devpost.com/software/wizviz}{devpost.com/software/wizviz}}
+			{}
+			{MediaPipe, OpenCV, TensorFlow, NumPy}
+			{}
+
+			\item Won first place in the Interactive Media track at SpartaHack X with a gesture-driven wizard duel where live body pose becomes spell casting, blocking, and ability triggers against an on-device AI opponent---no game engine, no cloud round-trips.
+			\item Mapped full-body pose to gameplay by extracting 33 skeletal landmarks each frame, classifying them into discrete actions, and tightening the inference loop until the experience held 60 FPS with sub-20ms input lag.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Golang, C++, Bash}
+		\end{rSet}
+		\begin{rSet}{ML \& AI}{LLMs, agentic AI, PyTorch, faster-whisper, pyannote-audio, Gemini API, pgvector, TensorFlow, MediaPipe, spaCy}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, Electron, Vite, React, Redis, RQ, Docker, GitHub}
+		\end{rSet}
+		\begin{rSet}{Databases \& Infrastructure}{PostgreSQL, GitHub Actions, AWS (S3, CloudFront)}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

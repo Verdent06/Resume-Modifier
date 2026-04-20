@@ -1,0 +1,85 @@
+\documentclass[
+	11pt
+]{../../../resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected May 2027}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Relevant Coursework:} Linear Algebra, Discrete Mathematics, Object-Oriented Software Design, Computer Organization and Architecture, Data Structures \& Algorithms
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{WFS Consulting Group}
+			{May -- Aug 2025}
+			{Web Development Intern}
+			{}
+			{Plymouth, MI}
+
+			\item Shipped the firm's main customer-facing digital communications site in Vue by translating Figma layouts through iterative review with a non-technical stakeholder, tightening typography, spacing, and copy so published web content matched signed-off designs on desktop and mobile.
+			\item Implemented the primary contact workflow with client-side validation, visible labels, and explicit error text so keyboard-first visitors get the same clarity as mouse users---covering basic digital accessibility expectations while reducing silent failures on inquiry pages.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct 2025 -- Present}
+			{Co-Founder \& Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, giving board members live participation analytics and reducing end-of-event processing from days to minutes.
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full codebase and workspace access in 30 seconds, cutting setup time by 97\% across 150+ members.
+			\item Crafted a cron-scheduled pipeline that cross-checks check-in exports against enrollment before Slack summaries go out---soft-fail, idempotent steps isolate bad rows so quality assurance catches data issues before they reach stakeholders.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Dadei --- Ambient AI Assistant}
+			{\href{https://dadei.app}{dadei.app}}
+			{}
+			{React, Vite, Electron, FastAPI, pgvector, WebSockets, Redis}
+			{}
+
+			\item Launched a public web experience and desktop clients that keep phones and laptops in sync over authenticated WebSockets, fanning fresh transcripts and proposed actions so user experience stays coherent across devices without manual refresh.
+			\item Sharpens fuzzy who-when-what references through hybrid retrieval on Postgres/\texttt{pgvector}, ranking episodic rows, summaries, and recent turns by semantic, lexical, and recency signals before Gemini proposes calendar items and messages.
+			\item Voice uploads acknowledge immediately while transcription and diarization run out of band; digest idempotency and per-network locks prevent duplicate timelines when two laptops capture the same room.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic --- Knowledge Graph Explorer}
+			{Aug -- Nov 2025}
+			{}
+			{Three.js, Spring Boot, Neo4j, PostgreSQL}
+			{}
+
+			\item Built an interactive 3D knowledge graph explorer where users visually traverse, search, and filter interconnected ideas---a structured browsing model that keeps dense material navigable as content strategy adds more nodes instead of flattening pages.
+			\item Migrated hot read paths from recursive SQL self-joins onto Neo4j so relationships stay first-class; indexing cut query latency 48\% (850ms $\rightarrow$ 440ms) and made multi-hop traversals 3$\times$ faster than equivalent SQL.
+			\item Authored CI/CD pipelines and Dockerfiles for the polyglot stack (Spring Boot + React + Neo4j), enforcing branch protection with automated quality-assurance gates and 85\%+ coverage across 35+ tests on every merge.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C/C++, Bash}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{React, Vite, Vue.js, Figma, Three.js, Spring Boot, FastAPI, Node.js, Electron}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, Redis, MySQL}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, CloudFront), Docker, GitHub Actions, CI/CD Pipelines}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

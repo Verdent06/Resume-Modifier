@@ -42,6 +42,9 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Smiths Group                | Software Engineering Intern (Cyber focus)                    | 2026-03-12 | Applied | dev-ops    |            |
 | SAP                         | SuccessFactors iXp Intern – AI Software Engineer (Summer 2026) | 2026-03-12 | Applied | ai-ml      |            |
 | Draper                      | Software Engineering Intern                                    | 2026-03-13 | Applied | full-stack |            |
+| ASMSU                       | Engagement Office Assistant (Summer 2026)                      | 2026-04-19 | Applied | full-stack |            |
+| Michigan State University (ICER) | LLM Research and Development Technician                   | 2026-04-19 | Applied | ai-ml      |            |
+| MSU International Studies and Programs | Website Intern                                    | 2026-04-19 | Applied | full-stack |            |
 
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
@@ -56,7 +59,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 32
+- **Total applied:** 35
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —
