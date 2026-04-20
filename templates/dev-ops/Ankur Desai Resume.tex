@@ -40,46 +40,46 @@
 			{}
 			{East Lansing, MI}
 
-			\item Designed polyglot persistence architecture (PostgreSQL + Neo4j) with environment-parity Docker Compose configuration, enabling one-command local setup and eliminating configuration drift between dev and staging.
-			\item Eliminated graph query bottlenecks by refactoring Cypher queries with relationship-type indexing, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms) and making recursive traversals 3$\times$ faster than equivalent SQL joins.
-			\item Maintained 85\% test coverage across JUnit and Jasmine suites via GitHub Actions CI/CD with branch protection, preventing untested code from reaching production on all merges.
+			\item Designed PostgreSQL + Neo4j persistence with Docker Compose parity for one-command local setup and no config drift vs.\ staging.
+			\item Refactored Cypher with relationship-type indexing, cutting p95 latency 48\% (850ms $\rightarrow$ 440ms) and making recursive traversals 3$\times$ faster than SQL joins.
+			\item Kept 85\% JUnit/Jasmine coverage with GitHub Actions + branch protection so untested merges never reached production.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- Agentic Voice Assistant}
+			{Dadei --- Ambient AI Assistant}
 			{May 2025 -- Nov. 2025}
+			{\href{https://dadei.app}{dadei.app}}
+			{Docker, FastAPI, PostgreSQL, pgvector, Redis, RQ, Alembic, GitHub Actions, Uvicorn}
 			{}
-			{FastAPI, AWS Lambda, Redis, Celery, Docker}
-			{}
+			% VERIFY: 100+ networks + [TBD] throughput/dedupe numbers before final submits.
 
-			\item Deployed containerized FastAPI inference service on AWS Lambda with lazy-loaded ML models (Whisper, Sentence-BERT, spaCy), eliminating idle compute costs and reducing cold-start latency 86\% (6{,}643ms $\rightarrow$ 930ms).
-			\item Decoupled ML inference from the API layer by offloading the RAG pipeline to an async Redis/Celery task queue, cutting end-to-end response time by 73\% and enabling horizontal worker scaling under load.
-			\item Built bidirectional IPC event bus between Electron and Next.js client layers with a dedicated webhook server, achieving sub-50ms event propagation and speaker transcription delivery under 2 seconds.
+			\item Eliminated release drift with pinned Docker images, \texttt{docker-compose} dev parity, and prod starts that always run \texttt{alembic upgrade head} before Uvicorn so schema, \texttt{pgvector} indexes, and extension grants never trail the app across rollbacks.
+			\item Hardened CI via GitHub Actions matrix: Ruff on \texttt{app/} and \texttt{tests/}; pytest + migrations against \texttt{pgvector/pgvector:pg15}; DB job asserting \texttt{CREATE EXTENSION vector}---cutting migration-caused broken deploys an estimated \textbf{[TBD]}\%. % VERIFY
+			\item Made background work safe with or without Redis: inline \texttt{BackgroundTasks} fallback, Redis/RQ + SHA-256 idempotency when enabled, and per-network locks for conversation closes---sustained ingest \textbf{[TBD]} $\rightarrow$ \textbf{[TBD]} interactions/min in soak tests without duplicate side effects. % VERIFY
+			\item Scaled to \textbf{100+} registered customer networks on managed infrastructure using pooled Postgres, health-gated rollouts, and Redis webhook dedupe so multi-device fan-out does not amplify identical events; duplicate deliveries fell \textbf{[TBD]}\% in long soak tests. % VERIFY
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{WizViz --- SpartaHack X}
 			{Feb. 2025}
-			{}
-			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{\href{https://devpost.com/software/wizviz}{devpost.com/software/wizviz}}
+			{Python, MediaPipe, OpenCV, TensorFlow, NumPy}
 			{}
 
-			\item Won Interactive Media Track: built a gesture-controlled wizard duel where real-time full-body pose estimation drives spell casting, blocking, and AI combat — entirely in a browser with no game engine.
-			\item Built full-body gesture pipeline using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
-			\item Developed custom 2D vector physics engine with AABB collision detection to translate live 3D skeletal coordinates into game state, maintaining \textless5px drift at 60 FPS.
+			\item Won Interactive Media track at SpartaHack X; on-device MediaPipe pose pipeline and custom 2D physics at 60 FPS (portfolio on Devpost).
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
 		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Next.js, Celery}
+		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Vite, Electron, RQ}
 		\end{rSet}
-		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB, Redis}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, Redis}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (Lambda, EC2, RDS, S3), Docker, GitHub Actions, CI/CD Pipelines}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitHub Actions, CI/CD Pipelines}
 		\end{rSet}
 	\end{rSection}
 

@@ -81,7 +81,7 @@
     % --- LINE 1: Name | Tech | Dates ---
     \textbf{\fontsize{11pt}{13pt}\selectfont #1}
     \ifthenelse{\equal{#4}{}}{}{ % If Tech (#4) exists
-        \textbf{\hspace{0em}|}\hspace{0.4em}
+        \textbf{\hspace{-0.4em}|}\hspace{0em}
 \textit{#4}
     }
     \hfill {#2}% <--- Percent prevents trailing space
@@ -102,7 +102,7 @@
         \vspace{-0.5em}
 }{
     \end{list}
-	\vspace{-0.12em}
+	\vspace{-0.35em}
 }
 
 \newenvironment{rSet}[2] % 2 Parameters: title, items

@@ -38,7 +38,7 @@ When the user asks for **help on their resumes**, **which template to use**, or 
 
 - Compare tracks (full-stack vs. ai-ml vs. dev-ops) and recommend which template fits a role or company.
 - Suggest concrete edits to bullets, ordering, or skills based on context and the role they're targeting.
-- Explain tradeoffs (e.g. leading with MindMosaic vs. Mira for a given JD).
+- Explain tradeoffs (e.g. leading with MindMosaic vs. Dadei for a given JD).
 
 For full tailoring from a job description, still delegate to the **resume-pipeline**; template help is for advice, comparisons, and edits to the base templates themselves.
 

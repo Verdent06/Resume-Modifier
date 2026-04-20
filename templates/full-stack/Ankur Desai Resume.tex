@@ -10,7 +10,7 @@
 	\begin{rSection}{E}{ducation}
 		\begin{rSectionEntry}
 			{Michigan State University}
-			{Expected Graduation, 2027}
+			{Expected May 2027}
 			{B.S. in Computer Science}
 			{}
 			{East Lansing, MI}
@@ -23,65 +23,74 @@
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
 			{Claude Builder Club @ MSU}
-			{Oct. 2025 -- Present}
-			{Vice President}
+			{Oct 2025 -- Present}
+			{Co-Founder \& Vice President}
 			{}
 			{East Lansing, MI}
 
-			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
+			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full codebase and workspace access in 30 seconds, cutting setup time by 97\% across 150+ members.
+			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, giving board members instant visibility into live participation data and cutting processing time by days.
 			\item Crafted a cron-scheduled event pipeline that cross-checks check-in records with enrollment and posts robust, per-event Slack reports—bad records never break the batch thanks to soft-fail, idempotent functions.
-			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, giving board members instant visibility into live participation data and cutting processing time by 80\%.
-			\item Enforced a 4-tier role hierarchy (prospect $\rightarrow$ member $\rightarrow$ board $\rightarrow$ e-board) at the database layer using Postgres row-level security, so every new API route and query inherits access rules automatically with no per-route auth boilerplate.
+			\item Enforced a 4-tier role hierarchy (prospect $\rightarrow$ member $\rightarrow$ board $\rightarrow$ e-board) at the database layer using Postgres row-level security, so every new API route inherits access rules automatically with zero per-route auth boilerplate.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
-			{MindMosaic}
-			{Aug. 2025 -- Nov. 2025}
-			{Software Engineer}
+			{WFS Consulting Group}
+			{May -- Aug 2025}
+			{Web Development Intern}
 			{}
-			{East Lansing, MI}
+			{Plymouth, MI}
 
-			\item Refactored a relational query layer with a graph database (Neo4j) to model connected data natively; relationship-type indexing eliminated full-table scans and cut query latency 48\%, making traversals 3$\times$ faster than equivalent SQL joins.
-			\item Integrated Google and GitHub OAuth 2.0 authentication into Angular frontend, enabling passwordless sign-in; secured sessions with httpOnly JWT cookies and automated token rotation to prevent credential exposure between requests.
-			\item Built a GitHub Actions CI/CD pipeline that runs Spring Boot integration test suites (JUnit, Jasmine) inside a Dockerized environment; every pull request triggers automated validation with 85\%+ coverage gates enforced before merge.
+			\item Built the firm's main customer-facing website in Vue, iterating on Figma designs with a non-technical stakeholder and delivering a mobile-responsive experience with validated contact forms.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- Agentic Voice Assistant}
-			{May 2025 -- Nov. 2025}
+			{MindMosaic --- Knowledge Graph Explorer}
+			{Aug -- Nov 2025}
 			{}
-			{Next.js, FastAPI, MongoDB, Redis, Celery}
+			{Three.js, Spring Boot, Neo4j, PostgreSQL}
 			{}
 
-			\item Engineered a multi-client voice assistant that listens to natural conversation, infers what each speaker wants, and dispatches tasks across concurrent audio streams.
-			\item Designed cross-platform desktop client (Electron + Next.js) with an embedded HTTP server for OAuth callback handling; real-time event propagation via IPC delivers sub-50ms latency.
-			\item Architected an async ML inference pipeline with Redis/Celery to offload Whisper and Sentence-BERT from the request path, cutting voice endpoint response time to under 200ms.
-			\item Routed processed results back to clients through a dedicated webhook server, sustaining sub-100ms queue pickup latency across 10 concurrent voice streams.
+			\item Built an interactive 3D knowledge graph explorer where users visually traverse, search, and filter interconnected ideas.
+			\item Designed dual-database persistence (PostgreSQL + Neo4j) to model relational data as a navigable graph; relationship-type indexing cut p95 query latency 48\% (850ms $\rightarrow$ 440ms), making multi-hop traversals 3$\times$ faster than SQL self-joins.
+			\item Integrated dual-provider OAuth 2.0 (Google + GitHub) with httpOnly JWT cookies, refresh token rotation, and user-scoped access control --- each user traverses only their own subgraph.
+			\item Authored CI/CD pipelines and Dockerfiles for the polyglot stack (Spring Boot + React + Neo4j), enforcing branch protection with automated test gates and 85\%+ coverage across 35+ tests on every merge.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
-			{WizViz --- SpartaHack X}
-			{Feb. 2025}
+			{Dadei --- Ambient AI Assistant}
+			{\href{https://dadei.app}{dadei.app}}
 			{}
-			{Python, MediaPipe, OpenCV, NumPy, TensorFlow}
+			{React, Vite, Electron, FastAPI, pgvector, WebSockets, Redis}
 			{}
 
-			\item Won Interactive Media Track: Gesture-controlled wizard duel where full-body movements cast spells, block attacks, and trigger abilities against an AI opponent.
-			\item Built full-body gesture pipeline using MediaPipe Pose to map 33 skeletal landmarks into game actions; optimized inference loop to sustain 60 FPS with sub-20ms input lag.
-			\item Developed a custom 2D physics engine with collision detection to translate live skeletal coordinates into game state, maintaining \textless5px positional accuracy at 60 FPS.
+			\item Built an ambient assistant that listens across phones and laptops, runs speaker recognition and vector searching to build calendar entries, reminders and messages/emails from natural dialogue.
+			\item Sharpens fuzzy who-when-what references through hybrid retrieval on Postgres/\texttt{pgvector}, ranking episodic rows, summaries, and recent turns by semantic, lexical, and recency signals before Gemini runs.
+			\item Keeps phones and laptops on one network in lockstep without polling --- clients subscribe over authenticated WebSockets, and the backend fan-outs fresh transcripts and proposed actions in parallel.
+			\item Voice uploads ack immediately while transcription, diarization, and speaker matching run out of band; digest idempotency and per-network locks keep two laptops in one room from forking one timeline.
+			\item Turns each conversation close into grounded memories and actions: Gemini runs summaries and tool calls anchored with transcript quotes, persisted against the same retrieved context so outputs track what was actually said.		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz --- SpartaHack X}
+			{\href{https://devpost.com/software/wizviz}{Devpost}}
+			{}
+			{Python, MediaPipe, OpenCV, TensorFlow, NumPy}
+			{}
+
+			\item Won SpartaHackX; Cooperative, gesture-controlled wizard duel where body movements cast spells, attacks, and abilities.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C/C++, Bash}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Spring Boot, FastAPI, Node.js, Angular, React, Next.js, Redis}
+		\begin{rSet}{Frameworks}{React, Vite, Vue.js, Three.js, Spring Boot, FastAPI, Node.js, Tailwind CSS, Electron}
 		\end{rSet}
-		\begin{rSet}{Databases}{PostgreSQL, Neo4j, MongoDB}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, Redis, MySQL}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, RDS, S3), Docker, GitHub Actions, CI/CD Pipelines}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, CloudFront), Docker, GitHub Actions, CI/CD Pipelines}
 		\end{rSet}
 	\end{rSection}
 

@@ -28,59 +28,48 @@
 			{}
 			{East Lansing, MI}
 
-			\item Eliminated manual onboarding entirely by automating member provisioning (GitHub API + Slack SDK) to grant full repo and workspace access in 30 seconds, cutting setup time 97\% across 100+ members.
-			\item Replaced paper sign-in sheets with a QR-driven check-in system backed by AWS S3 token caching, enabling real-time attendance tracking and cutting processing time by 80\%.
-			\item Enforced production-grade quality via GitHub Actions CI/CD with 90\% coverage gates across 30+ tests, reducing bug escape rate by 65\%.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{MindMosaic}
-			{Aug. 2025 -- Nov. 2025}
-			{Technical Lead}
-			{}
-			{East Lansing, MI}
-
-			\item Led a 6-engineer team building a full-stack knowledge graph application; owned sprint planning, PR review and merge authority, and final architecture decisions across the entire stack.
-			\item Authored all CI/CD pipelines and Dockerfiles, containerizing the polyglot Spring Boot + Angular + Neo4j stack and enforcing branch protection with automated test gates on every production merge.
-			\item Designed dual-database persistence layer (PostgreSQL + Neo4j) for multi-hop graph traversals; achieved 3$\times$ faster performance than SQL self-joins and cut p95 query latency 48\% through relationship-type indexing.
+			\item Replaced multi-day manual onboarding with one automated provisioning flow (organization membership plus Slack workspace invites) so new contributors receive repository and channel access in under 30 seconds, cutting setup time an estimated 97\% across more than 100 members.
+			\item Retired paper attendance by issuing short-lived QR tokens cached at the edge with S3 and CloudFront, validating check-in in real time and sustaining 150+ scans per event without redundant authentication round-trips.
+			\item Hardened how the club ships software with GitHub Actions coverage gates above 90\%, branch protection on production merges, and review standards that reduced escaped defects by an estimated 65\%.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Mira --- Agentic Voice Assistant}
+			{Dadei --- Ambient AI Assistant}
 			{May 2025 -- Nov. 2025}
+			{\href{https://dadei.app}{dadei.app}}
+			{Python, FastAPI, PostgreSQL, pgvector, Redis, RQ, Gemini API, faster-whisper, pyannote-audio, PyTorch, Docker}
 			{}
-			{Next.js, FastAPI, MongoDB, Redis, Celery}
-			{}
+			% VERIFY: 100+ networks + all [TBD] metrics before final submits.
 
-			\item Built multi-client agentic voice assistant that batches natural dialogue, resolves implicit speaker intent, and dispatches real tasks across concurrent voice streams.
-			\item Fine-tuned a Sentence-BERT intent classification head (SVM, 12-class taxonomy) on 200 synthetic utterances, achieving 91\% F1; replaced regex-based task routing, eliminating an entire class of dispatch failures.
-			\item Trained a spaCy NER component on 180 annotated examples to extract TASK, PERSON, TIME, and APP entities, improving recall 34\% over the \texttt{en\_core\_web\_trf} baseline.
-			\item Reduced speaker diarization error rate from 18.4\% to 9.1\% via x-vector threshold calibration; lazy-loaded Lambda inference cutting cold-start latency by 86\% (6{,}643ms $\rightarrow$ 930ms).
+			\item Built an ambient assistant that closes the loop from passive, multi-device audio to structured outcomes: after each conversation segment, Gemini~2.5~Pro proposes grounded episodic memories and calendar-style actions with evidence quotes tied back to a numbered transcript manifest, reducing brittle wake-word command UX.
+			\item Ran local speech understanding on CPU using \texttt{faster-whisper} (\texttt{large-v3-turbo}, int8) for word-timed transcripts, \texttt{pyannote/speaker-diarization-3.1} for segmentation, and an online centroid + capped prototype bank with cosine gates to stabilize who-spoke-what across sessions; diarization-attributed turns improved speaker-consistency score by \textbf{[TBD]}\% on held-out clips. % VERIFY: metric + eval set
+			\item Implemented hybrid RAG over \texttt{pgvector} in Postgres: Gemini \texttt{gemini-embedding-001} vectors (768-d, L2-normalized) with IVFFlat cosine ANN, then application-level semantic--lexical fusion, recency decay, and optional reciprocal-rank fusion before prompting---raising top-k useful context hits from \textbf{[TBD]}\% $\rightarrow$ \textbf{[TBD]}\% on an internal replay suite. % VERIFY: hit-rate methodology
+			\item Shipped the full inference and persistence stack under Docker with Alembic migrations (including the \texttt{vector} extension), optional Redis/RQ workers, and CI that boots a real \texttt{pgvector} service for pytest---the same pipeline now backs \textbf{100+} concurrently registered personal networks with bounded duplicate delivery after Redis dedupe claims. % VERIFY: network count + dedupe effect
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{WizViz --- SpartaHack X}
 			{Feb. 2025}
-			{}
+			{\href{https://devpost.com/software/wizviz}{devpost.com/software/wizviz}}
 			{Python, MediaPipe, OpenCV, TensorFlow, NumPy}
 			{}
 
-			\item Won Interactive Media Track: gesture-controlled wizard duel where full-body pose estimation drives spell casting, blocking, and ability triggering against an AI opponent.
-			\item Built a full-body pose estimation pipeline using MediaPipe Pose to extract and classify 33 skeletal landmarks into discrete game actions; optimized the inference loop to sustain 60 FPS with sub-20ms input latency.
-			\item Implemented a custom 2D vector physics engine with AABB collision detection to project live 3D skeletal coordinates into game state, maintaining \textless5px positional drift at 60 FPS.
+			\item Won first place in the Interactive Media track at SpartaHack X with a gesture-driven wizard duel where live body pose becomes spell casting, blocking, and ability triggers against an on-device AI opponent---no game engine, no cloud round-trips.
+			\item Mapped full-body pose to gameplay by extracting 33 skeletal landmarks each frame, classifying them into discrete actions, and tightening the inference loop until the experience held 60 FPS with sub-20ms input lag.
+			\item Projected live 3D pose into a hand-built 2D physics model with collision response so motion remained stable during play at 60 FPS.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Cypher, Golang, C++, Bash}
+		\begin{rSet}{Languages}{Python, Java, JavaScript/TypeScript, SQL, Golang, C++, Bash}
 		\end{rSet}
-		\begin{rSet}{ML \& AI}{PyTorch, scikit-learn, Sentence-BERT, spaCy, MediaPipe, Whisper}
+		\begin{rSet}{ML \& AI}{PyTorch, faster-whisper, pyannote-audio, Google Gemini API, pgvector, TensorFlow, MediaPipe, spaCy}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, Node.js, React, Next.js, Redis, Celery}
+		\begin{rSet}{Frameworks}{FastAPI, Electron, Vite, React, Redis, RQ, Docker}
 		\end{rSet}
-		\begin{rSet}{Databases \& Infrastructure}{PostgreSQL, Neo4j, MongoDB, AWS (Lambda, S3), GitHub Actions}
+		\begin{rSet}{Databases \& Infrastructure}{PostgreSQL, GitHub Actions, AWS (S3, CloudFront)}
 		\end{rSet}
 	\end{rSection}
 

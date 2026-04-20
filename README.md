@@ -92,9 +92,9 @@ xelatex "Ankur Desai Resume.tex"
 
 Each template shares the same structure but differs in **project selection** and **bullet emphasis**:
 
-- **full-stack**: Leads with MindMosaic (architectural improvement + auth story) and Mira (voice/real-time client). Emphasizes system design, database architecture, and OAuth implementation.
-- **ai-ml**: Leads with Mira (ML inference, Sentence-BERT, Whisper deployment, cold-start optimization). MindMosaic is deprioritized or dropped. WizViz (MediaPipe, real-time CV) moves up.
-- **dev-ops**: Leads with Claude Builder Club (CI/CD, GitHub Actions, automation). Mira surfaces for its Lambda deployment and cold-start reduction story. Auth and graph architecture bullets are cut.
+- **full-stack**: Leads with MindMosaic (architectural improvement + auth story) and Dadei (voice/real-time client). Emphasizes system design, database architecture, and OAuth implementation.
+- **ai-ml**: Leads with Dadei (ML inference, Sentence-BERT, Whisper deployment, cold-start optimization). MindMosaic is deprioritized or dropped. WizViz (MediaPipe, real-time CV) moves up.
+- **dev-ops**: Leads with Claude Builder Club (CI/CD, GitHub Actions, automation). Dadei surfaces for its Lambda deployment and cold-start reduction story. Auth and graph architecture bullets are cut.
 
 ---
 
