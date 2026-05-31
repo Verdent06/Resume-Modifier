@@ -1,6 +1,6 @@
 ---
 description: Grades a resume by adopting the recruiter persona for a specific role. Output is one overall grade (0.0-10.0) and a brutal, prescriptive gap-finding report. Dispatched by the pipeline with the .tex and persona.md paths.
-globs:
+# globs:
 alwaysApply: false
 ---
 

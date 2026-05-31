@@ -1,107 +1,180 @@
-# Resume System
+# Resume Pipeline
 
-A modular, multi-track resume system built for fast, targeted applications. One shared class file. Three base templates. Unlimited company-specific outputs.
+This repository is a coordinated, agent-based pipeline with strict separation of responsibilities:
+
+- The orchestrator coordinates files, persona construction, dispatch, loop control, and persistence.
+- The writer is a mechanical selector over `context.md` (pick bullets, apply swap sets, pick skills buckets).
+- The grader is a blind recruiter simulation (sees only the artifact + persona, calls out gaps brutally).
+
+The goal is to produce a role-specific resume artifact quickly and honestly, with minimal stylistic drift.
 
 ---
 
-## Directory Structure
+## Core Design Decisions
+
+1. **Separation of concerns is strict**
+   - `context.md` is candidate-state data, not pipeline policy.
+   - Pipeline mechanics live in `.cursor/rules/` files.
+
+2. **Writer is mechanical, not creative**
+   - Bullets are copied verbatim from `context.md`.
+   - Tech changes are allowed only through explicit swap sets.
+   - No invented metrics, no rewritten prose.
+
+3. **Grader is blind by design**
+   - Grader reads only resume `.tex` + `persona.md`.
+   - Grader does not see `context.md`, bullet pools, or swap sets.
+   - Output is one overall score (`0.0-10.0`) + named, surgical gap calls.
+
+4. **Loop is shorter and harsher**
+   - Max 3 iterations.
+   - Exit threshold: `8.25`.
+   - Grade is a gate; gap-finding is the main product.
+
+5. **Persona replaces per-role JD scratch files**
+   - `persona.md` is the role briefing used by both writer and grader.
+   - It consolidates role facts, ATS terms, and recruiter framing.
+
+---
+
+## Repository Layout
 
 ```
 resume/
-├── resume.cls                          # Shared LaTeX class — do not duplicate
+├── resume.cls
 ├── README.md
-├── context.md                          # Candidate context for resume-writing (graduation year, personal info)
+├── context.md
 │
 ├── templates/
 │   ├── full-stack/
-│   │   ├── Ankur Desai Resume.tex      # Base template for product/full-stack SWE roles
+│   │   ├── Ankur Desai Resume.tex
 │   │   └── Ankur Desai Resume.pdf
 │   ├── ai-ml/
-│   │   ├── Ankur Desai Resume.tex      # Base template for ML/AI engineering roles
+│   │   ├── Ankur Desai Resume.tex
 │   │   └── Ankur Desai Resume.pdf
 │   └── dev-ops/
-│       ├── Ankur Desai Resume.tex      # Base template for DevOps/infra-focused roles
+│       ├── Ankur Desai Resume.tex
 │       └── Ankur Desai Resume.pdf
 │
 └── applications/
-    └── [Company]/
-        ├── company.md                  # Company description and research notes
-        └── [role]/                     # One folder per role applied to
-            ├── Ankur Desai Resume.tex  # Tailored copy of the relevant base template
-            ├── Ankur Desai Resume.pdf
-            └── job.md                  # Parsed job information + ATS information
+    └── [year]/
+        ├── TRACKER.md                # Per-year application log
+        └── [company]/
+            ├── company.md            # Company context, write-once per company
+            └── [role]/
+                ├── persona.md        # Recruiter briefing + role signals
+                ├── Ankur Desai Resume.tex
+                ├── Ankur Desai Resume.pdf
+                └── grade.md          # Final grading report only
 ```
 
-**Example:**
-```
-applications/
-└── visa/
-    ├── company.md
-    └── insight-day-technology/
-        ├── Ankur Desai Resume.tex
-        ├── Ankur Desai Resume.pdf
-        └── job.md
-```
+Notes:
+- `persona.md` is the per-role source of truth.
+- Track templates are starting artifacts only; all role work happens in application folders.
 
 ---
 
-## Workflow
+## Agent Contracts
 
-### 1. Identify the track
-Pick the base template that best matches the role's primary focus:
+### Orchestrator (`resume-pipeline.mdc`)
 
-| Track | Use when the JD emphasizes... |
-|---|---|
-| `full-stack` | Product features, frontend/backend, system design, auth, databases |
-| `ai-ml` | Models, inference pipelines, training, embeddings, data engineering |
-| `dev-ops` | CI/CD, IaC, container orchestration, observability, cloud infra |
+Owns the system flow:
+- Parse JD into structured role data.
+- Resolve `company.md` (create once or reuse).
+- Build `persona.md`.
+- Copy selected track template into role folder.
+- Dispatch writer/grader and manage the loop.
+- Compile and persist final artifacts.
+- Append application tracking entry.
 
-When in doubt, full-stack is the default. Never send a generic resume.
+Never does:
+- Direct resume content editing.
+- Direct scoring.
 
-### 2. Create the company folder
-```
-applications/[Company]/
-```
-Copy the appropriate base template into it. Never edit the base templates directly — they are the source of truth.
+### Writer (`resume-writing.mdc`)
 
-### 3. Tailor
-- Paste the full job description into the chat.
-- Run the Cursor resume-pipeline rule (Agent mode).
-- The pipeline will:
-  - Parse the JD and extract: company/role names, slugs, core responsibilities, required/preferred skills, ATS keywords, and template choice.
-  - Create (if needed) the company folder and `company.md` (never overwrite existing company.md; it is written once per company).
-  - Create the position folder and copy in the correct base template (`Ankur Desai Resume.tex`, etc.), fixing class path as needed.
-  - Populate `job.md` for the role, including parsed facts, ATS keyword lists, bullet mapping, and honest gap analysis.
-  - Run initial tailoring via `@resume-writing`, updating only the position's working `.tex`.
-  - Enter an iterative write→grade loop (max 7 passes) until all grading dimensions are A/B and ATS coverage is 90%+, or iteration cap is hit.
-  - After the loop: check skills line & page fit, recompile, and save the final grade to `grade.md`.
-  - Append an application log entry to `INTERNSHIPS.md`.
+Reads:
+- `context.md`
+- `persona.md`
+- Current role `.tex`
+- Latest grading report (iteration > 1)
 
-- Role-specific tailoring and keyword/ATS focus is always performed in the working application folder, never directly on the templates.
-- The pipeline always uses the existing `[Company]/company.md` for research context, not per-role notes.
+Can do:
+- Select bullets from pool.
+- Swap technologies within declared swap sets.
+- Select 3-5 skills buckets and trim items by JD relevance.
+- Reorder entries and tune bullet distribution (soft 12-14 target).
 
-### 4. Compile
-From the folder containing the `.tex` file:
+Cannot do:
+- Rewrite bullet prose.
+- Invent claims, metrics, entries, or technologies.
+- Modify education, `resume.cls`, or templates.
+
+### Grader (`resume-grading.mdc`)
+
+Reads:
+- Current role `.tex`
+- `persona.md`
+
+Outputs:
+- One overall grade (`0.0-10.0`, one decimal precision).
+- Brutal, specific "what is wrong" and "would like to see" sections.
+- Entry-specific callouts by name.
+
+Cannot do:
+- Access `context.md` or alternative bullet inventory.
+- Give pool-aware instructions ("use bullet X from context").
+
+---
+
+## End-to-End Flow
+
+1. User provides JD.
+2. Orchestrator parses role and chooses track (`full-stack`, `ai-ml`, `dev-ops`).
+3. Orchestrator prepares application folder and persona artifacts.
+4. Writer runs first pass on copied `.tex`.
+5. Grader scores and calls out gaps.
+6. Writer addresses resolvable gaps in-rails.
+7. Repeat (max 3 iterations) until grade `>= 8.25` or cap.
+8. Compile PDF, run fit corrections, persist final `grade.md`.
+9. Append application tracker entry.
+
+This is deliberately optimized for consistency and fast adaptation, not prose novelty.
+
+---
+
+## Data Boundaries (Important)
+
+- `context.md`: timeless candidate data only (education facts, bullet pools, swap sets, skills inventory, canonical entries).
+- `persona.md`: per-role recruiter/ATS framing generated by orchestrator.
+- `.mdc` files: behavioral contracts and pipeline control logic.
+
+If policy text appears in `context.md`, that is a scoping bug.
+
+---
+
+## Practical Limitations
+
+- The writer can only close gaps that are representable via existing bullet pools and swap sets.
+- Some role mismatches are structural; the loop may cap out below threshold.
+- A high score does not guarantee an interview; it means the artifact is strong for resume-screen stage.
+- Manual review is still expected for final polish and occasional page-fit edge cases.
+
+---
+
+## Usage
+
+1. Paste a complete JD in chat.
+2. Run the pipeline rule in Agent mode.
+3. Review generated files under the role folder:
+   - `persona.md`
+   - `Ankur Desai Resume.tex`
+   - `Ankur Desai Resume.pdf`
+   - `grade.md`
+4. Confirm tracker entry was appended.
+
+Compile manually when needed:
+
 ```bash
 xelatex "Ankur Desai Resume.tex"
 ```
-
----
-
-## Base Template Philosophy
-
-Each template shares the same structure but differs in **project selection** and **bullet emphasis**:
-
-- **full-stack**: Leads with MindMosaic (architectural improvement + auth story) and Dadei (voice/real-time client). Emphasizes system design, database architecture, and OAuth implementation.
-- **ai-ml**: Leads with Dadei (ML inference, Sentence-BERT, Whisper deployment, cold-start optimization). MindMosaic is deprioritized or dropped. WizViz (MediaPipe, real-time CV) moves up.
-- **dev-ops**: Leads with Claude Builder Club (CI/CD, GitHub Actions, automation). Dadei surfaces for its Lambda deployment and cold-start reduction story. Auth and graph architecture bullets are cut.
-
----
-
-## Key Rules
-
-1. **`resume.cls` is never duplicated.** All templates reference a single shared class file. Changes to formatting propagate everywhere.
-2. **Base templates are never sent directly.** Every application gets its own folder and its own tailored copy.
-3. **One page, hard constraint.** If a bullet doesn't earn its space for this specific role, cut it.
-4. **Technologies need architectural justification.** Never list a tool without a bullet that explains why it was the right choice.
-5. **Every application folder gets logged in `INTERNSHIPS.md`** after submission — this feeds the pipeline's calibration over time.

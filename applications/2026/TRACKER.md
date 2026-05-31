@@ -1,4 +1,4 @@
-# Internships Tracker
+# Internships Tracker (2026)
 
 Read by `@resume-grading` to calibrate likelihood estimates against historical performance.
 Fill in honestly — the more data here, the more accurate the grading agent's odds estimates.
@@ -6,7 +6,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 ---
 
 ## Application Log
-
 
 | Company                     | Role                                    | Date Applied | Status  | Template Used | Heard Back |
 | --------------------------- | --------------------------------------- | ------------ | ------- | ------------- | ---------- |
@@ -46,7 +45,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Michigan State University (ICER) | LLM Research and Development Technician                   | 2026-04-19 | Applied | ai-ml      |            |
 | MSU International Studies and Programs | Website Intern                                    | 2026-04-19 | Applied | full-stack |            |
 
-
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
 ---
@@ -63,4 +61,3 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 - **Response rate:** —
 - **OA conversion:** —
 - **Interview conversion:** —
-

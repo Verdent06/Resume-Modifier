@@ -31,7 +31,7 @@ The orchestrator never duplicates either agent's work and never bypasses them.
 | `Ankur Desai Resume.tex` | read | write | read |
 | `Ankur Desai Resume.pdf` | compile, read | – | read |
 | `grade.md` | write (final only) | – | – |
-| `INTERNSHIPS.md` | append | – | – |
+| `TRACKER.md` | append | – | – |
 | `templates/**` | read | **never** | – |
 | `resume.cls` | – | **never** | – |
 
@@ -56,14 +56,15 @@ resume/
 ├── context.md                                    ← Candidate state. Read-only for everyone.
 ├── templates/{full-stack,ai-ml,dev-ops}/         ← Track defaults. Read-only.
 └── applications/
-    ├── INTERNSHIPS.md
-    └── {company_slug}/
-        ├── company.md                            ← Write-once per company.
-        └── {position_slug}/
-            ├── persona.md                        ← Built per role.
-            ├── grade.md                          ← Final grading report only.
-            ├── Ankur Desai Resume.tex            ← Working copy.
-            └── Ankur Desai Resume.pdf            ← Compiled output.
+    ├── {role_year}/
+    │   ├── TRACKER.md
+    │   └── {company_slug}/
+    │       ├── company.md                        ← Write-once per company.
+    │       └── {position_slug}/
+    │           ├── persona.md                    ← Built per role.
+    │           ├── grade.md                      ← Final grading report only.
+    │           ├── Ankur Desai Resume.tex        ← Working copy.
+    │           └── Ankur Desai Resume.pdf        ← Compiled output.
 ```
 
 ---
@@ -95,6 +96,8 @@ Create one todo per step listed below. Do not batch.
   preferred_skills:       list[str]  (exact JD phrases)
   ats_keywords:           list[str]  (15-20 exact terms)
   track_decision:         "full-stack" | "ai-ml" | "dev-ops"
+  role_year:              str (target cycle year token, e.g. "2026")
+  applications_root:      str (exactly "resume/applications/{role_year}")
 }
 ```
 
@@ -103,13 +106,19 @@ Create one todo per step listed below. Do not batch.
 - `dev-ops` → JD explicitly requires CI/CD, containerization, cloud infra, SRE, or observability
 - `full-stack` → default for everything else
 
+**Role-year root logic:**
+- Always route artifacts under `resume/applications/{role_year}/`.
+- `role_year` is the hiring/application cycle year token (e.g. `"2026"`).
+- If the JD/role title includes a cycle year, use it. Otherwise default to the current calendar year.
+- Never write new artifacts to legacy flat `resume/applications/` company folders.
+
 ---
 
 ## Step 2 — Resolve company.md  *(parallel with Step 4)*
 
-**In:** `company_name`, `company_slug`.
+**In:** `company_name`, `company_slug`, `applications_root`.
 
-**Action:** Check `resume/applications/{company_slug}/company.md`. If absent, create the folder and write `company.md` from the template below. If present, read it.
+**Action:** Check `{applications_root}/{company_slug}/company.md`. If absent, create the folder and write `company.md` from the template below. If present, read it.
 
 **Out:** `company.md` contents (in-memory).
 
@@ -139,7 +148,7 @@ Create one todo per step listed below. Do not batch.
 
 **In:** Step 1 state object, `company.md` contents, `TIER_LIST.md` (if present, for tier signal).
 
-**Action:** Write `resume/applications/{company_slug}/{position_slug}/persona.md`. This is the single source of truth for both writer and grader on this role.
+**Action:** Write `{applications_root}/{company_slug}/{position_slug}/persona.md`. This is the single source of truth for both writer and grader on this role.
 
 **Out:** `persona.md` on disk.
 
@@ -187,9 +196,9 @@ Make it sharp and team-specific. Avoid generic FAANG-speak.}
 
 ## Step 4 — Copy Track Default  *(parallel with Step 2)*
 
-**In:** `track_decision`, `company_slug`, `position_slug`.
+**In:** `track_decision`, `applications_root`, `company_slug`, `position_slug`.
 
-**Action:** Create `resume/applications/{company_slug}/{position_slug}/`. Copy `resume/templates/{track_decision}/Ankur Desai Resume.tex` into it. Fix `\documentclass` path from `../../resume` to `../../../resume`.
+**Action:** Create `{applications_root}/{company_slug}/{position_slug}/`. Copy `resume/templates/{track_decision}/Ankur Desai Resume.tex` into it. Fix `\documentclass` path from `../../resume` to `../../../resume`.
 
 **Out:** Working `.tex` in position folder.
 
@@ -256,7 +265,7 @@ Make it sharp and team-specific. Avoid generic FAANG-speak.}
 
 **In:** Final `.tex`, `persona.md`.
 
-**Action:** Dispatch `@resume-grading` one last time on the shipped version. Persist that report to `resume/applications/{company_slug}/{position_slug}/grade.md`.
+**Action:** Dispatch `@resume-grading` one last time on the shipped version. Persist that report to `{applications_root}/{company_slug}/{position_slug}/grade.md`.
 
 **Out:** `grade.md` on disk.
 
@@ -272,7 +281,7 @@ APPLICATION SESSION READY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Company:    {company_name}
 Role:       {role_title}
-Folder:     resume/applications/{company_slug}/{position_slug}/
+Folder:     {applications_root}/{company_slug}/{position_slug}/
 Track:      {track_decision}
 Iterations: {n} / 3
 
@@ -300,9 +309,9 @@ Outside-Resume Levers: {1-2 actions}
 
 ---
 
-## Step 10 — INTERNSHIPS.md Append  *(parallel with Step 9)*
+## Step 10 — TRACKER.md Append  *(parallel with Step 9)*
 
-**Action:** Append to `resume/applications/INTERNSHIPS.md`:
+**Action:** Append to `{applications_root}/TRACKER.md`:
 
 ```
 | {company_name} | {role_title} | {YYYY-MM-DD today} | Applied | {track_decision} | |

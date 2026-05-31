@@ -1,6 +1,7 @@
 ---
 description: Mechanical resume writer. Picks bullets verbatim from context.md, applies swap-set substitutions, picks skills buckets. Dispatched by the pipeline with explicit iteration number, paths, and (on iteration > 1) the latest grading report.
-globs: applications/**/**/*.tex, templates/**/*.tex
+# globs: applications/**/**/*.tex, templates/**/*.tex
+alwaysApply: false
 ---
 
 # Resume Writing Agent
