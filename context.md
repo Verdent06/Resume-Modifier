@@ -185,8 +185,7 @@ Use this subsection as **ground truth** for bullets, interviews, and system-desi
 | Config / validation | **Pydantic** 2.9, **pydantic-settings** |  |
 | Auth | **authlib**, **python-jose**, **passlib[bcrypt]**, **itsdangerous** | JWT access + refresh; session middleware for OAuth state threading |
 | HTTP client | **httpx** |  |
-| Legacy ASGI on AWS | **`mangum`** imported in `main.py` | **Vestigial** for Lambda era; **inert** on Railway |
-| Optional queue | **`redis`**, **`rq`**, **`core/async_tasks.py`** | Graceful degradation when Redis absent |
+| Task queue | **`redis`**, **`rq`**, **`core/async_tasks.py`** | Graceful degradation when Redis absent |
 
 #### ML / audio stack
 
@@ -321,10 +320,10 @@ These items support reliability and hiring signal but **do not replace** RAG, re
 
 ### WizViz — SpartaHack X
 
-**Date:** February 2025  
+**Date:** February 2025
 **Portfolio / submission (public):** [https://devpost.com/software/wizviz](https://devpost.com/software/wizviz) — hackathon write-up, screenshots, team credits, and **Best Game / Interactive Media** placement for SpartaHack X (see Devpost “Submitted to” and updates).
 
-**Tech stack:** Python, MediaPipe, OpenCV, NumPy, TensorFlow  
+**Tech stack:** Python, MediaPipe, OpenCV, NumPy, TensorFlow
 **Award:** 1st Place, Interactive Media Track — SpartaHack X
 
 **What it is:** A real-time, gesture-controlled game built and demoed at SpartaHack X in 24 hours. Players cast spells and battle an AI opponent using full-body pose movements captured via webcam — no game engine.

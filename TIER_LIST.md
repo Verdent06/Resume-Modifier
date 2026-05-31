@@ -11,7 +11,7 @@
 *Sub-5% acceptance. Strongest brand. Best comp ($55–120+/hr). Apply to all of these regardless — they're lottery tickets, but you want every ticket.*
 
 
-| Company                          | Location                 | Notes                                                                        | Interview Process                                                                         |
+| Company                          | Location                 | Notes                                                                        | Interview Process                               ****                                          |
 | -------------------------------- | ------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | **Google**                       | Mountain View, NYC       | STEP (sophs), SWE (juniors)                                                  | 2–3 rds · Easy–Med · Google Docs (no OA) · No sys design · Bottleneck: host match · ~4–5% |
 | **Meta**                         | Menlo Park, NYC, Seattle | Meta University (sophs); ML/Infra strong                                     | 1–2 rds + OA · Easy–Med · CodeSignal · No sys design · Bottleneck: resume · ~3–5%         |
@@ -22,7 +22,7 @@
 | **OpenAI**                       | San Francisco            | AI frontier; practical eng bar; <0.5% acceptance                             | 4–6 hr loop · Med–Hard · HackerRank · Yes (deep) · Bottleneck: all stages · <0.5%         |
 | **xAI**                          | San Francisco            | Musk AI lab; $200B+ val; Tier 1 Blind                                        | 3–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · <1%                          |
 | **Jane Street**                  | NYC                      | Quant; $25K+/mo; OCaml; brutal math-first bar                                | 4–5 rds · Hard · HackerRank · No (math-heavy) · Bottleneck: tech screen · <1%             |
-| **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                                             | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |
+| **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                                             | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |****
 | **Two Sigma**                    | NYC                      | Quant; strong eng culture; Python/C++                                        | 4–5 rds · Hard · CodeSignal · Yes (systems) · Bottleneck: resume · <1%                    |
 | **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                                    | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
 | **IMC Trading**                  | Chicago, NYC             | Quant; low-latency/algo; C++/Java/Python; $83–121/hr; housing + $25K sign-on | 3–4 rds · Med–Hard · HackerRank · No · Bottleneck: OA + tech rounds · ~1–2%               |
