@@ -1,268 +1,321 @@
 ---
-description: Triggered when the user pastes a job listing and asks to build or tailor a resume for a specific role.
+description: Triggered when a job listing is provided and the user wants to build or tailor a resume. Orchestrates parse → persona → dispatch → loop → persist. Owns no domain logic, only coordination.
 globs:
 alwaysApply: false
 ---
 
-# Resume Application Pipeline
+# Resume Application Pipeline (Orchestrator)
 
-You are the orchestrator. You do not write resume content directly — you delegate to `@resume-writing` and `@resume-grading` and manage the file system. Execute every step in order. Do not skip steps. Do not summarize steps you haven't done yet.
-
----
-
-## Agent Mode: One Todo per Step
-
-When running this pipeline in Cursor agent mode, **create one todo per pipeline step**. Do not batch multiple steps into a single todo (e.g. do not use "Step 1–2: Parse JD and create company folder"). Each step below is its own todo:
-
-1. **Step 1** — Parse the Job Description  
-2. **Step 2** — Create Company Folder and company.md  
-3. **Step 3** — Copy Template to Position Folder (and fix documentclass path)  
-4. **Step 4** — Create job.md  
-5. **Step 5** — Initial Write Pass  
-6. **Step 6** — Recursive Grade → Write Loop (until exit conditions or 7 iterations)  
-7. **After loop** — Skills line fit, page fit, write grade.md  
-8. **Step 7** — Final Output to User  
-9. **Step 8** — Append to INTERNSHIPS.md  
-
-Create the todo list at the start, then work through one step per todo. Mark each todo complete only when that step is fully done.
+You are the orchestrator. You parse the JD, build the recruiter persona, route data between agents, run the loop, and persist artifacts. You do not write resume content. You do not score resumes. Those are delegated.
 
 ---
 
-## Project Structure Reference
+## Delegations
+
+| Agent | Owns | Reads |
+|---|---|---|
+| `@resume-writing` | All `.tex` edits | `context.md`, `persona.md`, current `.tex`, latest grading report (iteration > 1) |
+| `@resume-grading` | All scoring | `persona.md`, current `.tex` |
+
+The orchestrator never duplicates either agent's work and never bypasses them.
+
+---
+
+## File System Authority
+
+| File | Orchestrator | Writer | Grader |
+|---|---|---|---|
+| `context.md` | read | read | **never** |
+| `company.md` | write-once, read | – | – |
+| `persona.md` | write, read | read | read |
+| `Ankur Desai Resume.tex` | read | write | read |
+| `Ankur Desai Resume.pdf` | compile, read | – | read |
+| `grade.md` | write (final only) | – | – |
+| `INTERNSHIPS.md` | append | – | – |
+| `templates/**` | read | **never** | – |
+| `resume.cls` | – | **never** | – |
+
+---
+
+## Concurrency
+
+Independent steps share a tool-call turn. Explicitly parallel pairs:
+
+- Step 2 ‖ Step 4 (both depend only on Step 1)
+- Step 9 ‖ Step 10 (both depend only on the final grade.md write)
+
+All other steps are sequentially dependent.
+
+---
+
+## Project Structure
 
 ```
 resume/
-├── resume.cls                          ← Shared LaTeX class — never duplicate or modify
-├── README.md
-├── context.md                          ← Candidate context for resume-writing (graduation year, personal info)
-│
-├── templates/
-│   ├── full-stack/
-│   │   ├── Ankur Desai Resume.tex      ← Template for product/full-stack SWE roles
-│   │   └── Ankur Desai Resume.pdf
-│   ├── ai-ml/
-│   │   ├── Ankur Desai Resume.tex      ← Template for ML/AI engineering roles
-│   │   └── Ankur Desai Resume.pdf
-│   └── dev-ops/
-│       ├── Ankur Desai Resume.tex      ← Template for DevOps/infra-focused roles
-│       └── Ankur Desai Resume.pdf
-│
+├── resume.cls
+├── context.md                                    ← Candidate state. Read-only for everyone.
+├── templates/{full-stack,ai-ml,dev-ops}/         ← Track defaults. Read-only.
 └── applications/
-    ├── INTERNSHIPS.md                  ← Application history — read by grading agent
+    ├── INTERNSHIPS.md
     └── {company_slug}/
-        ├── company.md
+        ├── company.md                            ← Write-once per company.
         └── {position_slug}/
-            ├── job.md
-            ├── grade.md                ← Final grading report only (written after loop exits; iteration reports stay in chat)
-            ├── Ankur Desai Resume.tex  ← Working copy — the only file you edit
-            └── Ankur Desai Resume.pdf  ← Compiled output — check for one-page constraint
+            ├── persona.md                        ← Built per role.
+            ├── grade.md                          ← Final grading report only.
+            ├── Ankur Desai Resume.tex            ← Working copy.
+            └── Ankur Desai Resume.pdf            ← Compiled output.
 ```
 
 ---
 
-## Step 1 — Parse the Job Description
+## Agent Mode: One Todo Per Step
 
-Read the full job listing the user provided. Extract and record:
-
-- **Company name** — official, properly cased
-- **Role title** — properly cased
-- **company_slug** — lowercase, hyphens only (e.g. `amazon`)
-- **position_slug** — lowercase, hyphens only (e.g. `software-development-intern`)
-- **Work type** — Internship / Co-op / Full-time
-- **Location** — include remote/hybrid/onsite signal
-- **Compensation** — exact if listed, else null
-- **Core responsibilities** — max 6, one sentence each, your words not the JD's
-- **Required skills** — exact phrases from the JD
-- **Preferred skills** — exact phrases from the JD
-- **ATS keywords** — 15-20 exact terms an ATS scanner would match, pulled from responsibilities, qualifications, and team descriptions sections
-- **Template decision** — `full-stack` | `ai-ml` | `dev-ops`
-
-**Template selection logic:**
-- `ai-ml` → role explicitly requires ML frameworks, model training, inference, or data pipelines
-- `dev-ops` → role explicitly requires CI/CD, containerization, cloud infra, SRE, or observability
-- `full-stack` → everything else, and when in doubt
+Create one todo per step listed below. Do not batch.
 
 ---
 
-## Step 2 — Create Company Folder and company.md
+## Step 1 — Parse JD
 
-Check if `resume/applications/{company_slug}/` exists.
+**In:** Raw JD text from user.
 
-**If it does not exist**, create it. Then create `resume/applications/{company_slug}/company.md` using this exact structure:
+**Action:** Extract structured facts. Decide which track applies.
+
+**Out (state object):**
+```
+{
+  company_name:           str (official casing)
+  role_title:             str (official casing)
+  company_slug:           str (lowercase, hyphens)
+  position_slug:          str (lowercase, hyphens)
+  work_type:              "Internship" | "Co-op" | "Full-time"
+  location:               str (include remote/hybrid/onsite)
+  compensation:           str | null
+  core_responsibilities:  list[str]  (max 6)
+  required_skills:        list[str]  (exact JD phrases)
+  preferred_skills:       list[str]  (exact JD phrases)
+  ats_keywords:           list[str]  (15-20 exact terms)
+  track_decision:         "full-stack" | "ai-ml" | "dev-ops"
+}
+```
+
+**Track decision logic:**
+- `ai-ml` → JD explicitly requires ML frameworks, model training, inference, or data pipelines
+- `dev-ops` → JD explicitly requires CI/CD, containerization, cloud infra, SRE, or observability
+- `full-stack` → default for everything else
+
+---
+
+## Step 2 — Resolve company.md  *(parallel with Step 4)*
+
+**In:** `company_name`, `company_slug`.
+
+**Action:** Check `resume/applications/{company_slug}/company.md`. If absent, create the folder and write `company.md` from the template below. If present, read it.
+
+**Out:** `company.md` contents (in-memory).
+
+**Template (only used when creating):**
 
 ```markdown
-# {Company Name}
+# {company_name}
 
 ## What They Do
-{2-3 sentences: core product or service, scale, market position. Be specific — not "they build software," but what software and for whom.}
+{2-3 sentences. Core product, scale, market position. Specific.}
 
 ## Why This Company
-{3-5 sentences written in first person from the candidate's perspective. Use context.md for the candidate's interests and background. Directly answers "What do you want to do at {Company}?" Connect the company's specific technical work to the candidate's interests. Do not write generic enthusiasm — name a specific product, team, or technical challenge.}
+{3-5 sentences, first person from candidate perspective. Name a specific technical hook from this company's actual work. Reference context.md for candidate interests if helpful.}
 
 ## Engineering Culture
-{What is this company known for technically? Stack, scale challenges, engineering blog themes, notable open-source work, famous systems they've built. Use web search if needed for accuracy.}
+{Stack, scale, engineering blog themes, OSS, famous systems they built.}
 
 ## Relevant Teams / Orgs
-{If the JD mentions a specific team or org, describe it and its technical scope. Otherwise, list 1-2 teams that align most with the candidate's background (from context.md).}
+{If JD names a team, describe it. Otherwise 1-2 teams aligned with candidate background.}
 ```
 
-**If the folder already exists**, read `resume/applications/{company_slug}/company.md` — do not overwrite it. Use it as context for later steps.
+**Constraint:** `company.md` is write-once. Never overwrite.
 
 ---
 
-## Step 3 — Copy Template Folder to Position Folder
+## Step 3 — Construct persona.md
 
-Create `resume/applications/{company_slug}/{position_slug}/`.
+**In:** Step 1 state object, `company.md` contents, `TIER_LIST.md` (if present, for tier signal).
 
-Copy the entire contents of `resume/templates/{template_decision}/` into this folder. This is now the **working copy**. Template originals are never touched again.
+**Action:** Write `resume/applications/{company_slug}/{position_slug}/persona.md`. This is the single source of truth for both writer and grader on this role.
 
-**Fix the resume class path:** The template's `.tex` uses `../../resume` (two levels up from `templates/{template}/`). From `applications/{company_slug}/{position_slug}/` the class is three levels up. In the copied `Ankur Desai Resume.tex`, update the `\documentclass` path from `../../resume` to `../../../resume` so the LaTeX compiles correctly.
+**Out:** `persona.md` on disk.
 
----
-
-## Step 4 — Create job.md
-
-Create `resume/applications/{company_slug}/{position_slug}/job.md`:
+**Template:**
 
 ```markdown
-# {Role Title} — {Company Name}
+# {role_title} — {company_name}
 
 ## Quick Facts
-- **Type:** {work type}
-- **Location:** {location + remote/hybrid/onsite}
-- **Compensation:** {exact amount or "Not listed"}
-- **Template Used:** {full-stack | ai-ml | dev-ops}
+- **Type:** {work_type}
+- **Location:** {location}
+- **Compensation:** {compensation or "Not listed"}
+- **Track:** {track_decision}
+- **Company Tier:** {S/A/B/C from TIER_LIST.md, or "Unrated"}
 
-## ATS Keywords
-{comma-separated list of all 15-20 keywords identified in Step 1}
+## Recruiter Persona
+{4-6 sentences in first person as the hiring manager for this specific team. State:
+- Who you are (team, function, hiring bar at this company)
+- What you value technically for this role
+- What a strong intern profile looks like at your team
+- The 3 things that would make you pass this resume forward
+- The 3 things that would no-pile it immediately
+Make it sharp and team-specific. Avoid generic FAANG-speak.}
 
 ## Role Summary
-{3-4 sentences synthesizing what this role does day-to-day. Go beyond the JD — use knowledge of the company to add real context about what the team works on, what success looks like at 3 months.}
+{3-4 sentences. Day-to-day reality. What success at 3 months looks like.}
 
 ## What They're Really Looking For
-{Not a restatement of the JD. Interpret the subtext. "Strong CS fundamentals" at Google means something specific. "Comfortable with ambiguity" signals a team without rigid specs. Write 4-6 interpreted signal bullets.}
+{4-6 interpreted signals. Subtext, not restatement of the JD. Example: "'Strong CS fundamentals' at Google means LeetCode-medium fluency, not coursework."}
 
 ## Required Skills
-{bulleted list, exact JD phrases}
+{exact JD phrases, bulleted}
 
 ## Preferred Skills
-{bulleted list, exact JD phrases}
+{exact JD phrases, bulleted}
 
-## Keyword Map
-| Keyword | In Resume? | Location / Notes |
-|---------|-----------|-----------------|
-{One row per ATS keyword. Fill In Resume? as Y or N. Notes: which bullet or section, or what would need to change to add it.}
+## ATS Keywords
+{comma-separated list of 15-20 keywords the writer targets in bullets}
 
-## Gaps
-{Honest list of things the JD requires that the current resume doesn't cover. Be specific: not "lacks cloud experience" but "no mention of Kubernetes, which appears 3 times in JD responsibilities."}
+## Gaps (honest)
+{Specific candidate-vs-JD mismatches. Example: "JD requires 3 mentions of Kubernetes; candidate has it in Skills only, no production bullet. Acceptable in Skills line."}
 ```
+
+---
+
+## Step 4 — Copy Track Default  *(parallel with Step 2)*
+
+**In:** `track_decision`, `company_slug`, `position_slug`.
+
+**Action:** Create `resume/applications/{company_slug}/{position_slug}/`. Copy `resume/templates/{track_decision}/Ankur Desai Resume.tex` into it. Fix `\documentclass` path from `../../resume` to `../../../resume`.
+
+**Out:** Working `.tex` in position folder.
 
 ---
 
 ## Step 5 — Initial Write Pass
 
-Call `@resume-writing` with this exact instruction:
+**In:** `persona.md` path, working `.tex` path.
 
-> Read `resume/applications/{company_slug}/{position_slug}/job.md`, and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Apply the full tailoring priority order from the writing rules. Focus first on tech swaps and ATS keyword injection. Do not change any existing metrics. Produce the edited .tex file. This is iteration 1.
+**Action:** Dispatch `@resume-writing`:
 
-`@resume-writing` edits the working `.tex` file in place.
+> Iteration 1. Resume working copy: `{tex_path}`. Persona: `{persona_path}`. Run your first-pass workflow.
 
----
-
-## Step 6 — Recursive Grade → Write Loop
-
-After each write pass, call `@resume-grading` with this exact instruction:
-
-> Read `resume/applications/{company_slug}/{position_slug}/job.md`, `resume/applications/{company_slug}/company.md`, `resume/applications/INTERNSHIPS.md` (if exists), and the current `resume/applications/{company_slug}/{position_slug}/Ankur Desai Resume.tex`. Produce the full grading report.
-
-- **Do not write** `grade-iteration-1.md`, `grade-iteration-2.md`, or any intermediate grading files. Grading reports exist in the chat only so the next write pass can use them.
-
-**You (the pipeline) decide whether to loop again** by reading the grading report. Exit the loop only when **all** of the following are true:
-1. **Overall grade is A** (B+ is not enough)
-2. **ATS coverage is 90%+** of required keywords present in bullets (from the grader's dimension score and count)
-3. **Every entry hook is graded A or B** (no C or below on any first bullet)
-4. **No dimension score below B** (Hook Quality, ATS Coverage, Metric Density, Tech Justification, Role Relevance, Narrative Coherence all B or higher)
-
-If the report does not satisfy all four: call `@resume-writing` again with:
-
-> Read the grading report just produced, and the current `.tex`. Fix exactly and only what the grader flagged as Priority 1 and Priority 2 changes. Do not make changes the grader did not request. This is iteration {n}.
-
-Then grade again. Repeat until all four exit conditions are met **or** you have completed **7** write/grade iterations. If 7 iterations are done and the conditions are still not met: exit anyway, output the best version reached, and flag remaining gaps in the user summary.
-
-**After exiting the loop:**
-
-1. Compile the `.tex` to PDF.
-
-2. **Skills line fit (before page fit):** Check the compiled PDF. If the Skills section wraps onto a new line, instruct `@resume-writing` to fix it: shorten skill names, use standard abbreviations, or split into two logical lines that each fit on one line. Recompile. Repeat until no skills line wraps. This does not count as an iteration. (Fixing skills wrap first keeps the skills block from affecting page length.)
-
-3. **Page fit:** Check whether the resume fits one page well (no overflow, no noticeable underfill). If it overflows or is underfilled, instruct `@resume-writing` to fix: **prefer refactoring** (tighten wording, shorten phrases across multiple bullets, trim a few words from several lines); cut an entire bullet only when refactoring is insufficient. If underfilled, suggest adding impact or a bullet where it strengthens the resume. Recompile. Repeat until the resume fits one page well. This does not count as an iteration.
-
-4. Re-call `@resume-grading` with the final `.tex` and the compiled PDF so the report includes Skills Line Fit and Page Fit. Write that **final** grading report to `applications/{company_slug}/{position_slug}/grade.md`. This is the only grading file the user sees on disk.
+**Out:** Updated `.tex` in place. Writer may emit a one-line chat summary of edits made.
 
 ---
 
-## Step 7 — Final Output to User
+## Step 6 — Write/Grade Loop
 
-After the loop exits, output this summary to the user:
+**Iteration cap:** 3.
+**Exit threshold:** overall grade ≥ 8.25.
+
+**Loop:**
+
+1. Dispatch `@resume-grading`:
+   > Resume: `{tex_path}`. Persona: `{persona_path}`. Produce report.
+2. Capture overall grade from report. Do **not** persist the report to disk.
+3. **If** grade ≥ 8.25 or iteration count = 3 → exit loop.
+4. **Else** dispatch `@resume-writing`:
+   > Iteration {n}. Resume working copy: `{tex_path}`. Persona: `{persona_path}`. Latest grading report attached below. Address resolvable gaps within rails.
+   >
+   > {full text of latest grading report}
+
+   Increment iteration count. Return to step 1.
+
+**Out:** Final `.tex` and the latest grading report (in chat memory).
+
+---
+
+## Step 7 — Fit Checks (post-loop, non-counted)
+
+**In:** Final `.tex`.
+
+**Action:**
+
+1. Compile `.tex` → PDF via `xelatex "Ankur Desai Resume.tex"` from the position folder.
+2. **Skills line fit:** If any skills bucket line wraps, dispatch `@resume-writing`:
+   > Skills line wrapping. Trim items in the wrapping bucket per JD relevance in persona.md. Do not add or remove buckets.
+
+   Recompile. Repeat until no wrap.
+3. **Page fit:** If overflow, dispatch:
+   > Page overflow. Drop one bullet from the weakest project entry.
+
+   If underfill, dispatch:
+   > Page underfill. Add one bullet from a strong entry's pool.
+
+   Recompile. Repeat until one-page fit.
+
+**Out:** Compiled, well-fitted PDF.
+
+---
+
+## Step 8 — Final grade.md
+
+**In:** Final `.tex`, `persona.md`.
+
+**Action:** Dispatch `@resume-grading` one last time on the shipped version. Persist that report to `resume/applications/{company_slug}/{position_slug}/grade.md`.
+
+**Out:** `grade.md` on disk.
+
+---
+
+## Step 9 — User Summary  *(parallel with Step 10)*
+
+**Action:** Output the summary block below to the user.
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 APPLICATION SESSION READY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Company:    {Company Name}
-Role:       {Role Title}
+Company:    {company_name}
+Role:       {role_title}
 Folder:     resume/applications/{company_slug}/{position_slug}/
-Template:   {full-stack | ai-ml | dev-ops}
-Iterations: {n} write/grade passes completed
+Track:      {track_decision}
+Iterations: {n} / 3
 
 FINAL GRADE
 ────────────
-Overall:           {A/B/C/D}
-ATS Coverage:      {n}/{total} keywords in bullets
-Hook Quality:      {A/B/C/D}
-Narrative:         {A/B/C/D}
-Skills Line Fit:   {A/B/C/D}
-Page Fit:          {A/B/C/D}
+Overall:    {N.N / 10.0}
+Threshold:  8.25
+Status:     {Above threshold | Below threshold — capped at iteration limit}
 
-TOP 3 CHANGES MADE
-────────────────────
-1. {change} → targets: {JD requirement}
-2. {change} → targets: {JD requirement}
-3. {change} → targets: {JD requirement}
+TOP GAPS THE GRADER FLAGGED
+──────────────────────────────
+{Condensed "What Is Wrong" list from final grade.md, 3-5 lines}
 
-REMAINING GAPS (if any)
-────────────────────────
-{List anything the grader flagged that couldn't be resolved before hitting the iteration cap}
+WHAT THE WRITER COULD NOT CLOSE
+──────────────────────────────────
+{Any items the writer flagged as out-of-rails during the loop. If none: "Writer closed all addressable gaps."}
 
 LIKELIHOOD ESTIMATE
-────────────────────
-Resume Screen:   {Low / Medium / High} — {1 sentence}
-Overall Odds:    {Low / Medium / High} — {2 sentences}
-What moves the needle: {1-2 non-resume actions — referral, OA prep, GitHub, etc.}
+─────────────────────
+Resume Screen:  {Low / Medium / High} — {1 sentence}
+Overall Odds:   {Low / Medium / High} — {2 sentences}
+Outside-Resume Levers: {1-2 actions}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Ask me anything: interview prep, behavioral questions, cover letter, or application strategy for this role.
 ```
 
 ---
 
-## Step 8 — Append to INTERNSHIPS.md
+## Step 10 — INTERNSHIPS.md Append  *(parallel with Step 9)*
 
-Append a new row to `resume/applications/INTERNSHIPS.md`:
+**Action:** Append to `resume/applications/INTERNSHIPS.md`:
 
 ```
-| {Company} | {Role} | {YYYY-MM-DD} | Applied | {template} | |
+| {company_name} | {role_title} | {YYYY-MM-DD today} | Applied | {track_decision} | |
 ```
-
-Update the total applied count in the summary stats section.
 
 ---
 
-## Hard Constraints
+## Orchestrator Constraints
 
-- **Never edit** `resume/templates/full-stack/`, `resume/templates/ai-ml/`, or `resume/templates/dev-ops/` — those are templates
-- **Never invent** experience entries or company names
-- **Never add** a new `\begin{rSection}` to the resume
-- **Never shrink** font size or margins to fit one page — cut content instead
-- **`company.md`** is written once per company and never overwritten
-- **`@resume-writing`** owns all `.tex` edits — the pipeline never edits resume content directly
-- **`@resume-grading`** owns all scoring — the pipeline never self-grades
+- Never edit `.tex` content. Always delegate to the writer.
+- Never compute a grade. Always delegate to the grader.
+- Never pass `context.md` to the grader. The grader is blind to the bullet pool by design.
+- Always pass both `context.md` and `persona.md` to the writer.
+- `company.md` is write-once. Never overwrite.
+- Never write intermediate `grade.md` files. Only the final report is persisted.
+- Never edit `context.md`, `resume.cls`, or any file under `templates/`.
