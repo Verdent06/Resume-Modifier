@@ -47,7 +47,7 @@ apply → binary knockout gates → resume screen → online assessment (OA)
 
 These are universal levers; the exact email scripts are reusable patterns, not one-offs.
 
-- **Punting (deadline extension).** When an offer's expiry is too early, the cleanest lever is your university's recruitment policy. Many career centers publish a guideline (e.g. "offers must remain open until a fixed date such as Nov 30"). Cite it politely and ask the company to align your offer with the policy. This is a legitimate, low-friction extension that recruiters honor routinely. Verify MSU's current career-center policy before citing it.
+- **Punting (deadline extension).** When an offer's expiry is too early, the cleanest lever is your university's recruitment policy. Many career centers publish a guideline (e.g. "offers must remain open until a fixed date such as Nov 30"). Cite it politely and ask the company to align your offer with the policy. This is a legitimate, low-friction extension that recruiters honor routinely.
 - **Expediting (process compression).** When you have a competing exploding deadline, tell the *other* companies early and ask if anything can be done to accelerate. A polite, specific note ("I have an exploding deadline on [date], I'm genuinely excited about [company], can we expedite?") frequently moves a process from weeks to days. Recruiters would rather fast-track a motivated candidate than lose them.
 - **The 48-hour exploding offer.** If an offer explodes in 48 hours, decline the timeline, not the offer: state plainly that no responsible decision is possible in 48 hours, that you are mid-process elsewhere, and that you take the commitment seriously. They will not rescind for a polite, reasonable ask.
 
@@ -205,5 +205,4 @@ Hiring is heavily skewed toward CS fundamentals plus first-hand build/sim experi
 - **The volume math is a model, not a measurement.** The `0.99^N` framing is an illustrative argument for applying broadly, not an empirical acceptance rate. Real per-application rates vary enormously by candidate, company, and timing.
 - **No big-tech firm publishes a numeric GPA cutoff.** "3.5" is a market convention, not a Google/Amazon/Meta policy. Reported acceptance rates and cutoffs are estimates.
 - **The AI-screening and regulatory landscape is moving fast.** Adoption statistics and regulation timelines (NYC Local Law 144, Illinois HB 3773, Colorado AI Act, EU AI Act high-risk provisions) are in flux; future-tense adoption figures are forecasts.
-- **University-specific levers must be verified.** Recruitment-policy deadlines and program eligibility change yearly. Confirm MSU's current career-center policy and any program's stated eligibility before relying on them.
 - **Cross-reference:** all resume construction, ATS parsing rules, and bullet/format doctrine live in `resume.md`. This file owns the process; that file owns the document.
