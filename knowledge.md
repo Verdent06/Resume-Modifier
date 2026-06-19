@@ -1,134 +1,209 @@
-## Intern Recruiting Knowledge
+# The Field & The Recruiting Game
 
-### TL;DR
-- For a 2025-2026 SWE intern, the resume is a *lighter* filter than most students think: the binding gates are binary knockout questions (work authorization, "are you a current student," graduation window) and — for high-volume programs — the auto-graded online coding assessment, NOT a nuanced AI read of your bullet points. The resume's job is to (1) parse cleanly into ATS fields, (2) survive a ~7-second human scan, and (3) supply concrete, specific project/leadership evidence that holds up in interviews.
-- The single highest-leverage formatting move is an unambiguous "Expected Month Year" graduation date plus a clean, single-column, standard-header layout; GPA goes on only if ≥3.5; one to three genuinely engineered projects with a working GitHub link beat any amount of club-membership padding.
-- Across the three delta tracks (DevOps, AI/ML, Robotics), interns are judged on demonstrated *curiosity and fundamentals* — Linux/IaC/scripting tinkering for platform, math foundations + framework familiarity for ML, competition + simulation + C++/Python for robotics — not on production-scale deployment they couldn't plausibly have done yet.
-
----
-
-## THE BASE LAYER (Universal SWE Intern & Full-Stack)
-
-### 1. The Validation Stack: ATS / AI NLP Parsing for Students
-
-**The modern pipeline (2025-2026): three layers, not one.** Before a human sees a student resume, it passes through (1) the classic ATS parser that extracts structured fields, (2) increasingly, an LLM-based semantic screening layer, and (3) at some companies an AI-detection pass that flags synthetic/AI-written resumes. Adoption is near-universal at scale: over 98% of Fortune 500 companies use an ATS, per Jobscan's 2026 ATS guide ("Over 98% of Fortune 500 companies use an ATS to manage the massive volume of digital applications, converting unstructured resumes into searchable databases"), and as of 2026 most large employers have layered LLM screening on top. The legacy advice ("stuff in keywords") is now partially obsolete: modern NLP understands that "Python programming," "Python development," and "Python scripting" are the same competency, and weights contextual relevance (a tool used in a described project) over a bare skills-list mention.
-
-**Graduation dates — the #1 student-specific parsing failure.** The gold-standard format is `Expected May 2027` — the word "Expected" plus an abbreviated or spelled-out month plus a four-digit year, on its own line in the education entry. Concrete parsing behaviors to know:
-- **Always include the month.** A year-only date ("2027") is the single most common student formatting mistake. Parsers cannot tell whether "2027" means January or December; some platforms log an error or default to January 1, distorting the timeline view. "Expected May 2027" parses correctly across all five major ATS platforms (Workday, Greenhouse, iCIMS, Taleo, Lever).
-- **Never leave the date blank or write "TBD."** A missing date can cause the parser to classify an in-progress degree as a *completed* past degree, misrepresenting your status.
-- **Never use a past/already-elapsed graduation year you haven't reached.** "May 2025" on a resume read in 2026 reads as "already graduated," which a background check won't confirm.
-- **Be consistent.** Mixing "May 2027," "Spring 2025," and "2023" forces the parser to guess and introduces misfiling errors.
-- For students/recent grads, the **Education section goes near the top**, directly after the summary/skills — recognized by both recruiters and ATS as the new-grad convention.
-
-**GPA — when to list, thresholds, and filter behavior.**
-- **The 3.5 threshold** is the broadly cited "include it" line; many guides say list GPA if 3.5+ and omit below. Some sources push the bar to 3.7 for maximum competitiveness. For students with a GPA between 3.0 and 3.5 the safe default is to omit unless the posting requests it.
-- **Format as a ratio: `3.7/4.0`** in most guidance, though note one parsing risk: a slash format `3.8/4.0` can be split by some parsers into two numbers and misread the denominator; placing it as `GPA: 3.8` on the same line as (or directly below) the degree, related info kept together, parses most cleanly. Pick one decimal convention and keep it consistent.
-- **Omission as a filter trigger:** if a job description states a minimum GPA, the ATS may use it as a filtering criterion; a missing GPA where one is required, or a GPA below a stated minimum, can cost you. But absent a stated minimum, omitting a sub-3.5 GPA is standard and not penalized.
-- **Big-tech reality:** None of Google, Amazon, Microsoft, or Meta publishes a hard numeric GPA cutoff for interns. Reported "cutoffs" are de facto/competitive, not stated policy. Microsoft's own eligibility page lists no GPA bar. The enforced filters are class standing and the graduation window (below), not GPA.
-
-**Latin honors & coursework.**
-- Latin honors (cum laude, etc.) placed **inline with the degree line** are extracted into the structured education record ~96% of the time vs. ~71% when placed in a standalone honors box or second column (Resume Optimizer Pro parsed 9,200 resumes). Placing the honor on a separate line below the degree breaks the credential linkage in Workday and iCIMS — the single most common Latin-honors parse failure. Use "Expected" before commencement to avoid claiming an unconfirmed honor.
-- From an ATS standpoint, "magna cum laude" and a Dean's List line are *not* standard keyword fields — they help the human reader but do not generate match hits. Keep them for the human.
-- **Relevant Coursework** is appropriate for students with limited work history and provides keyword surface area (e.g., "Data Structures, Algorithms, Machine Learning, Database Systems"), but keep it brief; for experienced candidates it's noise.
-
-**Keyword adjacency & matching.**
-- Include both the acronym and the spelled-out form on first use ("Machine Learning (ML)," "Continuous Integration/Continuous Deployment (CI/CD)") because parsers and JD-matchers don't always equate them.
-- Spell out the full degree name then the abbreviation in parentheses — "Bachelor of Science in Computer Science (B.S.)" — because "B.S." and "BS" are treated as equal by Lever and Greenhouse but differently by Workday and iCIMS; always include periods.
-- Use the **exact tech names from the posting**. Greenhouse keyword search works on exact strings: if the JD says "React Native" and you wrote "React (mobile)," the search may miss you.
-- Mirror the role title: use the literal "Software Engineer Intern" job title rather than vague "Engineering Intern," since titles are weighted in relevance scores and recruiters search the database by title.
-
-**Vendor-specific parsing behavior (Greenhouse / Lever / Workday).**
-- **Greenhouse** is the friendliest: the recruiter's primary view is a render of your *actual uploaded PDF*, with parsed fields as sidebar metadata. So a visually clean, well-organized PDF carries more weight here, and a beautiful-but-parseable resume beats an ugly-but-parser-perfect one. Greenhouse rejections are manual human decisions against a scorecard, not algorithmic auto-rejects. Greenhouse AI (LLM profile summaries) became generally available in late 2025.
-- **Lever** stores the parsed profile and the original file *separately*, and the recruiter acts on the **parsed card first** — so a parse failure in Lever is more consequential than in Greenhouse. Single-column PDFs hit ~94% parse fidelity vs. ~71% for two-column in Lever-style testing.
-- **Workday** forces the extended auto-fill profile flow and is where knockout questions live (below). DOCX often parses more reliably than PDF in stricter parsers (iCIMS, Taleo); single-column always.
-- Universal parser hygiene: name/contact in the document **body**, not the header/footer (parsers often ignore the header XML layer — candidates have applied with "no email" because it lived only in the footer); standard section labels ("Experience," "Education," "Skills" — not "My Journey"); no tables/columns/graphics/skill-bars; text-based PDF or DOCX, never an image. Best commercial parsers top out near 87% field-level accuracy vs. ~96% for humans, so ~1 in 8 fields breaks even on a clean doc.
-
-**The human "scan" for early-career talent.** Ladders Inc.'s 2018 Eye-Tracking Study (updating its 2012 study of 30 recruiters) found that "the average initial screening time for a candidate's resume clocks in at just 7.4 seconds—an improvement on the six-second average screening time found in 2012" (theladders.com / PR Newswire, Nov. 6 2018). Recruiters spend ~80% of that first pass on six elements: name, current title/company, previous title/company, dates, and **education**. For students with little/no work history, education is disproportionately one of those six fixation points — which is *why* the in-progress degree, school, and expected-grad-date must be at the top and instantly legible. The scan follows an F-pattern: top-left quadrant gets the most attention; the bottom-right is nearly invisible on the first pass. If a resume survives, it gets a second 20-90 second pass. Practical student implications: lead with a specific, quantified one-line summary (not a generic objective); put your strongest engineered project and your GitHub link high; a one-page, single-column layout makes limited content look substantial and scannable.
-
-### 2. Internship Credibility Signals
-
-**Institutional prestige & brand logos.** A recognizable school or a brand-name prior internship buys a few extra seconds of attention in the scan, and modern parsers index school names for recruiter search. But for interns specifically, prestige is a tiebreaker, not a gate — there's no published school filter, and the documented hard filters are eligibility/knockouts and (for high-volume roles) the coding assessment.
-
-**Hackathons — how they're actually weighed.** Recruiters favor hackathon experience because it signals hands-on building, teamwork under pressure, and shipping. The decisive factor is **specificity over participation**: a weak entry ("attended TechCrunch Disrupt") versus a strong one ("Led a 4-person team to build a real-time sentiment-analysis tool in 48 hours using Python, Flask, and the GPT-4 API; won 'Best Use of AI' out of 120 teams"). Notably, recruiters value the *troubleshooting/pivot story* even from a failed hackathon — one documented case had an engineering lead rate a "messy GitHub commits + we pivoted from a broken WebSocket to a REST API" narrative above any certificate. Don't attend purely for resume filler; HR professionals say insincere motivation is "very visible."
-
-**Distinguishing GENUINE leadership from club-padding — the core signal.** This is one of the sharpest filters experienced screeners apply. The pattern recruiters reward is **depth in one organization that produced something tangible and enriched a community**, versus breadth of passive memberships:
-- **Padding (liability):** listing 10 clubs, "member of" lines, titles with nothing underneath. Recruiters who run hiring say "no one cares about your clubs" when "in most these clubs you don't actually do anything," and a packed activities list "screams desperation, not dedication." When a recruiter probes a passive listing in an interview, "there's nothing underneath" — the resume becomes a liability.
-- **Genuine systems-building (asset):** the signal is *initiative that built or ran something measurable*. Concrete, recruiter-validated examples: organizing a month-long coding bootcamp for first-years (built curriculum, recruited mentors, tracked participation: 120 enrolled, 80 completed, 15 landed internships); managing club tooling/infrastructure; **transitioning into a teaching/education pipeline role** (CS TA, grader, running a workshop series, mentoring younger members); revamping a process and tracking the delta. The tell is *precise organizational terminology and quantified impact* ("Led a 15-member team," "negotiated a $1,500 budget increase," "designed and led a case-interview training program for 50+ students, +35% placements") plus the ability to "describe every decision you made and why it worked."
-- **The build-target rule for students:** own ONE club/initiative deeply rather than collecting names. CS-relevant student jobs that read as genuine systems work: CS TA/grader, web-services student developer, data-squad, IT student worker — these double as work experience and demonstrate the teaching-pipeline signal.
-
-**Where to place it:** if a leadership role involved real responsibility (managing a team/budget/tooling), put it under "Leadership Experience" or "Relevant Experience," formatted like a job with reverse-chronological dates, action verbs, and quantified results — signaling you treat it as professional development, not a social pastime.
-
-### 3. Core Software Competency for Interns
-
-**The threshold question screeners ask: "Is this tutorial-grade, or genuinely engineered?"** A no-GitHub-link is an immediate disqualifier for competitive internships; you need 2-3 projects on your resume and GitHub, with built-out READMEs and a maintained commit history, especially before your first internship. But the *existence* of projects isn't enough — interviewers probe for architectural literacy.
-
-**Signals that a student has moved beyond class assignments:**
-- **Multi-tenant / SaaS architecture.** Building a genuinely multi-tenant application (each customer/tenant isolated on a single codebase and deployment) is a strong "beyond-tutorial" signal because it forces real engineering decisions: tenant isolation via row-level security (e.g., Postgres RLS policies keyed on `tenant_id`), subdomain routing/middleware, and per-tenant data separation. The modern student stack where this shows up is Next.js + Supabase + Vercel; the difference between cloning a starter template and *understanding* the isolation/security/scaling tradeoffs is exactly what interviewers dig into.
-- **Cloud-native deployment.** Shipping to Vercel/Supabase (or AWS), configuring environment variables, auth (cookie-based/SSR), and a live URL demonstrates you understand the deploy lifecycle, not just `localhost`.
-- **Basic CI/CD.** A GitHub Actions pipeline that runs tests on commit, even a simple one, signals engineering maturity.
-
-**How interviewers detect tutorial-grade vs. real:** they ask you to walk through *why* you made a decision, what broke, and how you debugged it. Generic AI-generated or copied resumes "collapse on screening calls" — when asked "tell me about this bullet point" and the candidate can't provide details, it's obvious the work was generated rather than lived. The defensible project is one where you can narrate trade-offs (why REST over WebSocket, why this caching strategy, what the error-analysis loop was). Quantify impact ("reduced page load 30% via lazy loading," "cut data-processing time 25% with a multi-threaded parser") and describe the engineering, not the assignment.
-
-**The high-volume-role caveat (new for 2025-2026):** for big-tech intern pipelines, the resume project section often matters *after* you clear the auto-graded **online assessment (OA)**. Per amazon.jobs (How We Hire), "The SDE Online Assessment (OA) is the first step in the hiring process for our full-time and internship SDE roles"; Amazon's stated SDE format is "90 minutes to complete two technical questions followed by 20 minutes of Systems Design scenarios and an 8-minute multiple choice Work Style Survey related to our Leadership Principles." Candidate reports reinforce its gating role — per a DEV Community "Amazon Spring 2026 SDE Internship Interview Guide," the OA is "received within 1-2 weeks of applying. This is the stage with the highest elimination rate." Meta has added an asynchronous CodeSignal coding screen as the first technical step: Exponent's 2026 Meta SWE guide lists "Asynchronous technical screen: A coding problem that you can solve asynchronously using CodeSignal," and Hello Interview describes it as a 90-minute proctored CodeSignal test (video/mic on) of one problem in four progressive stages, "a new addition to Meta's process as of 2025" — completed before any meaningful resume/team-match review. **Implication:** for these companies, LeetCode/data-structures fluency is the real gate; the resume's project depth wins the *team-match and interview*, not the initial screen. For startups and mid-size firms on Greenhouse/Lever, the resume and projects carry more of the early weight.
+> **Scope of this file.** This is the authority on *how software engineering hiring actually works*: the funnel, the timeline, where jobs live, how the interview loop is composed, how to network, and how to negotiate. It is organized along two axes that do not overlap: **lifecycle stage** (intern, new grad, experienced) and **industry track** (general SWE, DevOps, AI/ML, robotics).
+>
+> **What does NOT live here.** How to build the resume document (formatting, ATS parsing rules, bullet construction, what a recruiter wants on paper). That is `resume.md`. The two files cross-reference; they do not duplicate. When this file says "a robotics resume needs ROS," it means *that field hires for ROS*; the *how-to-write-the-bullet* is in `resume.md`.
+>
+> **Reliability convention.** Claims are tagged inline where it matters: **[solid]** = official source or peer-reviewed study; **[directional]** = vendor data or aggregated candidate reports, true in shape but not audited; **[forecast]** = projection about a moving target. Default to skepticism on anything not tagged solid. Full sourcing caveats in Part IV.
 
 ---
 
-## THE DELTA LAYER (Domain-specific differences for Interns)
+## PART I — UNIVERSAL RECRUITING MECHANICS
 
-### 4. Delta — DevOps / Platform Intern
+*True across every stage and track. Stage-specific deltas live in Part II; track-specific deltas in Part III.*
 
-The intern bar here is **demonstrated deployment curiosity and fundamentals**, not production SRE experience. Specific evidence recruiters look for:
-- **Linux proficiency** — comfort on the command line, Bash scripting; "Adept at Git, Linux, and configuration management tools" is the entry-level baseline.
-- **Scripting** — Python and Bash are the core intern scripting languages; show a script that automated something real ("improved deployment speed 20% in a class project using Docker").
-- **Basic Infrastructure-as-Code awareness** — Terraform is the dominant keyword; even "contributed to open-source infrastructure-as-code projects" or "provisioned AWS resources with Terraform" at a learning level reads well. Ansible/CloudFormation are secondary.
-- **Containers & CI/CD** — Docker (and a nod to Kubernetes via lightweight k3s/Kind/Minikube), plus a CI/CD pipeline with Jenkins or GitHub Actions.
-- **The homelab signal (genuine initiative).** A documented homelab is increasingly respected: hiring managers report asking about home-lab experience and weighting it — but only if you can "back up the experience claimed with some hard answers." List it under **Projects**, not hobbies, with the action-verb + specific-technology + outcome formula ("Deployed a Kubernetes cluster using k3s, migrating 8 Docker Compose services to enable rolling updates"; "Implemented monitoring with Prometheus and Grafana"). A GitHub repo of Ansible/Docker Compose files makes it real and is a documented interview-conversation starter (one candidate landed a role when a homelab anecdote about learning Kubernetes on Raspberry Pis sealed the offer). Vague "configured a firewall" bullets that "could describe anyone with a Raspberry Pi" do nothing.
-- **Avoid the entry-level trap:** don't list "familiar with Docker" with no demonstrated container orchestration; tie every tool to a problem you solved.
+### 1. The Funnel & The Real Gates
 
-### 5. Delta — AI / ML Intern
+The pipeline for a high-volume engineering role is a sequence of filters, each with its own elimination rate:
 
-For interns, recruiters weight **academic math foundations, framework familiarity, and data-pipeline exposure** over production-scale ML deployment (which they don't expect a student to have done).
-- **Math foundations expected:** linear algebra, calculus, probability, and statistics — these are described as fundamental to ML algorithms (linear algebra for data manipulation, calculus for optimization, probability/statistics for distributions and inference). A strong GPA in these courses or listing them as relevant coursework matters.
-- **Framework familiarity:** PyTorch and TensorFlow are the headline deep-learning frameworks; scikit-learn and Keras for classical ML; NumPy/pandas for data manipulation; Matplotlib/Seaborn for visualization. Python is the lingua franca (with C/C++ valued where speed/embedded matters, since many ML libraries are written in them).
-- **Data pipeline exposure:** demonstrate the end-to-end workflow — data preprocessing/cleaning, feature engineering, model selection, cross-validation, error analysis. Showing you "evaluated 5 modeling approaches using cross-validation" and "conducted error analysis to identify top improvement opportunities" signals you understand the real workflow, not just `model.fit()`.
-- **How interns prove passion beyond coursework:** independent ML projects on GitHub, **Kaggle competitions** (cite a concrete result — "top 5% out of 3,000 teams"; even "top 25%" is notable), and any research/publication. A caveat from practitioners: Kaggle rank is third-party validation that catches ML-recruiter attention, but is not universally understood by every recruiter and complements rather than replaces communication and fundamentals.
-- **Production-scale ML / MLOps** (deploying models to production, big-data tooling like Spark/Hadoop) is a *bonus* for interns and a *requirement* for full-time — the inversion is the key delta. For an intern, "built and trained a CNN that improved image-classification accuracy 15% in a research project" is exactly right; you don't need to have served it at scale.
+```
+apply → binary knockout gates → resume screen → online assessment (OA)
+      → technical phone screen → onsite/virtual loop → team match → offer → negotiation
+```
 
-### 6. Delta — Robotics & Autonomy Intern
+**The binding gates are not the resume.** Most students over-index on resume polish and under-index on the two filters that actually eliminate them:
 
-Recruiters here weight **first-hand robotics build experience, simulation exposure, and the C++/Python + hardware-software boundary understanding** at the student level.
-- **Competition experience is gold.** FIRST Robotics Competition (FRC/FTC) is a recognized, sponsor-valued pipeline (Qualcomm and others explicitly recruit FIRST alumni). Frame it with technical specifics and impact: "Led a team of 8 to design, build, and program a competitive robot in C++ and Java, advanced to the FIRST World Championship." Mentoring younger teams / running outreach reads as the genuine teaching-pipeline leadership signal.
-- **Simulation platform exposure:** ROS / ROS2 and Gazebo are the headline frameworks; also Webots, PyBullet, MATLAB/Simulink. "Built a robot simulation environment in Gazebo" or "created simulation environments using Gazebo and PyBullet that accelerated testing" demonstrates you can plan/test before hardware — a maturity signal.
-- **Language expectations:** C++ and Python are the core; MATLAB common in controls/academic contexts. Recruiters scan for exact matches to the posting (ROS, C++, Python). The demand is heavily skewed toward CS fundamentals: The Construct's analysis of ~2,000 U.S. robotics-software-engineer LinkedIn openings (Nov. 2024) found "96% of employers preferred candidates with computer science expertise," with C++ and Python dominant; CareersInRobotics' January 2026 study of 2,724 robotics postings found ROS/ROS2 "nearly universal for anything beyond pure research positions."
-- **Hardware/software boundary understanding:** show you grasp where software meets the physical system — experience with microcontrollers (Arduino), sensors (IMUs, cameras, LiDAR, GPS), actuators, and concepts like kinematics/dynamics, basic control, sensor fusion, and SLAM. A representative intern JD: "Basic understanding of ROS/ROS2; Python and/or C++; understanding of kinematics, dynamics, and basic control concepts; familiarity with Linux; experience with Gazebo; exposure to SLAM, localisation, or navigation; Git." Quantify ("developed robotic arm control software in C++ to optimize picking speed 20%"; "created a SLAM algorithm that reduced mapping error 15%").
-- **Strongly encouraged:** a portfolio/website and a GitHub for robotics roles, since hands-on proof matters more than a skills list.
+- **Binary knockout questions** run before any human or model reads a word: work authorization / visa sponsorship, "are you a current student," and the graduation window. These are auto-reject and absolute. Know your exact status and answer honestly. International students should target programs that do not filter on sponsorship and confirm "returning to school after the internship" eligibility (Microsoft states this explicitly). **[solid]**
+- **The online assessment (OA)** is the highest-elimination stage for big-tech high-volume pipelines. Per amazon.jobs (How We Hire), the SDE Online Assessment is the first step for full-time and internship SDE roles; the stated format is ~90 minutes for two coding questions, a systems-design scenario block, and a Work Style Survey tied to Leadership Principles. Candidate reports consistently describe the OA as the stage with the highest elimination rate. **[solid for existence/format, directional for elimination rate]**
+- Meta has moved an asynchronous CodeSignal coding screen to the front: a ~90-minute proctored single-problem test in progressive stages, completed *before* meaningful resume or team-match review (new as of 2025). **[directional]**
+
+**Implication:** for Amazon/Meta-class pipelines, LeetCode and data-structures fluency is the real first filter. The resume's depth wins the *team-match and interview*, not the screen. For startups and mid-size firms on Greenhouse/Lever, a human reads the PDF early, so the resume carries more of the front-end weight. **The single most important strategic fact for Ankur: OA is the gate. Treat it as the real filter, not the resume.**
+
+### 2. The Volume & Timing Game
+
+**Volume is a probability machine.** Take a brutal acceptance rate of 1% per application. The chance of zero offers after N applications is `0.99^N`. After 300 applications that is `0.99^300 ≈ 4.9%`, i.e. ~95% odds of at least one offer; after 500 it is `~0.66%`. You do not get an offer by being the perfect candidate at one company; you get it by being a good candidate at enough companies that the math turns in your favor. **The sweet spot cited by practitioners is ~300 applications.** **[directional — illustrative model, not measured rates]**
+
+**Apply early. This is non-negotiable and it is where most students lose.** Three independent reasons:
+
+1. **Apps close fast.** Many high-value reqs open in a window and fill within days to a couple of weeks. A late application is often a closed application regardless of fit.
+2. **The early applicant pool is smaller.** Same req, far fewer competitors in the first wave.
+3. **Interviews harden later.** The first wave gets the easier loops and the open headcount; by the second wave (roughly Nov→Jan for the summer cycle) interviews get materially harder and slots are scarcer.
+
+**Operationalize it:** applications are rolling, so treat applying as a continuous process with a daily target (e.g. 5 companies/day → ~150/month). Apply until you have an offer in hand, ideally before November. Fill only the required fields; skip optional address/self-ID/etc. unless required, to keep volume high.
+
+**Lining up timelines.** The goal is to have multiple offers live *at the same time*, because simultaneous offers are the only real negotiation leverage (Part I §7). When an early offer threatens to expire before others land, you "punt" it (extend the deadline) and "expedite" the others (compress their timeline). Done right, three offers converge in the same window and you negotiate them against each other. Done wrong, they arrive sequentially and each expires before the next lands, leaving you with zero leverage.
+
+### 3. Process-Level Leverage Tactics
+
+These are universal levers; the exact email scripts are reusable patterns, not one-offs.
+
+- **Punting (deadline extension).** When an offer's expiry is too early, the cleanest lever is your university's recruitment policy. Many career centers publish a guideline (e.g. "offers must remain open until a fixed date such as Nov 30"). Cite it politely and ask the company to align your offer with the policy. This is a legitimate, low-friction extension that recruiters honor routinely. Verify MSU's current career-center policy before citing it.
+- **Expediting (process compression).** When you have a competing exploding deadline, tell the *other* companies early and ask if anything can be done to accelerate. A polite, specific note ("I have an exploding deadline on [date], I'm genuinely excited about [company], can we expedite?") frequently moves a process from weeks to days. Recruiters would rather fast-track a motivated candidate than lose them.
+- **The 48-hour exploding offer.** If an offer explodes in 48 hours, decline the timeline, not the offer: state plainly that no responsible decision is possible in 48 hours, that you are mid-process elsewhere, and that you take the commitment seriously. They will not rescind for a polite, reasonable ask.
+
+### 4. Networking & Referrals
+
+**Referrals multiply interview odds.** A referral does not guarantee an interview, but it moves your application from the cold pile to a warm read and is the single highest-leverage non-technical action. Build a referral spreadsheet early and work it deliberately.
+
+**Order of who can actually get you an offer** (network up this ladder, not down):
+
+```
+Hiring Manager  >  Recruiter  >  Engineer  >  Cold Apply
+```
+
+The hiring manager has the most power; an engineer's referral is useful but weaker than a recruiter relationship, which is weaker than HM attention.
+
+**Networking is a two-way street, and people see through transactional outreach instantly.** Reaching out only when you need something leaves a bad impression of you and everything you represent. Genuine relationships mean following up, caring how people are doing, offering your hand when you can, and thanking people when something good happens. This is not a soft nicety; it is the mechanism. Real relationships produce opportunities cold outreach cannot.
+
+**Mechanics** (the detailed outreach scripts live in your outreach playbooks):
+- Warm intros first: prior interns, school alumni at the company, community connections.
+- Cold email works when it is specific and non-robotic: who you are, a real reason you care about *this* company, one or two genuine accomplishments, no portfolio dump, no ask in the first message for cold contacts.
+- Post-conversation: follow up within 24 hours, attach your resume, ask if anything should change before they submit the referral.
+- For sourcing contacts: LinkedIn to find the person, an email-finder tool to reach them; this can be partly automated.
+
+### 5. Where Opportunities Live
+
+| Channel | Funnel shape | How to source |
+|---|---|---|
+| **Big tech (FAANG/MANGO)** | Workday/Greenhouse + OA-gated; resume matters post-OA | Company career pages, internal referrals, aggregators |
+| **Startups** | Greenhouse/Lever; a human reads your PDF early; founder-direct works | VC portfolio company pages (YC, a16z, Sequoia, etc.), LinkedIn/X, founder DMs, VC fellowships (Neo, Contrary) |
+| **Quant / HFT** | Earliest cycle, highest bar; CP + math heavy | Firm sites, trading competitions, early-engagement programs |
+| **Mid-size / non-tech-tech** | Often resume-first, less OA gauntlet | Aggregators, LinkedIn, career fairs |
+
+**Sourcing tools and lists:** Simplify (autofill + tracking), levels.fyi/internships (comp + listings), community-maintained internship GitHub lists, and VC portfolio pages for startups. Career fairs convert well if worked correctly: arrive before booths set up or right as they tear down, go in with a ranked target list, and do not leave a booth without the recruiter's email and notes written on your resume.
+
+### 6. The Interview Loop by Type
+
+Four interview types recur. Which appear, and in what weight, depends on company and level.
+
+- **Coding / DS&A.** The dominant filter. Pattern-based: arrays/strings (two pointers, sliding window), hashing, linked lists, stacks/queues, trees, graphs (BFS/DFS, topological sort), recursion/backtracking, dynamic programming, heaps/intervals. The bar at top firms: comfortably *solve* a LeetCode medium in under ~20 minutes, where solve = understand + code + test. Prep is pattern-first (Grokking/NeetCode/Blind 75), with deliberate timed practice and a running doc of every OA/interview question you encounter.
+- **OOP / Low-Level Design (LLD).** "Design a parking lot / elevator / file system / library." Tests class modeling, not distributed systems. Use classes by default; demonstrate inheritance, encapsulation, polymorphism, abstraction; handle edge cases with clean error output; readable naming. Knowledge rarely exceeds intro-OOP plus core data structures.
+- **Systems Design.** Mostly new-grad-plus and experienced; rare for interns beyond a light scenario. Resources: ByteByteGo, the standard system-design primers. Quant firms generally skip this (only infra roles ask).
+- **Behavioral.** A *filter* round, not a differentiator: doing well does not get you hired, but doing badly gets you rejected. It is low-hanging fruit because it is highly preppable. Keep a journal of what you did; map ~10-12 concrete stories to the company's values framework (for Amazon, the Leadership Principles). This is the gate students most often neglect; allocate explicit time to it.
+
+**Mock interviewing is the scrimmage.** You cannot perform in a real loop without reps. Cadence: 2-3/week in the prep season, ~1/week the week before a real interview. Use interviewing.io, Pramp, peers, and engineers. Schedule real interviews and mocks on Tue/Thu/Fri when possible, and keep a post-interview "reflections" doc of questions, approaches, and what to improve.
+
+### 7. Negotiation — The Offer Game
+
+**Why negotiate:** companies open with their lowest viable number assuming you will sign. You are expensive to hire (a single hire can cost a company well into five figures across sourcing, screens, and interviewer time), which is exactly why they will move for a candidate they have already chosen. They will not rescind for a polite, reasonable ask.
+
+**Leverage, in order of strength:**
+
+```
+Competing offers (same industry)  >  Past experience / proven value
+    >  Strong alternatives & stated reasons  >  Personal circumstances
+```
+
+Competing offers in the *same* industry negotiate best (tech vs tech, quant vs quant). It is hard to negotiate quant against tech. Same-geography comparisons are cleanest (Bay vs Bay, NYC vs NYC) because of cost-of-living adjustments.
+
+**Dimensions you can move** (it is never just base): base salary, signing bonus, equity (RSUs/options), end-of-year bonus, relocation, start date, team/tech assignment, promotion velocity. For interns, comp numbers are usually fixed — negotiate anyway for the practice; full-time is genuinely negotiable.
+
+**The rules that matter most:**
+1. Never give the first number. If pushed, deflect to fit; if pushed again, anchor to a market figure rather than your own target.
+2. Never sign until the last day — preserve optionality.
+3. Get everything in writing.
+4. Always keep the door open; be overwhelmingly positive.
+5. Don't be the sole decision-maker (a family/external consult is a legitimate, pressure-relieving frame).
+6. Have a stated reason for every ask; be motivated by more than money; understand what *they* value; stay winnable.
+
+**Common recruiter plays and the counter:** when a recruiter offers an increase *only if you commit to signing*, they are removing your leverage. Acknowledge the gesture, restate that you cannot commit before your real decision date, and ask them to proceed in good faith. The recruiter is your advocate (they get paid when you do); make them like you, and negotiate like you are making dinner plans with a friend, not issuing ultimatums.
 
 ---
 
-## Recommendations (staged, build-target spec)
+## PART II — RECRUITING BY LIFECYCLE STAGE
 
-**Stage 0 — Pass the gates (do first, non-negotiable):**
-1. Answer knockout questions honestly and know your status: the work-authorization/visa-sponsorship question and the "current student / graduation window" question are binary auto-reject gates applied before any human or AI read. International students should target programs that don't filter on sponsorship and confirm "returning to school after the internship" eligibility (Microsoft makes this explicit).
-2. Format the education block for clean parsing: `Expected Month Year`, full degree name + abbreviation, GPA as `GPA: 3.x` only if ≥3.5, Latin honors inline. Single-column, standard headers, contact in the body, PDF (or DOCX for stricter parsers), no tables/graphics.
-3. If targeting high-volume big-tech intern programs (Amazon, Meta, etc.), **train for the online assessment now** — LeetCode/data-structures fluency is the real first filter; the resume mostly matters for team-match afterward.
+### 8. Internship Recruiting
 
-**Stage 1 — Win the ~7-second human scan:**
-4. One page, education at top, a specific quantified summary line, GitHub link high and clickable.
-5. Lead with your single most-engineered project.
+**This is Ankur's current stage.** The defining features:
 
-**Stage 2 — Build the credibility the resume claims:**
-6. Ship 2-3 genuinely engineered projects with working GitHub + READMEs; for full-stack, attempt one multi-tenant/cloud-native app (Next.js + Supabase + Vercel) with real auth and a CI step. Be able to narrate every trade-off.
-7. Go deep in ONE organization and produce something measurable (run a workshop series, manage tooling, TA/teach, organize a bootcamp). Drop passive memberships.
-8. Add the track-specific evidence: DevOps → documented homelab + Terraform/Docker/Bash; ML → math coursework + PyTorch/TensorFlow project + a Kaggle result; Robotics → FRC/competition + ROS/Gazebo + C++/Python, plus a portfolio.
+- **Absurdly early cycle.** For a given summer, the strongest reqs open the prior **Aug–Oct** and quant opens even earlier (June). The first wave closes by ~November; the second wave (Nov–Jan) is harder and thinner. Apply within ~72 hours of a req opening.
+- **OA-gated at scale.** For big tech, the OA is the real gate (Part I §1). The resume mostly determines team-match after you clear it.
+- **Eligibility is a hard gate.** Current-student status and a return-to-school-after-internship expectation are checked; the graduation window must match the program's target class.
+- **Underclassman / early-identity programs** exist specifically for freshmen/sophomores and are resume+essay rather than OA-heavy: Google STEP, Microsoft Explore, Meta University, Uber, IBM, and various diversity-forward programs. These are disproportionately valuable early because they convert.
+- **Return offers are the prize.** A strong internship converts to a return offer, which is the cleanest path to a new-grad seat (see §9). Optimize the internship itself for conversion: communicate return-offer intent to your manager early so they scope a project that can succeed and showcase you.
+- **Prestige is a tiebreaker, not a gate.** No published school filter exists for interns; the documented hard filters are eligibility/knockouts and (for high-volume roles) the OA. School and brand-name prior internships buy a few extra seconds of recruiter attention, nothing more.
 
-**Benchmarks that change the strategy:**
-- GPA <3.0: omit it; lean harder on projects, OA performance, and referrals.
-- No GitHub / no projects: top priority — build two small projects before applying; a missing GitHub is a competitive disqualifier.
-- Targeting startups (Greenhouse/Lever) vs. big-tech (Workday + OA): for startups, invest more in resume/project polish and exact-keyword matching since a human reads your PDF early; for big-tech, invest in OA prep first.
+### 9. New Grad Recruiting
 
-## Caveats
-- **Sourcing quality varies.** Official career pages (Amazon's SDE OA page, Microsoft's eligibility page) and the Ladders/SHRM/IEEE studies are high-reliability. Many parsing-percentage figures (e.g., "94% single-column parse fidelity," "96% inline-honors extraction") come from resume-tool vendors (Resume Optimizer Pro, Jobscan) whose methodology isn't independently audited — treat as directional, not gospel. OA "highest elimination rate" claims are candidate-reported (DEV Community, aggregators), often India-cycle specific.
-- **No big-tech firm publishes a numeric GPA cutoff for interns;** "3.5" is a broad market convention, not a Google/Amazon/Meta policy. Reported acceptance rates and cutoffs are estimates.
-- **The AI-screening landscape is moving fast and is partly speculative.** Adoption stats ("87-88% of companies use AI in recruiting," "by late 2026 ~83% will use AI to review resumes") are projections/survey figures, and regulation (NYC Local Law 144, Illinois HB 3773 effective Jan 2026, Colorado AI Act effective June 2026, EU AI Act high-risk provisions from Aug 2026) is in flux. Where future-tense adoption is cited, treat it as forecast, not established fact.
-- **Google STEP's 2026 format** may have changed/merged per several secondary guides — unconfirmed; verify on the official Google site before relying on it. STEP and the early-career analogs (Microsoft Explore, Meta University) are restricted to first- and second-year students; standard SWE internships target penultimate/final-year students.
-- The "~7-second scan" is a useful heuristic but some talent-acquisition practitioners argue it oversimplifies; resumes that survive the first pass do get a longer second read.
+The first full-time role out of undergrad. A distinct req type ("New Grad" / "University Grad") with its own funnel.
+
+- **Return-offer-first reality.** Most new-grad headcount is filled by converting prior interns. The open-market new-grad funnel competes for the residual seats, which makes it tighter than the intern funnel. The single best new-grad strategy is to have already interned there (or somewhere strong) and convert.
+- **Funnel is similar to intern** (OA → loop) but the bar is a notch higher and prior internship experience now carries real weight on the resume.
+- **Timeline** runs alongside but slightly behind the intern cycle for the same fall; many new-grad reqs open in the fall of the final year.
+- **What changes vs intern:** systems design starts appearing in loops; behavioral expects more substantive ownership stories; the resume leads with internship impact rather than projects/coursework (see `resume.md` Part II).
+
+### 10. Experienced / Lateral Hire Recruiting (1+ years)
+
+Once you have shipped real production work, the game inverts. This is the long-arc target after the first job, not Ankur's near-term cycle, but the structure is worth knowing now because it shapes which early choices compound.
+
+- **The funnel is recruiter- and referral-driven, not OA-gauntlet-driven.** High-volume OA screens largely fall away. The front door is a recruiter reach-out (inbound, often via a strong LinkedIn presence and prior-company brand) or a referral straight to a hiring manager. Cold applications matter far less than at the student stage.
+- **Loops shift toward design and depth.** Systems design becomes central; coding rounds remain but are calibrated to level; behavioral becomes scope-and-impact interrogation ("tell me about a system you owned, what broke, what you decided"). Domain-specific deep dives appear (see Part III tracks).
+- **Leverage is structural.** Your current total compensation is the floor and an anchor; competing offers and a credible willingness to stay put are real leverage in a way a student never has. Negotiation (Part I §7) is fully in play and the dimensions widen (level, scope, team, refreshers, sign-on to offset unvested equity).
+- **Brand and network are the sourcing engine.** Who knows your work, where you worked, and what you shipped drive inbound. This is why the playbook advice to build genuine relationships and a public presence early is not vanity: it is the experienced-hire pipeline forming years in advance.
+- **What this means for choices made now:** pick early roles where you ship measurable, narratable production systems; cultivate the relationships and public footprint that later become inbound; treat compounding skills and reputation as the asset, because at this stage they *are* the funnel.
+
+---
+
+## PART III — INDUSTRY / SPECIALIZATION TRACKS
+
+*Each track is self-contained. General SWE / Full-Stack is the foundation every specialization assumes; the three industry tracks describe how that field hires differently. The matching resume guidance is in `resume.md` Part III.*
+
+### 11. General SWE / Full-Stack — The Foundation
+
+The default track and the baseline the others build on. Hiring here is the funnel described in Part I in its purest form: OA-gated at big tech, resume-and-project-first at startups, DS&A-dominant loops, with LLD and (at higher levels) systems design.
+
+- **What it tests:** general CS fundamentals and the ability to ship a working product end-to-end (frontend, backend, API, data, deploy). No domain specialization assumed.
+- **Where the jobs are:** the broadest market — every tech company, every startup, most non-tech companies with engineering orgs.
+- **Interview flavor:** DS&A coding is the spine; full-stack roles add practical "build/extend a small app or API" rounds at startups. Trade-off fluency (why REST vs WebSocket, why this caching layer) is what separates real from tutorial-grade.
+- **The signal that matters:** one or more genuinely engineered, shippable products you can narrate decision-by-decision.
+
+### 12. DevOps / Platform / Infrastructure
+
+Hiring weights deployment fundamentals and operational maturity over feature-building.
+
+- **Where the jobs are:** platform/infra/SRE teams at scaled companies, plus cloud-heavy startups. Demand is steady and less saturated than general SWE at the student level.
+- **Stack the field hires for:** Linux + Bash, Python scripting, Docker, Kubernetes, a CI/CD system (GitHub Actions/Jenkins), Infrastructure-as-Code (Terraform is the dominant keyword; Ansible/CloudFormation secondary), a cloud (AWS/GCP/Azure), observability (Prometheus/Grafana).
+- **Interview flavor:** DS&A still gates entry, but loops add Linux/networking depth, "debug this broken pipeline/deployment," and scenario questions about reliability, rollback, and on-call. Operational thinking (what breaks, how you'd detect and recover) is the differentiator.
+- **The intern-level bar:** *demonstrated deployment curiosity and fundamentals*, not production SRE experience. A documented homelab is increasingly respected by hiring managers as genuine initiative — but only if you can back the claims with hard answers. Tie every tool to a problem you solved; vague "configured a firewall" reads as anyone-with-a-Raspberry-Pi. **[directional]**
+
+### 13. AI / ML
+
+A split field — research, applied ML, and MLOps are three different hiring profiles — but all weight math foundations and demonstrated framework fluency for early-career candidates.
+
+- **Subfields:** *Research* (publications, novel methods, often grad-school-adjacent); *Applied ML* (ship models into products, the largest hiring bucket); *MLOps/ML platform* (serve and scale models — a *bonus* for interns, a *requirement* for full-time; this inversion is the key delta).
+- **Where the jobs are:** dedicated ML/AI teams at big tech and AI labs, plus a fast-growing GenAI startup layer (RAG, agents, eval/governance).
+- **Stack the field hires for:** Python (lingua franca), PyTorch and TensorFlow (deep learning), scikit-learn/Keras (classical), NumPy/pandas (data), Matplotlib/Seaborn (viz); C/C++ where speed/embedded matters. Math foundations (linear algebra, calculus, probability, statistics) are treated as fundamental and recruiters look for them in coursework/GPA.
+- **Interview flavor:** DS&A coding still gates; loops add ML-specific rounds (model design, data-pipeline reasoning, error analysis, sometimes a take-home or live notebook). Demonstrating the *end-to-end workflow* (preprocessing → feature engineering → model selection → cross-validation → error analysis) signals you understand real ML, not just `model.fit()`.
+- **Third-party validation that catches ML-recruiter attention:** independent GitHub ML projects, a concrete Kaggle result ("top 5% of 3,000 teams"; even "top 25%" is notable), and any research/publication. Kaggle rank is recognized by ML recruiters specifically but not universally understood; it complements, never replaces, fundamentals and communication. **[directional]**
+
+### 14. Robotics / Autonomy
+
+**Ankur's second track.** Hiring is heavily skewed toward CS fundamentals plus first-hand build/sim experience and an understanding of the hardware-software boundary.
+
+- **Where the jobs are:** autonomy/AV companies (Waymo, Tesla, Aurora, Applied Intuition, Zoox, Cruise), drone/robotics firms, and robotics teams inside larger companies. Production roles dominate over pure-research roles.
+- **Stack the field hires for:** C++ and Python are the core (MATLAB common in controls/academia); ROS/ROS2 is near-universal for anything beyond pure research; Gazebo is the headline simulator (also Webots, PyBullet, Isaac); Linux throughout; Git. Concepts: kinematics/dynamics, basic control, sensor fusion, SLAM, localization, navigation, perception. **[solid — multiple 2024–2026 posting studies converge here]**
+- **The CS-fundamentals skew is real:** posting studies find the strong majority of robotics-software employers prefer CS expertise, with C++/Python dominant and ROS/ROS2 nearly universal outside research. Translation: DS&A still gates the loop; robotics depth is what wins it.
+- **Interview flavor:** DS&A coding (often C++-flavored), plus domain rounds on ROS architecture, coordinate frames/transforms, sensor fusion, control basics, and "walk me through a system you built." Simulation exposure (Gazebo/PyBullet) is read as a maturity signal: you can plan and test before hardware.
+- **Competition pedigree is gold and recognized:** FIRST Robotics (FRC/FTC) is a sponsor-valued pipeline (Qualcomm and others recruit FIRST alumni directly). It is a legitimate entry on an autonomy resume, especially before research produces narratable output. **[solid]**
+- **Hands-on proof matters more than a skills list:** a portfolio/site and a robotics GitHub are strongly encouraged for this track specifically.
+
+---
+
+## PART IV — Caveats & Sourcing
+
+- **Source quality varies and is tagged inline.** Official career pages (Amazon SDE OA, Microsoft eligibility) and named studies (Ladders eye-tracking; The Construct and CareersInRobotics posting analyses) are high-reliability. Vendor parsing percentages and OA "highest elimination rate" claims are directional, often candidate-reported and sometimes cycle- or region-specific (India-cycle OA reports, for instance). Treat them as shape-of-the-truth, not gospel.
+- **The volume math is a model, not a measurement.** The `0.99^N` framing is an illustrative argument for applying broadly, not an empirical acceptance rate. Real per-application rates vary enormously by candidate, company, and timing.
+- **No big-tech firm publishes a numeric GPA cutoff.** "3.5" is a market convention, not a Google/Amazon/Meta policy. Reported acceptance rates and cutoffs are estimates.
+- **The AI-screening and regulatory landscape is moving fast.** Adoption statistics and regulation timelines (NYC Local Law 144, Illinois HB 3773, Colorado AI Act, EU AI Act high-risk provisions) are in flux; future-tense adoption figures are forecasts.
+- **University-specific levers must be verified.** Recruitment-policy deadlines and program eligibility change yearly. Confirm MSU's current career-center policy and any program's stated eligibility before relying on them.
+- **Cross-reference:** all resume construction, ATS parsing rules, and bullet/format doctrine live in `resume.md`. This file owns the process; that file owns the document.

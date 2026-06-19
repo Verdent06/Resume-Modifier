@@ -11,7 +11,7 @@
 *Sub-5% acceptance. Strongest brand. Best comp ($55–120+/hr). Apply to all of these regardless — they're lottery tickets, but you want every ticket.*
 
 
-| Company                          | Location                 | Notes                                                                        | Interview Process                               ****                                          |
+| Company                          | Location                 | Notes                                                                        | Interview Process ****                                                                    |
 | -------------------------------- | ------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | **Google**                       | Mountain View, NYC       | STEP (sophs), SWE (juniors)                                                  | 2–3 rds · Easy–Med · Google Docs (no OA) · No sys design · Bottleneck: host match · ~4–5% |
 | **Meta**                         | Menlo Park, NYC, Seattle | Meta University (sophs); ML/Infra strong                                     | 1–2 rds + OA · Easy–Med · CodeSignal · No sys design · Bottleneck: resume · ~3–5%         |
@@ -22,7 +22,7 @@
 | **OpenAI**                       | San Francisco            | AI frontier; practical eng bar; <0.5% acceptance                             | 4–6 hr loop · Med–Hard · HackerRank · Yes (deep) · Bottleneck: all stages · <0.5%         |
 | **xAI**                          | San Francisco            | Musk AI lab; $200B+ val; Tier 1 Blind                                        | 3–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · <1%                          |
 | **Jane Street**                  | NYC                      | Quant; $25K+/mo; OCaml; brutal math-first bar                                | 4–5 rds · Hard · HackerRank · No (math-heavy) · Bottleneck: tech screen · <1%             |
-| **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                                             | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |****
+| **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                                             | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |
 | **Two Sigma**                    | NYC                      | Quant; strong eng culture; Python/C++                                        | 4–5 rds · Hard · CodeSignal · Yes (systems) · Bottleneck: resume · <1%                    |
 | **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                                    | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
 | **IMC Trading**                  | Chicago, NYC             | Quant; low-latency/algo; C++/Java/Python; $83–121/hr; housing + $25K sign-on | 3–4 rds · Med–Hard · HackerRank · No · Bottleneck: OA + tech rounds · ~1–2%               |
@@ -35,32 +35,32 @@
 *Strong brand, excellent comp ($45–70/hr), respected eng culture. Primary targets. Referrals move the needle significantly here for non-target students.*
 
 
-| Company                | Location               | Notes                                                                                                   | Interview Process                                                                                            |
-| ---------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Stripe**             | San Francisco, Seattle | Top fintech eng bar; no OA; best fintech name on a resume                                               | 4–5 rds · Med–Hard · No OA · Yes · Bottleneck: tech rounds · ~2–3%                                           |
-| **Anthropic**          | San Francisco          | AI safety; $183B val; ~1–5% acceptance                                                                  | 4–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · ~1–2%                                           |
-| **Databricks**         | San Francisco          | Data/AI infra; $134B val; IPO imminent; concurrency round is genuinely hard                             | 3–4 rds · Med–Hard · CodeSignal · Yes (single-machine) · Bottleneck: concurrency round · <3%                 |
-| **Amazon**             | Seattle, multiple      | Highest intern volume in Big Tech; OA equalizes non-targets; 30K+ layoffs hurt prestige but brand holds | OA + 1–3 rds · Easy–Med · Amazon custom · No (interns) · Bottleneck: OA · ~1–2% (large class)                |
-| **Palantir**           | NYC, Denver, Palo Alto | Defense/Gov; $60/hr; Karat interviews; Decomposition round is unique — not LC                           | 4 rds · Easy–Med · Karat · Yes (decomp) · Bottleneck: recruiter screen · <2–3%                               |
-| **Anduril Industries** | Costa Mesa, Seattle    | Defense tech; $14B+ val; CNBC #1 Disruptor; C++ for embedded/autonomy                                   | 3 rds · Medium · HackerRank · Yes (practical) · Bottleneck: 4-hr onsite · ~3–5%                              |
-| **Airbnb**             | San Francisco          | Design-forward eng; 85% target-school slots; DP coding is brutal                                        | 4 rds · Med–Hard · CodeSignal · Rare (interns) · Bottleneck: DP coding rounds · ~1–3%                        |
-| **Uber**               | San Francisco, NYC     | Scale systems; $67/hr; unique LLD round for interns                                                     | 3–4 rds · Medium · CodeSignal · Yes (LLD) · Bottleneck: OA/resume · ~1–3%                                    |
-| **Snap**               | Santa Monica, Seattle  | No OA — resume is the only gatekeeper; graph-heavy problems                                             | 2–3 rds · Medium · No OA · No · Bottleneck: resume · <3–5%                                                   |
-| **TikTok**             | San Jose, LA, Seattle, NYC | ByteDance US; rec/infra/ads at massive scale; intern comp ~$45–60/hr by office (Levels.fyi); geopolitical/regulatory overhang | 3–4 rds · Med–Hard · HackerRank / OA · Light (intern) · Bottleneck: resume + LC · ~2–4%                    |
-| **Discord**            | San Francisco          | Real-time systems; TCP chat server phone screen (known in advance, no AI)                               | 3–4 rds · Medium (practical) · None — TCP project · Yes (messaging) · Bottleneck: tiny cohort · Very low     |
-| **Figma**              | San Francisco          | Byteboard replaces OA; reading speed under pressure matters                                             | 3–4 rds · Easy–Med · Byteboard · Rare · Bottleneck: Byteboard reading crunch · Very low                      |
-| **Scale AI**           | San Francisco          | AI infra; $29B val; Meta investment; Tier 1 Blind                                                       | 3–4 rds · Med–Hard · HackerRank · Yes · Bottleneck: tech rounds · <3%                                        |
-| **Cloudflare**         | San Francisco          | Edge/security; 1,111 intern goal 2026; school-blind; Go/Rust valued                                     | 2–4 rds · Practical/Systems · HackerRank/take-home · Yes (pair prog) · Bottleneck: resume (250K+ apps) · <8% |
-| **Datadog**            | NYC                    | Observability; only 2 rounds; project deep-dive is real; Datadog-themed problems                        | 2 rds · Medium · CoderPad · No · Bottleneck: pre-tech screening · Selective                                  |
-| **Snowflake**          | San Mateo              | Data cloud; strong brand in data infra; competitive                                                     | 3–4 rds · Med–Hard · CodeSignal · Light · Bottleneck: tech rounds · ~3–5%                                    |
-| **DoorDash**           | San Francisco          | Logistics; vague problem statements are intentional; brute force penalized                              | 2–3 rds · Med–Hard · HackerRank · No (L4+ only) · Bottleneck: tech onsite · Selective                        |
-| **Plaid**              | San Francisco          | Fintech infra; API design focus; strong brand in the space                                              | 3–4 rds · Medium · CodeSignal · Light · Bottleneck: tech rounds · ~3–5%                                      |
-| **Perplexity AI**      | San Francisco          | AI search; $20B val; explosive growth                                                                   | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <2%                                         |
-| **Ramp**               | NYC                    | AI fintech; $514M raised; fast-growing; strong brand for its size                                       | 3 rds · Medium · CodeSignal · No · Bottleneck: tech rounds · ~3–5%                                           |
-| **Roblox**             | San Mateo              | UGC platform at scale; Lua/C++/real-time; ~$62/hr + ~$10K housing (2025–26, Levels.fyi/careers); still often bucketed as “gaming” | 3–4 rds · Med–Hard · CodeSignal (+ comms) · Light · Bottleneck: OA + tech rounds · ~2–4%                 |
-| **Applied Intuition**  | Sunnyvale              | AV simulation; $6B+ val; C++ heavy; feeds into AV/robotics career                                       | 3–4 rds · Med–Hard · No OA · Yes (AV systems) · Bottleneck: tech rounds · ~3–5%                              |
-| **Waymo**              | Mountain View          | AV; Alphabet lineage; elite eng bar; strongest AV name                                                  | 4 rds · Med–Hard · HackerRank · Yes · Bottleneck: tech rounds · ~3–5%                                        |
-| **Anysphere (Cursor)** | San Francisco          | AI code editor; $20B val; $1B ARR in 24 months; white-hot signal                                        | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <2%                                         |
+| Company                | Location                   | Notes                                                                                                                             | Interview Process                                                                                            |
+| ---------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Stripe**             | San Francisco, Seattle     | Top fintech eng bar; no OA; best fintech name on a resume                                                                         | 4–5 rds · Med–Hard · No OA · Yes · Bottleneck: tech rounds · ~2–3%                                           |
+| **Anthropic**          | San Francisco              | AI safety; $183B val; ~1–5% acceptance                                                                                            | 4–5 rds · Med–Hard · HackerRank · Yes · Bottleneck: resume · ~1–2%                                           |
+| **Databricks**         | San Francisco              | Data/AI infra; $134B val; IPO imminent; concurrency round is genuinely hard                                                       | 3–4 rds · Med–Hard · CodeSignal · Yes (single-machine) · Bottleneck: concurrency round · <3%                 |
+| **Amazon**             | Seattle, multiple          | Highest intern volume in Big Tech; OA equalizes non-targets; 30K+ layoffs hurt prestige but brand holds                           | OA + 1–3 rds · Easy–Med · Amazon custom · No (interns) · Bottleneck: OA · ~1–2% (large class)                |
+| **Palantir**           | NYC, Denver, Palo Alto     | Defense/Gov; $60/hr; Karat interviews; Decomposition round is unique — not LC                                                     | 4 rds · Easy–Med · Karat · Yes (decomp) · Bottleneck: recruiter screen · <2–3%                               |
+| **Anduril Industries** | Costa Mesa, Seattle        | Defense tech; $14B+ val; CNBC #1 Disruptor; C++ for embedded/autonomy                                                             | 3 rds · Medium · HackerRank · Yes (practical) · Bottleneck: 4-hr onsite · ~3–5%                              |
+| **Airbnb**             | San Francisco              | Design-forward eng; 85% target-school slots; DP coding is brutal                                                                  | 4 rds · Med–Hard · CodeSignal · Rare (interns) · Bottleneck: DP coding rounds · ~1–3%                        |
+| **Uber**               | San Francisco, NYC         | Scale systems; $67/hr; unique LLD round for interns                                                                               | 3–4 rds · Medium · CodeSignal · Yes (LLD) · Bottleneck: OA/resume · ~1–3%                                    |
+| **Snap**               | Santa Monica, Seattle      | No OA — resume is the only gatekeeper; graph-heavy problems                                                                       | 2–3 rds · Medium · No OA · No · Bottleneck: resume · <3–5%                                                   |
+| **TikTok**             | San Jose, LA, Seattle, NYC | ByteDance US; rec/infra/ads at massive scale; intern comp ~$45–60/hr by office (Levels.fyi); geopolitical/regulatory overhang     | 3–4 rds · Med–Hard · HackerRank / OA · Light (intern) · Bottleneck: resume + LC · ~2–4%                      |
+| **Discord**            | San Francisco              | Real-time systems; TCP chat server phone screen (known in advance, no AI)                                                         | 3–4 rds · Medium (practical) · None — TCP project · Yes (messaging) · Bottleneck: tiny cohort · Very low     |
+| **Figma**              | San Francisco              | Byteboard replaces OA; reading speed under pressure matters                                                                       | 3–4 rds · Easy–Med · Byteboard · Rare · Bottleneck: Byteboard reading crunch · Very low                      |
+| **Scale AI**           | San Francisco              | AI infra; $29B val; Meta investment; Tier 1 Blind                                                                                 | 3–4 rds · Med–Hard · HackerRank · Yes · Bottleneck: tech rounds · <3%                                        |
+| **Cloudflare**         | San Francisco              | Edge/security; 1,111 intern goal 2026; school-blind; Go/Rust valued                                                               | 2–4 rds · Practical/Systems · HackerRank/take-home · Yes (pair prog) · Bottleneck: resume (250K+ apps) · <8% |
+| **Datadog**            | NYC                        | Observability; only 2 rounds; project deep-dive is real; Datadog-themed problems                                                  | 2 rds · Medium · CoderPad · No · Bottleneck: pre-tech screening · Selective                                  |
+| **Snowflake**          | San Mateo                  | Data cloud; strong brand in data infra; competitive                                                                               | 3–4 rds · Med–Hard · CodeSignal · Light · Bottleneck: tech rounds · ~3–5%                                    |
+| **DoorDash**           | San Francisco              | Logistics; vague problem statements are intentional; brute force penalized                                                        | 2–3 rds · Med–Hard · HackerRank · No (L4+ only) · Bottleneck: tech onsite · Selective                        |
+| **Plaid**              | San Francisco              | Fintech infra; API design focus; strong brand in the space                                                                        | 3–4 rds · Medium · CodeSignal · Light · Bottleneck: tech rounds · ~3–5%                                      |
+| **Perplexity AI**      | San Francisco              | AI search; $20B val; explosive growth                                                                                             | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <2%                                         |
+| **Ramp**               | NYC                        | AI fintech; $514M raised; fast-growing; strong brand for its size                                                                 | 3 rds · Medium · CodeSignal · No · Bottleneck: tech rounds · ~3–5%                                           |
+| **Roblox**             | San Mateo                  | UGC platform at scale; Lua/C++/real-time; ~$62/hr + ~$10K housing (2025–26, Levels.fyi/careers); still often bucketed as “gaming” | 3–4 rds · Med–Hard · CodeSignal (+ comms) · Light · Bottleneck: OA + tech rounds · ~2–4%                     |
+| **Applied Intuition**  | Sunnyvale                  | AV simulation; $6B+ val; C++ heavy; feeds into AV/robotics career                                                                 | 3–4 rds · Med–Hard · No OA · Yes (AV systems) · Bottleneck: tech rounds · ~3–5%                              |
+| **Waymo**              | Mountain View              | AV; Alphabet lineage; elite eng bar; strongest AV name                                                                            | 4 rds · Med–Hard · HackerRank · Yes · Bottleneck: tech rounds · ~3–5%                                        |
+| **Anysphere (Cursor)** | San Francisco              | AI code editor; $20B val; $1B ARR in 24 months; white-hot signal                                                                  | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <2%                                         |
 
 
 ---
@@ -153,7 +153,7 @@
 
 | Company                       | Location                      | Notes                                                                                 | Interview Process                                                                         |
 | ----------------------------- | ----------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Square / Block**            | San Francisco                 | ⚠️ Cutting ~50% of workforce 2026 — was A-tier; now C until stability returns          | 3 rds · Medium · HackerRank · No · Bottleneck: resume · ~5–8%                             |
+| **Square / Block**            | San Francisco                 | ⚠️ Cutting ~50% of workforce 2026 — was A-tier; now C until stability returns         | 3 rds · Medium · HackerRank · No · Bottleneck: resume · ~5–8%                             |
 | **Splunk (Cisco)**            | San Francisco                 | Cisco acquisition 2024; enterprise observability; reduced from B                      | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~8–12%                     |
 | **Lucid Motors**              | Newark, CA                    | EV; interesting eng; limited brand signal for SWE                                     | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~10–15%                       |
 | **Raytheon / RTX**            | Multiple                      | Traditional defense prime; ongoing restructuring; slow pace                           | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                |
@@ -245,40 +245,3 @@
 | WITCH companies (Wipro, Infosys, TCS, Cognizant, HCL) | Body shops; active negative signal at top companies       |
 | Pre-seed startups with no product                     | No mentorship, likely unpaid, zero brand value            |
 | Generic IT intern at non-tech company                 | Help desk and ticket routing is not software engineering  |
-
-
----
-
-## RECRUITING STRATEGY REFERENCE
-
-### Priority Application Order (MSU-Specific)
-
-
-| Priority | Target                             | Why                                    |
-| -------- | ---------------------------------- | -------------------------------------- |
-| 1        | Amazon, Capital One, Cloudflare    | School-blind; OA equalizes non-targets |
-| 2        | Ford, GM, Rocket, TechSmith        | MSU pipeline = legitimate path         |
-| 3        | Palantir, Databricks, Anduril      | Apply early + referral required        |
-| 4        | All A–B tier                       | Mass apply Sept–Nov; numbers game      |
-| 5        | S-tier (Google, Meta, OpenAI, xAI) | Always apply — nothing to lose         |
-
-
-### Prep Matrix by Interview Type
-
-
-| Type             | Companies                                   | Prep                                                          |
-| ---------------- | ------------------------------------------- | ------------------------------------------------------------- |
-| LeetCode Core    | All A/B-tier                                | NeetCode 150, Blind 75 — arrays, graphs, DP, trees, hash maps |
-| CodeSignal GCA   | Uber (725+), Robinhood (800+), Roblox, Airbnb, Lyft | CodeSignal Practice Platform                                  |
-| Concurrency      | Databricks                                  | LeetCode concurrency section; threading in Python/Java        |
-| System Design    | Palantir, Anduril, Waymo, Cloudflare        | DDIA; Grokking System Design                                  |
-| C++              | Anduril, Shield AI, SpaceX, Aurora          | cppreference.com; LC in C++                                   |
-| Networking / TCP | Discord, Cloudflare, Duo Security           | Cloudflare blog; Tanenbaum "Computer Networks"                |
-| Behavioral / LP  | Amazon, Palantir (cultural hard filter)     | Write 2–3 STAR stories per Amazon LP; applies broadly         |
-| Palantir Decomp  | Palantir only                               | Pseudocode product design; Palantir blog case studies         |
-| Byteboard        | Figma                                       | Reading comprehension speed under time pressure               |
-
-
----
-
-*Version 3.0 — March 2026*

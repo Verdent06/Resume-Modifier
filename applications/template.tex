@@ -1,0 +1,106 @@
+%% ============================================================================
+%%  applications/template.tex  —  SKELETON RESUME (single source template)
+%% ----------------------------------------------------------------------------
+%%  This is the ONLY resume template. The orchestrator copies this file into a
+%%  position folder, then the writer fills the Experience / Projects / Skills
+%%  sections from the context.md bullet pool. It replaces the old per-track
+%%  templates (full-stack / ai-ml / dev-ops) — track is now a doctrine-routing
+%%  label, not a file choice, so any track (including robotics/autonomy) fills
+%%  this same skeleton.
+%%
+%%  WHAT IS FIXED (do not change): header (\name, \contact) and Education.
+%%  WHAT GETS FILLED: Experience entries, Projects entries, Technical Skills.
+%%
+%%  rSectionEntry signature — 5 positional params, ALWAYS supply all 5 braces:
+%%     {1 name}{2 dates}{3 tagline/role/link}{4 technologies}{5 location}
+%%     - param 4 (technologies) renders after the name with a " | " separator;
+%%       leave it {} for experiences, fill it for projects (the tech-stack line).
+%%     - any unused param is an empty {}.
+%%  rSet signature — {1 bucket label}{2 comma-separated items}.
+%%
+%%  PATH NOTE: this template sits at resume/applications/template.tex, beside
+%%  resume.cls, so the class path is just `resume`. On copy into
+%%  applications/{year}/{company}/{role}/, the orchestrator rewrites it to
+%%  ../../../resume (three levels up to applications/, where resume.cls lives).
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{resume}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed; writer does not modify) --------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected May 2028}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, OOP, Computer Architecture, Linear Algebra, Discrete Math
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
+	% Order by impact density for THIS role, not chronology (see resume.md I.3).
+	% First bullet of each entry is the hook: lead with the problem/outcome,
+	% not the technology (see resume.md I.4). 2-3 bullets per experience.
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Organization Name}
+			{Start -- End}
+			{Role / Title}
+			{}
+			{City, ST}
+
+			\item {Hook bullet — decision + why it mattered, human-readable, metric as the closer.}
+			\item {Evidence bullet — the architectural choice and what it enabled.}
+			\item {Evidence bullet — deeper implementation detail with a tied metric.}
+		\end{rSectionEntry}
+
+		% \begin{rSectionEntry}{...}{...}{...}{}{...}
+		%   \item {...}
+		% \end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS (writer fills from context.md pool) -----------------------
+	% 1-2 bullets each. Tech-stack line goes in param 4 (derived from the bullets
+	% selected for this project). Optional live link goes in param 3 as \href.
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Project Name --- One-line descriptor}
+			{Start -- End}
+			{\href{https://example.com}{example.com}}
+			{Language, Framework, Database, Infra}
+			{}
+
+			\item {Hook bullet — what the project does and the problem it solves.}
+			\item {Evidence bullet — a key engineering decision with a metric.}
+		\end{rSectionEntry}
+
+		% \begin{rSectionEntry}{...}{...}{}{Tech, Stack, Here}{}
+		%   \item {...}
+		% \end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS (writer picks 3-5 buckets from context.md) --------
+	% ~80 char limit per line after the label. Trim tail items to fit; promote a
+	% tail item only if it is a hard ATS keyword from the JD (see resume.md I.5).
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Item, Item, Item, Item, Item}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Item, Item, Item, Item}
+		\end{rSet}
+		\begin{rSet}{Databases}{Item, Item, Item}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{Item, Item, Item, Item}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

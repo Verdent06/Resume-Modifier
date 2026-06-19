@@ -42,7 +42,6 @@ cloud-providers: [AWS, GCP]
 container-orchestration: [Kubernetes, Docker Swarm, ECS]
 ci-cd-platforms: [GitHub Actions, GitLab CI/CD]
 backend-languages: [Python, Java, Go, C++, Rust]
-jvm-languages: [Java, Kotlin]
 oauth-providers: [Google, GitHub, Microsoft]
 ```
 
