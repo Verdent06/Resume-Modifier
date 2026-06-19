@@ -27,7 +27,7 @@ apply → binary knockout gates → resume screen → online assessment (OA)
 - **The online assessment (OA)** is the highest-elimination stage for big-tech high-volume pipelines. Per amazon.jobs (How We Hire), the SDE Online Assessment is the first step for full-time and internship SDE roles; the stated format is ~90 minutes for two coding questions, a systems-design scenario block, and a Work Style Survey tied to Leadership Principles. Candidate reports consistently describe the OA as the stage with the highest elimination rate. **[solid for existence/format, directional for elimination rate]**
 - Meta has moved an asynchronous CodeSignal coding screen to the front: a ~90-minute proctored single-problem test in progressive stages, completed *before* meaningful resume or team-match review (new as of 2025). **[directional]**
 
-**Implication:** for Amazon/Meta-class pipelines, LeetCode and data-structures fluency is the real first filter. The resume's depth wins the *team-match and interview*, not the screen. For startups and mid-size firms on Greenhouse/Lever, a human reads the PDF early, so the resume carries more of the front-end weight. **The single most important strategic fact for Ankur: OA is the gate. Treat it as the real filter, not the resume.**
+**Implication:** for Amazon/Meta-class pipelines, LeetCode and data-structures fluency is the real first filter. The resume's depth wins the *team-match and interview*, not the screen. For startups and mid-size firms on Greenhouse/Lever, a human reads the PDF early, so the resume carries more of the front-end weight.
 
 ### 2. The Volume & Timing Game
 
@@ -124,7 +124,7 @@ Competing offers in the *same* industry negotiate best (tech vs tech, quant vs q
 
 ### 8. Internship Recruiting
 
-**This is Ankur's current stage.** The defining features:
+The defining features:
 
 - **Absurdly early cycle.** For a given summer, the strongest reqs open the prior **Aug–Oct** and quant opens even earlier (June). The first wave closes by ~November; the second wave (Nov–Jan) is harder and thinner. Apply within ~72 hours of a req opening.
 - **OA-gated at scale.** For big tech, the OA is the real gate (Part I §1). The resume mostly determines team-match after you clear it.
@@ -144,7 +144,7 @@ The first full-time role out of undergrad. A distinct req type ("New Grad" / "Un
 
 ### 10. Experienced / Lateral Hire Recruiting (1+ years)
 
-Once you have shipped real production work, the game inverts. This is the long-arc target after the first job, not Ankur's near-term cycle, but the structure is worth knowing now because it shapes which early choices compound.
+Once you have shipped real production work, the game inverts. This is the long-arc target after the first job, not a near-term cycle, but the structure is worth knowing now because it shapes which early choices compound.
 
 - **The funnel is recruiter- and referral-driven, not OA-gauntlet-driven.** High-volume OA screens largely fall away. The front door is a recruiter reach-out (inbound, often via a strong LinkedIn presence and prior-company brand) or a referral straight to a hiring manager. Cold applications matter far less than at the student stage.
 - **Loops shift toward design and depth.** Systems design becomes central; coding rounds remain but are calibrated to level; behavioral becomes scope-and-impact interrogation ("tell me about a system you owned, what broke, what you decided"). Domain-specific deep dives appear (see Part III tracks).
@@ -188,7 +188,7 @@ A split field — research, applied ML, and MLOps are three different hiring pro
 
 ### 14. Robotics / Autonomy
 
-**Ankur's second track.** Hiring is heavily skewed toward CS fundamentals plus first-hand build/sim experience and an understanding of the hardware-software boundary.
+Hiring is heavily skewed toward CS fundamentals plus first-hand build/sim experience and an understanding of the hardware-software boundary.
 
 - **Where the jobs are:** autonomy/AV companies (Waymo, Tesla, Aurora, Applied Intuition, Zoox, Cruise), drone/robotics firms, and robotics teams inside larger companies. Production roles dominate over pure-research roles.
 - **Stack the field hires for:** C++ and Python are the core (MATLAB common in controls/academia); ROS/ROS2 is near-universal for anything beyond pure research; Gazebo is the headline simulator (also Webots, PyBullet, Isaac); Linux throughout; Git. Concepts: kinematics/dynamics, basic control, sensor fusion, SLAM, localization, navigation, perception. **[solid — multiple 2024–2026 posting studies converge here]**
