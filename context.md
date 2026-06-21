@@ -119,14 +119,12 @@ Co-Founder & Vice President                       East Lansing, MI
 **Bullet pool:**
 
 ```
-1. Eliminated manual onboarding by automating member provisioning across GitHub and Slack, granting repository and workspace access in under 30 seconds for new contributors at scale. (vertical: onboarding automation)
-2. Replaced paper attendance workflows with QR-based check-ins backed by token caching on AWS S3 and CloudFront, enabling real-time validation during events. (vertical: attendance infrastructure)
-3. Built an event processing pipeline that cross-checks check-in records with enrollment data and publishes per-event Slack summaries for board visibility. (vertical: event reporting pipeline)
-4. Hardened attendance batch reliability with soft-fail and idempotent processing so malformed records do not interrupt full event report generation. (vertical: fault-tolerant batch processing)
-5. Enforced a four-tier role progression model using PostgreSQL row-level security so access policy is inherited by new routes without per-endpoint auth rewrites. (vertical: authorization architecture)
-6. Standardized delivery quality with GitHub Actions coverage gates above 90 percent and production branch protections to block unreviewed, under-tested merges. (vertical: CI/CD guardrails)
-7. Automated operational visibility for leadership with instant participation data instead of delayed manual reconciliation from paper sign-in sheets. (vertical: leadership analytics)
-8. Scaled internal tooling to support a fast-growing engineering community, with onboarding and event systems used across 100-plus to 150-plus members. (vertical: organization scale operations)
+1. Replaced the club's manual GitHub-and-Slack onboarding with an automated provisioning service that grants repo and workspace access in a single flow, cutting new-member setup from [X manual steps / Y minutes] to under 30 seconds.
+2. Architected a four-tier role-progression model on PostgreSQL row-level security so authorization is inherited at the data layer, letting new API routes ship without per-endpoint auth rewrites.
+3. Built a fault-tolerant event pipeline that reconciles QR check-ins against enrollment records with idempotent, soft-fail batch processing, so malformed entries never abort a run; processed [N] check-ins across [M] events with zero dropped records.
+4. Stood up the attendance system's cloud surface on AWS S3 and CloudFront with token caching at the edge, holding check-in validation under [X ms] during live events.
+5. Authored the deployment pipeline in GitHub Actions with branch protection and automated gates, taking the team from manual merges to [N] reviewed deploys per week without regressions reaching production.
+6. Sustained [N] concurrent check-ins during peak event load across a 150-member engineering community, validating each in real time against the enrollment source of truth.
 ```
 
 ---
