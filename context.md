@@ -2,6 +2,10 @@
 
 Canonical state for Ankur Desai's resume system. Headers, bullet pools, swap sets, and skills inventory. The writer agent reads this file; the grader does not.
 
+**Profile (the 7-second impression):** A CS systems engineer who owns the layer between intelligence (LLMs, models, agents) and reliable real-world action: real-time delivery, async orchestration, the human-approval/safety boundary, and the deployment discipline to ship it. Not a frontend dev, not a notebook-ML person, not a controls/SLAM specialist.
+
+Each entry carries a fixed **Lane**: the one distinct signal it contributes that no other entry can. Per-track scaling is volume control on lanes the target role rewards, not reassignment.
+
 ---
 
 ## Identity
@@ -39,53 +43,61 @@ ci-cd-platforms: [GitHub Actions, GitLab CI/CD]
 
 ## Skills Inventory (Buckets)
 
-Character limit per bucket line: ~80 characters after the bucket label.
+Master pools. The writer picks 3-5 buckets per resume and trims each to ~80 characters after the label for the rendered line. Items below exceed that on purpose so there is room to select per role.
 
 ### Bucket: Languages
 
 ```
-Python, Java, JavaScript/TypeScript, SQL, Cypher, C++, Go, Bash
+Python, Java, Go, JavaScript/TypeScript, C++, SQL, Cypher, Bash
 ```
 
 ### Bucket: Frameworks
 
 ```
-FastAPI, Spring Boot, Node.js, React, Next.js, Angular, Electron, ROS2
+FastAPI, Spring Boot, Node.js, React, Next.js, Angular, Vue, Electron
 ```
 
 ### Bucket: Databases
 
 ```
-PostgreSQL, Neo4j, MongoDB, Redis
-```
-
-### Bucket: Cloud & Infrastructure
-
-```
-AWS (EC2, RDS, S3), Docker, Kubernetes, GitHub Actions, CI/CD Pipelines, Gazebo
+PostgreSQL, Neo4j, Redis, pgvector
 ```
 
 ### Bucket: AI / ML
 
 ```
-PyTorch, Hugging Face, faster-whisper, pyannote-audio, spaCy, sentence-transformers, RAG
+PyTorch, Hugging Face, pyannote-audio, Whisper, Deepgram, Gemini, MediaPipe, OpenCV, RAG
+```
+
+### Bucket: Cloud & Infrastructure
+
+```
+AWS (EC2, S3, RDS), Docker, Terraform, GitHub Actions, CI/CD, Railway, Vercel, Supabase
+```
+
+### Bucket: Robotics
+
+```
+ROS2, Gazebo, WPILib, PathPlanner, AprilTag, RViz
 ```
 
 ### Bucket: Tools
 
 ```
-Git, Linux, Postman, Figma, Microsoft Office, RViz, ROSBag
+Git, Linux, Postman, Figma, ROSBag
 ```
 
 ---
 
 ## Canonical Entries
 
-Each entry has a fixed header and a bullet pool. Bullets are copied verbatim into the resume; swap-set substitutions are the only modification permitted.
+Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied verbatim into the resume; swap-set substitutions are the only modification permitted.
 
 ---
 
 ### Experience: Bopardikar Lab
+
+**Lane:** Research ceiling and the LLM-to-action safety boundary. The only entry that says "works on novel, safety-critical AI-robotics problems." Anchors the autonomy track's intellectual ceiling and the orchestration-level defense angle.
 
 **Header:**
 
@@ -97,17 +109,19 @@ Undergraduate Research Assistant                  East Lansing, MI
 **Bullet pool:**
 
 ```
-1. [pending]
-2. [pending]
-3. [pending]
-4. [pending]
-5. [pending]
-6. [pending]
+1. Researching whether the cheap triage layer that guards an LLM-controlled robot is itself a gameable security boundary, by splitting one unsafe command into individually innocent fragments that reassemble past the gate into unsafe robot behavior.
+2. Built the defense under attack as a steelman, composing a triage-plus-verification gate from three published safety architectures rather than a naive single classifier, so the result survives the objection that a real system would do more.
+3. Framed the decomposition attack as a measurement instrument rather than a one-off exploit, tracing an empirical cost-versus-security frontier that ties a triage gate's cost savings to exactly the compositional blind spot the attack rides.
+4. Reproduced a published adversarial-robotics attack pipeline (attacker, target, judge, syntax-checker) as the baseline, so the novel attack's success rate is measured against a credible reference instead of reported in isolation.
+5. Built the full language-to-motion pipeline in simulation on ROS2 and Gazebo with the attack layer decoupled at the ROS2 interface, so swapping the target robot platform cost only the URDF and control layer and never touched the security result.
+6. Modeled the threat as multi-turn, exploiting the feedback loop where robot telemetry returns to the LLM, a harder and more realistic attack surface than single-shot prompt injection.
 ```
 
 ---
 
 ### Experience: Claude Builder Club @ MSU
+
+**Lane:** Founder leadership plus operational infrastructure. Carries two signals no project does: founding-and-growth leadership (0 to 150+) and multi-service provisioning/CI-CD ops at community scale. Compresses hard on the autonomy track.
 
 **Header:**
 
@@ -119,17 +133,20 @@ Co-Founder & Vice President                       East Lansing, MI
 **Bullet pool:**
 
 ```
-1. Replaced the club's manual GitHub-and-Slack onboarding with an automated provisioning service that grants repo and workspace access in a single flow, cutting new-member setup from [X manual steps / Y minutes] to under 30 seconds.
-2. Architected a four-tier role-progression model on PostgreSQL row-level security so authorization is inherited at the data layer, letting new API routes ship without per-endpoint auth rewrites.
-3. Built a fault-tolerant event pipeline that reconciles QR check-ins against enrollment records with idempotent, soft-fail batch processing, so malformed entries never abort a run; processed [N] check-ins across [M] events with zero dropped records.
-4. Stood up the attendance system's cloud surface on AWS S3 and CloudFront with token caching at the edge, holding check-in validation under [X ms] during live events.
-5. Authored the deployment pipeline in GitHub Actions with branch protection and automated gates, taking the team from manual merges to [N] reviewed deploys per week without regressions reaching production.
-6. Sustained [N] concurrent check-ins during peak event load across a 150-member engineering community, validating each in real time against the enrollment source of truth.
+1. Co-founded and grew an MSU engineering community from zero to 150+ members, replacing a sprawl of spreadsheets, Slack threads, and manual invites with a single club-operations platform I built to run member lifecycle, events, and project provisioning.
+2. Automated member onboarding end to end so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, collapsing a manual multi-service invite process to seconds.
+3. Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent so simultaneous scans cannot double-award or be forged client-side, sustaining 150+ check-ins per event.
+4. Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth.
+5. Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
+6. Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, with the frontend auto-deploying on the same commit, taking the team from manual changes to reviewed continuous deploys.
+7. Scoped live dashboard updates to per-user realtime subscriptions filtered at the row level, so a member sees their own role or acceptance change instantly without waking every other client.
 ```
 
 ---
 
 ### Experience: MindMosaic
+
+**Lane:** Titled product delivery anchored on the Neo4j graph backend, the dual-database architecture, and the AWS deployment script plus Terraform/IaC. Carries shipped-to-real-users institutional weight. Not OAuth, not Postgres-as-the-star.
 
 **Header:**
 
@@ -141,42 +158,19 @@ Software Engineering Intern                   East Lansing, MI
 **Bullet pool:**
 
 ```
-1. Built and shipped an AI-powered journaling and self-reflection platform, delivering a production MVP to real users within a 12-week internship. (vertical: full-stack product delivery)
-2. Designed and implemented core backend APIs in Node.js and Express, supporting secure user authentication, journal entry encryption, and personalized prompt generation. (vertical: backend architecture)
-3. Delivered a responsive React TypeScript frontend with real-time text analysis and AI-assist features, driving user engagement through live insights and suggestions. (vertical: AI-powered web frontend)
-4. Integrated OpenAI GPT-4 via serverless functions for natural language analysis, journaling recommendations, and mood tracking, optimizing prompt/response cycles for latency and cost. (vertical: LLM integration)
-5. Automated deployment, monitoring, and alerting with GitHub Actions, Docker, and Sentry, reducing regression risk and ensuring high service availability for early users. (vertical: DevOps & CI/CD)
-6. Collaborated in a distributed three-engineer team with weekly agile sprints, shipping iteratively to meet stakeholder demo milestones and cut scope based on user feedback. (vertical: remote agile collaboration)
-7. Launched early access to a pilot cohort, gathering actionable analytics and synthesizing user feedback to guide next-stage feature development and bug triage. (vertical: user research & feedback)
-```
-
----
-
-### Experience: WFS Consulting Group
-
-**Header:**
-
-```
-WFS Consulting Group                              May 2025 -- Aug 2025
-Web Development Intern                            Plymouth, MI
-```
-
-**Bullet pool:**
-
-```
-1. Built the firm's primary customer-facing website in Vue, translating business goals into a production web experience for external clients. (vertical: website build ownership)
-2. Iterated directly on Figma mocks with a non-technical stakeholder to convert design feedback into shipped frontend components. (vertical: cross-functional design collaboration)
-3. Delivered a mobile-responsive interface so the site remained usable and visually consistent across phones, tablets, and desktop browsers. (vertical: responsive frontend implementation)
-4. Implemented validated contact form flows to improve lead capture quality and prevent malformed submissions before backend handling. (vertical: form validation and reliability)
-5. Converted static design artifacts into maintainable Vue views and reusable UI structures suitable for ongoing content and layout updates. (vertical: componentized frontend delivery)
-6. Shortened design-to-release iteration cycles by pairing directly with stakeholders and incorporating feedback in the same build stream. (vertical: iterative delivery velocity)
-7. Improved accessibility of firm information by consolidating service and contact experiences into a single coherent public web surface. (vertical: information architecture)
-8. Executed end-to-end frontend implementation for an external-facing business site, from design interpretation through responsive launch readiness. (vertical: end-to-end web execution)
+1. Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Spring Boot, Neo4j, and PostgreSQL stack.
+2. Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
+3. Designed a dual-database layer that keeps transactional records in PostgreSQL while serving relationship-heavy reads from Neo4j, routing each query class to the store that answers it fastest instead of forcing one engine to do both jobs.
+4. Owned the Spring Boot backend serving the platform's core CRUD and graph-traversal APIs, structuring endpoints around the dual-store model so the client never has to know which database backs a given read.
+5. Authored an AWS deployment script and managed the environment as code with Terraform, turning a manual multi-service bring-up into a repeatable, version-controlled provision so the polyglot stack deploys identically every time.
+6. Built CI/CD pipelines and Dockerfiles for the Spring Boot, frontend, and Neo4j services, enforcing branch protection and automated quality gates with 85%+ coverage across 35+ tests on every merge.
 ```
 
 ---
 
 ### Experience: FIRST Robotics
+
+**Lane:** Competition-robotics pedigree and the hardware-software boundary, plus software-captain leadership and a world-stage result. Holds the autonomy Experience slot until Bopardikar produces narratable output, then compresses to one line. Drops on the full-stack track.
 
 **Header:**
 
@@ -186,18 +180,21 @@ Software Captain                            Northville, MI
 ```
 
 **Bullet pool:**
+
 ```
-1. [pending]
-2. [pending]
-3. [pending]
-4. [pending]
-5. [pending]
-6. [pending]
+1. Led the software and electrical teams (5 and 6 engineers) for a competition robot that reached the FIRST World Championship and placed top 16 in its division in Houston, the program's strongest world-stage finish since 2014.
+2. Delivered the team's first multi-piece autonomous routine, chaining vision-corrected driving paths with timed intake-and-shoot actions so the robot scored multiple game pieces with no driver input during the autonomous period.
+3. Anchored auto-aim on real-time, vision-corrected localization that fused two AprilTag cameras with swerve odometry on a dedicated 250Hz thread with latency compensation, holding pose accurate during aggressive motion.
+4. Hardened pose estimation against bad vision data by gating camera measurements on tag count, target area, and angular velocity before fusing them, rejecting the garbage estimates that would otherwise poison the localization filter during fast rotation.
+5. Engineered graceful sensor-failure handling so the most match-critical mechanism falls back to an internal encoder and stays operable through a sensor loss instead of bricking mid-match, surfacing the degradation as an alert rather than a silent failure.
+6. Built shoot-from-anywhere aiming that maps target distance to arm angle through a regression model, keeping several candidate models swappable behind one interface so the team could A/B them against measured shot data without code churn.
 ```
 
 ---
 
 ### Project: Dadei
+
+**Lane:** Flagship systems depth. The deepest engineering signal in the portfolio: real-time cross-process delivery, async orchestration, hybrid retrieval, agentic tool-calling, and the single human-approval action boundary that is the profile thesis made concrete.
 
 **Header:**
 
@@ -209,43 +206,21 @@ Dadei                                             May 2025 -- Jun 2026
 **Bullet pool:**
 
 ```
-1. Built an identity-aware voice assistant platform that turns noisy, multi-speaker audio into actionable conversations, memories, and follow-ups, balancing real-time responsiveness with durable history so users can act on spoken context later. (vertical: project overview)
-2. Serialized interaction transcription behind a single processing lock to prevent memory spikes, then gated chunks by speech quality and per-window stream scoring before persistence and fan-out, reducing wasted inference on low-signal audio. (vertical: interaction ingest + audio quality gate)
-3. Replaced single-signal context lookup with a hybrid retrieval pipeline that fuses 768-dimensional vector similarity, lexical overlap, recency, participant overlap, and threshold gating, then assembles ranked episodic and conversation context under a char budget. (vertical: hybrid RAG + context assembly)
-4. Separated realtime delivery into an in-process WebSocket registry and a Redis Streams bridge, adding dedupe keys, retry/backoff handling, and dead-letter routing so cross-process events stay replayable without duplicating client-side mutations. (vertical: realtime broker + stream reliability)
-5. Moved post-interaction memory work, conversation-close processing, and delayed action firing onto deduplicated queues with a dedicated scheduled-actions lane and 600-second claim windows, keeping request paths fast while preserving eventual consistency for side effects. (vertical: async orchestration + action scheduling)
-6. Standardized identity around access-plus-refresh token lifecycles while preserving web and desktop Google OAuth return flows with strict state and origin validation, enabling safer auth hardening without breaking existing client sign-in paths. (vertical: auth + OAuth lifecycle)
-7. Consolidated browser and desktop surfaces behind a shared UI/domain layer, then isolated native concerns in Electron main/preload boundaries and encrypted token storage with keychain fallback, cutting drift while keeping sensitive operations out of renderer scope. (vertical: dual-runtime frontend + desktop security boundary)
-8. Combined reconnecting realtime control with local wake-word inference and 16 kHz command audio streaming, using 20-second heartbeats, a 60-second watchdog, and adaptive silence capture windows to keep hands-free interaction responsive during unstable network conditions. (vertical: client realtime + wake-word audio pipeline)
+1. Built an ambient voice assistant that turns passively overheard conversation into real calendar, email, and task actions behind a human-approval gate, routing every side effect through a single chokepoint so an LLM never fires an irreversible action without a cancelable countdown.
+2. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
+3. Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, eliminating the catastrophic false-merge failure a single-threshold cosine match produces.
+4. Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic and cut duplicate transcription roughly in half.
+5. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, matching each engine to its latency requirement so interactive commands stay responsive while bulk transcription stays cheap.
+6. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap before the model proposes actions, grounding every proposal in ranked episodic evidence under a fixed token budget.
+7. Implemented delayed action auto-fire on wall-clock-relative job scheduling with a one-second flush backstop, keeping countdown auto-fire correct across worker timezones and tight to the user-visible timer instead of drifting to a 20-second heartbeat.
+8. Shipped the backend as two services from a single Docker image split by process role, with migrations-on-boot ordering and a three-layer restart strategy that survives the worker queue's silent exit-zero death on a Redis drop, deployed behind a CI matrix of lint, test, and migration-verification gates.
 ```
 
 ---
 
-### Project: WizViz
+### Project: fliks
 
-**Header:**
-
-```
-WizViz --- SpartaHack X                           Feb 2025
-{tech stack derived from selected bullets}
-```
-
-**Bullet pool:**
-
-```
-1. Won first place in the Interactive Media track at SpartaHack X with a cooperative, gesture-controlled wizard duel built under hackathon constraints. (vertical: competition outcome)
-2. Designed gameplay where full-body movement maps to spell casting, blocking, and ability activation to create a touchless, motion-first game loop. (vertical: gesture gameplay design)
-3. Processed live player motion with a MediaPipe pose pipeline that extracts 33 skeletal landmarks per frame for action interpretation. (vertical: pose sensing pipeline)
-4. Classified landmark streams into discrete game actions and tuned pose-to-action mappings for stable recognition during active play. (vertical: real-time action classification)
-5. Tightened the inference loop to sustain 60 FPS with sub-20 ms input lag, preserving responsiveness in competitive duel interactions. (vertical: low-latency runtime optimization)
-6. Projected live 3D pose output into a custom 2D physics model with collision response to keep character motion and combat interactions stable. (vertical: physics integration)
-7. Implemented on-device gameplay intelligence so duel logic and opponent behavior run without cloud round-trips during matches. (vertical: edge-first game inference)
-8. Delivered an end-to-end computer vision game stack using Python, MediaPipe, OpenCV, TensorFlow, and NumPy for real-time interactive media. (vertical: CV stack integration)
-```
-
----
-
-### Project: fliks.gg
+**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system. [FLAG: audit says Go, not Rust, confirm.]
 
 **Header:**
 
@@ -257,10 +232,34 @@ fliks.gg                                          Jun 2026 -- Present
 **Bullet pool:**
 
 ```
-1. [pending]
-2. [pending]
-3. [pending]
-4. [pending]
-5. [pending]
-6. [pending]
+1. Building a multi-game platform where players upload competitive gameplay clips, the community rates skill, and top clips mint shareable certification cards, filling the gap between platforms that host low-skill content and ones that coach rather than validate skill.
+2. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
+3. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
+4. Designed a game-scoped data model under one unified experience from day one, so adding a new game is content (new mechanic vocabulary, ranks, and classifier) rather than a re-architecture, and cross-game player profiles work from the first release.
+5. Architected an ML rating service that grades each clip independently and displays its verdict beside the crowd's, turning model-versus-community disagreement into product surface, with crowdsourced ratings serving as the labeled data the classifier trains on.
+6. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
+```
+
+---
+
+### Project: WizViz
+
+**Lane:** Real-time computer vision and on-device inference, built under hackathon constraint. The only perception-adjacent, real-time-CV entry. [FLAG: no audit evidence of a placement, add to hook if it placed.]
+
+**Header:**
+
+```
+WizViz                                            Feb 2025
+{tech stack derived from selected bullets}
+```
+
+**Bullet pool:**
+
+```
+1. Built a webcam-controlled two-player fighting game at a 36-hour hackathon where body gestures alone drive combat, splitting one camera frame to track both players with no extra hardware.
+2. Stabilized noisy per-frame pose output by accumulating every frame's gesture classification across the turn window and taking the dominant sustained gesture, instead of reading a single jittery frame at the turn boundary.
+3. Classified five distinct combat gestures from body landmarks with a scale-invariant geometric model normalized by torso length, making detection work across players and camera distances without any labeled training data.
+4. Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, keeping the game responsive instead of blocking on per-frame detection.
+5. Separated two players on one webcam by landmark position, assigning each detected pose to a side of the frame so local two-player worked with zero additional cameras.
+6. Built a single-player opponent with a difficulty knob, random play below a threshold and a finite-state policy above it that rests, defends, heals, or finishes based on game state.
 ```
