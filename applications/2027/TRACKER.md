@@ -7,22 +7,15 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Application Log
 
-| Company | Role | Date Applied | Status | Template Used | Heard Back |
-| ------- | ---- | ------------ | ------ | ------------- | ---------- |
+| Company | Role | Date Applied | Status |
+| ------- | ---- | ------------ | ------ |
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
-
----
-
-## Observations
-
-*Add notes over time — what's getting responses, what interviewers are asking, patterns in rejections.*
 
 ---
 
 ## Summary Stats
 
 - **Total applied:** 0
-- **Response rate:** —
-- **OA conversion:** —
-- **Interview conversion:** —
+- **Interview conversion:** 0
+- **Offers:** 0
