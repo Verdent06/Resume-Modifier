@@ -131,6 +131,29 @@ Co-Founder & Vice President                       East Lansing, MI
 
 ---
 
+### Experience: MindMosaic
+
+**Header:**
+
+```
+MindMosaic                                    Aug 2025 -- May 2026
+Software Engineering Intern                   East Lansing, MI
+```
+
+**Bullet pool:**
+
+```
+1. Built and shipped an AI-powered journaling and self-reflection platform, delivering a production MVP to real users within a 12-week internship. (vertical: full-stack product delivery)
+2. Designed and implemented core backend APIs in Node.js and Express, supporting secure user authentication, journal entry encryption, and personalized prompt generation. (vertical: backend architecture)
+3. Delivered a responsive React TypeScript frontend with real-time text analysis and AI-assist features, driving user engagement through live insights and suggestions. (vertical: AI-powered web frontend)
+4. Integrated OpenAI GPT-4 via serverless functions for natural language analysis, journaling recommendations, and mood tracking, optimizing prompt/response cycles for latency and cost. (vertical: LLM integration)
+5. Automated deployment, monitoring, and alerting with GitHub Actions, Docker, and Sentry, reducing regression risk and ensuring high service availability for early users. (vertical: DevOps & CI/CD)
+6. Collaborated in a distributed three-engineer team with weekly agile sprints, shipping iteratively to meet stakeholder demo milestones and cut scope based on user feedback. (vertical: remote agile collaboration)
+7. Launched early access to a pilot cohort, gathering actionable analytics and synthesizing user feedback to guide next-stage feature development and bug triage. (vertical: user research & feedback)
+```
+
+---
+
 ### Experience: WFS Consulting Group
 
 **Header:**
@@ -155,6 +178,27 @@ Web Development Intern                            Plymouth, MI
 
 ---
 
+### Experience: FIRST Robotics
+
+**Header:**
+
+```
+FIRST Robotics, Robostangs                  Jun 2023 -- May 2024
+Software Captain                            Northville, MI
+```
+
+**Bullet pool:**
+```
+1. [pending]
+2. [pending]
+3. [pending]
+4. [pending]
+5. [pending]
+6. [pending]
+```
+
+---
+
 ### Project: Dadei
 
 **Header:**
@@ -175,30 +219,6 @@ Dadei                                             May 2025 -- Jun 2026
 6. Standardized identity around access-plus-refresh token lifecycles while preserving web and desktop Google OAuth return flows with strict state and origin validation, enabling safer auth hardening without breaking existing client sign-in paths. (vertical: auth + OAuth lifecycle)
 7. Consolidated browser and desktop surfaces behind a shared UI/domain layer, then isolated native concerns in Electron main/preload boundaries and encrypted token storage with keychain fallback, cutting drift while keeping sensitive operations out of renderer scope. (vertical: dual-runtime frontend + desktop security boundary)
 8. Combined reconnecting realtime control with local wake-word inference and 16 kHz command audio streaming, using 20-second heartbeats, a 60-second watchdog, and adaptive silence capture windows to keep hands-free interaction responsive during unstable network conditions. (vertical: client realtime + wake-word audio pipeline)
-```
-
----
-
-### Project: MindMosaic
-
-**Header:**
-
-```
-MindMosaic --- Knowledge Graph Explorer           Aug 2025 -- Jun 2025
-{tech stack derived from selected bullets}
-```
-
-**Bullet pool:**
-
-```
-1. Built an interactive Three.js knowledge graph explorer that lets users visually traverse, search, and filter interconnected ideas in 3D space. (vertical: 3D graph UX)
-2. Designed dual-database persistence with PostgreSQL and Neo4j to model structured records and graph relationships in a unified application flow. (vertical: dual-database architecture)
-3. Refactored Cypher queries with relationship-type indexing to cut p95 traversal latency from 850 ms to 440 ms on complex graph lookups. (vertical: graph query optimization)
-4. Achieved multi-hop graph traversal performance roughly three times faster than comparable SQL self-join pathways for recursive relationship discovery. (vertical: traversal performance gains)
-5. Integrated Google and GitHub OAuth 2.0 sign-in with httpOnly JWT cookies, refresh token rotation, and durable auth session handling. (vertical: authentication system)
-6. Enforced user-scoped graph access so each authenticated user traverses only their own subgraph and related knowledge entities. (vertical: tenant data isolation)
-7. Established Docker-based environment parity across local and staging workflows to support one-command setup and reduce config drift. (vertical: dev/staging parity)
-8. Authored CI/CD pipelines and Dockerfiles for a polyglot stack, enforcing branch protection and automated test gates with 85-plus percent coverage across 35-plus tests. (vertical: release automation and quality gates)
 ```
 
 ---
