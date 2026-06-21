@@ -31,18 +31,8 @@ Coursework: Data Structures & Algorithms, Object Oriented Programming, Computer 
 Flat dictionary. Unconditional within each set. Single-token swaps.
 
 ```yaml
-frontend-frameworks: [React, Angular, Vue, Next.js]
-backend-frameworks: [FastAPI, Spring Boot, Express, Flask, Node.js]
 relational-databases: [PostgreSQL, MySQL]
-document-databases: [MongoDB, DynamoDB, Firestore]
-graph-databases: [Neo4j]
-cache-stores: [Redis]
-task-queues: [Celery, RQ]
-cloud-providers: [AWS, GCP]
-container-orchestration: [Kubernetes, Docker Swarm, ECS]
 ci-cd-platforms: [GitHub Actions, GitLab CI/CD]
-backend-languages: [Python, Java, Go, C++, Rust]
-oauth-providers: [Google, GitHub, Microsoft]
 ```
 
 ---
@@ -60,7 +50,7 @@ Python, Java, JavaScript/TypeScript, SQL, Cypher, C++, Go, Bash
 ### Bucket: Frameworks
 
 ```
-FastAPI, Spring Boot, Node.js, React, Next.js, Angular, Electron
+FastAPI, Spring Boot, Node.js, React, Next.js, Angular, Electron, ROS2
 ```
 
 ### Bucket: Databases
@@ -72,7 +62,7 @@ PostgreSQL, Neo4j, MongoDB, Redis
 ### Bucket: Cloud & Infrastructure
 
 ```
-AWS (EC2, RDS, S3), Docker, Kubernetes, GitHub Actions, CI/CD Pipelines
+AWS (EC2, RDS, S3), Docker, Kubernetes, GitHub Actions, CI/CD Pipelines, Gazebo
 ```
 
 ### Bucket: AI / ML
@@ -84,7 +74,7 @@ PyTorch, Hugging Face, faster-whisper, pyannote-audio, spaCy, sentence-transform
 ### Bucket: Tools
 
 ```
-Git, Linux, Postman, Figma, Microsoft Office
+Git, Linux, Postman, Figma, Microsoft Office, RViz, ROSBag
 ```
 
 ---
@@ -113,8 +103,6 @@ Undergraduate Research Assistant                  East Lansing, MI
 4. [pending]
 5. [pending]
 6. [pending]
-7. [pending]
-8. [pending]
 ```
 
 ---
@@ -172,7 +160,7 @@ Web Development Intern                            Plymouth, MI
 **Header:**
 
 ```
-Dadei                                             May 2025 -- Present
+Dadei                                             May 2025 -- Jun 2026
 {tech stack derived from selected bullets}
 ```
 
@@ -189,15 +177,6 @@ Dadei                                             May 2025 -- Present
 8. Combined reconnecting realtime control with local wake-word inference and 16 kHz command audio streaming, using 20-second heartbeats, a 60-second watchdog, and adaptive silence capture windows to keep hands-free interaction responsive during unstable network conditions. (vertical: client realtime + wake-word audio pipeline)
 ```
 
-**Metrics to Verify:**
-
-```
-- 768 embedding dimensionality and whether all retrieval pathways currently use that shape in production.
-- Queue dedupe claim window (600 seconds) and whether it remains consistent across post-memory and conversation-close jobs.
-- Client realtime heartbeat (20,000 ms) and watchdog timeout (60,000 ms) values used in the active build.
-- Command audio sample rate (16,000 Hz) and wake-capture timing thresholds used in the shipped desktop/web clients.
-```
-
 ---
 
 ### Project: MindMosaic
@@ -205,7 +184,7 @@ Dadei                                             May 2025 -- Present
 **Header:**
 
 ```
-MindMosaic --- Knowledge Graph Explorer           Aug 2025 -- Nov 2025
+MindMosaic --- Knowledge Graph Explorer           Aug 2025 -- Jun 2025
 {tech stack derived from selected bullets}
 ```
 
@@ -253,7 +232,7 @@ WizViz --- SpartaHack X                           Feb 2025
 **Header:**
 
 ```
-fliks.gg                                          [TBD] -- Present
+fliks.gg                                          Jun 2026 -- Present
 {tech stack derived from selected bullets}
 ```
 
@@ -266,7 +245,4 @@ fliks.gg                                          [TBD] -- Present
 4. [pending]
 5. [pending]
 6. [pending]
-7. [pending]
-8. [pending]
 ```
-
