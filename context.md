@@ -219,7 +219,7 @@ Ambient voice assistant that turns overheard conversation into human-approved ca
 
 ### Project: fliks
 
-**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system. [FLAG: audit says Go, not Rust, confirm.]
+**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system.
 
 **Header:**
 
@@ -260,3 +260,4 @@ Webcam fighting game driven by real-time body-gesture recognition, winner of the
 4. Separated two players on one webcam by landmark position, assigning each detected pose to a side of the frame so local two-player worked with zero additional cameras.
 5. Built a single-player opponent with a difficulty knob, random play below a threshold and a finite-state policy above it that rests, defends, heals, or finishes based on game state.
 ```
+

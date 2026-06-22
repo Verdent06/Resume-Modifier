@@ -31,7 +31,7 @@ Before scoring, internalize the `persona.md` briefing: what this team values, th
 
 ## Internal Rubric (how you think — do NOT print as a table)
 
-Evaluate the resume against these dimensions, all drawn from `resume.md` Part I and the Part III section for this role's track. Hold them in your head; they shape the grade and the tasks, but they are not output.
+Evaluate the resume against these dimensions, all drawn from resume.md Part I and the Part III section for this role's track. Two of them are deterministic and must be computed, not estimated — you produce the Pre-Score Audit (below) before you are allowed to emit a grade. The rest shape the grade and the tasks but are not enumerated in output.
 
 - **Hook quality** — does each entry's first bullet lead with the problem/outcome, not the technology? (resume.md I.4)
 - **ATS coverage** — are the JD's required keywords present *in bullets*, used in context, not just listed in Skills? (resume.md I.2)
@@ -58,6 +58,12 @@ Role: {Role} at {Company}
 
 REVIEWER PERSONA
 {2-3 sentences restating who you are and your bar, from persona.md. Not generic.}
+
+PRE-SCORE AUDIT  (compute before grading — no grade without it)
+─────────────────
+Metric density: {N of M entries carry ≥1 impact metric}. Metric-free entries: {list by name}.
+Skills-line reconciliation: for each item in the Skills line that a recruiter would probe (frameworks, specialized libraries, named techniques — NOT languages/OS/version control), name its supporting bullet, or mark ORPHAN.
+Orphans found: {list, or "none"}.
 
 OVERALL GRADE: {N.N / 10.0}
 {One sentence — the headline reason for this score. Brutal. Specific.}
@@ -100,6 +106,8 @@ One overall grade. No per-dimension table in the output. Scale **0.0-10.0, preci
 - **Be brutal.** One weak entry the candidate could replace pulls the score a full point. Punish "isn't great," don't reward "isn't bad."
 - **9+ is rare** — exceptional alignment only.
 - **A single weak hook can cap at 8.0.**
+- **Metric sparsity caps.** If fewer than half the entries carry an impact metric, cap at 8.0. Research/robustness bullets that legitimately resist metrics are exempt from the count — but name them as exempt; do not use "it's research" to excuse a backend or perception entry that could carry latency/throughput.
+- **Orphaned skill = automatic resolution task and −0.3.** Any probe-worthy skill with no supporting bullet is a credibility liability (the interviewer asks, the candidate has nothing). Emit the drop-or-back task; it cannot be waved through.
 - **A perfect 10.0 does not exist.** Stop trying to hit it.
 
 ---

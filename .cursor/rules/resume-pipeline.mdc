@@ -93,23 +93,28 @@ Create one todo per step. Do not batch.
 **Out (state object):**
 ```
 {
-  company_name:           str (official casing)
-  role_title:             str (official casing)
-  company_slug:           str (lowercase, hyphens)
-  position_slug:          str (lowercase, hyphens)
-  work_type:              "Internship" | "Co-op" | "Full-time"
-  lifecycle_stage:        "intern" | "new-grad" | "experienced"
-  location:               str (include remote/hybrid/onsite)
-  compensation:           str | null
-  core_responsibilities:  list[str]  (max 6)
-  required_skills:        list[str]  (exact JD phrases)
-  preferred_skills:       list[str]  (exact JD phrases)
-  ats_keywords:           list[str]  (15-20 exact terms)
-  track_decision:         "full-stack" | "ai-ml" | "dev-ops" | "robotics"
-  role_year:              str (cycle year token, e.g. "2026")
-  applications_root:      str (exactly "resume/applications/{role_year}")
+  company_name:                 str (official casing)
+  role_title:                   str (official casing)
+  company_slug:                 str (lowercase, hyphens)
+  position_slug:                str (lowercase, hyphens)
+  work_type:                    "Internship" | "Co-op" | "Full-time"
+  lifecycle_stage:              "intern" | "new-grad" | "experienced"
+  location:                     str (include remote/hybrid/onsite)
+  compensation:                 str | null
+  core_responsibilities:        list[str]  (max 6)
+  required_skills:              list[str]  (exact JD phrases)
+  preferred_skills:             list[str]  (exact JD phrases)
+  ats_keywords:                 list[str]  (15-20 exact terms)
+  track_decision:               "full-stack" | "ai-ml" | "dev-ops" | "robotics"
+  role_year:                    str (cycle year token, e.g. "2026")
+  applications_root:            str (exactly "resume/applications/{role_year}")
+  class_standing_at_internship: str (compute from grad date + internship term; e.g. "rising senior")
+  eligibility_verdict:          "eligible" | "ineligible" | "ambiguous"
+  eligibility_reason:           str  (the computed comparison, not a guess)
 }
 ```
+
+Eligibility is computed, never reasoned. Map the candidate's graduation date and the posting's internship term to a class standing, then compare against the JD's class-year requirement. Surface eligibility_verdict from that comparison only. Do not let the model narrate an eligibility conclusion that contradicts the computed field.
 
 **Track decision (doctrine-routing label, not a template choice — one template fills all):**
 - `ai-ml` → JD requires ML frameworks, model training, inference, or data pipelines

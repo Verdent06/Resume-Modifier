@@ -63,7 +63,7 @@ If a JD-required technology is not in the pool and no swap set bridges it, state
    - Select and order entries so the most role-relevant leads (impact density, not chronology).
    - For each entry, select the pool bullets that best match the persona; ensure the first bullet is the strongest hook for this role.
    - Use swaps to bring ATS keywords into bullets (not just Skills) where a swap set allows it.
-4. Pick 3-5 skills buckets; trim per char limit + JD relevance.
+4. Pick 3-5 skills buckets from the inventory. Trim items within each by JD-keyword relevance until the line fits the ~80-char limit. Reconcile against the page: any probe-worthy skill (framework, specialized library, named technique — e.g. PyTorch, RAG) whose supporting entry you did not select must be dropped from the Skills line. Languages, OS, and version control are baseline and exempt. A skill that survives must either appear in a selected bullet or be a JD-required keyword.
 5. Apply swaps consistently within each entry.
 6. Bias bullet counts: experiences 2-3 each, projects 1-2 each. Target 12-14 total.
 7. Emit the updated `.tex` in place. One-line chat summary optional ("Led with MindMosaic; swapped React → Angular across it; Dadei over WizViz in projects").
