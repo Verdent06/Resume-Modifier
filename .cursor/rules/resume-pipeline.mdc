@@ -177,6 +177,12 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
      "candidate_languages": <Languages inventory from context.md>,
      "exempt_entries":      <entries whose every bullet is genuinely metric-resistant,
                              e.g. a research lab — keep this list tight and honest>,
+     "protected_entries":   <the role-critical entries for this track that must stay
+                             >= 2 bullets and must not be cut in the fit pass — e.g.
+                             the autonomy lab on the robotics track. Derive from the
+                             persona's lead-signal, not arbitrarily>,
+     "min_entries":         <hard floor on Experience+Projects entry count, default 5;
+                             stops the metric ratio being gamed by shrinking the field>,
      "iter1_counts":        <from step 5.2>
    }
    ```
@@ -217,7 +223,11 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 
 1. Recompile.
 2. **Skills line wrap:** dispatch the writer to trim the wrapping bucket per JD relevance (no bucket add/remove). Recompile until no wrap.
-3. **Page fit:** re-run `validate.py` with `--phase fit` (the anti-deletion gate is relaxed in this phase). Overflow → drop one bullet from the weakest project entry. Underfill → add one bullet from a strong entry's pool. Recompile until `page_fit` passes.
+3. **Page fit:** before any fit edit, **snapshot `prefit_counts`** (current per-entry bullet counts) into `gate_inputs.json`. Overflow → drop one bullet from the weakest **non-protected project** entry. Underfill → add one bullet from a strong entry's pool. After each edit, re-run:
+   ```
+   python validate.py --tex "{tex_path}" --inputs gate_inputs.json --pdf "{pdf_path}" --phase fit --out gate_report.json
+   ```
+   The `--phase fit` run relaxes the iteration-1 anti-deletion gate but enforces `fit_protection` (no Experience or protected-entry bullet may be cut in this phase) and `page_fit`. Recompile until both pass.
 
 ---
 

@@ -79,7 +79,7 @@ The dispatch carries failed deterministic gates. These are not judgment calls. A
 
 **Tech-stack lines (projects)** — derived from selected bullets, not chosen freely; collect distinct techs, apply entry swaps, order language → framework → database → infra; drop the least essential if it wraps; add nothing not in the bullets.
 
-**Bullet target** — soft 12-14 total. Page fit is the orchestrator's call via the validator; when dispatched for overflow/underfill, drop or add a *whole* bullet — never trim words.
+**Bullet target** — soft 12-14 total. Page fit is the orchestrator's call via the validator; when dispatched for overflow/underfill, drop or add a *whole* bullet — never trim words. **Fit drops come from non-protected project entries only — never an Experience entry, never a role-critical (protected) entry.** The `fit_protection` gate enforces this.
 
 ---
 

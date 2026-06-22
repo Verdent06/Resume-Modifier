@@ -300,25 +300,110 @@ def gate_no_orphans(pr: ParsedResume, jd_required) -> GateResult:
 
 
 def gate_no_bullet_deletion(pr: ParsedResume, iter1_counts, phase) -> GateResult:
-    """No entry may drop below its iteration-1 bullet count. Stops the writer's
-    degenerate response to a metric task (delete the metric-free bullet). Active
-    in the loop only; the orchestrator's page-fit phase is allowed to drop one."""
+    """No entry may drop below its iteration-1 bullet count, and no entry present
+    at iteration 1 may be removed entirely. Stops the writer's degenerate response
+    to a metric task (delete the metric-free bullet) AND the subtler exploit where
+    deleting a whole metric-free entry RAISES the ratio (smaller denominator). The
+    earlier `if name in cur` check silently skipped removed entries — that was the
+    hole. Active in the loop only; the page-fit phase is allowed to drop one."""
     if phase != "loop" or not iter1_counts:
         return GateResult("no_bullet_deletion", True, True,
                           "Skipped (iteration 1 or fit-check phase).")
     cur = {e.name: len(e.bullets) for e in pr.entries}
-    shrunk = []
+    cur_norm = {_norm(k): v for k, v in cur.items()}
+    shrunk, removed = [], []
     for name, base in iter1_counts.items():
-        if name in cur and cur[name] < base:
-            shrunk.append(f"{name}: {base}->{cur[name]}")
-    if shrunk:
+        nk = _norm(name)
+        if nk not in cur_norm:
+            removed.append(name)
+        elif cur_norm[nk] < base:
+            shrunk.append(f"{name}: {base}->{cur_norm[nk]}")
+    if shrunk or removed:
+        parts = []
+        if removed:
+            parts.append(f"entries removed entirely: {removed}")
+        if shrunk:
+            parts.append(f"entries shrunk below baseline: {shrunk}")
         return GateResult(
             "no_bullet_deletion", True, False,
-            f"Entries shrunk below iteration-1 count: {shrunk}. Fix metric gaps by "
-            f"SWAPPING in a metric-bearing pool bullet, never by deletion. If the "
-            f"pool has none, restore the bullet and mark the metric out-of-rails.",
+            "; ".join(parts) + ". Fix metric gaps by SWAPPING in a metric-bearing "
+            "pool bullet, never by deleting a bullet or an entry. Removing a weak "
+            "entry to lift the ratio is the exact exploit this gate exists to stop. "
+            "If a pool has no metric, restore the content and mark it out-of-rails.",
         )
     return GateResult("no_bullet_deletion", True, True, "No entry shrank below baseline.")
+
+
+def gate_min_entries(pr: ParsedResume, min_entries: int) -> GateResult:
+    """Ratio floor. The metric ratio = metric-bearing / counted entries, so the
+    field can be 'improved' by shrinking the denominator. A hard minimum on entry
+    count removes that incentive at the root, including on iteration 1 where there
+    is no baseline to compare against."""
+    n = len(pr.entries)
+    if n < min_entries:
+        return GateResult(
+            "min_entries", True, False,
+            f"{n} Experience+Projects entries; floor is {min_entries}. A thin field "
+            f"can game the metric-density ratio — restore entries to meet the floor.",
+        )
+    return GateResult("min_entries", True, True, f"{n} entries (floor {min_entries}).")
+
+
+def gate_protected_depth(pr: ParsedResume, protected) -> GateResult:
+    """Fix 3a: a role-critical entry may not be hollowed out to a single bullet.
+    Directly catches the SEAS-lab-reduced-to-one-bullet regression. Protected
+    entries are named by the orchestrator/persona (e.g. the autonomy lab on the
+    robotics track) and must carry >= 2 bullets in any phase."""
+    if not protected:
+        return GateResult("protected_depth", True, True, "Skipped (no protected entries named).")
+    prot = {_norm(x) for x in protected}
+    cur = {_norm(e.name): len(e.bullets) for e in pr.entries}
+    thin = []
+    for name in protected:
+        nk = _norm(name)
+        if nk in cur and cur[nk] < 2:
+            thin.append(f"{name}: {cur[nk]} bullet")
+        elif nk not in cur:
+            thin.append(f"{name}: absent")
+    if thin:
+        return GateResult(
+            "protected_depth", True, False,
+            f"Role-critical entries reduced below 2 bullets or dropped: {thin}. "
+            f"These carry the role's core signal — keep them deep, cut elsewhere.",
+        )
+    return GateResult("protected_depth", True, True, "Protected entries retain depth.")
+
+
+def gate_fit_protection(pr: ParsedResume, prefit_counts, protected, phase) -> GateResult:
+    """Fix 3b: during the page-fit pass, drops must come from Projects only, and a
+    protected entry may not shrink. Without this, a fit pass scoped to 'weakest
+    project' can silently cut an Experience or lab bullet (which is what happened
+    to the SEAS lab last round). Needs prefit_counts snapshotted by the
+    orchestrator immediately before the fit pass."""
+    if phase != "fit":
+        return GateResult("fit_protection", True, True, "Skipped (loop phase).")
+    if not prefit_counts:
+        return GateResult("fit_protection", True, True, "Skipped (no pre-fit snapshot).")
+    section = {_norm(e.name): e.section for e in pr.entries}
+    cur = {_norm(e.name): len(e.bullets) for e in pr.entries}
+    prot = {_norm(x) for x in (protected or [])}
+    violations = []
+    for name, base in prefit_counts.items():
+        nk = _norm(name)
+        shrank = (nk not in cur) or (cur[nk] < base)
+        if not shrank:
+            continue
+        if section.get(nk, "").startswith("experience"):
+            violations.append(f"experience entry cut in fit: {name}")
+        elif nk in prot:
+            violations.append(f"protected entry cut in fit: {name}")
+    if violations:
+        return GateResult(
+            "fit_protection", True, False,
+            f"{violations}. Page-fit drops come from non-protected PROJECT entries "
+            f"only — never Experience, never a protected entry.",
+        )
+    return GateResult("fit_protection", True, True, "Fit drops were project-scoped and protected entries intact.")
 
 
 def gate_page_fit(pdf_path) -> GateResult:
@@ -389,6 +474,9 @@ def main() -> int:
         gate_required_languages(pr, gi.get("jd_languages", []), gi.get("candidate_languages", [])),
         gate_no_orphans(pr, gi.get("jd_required_keywords", [])),
         gate_no_bullet_deletion(pr, gi.get("iter1_counts", {}), args.phase),
+        gate_min_entries(pr, gi.get("min_entries", 4)),
+        gate_protected_depth(pr, gi.get("protected_entries", [])),
+        gate_fit_protection(pr, gi.get("prefit_counts", {}), gi.get("protected_entries", []), args.phase),
         gate_page_fit(args.pdf),
     ]
     ratio, ceiling, metric_free, exempt_used = compute_metric_density(pr, gi.get("exempt_entries", []))
