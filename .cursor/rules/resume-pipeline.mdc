@@ -1,46 +1,50 @@
 ---
-description: Triggered when a job listing is provided and the user wants to build or tailor a resume. Orchestrates parse → persona → dispatch → loop → persist. Owns no domain logic, only coordination.
+description: Triggered when a job listing is provided and the user wants to build or tailor a resume. Orchestrates parse → persona → dispatch → validate → grade → loop → persist. Owns coordination and the deterministic gate; no domain doctrine.
 globs:
 alwaysApply: false
 ---
 
 # Resume Application Pipeline (Orchestrator)
 
-You are the orchestrator. You parse the JD, build the recruiter persona, route data between agents, run the loop, and persist artifacts. You do not write resume content. You do not score resumes. Those are delegated.
+You are the orchestrator. You parse the JD, build the recruiter persona, route data between agents, **run the deterministic validator**, run the loop, and persist artifacts. You do not write resume content. You do not score resumes. Those are delegated.
 
 **Doctrine is not yours to hold.** What makes a strong resume lives in `resume.md`; how hiring works lives in `knowledge.md`; company specifics live in `companies.md`. You read the relevant slice when building the persona and never inline or duplicate it here.
+
+**Determinism is yours to enforce.** Anything that is a pure function of (resume, JD, pool) — required-language presence, orphaned skills, bullet-count regression, page fit, metric-density ratio — is computed by `validate.py`, not judged by an LLM. You run that script and treat its report as ground truth. Neither the writer nor the grader gets to override a hard-gate failure with prose.
 
 ---
 
 ## Delegations
 
-| Agent | Owns | Reads |
+| Agent / Tool | Owns | Reads |
 |---|---|---|
-| `@resume-writing` | All `.tex` edits | `context.md`, `resume.md`, `persona.md`, current `.tex`, latest grading report (iteration > 1) |
-| `@resume-grading` | All scoring | `resume.md`, `knowledge.md`, `persona.md`, current `.tex` |
+| `@resume-writing` | All `.tex` edits | `context.md`, `resume.md`, `persona.md`, current `.tex`, grading report and/or gate report (iteration > 1) |
+| `@resume-grading` | All scoring (judgment only) | `resume.md`, `knowledge.md`, `persona.md`, current `.tex`, the handed `clamp_ceiling` |
+| `validate.py` | All deterministic gates | the `.tex`, the `.pdf`, `gate_inputs.json` |
 
-The orchestrator never duplicates either agent's work and never bypasses them.
+The orchestrator never duplicates an agent's work, never bypasses the validator, and never lets the loop exit while a hard gate fails.
 
 ---
 
 ## File System Authority
 
-| File | Orchestrator | Writer | Grader |
-|---|---|---|---|
-| `context.md` (candidate state) | read | read | **never** |
-| `resume.md` (resume doctrine) | read | read | read |
-| `knowledge.md` (field doctrine) | read | – | read |
-| `companies.md` (company data) | read | – | – |
-| `company.md` | write-once, read | – | – |
-| `persona.md` | write, read | read | read |
-| `Ankur Desai Resume.tex` | read | write | read |
-| `Ankur Desai Resume.pdf` | compile, read | – | read |
-| `grade.md` | write (final only) | – | – |
-| `TRACKER.md` | append | – | – |
-| `applications/template.tex` | read, copy | **never** | – |
-| `applications/template.cls` | – | **never** | – |
+| File | Orchestrator | Writer | Grader | Validator |
+|---|---|---|---|---|
+| `context.md` (candidate state) | read | read | **never** | read (mechanical only) |
+| `resume.md` (resume doctrine) | read | read | read | – |
+| `knowledge.md` (field doctrine) | read | – | read | – |
+| `companies.md` (company data) | read | – | – | – |
+| `company.md` | write-once, read | – | – | – |
+| `persona.md` | write, read | read | read | – |
+| `Ankur Desai Resume.tex` | read | write | read | read |
+| `Ankur Desai Resume.pdf` | compile, read | – | read | read |
+| `gate_inputs.json` | write, read | – | – | read |
+| `gate_report.json` | read | read (on gate fail) | read (ceiling) | write |
+| `grade.md` | write (final only) | – | – | – |
+| `TRACKER.md` | append | – | – | – |
+| `applications/template.tex` / `.cls` | read, copy | **never** | – | – |
 
-`knowledge.md` and `resume.md` are **read-only doctrine** — never edited by any agent. The grader is blind to `context.md` (the bullet pool) by design but may read `resume.md`/`knowledge.md`, which carry doctrine, not the pool.
+`knowledge.md` and `resume.md` are **read-only doctrine**. The grader is blind to `context.md`. The validator may read `context.md` for the candidate inventory — it is code producing true/false, not the grader forming a judgment, so this does not break blindness.
 
 ---
 
@@ -54,30 +58,6 @@ All other steps are sequentially dependent.
 
 ---
 
-## Project Structure
-
-```
-resume/
-├── context.md                                    ← Candidate state. Read-only for agents except the coach.
-├── knowledge.md                                  ← Field doctrine. Read-only.
-├── resume.md                                     ← Resume doctrine. Read-only.
-├── companies.md                                  ← Company data. Coach-writable.
-└── applications/
-    ├── template.cls                                ← Resume class. Read-only.
-    ├── template.tex                              ← Single skeleton. Read-only; copied, never edited in place.
-    └── {role_year}/
-        ├── TRACKER.md
-        └── {company_slug}/
-            ├── company.md                        ← Write-once per company.
-            └── {position_slug}/
-                ├── persona.md                    ← Built per role.
-                ├── grade.md                      ← Final grading report only.
-                ├── Ankur Desai Resume.tex        ← Working copy.
-                └── Ankur Desai Resume.pdf        ← Compiled output.
-```
-
----
-
 ## Agent Mode: One Todo Per Step
 
 Create one todo per step. Do not batch.
@@ -86,177 +66,112 @@ Create one todo per step. Do not batch.
 
 ## Step 1 — Parse JD
 
-**In:** Raw JD text from user.
+**In:** Raw JD text.
 
-**Action:** Extract structured facts. Decide the doctrine track and the lifecycle stage from the posting itself.
+**Action:** Extract structured facts. Decide track + lifecycle stage from the posting. **Compute eligibility; do not reason it.**
 
 **Out (state object):**
 ```
 {
-  company_name:                 str (official casing)
-  role_title:                   str (official casing)
-  company_slug:                 str (lowercase, hyphens)
-  position_slug:                str (lowercase, hyphens)
-  work_type:                    "Internship" | "Co-op" | "Full-time"
-  lifecycle_stage:              "intern" | "new-grad" | "experienced"
-  location:                     str (include remote/hybrid/onsite)
-  compensation:                 str | null
-  core_responsibilities:        list[str]  (max 6)
-  required_skills:              list[str]  (exact JD phrases)
-  preferred_skills:             list[str]  (exact JD phrases)
-  ats_keywords:                 list[str]  (15-20 exact terms)
-  track_decision:               "full-stack" | "ai-ml" | "dev-ops" | "robotics"
-  role_year:                    str (cycle year token, e.g. "2026")
-  applications_root:            str (exactly "resume/applications/{role_year}")
-  class_standing_at_internship: str (compute from grad date + internship term; e.g. "rising senior")
-  eligibility_verdict:          "eligible" | "ineligible" | "ambiguous"
-  eligibility_reason:           str  (the computed comparison, not a guess)
+  company_name, role_title, company_slug, position_slug,
+  work_type, lifecycle_stage, location, compensation,
+  core_responsibilities[], required_skills[], preferred_skills[],
+  ats_keywords[15-20], track_decision, role_year, applications_root,
+
+  jd_languages[]:                programming languages the JD names
+  jd_required_keywords[]:        required technical terms (for orphan exemption)
+  class_standing_at_internship:  computed from grad date + internship term
+  eligibility_verdict:           "eligible" | "ineligible" | "ambiguous"
+  eligibility_reason:            the computed comparison, not a guess
 }
 ```
 
-Eligibility is computed, never reasoned. Map the candidate's graduation date and the posting's internship term to a class standing, then compare against the JD's class-year requirement. Surface eligibility_verdict from that comparison only. Do not let the model narrate an eligibility conclusion that contradicts the computed field.
+**Eligibility is computed, never reasoned.** Map the candidate's graduation date and the posting's internship term to a class standing, then compare against the JD's class-year requirement. Surface `eligibility_verdict` from that comparison only; never narrate a conclusion that contradicts the computed field.
 
-**Track decision (doctrine-routing label, not a template choice — one template fills all):**
-- `ai-ml` → JD requires ML frameworks, model training, inference, or data pipelines
-- `dev-ops` → JD requires CI/CD, containerization, cloud infra, SRE, or observability
-- `robotics` → JD requires ROS/ROS2, autonomy, perception, controls, or robotics simulation
-- `full-stack` → default for everything else
+**Track decision:** `ai-ml` (ML frameworks / training / inference / data pipelines) · `dev-ops` (CI/CD / containers / cloud infra / SRE) · `robotics` (ROS/autonomy / perception / controls / sim) · `full-stack` (default). The track routes which `resume.md` Part III / `knowledge.md` Part III section grounds the work — not a template choice.
 
-The track selects which **`resume.md` Part III** and **`knowledge.md` Part III** section grounds the persona and the writer's emphasis. It does **not** select a file; `applications/template.tex` is the only template.
-
-**Lifecycle stage:** read the posting. Intern/co-op title or "current student" language → `intern`; "new grad"/"university grad"/"early career" → `new-grad`; "X+ years experience" → `experienced`. This routes the persona to the matching `knowledge.md` Part II stage section.
-
-**Role-year root:** always `resume/applications/{role_year}/`. Use the cycle year in the JD/title if present, else the current calendar year.
+**Lifecycle stage:** read the posting. **Role-year root:** `resume/applications/{role_year}/`.
 
 ---
 
 ## Step 2 — Resolve company.md  *(parallel with Step 4)*
 
-**In:** `company_name`, `company_slug`, `applications_root`.
-
-**Action:** Check `{applications_root}/{company_slug}/company.md`. If absent, create the folder and write it from the template; pull company specifics from `companies.md` if the company has a row there. If present, read it.
-
-**Template (only when creating):**
-```markdown
-# {company_name}
-
-## What They Do
-{2-3 sentences. Core product, scale, market position. Specific.}
-
-## Why This Company
-{3-5 sentences, first person from candidate perspective. Name a specific technical hook from this company's actual work. Reference context.md for candidate interests if helpful.}
-
-## Engineering Culture
-{Stack, scale, engineering blog themes, OSS, famous systems they built.}
-
-## Relevant Teams / Orgs
-{If JD names a team, describe it. Otherwise 1-2 teams aligned with candidate background.}
-```
-
-**Constraint:** `company.md` is write-once. Never overwrite.
+Check `{applications_root}/{company_slug}/company.md`. If absent, create from template, pulling specifics from `companies.md` if a row exists. If present, read. `company.md` is write-once; never overwrite.
 
 ---
 
 ## Step 3 — Construct persona.md
 
-**In:** Step 1 state object, `company.md`, and the grounding files: `resume.md` (Part I universal doctrine + Part III for `track_decision`), `knowledge.md` (Part II for `lifecycle_stage` + Part III for `track_decision`), `companies.md` (the company row, for tier/process/bottleneck).
-
-**Action:** Write `{applications_root}/{company_slug}/{position_slug}/persona.md`, the single source of truth for both writer and grader. The persona must be grounded in the doctrine files, not invented: what "strong" looks like comes from `resume.md`; what this stage/track is judged on comes from `knowledge.md`.
-
-**Template:**
-```markdown
-# {role_title} — {company_name}
-
-## Quick Facts
-- **Type:** {work_type}
-- **Stage:** {lifecycle_stage}
-- **Location:** {location}
-- **Compensation:** {compensation or "Not listed"}
-- **Track:** {track_decision}
-- **Company Tier:** {tier from companies.md, or "Unrated"}
-
-## Recruiter Persona
-{4-6 sentences, first person as the hiring manager for this specific team. State: who you are and your bar at this company (use companies.md); what you value technically for this role (use knowledge.md Part III for the track); what a strong {lifecycle_stage} profile looks like (knowledge.md Part II); the 3 things that pass this resume forward and the 3 that no-pile it (resume.md Part I doctrine). Sharp and team-specific. No generic FAANG-speak.}
-
-## Role Summary
-{3-4 sentences. Day-to-day reality. What success at 3 months looks like.}
-
-## What They're Really Looking For
-{4-6 interpreted signals — subtext, not JD restatement. Ground each in knowledge.md/resume.md (e.g. "'strong CS fundamentals' here means the OA is the gate — knowledge.md Part I — not coursework").}
-
-## Required Skills
-{exact JD phrases, bulleted}
-
-## Preferred Skills
-{exact JD phrases, bulleted}
-
-## ATS Keywords
-{comma-separated list of 15-20 keywords the writer targets in bullets}
-
-## Gaps (honest)
-{Specific candidate-vs-JD mismatches and where they are acceptable, e.g. "Kubernetes in Skills only, no production bullet — acceptable in Skills per resume.md."}
-```
+Write `{applications_root}/{company_slug}/{position_slug}/persona.md`, the single source of truth for writer and grader, grounded in `resume.md` (Part I + Part III for the track), `knowledge.md` (Part II for the stage + Part III for the track), and the company row. (Template unchanged — Quick Facts, Recruiter Persona, Role Summary, What They're Really Looking For, Required/Preferred Skills, ATS Keywords, Gaps.)
 
 ---
 
 ## Step 4 — Copy the Skeleton Template  *(parallel with Step 2)*
 
-**In:** `applications_root`, `company_slug`, `position_slug`.
-
-**Action:** Create `{applications_root}/{company_slug}/{position_slug}/`. Copy `resume/applications/template.tex` into it as `Ankur Desai Resume.tex`. **Fix the class path for depth:** `template.cls` lives at `resume/applications/template.cls`, and the position folder is three levels under `applications/`, so rewrite `\documentclass[...]{resume}` to `\documentclass[...]{../../../resume}`. (Verify the up-count matches the actual nesting.)
-
-**Out:** Working `.tex` in the position folder, ready for the writer.
+Create the position folder. Copy `resume/applications/template.tex` into it as `Ankur Desai Resume.tex`. Rewrite the class path for folder depth (`{template}` → `{../../../template}`; verify the up-count).
 
 ---
 
-## Step 5 — Initial Write Pass
+## Step 5 — Initial Write Pass + Snapshot
 
-**In:** `persona.md` path, working `.tex` path.
+1. Dispatch `@resume-writing`:
+   > Iteration 1. Resume working copy: `{tex_path}`. Persona: `{persona_path}`. Run your first-pass workflow.
+2. **Snapshot the baseline.** Parse the resulting `.tex` for per-entry bullet counts (Experience + Projects). These are `iter1_counts` — the anti-deletion floor.
+3. **Assemble `gate_inputs.json`** in the position folder:
+   ```json
+   {
+     "jd_languages":        <from state object>,
+     "jd_required_keywords":<from state object>,
+     "candidate_languages": <Languages inventory from context.md>,
+     "exempt_entries":      <entries whose every bullet is genuinely metric-resistant,
+                             e.g. a research lab — keep this list tight and honest>,
+     "iter1_counts":        <from step 5.2>
+   }
+   ```
 
-**Action:** Dispatch `@resume-writing`:
-> Iteration 1. Resume working copy: `{tex_path}`. Persona: `{persona_path}`. Run your first-pass workflow.
-
-**Out:** Updated `.tex` in place. Writer may emit a one-line chat summary.
+**Out:** First-pass `.tex`, `gate_inputs.json`, `iter1_counts`.
 
 ---
 
-## Step 6 — Write/Grade Loop
+## Step 6 — Validate / Grade Loop
 
-**Iteration cap:** 3. **Exit threshold:** overall grade ≥ 8.25.
+**Iteration cap:** 3. **Exit condition:** `grade ≥ 8.25` **AND** `hard_gates_pass == true`.
 
-**Loop:**
-1. Dispatch `@resume-grading`:
-   > Resume: `{tex_path}`. Persona: `{persona_path}`. Produce report.
-2. Capture the overall grade. Do **not** persist the report.
-3. **If** grade ≥ 8.25 or iteration = 3 → exit.
-4. **Else** dispatch `@resume-writing`:
-   > Iteration {n}. Resume working copy: `{tex_path}`. Persona: `{persona_path}`. Latest grading report attached. Address the resolution tasks within rails.
+**Each iteration:**
+
+1. **Compile.** `xelatex "Ankur Desai Resume.tex"` from the position folder.
+2. **Validate (deterministic gate, always first):**
+   ```
+   python validate.py --tex "{tex_path}" --inputs gate_inputs.json \
+       --pdf "{pdf_path}" --phase loop --out gate_report.json
+   ```
+   Read `gate_report.json`.
+3. **If `hard_gates_pass == false`:** the artifact is invalid; do **not** grade it. Dispatch `@resume-writing` with the failed gates as **mechanical** fix tasks (these are not judgment calls — they are "add C++ and Java to Languages," "restore the deleted fliks bullet or swap in a metric-bearing one," "drop the orphaned skill"):
+   > Iteration {n}. Gate failures below — fix mechanically, in rails. Do not touch anything not named. Never resolve a metric or gate task by deleting a bullet.
    >
-   > {full text of latest grading report}
+   > {the failed gate details from gate_report.json}
 
-   Increment iteration. Return to step 1.
+   Increment iteration. If under cap, return to step 1. If at cap, exit with the standing gate failures recorded.
+4. **If `hard_gates_pass == true`:** dispatch `@resume-grading`, handing it the ceiling:
+   > Resume: `{tex_path}`. Persona: `{persona_path}`. Hard gates pass. Your grade may not exceed `clamp_ceiling = {gate_report.metric_density.clamp_ceiling}` (computed upstream from metric density — do not recompute or negotiate it). Produce report.
+5. Capture the overall grade. Do **not** persist the report.
+6. **If `grade ≥ 8.25` →** exit (gates already pass). **Else if iteration < 3 →** dispatch `@resume-writing` with the grading report's resolution tasks (judgment fixes), increment, return to step 1. **Else →** exit at cap.
 
-**Out:** Final `.tex` and the latest grading report (in chat memory).
+**Out:** Final `.tex`, the latest grade, the latest gate report.
 
 ---
 
 ## Step 7 — Fit Checks (post-loop, non-counted)
 
-**In:** Final `.tex`.
-
-1. Compile via `xelatex "Ankur Desai Resume.tex"` from the position folder.
-2. **Skills line wrap:** dispatch `@resume-writing`:
-   > Skills line wrapping. Trim items in the wrapping bucket per JD relevance in persona.md. Do not add or remove buckets.
-   Recompile until no wrap.
-3. **Page fit:** overflow → `Page overflow. Drop one bullet from the weakest project entry.` Underfill → `Page underfill. Add one bullet from a strong entry's pool.` Recompile until one page.
-
-**Out:** Compiled, well-fitted PDF.
+1. Recompile.
+2. **Skills line wrap:** dispatch the writer to trim the wrapping bucket per JD relevance (no bucket add/remove). Recompile until no wrap.
+3. **Page fit:** re-run `validate.py` with `--phase fit` (the anti-deletion gate is relaxed in this phase). Overflow → drop one bullet from the weakest project entry. Underfill → add one bullet from a strong entry's pool. Recompile until `page_fit` passes.
 
 ---
 
 ## Step 8 — Final grade.md
 
-**Action:** Dispatch `@resume-grading` once more on the shipped version. Persist that report to `{applications_root}/{company_slug}/{position_slug}/grade.md`.
+Dispatch `@resume-grading` once more on the shipped version, handing the final ceiling. Persist that report to `{position_slug}/grade.md`.
 
 ---
 
@@ -266,19 +181,20 @@ The track selects which **`resume.md` Part III** and **`knowledge.md` Part III**
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 APPLICATION SESSION READY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Company:    {company_name}
-Role:       {role_title}
+Company:    {company_name}        Role: {role_title}
 Folder:     {applications_root}/{company_slug}/{position_slug}/
 Track:      {track_decision}   Stage: {lifecycle_stage}
 Iterations: {n} / 3
+Eligibility:{eligibility_verdict} — {eligibility_reason}
 
 FINAL GRADE
 ────────────
-Overall:    {N.N / 10.0}
+Overall:    {N.N} / 10.0   (ceiling this run: {clamp_ceiling})
+Gates:      {PASS | FAIL — list failing gates}
 Threshold:  8.25
-Status:     {Above threshold | Below threshold — capped at iteration limit}
+Status:     {Above threshold & gates pass | Below threshold | Gate-blocked at cap}
 
-TOP RESOLUTION TASKS (from final grade.md)
+TOP RESOLUTION TASKS
 ──────────────────────────────────────────
 {Condensed task-action list, 3-5 lines}
 
@@ -290,27 +206,27 @@ LIKELIHOOD ESTIMATE
 ─────────────────────
 Resume Screen:  {Low / Medium / High} — {1 sentence}
 Overall Odds:   {Low / Medium / High} — {2 sentences, calibrated against TRACKER.md}
-Outside-Resume Levers: {1-2 actions, grounded in knowledge.md — e.g. referral, OA prep}
+Outside-Resume Levers: {1-2 actions grounded in knowledge.md}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
+
+If gates never cleared by the cap, say so plainly here — a gate-blocked resume does not ship as "above threshold" regardless of the number.
 
 ---
 
 ## Step 10 — TRACKER.md Append  *(parallel with Step 9)*
 
-Append to `{applications_root}/TRACKER.md`:
 ```
-| {company_name} | {role_title} | {YYYY-MM-DD today} | Applied | {track_decision} | |
+| {company_name} | {role_title} | {YYYY-MM-DD} | Applied | {track_decision} | |
 ```
 
 ---
 
 ## Orchestrator Constraints
 
-- Never edit `.tex` content. Delegate to the writer.
-- Never compute a grade. Delegate to the grader.
-- Never pass `context.md` to the grader. It is blind to the bullet pool by design.
-- Always pass `persona.md` to both agents; pass `context.md` to the writer only.
-- `company.md` is write-once. `knowledge.md` and `resume.md` are read-only doctrine.
-- Never write intermediate `grade.md` files — only the final report.
-- Never edit `context.md`, `applications/template.cls`, `applications/template.tex`, `knowledge.md`, or `resume.md`.
+- Never edit `.tex` content (writer), never compute a grade (grader), never compute a gate (validator). Run the validator; route its report.
+- Never grade an artifact whose hard gates fail.
+- Never let the loop exit unless `grade ≥ 8.25` AND `hard_gates_pass`.
+- Always hand the grader its `clamp_ceiling`; never let it set its own.
+- Keep `exempt_entries` honest and minimal — it is the one input that can soften the metric ceiling, and `validate.py` logs every exemption it applies.
+- Never pass `context.md` to the grader. Never edit doctrine files, `template.tex`, or `template.cls`.

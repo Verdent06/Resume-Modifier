@@ -233,7 +233,7 @@ Multi-game platform that crowd-validates gameplay skill and mints shareable cert
 ```
 1. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
 2. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
-3. Designed a game-scoped data model under one unified experience from day one, so adding a new game is content (new mechanic vocabulary, ranks, and classifier) rather than a re-architecture, and cross-game player profiles work from the first release.
+3. Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box with no managed queue or transcoding service.
 4. Architected an ML rating service that grades each clip independently and displays its verdict beside the crowd's, turning model-versus-community disagreement into product surface, with crowdsourced ratings serving as the labeled data the classifier trains on.
 5. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
 ```
