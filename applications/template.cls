@@ -77,7 +77,7 @@
 	\end{list}
 }
 
-\newenvironment{rSectionEntry}[5]{ % 5 parameters: name, dates, tagline, technologies, location
+\newenvironment{rSectionEntry}[5]{ % 5 parameters: name, dates/link, tagline, technologies, location
     % --- LINE 1: Name | Tech | Dates ---
     \textbf{\fontsize{11pt}{13pt}\selectfont #1}
     \ifthenelse{\equal{#4}{}}{}{ % If Tech (#4) exists
@@ -85,13 +85,13 @@
 \textit{#4}
     }
     \hfill {#2}% <--- Percent prevents trailing space
-	\vspace{0.08em}
+	% \vspace{0.08em}
     \\
     % --- LINE 2: Tagline | Location ---
     \ifthenelse{\equal{#3}{}\and\equal{#5}{}}{
         \vspace{-1.4em}
     }{
-		#3% <--- Percent prevents space after tagline
+        {\fontsize{10pt}{12pt}\selectfont #3}% <--- #3 now 1pt smaller
         \hfill
         #5% <--- CRITICAL: Percent prevents trailing space, forcing strict right alignment
     }
