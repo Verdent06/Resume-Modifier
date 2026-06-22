@@ -91,7 +91,7 @@ Git, Linux, Postman, Figma, ROSBag
 
 ## Canonical Entries
 
-Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied verbatim into the resume; swap-set substitutions are the only modification permitted.
+Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied verbatim into the resume; swap-set substitutions are the only modification permitted. Experience entries carry dates; project entries carry a live link instead of a date so they can be ordered by relevance, not recency. Each project also carries a one-line descriptor that renders below the name (the rSectionEntry tagline slot, param #3), giving the at-a-glance "what it is." Because the descriptor carries identity, a project's lead bullet leads with its strongest engineering decision, never a re-description of the project. Experiences have no descriptor slot (the tagline holds the role), so an experience's first bullet still establishes what was built.
 
 ---
 
@@ -163,19 +163,18 @@ Software Engineering Intern                   East Lansing, MI
 3. Designed a dual-database layer that keeps transactional records in PostgreSQL while serving relationship-heavy reads from Neo4j, routing each query class to the store that answers it fastest instead of forcing one engine to do both jobs.
 4. Owned the Spring Boot backend serving the platform's core CRUD and graph-traversal APIs, structuring endpoints around the dual-store model so the client never has to know which database backs a given read.
 5. Authored an AWS deployment script and managed the environment as code with Terraform, turning a manual multi-service bring-up into a repeatable, version-controlled provision so the polyglot stack deploys identically every time.
-6. Built CI/CD pipelines and Dockerfiles for the Spring Boot, frontend, and Neo4j services, enforcing branch protection and automated quality gates with 85%+ coverage across 35+ tests on every merge.
 ```
 
 ---
 
-### Experience: FIRST Robotics
+### Experience: Robostangs
 
 **Lane:** Competition-robotics pedigree and the hardware-software boundary, plus software-captain leadership and a world-stage result. Holds the autonomy Experience slot until Bopardikar produces narratable output, then compresses to one line. Drops on the full-stack track.
 
 **Header:**
 
 ```
-FIRST Robotics, Robostangs                  Jun 2023 -- May 2024
+Robostangs (FRC Team 548)                   Jun 2023 -- May 2024
 Software Captain                            Northville, MI
 ```
 
@@ -199,14 +198,14 @@ Software Captain                            Northville, MI
 **Header:**
 
 ```
-Dadei                                             May 2025 -- Jun 2026
-{tech stack derived from selected bullets}
+Dadei  |  {tech derived from selected bullets}    dadei.app
+Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions
 ```
 
 **Bullet pool:**
 
 ```
-1. Built an ambient voice assistant that turns passively overheard conversation into real calendar, email, and task actions behind a human-approval gate, routing every side effect through a single chokepoint so an LLM never fires an irreversible action without a cancelable countdown.
+1. Routed every model-proposed side effect through a single approval chokepoint, so the assistant never fires an irreversible calendar, email, or task action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
 2. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
 3. Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, eliminating the catastrophic false-merge failure a single-threshold cosine match produces.
 4. Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic and cut duplicate transcription roughly in half.
@@ -225,41 +224,39 @@ Dadei                                             May 2025 -- Jun 2026
 **Header:**
 
 ```
-fliks.gg                                          Jun 2026 -- Present
-{tech stack derived from selected bullets}
+fliks  |  {tech derived from selected bullets}    github.com/fliks-gg
+Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards
 ```
 
 **Bullet pool:**
 
 ```
-1. Building a multi-game platform where players upload competitive gameplay clips, the community rates skill, and top clips mint shareable certification cards, filling the gap between platforms that host low-skill content and ones that coach rather than validate skill.
-2. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
-3. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
-4. Designed a game-scoped data model under one unified experience from day one, so adding a new game is content (new mechanic vocabulary, ranks, and classifier) rather than a re-architecture, and cross-game player profiles work from the first release.
-5. Architected an ML rating service that grades each clip independently and displays its verdict beside the crowd's, turning model-versus-community disagreement into product surface, with crowdsourced ratings serving as the labeled data the classifier trains on.
-6. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
+1. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
+2. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
+3. Designed a game-scoped data model under one unified experience from day one, so adding a new game is content (new mechanic vocabulary, ranks, and classifier) rather than a re-architecture, and cross-game player profiles work from the first release.
+4. Architected an ML rating service that grades each clip independently and displays its verdict beside the crowd's, turning model-versus-community disagreement into product surface, with crowdsourced ratings serving as the labeled data the classifier trains on.
+5. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
 ```
 
 ---
 
 ### Project: WizViz
 
-**Lane:** Real-time computer vision and on-device inference, built under hackathon constraint. The only perception-adjacent, real-time-CV entry. [FLAG: no audit evidence of a placement, add to hook if it placed.]
+**Lane:** Real-time computer vision and on-device inference, built under hackathon constraint. The only perception-adjacent, real-time-CV entry; carries a hackathon track win for credibility.
 
 **Header:**
 
 ```
-WizViz                                            Feb 2025
-{tech stack derived from selected bullets}
+WizViz  |  {tech derived from selected bullets}   devpost.com/software/wizviz
+Webcam fighting game driven by real-time body-gesture recognition, winner of the Interactive Media track at SpartaHack X
 ```
 
 **Bullet pool:**
 
 ```
-1. Built a webcam-controlled two-player fighting game at a 36-hour hackathon where body gestures alone drive combat, splitting one camera frame to track both players with no extra hardware.
-2. Stabilized noisy per-frame pose output by accumulating every frame's gesture classification across the turn window and taking the dominant sustained gesture, instead of reading a single jittery frame at the turn boundary.
-3. Classified five distinct combat gestures from body landmarks with a scale-invariant geometric model normalized by torso length, making detection work across players and camera distances without any labeled training data.
-4. Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, keeping the game responsive instead of blocking on per-frame detection.
-5. Separated two players on one webcam by landmark position, assigning each detected pose to a side of the frame so local two-player worked with zero additional cameras.
-6. Built a single-player opponent with a difficulty knob, random play below a threshold and a finite-state policy above it that rests, defends, heals, or finishes based on game state.
+1. Stabilized noisy per-frame pose output by accumulating every frame's gesture classification across the turn window and taking the dominant sustained gesture, instead of reading a single jittery frame at the turn boundary.
+2. Classified five distinct combat gestures from body landmarks with a scale-invariant geometric model normalized by torso length, making detection work across players and camera distances without any labeled training data.
+3. Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, keeping the game responsive instead of blocking on per-frame detection.
+4. Separated two players on one webcam by landmark position, assigning each detected pose to a side of the frame so local two-player worked with zero additional cameras.
+5. Built a single-player opponent with a difficulty knob, random play below a threshold and a finite-state policy above it that rests, defends, heals, or finishes based on game state.
 ```

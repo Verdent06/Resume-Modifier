@@ -38,7 +38,7 @@ The orchestrator never duplicates either agent's work and never bypasses them.
 | `grade.md` | write (final only) | – | – |
 | `TRACKER.md` | append | – | – |
 | `applications/template.tex` | read, copy | **never** | – |
-| `applications/resume.cls` | – | **never** | – |
+| `applications/template.cls` | – | **never** | – |
 
 `knowledge.md` and `resume.md` are **read-only doctrine** — never edited by any agent. The grader is blind to `context.md` (the bullet pool) by design but may read `resume.md`/`knowledge.md`, which carry doctrine, not the pool.
 
@@ -63,7 +63,7 @@ resume/
 ├── resume.md                                     ← Resume doctrine. Read-only.
 ├── companies.md                                  ← Company data. Coach-writable.
 └── applications/
-    ├── resume.cls                                ← Resume class. Read-only.
+    ├── template.cls                                ← Resume class. Read-only.
     ├── template.tex                              ← Single skeleton. Read-only; copied, never edited in place.
     └── {role_year}/
         ├── TRACKER.md
@@ -198,7 +198,7 @@ The track selects which **`resume.md` Part III** and **`knowledge.md` Part III**
 
 **In:** `applications_root`, `company_slug`, `position_slug`.
 
-**Action:** Create `{applications_root}/{company_slug}/{position_slug}/`. Copy `resume/applications/template.tex` into it as `Ankur Desai Resume.tex`. **Fix the class path for depth:** `resume.cls` lives at `resume/applications/resume.cls`, and the position folder is three levels under `applications/`, so rewrite `\documentclass[...]{resume}` to `\documentclass[...]{../../../resume}`. (Verify the up-count matches the actual nesting.)
+**Action:** Create `{applications_root}/{company_slug}/{position_slug}/`. Copy `resume/applications/template.tex` into it as `Ankur Desai Resume.tex`. **Fix the class path for depth:** `template.cls` lives at `resume/applications/template.cls`, and the position folder is three levels under `applications/`, so rewrite `\documentclass[...]{resume}` to `\documentclass[...]{../../../resume}`. (Verify the up-count matches the actual nesting.)
 
 **Out:** Working `.tex` in the position folder, ready for the writer.
 
@@ -308,4 +308,4 @@ Append to `{applications_root}/TRACKER.md`:
 - Always pass `persona.md` to both agents; pass `context.md` to the writer only.
 - `company.md` is write-once. `knowledge.md` and `resume.md` are read-only doctrine.
 - Never write intermediate `grade.md` files — only the final report.
-- Never edit `context.md`, `applications/resume.cls`, `applications/template.tex`, `knowledge.md`, or `resume.md`.
+- Never edit `context.md`, `applications/template.cls`, `applications/template.tex`, `knowledge.md`, or `resume.md`.

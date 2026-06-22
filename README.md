@@ -28,7 +28,7 @@ An agent-based system that turns a job description into a role-specific resume, 
 
 2. **Read-only doctrine.** `knowledge.md` and `resume.md` are **never edited by any agent** unless the user explicitly says so. Only `context.md` (candidate state) and `companies.md` (company data) are agent-writable.
 
-3. **One skeleton template.** `applications/template.tex` is the single resume skeleton, sitting beside `applications/resume.cls`. Track (full-stack / ai-ml / dev-ops / robotics) is a doctrine-routing label that selects which `resume.md`/`knowledge.md` section grounds the work — not a separate file. The writer fills the same skeleton for every track.
+3. **One skeleton template.** `applications/template.tex` is the single resume skeleton, sitting beside `applications/template.cls`. Track (full-stack / ai-ml / dev-ops / robotics) is a doctrine-routing label that selects which `resume.md`/`knowledge.md` section grounds the work — not a separate file. The writer fills the same skeleton for every track.
 
 4. **Writer is mechanical, not creative.** Bullets are copied verbatim from `context.md`; tech changes only via explicit swap sets; no invented metrics or prose. *Which* selection is strongest is decided by `resume.md`, applied through selection only.
 
@@ -51,7 +51,7 @@ resume/
 ├── companies.md          ← company data (agent-writable: coach)
 │
 └── applications/
-    ├── resume.cls        ← resume class (read-only)
+    ├── template.cls        ← resume class (read-only)
     ├── template.tex      ← single skeleton; copied, never edited in place
     └── {year}/
         ├── TRACKER.md
@@ -75,7 +75,7 @@ Always-on coordinator. Reads the four markdown sources + the web; routes strateg
 Parses the JD (track + lifecycle stage from the posting), resolves `company.md`, builds the doctrine-grounded `persona.md`, copies `applications/template.tex` (fixing the class path for folder depth), runs the write/grade loop, compiles, persists, appends the tracker. Never edits content or scores.
 
 ### Writer (`resume-writing.mdc`)
-Reads `context.md`, `resume.md`, `persona.md`, the working `.tex`, and (iteration > 1) the grading report. Fills the skeleton: selects bullets, swaps within sets, picks skills buckets, orders by impact density per `resume.md`. Cannot rewrite prose, invent anything, or edit the doctrine files, `template.tex`, `resume.cls`, or education.
+Reads `context.md`, `resume.md`, `persona.md`, the working `.tex`, and (iteration > 1) the grading report. Fills the skeleton: selects bullets, swaps within sets, picks skills buckets, orders by impact density per `resume.md`. Cannot rewrite prose, invent anything, or edit the doctrine files, `template.tex`, `template.cls`, or education.
 
 ### Grader (`resume-grading.mdc`)
 Reads `persona.md`, the `.tex`, `resume.md`, `knowledge.md`. Adopts the role persona, scores `0.0-10.0`, and emits a task-action resolution list. Blind to `context.md` and the bullet pool.

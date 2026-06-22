@@ -46,7 +46,7 @@ That is the complete list.
 - **Add an entry** not in `context.md`.
 - **Modify metrics** inside bullets.
 - **Add/remove items from the master skills inventory** (only trim per-resume picks).
-- **Edit `context.md`, `resume.md`, `knowledge.md`, `applications/resume.cls`, or `applications/template.tex`.**
+- **Edit `context.md`, `resume.md`, `knowledge.md`, `applications/template.cls`, or `applications/template.tex`.**
 - **Shrink font, line spacing, or margins** to fit one page.
 
 If a JD-required technology is not in the pool and no swap set bridges it, state so in chat and stop. Fabrication is not an option.
