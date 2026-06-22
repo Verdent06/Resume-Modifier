@@ -96,7 +96,59 @@ Create one todo per step. Do not batch.
 
 ## Step 2 — Resolve company.md  *(parallel with Step 4)*
 
-Check `{applications_root}/{company_slug}/company.md`. If absent, create from template, pulling specifics from `companies.md` if a row exists. If present, read. `company.md` is write-once; never overwrite.
+**In:** `company_name`, `company_slug`, `applications_root`, Step 1 state object (comp, location, work model).
+
+**Action:** Check `{applications_root}/{company_slug}/company.md`. If absent, create the folder and write from the template below. If present, read. `company.md` is write-once; never overwrite.
+
+**Source priority when creating:**
+1. **`companies.md` row** (if present) — primary source for tier, interview funnel, bottleneck, acceptance estimate, and the Notes column (product/stack signal). Slice the row into Quick Facts and Interview Process; do not copy the table verbatim.
+2. **The JD** — intern comp, locations, work model, clearance/eligibility, review windows, role-specific stack.
+3. **Web search** — fill gaps when no row exists or Notes is thin (valuation, HQ, product description).
+
+The prose block at the top expands the row's **Notes** (or web/JD research) into 2–4 readable sentences. Reference tone, not first person — this file is company intel for the pipeline, not a "why this company" essay.
+
+**Template (only when creating):**
+
+```markdown
+# {company_name}
+
+{2-4 sentences: what the company builds, who it serves, and why it matters technically. Expand companies.md Notes into prose; name the flagship product/platform if one exists. Specific, not marketing fluff.}
+
+## Quick Facts
+
+- **Tier:** {from companies.md tier section, or "Unrated"}
+- **HQ / offices:** {HQ + offices relevant to this application}
+- **Valuation / signal:** {funding, market position, prestige markers — from Notes or web}
+- **Product focus:** {core technical product/platform in one line}
+- **Financial comp ({role_year} {track or role family}):** {from JD or null}
+- **Work model:** {paid/unpaid, remote/hybrid/onsite, term length — from JD}
+- **Clearance / eligibility:** {export-control, citizenship, class-year gates — from JD, or omit if none}
+
+## Interview Process
+
+| Stage | Format | Notes |
+| ----- | ------ | ----- |
+| Resume screen | {Human + ATS / referral-heavy / etc.} | {timing signal, e.g. review window} |
+| OA | {platform or "None"} | {difficulty, style} |
+| {additional stages from companies.md Interview Process column} | {format} | {notes} |
+| Behavioral | {if applicable} | {culture signal} |
+
+**Estimated funnel:** {round count} · {LC/practical difficulty} · {OA platform} · {sys design?} · Bottleneck: {from companies.md} · {acceptance estimate from companies.md}
+
+## Stack & Hiring Signal
+
+- **Languages:** {from Notes, JD, and track — name what actually ships}
+- **Domains:** {technical domains this company hires for}
+- **What wins:** {what passes a resume screen here — grounded in companies.md Notes and knowledge.md, not generic advice}
+
+## Sources
+
+- {JD URL if available}
+- `companies.md` {tier section} row (interview format, bottleneck, acceptance estimate)
+- {any web sources used for prose or facts}
+```
+
+**Constraint:** `company.md` is write-once. Never overwrite.
 
 ---
 
