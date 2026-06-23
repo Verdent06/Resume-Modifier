@@ -70,15 +70,17 @@ resume/
 
 2. **Writer is mechanical.** Bullets are copied verbatim from `context.md`; tech changes only via swap sets.
 
-3. **Grader is blind to the pool.** It reads the `.tex` + `persona.md` + `reference/` — never `context.md`. It emits defects from recruiter judgment on the shipped page, not writer-internal plans.
+3. **Grader is blind to the pool.** It reads the `.tex` + `persona.md` (recruiter lens) + `reference/` — never `context.md`. It judges the shipped page against abstract screen criteria, not a hidden targeting plan.
 
-4. **Demerit model, not anchored grades.** Emergencies (veto), majors (×3), minors (×1). Pass bar: weighted < 5, no emergency, gates pass. Display score = `10 − weighted` (cosmetic only).
+4. **Writer has two modes.** **Initial:** construct from `context.md` lanes + persona lens (no defects yet). **Grading-response:** defects JSON is primary; persona only interprets grader language.
 
-5. **Prose and score cannot diverge.** Every observation in the grader report must appear in the scored defects JSON. `check-report` enforces 1:1 before scoring.
+5. **Demerit model, not anchored grades.** Emergencies (veto), majors (×3), minors (×1). Weighted total and display score (`10 − weighted`) are informational in `grade.md`. Loop exits on zero demerits, writer peak, or timeout — no pass threshold.
 
-6. **`grade.md` is the deliverable.** Verdict, scored defects, mechanical gates, likelihood, and interview prep — folded from what used to be four JSON files.
+6. **Prose and score cannot diverge.** Every observation in the grader report must appear in the scored defects JSON. `check-report` enforces 1:1 before scoring.
 
-7. **One skeleton.** `applications/template.tex` for every track; track is a routing label into `reference/` sections.
+7. **`grade.md` is the deliverable.** Verdict, scored defects, mechanical gates, likelihood, and interview prep — folded from what used to be four JSON files.
+
+8. **One skeleton.** `applications/template.tex` for every track; track is a routing label into `reference/` sections.
 
 ---
 
@@ -87,14 +89,14 @@ resume/
 1. Paste a JD (or ask the coach — it routes to the pipeline).
 2. Orchestrator parses role → `screen_track` + `differentiator` → eligibility (computed, not reasoned).
 3. Resolve `company.md`, build `persona.md`, copy skeleton template.
-4. Writer fills first pass from persona + `context.md` + doctrine; orchestrator snapshots `iter1_counts` and writes `.pipeline/gate_inputs.json`.
-5. **Loop** (cap 10 graded cycles — timeout if neither zero demerits nor writer peak; shoot for those two exits):
+4. Writer **initial** pass from persona lens + `context.md` lanes + doctrine; orchestrator snapshots `iter1_counts` and writes `.pipeline/gate_inputs.json`.
+5. **Loop** (cap 10 — timeout if neither zero demerits nor writer peak):
    - `xelatex` → `cleanup.py clean`
    - `validate.py gates` — hard gates must pass before grading
    - `@resume-grading` → `check-report` → `validate.py demerits`
-   - Writer addresses defects in-rails → `writer_loop_status.json` → `validate.py writer-loop`
-   - Exit only on `loop_target_met`, writer `peak`, or timeout at 10; ship bar (`weighted < 5`) checked at loop exit
-6. **Fit checks** (only if ship bar + gates pass — skills wrap, page fill).
+   - Writer **grading-response** (defects JSON primary) → `writer_loop_status.json` → `validate.py writer-loop`
+   - Exit only on `loop_target_met`, writer `peak`, or timeout at 10
+6. **Fit checks** (if hard gates pass — skills wrap, page fill).
 7. Final grade pass → assemble `grade.md` → `cleanup.py clean --ship`.
 8. Append `TRACKER.md`.
 
@@ -109,7 +111,7 @@ Run from repo root.
 | Subcommand | Purpose |
 |------------|---------|
 | `gates` | Required languages, orphans, anti-deletion, protected depth, lead signal, page fill |
-| `demerits` | Score grader defect JSON → ship pass/fail, `loop_target_met`, display score |
+| `demerits` | Score grader defect JSON → weighted total, `loop_target_met`, display score |
 | `writer-loop` | Validate `writer_loop_status.json` after a grading-response pass |
 | `check-report` | Wishlist bullet count must match JSON defects; no deprecated severities |
 
@@ -162,7 +164,7 @@ python scripts/cleanup.py clean-tree --root applications
 | `reference/recruiting.md` | Field + recruiting doctrine (read-only) |
 | `reference/resume.md` | Resume doctrine (read-only) |
 | `reference/companies.md` | Company operational data (coach-writable) |
-| `persona.md` | Per-role briefing (orchestrator-generated) |
+| `persona.md` | Per-role recruiter lens — bar, track, abstract screen criteria (no entry names) |
 | `grade.md` | Final verdict, defects, gates, interview prep |
 
 ---
@@ -170,7 +172,7 @@ python scripts/cleanup.py clean-tree --root applications
 ## Practical Limitations
 
 - The writer can only close gaps representable via the bullet pool + swap sets. Structural mismatches cap out as out-of-rails defects in `grade.md`.
-- Passing demerits + gates means strong for the **resume screen** — not a guarantee past OA/onsite.
+- Weighted demerits and display score in `grade.md` describe resume-screen quality — not a guarantee past OA/onsite.
 - Historical `grade.md` / `company.md` files may cite old paths (`companies.md`); live rules use `reference/companies.md`.
 
 ---

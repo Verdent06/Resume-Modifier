@@ -20,7 +20,7 @@ USAGE (from repo root)
     python scripts/validate.py check-report --report grader_output.txt
 
   gates        exit 0 -> all HARD gates pass;  exit 1 -> a hard gate failed
-  demerits     exit 0 -> PASS (ship bar: weighted < threshold); loop target is weighted == 0
+  demerits     exit 0 -> scored; loop target is weighted == 0 and no emergency
   writer-loop  exit 0 -> writer_loop_status.json valid
   check-report exit 0 -> JSON and wishlist match;  exit 1 -> diverged
 
@@ -493,20 +493,19 @@ def compute_metric_density(pr: ParsedResume, exempt_entries):
 # ============================================================================
 #  DEMERIT SCORER  (merged from the former score_demerits.py)
 #  Same deterministic layer as the artifact gates: takes the recruiter grader's
-#  severity-tagged defect list and turns it into pass/fail in code, so a familiar
-#  0-10 can never be vibed. Run via the `demerits` subcommand.
+#  severity-tagged defect list and computes weighted demerits + display score.
+#  No pass/fail threshold — the loop exits on zero demerits, writer peak, or timeout.
 # ============================================================================
 
 DEMERIT_WEIGHTS = {"emergency": None, "major": 3, "minor": 1}  # emergency = veto; no unscored tier
-DEMERIT_THRESHOLD = 5
 _DEMERIT_SEVERITIES = set(DEMERIT_WEIGHTS)
 _DEPRECATED_SEVERITIES = {"patch"}  # legacy grader output; coerced to minor with warning
 
 
-def score_demerits(defects, threshold=DEMERIT_THRESHOLD, weights=DEMERIT_WEIGHTS):
+def score_demerits(defects, weights=DEMERIT_WEIGHTS):
     """Rules, all here and none in the model:
-      - any `emergency` -> FAIL (veto); an application-killer is never outweighed.
-      - else weighted = major*3 + minor*1; PASS iff weighted < threshold.
+      - weighted = major*3 + minor*1
+      - loop_target_met = no emergency AND weighted == 0
       - display score = max(0, 10 - weighted), cosmetic only.
     Unknown severity is coerced to `major` (fail-safe); deprecated `patch` -> `minor`.
     Both are surfaced in coerced_defects, never silent."""
@@ -525,18 +524,12 @@ def score_demerits(defects, threshold=DEMERIT_THRESHOLD, weights=DEMERIT_WEIGHTS
     emergency = len(buckets["emergency"])
     weighted = (weights["major"] * len(buckets["major"])
                 + weights["minor"] * len(buckets["minor"]))
-    passed = emergency == 0 and weighted < threshold
     loop_target_met = emergency == 0 and weighted == 0
     return {
-        "passed": passed,
         "loop_target_met": loop_target_met,
-        "fail_reason": ("emergency defect present (veto)" if emergency
-                        else f"weighted demerits {weighted} >= threshold {threshold}"
-                        if not passed else None),
         "weighted_demerits": weighted,
         "display_score": max(0.0, 10.0 - weighted),
         "counts": {k: len(v) for k, v in buckets.items()},
-        "threshold": threshold,
         "coerced_defects": coerced,
     }
 
@@ -707,22 +700,19 @@ def run_gates(args) -> int:
 def run_demerits(args) -> int:
     raw = json.loads(Path(args.demerits).read_text(encoding="utf-8"))
     defects = raw.get("defects", raw if isinstance(raw, list) else [])
-    result = score_demerits(defects, threshold=args.threshold)
+    result = score_demerits(defects)
     Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
 
     c = result["counts"]
-    print(f"{'PASS' if result['passed'] else 'FAIL'}  "
-          f"weighted={result['weighted_demerits']} (thr {result['threshold']})  "
+    print(f"weighted={result['weighted_demerits']}  "
           f"display={result['display_score']:.1f}  "
           f"loop_target={'met' if result['loop_target_met'] else 'open'}", file=sys.stderr)
     print(f"  emergency={c['emergency']} major={c['major']} "
           f"minor={c['minor']}", file=sys.stderr)
-    if result["fail_reason"]:
-        print(f"  fail: {result['fail_reason']}", file=sys.stderr)
     if result["coerced_defects"]:
         print(f"  WARNING: {len(result['coerced_defects'])} defect(s) had an unknown "
               f"severity, scored as major", file=sys.stderr)
-    return 0 if result["passed"] else 1
+    return 0
 
 
 def run_writer_loop(args) -> int:
@@ -750,10 +740,9 @@ def main() -> int:
     g.add_argument("--out", default="gate_report.json")
     g.set_defaults(func=run_gates)
 
-    d = sub.add_parser("demerits", help="score the grader's defect list into pass/fail")
+    d = sub.add_parser("demerits", help="score the grader's defect list (informational)")
     d.add_argument("--demerits", required=True, help="grader-emitted defect JSON")
     d.add_argument("--out", default="demerit_score.json")
-    d.add_argument("--threshold", type=int, default=DEMERIT_THRESHOLD)
     d.set_defaults(func=run_demerits)
 
     c = sub.add_parser("check-report", help="verify grader prose matches defect JSON")

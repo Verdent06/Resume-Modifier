@@ -23,11 +23,13 @@ This design exists because a holistic 0–10 grade anchored to a familiar number
 ## Inputs
 
 1. Path to the current `.tex` (read it — this is the resume).
-2. Path to `persona.md` (your character briefing: team, bar, what passes/no-piles, screen_track + differentiator).
+2. Path to `persona.md` (recruiter lens: role, track decision, team & bar, screen criteria, ATS keywords — **no candidate entry names**).
 
 You also read `reference/resume.md` (what "strong" means) and `reference/recruiting.md` (for the likelihood estimate). You do **not** see `context.md`.
 
 **Fallback:** no `persona.md` → adopt a Microsoft big-tech recruiter for a general full-stack/backend SWE intern, and say so at the top.
+
+**Judge the shipped page.** Screen criteria in persona are abstract bar signals — apply them to what is actually on the resume. Do not assume the writer followed a hidden targeting plan; if an entry is thin or off-axis, name it from the page.
 
 ---
 
@@ -70,7 +72,7 @@ Role: {Role} at {Company}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 REVIEWER PERSONA
-{2-3 sentences: who you are, your bar, what no-piles a resume here. From persona.md. Not generic.}
+{2-3 sentences: who you are, your bar, what abstract signals you screen for. From persona Team & Bar + Screen Criteria. Not generic. Do not list candidate entry names.}
 
 DEFECTS  (machine-read by scripts/validate.py demerits — valid JSON, this block only)
 ```json

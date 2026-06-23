@@ -97,7 +97,7 @@ Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied ver
 
 ### Experience: Bopardikar Lab
 
-**Lane:** Research ceiling and the LLM-to-action safety boundary. The only entry that says "works on novel, safety-critical AI-robotics problems." Anchors the autonomy track's intellectual ceiling and the orchestration-level defense angle.
+**Lane:** Research ceiling and the LLM-to-action safety boundary. The only entry that says "works on novel, safety-critical AI-robotics problems," anchoring the autonomy track's intellectual ceiling. Now also carries the portfolio's only defensible C++ surface (the verifier node) and a real-robot, sim-to-hardware validation signal on a physical RoboMaster EP Core.
 
 **Header:**
 
@@ -109,12 +109,13 @@ Undergraduate Research Assistant                  East Lansing, MI
 **Bullet pool:**
 
 ```
-1. Researching whether the cheap triage layer that guards an LLM-controlled robot is itself a gameable security boundary, by splitting one unsafe command into individually innocent fragments that reassemble past the gate into unsafe robot behavior.
-2. Built the defense under attack as a steelman, composing a triage-plus-verification gate from three published safety architectures rather than a naive single classifier, so the result survives the objection that a real system would do more.
-3. Framed the decomposition attack as a measurement instrument rather than a one-off exploit, tracing an empirical cost-versus-security frontier that ties a triage gate's cost savings to exactly the compositional blind spot the attack rides.
-4. Reproduced a published adversarial-robotics attack pipeline (attacker, target, judge, syntax-checker) as the baseline, so the novel attack's success rate is measured against a credible reference instead of reported in isolation.
-5. Built the full language-to-motion pipeline in simulation on ROS2 and Gazebo with the attack layer decoupled at the ROS2 interface, so swapping the target robot platform cost only the URDF and control layer and never touched the security result.
-6. Modeled the threat as multi-turn, exploiting the feedback loop where robot telemetry returns to the LLM, a harder and more realistic attack surface than single-shot prompt injection.
+1. Researching the security of an LLM-controlled robot, where the cheap per-step gate screening its motion plans is the exact seam an attacker slips a harmful plan through.
+2. Reframed the project from defense-building to measurement, mapping the frontier where a triage gate's cost savings and its attackability reduce to one property: per-step versus whole-plan checking.
+3. Architected the node graph to run byte-identical in Gazebo and on a physical RoboMaster EP Core, isolating the sim-to-hardware swap to the URDF and controller layer.
+4. Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, the gate the decomposition attack is built to defeat.
+5. Integrated nav2's production MPPI controller rather than hand-rolling a planner, keeping the C++ work on the security apparatus instead of motion control.
+6. Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, so the decomposition attack's success rate reads against a credible reference.
+7. Built the attacked defense as a steelman from published safety architectures, so the decomposition attack lands on the strongest reasonable system, not a strawman.
 ```
 
 ---
@@ -135,7 +136,7 @@ Co-Founder & Vice President                       East Lansing, MI
 ```
 1. Co-founded and grew an MSU engineering community from zero to 150+ members, replacing a sprawl of spreadsheets, Slack threads, and manual invites with a single club-operations platform I built to run member lifecycle, events, and project provisioning.
 2. Automated member onboarding end to end so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, collapsing a manual multi-service invite process to seconds.
-3. Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent, sustaining 150+ check-ins per event.
+3. Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent so simultaneous scans cannot double-award or be forged client-side, sustaining 150+ check-ins per event.
 4. Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth.
 5. Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
 6. Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, with the frontend auto-deploying on the same commit, taking the team from manual changes to reviewed continuous deploys.
@@ -205,21 +206,21 @@ Ambient voice assistant that turns overheard conversation into human-approved ca
 **Bullet pool:**
 
 ```
-1. Routed all model-proposed side effects through one approval chokepoint, so the assistant never fires an irreversible action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
-2. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that Redis pub/sub silently dropped on disconnect.
-3. Engineered a no-merge-first speaker-ID model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity, eliminating the false-merge failure a single-threshold cosine produces.
-4. Solved the same-room, multi-mic problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election on SNR, clarity, and cadence, routing to the best mic and cutting duplicates roughly in half.
+1. Routed every model-proposed side effect through a single approval chokepoint, so the assistant never fires an irreversible calendar, email, or task action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
+2. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
+3. Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, eliminating the catastrophic false-merge failure a single-threshold cosine match produces.
+4. Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic and cut duplicate transcription roughly in half.
 5. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, matching each engine to its latency requirement so interactive commands stay responsive while bulk transcription stays cheap.
 6. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap before the model proposes actions, grounding every proposal in ranked episodic evidence under a fixed token budget.
 7. Implemented delayed action auto-fire on wall-clock-relative job scheduling with a one-second flush backstop, keeping countdown auto-fire correct across worker timezones and tight to the user-visible timer instead of drifting to a 20-second heartbeat.
-8. Shipped the backend as two services from one Docker image by role, with boot-time migrations and a three-layer restart strategy surviving the worker queue's silent exit-zero death on a Redis drop, behind a CI gate of lint, tests, and migrations.
+8. Shipped the backend as two services from a single Docker image split by process role, with migrations-on-boot ordering and a three-layer restart strategy that survives the worker queue's silent exit-zero death on a Redis drop, deployed behind a CI matrix of lint, test, and migration-verification gates.
 ```
 
 ---
 
 ### Project: fliks
 
-**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system.
+**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system. [FLAG: audit says Go, not Rust, confirm.]
 
 **Header:**
 
@@ -233,7 +234,7 @@ Multi-game platform that crowd-validates gameplay skill and mints shareable cert
 ```
 1. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
 2. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
-3. Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box with no managed queue or transcoding service.
+3. Designed a game-scoped data model under one unified experience from day one, so adding a new game is content (new mechanic vocabulary, ranks, and classifier) rather than a re-architecture, and cross-game player profiles work from the first release.
 4. Architected an ML rating service that grades each clip independently and displays its verdict beside the crowd's, turning model-versus-community disagreement into product surface, with crowdsourced ratings serving as the labeled data the classifier trains on.
 5. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
 ```
@@ -260,4 +261,3 @@ Webcam fighting game driven by real-time body-gesture recognition, winner of the
 4. Separated two players on one webcam by landmark position, assigning each detected pose to a side of the frame so local two-player worked with zero additional cameras.
 5. Built a single-player opponent with a difficulty knob, random play below a threshold and a finite-state policy above it that rests, defends, heals, or finishes based on game state.
 ```
-
