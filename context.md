@@ -135,7 +135,7 @@ Co-Founder & Vice President                       East Lansing, MI
 ```
 1. Co-founded and grew an MSU engineering community from zero to 150+ members, replacing a sprawl of spreadsheets, Slack threads, and manual invites with a single club-operations platform I built to run member lifecycle, events, and project provisioning.
 2. Automated member onboarding end to end so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, collapsing a manual multi-service invite process to seconds.
-3. Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent so simultaneous scans cannot double-award or be forged client-side, sustaining 150+ check-ins per event.
+3. Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent, sustaining 150+ check-ins per event.
 4. Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth.
 5. Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
 6. Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, with the frontend auto-deploying on the same commit, taking the team from manual changes to reviewed continuous deploys.
@@ -205,14 +205,14 @@ Ambient voice assistant that turns overheard conversation into human-approved ca
 **Bullet pool:**
 
 ```
-1. Routed every model-proposed side effect through a single approval chokepoint, so the assistant never fires an irreversible calendar, email, or task action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
-2. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
-3. Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, eliminating the catastrophic false-merge failure a single-threshold cosine match produces.
-4. Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic and cut duplicate transcription roughly in half.
+1. Routed all model-proposed side effects through one approval chokepoint, so the assistant never fires an irreversible action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
+2. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that Redis pub/sub silently dropped on disconnect.
+3. Engineered a no-merge-first speaker-ID model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity, eliminating the false-merge failure a single-threshold cosine produces.
+4. Solved the same-room, multi-mic problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election on SNR, clarity, and cadence, routing to the best mic and cutting duplicates roughly in half.
 5. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, matching each engine to its latency requirement so interactive commands stay responsive while bulk transcription stays cheap.
 6. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap before the model proposes actions, grounding every proposal in ranked episodic evidence under a fixed token budget.
 7. Implemented delayed action auto-fire on wall-clock-relative job scheduling with a one-second flush backstop, keeping countdown auto-fire correct across worker timezones and tight to the user-visible timer instead of drifting to a 20-second heartbeat.
-8. Shipped the backend as two services from a single Docker image split by process role, with migrations-on-boot ordering and a three-layer restart strategy that survives the worker queue's silent exit-zero death on a Redis drop, deployed behind a CI matrix of lint, test, and migration-verification gates.
+8. Shipped the backend as two services from one Docker image by role, with boot-time migrations and a three-layer restart strategy surviving the worker queue's silent exit-zero death on a Redis drop, behind a CI gate of lint, tests, and migrations.
 ```
 
 ---

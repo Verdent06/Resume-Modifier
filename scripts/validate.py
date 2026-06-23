@@ -20,7 +20,8 @@ USAGE (from repo root)
     python scripts/validate.py check-report --report grader_output.txt
 
   gates        exit 0 -> all HARD gates pass;  exit 1 -> a hard gate failed
-  demerits     exit 0 -> PASS;  exit 1 -> FAIL
+  demerits     exit 0 -> PASS (ship bar: weighted < threshold); loop target is weighted == 0
+  writer-loop  exit 0 -> writer_loop_status.json valid
   check-report exit 0 -> JSON and wishlist match;  exit 1 -> diverged
 
 LaTeX / pipeline file cleanup lives in scripts/cleanup.py.
@@ -525,8 +526,10 @@ def score_demerits(defects, threshold=DEMERIT_THRESHOLD, weights=DEMERIT_WEIGHTS
     weighted = (weights["major"] * len(buckets["major"])
                 + weights["minor"] * len(buckets["minor"]))
     passed = emergency == 0 and weighted < threshold
+    loop_target_met = emergency == 0 and weighted == 0
     return {
         "passed": passed,
+        "loop_target_met": loop_target_met,
         "fail_reason": ("emergency defect present (veto)" if emergency
                         else f"weighted demerits {weighted} >= threshold {threshold}"
                         if not passed else None),
@@ -536,6 +539,35 @@ def score_demerits(defects, threshold=DEMERIT_THRESHOLD, weights=DEMERIT_WEIGHTS
         "threshold": threshold,
         "coerced_defects": coerced,
     }
+
+
+def check_writer_loop_status(status: dict, defect_count: int) -> dict:
+    """Validate writer_loop_status.json after a grading-response pass.
+    `peak` is only valid when the writer documents what remains unfixable."""
+    action = str(status.get("action", "")).strip().lower()
+    if action not in ("continue", "peak"):
+        return {
+            "passed": False,
+            "detail": f"action must be 'continue' or 'peak', got {action!r}",
+        }
+    oor = status.get("out_of_rails")
+    if not isinstance(oor, list):
+        return {"passed": False, "detail": "out_of_rails must be an array"}
+    for i, item in enumerate(oor):
+        if not isinstance(item, dict):
+            return {"passed": False, "detail": f"out_of_rails[{i}] must be an object"}
+        missing = [k for k in ("entry", "defect", "why") if k not in item]
+        if missing:
+            return {
+                "passed": False,
+                "detail": f"out_of_rails[{i}] missing keys: {missing}",
+            }
+    if action == "peak" and defect_count > 0 and not oor:
+        return {
+            "passed": False,
+            "detail": "action is peak but out_of_rails is empty while defects remain",
+        }
+    return {"passed": True, "detail": f"action={action}, out_of_rails={len(oor)}"}
 
 
 # ============================================================================
@@ -681,7 +713,8 @@ def run_demerits(args) -> int:
     c = result["counts"]
     print(f"{'PASS' if result['passed'] else 'FAIL'}  "
           f"weighted={result['weighted_demerits']} (thr {result['threshold']})  "
-          f"display={result['display_score']:.1f}", file=sys.stderr)
+          f"display={result['display_score']:.1f}  "
+          f"loop_target={'met' if result['loop_target_met'] else 'open'}", file=sys.stderr)
     print(f"  emergency={c['emergency']} major={c['major']} "
           f"minor={c['minor']}", file=sys.stderr)
     if result["fail_reason"]:
@@ -689,6 +722,19 @@ def run_demerits(args) -> int:
     if result["coerced_defects"]:
         print(f"  WARNING: {len(result['coerced_defects'])} defect(s) had an unknown "
               f"severity, scored as major", file=sys.stderr)
+    return 0 if result["passed"] else 1
+
+
+def run_writer_loop(args) -> int:
+    status = json.loads(Path(args.status).read_text(encoding="utf-8"))
+    defect_count = 0
+    if args.demerits:
+        raw = json.loads(Path(args.demerits).read_text(encoding="utf-8"))
+        defect_count = len(raw.get("defects", raw if isinstance(raw, list) else []))
+    result = check_writer_loop_status(status, defect_count)
+    if args.out:
+        Path(args.out).write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(f"{'PASS' if result['passed'] else 'FAIL'}  {result['detail']}", file=sys.stderr)
     return 0 if result["passed"] else 1
 
 
@@ -715,6 +761,12 @@ def main() -> int:
                    help="grader report path, or '-' for stdin")
     c.add_argument("--out", default="", help="optional JSON result path")
     c.set_defaults(func=run_check_report)
+
+    w = sub.add_parser("writer-loop", help="validate writer_loop_status.json after a grading pass")
+    w.add_argument("--status", required=True, help="writer_loop_status.json")
+    w.add_argument("--demerits", default="", help="current demerits.json (for peak validation)")
+    w.add_argument("--out", default="", help="optional JSON result path")
+    w.set_defaults(func=run_writer_loop)
 
     args = ap.parse_args()
     return args.func(args)

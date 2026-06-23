@@ -70,7 +70,7 @@ resume/
 
 2. **Writer is mechanical.** Bullets are copied verbatim from `context.md`; tech changes only via swap sets.
 
-3. **Grader is blind to the pool.** It reads the `.tex` + `persona.md` + `reference/` — never `context.md`. It emits defects, not a holistic vibe score.
+3. **Grader is blind to the pool.** It reads the `.tex` + `persona.md` + `reference/` — never `context.md`. It emits defects from recruiter judgment on the shipped page, not writer-internal plans.
 
 4. **Demerit model, not anchored grades.** Emergencies (veto), majors (×3), minors (×1). Pass bar: weighted < 5, no emergency, gates pass. Display score = `10 − weighted` (cosmetic only).
 
@@ -87,13 +87,14 @@ resume/
 1. Paste a JD (or ask the coach — it routes to the pipeline).
 2. Orchestrator parses role → `screen_track` + `differentiator` → eligibility (computed, not reasoned).
 3. Resolve `company.md`, build `persona.md`, copy skeleton template.
-4. Writer fills first pass; orchestrator snapshots `iter1_counts` and writes `.pipeline/gate_inputs.json`.
-5. **Loop** (cap 5, early-exit if demerits stop improving):
+4. Writer fills first pass from persona + `context.md` + doctrine; orchestrator snapshots `iter1_counts` and writes `.pipeline/gate_inputs.json`.
+5. **Loop** (cap 10 graded cycles — timeout if neither zero demerits nor writer peak; shoot for those two exits):
    - `xelatex` → `cleanup.py clean`
    - `validate.py gates` — hard gates must pass before grading
    - `@resume-grading` → `check-report` → `validate.py demerits`
-   - Writer addresses defects in-rails; track out-of-rails for `grade.md`
-6. Fit checks (skills wrap, page fill).
+   - Writer addresses defects in-rails → `writer_loop_status.json` → `validate.py writer-loop`
+   - Exit only on `loop_target_met`, writer `peak`, or timeout at 10; ship bar (`weighted < 5`) checked at loop exit
+6. **Fit checks** (only if ship bar + gates pass — skills wrap, page fill).
 7. Final grade pass → assemble `grade.md` → `cleanup.py clean --ship`.
 8. Append `TRACKER.md`.
 
@@ -108,7 +109,8 @@ Run from repo root.
 | Subcommand | Purpose |
 |------------|---------|
 | `gates` | Required languages, orphans, anti-deletion, protected depth, lead signal, page fill |
-| `demerits` | Score grader defect JSON → pass/fail + display score |
+| `demerits` | Score grader defect JSON → ship pass/fail, `loop_target_met`, display score |
+| `writer-loop` | Validate `writer_loop_status.json` after a grading-response pass |
 | `check-report` | Wishlist bullet count must match JSON defects; no deprecated severities |
 
 ```bash
@@ -123,6 +125,10 @@ python scripts/validate.py check-report --report grader_output.txt
 python scripts/validate.py demerits \
   --demerits applications/2027/foo/bar/.pipeline/demerits.json \
   --out applications/2027/foo/bar/.pipeline/demerit_score.json
+
+python scripts/validate.py writer-loop \
+  --status applications/2027/foo/bar/.pipeline/writer_loop_status.json \
+  --demerits applications/2027/foo/bar/.pipeline/demerits.json
 ```
 
 ### `scripts/cleanup.py`
