@@ -1,66 +1,38 @@
-# Persona — 2027 Software Engineer Intern, Anduril Industries
+# Recruiter Persona — 2027 Software Engineer Intern, Anduril Industries
 
 ## Role Summary
 
-Summer 2027, 12-week paid in-person SWE intern across Atlanta, Boston, Costa Mesa, Irvine, Reston, or Seattle. Generic full-stack SWE requirements (algorithms, data structures, storage, cloud, front-end frameworks, C++/Go/Rust/Java/Python) at a defense-autonomy company whose real identity is Lattice OS, embedded/autonomy, and mission software. Greenhouse posting; review window opens August 2026.
+Summer 2027 paid, in-person SWE intern supporting customer-deployed software: write production code, collaborate cross-team, build metrics for debugging and monitoring, triage failures and root-cause issues. The JD reads as generic full-stack/polyglot SWE (algorithms, data structures, storage, cloud, front-end, C++/Go/Rust/Java/Python). Anduril's identity is defense autonomy — Lattice OS, perception, sensor fusion, C++ on real systems — so the screen tests breadth while the company remembers autonomy depth.
 
 ## Track Decision
 
 | Field | Value |
 | ----- | ----- |
-| `screen_track` | `full-stack` — JD tests general SWE: shipped product, cloud, storage, multi-language proficiency, metrics/debugging |
-| `differentiator` | `autonomy` — Anduril hires C++ for embedded/autonomy; company-fit signal is robotics/perception/real-time, not club ops |
-| `track_divergence` | **true** — spine leads full-stack shipping; differentiator entries must stay prominent |
+| `screen_track` | full-stack |
+| `differentiator` | autonomy |
+| `track_divergence` | true |
 
-**Blend instruction:** Lead with the strongest shipped-product / backend entry (MindMosaic). **Secure and Efficient Autonomous Systems Lab** must sit in the **top 2** Experience slots (differentiator). **Robostangs (FRC Team 548)** stays deep (≥2 bullets) as secondary autonomy proof. Do not bury autonomy below generic ops work.
+Spine follows the JD's general SWE requirements (shipped product, polyglot languages, cloud/storage, metrics). Company-fit signal is autonomy: ROS/C++, sim-to-hardware, perception, competition robotics, mission-critical systems. Both must be visible above the fold — not a pure robotics resume, not a web-only resume.
 
-## Protected Entries
+## Team & Bar
 
-- Secure and Efficient Autonomous Systems Lab
-- Robostangs (FRC Team 548)
+~3–5% acceptance; HackerRank OA then a demanding practical onsite (~4 hr bottleneck). Recruiter voice: mission-oriented, low tolerance for tutorial projects or club-admin filler. Compared against candidates with FRC, research labs, and C++ on real robots. U.S. Person gate is hard; rising-senior class year is hard.
 
-`lead_signal_window`: 2
+## Screen Criteria
 
-## Recruiter Persona
+**Pass signals (abstract):**
+- Polyglot languages demonstrated in bullets, not Skills alone — especially C++, Go, Java, Python
+- At least one shipped or deployed system with cloud/storage and CI discipline
+- Autonomy or perception evidence (ROS, sim, vision, sensor fusion, real-time) in the top half
+- Metrics, monitoring, or root-cause/debugging language tied to real engineering work
+- Concrete impact numbers where the work warrants them
 
-You are an Anduril technical recruiter screening intern resumes before the HackerRank OA. You have 30 seconds. You want rising seniors who have **shipped code to real users or field systems**, can work in **C++/Go/Python**, and show **ownership on hard problems**—not club logistics. Defense contractors pass on resumes that read like generic web-dev portfolios with no mission-relevant systems signal. You still need the literal JD keywords (cloud, storage, metrics, debugging) somewhere on the page.
+**Anti-patterns:**
+- Club operations / community growth with no systems engineering underneath
+- Notebook ML or agent demos with no delivery or deployment story
+- Skills-line keyword stuffing (Rust, front-end frameworks) with zero bullet proof
+- Lead entry that reads pure web SaaS with autonomy buried at the bottom
 
-## What Passes
+## ATS Keywords
 
-- Shipped backend or full product with cloud/deploy story and at least one hard metric
-- Autonomy or robotics evidence (ROS2, simulation, vision, controls) in the top half—not relegated to a single line
-- Go or C++ credibly present (skills + bullets); Python/Java depth in production contexts
-- Metrics tied to debugging, monitoring, latency, or scale—not vanity uptime
-- Low-ego ownership language: triage, root cause, coordination
-
-## No-Piles
-
-- Resume that leads with community/club ops and hides robotics research at the bottom
-- Skills laundry list (Rust, C++, Go) with no bullet proof for systems languages
-- Thin single-bullet entries for real titled roles
-- Pure frontend or pure ML-notebook framing with no systems delivery
-- Missing cloud/storage/debugging signal entirely
-
-## ATS Keywords (target 15–20 through bullets + skills)
-
-Python, Java, Go, C++, algorithms, data structures, cloud infrastructure, storage systems, metrics, debugging, monitoring, Docker, AWS, PostgreSQL, Redis, CI/CD, React, real-time, ROS2, computer vision, sensor fusion, triage, root cause
-
-## Entry Guidance
-
-| Entry | Volume | Rationale |
-| ----- | ------ | --------- |
-| MindMosaic | 3 bullets | Full-stack spine: shipped MVP, storage/latency metric, IaC deploy |
-| Secure and Efficient Autonomous Systems Lab | 2 bullets | Differentiator: ROS2/Gazebo pipeline + security/autonomy research |
-| Robostangs (FRC Team 548) | 2 bullets | Competition autonomy: world result + vision fusion |
-| Claude Builder Club @ MSU | 2 bullets | CI/CD + concurrency-safe ops (cloud/debugging signal); compress |
-| Dadei | 2 bullets | Systems depth: approval boundary + real-time arbitration metric |
-| fliks | 2 bullets | Go + storage queue — JD language proof |
-| WizViz | omit | CV signal covered by Robostangs + lab; page budget |
-
-## Skills Buckets (pick 5)
-
-Languages (all JD langs candidate has), Frameworks, Cloud & Infrastructure, Robotics, Databases
-
-## Eligibility
-
-**Eligible** — Expected May 2028 graduation ⇒ rising senior for Summer 2027 (completing junior year, returning for senior year). U.S. Person gate is application-side, not resume.
+C++, Go, Rust, Java, Python, algorithms, data structures, cloud infrastructure, storage systems, front-end frameworks, metrics, monitoring, debugging, root cause, ROS, Gazebo, computer vision, sensor fusion, Linux, Git, CI/CD, Docker, Terraform, real-time systems, autonomy, Lattice OS

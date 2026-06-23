@@ -22,25 +22,15 @@
 
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{MindMosaic}
-			{Aug 2025 -- May 2026}
-			{Software Engineering Intern}
-			{}
-			{East Lansing, MI}
-
-			\item Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Spring Boot, Neo4j, and PostgreSQL stack.
-			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
 			{Secure and Efficient Autonomous Systems Lab}
 			{May 2026 -- Present}
 			{Undergraduate Research Assistant}
 			{}
 			{East Lansing, MI}
 
-			\item Built the full language-to-motion pipeline in simulation on ROS2 and Gazebo with the attack layer decoupled at the ROS2 interface, so swapping the target robot platform cost only the URDF and control layer and never touched the security result.
-			\item Researching whether the cheap triage layer that guards an LLM-controlled robot is itself a gameable security boundary, by splitting one unsafe command into individually innocent fragments that reassemble past the gate into unsafe robot behavior.
+			\item Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, the gate the decomposition attack is built to defeat.
+			\item Architected the node graph to run byte-identical in Gazebo and on a physical RoboMaster EP Core, isolating the sim-to-hardware swap to the URDF and controller layer.
+			\item Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, so the decomposition attack's success rate reads against a credible reference.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -55,13 +45,14 @@
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
-			{Claude Builder Club @ MSU}
-			{Oct 2025 -- Present}
-			{Co-Founder \& Vice President}
+			{MindMosaic}
+			{Aug 2025 -- May 2026}
+			{Software Engineering Intern}
 			{}
 			{East Lansing, MI}
 
-			\item Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent so simultaneous scans cannot double-award or be forged client-side, sustaining 150+ check-ins per event.
+			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
+			\item Authored an AWS deployment script and managed the environment as code with Terraform, turning a manual multi-service bring-up into a repeatable, version-controlled provision so the polyglot stack deploys identically every time.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -69,32 +60,34 @@
 		\begin{rSectionEntry}
 			{Dadei}
 			{\href{https://dadei.app}{dadei.app}}
-			{Voice assistant for human-approved calendar, email, and task actions}
-			{Python, FastAPI, Redis, PostgreSQL, Docker}
+			{Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions}
+			{Python, FastAPI, Redis, Docker, PostgreSQL}
 			{}
 
-			\item Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic and cut duplicate transcription roughly in half.
+			\item Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
+			\item Implemented delayed action auto-fire on wall-clock-relative job scheduling with a one-second flush backstop, keeping countdown auto-fire correct across worker timezones and tight to the user-visible timer instead of drifting to a 20-second heartbeat.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{fliks}
 			{\href{https://github.com/fliks-gg}{github.com/fliks-gg}}
-			{Crowd-validated gameplay skill platform with shareable certification cards}
-			{Go, PostgreSQL, AWS EC2}
+			{Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards}
+			{Go, Docker}
 			{}
 
 			\item Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
+			\item Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, Java, Go, C++, JavaScript/TypeScript, SQL}
+		\begin{rSet}{Languages}{C++, Python, Java, Go, JavaScript/TypeScript, SQL, Bash}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Spring Boot, FastAPI}
+		\begin{rSet}{Frameworks}{FastAPI}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, RDS), CI/CD}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, RDS), Docker, Terraform}
 		\end{rSet}
-		\begin{rSet}{Robotics}{ROS2, Gazebo, AprilTag}
+		\begin{rSet}{Robotics}{ROS2, Gazebo, Linux, Git, AprilTag}
 		\end{rSet}
 		\begin{rSet}{Databases}{PostgreSQL, Neo4j, Redis}
 		\end{rSet}

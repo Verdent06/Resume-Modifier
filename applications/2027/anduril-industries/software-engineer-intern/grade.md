@@ -2,136 +2,40 @@
 
 ## Verdict
 
-| Field | Value |
-| ----- | ----- |
-| Gates | PASS |
-| Weighted demerits | 4 (emergency 0 / major 1 / minor 1) |
-| Display score | 6.0 / 10 |
-| Pass bar | weighted < 5 AND no emergency AND gates pass |
-| Demerit result | PASS |
-| Ship status | Shipped — gates pass & demerits clear |
-| Iterations | 2 (+ fit pass) |
-| Eligibility | eligible — Expected May 2028 ⇒ rising senior for Summer 2027 |
-| Track | full-stack + autonomy |
+- **Score:** 5.0 / 10 (5 demerits — 0 emergency, 1 major, 2 minor)
+- **Eligibility:** eligible — Expected May 2028; Summer 2027 is after junior year → rising senior per JD
+- **Track:** full-stack + autonomy (track_divergence)
+- **Pipeline:** 1 cycle · exit: writer_peak
 
-## Reviewer Persona
+## Screen Review
 
-You are an Anduril technical recruiter screening intern resumes before the HackerRank OA. You have 30 seconds. You want rising seniors who have shipped code to real users or field systems, can work in C++/Go/Python, and show ownership on hard problems—not club logistics. Defense contractors pass on resumes that read like generic web-dev portfolios with no mission-relevant systems signal.
+### First read
 
-## Scored Defects
+- C++ ROS2 verifier, Gazebo/sim-to-hardware, FRC world-stage vision stack, and Go/Python depth read on-axis for Anduril — autonomy signal sits in the top half where this screen expects it.
+- Polyglot delivery and operational discipline (dead-letter routing, CI gates, Terraform/AWS) match a generic SWE req beyond pure robotics.
+- The binding ding is full-stack breadth: nothing on the page names React, Angular, or Vue, so a rushed pass may bucket you backend/autonomy-only.
 
-| Entry | Severity | Defect | Why | Weight |
-| ----- | -------- | ------ | --- | ------ |
-| resume | major | C++ skills-only | C++ is listed in Languages but no bullet demonstrates it; Anduril's Notes column flags C++ for embedded/autonomy, so this reads as keyword padding at a company where it is a floor signal. | 3 |
-| fliks | minor | single bullet, no metric | Go architectural choice is credible but one unquantified line undersells the storage and media pipeline depth the JD's storage-systems language invites. | 1 |
+### Demerits
 
-### What Would Take This to the Next Level
+- **major** · `resume` · front-end frameworks absent — JD lists front-end frameworks as required familiarity; no React, Angular, or Vue appears in bullets or skills — reads backend/autonomy-only for a generic SWE req
+- **minor** · `fliks` · metric-free — Go monolith and transcoding pipeline are the right signals but both lines read unquantified — thinner than the work likely was
+- **minor** · `Dadei` · partial metric coverage — one-second scheduling bullet adds a number but the lead Redis Streams bullet remains unquantified — mixed density in the flagship project
 
-- C++ is on the page in Skills but nowhere in Experience or Projects—at Anduril that looks like ATS padding for a language they actually ship in autonomy and embedded stacks.
-- fliks is a single Go line with no throughput or scale number, so the storage-systems depth the posting asks for is harder to size in a quick scan.
+### Misreads
 
-## Mechanical Gates
+- **Front-end gap:** A 30-second scan may bucket you as backend/autonomy-only; lead with C++/ROS if targeting Lattice/autonomy, not a web tooling team.
+- **Research lab:** The reproduced attack baseline reads stronger than "researching," but still pre-publication — be ready to explain current outputs.
+- **MindMosaic:** Neo4j latency swap may read as data-engineering, not defense — connect graph/query routing to "storage systems" JD language.
 
-**hard_gates_pass:** true
+### Interview angles
 
-| Gate | Result | Detail |
-| ---- | ------ | ------ |
-| required_languages | PASS | All JD languages the candidate has are present: c++, go, java, python. |
-| no_orphans | PASS | No orphaned framework/library skills. |
-| no_bullet_deletion | PASS | Skipped (fit-check phase). |
-| min_entries | PASS | 6 entries (floor 5). |
-| protected_depth | PASS | Protected entries retain depth. |
-| lead_signal | PASS | Differentiator entry in top 2: Secure and Efficient Autonomous Systems Lab. |
-| fit_protection | PASS | Fit drops were project-scoped and protected entries intact. |
-| page_fill | PASS | One page, 95% filled. |
-
-**Metric density:** ratio 0.6 · metric-free entries: Claude Builder Club @ MSU, fliks · exemptions applied: Secure and Efficient Autonomous Systems Lab
-
-**Parsed entries:**
-
-| Entry | Section | Bullets |
-| ----- | ------- | ------- |
-| MindMosaic | experience | 2 |
-| Secure and Efficient Autonomous Systems Lab | experience | 2 |
-| Robostangs (FRC Team 548) | experience | 2 |
-| Claude Builder Club @ MSU | experience | 1 |
-| Dadei | projects | 1 |
-| fliks | projects | 1 |
-
-**Skills parsed:** Languages: Python, Java, Go, C++, JavaScript/TypeScript, SQL · Frameworks: Spring Boot, FastAPI · Cloud: AWS (EC2, S3, RDS), CI/CD · Robotics: ROS2, Gazebo, AprilTag · Databases: PostgreSQL, Neo4j, Redis
+- **Lead with:** C++ in production (verifier node, FRC stack); autonomy end-to-end (Gazebo → RoboMaster, AprilTag + odometry, security framing on motion plans); polyglot shipped systems (Go/fliks, Python/Dadei, Java/MindMosaic, Terraform/AWS).
+- **Defend:** No front-end framework on the page — anchor on JavaScript/TypeScript in inventory and be honest about depth; do not claim React experience you cannot defend *(out of rails: no pool bullet names React, Angular, or Vue)*. fliks and Dadei's lead bullet lack metrics — prepare verbal scale (upload volume, latency targets, user count) *(out of rails: bullet pool has no impact-metric lines for fliks)*.
+- **Depth prep:** Mission-oriented ownership language — triage, root cause, metrics — on Dadei/MindMosaic stories; C++ and practical systems problems for HackerRank and the ~4 hr onsite.
 
 ## Likelihood
 
-**Resume screen pass:** Medium — Strong autonomy spine (ROS2 lab + FRC vision in top half) and shipped intern work, but C++ is skills-only at a company where that language is a known hiring signal; early apply window helps.
-
-**Overall hire odds:** Medium — ~3–5% funnel acceptance per company data; bottleneck is the 4-hr practical onsite after HackerRank. Profile is directionally aligned (autonomy + systems + Go/Python) but not a shoo-in against target-school competition.
-
-**Binding funnel filters:** HackerRank OA (medium) → 4-hr practical onsite (bottleneck) · ~3–5% acceptance
-
-**What moves the needle (outside the resume):** Apply early (review begins August 2026); confirm U.S. Person and in-person availability on the Greenhouse form; prep HackerRank medium LC + systems-style practical; referral if any defense/autonomy contact exists in network.
-
-## Interview Prep
-
-### What the recruiter is looking for
-
-- Shipped software with measurable impact (latency, scale, concurrency)—not just project descriptions
-- Autonomy or robotics depth: ROS2, simulation, vision, real-time threads
-- Multi-language fluency with bullet proof, especially C++/Go at Anduril
-- Cloud/storage and operational thinking (metrics, debugging, triage language from JD)
-- Mission orientation and ownership—bias for action, low ego
-
-### Gaps on the page
-
-- **Major:** C++ appears only in Skills; no FRC/C++ bullet exists in the pool to close this within rails.
-- **Minor:** fliks compressed to one line for page fit—Go/storage story is present but thin.
-
-### Possible misreads
-
-- **C++ skills-only:** A 30-second scan may assume you listed a floor language without systems C++ experience—FRC almost certainly used C++/Java but it is not named on the page.
-- **fliks single bullet:** May read as a side project rather than a full storage/media pipeline unless you narrate the Postgres queue and transcode worker in the interview.
-
-### Out of rails (writer could not close)
-
-- **C++ demonstration:** No verbatim pool bullet names C++; Robostangs work is Java/WPILib-framed. Removing C++ from Skills would fail the required-language gate. Gap remains until a defensible C++ bullet is added to `context.md`.
-
-## Pipeline Config
-
-<details>
-<summary>gate_inputs.json (audit)</summary>
-
-```json
-{
-  "jd_languages": ["C++", "Go", "Rust", "Java", "Python"],
-  "jd_required_keywords": [
-    "algorithms", "data structures", "storage systems", "cloud infrastructure",
-    "front-end frameworks", "metrics", "debugging", "monitoring",
-    "C++", "Go", "Java", "Python", "Docker", "AWS", "PostgreSQL",
-    "CI/CD", "React", "ROS2", "real-time"
-  ],
-  "candidate_languages": ["Python", "Java", "Go", "JavaScript/TypeScript", "C++", "SQL", "Cypher", "Bash"],
-  "exempt_entries": ["Secure and Efficient Autonomous Systems Lab"],
-  "protected_entries": [
-    "Secure and Efficient Autonomous Systems Lab",
-    "Robostangs (FRC Team 548)"
-  ],
-  "lead_signal_window": 2,
-  "min_entries": 5,
-  "iter1_counts": {
-    "MindMosaic": 2,
-    "Secure and Efficient Autonomous Systems Lab": 2,
-    "Robostangs (FRC Team 548)": 2,
-    "Claude Builder Club @ MSU": 1,
-    "fliks": 1
-  },
-  "prefit_counts": {
-    "MindMosaic": 2,
-    "Secure and Efficient Autonomous Systems Lab": 2,
-    "Robostangs (FRC Team 548)": 2,
-    "Claude Builder Club @ MSU": 1,
-    "Dadei": 2,
-    "fliks": 1
-  }
-}
-```
-
-</details>
+- **Resume screen:** Medium–High — on-axis autonomy and systems depth; generic JD front-end gap is the main screen ding.
+- **Overall hire odds:** Medium — ~3–5% funnel (`companies.md`); HackerRank OA then 4-hr practical onsite is the bottleneck. Profile is differentiated on autonomy vs typical web-intern pool, but Rust (JD-listed, not in inventory) and front-end proof are headwinds.
+- **Funnel filters:** HackerRank OA (medium) → practical onsite (~4 hr) · U.S. Person required · Review begins August 2026
+- **Outside the resume:** Apply early (JD encourages it); confirm U.S. Person and rising-senior standing in application; referral if any Anduril/defense contact exists; prep C++ and practical systems problems for HackerRank/onsite.

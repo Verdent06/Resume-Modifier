@@ -9,7 +9,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 | Company | Role | Date Applied | Status | Track |
 | ------- | ---- | ------------ | ------ | ----- |
-| Anduril Industries | 2027 Software Engineer Intern | 2026-06-22 | Applied | full-stack+autonomy | |
+| Anduril Industries | 2027 Software Engineer Intern | 2026-06-23 | Applied | full-stack+autonomy |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
