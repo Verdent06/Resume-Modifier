@@ -15,7 +15,7 @@ resume/
 ├── reference/              ← curated knowledge agents read
 │   ├── recruiting.md       ← how hiring works (read-only)
 │   ├── resume.md           ← resume doctrine (read-only)
-│   └── companies.md        ← company tiers, processes, notes (coach-writable)
+│   └── companies.md        ← company tiers, processes, notes
 │
 ├── scripts/
 │   ├── validate.py         ← artifact gates, demerit scoring, report check
@@ -38,10 +38,10 @@ resume/
                 ├── persona.md
                 ├── Ankur Desai Resume.tex
                 ├── Ankur Desai Resume.pdf
-                └── grade.md          ← canonical grading + interview prep
+                └── grade.md          ← canonical screen review + likelihood
 ```
 
-**What you touch:** `context.md`, `network.md`, and (via the coach) `reference/companies.md`.
+**What you touch:** `context.md` and `network.md`.
 
 **What ships per application:** `persona.md`, `.tex`, `.pdf`, and `grade.md` only — no `.aux`/`.log`, no `.pipeline/`, no standalone JSON.
 
@@ -78,7 +78,7 @@ resume/
 
 6. **Prose and score cannot diverge.** Every observation in the grader report must appear in the scored defects JSON. `check-report` enforces 1:1 before scoring.
 
-7. **`grade.md` is the deliverable.** Verdict, scored defects, mechanical gates, likelihood, and interview prep — folded from what used to be four JSON files.
+7. **`grade.md` is the deliverable.** Verdict, screen review (demerits, misreads, interview angles), and likelihood — folded from what used to be four JSON files. Mechanical gates and persona stay out of the report (`persona.md`; validator audit in `.pipeline/` until ship).
 
 8. **One skeleton.** `applications/template.tex` for every track; track is a routing label into `reference/` sections.
 
@@ -163,15 +163,15 @@ python scripts/cleanup.py clean-tree --root applications
 | `network.md` | Contacts |
 | `reference/recruiting.md` | Field + recruiting doctrine (read-only) |
 | `reference/resume.md` | Resume doctrine (read-only) |
-| `reference/companies.md` | Company operational data (coach-writable) |
+| `reference/companies.md` | Company operational data |
 | `persona.md` | Per-role recruiter lens — bar, track, abstract screen criteria (no entry names) |
-| `grade.md` | Final verdict, defects, gates, interview prep |
+| `grade.md` | Final verdict, screen review, likelihood |
 
 ---
 
 ## Practical Limitations
 
-- The writer can only close gaps representable via the bullet pool + swap sets. Structural mismatches cap out as out-of-rails defects in `grade.md`.
+- The writer can only close gaps representable via the bullet pool + swap sets. Structural mismatches surface inline under **Defend** in `grade.md` as *(out of rails: …)*.
 - Weighted demerits and display score in `grade.md` describe resume-screen quality — not a guarantee past OA/onsite.
 - Historical `grade.md` / `company.md` files may cite old paths (`companies.md`); live rules use `reference/companies.md`.
 

@@ -327,7 +327,7 @@ The grader never sees `context.md`, never computes a number, and never reasons a
 1. Dispatch `@resume-grading` once more on the final version.
 2. Extract defects JSON → run `scripts/validate.py check-report` → run `scripts/validate.py demerits`.
 3. Run final gates → read `.pipeline/gate_report.json` and `.pipeline/gate_inputs.json`.
-4. **Write `grade.md`** using the schema below. Embed gate inputs, gate report, defects, and score — then run ship cleanup:
+4. **Write `grade.md`** using the schema below. Embed defects, score, likelihood, and orchestrator-synthesized interview angles — gate inputs/report stay in `.pipeline/` until ship cleanup:
    ```
    python scripts/cleanup.py clean --tex "{tex_path}" --ship
    ```
@@ -335,101 +335,56 @@ The grader never sees `context.md`, never computes a number, and never reasons a
 
 ### grade.md schema (canonical deliverable)
 
+User-facing report only — no tables, no persona restatement (lives in `persona.md`), no mechanical gates (validator audit stays in `.pipeline/` until ship).
+
 ```markdown
 # {Role Title} at {Company Name}
 
 ## Verdict
 
-| Field | Value |
-| ----- | ----- |
-| Gates | {PASS / FAIL — list any failing hard gates} |
-| Weighted demerits | {n} (emergency {e} / major {m} / minor {n}) |
-| Display score | {x.x} / 10 |
-| Loop target | weighted == 0 AND no emergency |
-| Loop target met | {yes / no} |
-| Loop exit | {zero_demerits \| writer_peak \| timeout} |
-| Iterations | {n graded cycles}{+ fit pass if Step 7 ran} |
-| Eligibility | {verdict} — {reason} |
-| Track | {screen_track}{ + differentiator if divergence} |
+- **Score:** {display_score} / 10 ({weighted} demerits — {e} emergency, {m} major, {i} minor)
+- **Eligibility:** {eligible / ineligible} — {one-line reason}
+- **Track:** {screen_track}{ + differentiator if divergence}
+- **Pipeline:** {n} cycle(s) · exit: {zero_demerits | writer_peak | timeout}
 
-## Reviewer Persona
+## Screen Review
 
-{Grader REVIEWER PERSONA section — who is screening, bar, abstract screen criteria}
+### First read
 
-## Scored Defects
+{2–3 bullets: what a 30-second screen registers — strengths and the binding ding.
+Sourced from grader likelihood + persona screen criteria applied to the shipped page.}
 
-| Entry | Severity | Defect | Why | Weight |
-| ----- | -------- | ------ | --- | ------ |
-| {entry} | {emergency\|major\|minor} | {defect} | {why} | {veto / 3 / 1} |
+### Demerits
 
-{If zero defects: "No scored defects."}
+- **{severity}** · `{entry}` · {defect} — {why}
+- …
 
-### What Would Take This to the Next Level
+{If zero defects: "No demerits — clean screen."}
 
-{Grader wishlist bullets — must match Scored Defects 1:1; same text the grader emitted}
+### Misreads
 
-## Mechanical Gates
+{One bullet per high-signal defect: how a rushed recruiter might bucket the resume wrong.
+Derived from defect `why` fields — not new judgments.}
 
-**hard_gates_pass:** {true/false}
+### Interview angles
 
-| Gate | Result | Detail |
-| ---- | ------ | ------ |
-| {name} | PASS/FAIL | {detail} |
-
-**Metric density:** ratio {r} · metric-free entries: {list} · exemptions applied: {list}
-
-**Parsed entries:**
-
-| Entry | Section | Bullets |
-| ----- | ------- | ------- |
-| … | … | … |
-
-**Skills parsed:** {languages, frameworks, … as readable list or sub-table}
+- **Lead with:** {stories/entries to open with for this role — from persona Screen Criteria + on-page strengths}
+- **Defend:** {gap → what to say if asked; append *(out of rails: …)* inline when writer could not close}
+- **Depth prep:** {technical threads worth drilling before OA/onsite}
 
 ## Likelihood
 
-**Resume screen pass:** {Low/Medium/High} — {1 sentence from grader}
-
-**Overall hire odds:** {Low/Medium/High} — {2 sentences from grader}
-
-**Binding funnel filters:** {OA platform, practical, bottleneck — from reference/companies.md / reference/recruiting.md}
-
-**What moves the needle (outside the resume):** {from grader}
-
-## Interview Prep
-
-### What the recruiter is looking for
-
-{3-5 bullets synthesized from persona Screen Criteria + defect themes — orchestrator writes this}
-
-### Gaps on the page
-
-{Group remaining scored defects by severity; plain-language impact for interview framing}
-
-### Possible misreads
-
-{For each high-signal defect, one line on how a 30-second screen might misinterpret the resume — derived from defect `why` fields, not new judgments}
-
-### Out of rails (writer could not close)
-
-{From `out_of_rails[]` accumulated in Step 6, or "Writer closed all addressable gaps within rails."}
-
-## Pipeline Config
-
-<details>
-<summary>gate_inputs.json (audit)</summary>
-
-```json
-{embedded gate_inputs snapshot}
-```
-</details>
+- **Resume screen:** {Low / Medium / High} — {one sentence from grader}
+- **Overall hire odds:** {Low / Medium / High} — {one–two sentences from grader}
+- **Funnel filters:** {OA platform, onsite format, eligibility gates — from reference/companies.md / reference/recruiting.md}
+- **Outside the resume:** {apply timing, referral, prep focus — from grader}
 ```
 
 ---
 
 ## Step 9 — User Summary  *(parallel with Step 10)*
 
-Short pointer — full detail lives in `grade.md`. No ship/stop verdict; the user reads `grade.md` for demerits, defects, and gates.
+Short pointer — full detail lives in `grade.md`. No ship/stop verdict; the user reads `grade.md` for the screen review and likelihood.
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -437,11 +392,11 @@ APPLICATION SESSION COMPLETE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Company:  {company_name}   Role: {role_title}
 Folder:   {applications_root}/{company_slug}/{position_slug}/
-Grade:    grade.md  ← canonical report (verdict, defects, gates, interview prep)
+Grade:    grade.md  ← canonical report (verdict, screen review, likelihood)
 
-Gates: {PASS/FAIL} · Demerits: {weighted} · Display: {x.x}/10 · Loop exit: {reason}
+Score: {x.x}/10 · Demerits: {weighted} · Loop exit: {reason}
 
-See grade.md for scored defects, gate detail, likelihood, and interview prep.
+See grade.md for demerits, misreads, interview angles, and funnel odds.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
