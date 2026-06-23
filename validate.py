@@ -374,6 +374,33 @@ def gate_protected_depth(pr: ParsedResume, protected) -> GateResult:
     return GateResult("protected_depth", True, True, "Protected entries retain depth.")
 
 
+def gate_lead_signal(pr: ParsedResume, protected, window: int) -> GateResult:
+    """Tuple/divergence gate. When the company's engineering identity diverges
+    from the JD's screen track (e.g. a generic SWE req at an autonomy company),
+    the orchestrator marks the differentiator-aligned entries as protected and
+    sets `lead_signal_window` > 0. At least one protected entry must then appear
+    within the top `window` entries (document order). This is the deterministic
+    floor under the company-fit differentiator — it stops a full-stack spine from
+    burying the autonomy entry at the bottom, which is exactly how the track flip
+    produced an off-axis resume last round. The grader still judges *which*
+    generalist entry leads; this only guarantees the differentiator is prominent,
+    not buried."""
+    if not window or not protected:
+        return GateResult("lead_signal", True, True, "Skipped (no divergence / window=0).")
+    prot = {_norm(x) for x in protected}
+    top = pr.entries[:window]
+    if any(_norm(e.name) in prot for e in top):
+        present = [e.name for e in top if _norm(e.name) in prot]
+        return GateResult("lead_signal", True, True,
+                          f"Differentiator entry in top {window}: {present}.")
+    return GateResult(
+        "lead_signal", True, False,
+        f"No differentiator/protected entry in the top {window} slots "
+        f"(top {window}: {[e.name for e in top]}). The company-fit signal is buried; "
+        f"move a protected entry up. Spine may lead, but the differentiator sits near it.",
+    )
+
+
 def gate_fit_protection(pr: ParsedResume, prefit_counts, protected, phase) -> GateResult:
     """Fix 3b: during the page-fit pass, drops must come from Projects only, and a
     protected entry may not shrink. Without this, a fit pass scoped to 'weakest
@@ -476,6 +503,7 @@ def main() -> int:
         gate_no_bullet_deletion(pr, gi.get("iter1_counts", {}), args.phase),
         gate_min_entries(pr, gi.get("min_entries", 4)),
         gate_protected_depth(pr, gi.get("protected_entries", [])),
+        gate_lead_signal(pr, gi.get("protected_entries", []), gi.get("lead_signal_window", 0)),
         gate_fit_protection(pr, gi.get("prefit_counts", {}), gi.get("protected_entries", []), args.phase),
         gate_page_fit(args.pdf),
     ]

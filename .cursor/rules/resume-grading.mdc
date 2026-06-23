@@ -40,7 +40,7 @@ Judgment dimensions only — the deterministic ones are already enforced:
 - **Role relevance** — does the lead material match what this track/stage is judged on? (resume.md III + knowledge.md II/III)
 - **Narrative coherence** — one story a reader can state in a sentence? (resume.md I.1)
 - **Tech justification** — is each technology tied to the decision that justified it? (resume.md I.2)
-- **Ordering** — Experience before Projects, impact-density order. (resume.md I.3)
+- **Ordering** — Experience before Projects; within Experience, three rules in order: (1) the `screen_track` spine leads — the entry that best answers what the JD literally tests; (2) **current and titled roles outrank pre-college extracurriculars regardless of raw impact density** — a high-school team, however strong, does not lead over a current research or internship role; (3) when the persona flags `track_divergence`, a `differentiator` entry must sit prominently near the lead (the `lead_signal` gate enforces the floor; you judge whether the arrangement actually reads as spine-leads-differentiator-supports). Flag a violation as a reorder task. (resume.md I.3)
 
 ATS keyword coverage, metric density, and skills-line/page fit are **gate-owned** — assume them satisfied and do not grade them.
 

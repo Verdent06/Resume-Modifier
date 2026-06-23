@@ -76,7 +76,18 @@ Create one todo per step. Do not batch.
   company_name, role_title, company_slug, position_slug,
   work_type, lifecycle_stage, location, compensation,
   core_responsibilities[], required_skills[], preferred_skills[],
-  ats_keywords[15-20], track_decision, role_year, applications_root,
+  ats_keywords[15-20], role_year, applications_root,
+
+  screen_track:                  the track the JD's REQUIREMENTS literally test
+                                 (ai-ml | dev-ops | robotics | full-stack)
+  differentiator:                the company's dominant engineering identity,
+                                 read from companies.md / the company.md brief
+                                 (e.g. "autonomy", "ml-infra", "fintech-backend"),
+                                 or null if the company has no distinct identity
+  track_divergence:              true when `differentiator` implies a track other
+                                 than `screen_track` (e.g. generic-SWE JD at an
+                                 autonomy company). This is the trigger for the
+                                 whole dynamic-targeting path below.
 
   jd_languages[]:                programming languages the JD names
   jd_required_keywords[]:        required technical terms (for orphan exemption)
@@ -88,7 +99,12 @@ Create one todo per step. Do not batch.
 
 **Eligibility is computed, never reasoned.** Map the candidate's graduation date and the posting's internship term to a class standing, then compare against the JD's class-year requirement. Surface `eligibility_verdict` from that comparison only; never narrate a conclusion that contradicts the computed field.
 
-**Track decision:** `ai-ml` (ML frameworks / training / inference / data pipelines) · `dev-ops` (CI/CD / containers / cloud infra / SRE) · `robotics` (ROS/autonomy / perception / controls / sim) · `full-stack` (default). The track routes which `resume.md` Part III / `knowledge.md` Part III section grounds the work — not a template choice.
+**Track is a tuple, not a label.** A single track word optimizes to the JD's surface keywords and goes blind to the company. Compute two signals:
+
+- **`screen_track`** — what the JD's *requirements* literally test. Drives the resume spine, the leading entry, and the doctrine grounding. Routing: `ai-ml` (ML frameworks / training / inference / data pipelines) · `dev-ops` (CI/CD / containers / cloud infra / SRE) · `robotics` (ROS/autonomy / perception / controls / sim) · `full-stack` (default — and the right call for a generic SWE req even at a specialized company).
+- **`differentiator`** — the company's engineering identity, from `companies.md` / `company.md`. The thing that makes *this* candidate memorable at *this* company once past the literal screen. Often the JD's mission paragraph, not its requirements list.
+
+When the two diverge (`track_divergence = true`), the resume leads with the `screen_track` spine **and** keeps the `differentiator`-aligned entries prominent and deep — it does not pick one pole. The mechanism that enforces this is `protected_entries` + `lead_signal_window`, set in Step 5. When they agree (or `differentiator` is null), behave as before: the single track grounds everything.
 
 **Lifecycle stage:** read the posting. **Role-year root:** `resume/applications/{role_year}/`.
 
@@ -96,65 +112,15 @@ Create one todo per step. Do not batch.
 
 ## Step 2 — Resolve company.md  *(parallel with Step 4)*
 
-**In:** `company_name`, `company_slug`, `applications_root`, Step 1 state object (comp, location, work model).
-
-**Action:** Check `{applications_root}/{company_slug}/company.md`. If absent, create the folder and write from the template below. If present, read. `company.md` is write-once; never overwrite.
-
-**Source priority when creating:**
-1. **`companies.md` row** (if present) — primary source for tier, interview funnel, bottleneck, acceptance estimate, and the Notes column (product/stack signal). Slice the row into Quick Facts and Interview Process; do not copy the table verbatim.
-2. **The JD** — intern comp, locations, work model, clearance/eligibility, review windows, role-specific stack.
-3. **Web search** — fill gaps when no row exists or Notes is thin (valuation, HQ, product description).
-
-The prose block at the top expands the row's **Notes** (or web/JD research) into 2–4 readable sentences. Reference tone, not first person — this file is company intel for the pipeline, not a "why this company" essay.
-
-**Template (only when creating):**
-
-```markdown
-# {company_name}
-
-{2-4 sentences: what the company builds, who it serves, and why it matters technically. Expand companies.md Notes into prose; name the flagship product/platform if one exists. Specific, not marketing fluff.}
-
-## Quick Facts
-
-- **Tier:** {from companies.md tier section, or "Unrated"}
-- **HQ / offices:** {HQ + offices relevant to this application}
-- **Valuation / signal:** {funding, market position, prestige markers — from Notes or web}
-- **Product focus:** {core technical product/platform in one line}
-- **Financial comp ({role_year} {track or role family}):** {from JD or null}
-- **Work model:** {paid/unpaid, remote/hybrid/onsite, term length — from JD}
-- **Clearance / eligibility:** {export-control, citizenship, class-year gates — from JD, or omit if none}
-
-## Interview Process
-
-| Stage | Format | Notes |
-| ----- | ------ | ----- |
-| Resume screen | {Human + ATS / referral-heavy / etc.} | {timing signal, e.g. review window} |
-| OA | {platform or "None"} | {difficulty, style} |
-| {additional stages from companies.md Interview Process column} | {format} | {notes} |
-| Behavioral | {if applicable} | {culture signal} |
-
-**Estimated funnel:** {round count} · {LC/practical difficulty} · {OA platform} · {sys design?} · Bottleneck: {from companies.md} · {acceptance estimate from companies.md}
-
-## Stack & Hiring Signal
-
-- **Languages:** {from Notes, JD, and track — name what actually ships}
-- **Domains:** {technical domains this company hires for}
-- **What wins:** {what passes a resume screen here — grounded in companies.md Notes and knowledge.md, not generic advice}
-
-## Sources
-
-- {JD URL if available}
-- `companies.md` {tier section} row (interview format, bottleneck, acceptance estimate)
-- {any web sources used for prose or facts}
-```
-
-**Constraint:** `company.md` is write-once. Never overwrite.
+Check `{applications_root}/{company_slug}/company.md`. If absent, create from template, pulling specifics from `companies.md` if a row exists. If present, read. `company.md` is write-once; never overwrite.
 
 ---
 
 ## Step 3 — Construct persona.md
 
-Write `{applications_root}/{company_slug}/{position_slug}/persona.md`, the single source of truth for writer and grader, grounded in `resume.md` (Part I + Part III for the track), `knowledge.md` (Part II for the stage + Part III for the track), and the company row. (Template unchanged — Quick Facts, Recruiter Persona, Role Summary, What They're Really Looking For, Required/Preferred Skills, ATS Keywords, Gaps.)
+Write `{applications_root}/{company_slug}/{position_slug}/persona.md`, the single source of truth for writer and grader, grounded in `resume.md` (Part I + Part III for **`screen_track`**), `knowledge.md` (Part II for the stage + Part III for `screen_track`), and the company row.
+
+**When `track_divergence` is true, the persona states the blend explicitly:** the spine is `screen_track` (what passes the literal screen and what leads), the differentiator is `differentiator` (the company-fit signal that must stay prominent). Name the specific candidate entries that carry the differentiator, and instruct that the spine leads while a differentiator entry sits second. This is the briefing both the writer and the grader read, so the targeting logic is visible to them, not hidden in the orchestrator.
 
 ---
 
@@ -177,10 +143,16 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
      "candidate_languages": <Languages inventory from context.md>,
      "exempt_entries":      <entries whose every bullet is genuinely metric-resistant,
                              e.g. a research lab — keep this list tight and honest>,
-     "protected_entries":   <the role-critical entries for this track that must stay
-                             >= 2 bullets and must not be cut in the fit pass — e.g.
-                             the autonomy lab on the robotics track. Derive from the
-                             persona's lead-signal, not arbitrarily>,
+     "protected_entries":   <when track_divergence is true, the differentiator-
+                             aligned entries (the candidate's company-fit signal —
+                             e.g. the autonomy lab + FRC for an autonomy company).
+                             Otherwise, the role-critical entry for the screen_track.
+                             These must stay >= 2 bullets and survive the fit pass.
+                             Derive from the persona's named differentiator entries,
+                             not arbitrarily>,
+     "lead_signal_window":  <2 when track_divergence is true (a differentiator entry
+                             must sit in the top 2, so the spine leads but the
+                             company-fit signal is never buried); 0 otherwise>,
      "min_entries":         <hard floor on Experience+Projects entry count, default 5;
                              stops the metric ratio being gamed by shrinking the field>,
      "iter1_counts":        <from step 5.2>
@@ -245,7 +217,7 @@ APPLICATION SESSION READY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Company:    {company_name}        Role: {role_title}
 Folder:     {applications_root}/{company_slug}/{position_slug}/
-Track:      {track_decision}   Stage: {lifecycle_stage}
+Track:      {screen_track}{ " + " + differentiator if track_divergence else "" }   Stage: {lifecycle_stage}
 Iterations: {n} / 3
 Eligibility:{eligibility_verdict} — {eligibility_reason}
 
@@ -279,7 +251,7 @@ If gates never cleared by the cap, say so plainly here — a gate-blocked resume
 ## Step 10 — TRACKER.md Append  *(parallel with Step 9)*
 
 ```
-| {company_name} | {role_title} | {YYYY-MM-DD} | Applied | {track_decision} | |
+| {company_name} | {role_title} | {YYYY-MM-DD} | Applied | {screen_track}{"+"+differentiator if track_divergence else ""} | |
 ```
 
 ---
