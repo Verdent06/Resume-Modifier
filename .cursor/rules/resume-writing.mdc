@@ -1,5 +1,5 @@
 ---
-description: Mechanical resume writer. Fills the skeleton from context.md, picks bullets verbatim, applies swap-set substitutions, picks skills buckets — all grounded in resume.md doctrine. Deterministic constraints (language presence, orphans, page fit, no-deletion) are enforced by validate.py, not by this rule.
+description: Mechanical resume writer. Fills the skeleton from context.md, picks bullets verbatim, applies swap-set substitutions, picks skills buckets — all grounded in reference/resume.md doctrine. Deterministic constraints (language presence, orphans, page fit, no-deletion) are enforced by scripts/validate.py, not by this rule.
 # globs: applications/**/*.tex, applications/template.tex
 alwaysApply: false
 ---
@@ -8,9 +8,9 @@ alwaysApply: false
 
 You are a mechanical selector. You assemble a resume by picking the strongest combination of pre-written bullets from `context.md` and substituting technologies via the swap-set dictionary. You produce **zero original prose**.
 
-Your *mechanics* are rails (below). Your *judgment* about which selection is strongest is governed by **`resume.md`**, not your taste: read `resume.md` Part I (structure, hierarchy, the hook rule, keyword-through-use) and the Part III section for this role's `track_decision`. Apply that doctrine through selection only.
+Your *mechanics* are rails (below). Your *judgment* about which selection is strongest is governed by **`reference/resume.md`**, not your taste: read `reference/resume.md` Part I (structure, hierarchy, the hook rule, keyword-through-use) and the Part III section for this role's `track_decision`. Apply that doctrine through selection only.
 
-**What you are no longer responsible for self-policing:** required-language presence, orphaned skills, page fit, and bullet-count regression. `validate.py` enforces those deterministically after you write. Do not hand-audit them; do the right thing by default and let the gate catch slips. This is why this rule is short.
+**What you are no longer responsible for self-policing:** required-language presence, orphaned skills, page fit, and bullet-count regression. `scripts/validate.py` enforces those deterministically after you write. Do not hand-audit them; do the right thing by default and let the gate catch slips. This is why this rule is short.
 
 ---
 
@@ -19,7 +19,7 @@ Your *mechanics* are rails (below). Your *judgment* about which selection is str
 1. Iteration number (1, 2, or 3)
 2. Path to the working `.tex`
 3. Path to `persona.md`
-4. Implicit access to `context.md` (pool, swap sets, skills inventory) and `resume.md` (doctrine)
+4. Implicit access to `context.md` (pool, swap sets, skills inventory) and `reference/resume.md` (doctrine)
 5. **Iteration > 1:** a grading report (judgment tasks) **or** a gate report (mechanical fixes) — the dispatch says which
 
 ---
@@ -30,7 +30,7 @@ Your *mechanics* are rails (below). Your *judgment* about which selection is str
 2. **Pick bullets** from each entry's pool.
 3. **Apply swap-set substitutions** consistently within an entry.
 4. **Pick 3-5 skills buckets** and trim by JD relevance to the ~80-char line. **Include every language the candidate has that the JD lists — languages are listed because you know them, not because a bullet names them.** (The gate enforces this; you just do it.)
-5. **Choose entry ordering** by impact density for this role (`resume.md` I.3).
+5. **Choose entry ordering** by impact density for this role (`reference/resume.md` I.3).
 6. **Choose bullet count per entry** toward the resume-wide target.
 7. **Derive project tech-stack lines** from the bullets you selected.
 
@@ -45,7 +45,7 @@ That is the complete list.
 - **Cross swap-set boundaries** (PostgreSQL ↔ MySQL legal; PostgreSQL → MongoDB not).
 - **Resolve a metric, grading, or gate task by deleting a bullet, or by dropping any entry below its iteration-1 bullet count.** Fix a metric gap by *swapping in* a metric-bearing pool bullet. If the entry's pool has none, leave it unchanged and state the metric is out-of-rails. Deletion is never the answer — it is the degenerate move the gate is built to catch.
 - **Modify the Education block or header.** Add a section or entry not in the skeleton/`context.md`. Modify metrics inside bullets.
-- **Edit `context.md`, `resume.md`, `knowledge.md`, `template.cls`, or `template.tex`.**
+- **Edit `context.md`, `reference/resume.md`, `reference/recruiting.md`, `template.cls`, or `template.tex`.**
 - **Shrink font, spacing, or margins** to fit a page.
 
 If a JD-required technology is not in the pool and no swap bridges it, state so in chat and stop. Fabrication is not an option.
@@ -55,7 +55,7 @@ If a JD-required technology is not in the pool and no swap bridges it, state so 
 ## Workflow
 
 ### Iteration 1 (first pass)
-1. Read `persona.md` (team, stack, ATS keywords, track) and the relevant `resume.md` doctrine.
+1. Read `persona.md` (team, stack, ATS keywords, track) and the relevant `reference/resume.md` doctrine.
 2. Fill the skeleton from `context.md`: order entries by impact density (most role-relevant leads); for each, select the pool bullets that best fit the persona, strongest hook first; use swaps to bring ATS keywords into bullets where a set allows.
 3. Pick 3-5 skills buckets; include every JD-listed language the candidate has.
 4. Bias bullet counts: experiences 2-3, projects 1-2; target 12-14 total.
@@ -87,7 +87,7 @@ The dispatch carries failed deterministic gates. These are not judgment calls. A
 
 - **Pool lacks a JD-keyword bullet:** try a swap; else add to a skills bucket if the inventory has it; else state "Pool has no bullet demonstrating {keyword}; gap remains."
 - **Two entries compete for a slot:** pick the one whose pool has more JD-aligned bullets after swaps; never split bullets across entries.
-- **Persona deprioritizes the usual lead:** reorder; impact density (`resume.md` I.3) decides.
+- **Persona deprioritizes the usual lead:** reorder; impact density (`reference/resume.md` I.3) decides.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Recruiter simulation, blind to BOTH the bullet pool and the writer's rails. Emits a structured, severity-tagged defect list — the things holding this resume back at the screen. Does NOT compute a score; validate.py demerits does that in code. This is the judgment half; the arithmetic half is deterministic.
+description: Recruiter simulation, blind to BOTH the bullet pool and the writer's rails. Emits a structured, severity-tagged defect list — the things holding this resume back at the screen. Does NOT compute a score; scripts/validate.py demerits does that in code. This is the judgment half; the arithmetic half is deterministic.
 # globs:
 alwaysApply: false
 ---
@@ -25,7 +25,7 @@ This design exists because a holistic 0–10 grade anchored to a familiar number
 1. Path to the current `.tex` (read it — this is the resume).
 2. Path to `persona.md` (your character briefing: team, bar, what passes/no-piles, screen_track + differentiator).
 
-You also read `resume.md` (what "strong" means) and `knowledge.md` (for the likelihood estimate). You do **not** see `context.md`.
+You also read `reference/resume.md` (what "strong" means) and `reference/recruiting.md` (for the likelihood estimate). You do **not** see `context.md`.
 
 **Fallback:** no `persona.md` → adopt a Microsoft big-tech recruiter for a general full-stack/backend SWE intern, and say so at the top.
 
@@ -37,7 +37,7 @@ Severity = **expected impact on the screen DECISION.** Not "what kind of defect"
 
 **There is no unscored category.** If a observation isn't worth emergency, major, or minor, do not mention it anywhere in the report — not in prose, not in a footnote, not as a "small ding." Cosmetic nits below minor impact are omitted entirely.
 
-> The bucket checklists and anchors below are the DEFAULT and are the knob the candidate tunes. They are deliberately concrete so the enumeration is anchored and repeatable rather than reinvented each run. Edit these lists; do not edit the scoring (that lives in `validate.py`).
+> The bucket checklists and anchors below are the DEFAULT and are the knob the candidate tunes. They are deliberately concrete so the enumeration is anchored and repeatable rather than reinvented each run. Edit these lists; do not edit the scoring (that lives in `scripts/validate.py`).
 
 ### EMERGENCY — would get the application rejected (any one ⇒ auto-fail)
 Types: stated eligibility miss for a gated role (wrong class year on the page); fabrication smell or internal inconsistency (dates that overlap impossibly, a title the bullets can't support, intern scope that reads invented); wrong role entirely (resume aimed at a different track than the JD); over one page or ATS-unparseable formatting; a hard required must-have wholly absent where the JD treats it as a filter.
@@ -72,7 +72,7 @@ Role: {Role} at {Company}
 REVIEWER PERSONA
 {2-3 sentences: who you are, your bar, what no-piles a resume here. From persona.md. Not generic.}
 
-DEFECTS  (machine-read by validate.py demerits — valid JSON, this block only)
+DEFECTS  (machine-read by scripts/validate.py demerits — valid JSON, this block only)
 ```json
 {
   "defects": [
@@ -91,8 +91,8 @@ LIKELIHOOD ESTIMATE
 ─────────────────────
 Resume Screen Pass:  {Low / Medium / High} — {1 sentence}
 Overall Hire Odds:   {Low / Medium / High} — {2 sentences, calibrated to this role's bar and
-                     the funnel reality in knowledge.md}
-What Moves the Needle (outside the resume): {1-2 actions grounded in knowledge.md}
+                     the funnel reality in reference/recruiting.md}
+What Moves the Needle (outside the resume): {1-2 actions grounded in reference/recruiting.md}
 ```
 
 ---

@@ -2,9 +2,9 @@
 
 > **Scope of this file.** This is the authority on *the document*: what a resume is for, how it survives ATS/AI/human review, how to structure it, and how to write every bullet. It encodes the resume doctrine refined over 50+ iterations (see `write-resume` skill) and layers external validation onto it.
 >
-> **What does NOT live here.** How hiring works — the funnel, timeline, networking, interview loop, negotiation, where jobs live. That is `knowledge.md`. The industry sections in *both* files share names but answer different questions: here, "the robotics resume" means *what the document must contain and lead with*; in `knowledge.md` it means *how that field hires*.
+> **What does NOT live here.** How hiring works — the funnel, timeline, networking, interview loop, negotiation, where jobs live. That is `reference/recruiting.md`. The industry sections in *both* files share names but answer different questions: here, "the robotics resume" means *what the document must contain and lead with*; in `reference/recruiting.md` it means *how that field hires*.
 >
-> **Relationship to the pipeline.** The Cursor pipeline (`resume-writing.mdc`, `resume-grading.mdc`, `resume-pipeline.mdc`) operationalizes this doctrine. `context.md` holds the canonical bullet pool; the writer selects verbatim with swap-sets; the grader scores against a per-role persona. This file is the *why* behind those rules. **[reliability tags](knowledge.md):** **[solid]** = official source/study, **[directional]** = vendor/aggregated, **[forecast]** = projection.
+> **Relationship to the pipeline.** The Cursor pipeline (`resume-writing.mdc`, `resume-grading.mdc`, `resume-pipeline.mdc`) operationalizes this doctrine. `context.md` holds the canonical bullet pool; the writer selects verbatim with swap-sets; the grader scores against a per-role persona. This file is the *why* behind those rules. **[reliability tags](recruiting.md):** **[solid]** = official source/study, **[directional]** = vendor/aggregated, **[forecast]** = projection.
 
 ---
 
@@ -145,13 +145,13 @@ A single static resume is a compromise. The endgame is a **base document with sw
 - **Impact, scope, and ownership replace coursework and most projects.** The question shifts from "can this person build?" to "what has this person owned and scaled?"
 - Reverse-chronological role depth; lead each role with the most consequential system you owned and the measurable outcome.
 - Drop the education-heavy framing (degree stays, GPA goes); drop personal projects unless one is genuinely exceptional and role-relevant.
-- This resume feeds a recruiter/referral-driven funnel (see `knowledge.md` §10), so it is read by a human early — narrative coherence and quantified scope matter more than keyword survival, though both still apply.
+- This resume feeds a recruiter/referral-driven funnel (see `reference/recruiting.md` §10), so it is read by a human early — narrative coherence and quantified scope matter more than keyword survival, though both still apply.
 
 ---
 
 ## PART III — RESUME BY INDUSTRY / TRACK
 
-*Standalone, not diffs. Each says what the document must lead with, the keywords to hit through real use, and the project archetypes that signal the track. How each field hires is in `knowledge.md` Part III.*
+*Standalone, not diffs. Each says what the document must lead with, the keywords to hit through real use, and the project archetypes that signal the track. How each field hires is in `reference/recruiting.md` Part III.*
 
 ### 12. General SWE / Full-Stack Resume
 
@@ -190,4 +190,4 @@ A single static resume is a compromise. The endgame is a **base document with sw
 - **Tags are inline.** Format rules and the eye-tracking 7.4s figure are well-sourced; specific parse-fidelity percentages and the homelab/Kaggle weighting are vendor- or community-reported and directional. The grad-date and single-column rules are the highest-confidence, highest-leverage moves.
 - **Parsers are imperfect even on clean docs** — best commercial parsers top out near 87% field-level accuracy vs ~96% for humans, so ~1 in 8 fields can break on a clean resume. This is *why* the format rules are strict, not pedantic.
 - **The AI-screening landscape moves fast** — AI-detection adoption and synthetic-resume flagging are partly forecast; don't treat any single adoption statistic as settled.
-- **Cross-reference:** the funnel, timeline, networking, interview loop, and negotiation all live in `knowledge.md`. This file owns the document; that file owns the process. The pipeline `.mdc` files operationalize this doctrine; `context.md` is the canonical bullet pool.
+- **Cross-reference:** the funnel, timeline, networking, interview loop, and negotiation all live in `reference/recruiting.md`. This file owns the document; that file owns the process. The pipeline `.mdc` files operationalize this doctrine; `context.md` is the canonical bullet pool.

@@ -1,42 +1,6 @@
 # Resume Pipeline
 
-An agent-based system that turns a job description into a role-specific resume, fast and honestly, with minimal stylistic drift. Doctrine lives in a markdown knowledge base; the rules are thin coordinators that reference it.
-
----
-
-## The Two-Layer Design
-
-**Knowledge (markdown, human-curated):**
-- `knowledge.md` — how the field and recruiting work: funnel, timeline, networking, interview loop, negotiation, and the four industry tracks (general SWE, DevOps, AI/ML, robotics).
-- `resume.md` — the resume document: ATS/AI parsing, structure/hierarchy, the DRAW/AR bullet doctrine, per-track resume emphasis.
-- `companies.md` — company-specific operational data: tiers, interview process, OA platform, bottlenecks.
-- `context.md` — candidate state only: identity, education, experiences/projects, the bullet pool, swap sets, skills inventory, targets.
-
-**Behavior (`.cursor/rules/`, thin coordinators):**
-- `career-coach.mdc` (always on) — the coordinator/coach. Answers strategy and resume questions by reading the knowledge base + current web data; dispatches the agents below.
-- `resume-pipeline.mdc` — orchestrator: parse JD → build persona → dispatch → loop → persist.
-- `resume-writing.mdc` — mechanical selector over `context.md`, grounded in `resume.md` doctrine.
-- `resume-grading.mdc` — blind recruiter simulation, evaluates against `resume.md`, calibrates odds with `knowledge.md`.
-
-**The rule of the system:** rules own process and mechanics; the markdown files own doctrine. Rules *reference* the files on demand and never inline or duplicate their content.
-
----
-
-## Core Design Decisions
-
-1. **Doctrine is referenced, not embedded.** Recruiting and resume knowledge live in `knowledge.md`/`resume.md`. Rules point at them; they hold no doctrine of their own. This keeps a single source of truth and prevents drift.
-
-2. **Read-only doctrine.** `knowledge.md` and `resume.md` are **never edited by any agent** unless the user explicitly says so. Only `context.md` (candidate state) and `companies.md` (company data) are agent-writable.
-
-3. **One skeleton template.** `applications/template.tex` is the single resume skeleton, sitting beside `applications/template.cls`. Track (full-stack / ai-ml / dev-ops / robotics) is a doctrine-routing label that selects which `resume.md`/`knowledge.md` section grounds the work — not a separate file. The writer fills the same skeleton for every track.
-
-4. **Writer is mechanical, not creative.** Bullets are copied verbatim from `context.md`; tech changes only via explicit swap sets; no invented metrics or prose. *Which* selection is strongest is decided by `resume.md`, applied through selection only.
-
-5. **Grader is blind to the pool, not to doctrine.** It reads the `.tex` + `persona.md` + `resume.md` + `knowledge.md`, and never `context.md`. It outputs one grade and a lean, executable task-action resolution list.
-
-6. **Loop is short and harsh.** Max 3 iterations, exit at `8.25`. The grade gates; the resolution tasks are the product.
-
-7. **Persona is the per-role briefing.** `persona.md` consolidates role facts, ATS terms, and recruiter framing, grounded in the doctrine files, and is read by both writer and grader.
+An agent-based system that turns a job description into a role-specific resume and a structured pre-interview grade report — fast, honestly, with minimal stylistic drift. Doctrine lives in markdown; behavior lives in thin Cursor rules; deterministic checks live in Python.
 
 ---
 
@@ -45,79 +9,169 @@ An agent-based system that turns a job description into a role-specific resume, 
 ```
 resume/
 ├── README.md
-├── context.md            ← candidate state (agent-writable: coach)
-├── knowledge.md          ← field doctrine (read-only)
-├── resume.md             ← resume doctrine (read-only)
-├── companies.md          ← company data (agent-writable: coach)
+├── context.md              ← your experiences, bullet pool, swap sets (you edit)
+├── network.md              ← contacts for referrals and outreach (you edit)
+│
+├── reference/              ← curated knowledge agents read
+│   ├── recruiting.md       ← how hiring works (read-only)
+│   ├── resume.md           ← resume doctrine (read-only)
+│   └── companies.md        ← company tiers, processes, notes (coach-writable)
+│
+├── scripts/
+│   ├── validate.py         ← artifact gates, demerit scoring, report check
+│   └── cleanup.py          ← LaTeX junk, .pipeline/, legacy JSON
+│
+├── .cursor/rules/          ← thin agent coordinators (no doctrine inline)
+│   ├── career-coach.mdc
+│   ├── resume-pipeline.mdc
+│   ├── resume-writing.mdc
+│   └── resume-grading.mdc
 │
 └── applications/
-    ├── template.cls        ← resume class (read-only)
-    ├── template.tex      ← single skeleton; copied, never edited in place
+    ├── template.tex
+    ├── template.cls
     └── {year}/
         ├── TRACKER.md
         └── {company}/
-            ├── company.md            ← write-once per company
+            ├── company.md
             └── {role}/
                 ├── persona.md
                 ├── Ankur Desai Resume.tex
                 ├── Ankur Desai Resume.pdf
-                └── grade.md           ← final grading report only
+                └── grade.md          ← canonical grading + interview prep
 ```
+
+**What you touch:** `context.md`, `network.md`, and (via the coach) `reference/companies.md`.
+
+**What ships per application:** `persona.md`, `.tex`, `.pdf`, and `grade.md` only — no `.aux`/`.log`, no `.pipeline/`, no standalone JSON.
 
 ---
 
-## Agent Contracts
+## The Two-Layer Design
 
-### Coach (`career-coach.mdc`)
-Always-on coordinator. Reads the four markdown sources + the web; routes strategy → `knowledge.md`, resume questions → `resume.md`, company specifics → `companies.md`, candidate state → `context.md`. Dispatches the pipeline/grader; never writes or grades itself.
+**Reference (markdown):** agents read on demand; rules never inline doctrine.
 
-### Orchestrator (`resume-pipeline.mdc`)
-Parses the JD (track + lifecycle stage from the posting), resolves `company.md`, builds the doctrine-grounded `persona.md`, copies `applications/template.tex` (fixing the class path for folder depth), runs the write/grade loop, compiles, persists, appends the tracker. Never edits content or scores.
+**Behavior (`.cursor/rules/`):** coordinators that dispatch work and run scripts.
 
-### Writer (`resume-writing.mdc`)
-Reads `context.md`, `resume.md`, `persona.md`, the working `.tex`, and (iteration > 1) the grading report. Fills the skeleton: selects bullets, swaps within sets, picks skills buckets, orders by impact density per `resume.md`. Cannot rewrite prose, invent anything, or edit the doctrine files, `template.tex`, `template.cls`, or education.
+**Determinism (`scripts/`):** anything that is a pure function of (resume, JD, pool) is code, not LLM judgment.
 
-### Grader (`resume-grading.mdc`)
-Reads `persona.md`, the `.tex`, `resume.md`, `knowledge.md`. Adopts the role persona, scores `0.0-10.0`, and emits a task-action resolution list. Blind to `context.md` and the bullet pool.
+| Agent | Role |
+|-------|------|
+| `career-coach.mdc` | Always-on coordinator; strategy, company questions, dispatches pipeline/grader |
+| `resume-pipeline.mdc` | Parse JD → persona → write/validate/grade loop → `grade.md` |
+| `resume-writing.mdc` | Mechanical bullet selection from `context.md`; no invented prose |
+| `resume-grading.mdc` | Blind recruiter; emits severity-tagged defect list |
+
+---
+
+## Core Design Decisions
+
+1. **Doctrine is referenced, not embedded.** `reference/recruiting.md` and `reference/resume.md` are read-only unless you explicitly say otherwise.
+
+2. **Writer is mechanical.** Bullets are copied verbatim from `context.md`; tech changes only via swap sets.
+
+3. **Grader is blind to the pool.** It reads the `.tex` + `persona.md` + `reference/` — never `context.md`. It emits defects, not a holistic vibe score.
+
+4. **Demerit model, not anchored grades.** Emergencies (veto), majors (×3), minors (×1). Pass bar: weighted < 5, no emergency, gates pass. Display score = `10 − weighted` (cosmetic only).
+
+5. **Prose and score cannot diverge.** Every observation in the grader report must appear in the scored defects JSON. `check-report` enforces 1:1 before scoring.
+
+6. **`grade.md` is the deliverable.** Verdict, scored defects, mechanical gates, likelihood, and interview prep — folded from what used to be four JSON files.
+
+7. **One skeleton.** `applications/template.tex` for every track; track is a routing label into `reference/` sections.
 
 ---
 
 ## End-to-End Flow
 
-1. User provides a JD (or the coach detects one).
-2. Orchestrator parses role → chooses track label + lifecycle stage.
-3. Orchestrator builds the application folder, `company.md`, and a doctrine-grounded `persona.md`.
-4. Writer fills the skeleton on the first pass.
-5. Grader scores and emits resolution tasks.
-6. Writer addresses in-rails tasks.
-7. Repeat (max 3) until grade `>= 8.25` or cap.
-8. Compile PDF, run fit checks, persist final `grade.md`.
-9. Append the tracker entry.
+1. Paste a JD (or ask the coach — it routes to the pipeline).
+2. Orchestrator parses role → `screen_track` + `differentiator` → eligibility (computed, not reasoned).
+3. Resolve `company.md`, build `persona.md`, copy skeleton template.
+4. Writer fills first pass; orchestrator snapshots `iter1_counts` and writes `.pipeline/gate_inputs.json`.
+5. **Loop** (cap 5, early-exit if demerits stop improving):
+   - `xelatex` → `cleanup.py clean`
+   - `validate.py gates` — hard gates must pass before grading
+   - `@resume-grading` → `check-report` → `validate.py demerits`
+   - Writer addresses defects in-rails; track out-of-rails for `grade.md`
+6. Fit checks (skills wrap, page fill).
+7. Final grade pass → assemble `grade.md` → `cleanup.py clean --ship`.
+8. Append `TRACKER.md`.
+
+---
+
+## Scripts
+
+Run from repo root.
+
+### `scripts/validate.py`
+
+| Subcommand | Purpose |
+|------------|---------|
+| `gates` | Required languages, orphans, anti-deletion, protected depth, lead signal, page fill |
+| `demerits` | Score grader defect JSON → pass/fail + display score |
+| `check-report` | Wishlist bullet count must match JSON defects; no deprecated severities |
+
+```bash
+python scripts/validate.py gates \
+  --tex "applications/2027/foo/bar/Ankur Desai Resume.tex" \
+  --inputs applications/2027/foo/bar/.pipeline/gate_inputs.json \
+  --pdf "applications/2027/foo/bar/Ankur Desai Resume.pdf" \
+  --phase loop \
+  --out applications/2027/foo/bar/.pipeline/gate_report.json
+
+python scripts/validate.py check-report --report grader_output.txt
+python scripts/validate.py demerits \
+  --demerits applications/2027/foo/bar/.pipeline/demerits.json \
+  --out applications/2027/foo/bar/.pipeline/demerit_score.json
+```
+
+### `scripts/cleanup.py`
+
+| Subcommand | Purpose |
+|------------|---------|
+| `clean --tex` | Remove `.aux`, `.log`, `.out`, etc.; keep `.tex` and `.pdf` |
+| `clean --tex --ship` | Above + `.pipeline/` + legacy standalone JSON |
+| `clean-tree --root applications` | Recursive maintenance across all role folders |
+
+```bash
+python scripts/cleanup.py clean --tex "applications/…/Ankur Desai Resume.tex"
+python scripts/cleanup.py clean-tree --root applications
+```
+
+---
+
+## Setup
+
+- **TeX:** `xelatex` on PATH (MacTeX or equivalent).
+- **Optional:** `pip install pdfplumber` for true page-fill measurement; without it, gates fall back to a bullet-count proxy.
 
 ---
 
 ## Data Boundaries
 
-- `context.md`: timeless candidate state only. Policy/doctrine text here is a scoping bug.
-- `knowledge.md` / `resume.md`: doctrine, read-only.
-- `companies.md`: company data, coach-writable.
-- `persona.md`: per-role framing, orchestrator-generated.
-- `.mdc` files: behavior and control logic, no doctrine.
+| File | Contents |
+|------|----------|
+| `context.md` | Candidate state only — policy text here is a bug |
+| `network.md` | Contacts |
+| `reference/recruiting.md` | Field + recruiting doctrine (read-only) |
+| `reference/resume.md` | Resume doctrine (read-only) |
+| `reference/companies.md` | Company operational data (coach-writable) |
+| `persona.md` | Per-role briefing (orchestrator-generated) |
+| `grade.md` | Final verdict, defects, gates, interview prep |
 
 ---
 
 ## Practical Limitations
 
-- The writer can only close gaps representable via the existing pool + swap sets. Some role mismatches are structural and the loop caps out below threshold.
-- A high score means the artifact is strong for the resume-screen stage; it does not guarantee an interview.
-- The robotics track routes doctrine but fills the same skeleton; if robotics volume grows, consider a dedicated bullet emphasis in `context.md`.
-- Manual review is still expected for final polish and page-fit edge cases.
+- The writer can only close gaps representable via the bullet pool + swap sets. Structural mismatches cap out as out-of-rails defects in `grade.md`.
+- Passing demerits + gates means strong for the **resume screen** — not a guarantee past OA/onsite.
+- Historical `grade.md` / `company.md` files may cite old paths (`companies.md`); live rules use `reference/companies.md`.
 
 ---
 
 ## Usage
 
-1. Paste a complete JD in chat (or ask a strategy/company/resume question — the coach routes it).
+1. Paste a complete JD in chat, or ask a strategy / company / resume question.
 2. The pipeline runs in Agent mode.
-3. Review the role folder: `persona.md`, `Ankur Desai Resume.tex`, `Ankur Desai Resume.pdf`, `grade.md`.
+3. Review the role folder: `persona.md`, `.tex`, `.pdf`, **`grade.md`**.
 4. Confirm the tracker entry was appended.
