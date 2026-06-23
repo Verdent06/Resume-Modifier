@@ -17,15 +17,16 @@ the writer deleting bullets to satisfy a metric task — is a pure function of
 instruction a stochastic agent can fudge.
 
 USAGE
-    python validate.py \
-        --tex "applications/2027/anduril-industries/software-engineer-intern/Ankur Desai Resume.tex" \
-        --inputs gate_inputs.json \
-        --pdf  "applications/2027/anduril-industries/software-engineer-intern/Ankur Desai Resume.pdf" \
-        --phase loop \
-        --out  gate_report.json
+    # artifact gates (between writer and grader)
+    python validate.py gates \
+        --tex "…/Ankur Desai Resume.tex" --inputs gate_inputs.json \
+        --pdf "…/Ankur Desai Resume.pdf" --phase loop --out gate_report.json
 
-  exit 0  -> all HARD gates pass (loop may proceed to grading)
-  exit 1  -> at least one HARD gate failed (orchestrator must re-dispatch writer)
+    # demerit scoring (turns the grader's defect list into pass/fail)
+    python validate.py demerits --demerits demerits.json --out demerit_score.json
+
+  gates    exit 0 -> all HARD gates pass;  exit 1 -> a hard gate failed
+  demerits exit 0 -> PASS (no emergency, weighted < threshold);  exit 1 -> FAIL
 
 gate_inputs.json (assembled by the orchestrator from the Step 1 state object +
 context.md inventory) is the single structured input. Shape:
@@ -433,37 +434,49 @@ def gate_fit_protection(pr: ParsedResume, prefit_counts, protected, phase) -> Ga
     return GateResult("fit_protection", True, True, "Fit drops were project-scoped and protected entries intact.")
 
 
-def gate_page_fit(pdf_path) -> GateResult:
-    if not pdf_path:
-        return GateResult("page_fit", True, True, "Skipped (no PDF supplied).")
-    p = Path(pdf_path)
-    if not p.exists():
-        return GateResult("page_fit", True, True, f"Skipped (PDF not found: {pdf_path}).")
-    pages = None
-    try:
-        from pypdf import PdfReader  # type: ignore
-        pages = len(PdfReader(str(p)).pages)
-    except Exception:
+def gate_page_fill(pr: ParsedResume, pdf_path, min_fill=0.85) -> GateResult:
+    """Replaces the binary 1-page check. A resume can be one page and still waste
+    a third of it — that reads as thin. Measure actual fill: exactly 1 page, and
+    page-1 text must reach at least `min_fill` of the way down. Uses pdfplumber to
+    find the lowest text baseline; falls back to a bullet-count floor when neither
+    pdfplumber nor a PDF is available (length varies per bullet, so the count is a
+    coarse proxy, used only when real measurement can't run)."""
+    if pdf_path and Path(pdf_path).exists():
         try:
-            import subprocess
-            out = subprocess.run(["pdfinfo", str(p)], capture_output=True, text=True)
-            for line in out.stdout.splitlines():
-                if line.lower().startswith("pages:"):
-                    pages = int(line.split(":")[1].strip())
-        except Exception:
-            return GateResult("page_fit", True, True,
-                              "Skipped (no pypdf and no pdfinfo available).")
-    if pages is None:
-        return GateResult("page_fit", True, True, "Skipped (could not read page count).")
-    if pages != 1:
-        return GateResult("page_fit", True, False, f"Resume is {pages} pages; must be exactly 1.")
-    return GateResult("page_fit", True, True, "One page.")
+            import pdfplumber  # type: ignore
+            with pdfplumber.open(pdf_path) as pdf:
+                npages = len(pdf.pages)
+                if npages != 1:
+                    return GateResult("page_fill", True, False,
+                                      f"{npages} pages; must be exactly 1 (overflow).")
+                page = pdf.pages[0]
+                bottoms = [c["bottom"] for c in page.chars] or [0]
+                fill = max(bottoms) / float(page.height)
+                if fill < min_fill:
+                    return GateResult("page_fill", True, False,
+                                      f"Page only {fill:.0%} filled (floor {min_fill:.0%}); "
+                                      f"add a bullet to a strong entry's pool.")
+                return GateResult("page_fill", True, True, f"One page, {fill:.0%} filled.")
+        except ImportError:
+            pass  # fall through to bullet-count proxy
+        except Exception as e:
+            return GateResult("page_fill", True, True, f"Skipped (PDF read error: {e}).")
+    # Fallback: bullet-count floor (no pdfplumber / no PDF).
+    total = sum(len(e.bullets) for e in pr.entries)
+    floor = 10
+    if total < floor:
+        return GateResult("page_fill", True, False,
+                          f"Only {total} bullets (floor {floor}); page likely underfilled. "
+                          f"Install pdfplumber for true fill measurement.")
+    return GateResult("page_fill", True, True,
+                      f"{total} bullets (no pdfplumber; bullet-count proxy).")
 
 
 def compute_metric_density(pr: ParsedResume, exempt_entries):
-    """Soft gate: returns (ratio, ceiling, metric_free, exempt_used). Does not
-    block the loop; the orchestrator hands `ceiling` to the grader as a hard cap
-    it cannot exceed. Edit-H arithmetic, now actually arithmetic."""
+    """Informational only now. The 0-10 ceiling was retired with the demerit
+    model — metric-free entries surface as `minor` defects in the grader instead.
+    Still reported because the ratio and the metric-free list are useful for the
+    writer and for debugging."""
     exempt = {_norm(x) for x in (exempt_entries or [])}
     counted, with_metric, metric_free, exempt_used = 0, 0, [], []
     for e in pr.entries:
@@ -476,23 +489,59 @@ def compute_metric_density(pr: ParsedResume, exempt_entries):
         else:
             metric_free.append(e.name)
     ratio = (with_metric / counted) if counted else 1.0
-    ceiling = 8.0 if ratio < 0.5 else 10.0
-    return round(ratio, 3), ceiling, metric_free, exempt_used
+    return round(ratio, 3), metric_free, exempt_used
 
 
 # ============================================================================
-#  MAIN
+#  DEMERIT SCORER  (merged from the former score_demerits.py)
+#  Same deterministic layer as the artifact gates: takes the recruiter grader's
+#  severity-tagged defect list and turns it into pass/fail in code, so a familiar
+#  0-10 can never be vibed. Run via the `demerits` subcommand.
 # ============================================================================
 
-def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--tex", required=True)
-    ap.add_argument("--inputs", required=True, help="gate_inputs.json")
-    ap.add_argument("--pdf", default="")
-    ap.add_argument("--phase", default="loop", choices=["loop", "fit"])
-    ap.add_argument("--out", default="gate_report.json")
-    args = ap.parse_args()
+DEMERIT_WEIGHTS = {"emergency": None, "major": 3, "minor": 1, "patch": 0}  # emergency = veto
+DEMERIT_THRESHOLD = 5
+_DEMERIT_SEVERITIES = set(DEMERIT_WEIGHTS)
 
+
+def score_demerits(defects, threshold=DEMERIT_THRESHOLD, weights=DEMERIT_WEIGHTS):
+    """Rules, all here and none in the model:
+      - any `emergency` -> FAIL (veto); an application-killer is never outweighed.
+      - else weighted = major*3 + minor*1 + patch*0; PASS iff weighted < threshold.
+      - display score = max(0, 10 - weighted), cosmetic only.
+    Unknown severity is coerced to `major` (fail-safe) and surfaced, never silent."""
+    buckets = {k: [] for k in _DEMERIT_SEVERITIES}
+    coerced = []
+    for d in defects:
+        sev = str(d.get("severity", "")).strip().lower()
+        if sev not in _DEMERIT_SEVERITIES:
+            coerced.append({**d, "original_severity": sev or "(missing)"})
+            sev = "major"
+        buckets[sev].append(d)
+
+    emergency = len(buckets["emergency"])
+    weighted = (weights["major"] * len(buckets["major"])
+                + weights["minor"] * len(buckets["minor"])
+                + weights["patch"] * len(buckets["patch"]))
+    passed = emergency == 0 and weighted < threshold
+    return {
+        "passed": passed,
+        "fail_reason": ("emergency defect present (veto)" if emergency
+                        else f"weighted demerits {weighted} >= threshold {threshold}"
+                        if not passed else None),
+        "weighted_demerits": weighted,
+        "display_score": max(0.0, 10.0 - weighted),
+        "counts": {k: len(v) for k, v in buckets.items()},
+        "threshold": threshold,
+        "coerced_defects": coerced,
+    }
+
+
+# ============================================================================
+#  MAIN  (two subcommands: `gates` for artifact checks, `demerits` for scoring)
+# ============================================================================
+
+def run_gates(args) -> int:
     tex = Path(args.tex).read_text(encoding="utf-8")
     gi = json.loads(Path(args.inputs).read_text(encoding="utf-8"))
     pr = parse_resume(tex)
@@ -505,18 +554,17 @@ def main() -> int:
         gate_protected_depth(pr, gi.get("protected_entries", [])),
         gate_lead_signal(pr, gi.get("protected_entries", []), gi.get("lead_signal_window", 0)),
         gate_fit_protection(pr, gi.get("prefit_counts", {}), gi.get("protected_entries", []), args.phase),
-        gate_page_fit(args.pdf),
+        gate_page_fill(pr, args.pdf, gi.get("min_fill", 0.85)),
     ]
-    ratio, ceiling, metric_free, exempt_used = compute_metric_density(pr, gi.get("exempt_entries", []))
+    ratio, metric_free, exempt_used = compute_metric_density(pr, gi.get("exempt_entries", []))
 
     hard_pass = all(g.passed for g in gates if g.hard)
     report = {
         "hard_gates_pass": hard_pass,
         "metric_density": {
             "ratio": ratio,
-            "clamp_ceiling": ceiling,
-            "metric_free_entries": metric_free,
-            "exempt_entries_applied": exempt_used,  # logged so exemption can't hide
+            "metric_free_entries": metric_free,            # grader turns these into minors
+            "exempt_entries_applied": exempt_used,          # logged so exemption can't hide
         },
         "gates": [asdict(g) for g in gates],
         "entries_parsed": [{"name": e.name, "section": e.section, "bullets": len(e.bullets)}
@@ -525,15 +573,53 @@ def main() -> int:
     }
     Path(args.out).write_text(json.dumps(report, indent=2), encoding="utf-8")
 
-    # Human-readable summary to stderr (orchestrator reads the JSON).
     print(f"hard_gates_pass = {hard_pass}", file=sys.stderr)
     for g in gates:
         print(f"  [{'PASS' if g.passed else 'FAIL'}] {g.name}: {g.detail}", file=sys.stderr)
-    print(f"  metric ratio = {ratio}  ->  grader ceiling = {ceiling}", file=sys.stderr)
-    if metric_free:
-        print(f"  metric-free entries: {metric_free}", file=sys.stderr)
-
+    print(f"  metric ratio = {ratio} (metric-free: {metric_free or 'none'})", file=sys.stderr)
     return 0 if hard_pass else 1
+
+
+def run_demerits(args) -> int:
+    raw = json.loads(Path(args.demerits).read_text(encoding="utf-8"))
+    defects = raw.get("defects", raw if isinstance(raw, list) else [])
+    result = score_demerits(defects, threshold=args.threshold)
+    Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
+
+    c = result["counts"]
+    print(f"{'PASS' if result['passed'] else 'FAIL'}  "
+          f"weighted={result['weighted_demerits']} (thr {result['threshold']})  "
+          f"display={result['display_score']:.1f}", file=sys.stderr)
+    print(f"  emergency={c['emergency']} major={c['major']} "
+          f"minor={c['minor']} patch={c['patch']}", file=sys.stderr)
+    if result["fail_reason"]:
+        print(f"  fail: {result['fail_reason']}", file=sys.stderr)
+    if result["coerced_defects"]:
+        print(f"  WARNING: {len(result['coerced_defects'])} defect(s) had an unknown "
+              f"severity, scored as major", file=sys.stderr)
+    return 0 if result["passed"] else 1
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="Deterministic resume checks: artifact gates and demerit scoring.")
+    sub = ap.add_subparsers(dest="cmd", required=True)
+
+    g = sub.add_parser("gates", help="run the artifact gates against the .tex/.pdf")
+    g.add_argument("--tex", required=True)
+    g.add_argument("--inputs", required=True, help="gate_inputs.json")
+    g.add_argument("--pdf", default="")
+    g.add_argument("--phase", default="loop", choices=["loop", "fit"])
+    g.add_argument("--out", default="gate_report.json")
+    g.set_defaults(func=run_gates)
+
+    d = sub.add_parser("demerits", help="score the grader's defect list into pass/fail")
+    d.add_argument("--demerits", required=True, help="grader-emitted defect JSON")
+    d.add_argument("--out", default="demerit_score.json")
+    d.add_argument("--threshold", type=int, default=DEMERIT_THRESHOLD)
+    d.set_defaults(func=run_demerits)
+
+    args = ap.parse_args()
+    return args.func(args)
 
 
 if __name__ == "__main__":
