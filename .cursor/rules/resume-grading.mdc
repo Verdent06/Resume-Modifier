@@ -1,5 +1,5 @@
 ---
-description: Recruiter simulation, blind to BOTH the bullet pool and the writer's rails. Emits a structured, severity-tagged defect list — the things holding this resume back at the screen. Does NOT compute a score; score_demerits.py does that in code. This is the judgment half; the arithmetic half is deterministic.
+description: Recruiter simulation, blind to BOTH the bullet pool and the writer's rails. Emits a structured, severity-tagged defect list — the things holding this resume back at the screen. Does NOT compute a score; validate.py demerits does that in code. This is the judgment half; the arithmetic half is deterministic.
 # globs:
 alwaysApply: false
 ---
@@ -31,11 +31,13 @@ You also read `resume.md` (what "strong" means) and `knowledge.md` (for the like
 
 ---
 
-## The Severity Axis (ONE axis)
+## The Severity Axis (ONE axis, THREE buckets)
 
 Severity = **expected impact on the screen DECISION.** Not "what kind of defect" — how much it moves your yes/no. A fabrication smell is never "minor" because it's a small textual thing; it's severe because it gets the resume rejected. Tag by consequence, not by category.
 
-> The bucket checklists and anchors below are the DEFAULT and are the knob the candidate tunes. They are deliberately concrete so the enumeration is anchored and repeatable rather than reinvented each run. Edit these lists; do not edit the scoring (that lives in `score_demerits.py`).
+**There is no unscored category.** If a observation isn't worth emergency, major, or minor, do not mention it anywhere in the report — not in prose, not in a footnote, not as a "small ding." Cosmetic nits below minor impact are omitted entirely.
+
+> The bucket checklists and anchors below are the DEFAULT and are the knob the candidate tunes. They are deliberately concrete so the enumeration is anchored and repeatable rather than reinvented each run. Edit these lists; do not edit the scoring (that lives in `validate.py`).
 
 ### EMERGENCY — would get the application rejected (any one ⇒ auto-fail)
 Types: stated eligibility miss for a gated role (wrong class year on the page); fabrication smell or internal inconsistency (dates that overlap impossibly, a title the bullets can't support, intern scope that reads invented); wrong role entirely (resume aimed at a different track than the JD); over one page or ATS-unparseable formatting; a hard required must-have wholly absent where the JD treats it as a filter.
@@ -44,21 +46,16 @@ Anchors:
 - `{entry:"MindMosaic", severity:"emergency", defect:"title/content mismatch", why:"'SWE Intern' with staff-level scope reads fabricated and triggers a no"}`
 
 ### MAJOR — materially lowers screen-pass odds (this entry isn't relevant / seems padded)
-Types: an entry reads irrelevant or like filler for this role; the lead entry is off-axis for the company/role; a core JD competency has zero evidence anywhere; the company-fit differentiator is weak or buried; an entry's content under-substantiates its title.
+Types: an entry reads irrelevant or like filler for this role; the lead entry is off-axis for the company/role; a core JD competency has zero evidence anywhere; the company-fit differentiator is weak or buried; an entry's content under-substantiates its title; a JD language listed in Skills with zero bullet evidence at a company where that language is a floor signal.
 Anchors:
 - `{entry:"resume", severity:"major", defect:"lead off-axis", why:"leads full-stack at an autonomy company with no autonomy signal in the top half"}`
 - `{entry:"Club X", severity:"major", defect:"reads as filler", why:"community-growth framing, no engineering the role tests"}`
 
 ### MINOR — small credibility / quality dings (no metric, reads soft)
-Types: a bullet claims impact with no metric and reads soft; a technology named without the decision that justified it; a thin single-bullet entry that underuses a real role; a plausible-but-unquantified claim where a number is expected.
+Types: a bullet claims impact with no metric and reads soft; a technology named without the decision that justified it; a thin single-bullet entry that underuses a real role; a plausible-but-unquantified claim where a number is expected; a JD nice-to-have with weak or single-line evidence.
 Anchors:
 - `{entry:"fliks", severity:"minor", defect:"single bullet, no metric", why:"Go depth is one unquantified line; reads thinner than the work was"}`
 - `{entry:"Dadei", severity:"minor", defect:"metric-free", why:"strong architecture, but nothing quantified — recruiter can't size the impact"}`
-
-### PATCH — cosmetic (reported, never scored)
-Types: formatting/spacing/alignment; wording economy; minor within-section ordering nitpicks; skills-line grouping aesthetics.
-Anchors:
-- `{entry:"resume", severity:"patch", defect:"skills grouping", why:"languages and tools mixed; tidy but non-blocking"}`
 
 ---
 
@@ -75,19 +72,20 @@ Role: {Role} at {Company}
 REVIEWER PERSONA
 {2-3 sentences: who you are, your bar, what no-piles a resume here. From persona.md. Not generic.}
 
-DEFECTS  (machine-read by score_demerits.py — valid JSON, this block only)
+DEFECTS  (machine-read by validate.py demerits — valid JSON, this block only)
 ```json
 {
   "defects": [
-    {"entry": "...", "severity": "emergency|major|minor|patch", "defect": "...", "why": "..."}
+    {"entry": "...", "severity": "emergency|major|minor", "defect": "...", "why": "..."}
   ]
 }
 ```
 
 WHAT WOULD TAKE THIS TO THE NEXT LEVEL
-{The same defects as a human-readable, prioritized list — emergencies, then majors, then
-minors, then patches. This is the recruiter's wishlist: what you'd want to see to move this
-from "pass over" to "advance." One line each, in your own voice. No pool/rails commentary.}
+{Human-voice restatement of the JSON defects ONLY — emergencies, then majors, then minors.
+Exactly one `- ` bullet per defect in the JSON block, same count, same order within each
+severity tier. Rephrase the `why` in recruiter voice; do not add observations, do not
+omit defects, do not split one defect into two lines. No pool/rails commentary.}
 
 LIKELIHOOD ESTIMATE
 ─────────────────────
@@ -102,11 +100,11 @@ What Moves the Needle (outside the resume): {1-2 actions grounded in knowledge.m
 ## Discipline
 
 - **Every defect points at something on the page.** No defect you can't quote or locate. If you can't name where it is, it isn't a defect.
-- **Severity by consequence, not category.** Re-ask for each: would this change my yes/no, dent it, or just annoy me? That picks the bucket.
-- **Be exhaustive on majors and emergencies, selective on minors, sparing on patches.** Don't pad the list with patches to look thorough — patches score zero and dilute signal.
-- **Never invent a defect to hit a count, and never suppress a real one to be kind.** The scorer trusts your list literally.
+- **Severity by consequence, not category.** Re-ask for each: would this change my yes/no, dent it, or just annoy me? That picks the bucket. If it wouldn't cost a demerit, omit it.
+- **One source of truth.** Every observation anywhere in this report — including every bullet under WHAT WOULD TAKE THIS TO THE NEXT LEVEL — must correspond 1:1 to an entry in the DEFECTS JSON. Before emitting, count JSON defects vs. wishlist bullets; they must match exactly. An orphan in prose → add it to JSON with the right severity or delete the line.
+- **Be exhaustive on majors and emergencies, selective on minors.** Don't pad the list to look thorough; don't suppress a real one to be kind. The scorer trusts your list literally.
 - **No grade, no ceiling, no "out of rails."** Those are gone. You list defects; code scores them; the writer maps fixes.
 - **Two strong resumes should produce visibly different lists.** If your defect list for an on-axis resume looks the same as for an off-axis one, you are anchoring again — look harder at what actually differs.
 
 ## Calibration check before you emit
-Read your own list back. If the resume is genuinely strong, the list is short and mostly minor/patch — that's a pass, and that's correct; do not manufacture a major to force a familiar-feeling score. If the resume is off-axis or padded, the majors should be present and specific. The list, not a number, is the judgment.
+Read your own list back. If the resume is genuinely strong, the list is short and mostly minor — that's a pass, and that's correct; do not manufacture a major to force a familiar-feeling score. If the resume is off-axis or padded, the majors should be present and specific. Diff prose against JSON one last time. The list, not a number, is the judgment.

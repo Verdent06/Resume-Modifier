@@ -23,10 +23,21 @@ USAGE
         --pdf "…/Ankur Desai Resume.pdf" --phase loop --out gate_report.json
 
     # demerit scoring (turns the grader's defect list into pass/fail)
-    python validate.py demerits --demerits demerits.json --out demerit_score.json
+    python validate.py demerits --demerits .pipeline/demerits.json --out .pipeline/demerit_score.json
 
-  gates    exit 0 -> all HARD gates pass;  exit 1 -> a hard gate failed
-  demerits exit 0 -> PASS (no emergency, weighted < threshold);  exit 1 -> FAIL
+    # grader report integrity (prose must match JSON defect count)
+    python validate.py check-report --report grade_snippet.txt
+
+    # remove LaTeX build junk (keep .tex and .pdf)
+    python validate.py clean --tex "…/Ankur Desai Resume.tex"
+
+    # final ship cleanup (also drops .pipeline/ and legacy JSON)
+    python validate.py clean --tex "…/Ankur Desai Resume.tex" --ship
+
+  gates        exit 0 -> all HARD gates pass;  exit 1 -> a hard gate failed
+  demerits     exit 0 -> PASS (no emergency, weighted < threshold);  exit 1 -> FAIL
+  check-report exit 0 -> JSON and wishlist match;  exit 1 -> diverged or invalid severity
+  clean        always exit 0; prints removed paths to stderr
 
 gate_inputs.json (assembled by the orchestrator from the Step 1 state object +
 context.md inventory) is the single structured input. Shape:
@@ -59,6 +70,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import shutil
 import sys
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
@@ -499,30 +511,34 @@ def compute_metric_density(pr: ParsedResume, exempt_entries):
 #  0-10 can never be vibed. Run via the `demerits` subcommand.
 # ============================================================================
 
-DEMERIT_WEIGHTS = {"emergency": None, "major": 3, "minor": 1, "patch": 0}  # emergency = veto
+DEMERIT_WEIGHTS = {"emergency": None, "major": 3, "minor": 1}  # emergency = veto; no unscored tier
 DEMERIT_THRESHOLD = 5
 _DEMERIT_SEVERITIES = set(DEMERIT_WEIGHTS)
+_DEPRECATED_SEVERITIES = {"patch"}  # legacy grader output; coerced to minor with warning
 
 
 def score_demerits(defects, threshold=DEMERIT_THRESHOLD, weights=DEMERIT_WEIGHTS):
     """Rules, all here and none in the model:
       - any `emergency` -> FAIL (veto); an application-killer is never outweighed.
-      - else weighted = major*3 + minor*1 + patch*0; PASS iff weighted < threshold.
+      - else weighted = major*3 + minor*1; PASS iff weighted < threshold.
       - display score = max(0, 10 - weighted), cosmetic only.
-    Unknown severity is coerced to `major` (fail-safe) and surfaced, never silent."""
+    Unknown severity is coerced to `major` (fail-safe); deprecated `patch` -> `minor`.
+    Both are surfaced in coerced_defects, never silent."""
     buckets = {k: [] for k in _DEMERIT_SEVERITIES}
     coerced = []
     for d in defects:
         sev = str(d.get("severity", "")).strip().lower()
-        if sev not in _DEMERIT_SEVERITIES:
-            coerced.append({**d, "original_severity": sev or "(missing)"})
+        if sev in _DEPRECATED_SEVERITIES:
+            coerced.append({**d, "original_severity": sev, "coerced_to": "minor"})
+            sev = "minor"
+        elif sev not in _DEMERIT_SEVERITIES:
+            coerced.append({**d, "original_severity": sev or "(missing)", "coerced_to": "major"})
             sev = "major"
         buckets[sev].append(d)
 
     emergency = len(buckets["emergency"])
     weighted = (weights["major"] * len(buckets["major"])
-                + weights["minor"] * len(buckets["minor"])
-                + weights["patch"] * len(buckets["patch"]))
+                + weights["minor"] * len(buckets["minor"]))
     passed = emergency == 0 and weighted < threshold
     return {
         "passed": passed,
@@ -538,7 +554,192 @@ def score_demerits(defects, threshold=DEMERIT_THRESHOLD, weights=DEMERIT_WEIGHTS
 
 
 # ============================================================================
-#  MAIN  (two subcommands: `gates` for artifact checks, `demerits` for scoring)
+#  GRADER REPORT CHECK  (prose/JSON 1:1 — no unscored observations)
+# ============================================================================
+
+_WISHLIST_HEADER = "WHAT WOULD TAKE THIS TO THE NEXT LEVEL"
+_DEFECTS_HEADER = "DEFECTS"
+
+
+def _extract_json_block(text: str, after_header: str) -> dict:
+    idx = text.upper().find(after_header.upper())
+    if idx < 0:
+        raise ValueError(f"missing {_DEFECTS_HEADER} section")
+    fence = text.find("```json", idx)
+    if fence < 0:
+        raise ValueError("missing ```json fence in DEFECTS section")
+    start = fence + len("```json")
+    end = text.find("```", start)
+    if end < 0:
+        raise ValueError("unclosed ```json fence")
+    return json.loads(text[start:end].strip())
+
+
+def _extract_wishlist_bullets(text: str) -> list[str]:
+    idx = text.upper().find(_WISHLIST_HEADER.upper())
+    if idx < 0:
+        raise ValueError(f"missing {_WISHLIST_HEADER} section")
+    body = text[idx + len(_WISHLIST_HEADER):]
+    stop_markers = ["LIKELIHOOD ESTIMATE", "━━━━━━━━"]
+    stop = len(body)
+    for marker in stop_markers:
+        pos = body.upper().find(marker.upper())
+        if pos >= 0:
+            stop = min(stop, pos)
+    section = body[:stop]
+    return [ln.strip()[2:].strip() for ln in section.splitlines()
+            if ln.strip().startswith("- ")]
+
+
+def check_grader_report(text: str) -> dict:
+    """Validate grader output: valid severities, wishlist count matches JSON defects."""
+    data = _extract_json_block(text, _DEFECTS_HEADER)
+    defects = data.get("defects", data if isinstance(data, list) else [])
+    if not isinstance(defects, list):
+        raise ValueError("defects must be a JSON array")
+
+    invalid = []
+    for i, d in enumerate(defects):
+        sev = str(d.get("severity", "")).strip().lower()
+        if sev in _DEPRECATED_SEVERITIES:
+            invalid.append({"index": i, "severity": sev, "reason": "deprecated — use minor or omit"})
+        elif sev not in _DEMERIT_SEVERITIES:
+            invalid.append({"index": i, "severity": sev or "(missing)", "reason": "unknown severity"})
+
+    wishlist = _extract_wishlist_bullets(text)
+    mismatch = len(wishlist) != len(defects)
+    return {
+        "ok": not invalid and not mismatch,
+        "defect_count": len(defects),
+        "wishlist_count": len(wishlist),
+        "invalid_severities": invalid,
+        "wishlist_mismatch": mismatch,
+    }
+
+
+def run_check_report(args) -> int:
+    text = Path(args.report).read_text(encoding="utf-8") if args.report != "-" else sys.stdin.read()
+    try:
+        result = check_grader_report(text)
+    except (ValueError, json.JSONDecodeError) as exc:
+        print(f"FAIL  check-report: {exc}", file=sys.stderr)
+        return 1
+
+    if result["ok"]:
+        print(f"PASS  {result['defect_count']} defect(s), wishlist matches", file=sys.stderr)
+        if args.out:
+            Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
+        return 0
+
+    print("FAIL  check-report:", file=sys.stderr)
+    if result["invalid_severities"]:
+        for item in result["invalid_severities"]:
+            print(f"  invalid severity at index {item['index']}: "
+                  f"{item['severity']} ({item['reason']})", file=sys.stderr)
+    if result["wishlist_mismatch"]:
+        print(f"  wishlist/JSON mismatch: {result['wishlist_count']} bullets vs "
+              f"{result['defect_count']} defects", file=sys.stderr)
+    if args.out:
+        Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
+    return 1
+
+
+# ============================================================================
+#  LATEX / PIPELINE CLEANUP
+# ============================================================================
+
+_LATEX_ARTIFACT_SUFFIXES = (
+    ".aux", ".bbl", ".blg", ".brf", ".dvi", ".fdb_latexmk", ".fls",
+    ".idx", ".ilg", ".ind", ".lof", ".log", ".lot", ".nav", ".out",
+    ".pdfsync", ".ps", ".run.xml", ".snm", ".synctex.gz", ".toc",
+    ".upa", ".upb", ".vrb", ".xdv",
+)
+_LEGACY_JSON_NAMES = (
+    "gate_inputs.json", "gate_report.json", "demerits.json", "demerit_score.json",
+)
+
+
+def _is_latex_artifact(path: Path) -> bool:
+    name = path.name.lower()
+    return any(name.endswith(suf) for suf in _LATEX_ARTIFACT_SUFFIXES)
+
+
+def clean_latex_artifacts(tex_path: Path) -> list[str]:
+    """Remove LaTeX intermediates next to the resume .tex; keep .tex and .pdf."""
+    tex_path = Path(tex_path).resolve()
+    parent = tex_path.parent
+    stem = tex_path.stem
+    prefix = stem + "."
+    removed: list[str] = []
+    for path in sorted(parent.iterdir()):
+        if not path.is_file() or path == tex_path:
+            continue
+        if path.suffix.lower() == ".pdf" and path.stem == stem:
+            continue
+        if not path.name.startswith(prefix) or not _is_latex_artifact(path):
+            continue
+        path.unlink()
+        removed.append(path.name)
+    return removed
+
+
+def clean_pipeline_artifacts(position_dir: Path, *, ship: bool = False) -> list[str]:
+    """Remove transient pipeline files from a position folder."""
+    position_dir = Path(position_dir).resolve()
+    removed: list[str] = []
+    pipeline_dir = position_dir / ".pipeline"
+    if pipeline_dir.is_dir():
+        shutil.rmtree(pipeline_dir)
+        removed.append(".pipeline/")
+    if ship:
+        for name in _LEGACY_JSON_NAMES:
+            path = position_dir / name
+            if path.is_file():
+                path.unlink()
+                removed.append(name)
+    return removed
+
+
+def run_clean(args) -> int:
+    tex = Path(args.tex).resolve()
+    if not tex.is_file():
+        print(f"clean: tex not found: {tex}", file=sys.stderr)
+        return 1
+
+    removed = clean_latex_artifacts(tex)
+    if args.ship:
+        removed.extend(clean_pipeline_artifacts(tex.parent, ship=True))
+    elif args.pipeline:
+        removed.extend(clean_pipeline_artifacts(tex.parent, ship=False))
+
+    if removed:
+        print(f"clean: removed {len(removed)} item(s) from {tex.parent}", file=sys.stderr)
+        for name in removed:
+            print(f"  {name}", file=sys.stderr)
+    else:
+        print(f"clean: nothing to remove in {tex.parent}", file=sys.stderr)
+
+    if args.out:
+        Path(args.out).write_text(json.dumps({"removed": removed}, indent=2), encoding="utf-8")
+    return 0
+
+
+def run_clean_tree(args) -> int:
+    """Recursive cleanup for every resume under a root (maintenance)."""
+    root = Path(args.root).resolve()
+    total: list[str] = []
+    for tex in sorted(root.rglob("Ankur Desai Resume.tex")):
+        total.extend(clean_latex_artifacts(tex))
+        if args.ship:
+            total.extend(clean_pipeline_artifacts(tex.parent, ship=True))
+    print(f"clean-tree: removed {len(total)} item(s) under {root}", file=sys.stderr)
+    for name in total:
+        print(f"  {name}", file=sys.stderr)
+    return 0
+
+
+# ============================================================================
+#  MAIN  (subcommands: gates, demerits, check-report, clean)
 # ============================================================================
 
 def run_gates(args) -> int:
@@ -591,7 +792,7 @@ def run_demerits(args) -> int:
           f"weighted={result['weighted_demerits']} (thr {result['threshold']})  "
           f"display={result['display_score']:.1f}", file=sys.stderr)
     print(f"  emergency={c['emergency']} major={c['major']} "
-          f"minor={c['minor']} patch={c['patch']}", file=sys.stderr)
+          f"minor={c['minor']}", file=sys.stderr)
     if result["fail_reason"]:
         print(f"  fail: {result['fail_reason']}", file=sys.stderr)
     if result["coerced_defects"]:
@@ -617,6 +818,26 @@ def main() -> int:
     d.add_argument("--out", default="demerit_score.json")
     d.add_argument("--threshold", type=int, default=DEMERIT_THRESHOLD)
     d.set_defaults(func=run_demerits)
+
+    c = sub.add_parser("check-report", help="verify grader prose matches defect JSON")
+    c.add_argument("--report", required=True,
+                   help="grader report path, or '-' for stdin")
+    c.add_argument("--out", default="", help="optional JSON result path")
+    c.set_defaults(func=run_check_report)
+
+    cl = sub.add_parser("clean", help="remove LaTeX build artifacts beside the resume")
+    cl.add_argument("--tex", required=True, help="path to Ankur Desai Resume.tex")
+    cl.add_argument("--pipeline", action="store_true",
+                    help="also remove .pipeline/ transient dir")
+    cl.add_argument("--ship", action="store_true",
+                    help="full ship cleanup: .pipeline/ + legacy standalone JSON")
+    cl.add_argument("--out", default="", help="optional JSON result path")
+    cl.set_defaults(func=run_clean)
+
+    ct = sub.add_parser("clean-tree", help="recursive clean under applications root")
+    ct.add_argument("--root", required=True, help="e.g. applications/")
+    ct.add_argument("--ship", action="store_true", help="also remove pipeline + legacy JSON")
+    ct.set_defaults(func=run_clean_tree)
 
     args = ap.parse_args()
     return args.func(args)

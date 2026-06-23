@@ -20,8 +20,10 @@ You are the orchestrator. You parse the JD, build the recruiter persona, route d
 |---|---|---|
 | `@resume-writing` | All `.tex` edits | `context.md`, `resume.md`, `persona.md`, current `.tex`, grading report and/or gate report (iteration > 1) |
 | `@resume-grading` | Defect enumeration (judgment only) | `resume.md`, `knowledge.md`, `persona.md`, current `.tex` |
-| `validate.py` | All deterministic artifact gates | the `.tex`, the `.pdf`, `gate_inputs.json` |
-| `score_demerits.py` | Pass/fail from the defect list | `demerits.json` (grader output) |
+| `validate.py gates` | All deterministic artifact gates | the `.tex`, the `.pdf`, transient gate inputs |
+| `validate.py demerits` | Pass/fail from the defect list | grader-emitted defect JSON |
+| `validate.py check-report` | Prose/JSON 1:1 enforcement on grader output | raw grader report text |
+| `validate.py clean` | LaTeX + transient pipeline file removal | resume `.tex` path |
 
 The orchestrator never duplicates an agent's work, never bypasses the validator, and never lets the loop exit while a hard gate fails.
 
@@ -39,11 +41,12 @@ The orchestrator never duplicates an agent's work, never bypasses the validator,
 | `persona.md` | write, read | read | read | – |
 | `Ankur Desai Resume.tex` | read | write | read | read |
 | `Ankur Desai Resume.pdf` | compile, read | – | read | read |
-| `gate_inputs.json` | write, read | – | – | read |
-| `gate_report.json` | read | read (on gate fail) | read (ceiling) | write |
+| `.pipeline/*.json` | write (loop only), delete at ship | – | – | read/write |
 | `grade.md` | write (final only) | – | – | – |
 | `TRACKER.md` | append | – | – | – |
 | `applications/template.tex` / `.cls` | read, copy | **never** | – | – |
+
+**Deliverable rule:** the position folder ships with `persona.md`, `Ankur Desai Resume.tex`, `Ankur Desai Resume.pdf`, and **`grade.md` only**. No `.aux`/`.log`/`.out`/`.synctex.gz` or other LaTeX intermediates. No standalone `gate_inputs.json`, `gate_report.json`, `demerits.json`, or `demerit_score.json` — folded into `grade.md`. No `.pipeline/` after ship. During the loop, write transient JSON under `{position_slug}/.pipeline/`; run `validate.py clean` after every compile to drop LaTeX junk immediately.
 
 `knowledge.md` and `resume.md` are **read-only doctrine**. The grader is blind to `context.md`. The validator may read `context.md` for the candidate inventory — it is code producing true/false, not the grader forming a judgment, so this does not break blindness.
 
@@ -188,7 +191,7 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 1. Dispatch `@resume-writing`:
    > Iteration 1. Resume working copy: `{tex_path}`. Persona: `{persona_path}`. Run your first-pass workflow.
 2. **Snapshot the baseline.** Parse the resulting `.tex` for per-entry bullet counts (Experience + Projects). These are `iter1_counts` — the anti-deletion floor.
-3. **Assemble `gate_inputs.json`** in the position folder:
+3. **Assemble gate inputs** and write `{position_slug}/.pipeline/gate_inputs.json`:
    ```json
    {
      "jd_languages":        <from state object>,
@@ -212,49 +215,63 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
    }
    ```
 
-**Out:** First-pass `.tex`, `gate_inputs.json`, `iter1_counts`.
+**Out:** First-pass `.tex`, transient gate inputs, `iter1_counts`.
 
 ---
 
 ## Step 6 — Validate / Grade Loop (demerit model)
 
-**Iteration cap:** 5 (a ceiling, not a target). **Exit condition:** `hard_gates_pass` **AND** demerit `passed` (from `score_demerits.py`). **Early-exit:** if a write pass does not lower `weighted_demerits` versus the previous iteration, the writer has hit the rails — stop and ship the best version so far.
+**Iteration cap:** 5 (a ceiling, not a target). **Exit condition:** `hard_gates_pass` **AND** demerit `passed` (from `validate.py demerits`). **Early-exit:** if a write pass does not lower `weighted_demerits` versus the previous iteration, the writer has hit the rails — stop and ship the best version so far. **Track out-of-rails:** when the writer reports a defect it cannot close within rails, append it to an in-memory `out_of_rails[]` list for Step 8.
 
 **Each iteration:**
 
-1. **Compile.** `xelatex "Ankur Desai Resume.tex"` from the position folder.
+1. **Compile.** `xelatex "Ankur Desai Resume.tex"` from the position folder, then:
+   ```
+   python validate.py clean --tex "{tex_path}"
+   ```
 2. **Validate (deterministic gates, always first):**
    ```
-   python validate.py --tex "{tex_path}" --inputs gate_inputs.json --pdf "{pdf_path}" --phase loop --out gate_report.json
+   python validate.py gates \
+     --tex "{tex_path}" \
+     --inputs .pipeline/gate_inputs.json \
+     --pdf "{pdf_path}" --phase loop \
+     --out .pipeline/gate_report.json
    ```
 3. **If `hard_gates_pass == false`:** invalid artifact — do **not** grade. Dispatch `@resume-writing` with the failed gates as mechanical fix tasks (add the missing language, restore the deleted entry/bullet, drop the orphan, move the buried differentiator up, fill the page). Increment; if under cap, go to 1; else exit recording the standing failures.
 4. **If `hard_gates_pass == true`:** dispatch `@resume-grading`:
    > Resume: `{tex_path}`. Persona: `{persona_path}`. Emit the demerit report.
 
-   Extract the `DEFECTS` JSON block to `demerits.json`, then:
+   Run the report check, then score:
    ```
-   python score_demerits.py --demerits demerits.json --out demerit_score.json
+   python validate.py check-report --report -
+   python validate.py demerits --demerits .pipeline/demerits.json --out .pipeline/demerit_score.json
    ```
-5. **Read `demerit_score.json`.** Capture `passed` and `weighted_demerits`.
-6. **Exit if `passed`** (gates already pass). **Else** dispatch `@resume-writing` with the defect list ordered emergencies → majors → minors (skip patches unless a pass is one patch away):
+   Extract the `DEFECTS` JSON block from the grader output to `.pipeline/demerits.json`. Pipe the full grader text to `check-report` (or `--report path`); **exit non-zero ⇒ re-dispatch grader** — prose and JSON diverged. Only score after `check-report` passes.
+
+5. **Read `.pipeline/demerit_score.json`.** Capture `passed` and `weighted_demerits`.
+6. **Exit if `passed`** (gates already pass). **Else** dispatch `@resume-writing` with the defect list ordered emergencies → majors → minors:
    > Iteration {n}. Address these defects in rails, highest severity first. Map each to a selection/swap/reorder; if a defect cannot be closed within rails, say so in chat and move on — do not fabricate.
    >
-   > {emergency + major + minor defects from demerits.json}
+   > {emergency + major + minor defects from demerits JSON}
 7. **Increment. Early-exit guard:** if the new `weighted_demerits` ≥ the previous iteration's, stop — the writer is not converging. Else if under cap, return to 1; else exit at cap.
 
-**Out:** Final `.tex`, final `gate_report.json`, final `demerit_score.json`.
+**Out:** Final `.tex`, final transient gate report + demerit score (for Step 8 assembly), `out_of_rails[]`.
 
-The grader never sees `context.md`, never computes a number, and never reasons about rails. `score_demerits.py` owns pass/fail. The 0–10 ceiling and metric-density clamp are **retired** — metric-free entries now surface as `minor` defects the grader can see without the pool, and the page check is a real fill gate, not a binary page count.
+The grader never sees `context.md`, never computes a number, and never reasons about rails. `validate.py demerits` owns pass/fail. Metric-free entries surface as `minor` defects the grader can see without the pool; the page check is a real fill gate, not a binary page count.
 
 ---
 
 ## Step 7 — Fit Checks (post-loop, non-counted)
 
-1. Recompile.
-2. **Skills line wrap:** dispatch the writer to trim the wrapping bucket per JD relevance (no bucket add/remove). Recompile until no wrap.
-3. **Page fit:** before any fit edit, **snapshot `prefit_counts`** (current per-entry bullet counts) into `gate_inputs.json`. Overflow → drop one bullet from the weakest **non-protected project** entry. Underfill → add one bullet from a strong entry's pool. After each edit, re-run:
+1. Recompile, then `python validate.py clean --tex "{tex_path}"`.
+2. **Skills line wrap:** dispatch the writer to trim the wrapping bucket per JD relevance (no bucket add/remove). Recompile until no wrap; run `clean` after each compile.
+3. **Page fit:** before any fit edit, **snapshot `prefit_counts`** (current per-entry bullet counts) into `.pipeline/gate_inputs.json`. Overflow → drop one bullet from the weakest **non-protected project** entry. Underfill → add one bullet from a strong entry's pool. After each edit, re-run:
    ```
-   python validate.py --tex "{tex_path}" --inputs gate_inputs.json --pdf "{pdf_path}" --phase fit --out gate_report.json
+   python validate.py gates \
+     --tex "{tex_path}" \
+     --inputs .pipeline/gate_inputs.json \
+     --pdf "{pdf_path}" --phase fit \
+     --out .pipeline/gate_report.json
    ```
    The `--phase fit` run relaxes the iteration-1 anti-deletion gate but enforces `fit_protection` (no Experience or protected-entry bullet may be cut in this phase) and `page_fit`. Recompile until both pass.
 
@@ -262,46 +279,128 @@ The grader never sees `context.md`, never computes a number, and never reasons a
 
 ## Step 8 — Final grade.md
 
-Dispatch `@resume-grading` once more on the shipped version; score it with `score_demerits.py`. Persist the demerit report + score to `{position_slug}/grade.md`.
+1. Dispatch `@resume-grading` once more on the shipped version.
+2. Extract defects JSON → run `validate.py check-report` → run `validate.py demerits`.
+3. Run final gates → read `.pipeline/gate_report.json` and `.pipeline/gate_inputs.json`.
+4. **Write `grade.md`** using the schema below. Embed gate inputs, gate report, defects, and score — then run ship cleanup:
+   ```
+   python validate.py clean --tex "{tex_path}" --ship
+   ```
+   (`--ship` removes `.pipeline/`, legacy standalone JSON, and any remaining LaTeX intermediates.)
+
+### grade.md schema (canonical deliverable)
+
+```markdown
+# {Role Title} at {Company Name}
+
+## Verdict
+
+| Field | Value |
+| ----- | ----- |
+| Gates | {PASS / FAIL — list any failing hard gates} |
+| Weighted demerits | {n} (emergency {e} / major {m} / minor {n}) |
+| Display score | {x.x} / 10 |
+| Pass bar | weighted < 5 AND no emergency AND gates pass |
+| Demerit result | {PASS / FAIL} |
+| Ship status | {Shipped — gates pass & demerits clear \| Stopped — reason} |
+| Iterations | {n} |
+| Eligibility | {verdict} — {reason} |
+| Track | {screen_track}{ + differentiator if divergence} |
+
+## Reviewer Persona
+
+{Grader REVIEWER PERSONA section — who is screening, bar, no-piles}
+
+## Scored Defects
+
+| Entry | Severity | Defect | Why | Weight |
+| ----- | -------- | ------ | --- | ------ |
+| {entry} | {emergency\|major\|minor} | {defect} | {why} | {veto / 3 / 1} |
+
+{If zero defects: "No scored defects — resume cleared the demerit bar."}
+
+### What Would Take This to the Next Level
+
+{Grader wishlist bullets — must match Scored Defects 1:1; same text the grader emitted}
+
+## Mechanical Gates
+
+**hard_gates_pass:** {true/false}
+
+| Gate | Result | Detail |
+| ---- | ------ | ------ |
+| {name} | PASS/FAIL | {detail} |
+
+**Metric density:** ratio {r} · metric-free entries: {list} · exemptions applied: {list}
+
+**Parsed entries:**
+
+| Entry | Section | Bullets |
+| ----- | ------- | ------- |
+| … | … | … |
+
+**Skills parsed:** {languages, frameworks, … as readable list or sub-table}
+
+## Likelihood
+
+**Resume screen pass:** {Low/Medium/High} — {1 sentence from grader}
+
+**Overall hire odds:** {Low/Medium/High} — {2 sentences from grader}
+
+**Binding funnel filters:** {OA platform, practical, bottleneck — from companies.md / knowledge.md}
+
+**What moves the needle (outside the resume):** {from grader}
+
+## Interview Prep
+
+### What the recruiter is looking for
+
+{3-5 bullets synthesized from persona.md "What Passes" + defect themes — orchestrator writes this}
+
+### Gaps on the page
+
+{Group remaining scored defects by severity; plain-language impact for interview framing}
+
+### Possible misreads
+
+{For each high-signal defect, one line on how a 30-second screen might misinterpret the resume — derived from defect `why` fields, not new judgments}
+
+### Out of rails (writer could not close)
+
+{From `out_of_rails[]` accumulated in Step 6, or "Writer closed all addressable gaps within rails."}
+
+## Pipeline Config
+
+<details>
+<summary>gate_inputs.json (audit)</summary>
+
+```json
+{embedded gate_inputs snapshot}
+```
+</details>
+```
 
 ---
 
 ## Step 9 — User Summary  *(parallel with Step 10)*
 
+Short pointer — full detail lives in `grade.md`:
+
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 APPLICATION SESSION READY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Company:    {company_name}        Role: {role_title}
-Folder:     {applications_root}/{company_slug}/{position_slug}/
-Track:      {screen_track}{ " + " + differentiator if track_divergence else "" }   Stage: {lifecycle_stage}
-Iterations: {n} / 3
-Eligibility:{eligibility_verdict} — {eligibility_reason}
+Company:  {company_name}   Role: {role_title}
+Folder:   {applications_root}/{company_slug}/{position_slug}/
+Grade:    grade.md  ← canonical report (verdict, defects, gates, interview prep)
 
-RESULT
-────────────
-Gates:      {PASS | FAIL — list failing gates}
-Demerits:   {weighted_demerits}  (emergency {e} / major {m} / minor {n} / patch {p})  derived score {display_score}/10
-Pass bar:   weighted < 5 AND no emergency AND gates pass
-Status:     {Shipped — gates pass & demerits clear | Stopped — {gate fail | non-convergence | cap} }
+{Verdict table rows: Gates, Demerits, Display score, Ship status — one line each}
 
-TOP RESOLUTION TASKS
-──────────────────────────────────────────
-{Condensed task-action list, 3-5 lines}
-
-WHAT THE WRITER COULD NOT CLOSE
-──────────────────────────────────
-{Out-of-rails items, or "Writer closed all addressable gaps."}
-
-LIKELIHOOD ESTIMATE
-─────────────────────
-Resume Screen:  {Low / Medium / High} — {1 sentence}
-Overall Odds:   {Low / Medium / High} — {2 sentences, calibrated against TRACKER.md}
-Outside-Resume Levers: {1-2 actions grounded in knowledge.md}
+See grade.md for scored defects, gate detail, likelihood, and interview prep.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-If gates never cleared by the cap, say so plainly here — a gate-blocked resume does not ship as "above threshold" regardless of the number.
+If gates never cleared by the cap, say so plainly — a gate-blocked resume does not ship as "above threshold" regardless of the number.
 
 ---
 
@@ -317,8 +416,11 @@ If gates never cleared by the cap, say so plainly here — a gate-blocked resume
 
 - Never edit `.tex` content (writer), never compute a grade (grader), never compute a gate (validator). Run the validator; route its report.
 - Never grade or score an artifact whose hard gates fail.
-- Never let the loop exit unless `score_demerits.py` returns `passed` AND `hard_gates_pass`.
-- Never let the grader compute the grade; `score_demerits.py` owns pass/fail. The grader emits only the defect list.
+- Never let the loop exit unless `validate.py demerits` returns `passed` AND `hard_gates_pass`.
+- Never let the grader compute the grade; `validate.py demerits` owns pass/fail. The grader emits only the defect list.
+- Never persist standalone JSON grading artifacts — fold them into `grade.md` and run `validate.py clean --ship`.
+- Run `validate.py clean --tex` after every `xelatex` compile during the loop and fit checks.
+- Always run `validate.py check-report` before scoring; re-dispatch the grader on failure.
 - Early-exit the loop when `weighted_demerits` stops dropping — do not grind to the cap.
 - Keep `exempt_entries` honest and minimal — it is the one input that can soften the metric ceiling, and `validate.py` logs every exemption it applies.
 - Never pass `context.md` to the grader. Never edit doctrine files, `template.tex`, or `template.cls`.
