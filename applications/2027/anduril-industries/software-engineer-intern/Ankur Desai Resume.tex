@@ -1,7 +1,3 @@
-%% ============================================================================
-%%  Anduril Industries — 2027 Software Engineer Intern
-%% ============================================================================
-
 \documentclass[
 	11pt
 ]{../../../template}
@@ -27,14 +23,13 @@
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
 			{MindMosaic}
-			{Aug. 2025 -- May 2026}
+			{Aug 2025 -- May 2026}
 			{Software Engineering Intern}
 			{}
 			{East Lansing, MI}
 
 			\item Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Spring Boot, Neo4j, and PostgreSQL stack.
 			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
-			\item Authored an AWS deployment script and managed the environment as code with Terraform, turning a manual multi-service bring-up into a repeatable, version-controlled provision so the polyglot stack deploys identically every time.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -45,12 +40,12 @@
 			{East Lansing, MI}
 
 			\item Built the full language-to-motion pipeline in simulation on ROS2 and Gazebo with the attack layer decoupled at the ROS2 interface, so swapping the target robot platform cost only the URDF and control layer and never touched the security result.
-			\item Built the defense under attack as a steelman, composing a triage-plus-verification gate from three published safety architectures rather than a naive single classifier, so the result survives the objection that a real system would do more.
+			\item Researching whether the cheap triage layer that guards an LLM-controlled robot is itself a gameable security boundary, by splitting one unsafe command into individually innocent fragments that reassemble past the gate into unsafe robot behavior.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{Robostangs (FRC Team 548)}
-			{Jun. 2023 -- May 2024}
+			{Jun 2023 -- May 2024}
 			{Software Captain}
 			{}
 			{Northville, MI}
@@ -58,41 +53,50 @@
 			\item Led the software and electrical teams (5 and 6 engineers) for a competition robot that reached the FIRST World Championship and placed top 16 in its division in Houston, the program's strongest world-stage finish since 2014.
 			\item Anchored auto-aim on real-time, vision-corrected localization that fused two AprilTag cameras with swerve odometry on a dedicated 250Hz thread with latency compensation, holding pose accurate during aggressive motion.
 		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct 2025 -- Present}
+			{Co-Founder \& Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent so simultaneous scans cannot double-award or be forged client-side, sustaining 150+ check-ins per event.
+		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
 			{Dadei}
 			{\href{https://dadei.app}{dadei.app}}
-			{Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions}
+			{Voice assistant for human-approved calendar, email, and task actions}
 			{Python, FastAPI, Redis, PostgreSQL, Docker}
 			{}
 
-			\item Routed every model-proposed side effect through a single approval chokepoint, so the assistant never fires an irreversible calendar, email, or task action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
-			\item Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
+			\item Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic and cut duplicate transcription roughly in half.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{fliks}
 			{\href{https://github.com/fliks-gg}{github.com/fliks-gg}}
-			{Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards}
+			{Crowd-validated gameplay skill platform with shareable certification cards}
 			{Go, PostgreSQL, AWS EC2}
 			{}
 
-			\item Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box with no managed queue or transcoding service.
+			\item Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, Java, Go, C++, JavaScript/TypeScript, SQL, Bash}
-		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, RDS), Docker, Terraform}
+		\begin{rSet}{Languages}{Python, Java, Go, C++, JavaScript/TypeScript, SQL}
 		\end{rSet}
 		\begin{rSet}{Frameworks}{Spring Boot, FastAPI}
 		\end{rSet}
-		\begin{rSet}{Databases}{PostgreSQL, Neo4j, Redis}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, RDS), CI/CD}
 		\end{rSet}
 		\begin{rSet}{Robotics}{ROS2, Gazebo, AprilTag}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Neo4j, Redis}
 		\end{rSet}
 	\end{rSection}
 

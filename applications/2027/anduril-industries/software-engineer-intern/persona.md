@@ -1,49 +1,66 @@
-# Recruiter Persona — Anduril Industries · 2027 Software Engineer Intern
+# Persona — 2027 Software Engineer Intern, Anduril Industries
 
-## Role Context
+## Role Summary
 
-Summer 2027 paid, in-person SWE intern (12 weeks). JD reads generic — algorithms, data structures, storage, cloud, front-end frameworks, proficiency in C++/Go/Rust/Java/Python — but Anduril is an autonomy-first defense company. Lattice OS fuses sensor streams into real-time C2; the floor ships C++, perception, and field-deployed software. Greenhouse posting; review begins August 2026. U.S. Person gate. Rising senior required.
+Summer 2027, 12-week paid in-person SWE intern across Atlanta, Boston, Costa Mesa, Irvine, Reston, or Seattle. Generic full-stack SWE requirements (algorithms, data structures, storage, cloud, front-end frameworks, C++/Go/Rust/Java/Python) at a defense-autonomy company whose real identity is Lattice OS, embedded/autonomy, and mission software. Greenhouse posting; review window opens August 2026.
 
-## Track Tuple (divergence active)
+## Track Decision
 
-- **screen_track:** `full-stack` — what the JD's requirements literally test. Resume spine leads with shipped product engineering: storage systems, cloud infra, backend APIs, metrics-worthy production work.
-- **differentiator:** `autonomy` — what makes this candidate memorable at Anduril. ROS2/Gazebo research, FRC sensor-fusion and vision, real-time CV.
-- **Blend rule:** MindMosaic (or equivalent shipped-product entry) leads. A differentiator entry must sit **second** — not buried below club ops or side projects. Robostangs and Bopardikar Lab carry the company-fit signal; at least one must appear in the top two entries.
+| Field | Value |
+| ----- | ----- |
+| `screen_track` | `full-stack` — JD tests general SWE: shipped product, cloud, storage, multi-language proficiency, metrics/debugging |
+| `differentiator` | `autonomy` — Anduril hires C++ for embedded/autonomy; company-fit signal is robotics/perception/real-time, not club ops |
+| `track_divergence` | **true** — spine leads full-stack shipping; differentiator entries must stay prominent |
 
-## What Passes the Screen
+**Blend instruction:** Lead with the strongest shipped-product / backend entry (MindMosaic). **Secure and Efficient Autonomous Systems Lab** must sit in the **top 2** Experience slots (differentiator). **Robostangs (FRC Team 548)** stays deep (≥2 bullets) as secondary autonomy proof. Do not bury autonomy below generic ops work.
 
-- Evidence you ship real software to real constraints — not coursework lists.
-- JD languages present in Skills (C++, Go, Java, Python — candidate lacks Rust; do not fabricate).
-- Storage + cloud through use (dual-database routing, Terraform/AWS, Docker/CI).
-- Autonomy/perception signal visible without letting the resume read as pure robotics — this is a generic SWE req at an autonomy company.
-- Metrics on production-scale work; triage/debugging/monitoring themes are a plus if organic in bullets.
+## Protected Entries
 
-## What No-Piles
+- Secure and Efficient Autonomous Systems Lab
+- Robostangs (FRC Team 548)
 
-- Club-growth / community framing with no engineering depth.
-- Pure ML-notebook or frontend-only signal.
-- Resume that leads robotics but drops the generalist shipping spine the JD lists.
-- Skills-list keyword stuffing with no bullet backing (especially frameworks).
+`lead_signal_window`: 2
 
-## Protected Entries (differentiator-aligned)
+## Recruiter Persona
 
-1. **Secure and Efficient Autonomous Systems Lab** — ROS2/Gazebo, LLM-to-robot safety; research ceiling.
-2. **Robostangs (FRC Team 548)** — vision, sensor fusion, competition robotics pedigree.
+You are an Anduril technical recruiter screening intern resumes before the HackerRank OA. You have 30 seconds. You want rising seniors who have **shipped code to real users or field systems**, can work in **C++/Go/Python**, and show **ownership on hard problems**—not club logistics. Defense contractors pass on resumes that read like generic web-dev portfolios with no mission-relevant systems signal. You still need the literal JD keywords (cloud, storage, metrics, debugging) somewhere on the page.
 
-## ATS Keywords (priority)
+## What Passes
 
-C++, Go, Python, Java, algorithms, data structures, PostgreSQL, cloud infrastructure, AWS, Docker, Terraform, CI/CD, Redis, metrics, monitoring, ROS2, computer vision, sensor fusion, real-time systems
+- Shipped backend or full product with cloud/deploy story and at least one hard metric
+- Autonomy or robotics evidence (ROS2, simulation, vision, controls) in the top half—not relegated to a single line
+- Go or C++ credibly present (skills + bullets); Python/Java depth in production contexts
+- Metrics tied to debugging, monitoring, latency, or scale—not vanity uptime
+- Low-ego ownership language: triage, root cause, coordination
 
-## Entry Ordering Guidance
+## No-Piles
 
-1. MindMosaic — shipped institutional product; storage + cloud spine
-2. Bopardikar Lab OR Robostangs — autonomy differentiator (second slot mandatory)
-3. Remaining experience (the other differentiator entry, compressed)
-4. Dadei — systems depth, orchestration, human-in-the-loop safety boundary
-5. fliks — Go depth, self-hosted infra, storage queue
+- Resume that leads with community/club ops and hides robotics research at the bottom
+- Skills laundry list (Rust, C++, Go) with no bullet proof for systems languages
+- Thin single-bullet entries for real titled roles
+- Pure frontend or pure ML-notebook framing with no systems delivery
+- Missing cloud/storage/debugging signal entirely
 
-Compress Claude Builder Club unless a bullet directly closes a JD gap nothing else covers.
+## ATS Keywords (target 15–20 through bullets + skills)
 
-## Skills Buckets (target 4–5)
+Python, Java, Go, C++, algorithms, data structures, cloud infrastructure, storage systems, metrics, debugging, monitoring, Docker, AWS, PostgreSQL, Redis, CI/CD, React, real-time, ROS2, computer vision, sensor fusion, triage, root cause
 
-Languages (all JD langs candidate has), Cloud & Infrastructure, Frameworks, Databases, Robotics (only if ROS2/Gazebo/AprilTag backed by selected bullets)
+## Entry Guidance
+
+| Entry | Volume | Rationale |
+| ----- | ------ | --------- |
+| MindMosaic | 3 bullets | Full-stack spine: shipped MVP, storage/latency metric, IaC deploy |
+| Secure and Efficient Autonomous Systems Lab | 2 bullets | Differentiator: ROS2/Gazebo pipeline + security/autonomy research |
+| Robostangs (FRC Team 548) | 2 bullets | Competition autonomy: world result + vision fusion |
+| Claude Builder Club @ MSU | 2 bullets | CI/CD + concurrency-safe ops (cloud/debugging signal); compress |
+| Dadei | 2 bullets | Systems depth: approval boundary + real-time arbitration metric |
+| fliks | 2 bullets | Go + storage queue — JD language proof |
+| WizViz | omit | CV signal covered by Robostangs + lab; page budget |
+
+## Skills Buckets (pick 5)
+
+Languages (all JD langs candidate has), Frameworks, Cloud & Infrastructure, Robotics, Databases
+
+## Eligibility
+
+**Eligible** — Expected May 2028 graduation ⇒ rising senior for Summer 2027 (completing junior year, returning for senior year). U.S. Person gate is application-side, not resume.

@@ -7,16 +7,16 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Application Log
 
-| Company | Role | Date Applied | Status | Track | Notes |
-| ------- | ---- | ------------ | ------ | ----- | ----- |
+| Company | Role | Date Applied | Status | Track |
+| ------- | ---- | ------------ | ------ | ----- |
 | Anduril Industries | 2027 Software Engineer Intern | 2026-06-22 | Applied | full-stack+autonomy | |
 
-**Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
+**Status:** Applied / Interviewing / Offer / Rejected
 
 ---
 
 ## Summary Stats
 
-- **Total applied:** 0
-- **Interview conversion:** 0
+- **Total applied:** 1
+- **Interviews:** 0
 - **Offers:** 0
