@@ -98,7 +98,7 @@ resume/
    - Exit only on `loop_target_met`, writer `peak`, or timeout at 10
 6. **Fit checks** (if hard gates pass — skills wrap, page fill).
 7. Final grade pass → assemble `grade.md` → `cleanup.py clean --ship`.
-8. Append `TRACKER.md`.
+8. Append `TRACKER.md` (new row + recomputed summary stats).
 
 ---
 
@@ -182,4 +182,4 @@ python scripts/cleanup.py clean-tree --root applications
 1. Paste a complete JD in chat, or ask a strategy / company / resume question.
 2. The pipeline runs in Agent mode.
 3. Review the role folder: `persona.md`, `.tex`, `.pdf`, **`grade.md`**.
-4. Confirm the tracker entry was appended.
+4. Confirm the tracker entry was appended and summary stats were updated.

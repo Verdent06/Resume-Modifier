@@ -35,6 +35,7 @@ context.md inventory) is the single structured input. Shape:
       "candidate_languages": ["C++", "Python", "Go", "Java", "SQL", "Bash"],
       "exempt_entries":      ["Secure and Efficient Autonomous Systems Lab"],
       "iter1_counts":        {"Robostangs (FRC Team 548)": 3, "WizViz": 2, ...}
+      "min_fill":            0.90   # optional; default PAGE_MIN_FILL in CONFIG
     }
 
   - jd_languages          : languages the JD lists (any phrasing).
@@ -75,6 +76,10 @@ EXEMPT_SKILL_TOKENS = {
 }
 # Skill buckets whose every item is treated as a baseline tool (orphan-exempt).
 EXEMPT_BUCKET_LABELS = {"languages", "tools"}
+
+# Page-fill gate: lowest text baseline on page 1 must reach this fraction of page
+# height (pdfplumber). Override per-run via gate_inputs.json "min_fill".
+PAGE_MIN_FILL = 0.90
 
 # IMPACT-METRIC ALLOWLIST (this is the only non-crisp gate; see module note).
 # A bullet "carries an impact metric" iff it matches one of these. The design is
@@ -432,7 +437,7 @@ def gate_fit_protection(pr: ParsedResume, prefit_counts, protected, phase) -> Ga
     return GateResult("fit_protection", True, True, "Fit drops were project-scoped and protected entries intact.")
 
 
-def gate_page_fill(pr: ParsedResume, pdf_path, min_fill=0.85) -> GateResult:
+def gate_page_fill(pr: ParsedResume, pdf_path, min_fill=PAGE_MIN_FILL) -> GateResult:
     """Replaces the binary 1-page check. A resume can be one page and still waste
     a third of it — that reads as thin. Measure actual fill: exactly 1 page, and
     page-1 text must reach at least `min_fill` of the way down. Uses pdfplumber to
@@ -671,7 +676,7 @@ def run_gates(args) -> int:
         gate_protected_depth(pr, gi.get("protected_entries", [])),
         gate_lead_signal(pr, gi.get("protected_entries", []), gi.get("lead_signal_window", 0)),
         gate_fit_protection(pr, gi.get("prefit_counts", {}), gi.get("protected_entries", []), args.phase),
-        gate_page_fill(pr, args.pdf, gi.get("min_fill", 0.85)),
+        gate_page_fill(pr, args.pdf, gi.get("min_fill", PAGE_MIN_FILL)),
     ]
     ratio, metric_free, exempt_used = compute_metric_density(pr, gi.get("exempt_entries", []))
 

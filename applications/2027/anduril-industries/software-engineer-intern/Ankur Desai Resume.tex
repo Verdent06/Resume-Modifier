@@ -28,9 +28,20 @@
 			{}
 			{East Lansing, MI}
 
+			\item Researching the security of an LLM-controlled robot, where the cheap per-step gate screening its motion plans is the exact seam an attacker slips a harmful plan through.
 			\item Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, the gate the decomposition attack is built to defeat.
 			\item Architected the node graph to run byte-identical in Gazebo and on a physical RoboMaster EP Core, isolating the sim-to-hardware swap to the URDF and controller layer.
-			\item Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, so the decomposition attack's success rate reads against a credible reference.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug 2025 -- May 2026}
+			{Software Engineering Intern}
+			{}
+			{East Lansing, MI}
+
+			\item Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Spring Boot, Neo4j, and PostgreSQL stack.
+			\item Authored an AWS deployment script and managed the environment as code with Terraform, replacing a manual multi-service bring-up that took 30 minutes with a single-command, version-controlled provision so the polyglot stack deploys identically every time.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -41,18 +52,7 @@
 			{Northville, MI}
 
 			\item Led the software and electrical teams (5 and 6 engineers) for a competition robot that reached the FIRST World Championship and placed top 16 in its division in Houston, the program's strongest world-stage finish since 2014.
-			\item Anchored auto-aim on real-time, vision-corrected localization that fused two AprilTag cameras with swerve odometry on a dedicated 250Hz thread with latency compensation, holding pose accurate during aggressive motion.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{MindMosaic}
-			{Aug 2025 -- May 2026}
-			{Software Engineering Intern}
-			{}
-			{East Lansing, MI}
-
-			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
-			\item Authored an AWS deployment script and managed the environment as code with Terraform, turning a manual multi-service bring-up into a repeatable, version-controlled provision so the polyglot stack deploys identically every time.
+			\item Engineered graceful sensor-failure handling so the most match-critical mechanism falls back to an internal encoder and stays operable through a sensor loss instead of bricking mid-match, surfacing the degradation as an alert rather than a silent failure.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -61,18 +61,18 @@
 			{Dadei}
 			{\href{https://dadei.app}{dadei.app}}
 			{Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions}
-			{Python, FastAPI, Redis, Docker, PostgreSQL}
+			{Python, FastAPI, React, Redis, PostgreSQL, Docker}
 			{}
 
-			\item Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
-			\item Implemented delayed action auto-fire on wall-clock-relative job scheduling with a one-second flush backstop, keeping countdown auto-fire correct across worker timezones and tight to the user-visible timer instead of drifting to a 20-second heartbeat.
+			\item Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, attributing 96\% of utterances to the correct speaker.
+			\item Built a React client that streams microphone audio over a WebSocket with client-side Web Audio processing, rendering live captions in under 300ms as the backend transcribes.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{fliks}
 			{\href{https://github.com/fliks-gg}{github.com/fliks-gg}}
 			{Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards}
-			{Go, Docker}
+			{Go, Docker, PostgreSQL}
 			{}
 
 			\item Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
@@ -81,15 +81,13 @@
 	\end{rSection}
 
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{C++, Python, Java, Go, JavaScript/TypeScript, SQL, Bash}
+		\begin{rSet}{Languages}{Python, Java, Go, C++, JavaScript/TypeScript, SQL, Bash}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{FastAPI}
+		\begin{rSet}{Frameworks}{FastAPI, Spring Boot, React}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, RDS), Docker, Terraform}
+		\begin{rSet}{Robotics}{ROS2, Gazebo}
 		\end{rSet}
-		\begin{rSet}{Robotics}{ROS2, Gazebo, Linux, Git, AprilTag}
-		\end{rSet}
-		\begin{rSet}{Databases}{PostgreSQL, Neo4j, Redis}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, RDS), Docker, Terraform, Redis}
 		\end{rSet}
 	\end{rSection}
 

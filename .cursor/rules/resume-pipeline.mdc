@@ -44,7 +44,7 @@ The orchestrator never duplicates an agent's work, never bypasses the validator,
 | `Ankur Desai Resume.pdf` | compile, read | – | read | read |
 | `.pipeline/*.json` | write (loop only), delete at ship | – | – | read/write |
 | `grade.md` | write (final only) | – | – | – |
-| `TRACKER.md` | append | – | – | – |
+| `TRACKER.md` | append row + recompute stats | – | – | – |
 | `applications/template.tex` / `.cls` | read, copy | **never** | – | – |
 
 **Deliverable rule:** the position folder ships with `persona.md`, `Ankur Desai Resume.tex`, `Ankur Desai Resume.pdf`, and **`grade.md` only**. No `.aux`/`.log`/`.out`/`.synctex.gz` or other LaTeX intermediates. No standalone `gate_inputs.json`, `gate_report.json`, `demerits.json`, or `demerit_score.json` — folded into `grade.md`. No `.pipeline/` after ship. During the loop, write transient JSON under `{position_slug}/.pipeline/`; run `scripts/cleanup.py clean` after every compile to drop LaTeX junk immediately.
@@ -404,9 +404,22 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 
 ## Step 10 — TRACKER.md Append  *(parallel with Step 9)*
 
-```
-| {company_name} | {role_title} | {YYYY-MM-DD} | Applied | {screen_track}{"+"+differentiator if track_divergence else ""} | |
-```
+**In:** Step 1 state object (`company_name`, `role_title`, `screen_track`, `differentiator`, `track_divergence`, `role_year`, `applications_root`), today's date.
+
+**Action:**
+
+1. Open `{applications_root}/TRACKER.md`.
+2. Append one row to **Application Log** (preserve the existing column schema):
+   ```
+   | {company_name} | {role_title} | {YYYY-MM-DD} | Applied | {screen_track}{"+"+differentiator if track_divergence else ""} |
+   ```
+3. **Recompute Summary Stats** by scanning every Application Log row (exclude the header and separator rows):
+   - **Total applied:** row count
+   - **Interviews:** rows whose Status is `Interviewing` or `Offer`
+   - **Offers:** rows whose Status is `Offer`
+4. Rewrite the **Summary Stats** section with the recomputed counts. Do not leave stale numbers.
+
+**Out:** Updated `TRACKER.md` with new row and fresh summary stats.
 
 ---
 

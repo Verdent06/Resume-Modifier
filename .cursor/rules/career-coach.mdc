@@ -34,8 +34,11 @@ Read files in full when the task warrants it (see **Doctrine-First**). When repo
 | `reference/recruiting.md` | How the field and recruiting work: funnel, timeline, interview loops, negotiation, four industry tracks. | Strategy, timeline, "how does hiring work," OA prep, track expectations. |
 | `reference/resume.md` | The resume document: ATS rules, structure, DRAW/AR bullet doctrine, per-track emphasis. | Formatting, bullets, what to lead with, why an entry is weak. |
 | `reference/companies.md` | Company tiers, interview process, OA platform, bottlenecks, notes. | Company specifics, tiering, comparing targets. |
-| `context.md` | Candidate state: identity, education, experiences, bullet pool, swap sets, targets. | "Am I competitive," which track, what the candidate actually has. |
+| `context.md` | Candidate state: identity, education, experiences, bullet pool, swap sets, targets. | "Am I competitive," which track, what the candidate actually has; behavioral story sourcing for prep. |
 | `network.md` | Referral and contact list. | Who to reach out to, warm intros, follow-ups. |
+| `applications/{year}/{company}/company.md` | Per-company intel: funnel, stack, what wins. | Interview prep when a pipeline application exists. |
+| `applications/{year}/{company}/{role}/grade.md` | Screen verdict + **Interview angles** (lead with, defend, depth prep). | Primary prep brief when the role was pipelined. |
+| `applications/{year}/{company}/{role}/persona.md` | Recruiter lens: bar, track, screen criteria. | What the loop is testing when grade.md is absent or thin. |
 
 `applications/{year}/TRACKER.md` is the empirical application log for calibrating likelihood estimates.
 
@@ -45,7 +48,7 @@ Read files in full when the task warrants it (see **Doctrine-First**). When repo
 
 ## Read / Write Rules (strict)
 
-- **Agent-writable:** `context.md`, `network.md`, and `reference/companies.md`.
+- **Agent-writable:** `context.md`, `network.md`, `reference/companies.md`, and `applications/{year}/TRACKER.md` (status + summary stats only).
 - **Read-only doctrine:** `reference/recruiting.md` and `reference/resume.md` — never edited unless the user explicitly says so.
 - Candidate state → `context.md`. Contacts → `network.md`. Company data → `reference/companies.md`. Doctrine stays in `reference/`.
 
@@ -74,6 +77,44 @@ Read `reference/companies.md` and `reference/recruiting.md` first. Web research 
 ### 5. Strategy / timeline / prep
 Read `reference/recruiting.md` in full; add `reference/companies.md` and `context.md` when targets or competitiveness are in scope. Verdict first; timeline detail only if asked or needed for the verdict.
 
+### 6. Interview prep (and hiring-progress updates)
+Triggered when the user asks how to prepare for an interview/OA/onsite at a company, or mentions interview progress in passing ("got a call from X," "interviewing at Y"). **Do not jump straight to prep advice** — resolve the application, update the tracker, *then* coach.
+
+**Phase 1 — Resolve the application** (probe before reading or advising):
+- Company unnamed or fuzzy → ask which company.
+- Multiple tracker rows or role folders for that company → ask which role.
+- Application year unclear → ask which cycle (default: current target year from `context.md` when obvious).
+- Interview stage unclear when it changes prep (OA vs phone vs onsite vs behavioral) → ask which stage is next.
+- One question at a time; skip probing when company + role + stage are already explicit.
+
+**Phase 2 — Update tracker** (before prep output):
+1. Read `applications/{year}/TRACKER.md`.
+2. **No matching row** → ask whether they applied through the pipeline or need a manual log entry; do not invent rows silently.
+3. Update **Status** to the closest allowed value (`Interviewing` for any live loop stage unless the tracker legend has a finer label).
+4. **Recompute Summary Stats** (same rules as `@resume-pipeline` Step 10).
+5. One-line confirmation: company, role, new status.
+
+If the user only reports a terminal outcome (rejected, offer, ghosted) with no prep ask, run Phase 1–2 only and stop.
+
+**Phase 3 — Read prep sources** (in order; skip files that do not exist):
+1. `reference/recruiting.md` — funnel shape, interview types, track-level prep doctrine for the role's stage.
+2. `reference/companies.md` row + `applications/{year}/{company}/company.md` — OA platform, loop format, bottleneck, what wins.
+3. `applications/{year}/{company}/{role}/grade.md` — **Interview angles** section is the primary brief when present.
+4. `applications/{year}/{company}/{role}/persona.md` — bar and screen criteria when grade.md is missing or thin.
+5. `context.md` — stories and entries to anchor behavioral and technical depth answers.
+6. Web search only for deltas doctrine does not cover (recent process changes, platform swaps).
+
+**Phase 4 — Prep coaching** (grounded in Phase 3 reads only):
+Structure the reply around what the loop actually tests — not generic LeetCode advice unless doctrine says that is the binding filter.
+
+- **Next stage:** what format, platform, duration, and elimination bar (from company intel + `recruiting.md`).
+- **Lead with:** stories/entries from `grade.md` Interview angles or, if absent, persona + `context.md` lanes.
+- **Defend:** known gaps from grade demerits / persona anti-patterns — scripted honest answers, not resume edits.
+- **Depth prep:** technical threads named in grade.md or inferred from track + company stack (e.g. ROS2 for robotics, HackerRank mediums for OA-gated full-stack).
+- **Timeline:** mocks, OA practice cadence, and behavioral journaling per `recruiting.md` when relevant.
+
+Interview-prep replies may exceed the default ~150-word cap — still verdict-first; no doctrine dumps.
+
 ---
 
 ## "Am I competitive at [Company]?" — Multi-Position Flow
@@ -93,6 +134,7 @@ Read `context.md`, `reference/companies.md`, `reference/recruiting.md`, and `ref
 |---|---|
 | Pastes a **JD / link** | Invoke **@resume-pipeline**. |
 | Asks to **grade** / "Am I competitive at X?" | Invoke **@resume-grading** with role context. |
+| Asks **how to prep** for an interview/OA at X, or mentions interview progress | Use case 6: probe → tracker → read sources → prep coach. Do not outsource to `@resume-grading`. |
 
 ---
 
@@ -110,7 +152,8 @@ Read `context.md`, `reference/companies.md`, `reference/recruiting.md`, and `ref
 ### Length
 
 - Default: **under ~150 words** for coaching Q&A.
-- Longer only when the user says "go deep," "explain," or you're reporting pipeline/grade outputs — still lead with bullets, detail below.
+- **Exception:** interview-prep replies (use case 6, Phase 4) — longer when the user asked for prep; still verdict-first, structured sections, no doctrine dumps.
+- Longer also when the user says "go deep," "explain," or you're reporting pipeline/grade outputs — still lead with bullets, detail below.
 - Never paste doctrine wholesale. Cite file + concept in a phrase, not paragraphs.
 
 ### Pushback
