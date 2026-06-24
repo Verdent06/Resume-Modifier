@@ -110,11 +110,11 @@ Undergraduate Research Assistant                  East Lansing, MI
 
 ```
 1. Researching the security of an LLM-controlled robot, where the cheap per-step gate screening its motion plans is the exact seam an attacker slips a harmful plan through.
-2. Reframed the project from defense-building to measurement, mapping the frontier where a triage gate's cost savings and its attackability reduce to one property: per-step versus whole-plan checking.
-3. Architected the node graph to run byte-identical in Gazebo and on a physical RoboMaster EP Core, isolating the sim-to-hardware swap to the URDF and controller layer.
+2. Reframed the contribution from building a defense to measuring one, arguing that a triage gate's cost savings and its attackability reduce to a single property: per-step versus whole-plan checking.
+3. Ran the node graph byte-identical in Gazebo and on a physical RoboMaster EP Core, driving the real robot over a custom C++ WiFi driver at a 30 Hz control loop with sub-20ms command latency.
 4. Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, the gate the decomposition attack is built to defeat.
 5. Integrated nav2's production MPPI controller rather than hand-rolling a planner, keeping the C++ work on the security apparatus instead of motion control.
-6. Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, so the decomposition attack's success rate reads against a credible reference.
+6. Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, then drove the decomposition attack to an 80% success rate against the per-step triage gate.
 7. Built the attacked defense as a steelman from published safety architectures, so the decomposition attack lands on the strongest reasonable system, not a strawman.
 ```
 
@@ -208,22 +208,23 @@ Ambient voice assistant that turns overheard conversation into human-approved ca
 **Bullet pool:**
 
 ```
-1. Routed every model-proposed side effect through a single approval chokepoint, so the assistant never fires an irreversible calendar, email, or task action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
+1. Routed all model-proposed side effects through one approval chokepoint, so the assistant never fires an irreversible action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
 2. Wired the React countdown banner to the action queue so cancelling the on-screen timer aborts the queued Redis job before it auto-fires and promotes the next pending action.
-3. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
-4. Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, attributing 96% of utterances to the correct speaker.
-5. Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic, cutting duplicate transcription by ~50%.
-6. Built a React client that streams microphone audio over a WebSocket with client-side Web Audio processing, rendering live captions in under 300ms as the backend transcribes.
-7. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, matching each engine to its latency requirement so interactive commands stay responsive while bulk transcription stays cheap.
-8. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap before the model proposes actions, grounding every proposal in ranked episodic evidence under a fixed token budget.
-9. Shipped the backend as two services from a single Docker image split by process role, with migrations-on-boot ordering and a three-layer restart strategy that survives the worker queue's silent exit-zero death on a Redis drop, deployed behind a CI matrix of lint, test, and migration-verification gates.
+3. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that Redis pub/sub silently dropped on disconnect.
+4. Engineered a no-merge-first speaker-ID model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity, attributing 96% of utterances to the correct speaker.
+5. Trained a custom wake-word model to 90% recall at under one false accept per hour, gating the command pipeline so the assistant only opens the mic on demand.
+6. Solved the same-room, multi-mic problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election on SNR, clarity, and cadence, routing to the best mic and cutting duplicate transcription by ~50%.
+7. Built a React client that streams microphone audio over a WebSocket with client-side Web Audio processing, rendering live captions in under 300ms as the backend transcribes.
+8. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, matching each engine to its latency requirement so interactive commands stay responsive while bulk transcription stays cheap.
+9. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap before the model proposes actions, grounding every proposal in ranked episodic evidence under a fixed token budget.
+10. Shipped the backend as two services from one Docker image by role, with boot-time migrations and a three-layer restart strategy surviving the worker queue's silent exit-zero death on a Redis drop, behind a CI gate of lint, tests, and migrations.
 ```
 
 ---
 
 ### Project: fliks
 
-**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system. [FLAG: audit says Go, not Rust, confirm.]
+**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system.
 
 **Header:**
 
@@ -237,7 +238,7 @@ Multi-game platform that crowd-validates gameplay skill and mints shareable cert
 ```
 1. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
 2. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
-3. Designed a game-scoped data model under one unified experience from day one, so adding a new game is content (new mechanic vocabulary, ranks, and classifier) rather than a re-architecture, and cross-game player profiles work from the first release.
+3. Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box with no managed queue or transcoding service.
 4. Architected an ML rating service that grades each clip independently and displays its verdict beside the crowd's, turning model-versus-community disagreement into product surface, with crowdsourced ratings serving as the labeled data the classifier trains on.
 5. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
 ```
