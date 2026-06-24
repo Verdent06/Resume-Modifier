@@ -122,7 +122,7 @@ Undergraduate Research Assistant                  East Lansing, MI
 
 ### Experience: Claude Builder Club @ MSU
 
-**Lane:** Founder leadership plus operational infrastructure. Carries two signals no project does: founding-and-growth leadership (0 to 150+) and multi-service provisioning/CI-CD ops at community scale. Compresses hard on the autonomy track.
+**Lane:** Founder leadership plus operational infrastructure. Carries two signals no project does: founding-and-growth leadership (0 to 150+) and multi-service provisioning/CI-CD ops at community scale. Compresses hard on the autonomy track. Also owns a custom-graphics frontend lane: a hand-built react-three-fiber 3D lineage graph plus React Query client-data architecture.
 
 **Header:**
 
@@ -135,12 +135,14 @@ Co-Founder & Vice President                       East Lansing, MI
 
 ```
 1. Co-founded and grew an MSU engineering community from zero to 150+ members, replacing a sprawl of spreadsheets, Slack threads, and manual invites with a single club-operations platform I built to run member lifecycle, events, and project provisioning.
-2. Automated member onboarding end to end so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, collapsing a manual multi-service invite process to seconds.
+2. Automated member onboarding end to end so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, cutting onboarding from 15 minutes of manual invites to seconds.
 3. Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent so simultaneous scans cannot double-award or be forged client-side, sustaining 150+ check-ins per event.
-4. Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth.
-5. Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
-6. Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, with the frontend auto-deploying on the same commit, taking the team from manual changes to reviewed continuous deploys.
-7. Scoped live dashboard updates to per-user realtime subscriptions filtered at the row level, so a member sees their own role or acceptance change instantly without waking every other client.
+4. Built the club's mentorship lineage as an interactive 3D radial graph in react-three-fiber, hand-writing a proportional-arc layout that prevents edge crossings and a custom camera that autofits each family to the viewport.
+5. Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth.
+6. Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
+7. Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, with the frontend auto-deploying on the same commit, taking the team from manual changes to reviewed continuous deploys.
+8. Scoped live dashboard updates to per-user realtime subscriptions filtered at the row level, so a member sees their own role or acceptance change instantly without waking every other client.
+9. Tuned React Query cache tiers by data volatility across the dashboards, caching stable roles longer than fast-changing application queues to cut redundant refetches while keeping live data fresh.
 ```
 
 ---
@@ -163,7 +165,7 @@ Software Engineering Intern                   East Lansing, MI
 2. Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
 3. Designed a dual-database layer that keeps transactional records in PostgreSQL while serving relationship-heavy reads from Neo4j, routing each query class to the store that answers it fastest instead of forcing one engine to do both jobs.
 4. Owned the Spring Boot backend serving the platform's core CRUD and graph-traversal APIs, structuring endpoints around the dual-store model so the client never has to know which database backs a given read.
-5. Authored an AWS deployment script and managed the environment as code with Terraform, turning a manual multi-service bring-up into a repeatable, version-controlled provision so the polyglot stack deploys identically every time.
+5. Authored an AWS deployment script and managed the environment as code with Terraform, replacing a manual multi-service bring-up that took 30 minutes with a single-command, version-controlled provision so the polyglot stack deploys identically every time.
 ```
 
 ---
@@ -194,7 +196,7 @@ Software Captain                            Northville, MI
 
 ### Project: Dadei
 
-**Lane:** Flagship systems depth. The deepest engineering signal in the portfolio: real-time cross-process delivery, async orchestration, hybrid retrieval, agentic tool-calling, and the single human-approval action boundary that is the profile thesis made concrete.
+**Lane:** Flagship systems depth. The deepest engineering signal in the portfolio: real-time cross-process delivery, async orchestration, hybrid retrieval, agentic tool-calling, and the single human-approval action boundary that is the profile thesis made concrete. The React client (real-time streaming UI and the cancel-to-abort countdown) gives the entry its full-stack and frontend signal.
 
 **Header:**
 
@@ -207,13 +209,14 @@ Ambient voice assistant that turns overheard conversation into human-approved ca
 
 ```
 1. Routed every model-proposed side effect through a single approval chokepoint, so the assistant never fires an irreversible calendar, email, or task action without a cancelable countdown, giving every real-world effect one auditable seam between the LLM and the outside world.
-2. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
-3. Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, eliminating the catastrophic false-merge failure a single-threshold cosine match produces.
-4. Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic and cut duplicate transcription roughly in half.
-5. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, matching each engine to its latency requirement so interactive commands stay responsive while bulk transcription stays cheap.
-6. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap before the model proposes actions, grounding every proposal in ranked episodic evidence under a fixed token budget.
-7. Implemented delayed action auto-fire on wall-clock-relative job scheduling with a one-second flush backstop, keeping countdown auto-fire correct across worker timezones and tight to the user-visible timer instead of drifting to a 20-second heartbeat.
-8. Shipped the backend as two services from a single Docker image split by process role, with migrations-on-boot ordering and a three-layer restart strategy that survives the worker queue's silent exit-zero death on a Redis drop, deployed behind a CI matrix of lint, test, and migration-verification gates.
+2. Wired the React countdown banner to the action queue so cancelling the on-screen timer aborts the queued Redis job before it auto-fires and promotes the next pending action.
+3. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after five failed deliveries, and stale-claim recovery, giving at-least-once delivery across process boundaries that Redis pub/sub silently dropped on disconnect.
+4. Engineered a no-merge-first speaker-identification model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity rather than collapsing two people into one, attributing 96% of utterances to the correct speaker.
+5. Solved the same-room, multiple-microphone problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election scoring SNR, clarity, and speaker cadence, so several devices hearing one utterance transcribe it once via the best mic, cutting duplicate transcription by ~50%.
+6. Built a React client that streams microphone audio over a WebSocket with client-side Web Audio processing, rendering live captions in under 300ms as the backend transcribes.
+7. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, matching each engine to its latency requirement so interactive commands stay responsive while bulk transcription stays cheap.
+8. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap before the model proposes actions, grounding every proposal in ranked episodic evidence under a fixed token budget.
+9. Shipped the backend as two services from a single Docker image split by process role, with migrations-on-boot ordering and a three-layer restart strategy that survives the worker queue's silent exit-zero death on a Redis drop, deployed behind a CI matrix of lint, test, and migration-verification gates.
 ```
 
 ---
@@ -257,7 +260,7 @@ Webcam fighting game driven by real-time body-gesture recognition, winner of the
 ```
 1. Stabilized noisy per-frame pose output by accumulating every frame's gesture classification across the turn window and taking the dominant sustained gesture, instead of reading a single jittery frame at the turn boundary.
 2. Classified five distinct combat gestures from body landmarks with a scale-invariant geometric model normalized by torso length, making detection work across players and camera distances without any labeled training data.
-3. Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, keeping the game responsive instead of blocking on per-frame detection.
+3. Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, sustaining 60 FPS with sub-20ms input lag instead of blocking on per-frame detection.
 4. Separated two players on one webcam by landmark position, assigning each detected pose to a side of the frame so local two-player worked with zero additional cameras.
 5. Built a single-player opponent with a difficulty knob, random play below a threshold and a finite-state policy above it that rests, defends, heals, or finishes based on game state.
 ```

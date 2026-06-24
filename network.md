@@ -16,3 +16,6 @@ Contacts for referrals, informational chats, and follow-ups. Update when you add
 | Nishant Gautam | Innovise IT | Founder & CEO | | | [Profile](https://www.linkedin.com/in/nishantgautamsap/) |
 | Jeenal Vora | HARMAN International | Automotive Digital Transformation and Operations Excellence Leader | | 248-412-3521 | [Profile](https://www.linkedin.com/in/jeenal-vora-7a2b7612/) |
 | Jan Yandooru | Ford Motor Company | Technical Program Manager (AI) | | | [Profile](https://www.linkedin.com/in/yanjan/) |
+| Venu Mantha | Oracle | Group Vice President, Architecture and Engineering (Financial Services and Insurance) | | | [Profile](https://www.linkedin.com/in/venu-mantha-4795a9/) |
+| Geetha Mantha | Charles Schwab | Senior Manager, Software Development & Engineering | | | [Profile](https://www.linkedin.com/in/geetha-mantha-3a3936157/) |
+| Chidananda Kakunje | Oracle | Director, EBS SCM Development | | | [Profile](https://www.linkedin.com/in/ckakunje/) |
