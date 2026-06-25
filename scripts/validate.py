@@ -6,18 +6,21 @@ Runs between the writer and the grader, on the compiled artifact. Produces a
 pass/fail gate report. The orchestrator treats this report as ground truth and
 does not let the write/grade loop exit while a hard gate fails.
 
-USAGE (from repo root)
-    python scripts/validate.py gates \
+USAGE (from repo root; use the repo virtualenv)
+
+    python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
+
+    .venv/bin/python scripts/validate.py gates \
         --tex "applications/…/Ankur Desai Resume.tex" \
         --inputs applications/…/.pipeline/gate_inputs.json \
         --pdf "applications/…/Ankur Desai Resume.pdf" --phase loop \
         --out applications/…/.pipeline/gate_report.json
 
-    python scripts/validate.py demerits \
+    .venv/bin/python scripts/validate.py demerits \
         --demerits applications/…/.pipeline/demerits.json \
         --out applications/…/.pipeline/demerit_score.json
 
-    python scripts/validate.py check-report --report grader_output.txt
+    .venv/bin/python scripts/validate.py check-report --report grader_output.txt
 
   gates        exit 0 -> all HARD gates pass;  exit 1 -> a hard gate failed
   demerits     exit 0 -> scored; loop target is weighted == 0 and no emergency

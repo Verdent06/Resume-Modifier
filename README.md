@@ -104,7 +104,11 @@ resume/
 
 ## Scripts
 
-Run from repo root.
+Run from repo root:
+
+```bash
+.venv/bin/python scripts/validate.py …
+```
 
 ### `scripts/validate.py`
 
@@ -116,19 +120,19 @@ Run from repo root.
 | `check-report` | Wishlist bullet count must match JSON defects; no deprecated severities |
 
 ```bash
-python scripts/validate.py gates \
+.venv/bin/python scripts/validate.py gates \
   --tex "applications/2027/foo/bar/Ankur Desai Resume.tex" \
   --inputs applications/2027/foo/bar/.pipeline/gate_inputs.json \
   --pdf "applications/2027/foo/bar/Ankur Desai Resume.pdf" \
   --phase loop \
   --out applications/2027/foo/bar/.pipeline/gate_report.json
 
-python scripts/validate.py check-report --report grader_output.txt
-python scripts/validate.py demerits \
+.venv/bin/python scripts/validate.py check-report --report grader_output.txt
+.venv/bin/python scripts/validate.py demerits \
   --demerits applications/2027/foo/bar/.pipeline/demerits.json \
   --out applications/2027/foo/bar/.pipeline/demerit_score.json
 
-python scripts/validate.py writer-loop \
+.venv/bin/python scripts/validate.py writer-loop \
   --status applications/2027/foo/bar/.pipeline/writer_loop_status.json \
   --demerits applications/2027/foo/bar/.pipeline/demerits.json
 ```
@@ -142,19 +146,21 @@ python scripts/validate.py writer-loop \
 | `clean-tree --root applications` | Recursive maintenance across all role folders |
 
 ```bash
-python scripts/cleanup.py clean --tex "applications/…/Ankur Desai Resume.tex"
-python scripts/cleanup.py clean-tree --root applications
+.venv/bin/python scripts/cleanup.py clean --tex "applications/…/Ankur Desai Resume.tex"
+.venv/bin/python scripts/cleanup.py clean-tree --root applications
 ```
 
 ---
 
 ## Setup
 
-- **TeX:** `xelatex` on PATH (MacTeX or equivalent).
-- **Python dependencies:** `python3 -m pip install -r requirements.txt`.
+- **TeX:** `xelatex` on PATH
+- **Python:**
 
-`pdfplumber` is required for page-fill validation. Missing dependencies, missing
-PDFs, and PDF read errors fail the gate instead of falling back to estimates.
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
 
 ---
 

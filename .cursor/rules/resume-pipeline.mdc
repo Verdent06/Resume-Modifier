@@ -248,11 +248,11 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 
 1. **Compile.** `xelatex "Ankur Desai Resume.tex"` from the position folder, then:
    ```
-   python scripts/cleanup.py clean --tex "{tex_path}"
+   .venv/bin/python scripts/cleanup.py clean --tex "{tex_path}"
    ```
 2. **Validate (deterministic gates, always first):**
    ```
-   python scripts/validate.py gates \
+   .venv/bin/python scripts/validate.py gates \
      --tex "{tex_path}" \
      --inputs .pipeline/gate_inputs.json \
      --pdf "{pdf_path}" --phase loop \
@@ -264,8 +264,8 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 
    Run the report check, then score:
    ```
-   python scripts/validate.py check-report --report -
-   python scripts/validate.py demerits --demerits .pipeline/demerits.json --out .pipeline/demerit_score.json
+   .venv/bin/python scripts/validate.py check-report --report -
+   .venv/bin/python scripts/validate.py demerits --demerits .pipeline/demerits.json --out .pipeline/demerit_score.json
    ```
    Extract the `DEFECTS` JSON block from the grader output to `.pipeline/demerits.json`. Pipe the full grader text to `check-report` (or `--report path`); **exit non-zero ⇒ re-dispatch grader** — prose and JSON diverged. Only score after `check-report` passes.
 
@@ -276,7 +276,7 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
    > **Mode: grading-response.** Iteration {n}. Resume: `{tex_path}`. Defects: `.pipeline/demerits.json` (authoritative — address in severity order). Persona: `{persona_path}` (interpret grader language only; do not re-target from persona). Default `continue` — try in-rails experiments and let the next grade score them; `peak` only after exhausting search per `@resume-writing`. After editing, emit `.pipeline/writer_loop_status.json`.
 9. **Validate writer decision:**
    ```
-   python scripts/validate.py writer-loop \
+   .venv/bin/python scripts/validate.py writer-loop \
      --status .pipeline/writer_loop_status.json \
      --demerits .pipeline/demerits.json \
      --iteration {n} \
@@ -298,7 +298,7 @@ The grader never sees `context.md`, never computes a number, and never reasons a
 
 **Prerequisite:** Step 6 exited with `hard_gates_pass`. If hard gates fail, skip this step.
 
-1. Recompile, then `python scripts/cleanup.py clean --tex "{tex_path}"`.
+1. Recompile, then `.venv/bin/python scripts/cleanup.py clean --tex "{tex_path}"`.
 2. **Skills line wrap:** dispatch the writer to trim the wrapping bucket per JD relevance (no bucket add/remove). Recompile until no wrap; run `clean` after each compile.
 3. **Page fit:** before any fit edit, **snapshot `prefit_counts`** (current per-entry bullet counts) into `.pipeline/gate_inputs.json`. Apply sacrifices in order until page fill passes:
 
@@ -313,7 +313,7 @@ The grader never sees `context.md`, never computes a number, and never reasons a
 
    After each edit, re-run:
    ```
-   python scripts/validate.py gates \
+   .venv/bin/python scripts/validate.py gates \
      --tex "{tex_path}" \
      --inputs .pipeline/gate_inputs.json \
      --pdf "{pdf_path}" --phase fit \
@@ -330,7 +330,7 @@ The grader never sees `context.md`, never computes a number, and never reasons a
 3. Run final gates → read `.pipeline/gate_report.json` and `.pipeline/gate_inputs.json`.
 4. **Write `grade.md`** using the schema below. Embed defects, score, likelihood, and orchestrator-synthesized interview angles — gate inputs/report stay in `.pipeline/` until ship cleanup:
    ```
-   python scripts/cleanup.py clean --tex "{tex_path}" --ship
+   .venv/bin/python scripts/cleanup.py clean --tex "{tex_path}" --ship
    ```
    (`--ship` removes `.pipeline/`, legacy standalone JSON, and any remaining LaTeX intermediates.)
 
@@ -436,6 +436,7 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 - Run `scripts/validate.py writer-loop` after every grading-response write pass; re-dispatch the writer on failure or premature `peak` (step 9).
 - Never persist standalone JSON grading artifacts — fold them into `grade.md` and run `scripts/cleanup.py clean --ship`.
 - Run `scripts/cleanup.py clean --tex` after every `xelatex` compile during the loop and fit checks.
+- Run all Python scripts via `.venv/bin/python` from repo root. If `.venv` is missing, create it (`python3 -m venv .venv`) and install `requirements.txt` before the pipeline.
 - Always run `scripts/validate.py check-report` before scoring; re-dispatch the grader on failure.
 - Keep `exempt_entries` honest and minimal — it is the one input that can soften the metric ceiling, and `scripts/validate.py` logs every exemption it applies.
 - Never pass `context.md` to the grader. Never edit doctrine files, `template.tex`, or `template.cls`.
