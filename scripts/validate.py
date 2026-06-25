@@ -35,7 +35,7 @@ context.md inventory) is the single structured input. Shape:
       "candidate_languages": ["C++", "Python", "Go", "Java", "SQL", "Bash"],
       "exempt_entries":      ["Secure and Efficient Autonomous Systems Lab"],
       "iter1_counts":        {"Robostangs (FRC Team 548)": 3, "WizViz": 2, ...}
-      "min_fill":            0.90   # optional; default PAGE_MIN_FILL in CONFIG
+      "min_fill":            0.93   # optional; default PAGE_MIN_FILL in CONFIG
     }
 
   - jd_languages          : languages the JD lists (any phrasing).
@@ -79,7 +79,7 @@ EXEMPT_BUCKET_LABELS = {"languages", "tools"}
 
 # Page-fill gate: lowest text baseline on page 1 must reach this fraction of page
 # height (pdfplumber). Override per-run via gate_inputs.json "min_fill".
-PAGE_MIN_FILL = 0.90
+PAGE_MIN_FILL = 0.93
 
 # IMPACT-METRIC ALLOWLIST (this is the only non-crisp gate; see module note).
 # A bullet "carries an impact metric" iff it matches one of these. The design is
@@ -539,9 +539,11 @@ def score_demerits(defects, weights=DEMERIT_WEIGHTS):
     }
 
 
-def check_writer_loop_status(status: dict, defect_count: int) -> dict:
+def check_writer_loop_status(
+    status: dict, defect_count: int, *, graded_iteration: int | None = None
+) -> dict:
     """Validate writer_loop_status.json after a grading-response pass.
-    `peak` is only valid when the writer documents what remains unfixable."""
+    `peak` is only valid when the writer documents exhausted in-rails search."""
     action = str(status.get("action", "")).strip().lower()
     if action not in ("continue", "peak"):
         return {
@@ -560,10 +562,38 @@ def check_writer_loop_status(status: dict, defect_count: int) -> dict:
                 "passed": False,
                 "detail": f"out_of_rails[{i}] missing keys: {missing}",
             }
+        if action == "peak":
+            attempted = item.get("attempted")
+            if not isinstance(attempted, list) or not attempted:
+                return {
+                    "passed": False,
+                    "detail": (
+                        f"out_of_rails[{i}] must include non-empty attempted[] "
+                        "listing concrete in-rails edits tried before peak"
+                    ),
+                }
+            if not all(isinstance(a, str) and a.strip() for a in attempted):
+                return {
+                    "passed": False,
+                    "detail": f"out_of_rails[{i}].attempted must be non-empty strings",
+                }
     if action == "peak" and defect_count > 0 and not oor:
         return {
             "passed": False,
             "detail": "action is peak but out_of_rails is empty while defects remain",
+        }
+    if (
+        action == "peak"
+        and defect_count > 0
+        and graded_iteration is not None
+        and graded_iteration < 2
+    ):
+        return {
+            "passed": False,
+            "detail": (
+                "action is peak on graded iteration 1 — default continue and "
+                "grade at least one in-rails experiment first"
+            ),
         }
     return {"passed": True, "detail": f"action={action}, out_of_rails={len(oor)}"}
 
@@ -726,7 +756,8 @@ def run_writer_loop(args) -> int:
     if args.demerits:
         raw = json.loads(Path(args.demerits).read_text(encoding="utf-8"))
         defect_count = len(raw.get("defects", raw if isinstance(raw, list) else []))
-    result = check_writer_loop_status(status, defect_count)
+    graded_iteration = int(args.iteration) if args.iteration else None
+    result = check_writer_loop_status(status, defect_count, graded_iteration=graded_iteration)
     if args.out:
         Path(args.out).write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(f"{'PASS' if result['passed'] else 'FAIL'}  {result['detail']}", file=sys.stderr)
@@ -759,6 +790,11 @@ def main() -> int:
     w = sub.add_parser("writer-loop", help="validate writer_loop_status.json after a grading pass")
     w.add_argument("--status", required=True, help="writer_loop_status.json")
     w.add_argument("--demerits", default="", help="current demerits.json (for peak validation)")
+    w.add_argument(
+        "--iteration",
+        default="",
+        help="graded loop iteration (1-based); peak rejected on iteration 1 when defects remain",
+    )
     w.add_argument("--out", default="", help="optional JSON result path")
     w.set_defaults(func=run_writer_loop)
 

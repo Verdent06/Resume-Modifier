@@ -109,11 +109,11 @@ Undergraduate Research Assistant                  East Lansing, MI
 **Bullet pool:**
 
 ```
-1. Researching the security of an LLM-controlled robot, where the cheap per-step gate screening its motion plans is the exact seam an attacker slips a harmful plan through, one innocent fragment at a time.
-2. Reframed the contribution from building a defense to measuring one, arguing that a triage gate's cost savings and its attackability reduce to a single property: per-step versus whole-plan checking.
-3. Ran the node graph byte-identical in Gazebo and on a physical RoboMaster EP Core, driving the real robot over a custom C++ WiFi driver at a 30 Hz control loop with sub-20ms command latency.
-4. Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, integrating nav2's MPPI controller rather than hand-rolling one to keep the C++ work on security, not motion control.
-5. Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, then drove the decomposition attack to an 80% success rate against the per-step triage gate.
+1. Stress-tested the security of an LLM-controlled robot, targeting the cheap per-step gate that screens its motion plans as the exact seam an attacker slips a harmful plan through, one innocent fragment at a time.
+2. Ran the node graph byte-identical in Gazebo and on a physical RoboMaster EP Core, driving the real robot over a custom C++ WiFi driver at a 30 Hz control loop with sub-20ms command latency.
+3. Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, integrating nav2's MPPI controller rather than hand-rolling one to keep the C++ work on security, not motion control.
+4. Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, then drove the decomposition attack to an 80% success rate against the per-step triage gate.
+5. Reframed the contribution from building a defense to measuring one, arguing that a triage gate's cost savings and its attackability reduce to a single property: per-step versus whole-plan checking.
 6. Built the attacked defense as a steelman composed from multiple published safety architectures rather than a naive single classifier, so the decomposition attack lands on the strongest reasonable system, not a strawman.
 ```
 
@@ -159,7 +159,7 @@ Software Engineering Intern                   East Lansing, MI
 **Bullet pool:**
 
 ```
-1. Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Spring Boot, Neo4j, and PostgreSQL stack.
+1. Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Java Spring Boot, Neo4j, and PostgreSQL stack.
 2. Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
 3. Designed a dual-database layer that keeps transactional records in PostgreSQL while serving relationship-heavy reads from Neo4j, routing each query class to the store that answers it fastest instead of forcing one engine to do both jobs.
 4. Owned the Spring Boot backend serving the platform's core CRUD and graph-traversal APIs, structuring endpoints around the dual-store model so the client never has to know which database backs a given read.
@@ -184,7 +184,7 @@ Software Captain                            Northville, MI
 ```
 1. Led the software and electrical teams (5 and 6 engineers) for a competition robot that reached the FIRST World Championship and placed top 16 in its division in Houston, the program's strongest world-stage finish since 2014.
 2. Delivered the team's first multi-piece autonomous routine, chaining vision-corrected driving paths with timed intake-and-shoot actions so the robot scored multiple game pieces with no driver input during the autonomous period.
-3. Anchored auto-aim on real-time, vision-corrected localization that fused two AprilTag cameras with swerve odometry on a dedicated 250Hz thread with latency compensation, holding pose accurate during aggressive motion.
+3. Anchored auto-aim on real-time, vision-corrected localization that fused two AprilTag cameras with swerve odometry on a dedicated 250Hz Java thread with latency compensation, holding pose accurate during aggressive motion.
 4. Hardened pose estimation against bad vision data by gating camera measurements on tag count, target area, and angular velocity before fusing them, rejecting estimates that would otherwise poison the localization filter.
 5. Engineered graceful sensor-failure handling so the most match-critical mechanism falls back to an internal encoder and stays operable through a sensor loss instead of bricking mid-match, surfaced as an alert rather than a silent failure.
 6. Built shoot-from-anywhere aiming that maps target distance to arm angle through a regression model, keeping candidate models swappable behind one interface so the team could A/B them against measured shot data.
@@ -207,14 +207,14 @@ Ambient voice assistant that turns overheard conversation into human-approved ca
 
 ```
 1. Routed all model-proposed side effects through one approval chokepoint with a cancelable countdown, giving every irreversible action one auditable seam between the LLM and the outside world.
-2. Built a React client that streams microphone audio over a WebSocket with client-side Web Audio processing and wires a countdown banner to the action queue, rendering live captions in under 300ms and letting the user cancel the on-screen timer to abort a queued Redis job before it auto-fires and promote the next pending action.
-3. Decoupled background workers from the live API behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that Redis pub/sub dropped.
+2. Built a React client that streams microphone audio up over a WebSocket with client-side Web Audio processing, receiving incremental live captions back in under 300ms as the backend transcribes each utterance.
+3. Decoupled background workers from the live FastAPI service behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that pub/sub dropped.
 4. Engineered a no-merge-first speaker-ID model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity, attributing 96% of utterances to the correct speaker.
 5. Trained a custom wake-word model to 90% recall at under one false accept per hour, gating the command pipeline so the assistant only opens the mic on demand instead of continuously streaming audio.
 6. Solved the same-room, multi-mic problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election on SNR, clarity, and cadence, cutting duplicate transcription by ~50%.
 7. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, keeping interactive commands responsive while bulk transcription stays cheap.
 8. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap, grounding each proposal under a fixed token budget.
-9. Shipped the backend as two services from one Docker image by role, with boot-time migrations and a three-layer restart strategy surviving the worker queue's silent exit-zero death on a Redis drop.
+9. Root-caused the worker queue's silent exit-zero death on a Redis drop, then added a health check that detects it and a three-layer restart that recovers it, running the Python backend as two services from one Docker image.
 ```
 
 ---

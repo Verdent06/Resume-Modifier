@@ -90,8 +90,8 @@ Apply the named gate failures exactly — add the missing language, restore/swap
 
 1. Read `.pipeline/demerits.json` — authoritative defect list, severity order.
 2. Optionally skim `persona.md` only to interpret grader phrasing against the role bar.
-3. Classify each defect: resolvable in rails (swap, different bullet, reorder, buckets) → apply; not in rails → record in `out_of_rails`.
-4. Change **only** what defects require. Re-emit the `.tex`.
+3. For **each** defect, search in-rails fixes before classifying it unfixable (see **Peak decision** below).
+4. Apply the best in-rails attempt for every defect you have not yet exhausted — even when uncertain. Re-emit the `.tex`.
 5. **Emit `.pipeline/writer_loop_status.json`** (required):
 
 ```json
@@ -104,13 +104,49 @@ or:
 {
   "action": "peak",
   "out_of_rails": [
-    {"entry": "Robostangs", "defect": "C++ only in skills", "why": "Pool has no verbatim C++ bullet; swap sets cannot bridge"}
+    {
+      "entry": "Robostangs",
+      "defect": "C++ only in skills",
+      "why": "Pool has no verbatim C++ bullet; swap sets cannot bridge",
+      "attempted": [
+        "Swapped all pool bullets — none mention C++",
+        "Checked swap sets — no C++ bridge from Java/Python bullets",
+        "Reordered to lead with strongest systems bullet — grader still flags language gap"
+      ]
+    }
   ]
 }
 ```
 
-- **`continue`** — in-rails fixes applied; another grading pass may help.
-- **`peak`** — cannot close remaining defects in rails; list every unfixable defect.
+- **`continue`** — default. In-rails edits shipped; another graded pass is expected. Use this when *any* defect might improve with the change you just made, or when you have not yet run a graded experiment on a plausible fix.
+- **`peak`** — last resort only. Every remaining defect is documented with a non-empty `attempted` list proving in-rails search was exhausted.
+
+#### Peak decision (high bar)
+
+`peak` is **not** "I don't see an obvious fix." Default to **`continue`** and let the grader score your experiment — trial-and-error across graded iterations is how the loop is designed to work.
+
+**Before `peak` on any defect, exhaust in-rails search:**
+
+1. Every bullet in the cited entry's pool — not only bullets currently on the page.
+2. Swap-set variants for JD keywords and grader language (consistent within the entry).
+3. Reorder entries or lead bullets to front-load the signal the defect asks for.
+4. Skills-bucket changes when the defect is orphan/keyword-only.
+5. Entry omit/include or depth shift when the defect is breadth, redundancy, or wrong lead.
+6. A **different** entry's pool bullet that addresses the same screen signal (e.g. polyglot proof from another lane).
+
+**Use `continue` when:**
+
+- A plausible in-rails fix exists but you are unsure it will satisfy the grader — **try it**.
+- You fixed some defects and others need another graded pass to see if side effects helped or hurt.
+- The fix is reorder, rebucket, or a different pool bullet you have not yet graded.
+
+**Do not `peak` when:**
+
+- You only inspected the current `.tex` selection without scanning the full entry pool in `context.md`.
+- The obvious next step is "swap in bullet X" or "lead with entry Y" and you have not graded that layout yet.
+- You are treating grader uncertainty as rails failure — ship the attempt as `continue` first.
+
+**`peak` only when** every remaining defect has `attempted` listing specific edits already graded or ruled out (pool bullet IDs or verbatim first words, swaps tried, reorders tried). "No bullet mentions X" is valid only after checking the full pool and swap sets, not after a skim of the current page.
 
 ### Mode: fit
 

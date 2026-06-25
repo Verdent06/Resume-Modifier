@@ -242,7 +242,7 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 | `writer_peak` | Writer emits `action: peak` in `.pipeline/writer_loop_status.json` and `scripts/validate.py writer-loop` passes |
 | `timeout` | Graded iteration count hits 10 without `zero_demerits` or `writer_peak` |
 
-**No plateau early-exit.** Demerits may sit at 2, 5, or 15 across iterations — the orchestrator keeps looping until one of the three exits above. The writer alone may stop early via `peak`.
+**No plateau early-exit.** Demerits may sit at 2, 5, or 15 across iterations — the orchestrator keeps looping until one of the three exits above. The writer alone may stop early via `peak`, but **`peak` is a high bar** (`@resume-writing`: exhaust in-rails search, default `continue`, graded trial-and-error encouraged). Reject a premature `peak` by re-dispatching the writer — do not exit the loop.
 
 **Each graded iteration:**
 
@@ -273,16 +273,17 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 6. **If `loop_target_met`:** set `loop_exit_reason = zero_demerits` and exit the loop.
 7. **If at cap** (this was the 10th graded iteration): set `loop_exit_reason = timeout` and exit the loop — do **not** dispatch the writer again.
 8. **Else** dispatch `@resume-writing` — **grading response** (defects are primary input):
-   > **Mode: grading-response.** Iteration {n}. Resume: `{tex_path}`. Defects: `.pipeline/demerits.json` (authoritative — address in severity order). Persona: `{persona_path}` (interpret grader language only; do not re-target from persona). After editing, emit `.pipeline/writer_loop_status.json` — see `@resume-writing`.
+   > **Mode: grading-response.** Iteration {n}. Resume: `{tex_path}`. Defects: `.pipeline/demerits.json` (authoritative — address in severity order). Persona: `{persona_path}` (interpret grader language only; do not re-target from persona). Default `continue` — try in-rails experiments and let the next grade score them; `peak` only after exhausting search per `@resume-writing`. After editing, emit `.pipeline/writer_loop_status.json`.
 9. **Validate writer decision:**
    ```
    python scripts/validate.py writer-loop \
      --status .pipeline/writer_loop_status.json \
      --demerits .pipeline/demerits.json \
+     --iteration {n} \
      --out .pipeline/writer_loop_report.json
    ```
-   **Exit non-zero ⇒ re-dispatch writer** with the validation error — do not accept an invalid status file.
-10. **Read `writer_loop_status.json`.** If `action == peak`: append each `out_of_rails` item to in-memory `out_of_rails[]`, set `loop_exit_reason = writer_peak`, exit the loop.
+   **Exit non-zero ⇒ re-dispatch writer** with the validation error — do not accept an invalid status file or exit on `peak`.
+10. **Read `writer_loop_status.json`.** If `action == peak` (and not rejected in step 9): append each `out_of_rails` item to in-memory `out_of_rails[]`, set `loop_exit_reason = writer_peak`, exit the loop.
 11. **If `action == continue`:** increment the iteration counter and return to step 1.
 
 **Post-loop:** proceed to Step 7 **only if** `hard_gates_pass`. If hard gates still fail, skip Step 7 fit and go straight to Step 8.
@@ -432,7 +433,7 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 - Loop exits only on `zero_demerits`, validated `writer_peak`, or `timeout` (10-iteration cap).
 - Run Step 7 fit only when the loop ended with `hard_gates_pass`.
 - Never let the grader compute demerit totals; `scripts/validate.py demerits` owns scoring and `loop_target_met`. The grader emits only the defect list.
-- Run `scripts/validate.py writer-loop` after every grading-response write pass; re-dispatch the writer on failure.
+- Run `scripts/validate.py writer-loop` after every grading-response write pass; re-dispatch the writer on failure or premature `peak` (step 9).
 - Never persist standalone JSON grading artifacts — fold them into `grade.md` and run `scripts/cleanup.py clean --ship`.
 - Run `scripts/cleanup.py clean --tex` after every `xelatex` compile during the loop and fit checks.
 - Always run `scripts/validate.py check-report` before scoring; re-dispatch the grader on failure.
