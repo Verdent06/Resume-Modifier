@@ -1,38 +1,30 @@
-# Recruiter Persona — 2027 Software Engineer Intern @ Anduril Industries
+# 2027 Software Engineer Intern at Anduril Industries
 
 ## Role Summary
 
-Summer 2027 paid, in-person SWE intern supporting deployed customer software: write production code, collaborate cross-team, build metrics for debugging/monitoring, triage and root-cause failures. The JD reads as a general polyglot SWE bar (algorithms, data structures, cloud, front-end familiarity). Anduril's identity is defense autonomy — Lattice OS, computer vision, sensor fusion, C++ on real systems. The screen tests whether you can ship reliable software *and* whether you look like someone who belongs on mission-critical autonomy work.
+This is a Summer 2027, in-person software engineering internship for a broad SWE intern who can contribute to deployed customer-facing systems, write production code, collaborate across teams, build/debug metrics, and root-cause failures. The JD surface is general software engineering: algorithms, data structures, storage systems, cloud infrastructure, frontend frameworks, and multiple programming languages. Anduril's company identity adds a mission-critical autonomy lens: software supports real-world defense systems where reliability, debugging, and operational ownership matter.
 
 ## Track Decision
 
-- **screen_track:** `full-stack` — JD requirements test generic SWE breadth: polyglot languages, storage, cloud, front-end exposure, debugging/metrics discipline.
-- **differentiator:** `autonomy` — C++/ROS/robotics/CV/sensor-fusion signal from companies.md; what makes a resume memorable at Anduril once past keyword match.
-- **track_divergence:** `true` — spine follows full-stack shipping proof; autonomy differentiator must stay prominent in the top half, not buried under club-ops or pure web work.
+- **screen_track:** full-stack
+- **differentiator:** autonomy / mission-critical defense software
+- **track_divergence:** true
+
+The screen spine is full-stack/general SWE because the required qualifications test broad CS, cloud, storage, frontend, and language fluency rather than ROS, controls, or perception as hard requirements. The differentiator is autonomy/defense technology, so the strongest resume still needs visible evidence of real-world systems discipline, safety boundaries, robotics/autonomy adjacency, or operational debugging depth.
 
 ## Team & Bar
 
-A-tier defense tech (~3–5% offer rate). Funnel: Greenhouse resume screen → HackerRank OA (medium) → ~4 hr practical onsite (bottleneck). Recruiter voice: mission-oriented, low-ego, high ownership — "bias for action" is real culture signal, not filler. Bar is above resume-only startups because OA + practical onsite filter hard, but the resume still decides warm vs cold read and what stories the onsite probes.
-
-**Evidence kinds that win:** polyglot languages demonstrated in bullets (especially C++, Go, Python, Java); shipped systems with metrics; robotics/autonomy/CV depth beyond Skills; triage/debugging/monitoring framing; real hardware or sim-to-real validation.
-
-**Anti-patterns:** club community-growth with no engineering depth; notebook ML without delivery; languages only in Skills with zero bullet proof; leading with pure full-stack with no autonomy signal at an autonomy company.
+The reviewer is screening a high-signal A-tier defense-tech internship on Greenhouse before a likely HackerRank and practical technical loop. The bar is not "toy app with many keywords"; it is evidence that the candidate can ship and debug software in systems that other people depend on. Strong signals include production-style backend ownership, polyglot programming shown inside bullets, infrastructure/deployment discipline, metrics used for debugging or scale, and credible adjacency to autonomy or real-world control systems.
 
 ## Screen Criteria
 
-**Pass signals (abstract):**
-- First half of page reads "strong CS engineer who ships" *and* "has touched real autonomy/C++ systems."
-- JD languages (C++, Go, Rust, Java, Python) appear in bullet context, not just Skills — Rust is nice-to-have if absent.
-- At least one entry shows metrics/debugging/monitoring or production triage discipline.
-- Shipped or deployed work with quantified impact.
-- FRC/competition robotics or ROS/Gazebo/sim-to-real reads as engineering, not hobby.
-
-**Fail / ding signals:**
-- Lead entry is pure web/community ops with no autonomy thread.
-- C++ or Go claimed only in Skills.
-- Thin single-bullet entries on titled roles.
-- Vanity metrics (uptime, LOC) or bullets that can't survive "walk me through this."
+- Demonstrates JD languages through use, especially Python, C++, Go, or Java, not only in the skills line.
+- Shows broad SWE fundamentals: APIs, databases/storage, cloud or deployment, frontend/client work, and debugging/monitoring.
+- Uses metrics to size real outcomes such as latency, throughput, command delay, check-in volume, or failure recovery.
+- Keeps autonomy/mission-critical evidence visible in the top half without turning the resume into a pure robotics specialist resume.
+- Avoids club-ops filler, unproven skills-list keyword stuffing, and ML/robotics claims that read as demos instead of engineered systems.
+- Presents ownership and bias for action through shipped systems, root-cause work, and cross-team/platform decisions.
 
 ## ATS Keywords
 
-C++, Go, Python, Java, Rust, algorithms, data structures, cloud infrastructure, storage systems, metrics, monitoring, debugging, triage, sensor fusion, computer vision, autonomy, ROS, Gazebo, Docker, CI/CD, AWS, real-time systems, front-end frameworks, production deployment, root cause
+Software engineering, algorithms, data structures, C++, Go, Rust, Java, Python, storage systems, cloud infrastructure, frontend frameworks, React, APIs, debugging, monitoring, metrics, root cause analysis, autonomy, sensor fusion, networking, Lattice OS, mission-critical software.
