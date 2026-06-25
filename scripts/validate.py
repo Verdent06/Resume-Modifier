@@ -440,39 +440,49 @@ def gate_fit_protection(pr: ParsedResume, prefit_counts, protected, phase) -> Ga
 def gate_page_fill(pr: ParsedResume, pdf_path, min_fill=PAGE_MIN_FILL) -> GateResult:
     """Replaces the binary 1-page check. A resume can be one page and still waste
     a third of it — that reads as thin. Measure actual fill: exactly 1 page, and
-    page-1 text must reach at least `min_fill` of the way down. Uses pdfplumber to
-    find the lowest text baseline; falls back to a bullet-count floor when neither
-    pdfplumber nor a PDF is available (length varies per bullet, so the count is a
-    coarse proxy, used only when real measurement can't run)."""
-    if pdf_path and Path(pdf_path).exists():
-        try:
-            import pdfplumber  # type: ignore
-            with pdfplumber.open(pdf_path) as pdf:
-                npages = len(pdf.pages)
-                if npages != 1:
-                    return GateResult("page_fill", True, False,
-                                      f"{npages} pages; must be exactly 1 (overflow).")
-                page = pdf.pages[0]
-                bottoms = [c["bottom"] for c in page.chars] or [0]
-                fill = max(bottoms) / float(page.height)
-                if fill < min_fill:
-                    return GateResult("page_fill", True, False,
-                                      f"Page only {fill:.0%} filled (floor {min_fill:.0%}); "
-                                      f"add a bullet to a strong entry's pool.")
-                return GateResult("page_fill", True, True, f"One page, {fill:.0%} filled.")
-        except ImportError:
-            pass  # fall through to bullet-count proxy
-        except Exception as e:
-            return GateResult("page_fill", True, True, f"Skipped (PDF read error: {e}).")
-    # Fallback: bullet-count floor (no pdfplumber / no PDF).
-    total = sum(len(e.bullets) for e in pr.entries)
-    floor = 10
-    if total < floor:
-        return GateResult("page_fill", True, False,
-                          f"Only {total} bullets (floor {floor}); page likely underfilled. "
-                          f"Install pdfplumber for true fill measurement.")
-    return GateResult("page_fill", True, True,
-                      f"{total} bullets (no pdfplumber; bullet-count proxy).")
+    page-1 text must reach at least `min_fill` of the way down. Measurement is
+    fail-closed: missing dependencies, missing PDFs, and PDF read errors are hard
+    gate failures."""
+    if not pdf_path:
+        return GateResult(
+            "page_fill", True, False,
+            "No PDF path supplied; compile the resume before running gates.",
+        )
+
+    pdf_file = Path(pdf_path)
+    if not pdf_file.exists():
+        return GateResult(
+            "page_fill", True, False,
+            f"PDF not found at {pdf_path}; compile the resume before running gates.",
+        )
+
+    try:
+        import pdfplumber  # type: ignore
+    except ImportError:
+        return GateResult(
+            "page_fill", True, False,
+            "pdfplumber is required for page-fill validation; install requirements.txt.",
+        )
+
+    try:
+        with pdfplumber.open(pdf_file) as pdf:
+            npages = len(pdf.pages)
+            if npages != 1:
+                return GateResult("page_fill", True, False,
+                                  f"{npages} pages; must be exactly 1 (overflow).")
+            page = pdf.pages[0]
+            bottoms = [c["bottom"] for c in page.chars] or [0]
+            fill = max(bottoms) / float(page.height)
+            if fill < min_fill:
+                return GateResult("page_fill", True, False,
+                                  f"Page only {fill:.0%} filled (floor {min_fill:.0%}); "
+                                  f"add a bullet to a strong entry's pool.")
+            return GateResult("page_fill", True, True, f"One page, {fill:.0%} filled.")
+    except Exception as e:
+        return GateResult(
+            "page_fill", True, False,
+            f"PDF page-fill measurement failed: {e}",
+        )
 
 
 def compute_metric_density(pr: ParsedResume, exempt_entries):

@@ -151,7 +151,10 @@ python scripts/cleanup.py clean-tree --root applications
 ## Setup
 
 - **TeX:** `xelatex` on PATH (MacTeX or equivalent).
-- **Optional:** `pip install pdfplumber` for true page-fill measurement; without it, gates fall back to a bullet-count proxy.
+- **Python dependencies:** `python3 -m pip install -r requirements.txt`.
+
+`pdfplumber` is required for page-fill validation. Missing dependencies, missing
+PDFs, and PDF read errors fail the gate instead of falling back to estimates.
 
 ---
 
