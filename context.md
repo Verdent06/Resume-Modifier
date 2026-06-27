@@ -192,6 +192,29 @@ Software Captain                            Northville, MI
 
 ---
 
+### Project: fliks
+
+**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system.
+
+**Header:**
+
+```
+fliks  |  {tech derived from selected bullets}    github.com/fliks-gg
+Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards
+```
+
+**Bullet pool:**
+
+```
+1. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
+2. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
+3. Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box.
+4. Architected an ML rating service that grades each clip independently and shows its verdict beside the crowd's, with those crowdsourced ratings serving as the labeled data the classifier trains on.
+5. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
+```
+
+---
+
 ### Project: Dadei
 
 **Lane:** Flagship systems depth. The deepest engineering signal in the portfolio: real-time cross-process delivery, async orchestration, hybrid retrieval, agentic tool-calling, and the single human-approval action boundary that is the profile thesis made concrete. The React client (real-time streaming UI and the cancel-to-abort countdown) gives the entry its full-stack and frontend signal.
@@ -215,29 +238,6 @@ Ambient voice assistant that turns overheard conversation into human-approved ca
 7. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, keeping interactive commands responsive while bulk transcription stays cheap.
 8. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap, grounding each proposal under a fixed token budget.
 9. Root-caused the worker queue's silent exit-zero death on a Redis drop, then added a health check that detects it and a three-layer restart that recovers it, running the Python backend as two services from one Docker image.
-```
-
----
-
-### Project: fliks
-
-**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system.
-
-**Header:**
-
-```
-fliks  |  {tech derived from selected bullets}    github.com/fliks-gg
-Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards
-```
-
-**Bullet pool:**
-
-```
-1. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
-2. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
-3. Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box.
-4. Architected an ML rating service that grades each clip independently and shows its verdict beside the crowd's, with those crowdsourced ratings serving as the labeled data the classifier trains on.
-5. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
 ```
 
 ---
