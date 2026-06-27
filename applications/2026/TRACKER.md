@@ -44,6 +44,11 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | ASMSU                       | Engagement Office Assistant (Summer 2026)                      | 2026-04-19 | Rejected | full-stack    |
 | Michigan State University (ICER) | LLM Research and Development Technician                   | 2026-04-19 | Rejected | ai-ml        |
 | MSU International Studies and Programs | Website Intern                                    | 2026-04-19 | Rejected | full-stack    |
+| MyTravaly | Technology / AI & Software Development Intern | 2026-06-26 | Applied | full-stack+applied-ai-automation |
+| pSemi Corporation           | Intern, AI/ML Software Engineer - Summer 2026 | 2026-06-26 | Applied  | ai-ml+semiconductor |
+| CareFirst BlueCross BlueShield | Data Analytics Intern - Fall Recruitment MD/DC/VA (Remote) | 2026-06-26 | Applied | ai-ml |
+| American Heart Association  | Intern, Data Science-Remote              | 2026-06-26 | Applied  | ai-ml        |
+| Ndimensions Labs            | AI Intern, Robotics                     | 2026-06-26 | Applied  | ai-ml+robotics |
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
@@ -57,6 +62,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 35
-- **OA conversion:** — 0/35
-- **Interview conversion:** — 0/35
+- **Total applied:** 38
+- **OA conversion:** — 0/38
+- **Interview conversion:** — 0/38

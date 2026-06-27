@@ -1,0 +1,94 @@
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected May 2028}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, OOP, Computer Architecture, Linear Algebra, Discrete Math
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Dadei}
+			{\href{https://dadei.app}{dadei.app}}
+			{Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions}
+			{React, FastAPI, Redis, PostgreSQL}
+			{}
+
+			\item Built a React client that streams microphone audio up over a WebSocket with client-side Web Audio processing, receiving incremental live captions back in under 300ms as the backend transcribes each utterance.
+			\item Routed all model-proposed side effects through one approval chokepoint with a cancelable countdown, giving every irreversible action one auditable seam between the LLM and the outside world.
+			\item Root-caused the worker queue's silent exit-zero death on a Redis drop, then added a health check that detects it and a three-layer restart that recovers it, running the Python backend as two services from one Docker image.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{fliks}
+			{\href{https://github.com/fliks-gg}{github.com/fliks-gg}}
+			{Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards}
+			{Go, PostgreSQL, AWS EC2}
+			{}
+
+			\item Architected an ML rating service that grades each clip independently and shows its verdict beside the crowd's, with those crowdsourced ratings serving as the labeled data the classifier trains on.
+			\item Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{WizViz}
+			{\href{https://devpost.com/software/wizviz}{devpost.com/software/wizviz}}
+			{Webcam fighting game driven by real-time body-gesture recognition, winner of the Interactive Media track at SpartaHack X}
+			{Python, MediaPipe, OpenCV}
+			{}
+
+			\item Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, sustaining 60 FPS with sub-20ms input lag instead of blocking on per-frame detection.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct 2025 -- Present}
+			{Co-Founder \& Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Automated member onboarding so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, cutting onboarding from 15 minutes to seconds.
+			\item Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, taking the team from manual changes to reviewed continuous deploys.
+			\item Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
+			\item Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent, sustaining 150+ check-ins per event.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug 2025 -- May 2026}
+			{Software Engineering Intern}
+			{}
+			{East Lansing, MI}
+
+			\item Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Java Spring Boot, Neo4j, and PostgreSQL stack.
+			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
+			\item Owned the Spring Boot backend serving the platform's core CRUD and graph-traversal APIs, structuring endpoints around the dual-store model so the client never has to know which database backs a given read.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{JavaScript/TypeScript, Python, Java, SQL, Go}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{React, FastAPI, Spring Boot}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Redis, Neo4j}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

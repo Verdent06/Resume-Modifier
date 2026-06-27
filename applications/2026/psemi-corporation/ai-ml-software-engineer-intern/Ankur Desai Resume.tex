@@ -1,0 +1,97 @@
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected May 2028}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, OOP, Computer Architecture, Linear Algebra, Discrete Math
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Secure and Efficient Autonomous Systems Lab}
+			{May 2026 -- Present}
+			{Undergraduate Research Assistant}
+			{}
+			{East Lansing, MI}
+
+			\item Stress-tested the security of an LLM-controlled robot, targeting the cheap per-step gate that screens its motion plans as the exact seam an attacker slips a harmful plan through, one innocent fragment at a time.
+			\item Ran the node graph byte-identical in Gazebo and on a physical RoboMaster EP Core, driving the real robot over a custom C++ WiFi driver at a 30 Hz control loop with sub-20ms command latency.
+			\item Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, integrating nav2's MPPI controller rather than hand-rolling one to keep the C++ work on security, not motion control.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug 2025 -- May 2026}
+			{Software Engineering Intern}
+			{}
+			{East Lansing, MI}
+
+			\item Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Java Spring Boot, Neo4j, and PostgreSQL stack.
+			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct 2025 -- Present}
+			{Co-Founder \& Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Built the club's mentorship lineage as an interactive 3D radial graph in react-three-fiber, hand-writing a proportional-arc layout that prevents edge crossings and a custom camera that autofits each family to the viewport.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Dadei}
+			{\href{https://dadei.app}{dadei.app}}
+			{Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions}
+			{Python, FastAPI, React, PostgreSQL, pgvector, Redis}
+			{}
+
+			\item Routed all model-proposed side effects through one approval chokepoint with a cancelable countdown, giving every irreversible action one auditable seam between the LLM and the outside world.
+			\item Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap, grounding each proposal under a fixed token budget.
+			\item Built a React client that streams microphone audio up over a WebSocket with client-side Web Audio processing, receiving incremental live captions back in under 300ms as the backend transcribes each utterance.
+			\item Decoupled background workers from the live FastAPI service behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that pub/sub dropped.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{fliks}
+			{\href{https://github.com/fliks-gg}{github.com/fliks-gg}}
+			{Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards}
+			{Python, Go, PostgreSQL}
+			{}
+
+			\item Architected an ML rating service that grades each clip independently and shows its verdict beside the crowd's, with those crowdsourced ratings serving as the labeled data the classifier trains on.
+			\item Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, JavaScript/TypeScript, SQL, Java, Go, Bash}
+		\end{rSet}
+		\begin{rSet}{AI / ML}{RAG, pgvector}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, React, Spring Boot}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Redis, Neo4j, pgvector}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{EC2}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
