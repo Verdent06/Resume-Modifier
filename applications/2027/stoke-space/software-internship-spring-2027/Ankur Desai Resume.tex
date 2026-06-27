@@ -1,0 +1,132 @@
+%% ============================================================================
+%%  applications/template.tex  —  SKELETON RESUME (single source template)
+%% ----------------------------------------------------------------------------
+%%  This is the ONLY resume template. The orchestrator copies this file into a
+%%  position folder, then the writer fills the Experience / Projects / Skills
+%%  sections from the context.md bullet pool. It replaces the old per-track
+%%  templates (full-stack / ai-ml / dev-ops) — track is now a doctrine-routing
+%%  label, not a file choice, so any track (including robotics/autonomy) fills
+%%  this same skeleton.
+%%
+%%  WHAT IS FIXED (do not change): header (\name, \contact) and Education.
+%%  WHAT GETS FILLED: Experience entries, Projects entries, Technical Skills.
+%%
+%%  rSectionEntry signature — 5 positional params, ALWAYS supply all 5 braces:
+%%     {1 name}{2 dates}{3 tagline/role/link}{4 technologies}{5 location}
+%%     - param 4 (technologies) renders after the name with a " | " separator;
+%%       leave it {} for experiences, fill it for projects (the tech-stack line).
+%%     - any unused param is an empty {}.
+%%  rSet signature — {1 bucket label}{2 comma-separated items}.
+%%
+%%  PATH NOTE: this template sits at resume/applications/template.tex, beside
+%%  template.cls, so the class path is just `template`. On copy into
+%%  applications/{year}/{company}/{role}/, the orchestrator rewrites it to
+%%  ../../../template (three levels up to applications/, where template.cls lives).
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Ankur Desai}
+\contact{(248) $\hspace{-0.1em}$ 657 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 3805 \\ ardusa05@gmail.com \\ \href{https://ardusa.dev/}{www.ardusa.dev} \\ \href{https://linkedin.com/in/ardusa/}{linkedin.com/in/ardusa}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed; writer does not modify) --------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{Michigan State University}
+			{Expected May 2028}
+			{B.S. in Computer Science}
+			{}
+			{East Lansing, MI}
+
+			\item \textbf{GPA:} 3.5 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, OOP, Computer Architecture, Linear Algebra, Discrete Math
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
+	% Order by impact density for THIS role, not chronology (see resume.md I.3).
+	% First bullet of each entry is the hook: lead with the problem/outcome,
+	% not the technology (see resume.md I.4). 2-3 bullets per experience.
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{MindMosaic}
+			{Aug 2025 -- May 2026}
+			{Software Engineering Intern}
+			{}
+			{East Lansing, MI}
+
+			\item Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Java Spring Boot, Neo4j, and PostgreSQL stack.
+			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
+			\item Authored an AWS deployment script and managed the environment as code with Terraform, replacing a manual 30-minute multi-service bring-up with a single-command, version-controlled provision.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Secure and Efficient Autonomous Systems Lab}
+			{May 2026 -- Present}
+			{Undergraduate Research Assistant}
+			{}
+			{East Lansing, MI}
+
+			\item Ran the node graph byte-identical in Gazebo and on a physical RoboMaster EP Core, driving the real robot over a custom C++ WiFi driver at a 30 Hz control loop with sub-20ms command latency.
+			\item Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, then drove the decomposition attack to an 80\% success rate against the per-step triage gate.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Claude Builder Club @ MSU}
+			{Oct 2025 -- Present}
+			{Co-Founder \& Vice President}
+			{}
+			{East Lansing, MI}
+
+			\item Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent, sustaining 150+ check-ins per event.
+			\item Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth, and scoped realtime subscriptions to that same filter so a member sees their own role or acceptance change live.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS (writer fills from context.md pool) -----------------------
+	% 1-2 bullets each. Tech-stack line goes in param 4 (derived from the bullets
+	% selected for this project). Optional live link goes in param 3 as \href.
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Dadei}
+			{\href{https://dadei.app}{dadei.app}}
+			{Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions}
+			{Python, FastAPI, React, Redis, WebSockets}
+			{}
+
+			\item Routed all model-proposed side effects through one approval chokepoint with a cancelable countdown, giving every irreversible action one auditable seam between the LLM and the outside world.
+			\item Built a React client that streams microphone audio up over a WebSocket with client-side Web Audio processing, receiving incremental live captions back in under 300ms as the backend transcribes each utterance.
+			\item Root-caused the worker queue's silent exit-zero death on a Redis drop, then added a health check that detects it and a three-layer restart that recovers it, running the Python backend as two services from one Docker image.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{fliks}
+			{\href{https://github.com/fliks-gg}{github.com/fliks-gg}}
+			{Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards}
+			{Go, PostgreSQL, AWS EC2}
+			{}
+
+			\item Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
+			\item Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS (writer picks 3-5 buckets from context.md) --------
+	% ~80 char limit per line after the label. Trim tail items to fit; promote a
+	% tail item only if it is a hard ATS keyword from the JD (see resume.md I.5).
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, C++, JavaScript/TypeScript, SQL, Go}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{React, FastAPI, Spring Boot}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Redis, Neo4j}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3, RDS), Terraform}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

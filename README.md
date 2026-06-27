@@ -124,13 +124,13 @@ Run from repo root:
   --tex "applications/2027/foo/bar/Ankur Desai Resume.tex" \
   --inputs applications/2027/foo/bar/.pipeline/gate_inputs.json \
   --pdf "applications/2027/foo/bar/Ankur Desai Resume.pdf" \
-  --phase loop \
-  --out applications/2027/foo/bar/.pipeline/gate_report.json
+  --phase loop
+  # --out optional: defaults to gate_report.json beside --inputs under .pipeline/
 
 .venv/bin/python scripts/validate.py check-report --report grader_output.txt
 .venv/bin/python scripts/validate.py demerits \
-  --demerits applications/2027/foo/bar/.pipeline/demerits.json \
-  --out applications/2027/foo/bar/.pipeline/demerit_score.json
+  --demerits applications/2027/foo/bar/.pipeline/demerits.json
+  # --out optional: defaults to demerit_score.json beside --demerits under .pipeline/
 
 .venv/bin/python scripts/validate.py writer-loop \
   --status applications/2027/foo/bar/.pipeline/writer_loop_status.json \
@@ -144,10 +144,12 @@ Run from repo root:
 | `clean --tex` | Remove `.aux`, `.log`, `.out`, etc.; keep `.tex` and `.pdf` |
 | `clean --tex --ship` | Above + `.pipeline/` + legacy standalone JSON |
 | `clean-tree --root applications` | Recursive maintenance across all role folders |
+| `prune-root` | Remove stray `gate_*.json` / `demerits.json` from repo root |
 
 ```bash
 .venv/bin/python scripts/cleanup.py clean --tex "applications/…/Ankur Desai Resume.tex"
 .venv/bin/python scripts/cleanup.py clean-tree --root applications
+.venv/bin/python scripts/cleanup.py prune-root
 ```
 
 ---

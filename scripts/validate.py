@@ -13,12 +13,12 @@ USAGE (from repo root; use the repo virtualenv)
     .venv/bin/python scripts/validate.py gates \
         --tex "applications/…/Ankur Desai Resume.tex" \
         --inputs applications/…/.pipeline/gate_inputs.json \
-        --pdf "applications/…/Ankur Desai Resume.pdf" --phase loop \
-        --out applications/…/.pipeline/gate_report.json
+        --pdf "applications/…/Ankur Desai Resume.pdf" --phase loop
+        # --out defaults to sibling gate_report.json under the same .pipeline/
 
     .venv/bin/python scripts/validate.py demerits \
-        --demerits applications/…/.pipeline/demerits.json \
-        --out applications/…/.pipeline/demerit_score.json
+        --demerits applications/…/.pipeline/demerits.json
+        # --out defaults to sibling demerit_score.json under the same .pipeline/
 
     .venv/bin/python scripts/validate.py check-report --report grader_output.txt
 
@@ -706,7 +706,34 @@ def run_check_report(args) -> int:
 #  MAIN  (subcommands: gates, demerits, check-report)
 # ============================================================================
 
+_PIPELINE_DIR = ".pipeline"
+
+
+def _resolve_pipeline_out(
+    input_path: str | Path,
+    artifact_name: str,
+    explicit_out: str | None,
+) -> Path:
+    """Resolve output beside pipeline inputs; never fall back to cwd."""
+    if explicit_out:
+        out = Path(explicit_out)
+    else:
+        inp = Path(input_path).resolve()
+        if inp.parent.name != _PIPELINE_DIR:
+            print(
+                "validate: --out is required when inputs are not under a "
+                f".pipeline/ directory ({inp})",
+                file=sys.stderr,
+            )
+            raise SystemExit(2)
+        out = inp.parent / artifact_name
+    out = out.resolve()
+    out.parent.mkdir(parents=True, exist_ok=True)
+    return out
+
+
 def run_gates(args) -> int:
+    out = _resolve_pipeline_out(args.inputs, "gate_report.json", args.out or None)
     tex = Path(args.tex).read_text(encoding="utf-8")
     gi = json.loads(Path(args.inputs).read_text(encoding="utf-8"))
     pr = parse_resume(tex)
@@ -736,25 +763,28 @@ def run_gates(args) -> int:
                            for e in pr.entries],
         "skills_parsed": pr.skills,
     }
-    Path(args.out).write_text(json.dumps(report, indent=2), encoding="utf-8")
+    out.write_text(json.dumps(report, indent=2), encoding="utf-8")
 
     print(f"hard_gates_pass = {hard_pass}", file=sys.stderr)
     for g in gates:
         print(f"  [{'PASS' if g.passed else 'FAIL'}] {g.name}: {g.detail}", file=sys.stderr)
     print(f"  metric ratio = {ratio} (metric-free: {metric_free or 'none'})", file=sys.stderr)
+    print(f"  wrote {out}", file=sys.stderr)
     return 0 if hard_pass else 1
 
 
 def run_demerits(args) -> int:
+    out = _resolve_pipeline_out(args.demerits, "demerit_score.json", args.out or None)
     raw = json.loads(Path(args.demerits).read_text(encoding="utf-8"))
     defects = raw.get("defects", raw if isinstance(raw, list) else [])
     result = score_demerits(defects)
-    Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
+    out.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
     c = result["counts"]
     print(f"weighted={result['weighted_demerits']}  "
           f"display={result['display_score']:.1f}  "
           f"loop_target={'met' if result['loop_target_met'] else 'open'}", file=sys.stderr)
+    print(f"  wrote {out}", file=sys.stderr)
     print(f"  emergency={c['emergency']} major={c['major']} "
           f"minor={c['minor']}", file=sys.stderr)
     if result["coerced_defects"]:
@@ -786,12 +816,20 @@ def main() -> int:
     g.add_argument("--inputs", required=True, help="gate_inputs.json")
     g.add_argument("--pdf", default="")
     g.add_argument("--phase", default="loop", choices=["loop", "fit"])
-    g.add_argument("--out", default="gate_report.json")
+    g.add_argument(
+        "--out",
+        default="",
+        help="gate report path (default: gate_report.json beside --inputs under .pipeline/)",
+    )
     g.set_defaults(func=run_gates)
 
     d = sub.add_parser("demerits", help="score the grader's defect list (informational)")
     d.add_argument("--demerits", required=True, help="grader-emitted defect JSON")
-    d.add_argument("--out", default="demerit_score.json")
+    d.add_argument(
+        "--out",
+        default="",
+        help="demerit score path (default: demerit_score.json beside --demerits under .pipeline/)",
+    )
     d.set_defaults(func=run_demerits)
 
     c = sub.add_parser("check-report", help="verify grader prose matches defect JSON")

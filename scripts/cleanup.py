@@ -15,6 +15,9 @@ USAGE
     # maintenance: every resume under applications/
     python scripts/cleanup.py clean-tree --root applications
     python scripts/cleanup.py clean-tree --root applications --ship
+
+    # stray pipeline JSON accidentally written to repo root
+    python scripts/cleanup.py prune-root
 """
 
 from __future__ import annotations
@@ -101,6 +104,23 @@ def run_clean(args) -> int:
     return 0
 
 
+def run_prune_root(args) -> int:
+    root = Path(args.root).resolve()
+    removed: list[str] = []
+    for name in _LEGACY_JSON_NAMES:
+        path = root / name
+        if path.is_file():
+            path.unlink()
+            removed.append(name)
+    if removed:
+        print(f"prune-root: removed {len(removed)} item(s) from {root}", file=sys.stderr)
+        for name in removed:
+            print(f"  {name}", file=sys.stderr)
+    else:
+        print(f"prune-root: nothing to remove in {root}", file=sys.stderr)
+    return 0
+
+
 def run_clean_tree(args) -> int:
     root = Path(args.root).resolve()
     total: list[str] = []
@@ -131,6 +151,14 @@ def main() -> int:
     ct.add_argument("--root", required=True, help="e.g. applications/")
     ct.add_argument("--ship", action="store_true", help="also remove pipeline + legacy JSON")
     ct.set_defaults(func=run_clean_tree)
+
+    pr = sub.add_parser("prune-root", help="remove stray pipeline JSON from repo root")
+    pr.add_argument(
+        "--root",
+        default=str(Path(__file__).resolve().parent.parent),
+        help="repo root to prune (default: parent of scripts/)",
+    )
+    pr.set_defaults(func=run_prune_root)
 
     args = ap.parse_args()
     return args.func(args)

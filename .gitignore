@@ -1,3 +1,9 @@
+# Stray pipeline artifacts (should live under applications/*/.pipeline/ only)
+/gate_inputs.json
+/gate_report.json
+/demerits.json
+/demerit_score.json
+
 # LaTeX intermediate and output files
 *.aux
 *.bbl

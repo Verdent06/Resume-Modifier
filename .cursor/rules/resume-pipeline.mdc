@@ -85,7 +85,7 @@ Echo the active chat name in each todo title (e.g. todo: `grade · 2027/ctgt/...
 |---|---|---|---|
 | `@resume-writing` | All `.tex` edits | **Task** per pass | `context.md`, `reference/resume.md`, `persona.md` (lens), current `.tex`; **iter 1:** lens + pool; **iter >1:** defects JSON (+ persona only to interpret grader language) |
 | `@resume-grading` | Defect enumeration (judgment only) | **Task** per pass | `reference/resume.md`, `reference/recruiting.md`, `persona.md` (lens), current `.tex` |
-| `scripts/validate.py gates` | All deterministic artifact gates | orchestrator runs | the `.tex`, the `.pdf`, transient gate inputs |
+| `scripts/validate.py gates` | All deterministic artifact gates | orchestrator runs | the `.tex`, the `.pdf`, transient gate inputs; `--out` auto-derives beside `--inputs` under `.pipeline/` |
 | `scripts/validate.py demerits` | Weighted demerits + display score + `loop_target_met` | orchestrator runs | grader-emitted defect JSON |
 | `scripts/validate.py writer-loop` | Validate writer peak/continue decision | orchestrator runs | `writer_loop_status.json` + current `demerits.json` |
 | `scripts/validate.py check-report` | Prose/JSON 1:1 enforcement on grader output | orchestrator runs | raw grader report text |
@@ -321,8 +321,7 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
    .venv/bin/python scripts/validate.py gates \
      --tex "{tex_path}" \
      --inputs .pipeline/gate_inputs.json \
-     --pdf "{pdf_path}" --phase loop \
-     --out .pipeline/gate_report.json
+     --pdf "{pdf_path}" --phase loop
    ```
 3. **If `hard_gates_pass == false`:** invalid artifact — do **not** grade. Task `@resume-writing` (`write · {scope} · gate-fix`) with failed gates as mechanical fix tasks. Increment the iteration counter; if under cap, go to 1; else set `loop_exit_reason = timeout` and exit the loop with standing gate failures.
 4. **If `hard_gates_pass == true`:** Task `@resume-grading` (`grade · {scope} · iter-{n}`):
@@ -332,7 +331,7 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
    Run the report check, then score:
    ```
    .venv/bin/python scripts/validate.py check-report --report -
-   .venv/bin/python scripts/validate.py demerits --demerits .pipeline/demerits.json --out .pipeline/demerit_score.json
+   .venv/bin/python scripts/validate.py demerits --demerits .pipeline/demerits.json
    ```
    Extract the `DEFECTS` JSON block from the grader output to `.pipeline/demerits.json`. Pipe the full grader text to `check-report` (or `--report path`); **exit non-zero ⇒ re-dispatch grader** — prose and JSON diverged. Only score after `check-report` passes.
 
@@ -384,8 +383,7 @@ The grader never sees `context.md`, never computes a number, and never reasons a
    .venv/bin/python scripts/validate.py gates \
      --tex "{tex_path}" \
      --inputs .pipeline/gate_inputs.json \
-     --pdf "{pdf_path}" --phase fit \
-     --out .pipeline/gate_report.json
+     --pdf "{pdf_path}" --phase fit
    ```
    The `--phase fit` run relaxes the iteration-1 anti-deletion gate but enforces `fit_protection` (no Experience or protected-entry bullet may be cut in this phase) and `page_fit`. Recompile until both pass.
 
@@ -504,6 +502,7 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 - Never let the grader compute demerit totals; `scripts/validate.py demerits` owns scoring and `loop_target_met`. The grader emits only the defect list.
 - Run `scripts/validate.py writer-loop` after every grading-response write pass; re-dispatch the writer on failure or premature `peak` (step 9).
 - Never persist standalone JSON grading artifacts — fold them into `grade.md` and run `scripts/cleanup.py clean --ship`.
+- After ship, run `scripts/cleanup.py prune-root` from repo root to drop any stray pipeline JSON written outside `.pipeline/`.
 - Run `scripts/cleanup.py clean --tex` after every `xelatex` compile during the loop and fit checks.
 - Run all Python scripts via `.venv/bin/python` from repo root. If `.venv` is missing, create it (`python3 -m venv .venv`) and install `requirements.txt` before the pipeline.
 - Always run `scripts/validate.py check-report` before scoring; re-dispatch the grader on failure.

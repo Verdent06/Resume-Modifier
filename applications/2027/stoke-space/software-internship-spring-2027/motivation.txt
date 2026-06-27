@@ -1,0 +1,20 @@
+WHAT MOTIVATES YOU?
+
+What motivates me is software that has to work when the stakes are real—not demo-day real, but "if this misbehaves, something expensive or dangerous happens" real. That is why Stoke stands out. Nova is an engineering bet that launch cadence and cost come down only if the vehicle, the test stands, and the factory tooling share a software stack people trust under pressure. I want to intern somewhere the work is not a ticket queue disconnected from the machine. I want to own a piece of control or data software, push it through review, watch it run on hardware in Kent, and come back the next day ready to make it better.
+
+Most of my projects orbit that same boundary between intelligence and reliable action. In research I drive a physical robot from a custom C++ WiFi driver at 30 Hz with sub-20 millisecond command latency, with the same node graph running in Gazebo and on hardware. On Dadei I route every model-proposed calendar or email action through a single human-approval chokepoint because irreversible side effects need one auditable seam. Those problems taught me that motivation is not "I like space"—it is caring about timing guarantees, failure modes, validation discipline, and the humility to test on a stand before you assume something is ready.
+
+Stoke's Vehicle Software team is the lane I am aiming for. Bench testers, engine test stands, and flight systems are exactly the kind of environment where I do my best work: fast iteration, high ownership, and mentors who will tell me when my abstraction is wrong. I am motivated by joining a team that treats software as part of the rocket, not an afterthought wrapped around it.
+
+
+WHAT HAVE YOU LEARNED OUTSIDE THE CLASSROOM OR WORKPLACE?
+
+The skill that has mattered most is learning to carry a complex system from a vague idea to something another person can run without me in the room.
+
+Co-founding Claude Builder Club at MSU forced that early. We went from zero members to 150+ by replacing spreadsheets and Slack threads with a platform I built and operated: Postgres row-level security so authorization lives in the database, atomic RPCs for concurrency-safe event check-in, and GitHub Actions so every merge deploys migrations and edge functions. Nobody assigned those problems; they appeared because the club was growing faster than manual ops could handle. I learned to scope to the failure mode that would embarrass us first, ship a fix, and only then polish.
+
+Dadei taught the same lesson at a deeper technical level. I built an ambient voice assistant that proposes calendar, email, and task actions—but only after explicit human approval. That meant teaching myself streaming WebSocket audio, Redis Streams with dead-letter routing, hybrid retrieval over pgvector, and speaker identification without labeled data. The hardest debugging session was tracking down a worker that silently exited with code zero when Redis dropped; I added health checks and a three-layer restart because "it usually works" is not an architecture.
+
+FRC software captain work rounded out the hardware side: 250 Hz vision-corrected localization, graceful sensor-failure fallback mid-match, and autonomous routines on a competition timeline. Classroom assignments rarely give you a robot that bricks in front of a crowd if your filter poisons pose estimation.
+
+Those experiences make me a strong Stoke intern because I already default to ownership: identify the real constraint, build the smallest system that survives contact with reality, validate on something physical when possible, and document the seam where things break. Stoke moves fast on open-ended problems; that is how I have been training.
