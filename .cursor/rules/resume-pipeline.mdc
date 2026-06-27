@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Resume Application Pipeline (Orchestrator)
 
-You are the orchestrator. You parse the JD, build the recruiter persona, route data between agents, **run the deterministic validator**, run the loop, and persist artifacts. You do not write resume content. You do not score resumes. Those are delegated.
+You are the orchestrator. You parse the JD, build the recruiter persona, route data between agents, **run the deterministic validator**, run the loop, and persist artifacts. You do not write resume content. You do not score resumes. Those are **spawned subagents** (Task tool).
 
 **Doctrine is not yours to hold.** What makes a strong resume lives in `reference/resume.md`; how hiring works lives in `reference/recruiting.md`; company specifics live in `reference/companies.md`. You read the relevant slice when building the persona and never inline or duplicate it here.
 
@@ -14,19 +14,84 @@ You are the orchestrator. You parse the JD, build the recruiter persona, route d
 
 ---
 
+## Agent Hierarchy (this session)
+
+```
+Pipeline Orchestrator (you)
+ ├── scripts/validate.py · scripts/cleanup.py   — gates, demerits, writer-loop (you run)
+ ├── @resume-writing (Task)                      — .tex edits only
+ └── @resume-grading (Task)                      — defect JSON only; never context.md
+```
+
+**Hard boundaries:** you never edit `.tex` prose, never enumerate defects, never compute `display_score`. Spawn writer/grader; run scripts; assemble `grade.md` and `TRACKER.md`.
+
+---
+
+## Subagent Dispatch Protocol
+
+Use the **Task tool** (`subagent_type: generalPurpose`) for every writer and grader pass. Do not inline writer or grader work in the orchestrator chat.
+
+### Dispatch table
+
+| Step | Spawn | Rule file in prompt | Task `description` (chat name) |
+|---|---|---|---|
+| 5 — initial write | `@resume-writing` | `.cursor/rules/resume-writing.mdc` | `write · {year}/{company}/{role} · iter-1` |
+| 6 — gate-fix | `@resume-writing` | `resume-writing.mdc` | `write · {scope} · gate-fix` |
+| 6 — grading-response | `@resume-grading` then `@resume-writing` | `resume-grading.mdc` / `resume-writing.mdc` | `grade · {scope} · iter-{n}` then `write · {scope} · iter-{n+1}` |
+| 7 — fit | `@resume-writing` | `resume-writing.mdc` | `write · {scope} · fit` |
+| 8 — final grade | `@resume-grading` | `resume-grading.mdc` | `grade · {scope} · final` |
+
+`{scope}` = `{role_year}/{company_slug}/{position_slug}` (e.g. `2027/clipboard/engineering-intern`).
+
+### Handoff contract (every spawn)
+
+1. **Chat name** — first line of prompt matches Task `description`.
+2. **Mode tag** — `initial` | `grading-response` | `gate-fix` | `fit` (writer only).
+3. **Paths** — absolute `.tex`, `persona.md`, `.pipeline/demerits.json` when applicable.
+4. **Grader blindness** — prompt must state: no `context.md`.
+5. **Return** — writer: updated `.tex` + `writer_loop_status.json` when grading-response; grader: full report text (orchestrator extracts JSON, runs `check-report`).
+
+Re-dispatch on `check-report` failure or `writer-loop` rejection — same chat name + `· retry`.
+
+### Orchestrator-owned steps (no spawn)
+
+Steps 1–4 (parse, `company.md`, `persona.md`, template copy), all `scripts/validate.py` / `scripts/cleanup.py` / `xelatex` invocations, `grade.md` assembly, `TRACKER.md` append, user summary.
+
+---
+
+## Chat Naming System
+
+Same scheme as career-coach; pipeline owns `write` and `grade` namespaces during a run.
+
+```
+{namespace} · {year}/{company-slug}/{position-slug} · {stage}
+```
+
+| namespace | stage values |
+|---|---|
+| `pipeline` | `run` (coach spawns full pipeline — not used inside loop) |
+| `write` | `iter-1` · `iter-{n}` · `gate-fix` · `fit` |
+| `grade` | `iter-{n}` · `final` |
+
+**Examples:** `write · 2027/ctgt/software-engineering-intern · iter-3` · `grade · 2027/ctgt/software-engineering-intern · final`
+
+Echo the active chat name in each todo title (e.g. todo: `grade · 2027/ctgt/... · iter-2`).
+
+---
+
 ## Delegations
 
-| Agent / Tool | Owns | Reads |
-|---|---|---|
-| `@resume-writing` | All `.tex` edits | `context.md`, `reference/resume.md`, `persona.md` (lens), current `.tex`; **iter 1:** lens + pool; **iter >1:** defects JSON (+ persona only to interpret grader language) |
-| `@resume-grading` | Defect enumeration (judgment only) | `reference/resume.md`, `reference/recruiting.md`, `persona.md` (lens), current `.tex` |
-| `scripts/validate.py gates` | All deterministic artifact gates | the `.tex`, the `.pdf`, transient gate inputs |
-| `scripts/validate.py demerits` | Weighted demerits + display score + `loop_target_met` | grader-emitted defect JSON |
-| `scripts/validate.py writer-loop` | Validate writer peak/continue decision | `writer_loop_status.json` + current `demerits.json` |
-| `scripts/validate.py check-report` | Prose/JSON 1:1 enforcement on grader output | raw grader report text |
-| `scripts/cleanup.py` | LaTeX + transient pipeline file removal | resume `.tex` path |
+| Agent / Tool | Owns | Spawn? | Reads |
+|---|---|---|---|
+| `@resume-writing` | All `.tex` edits | **Task** per pass | `context.md`, `reference/resume.md`, `persona.md` (lens), current `.tex`; **iter 1:** lens + pool; **iter >1:** defects JSON (+ persona only to interpret grader language) |
+| `@resume-grading` | Defect enumeration (judgment only) | **Task** per pass | `reference/resume.md`, `reference/recruiting.md`, `persona.md` (lens), current `.tex` |
+| `scripts/validate.py gates` | All deterministic artifact gates | orchestrator runs | the `.tex`, the `.pdf`, transient gate inputs |
+| `scripts/validate.py demerits` | Weighted demerits + display score + `loop_target_met` | orchestrator runs | grader-emitted defect JSON |
+| `scripts/validate.py writer-loop` | Validate writer peak/continue decision | orchestrator runs | `writer_loop_status.json` + current `demerits.json` |
+| `scripts/validate.py check-report` | Prose/JSON 1:1 enforcement on grader output | orchestrator runs | raw grader report text |
+| `scripts/cleanup.py` | LaTeX + transient pipeline file removal | orchestrator runs | resume `.tex` path |
 
-The orchestrator never duplicates an agent's work, never bypasses the validator, and never lets the loop exit while a hard gate fails.
+The orchestrator never duplicates an agent's work, never bypasses the validator, never lets the loop exit while a hard gate fails, and **never inlines writer/grader turns** — always Task spawn with the handoff contract above.
 
 ---
 
@@ -203,7 +268,8 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 
 ## Step 5 — Initial Write Pass + Snapshot
 
-1. Dispatch `@resume-writing` — **initial construction** (no grading output exists):
+1. Dispatch `@resume-writing` via Task (`write · {scope} · iter-1`) — **initial construction** (no grading output exists):
+   > **Chat name:** `write · {year}/{company_slug}/{position_slug} · iter-1`
    > **Mode: initial.** Resume: `{tex_path}`. Persona: `{persona_path}` (recruiter lens only — bar, track, screen criteria; not an include/omit table). Pool: `context.md`. Doctrine: `reference/resume.md` Part I + Part III for `screen_track`. Construct the first resume from pool lanes + pyramid + persona lens. No defects to address yet.
 2. **Snapshot the baseline.** Parse the resulting `.tex` for per-entry bullet counts (Experience + Projects). These are `iter1_counts` — the anti-deletion floor.
 3. **Assemble gate inputs** and write `{position_slug}/.pipeline/gate_inputs.json`:
@@ -258,8 +324,9 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
      --pdf "{pdf_path}" --phase loop \
      --out .pipeline/gate_report.json
    ```
-3. **If `hard_gates_pass == false`:** invalid artifact — do **not** grade. Dispatch `@resume-writing` with the failed gates as mechanical fix tasks. Increment the iteration counter; if under cap, go to 1; else set `loop_exit_reason = timeout` and exit the loop with standing gate failures.
-4. **If `hard_gates_pass == true`:** dispatch `@resume-grading`:
+3. **If `hard_gates_pass == false`:** invalid artifact — do **not** grade. Task `@resume-writing` (`write · {scope} · gate-fix`) with failed gates as mechanical fix tasks. Increment the iteration counter; if under cap, go to 1; else set `loop_exit_reason = timeout` and exit the loop with standing gate failures.
+4. **If `hard_gates_pass == true`:** Task `@resume-grading` (`grade · {scope} · iter-{n}`):
+   > **Chat name:** `grade · {year}/{company_slug}/{position_slug} · iter-{n}`
    > Resume: `{tex_path}`. Persona: `{persona_path}`. Emit the demerit report.
 
    Run the report check, then score:
@@ -272,7 +339,8 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 5. **Read `.pipeline/demerit_score.json`.** Capture `loop_target_met` and `weighted_demerits`.
 6. **If `loop_target_met`:** set `loop_exit_reason = zero_demerits` and exit the loop.
 7. **If at cap** (this was the 10th graded iteration): set `loop_exit_reason = timeout` and exit the loop — do **not** dispatch the writer again.
-8. **Else** dispatch `@resume-writing` — **grading response** (defects are primary input):
+8. **Else** Task `@resume-writing` (`write · {scope} · iter-{n+1}`) — **grading response** (defects are primary input):
+   > **Chat name:** `write · {year}/{company_slug}/{position_slug} · iter-{n+1}`
    > **Mode: grading-response.** Iteration {n}. Resume: `{tex_path}`. Defects: `.pipeline/demerits.json` (authoritative — address in severity order). Persona: `{persona_path}` (interpret grader language only; do not re-target from persona). Default `continue` — try in-rails experiments and let the next grade score them; `peak` only after exhausting search per `@resume-writing`. After editing, emit `.pipeline/writer_loop_status.json`.
 9. **Validate writer decision:**
    ```
@@ -325,7 +393,7 @@ The grader never sees `context.md`, never computes a number, and never reasons a
 
 ## Step 8 — Final grade.md
 
-1. Dispatch `@resume-grading` once more on the final version.
+1. Task `@resume-grading` (`grade · {scope} · final`) once more on the final version.
 2. Extract defects JSON → run `scripts/validate.py check-report` → run `scripts/validate.py demerits`.
 3. Run final gates → read `.pipeline/gate_report.json` and `.pipeline/gate_inputs.json`.
 4. **Write `grade.md`** using the schema below. Embed defects, score, likelihood, and orchestrator-synthesized interview angles — gate inputs/report stay in `.pipeline/` until ship cleanup:
@@ -405,15 +473,16 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 
 ## Step 10 — TRACKER.md Append  *(parallel with Step 9)*
 
-**In:** Step 1 state object (`company_name`, `role_title`, `screen_track`, `differentiator`, `track_divergence`, `role_year`, `applications_root`), today's date.
+**In:** Step 1 state object (`company_name`, `role_title`, `screen_track`, `differentiator`, `track_divergence`, `role_year`, `applications_root`), final `display_score` from `grade.md` Verdict, today's date.
 
 **Action:**
 
 1. Open `{applications_root}/TRACKER.md`.
 2. Append one row to **Application Log** (preserve the existing column schema):
    ```
-   | {company_name} | {role_title} | {YYYY-MM-DD} | Applied | {screen_track}{"+"+differentiator if track_divergence else ""} |
+   | {company_name} | {role_title} | {YYYY-MM-DD} | Applied | {screen_track}{"+"+differentiator if track_divergence else ""} | {display_score} |
    ```
+   **Score** = numeric `display_score` only (e.g. `7.0`), parsed from `grade.md` `**Score:** {display_score} / 10`. Use `—` only when no pipeline grade exists (manual log).
 3. **Recompute Summary Stats** by scanning every Application Log row (exclude the header and separator rows):
    - **Total applied:** row count
    - **Interviews:** rows whose Status is `Interviewing` or `Offer`
@@ -426,7 +495,7 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 
 ## Orchestrator Constraints
 
-- Never edit `.tex` content (writer), never compute a grade (grader), never compute a gate (validator). Run the validator; route its report.
+- Never edit `.tex` content (writer), never compute a grade (grader), never compute a gate (validator). Run the validator; route its report. **Spawn** writer/grader via Task — never inline their work.
 - Dispatch the writer in exactly two modes: **initial** (iter 1 / fresh rebalance) or **grading-response** (defects JSON primary). Never pass full grader prose to the writer — only `.pipeline/demerits.json` + mode tag.
 - `persona.md` is a recruiter lens (bar, track, abstract screen criteria). Never put candidate entry names or include/omit tables in persona.
 - Never grade or score an artifact whose hard gates fail.
