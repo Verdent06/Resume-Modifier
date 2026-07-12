@@ -105,14 +105,14 @@ The orchestrator never duplicates an agent's work, never bypasses the validator,
 | `reference/companies.md` (company data) | read | – | – | – |
 | `company.md` | write-once, read | – | – | – |
 | `persona.md` | write, read | read | read | – |
-| `Ankur Desai Resume.tex` | read | write | read | read |
-| `Ankur Desai Resume.pdf` | compile, read | – | read | read |
+| `Vedant Desai Resume.tex` | read | write | read | read |
+| `Vedant Desai Resume.pdf` | compile, read | – | read | read |
 | `.pipeline/*.json` | write (loop only), delete at ship | – | – | read/write |
 | `grade.md` | write (final only) | – | – | – |
 | `TRACKER.md` | append row + recompute stats | – | – | – |
 | `applications/template.tex` / `.cls` | read, copy | **never** | – | – |
 
-**Deliverable rule:** the position folder ships with `persona.md`, `Ankur Desai Resume.tex`, `Ankur Desai Resume.pdf`, and **`grade.md` only**. No `.aux`/`.log`/`.out`/`.synctex.gz` or other LaTeX intermediates. No standalone `gate_inputs.json`, `gate_report.json`, `demerits.json`, or `demerit_score.json` — folded into `grade.md`. No `.pipeline/` after ship. During the loop, write transient JSON under `{position_slug}/.pipeline/`; run `scripts/cleanup.py clean` after every compile to drop LaTeX junk immediately.
+**Deliverable rule:** the position folder ships with `persona.md`, `Vedant Desai Resume.tex`, `Vedant Desai Resume.pdf`, and **`grade.md` only**. No `.aux`/`.log`/`.out`/`.synctex.gz` or other LaTeX intermediates. No standalone `gate_inputs.json`, `gate_report.json`, `demerits.json`, or `demerit_score.json` — folded into `grade.md`. No `.pipeline/` after ship. During the loop, write transient JSON under `{position_slug}/.pipeline/`; run `scripts/cleanup.py clean` after every compile to drop LaTeX junk immediately.
 
 `reference/recruiting.md` and `reference/resume.md` are **read-only doctrine**. The grader is blind to `context.md`. The validator may read `context.md` for the candidate inventory — it is code producing true/false, not the grader forming a judgment, so this does not break blindness.
 
@@ -262,7 +262,7 @@ Write `{applications_root}/{company_slug}/{position_slug}/persona.md` — the **
 
 ## Step 4 — Copy the Skeleton Template  *(parallel with Step 2)*
 
-Create the position folder. Copy `resume/applications/template.tex` into it as `Ankur Desai Resume.tex`. Rewrite the class path for folder depth (`{template}` → `{../../../template}`; verify the up-count).
+Create the position folder. Copy `resume/applications/template.tex` into it as `Vedant Desai Resume.tex`. Rewrite the class path for folder depth (`{template}` → `{../../../template}`; verify the up-count).
 
 ---
 
@@ -312,7 +312,7 @@ Create the position folder. Copy `resume/applications/template.tex` into it as `
 
 **Each graded iteration:**
 
-1. **Compile.** `xelatex "Ankur Desai Resume.tex"` from the position folder, then:
+1. **Compile.** `xelatex "Vedant Desai Resume.tex"` from the position folder, then:
    ```
    .venv/bin/python scripts/cleanup.py clean --tex "{tex_path}"
    ```

@@ -11,9 +11,9 @@ USAGE (from repo root; use the repo virtualenv)
     python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
 
     .venv/bin/python scripts/validate.py gates \
-        --tex "applications/…/Ankur Desai Resume.tex" \
+        --tex "applications/…/Vedant Desai Resume.tex" \
         --inputs applications/…/.pipeline/gate_inputs.json \
-        --pdf "applications/…/Ankur Desai Resume.pdf" --phase loop
+        --pdf "applications/…/Vedant Desai Resume.pdf" --phase loop
         # --out defaults to sibling gate_report.json under the same .pipeline/
 
     .venv/bin/python scripts/validate.py demerits \

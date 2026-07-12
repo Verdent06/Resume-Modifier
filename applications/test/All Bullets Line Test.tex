@@ -2,119 +2,56 @@
 	11pt
 ]{../template}
 
-\name{Ankur Desai --- Bullet Line Test}
-\contact{All canonical bullets from context.md rendered with the resume template}
+\name{Vedant Desai --- Bullet Line Test}
+\contact{Inactive until context.md is populated with canonical entries}
 
 \begin{document}
 
+	% This harness renders every bullet from context.md for line-length validation.
+	% Re-populate from context.md once Vedant's bullet pool is filled in.
+
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{Secure and Efficient Autonomous Systems Lab}
-			{May 2026 -- Present}
-			{Undergraduate Research Assistant}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
 			{}
-			{East Lansing, MI}
+			{Ann Arbor, MI}
 
-			\item Stress-tested the security of an LLM-controlled robot, targeting the cheap per-step gate that screens its motion plans as the exact seam an attacker slips a harmful plan through, one innocent fragment at a time.
-			\item Ran the node graph byte-identical in Gazebo and on a physical RoboMaster EP Core, driving the real robot over a custom C++ WiFi driver at a 30 Hz control loop with sub-20ms command latency.
-			\item Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, integrating nav2's MPPI controller rather than hand-rolling one to keep the C++ work on security, not motion control.
-			\item Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, then drove the decomposition attack to an 80\% success rate against the per-step triage gate.
-			\item Reframed the contribution from building a defense to measuring one, arguing that a triage gate's cost savings and its attackability reduce to a single property: per-step versus whole-plan checking.
-			\item Built the attacked defense as a steelman composed from multiple published safety architectures rather than a naive single classifier, so the decomposition attack lands on the strongest reasonable system, not a strawman.
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at \textasciitilde2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating \textasciitilde800 hours of manual pulls across 400 tracked PACs.
+			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
-			{Claude Builder Club @ MSU}
-			{Oct 2025 -- Present}
-			{Co-Founder \& Vice President}
+			{Lyndbrook Capital}
+			{Feb 2026 -- Apr 2026}
+			{Data Engineering Consultant}
 			{}
-			{East Lansing, MI}
+			{Remote}
 
-			\item Co-founded and grew an MSU engineering community from zero to 150+ members, replacing a sprawl of spreadsheets, Slack threads, and manual invites with a single club-operations platform I designed and built.
-			\item Automated member onboarding so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, cutting onboarding from 15 minutes to seconds.
-			\item Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent, sustaining 150+ check-ins per event.
-			\item Built the club's mentorship lineage as an interactive 3D radial graph in react-three-fiber, hand-writing a proportional-arc layout that prevents edge crossings and a custom camera that autofits each family to the viewport.
-			\item Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth, and scoped realtime subscriptions to that same filter so a member sees their own role or acceptance change live.
-			\item Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
-			\item Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, taking the team from manual changes to reviewed continuous deploys.
-			\item Tuned React Query cache tiers by data volatility across the dashboards, caching stable roles longer than fast-changing application queues to cut redundant refetches while keeping live data fresh.
+			\item Contracted pre-LOI to build acquisition intelligence for a boutique search fund targeting water utility operators; aggregated EPA ECHO and MassGIS regulatory data into a unified PWSID entity database and delivered 800+ validated Day-1 acquisition targets within the engagement window.
+			\item Automated off-market deal sourcing by aggregating 2,500+ legal entities from EPA compliance databases and cross-referencing Google Maps API data to surface unlisted acquisition targets, eliminating 15 hours of manual prospecting per week for the fund's Principal.
+			\item Built a Review Velocity scoring algorithm that proxied fleet expansion and operational scale from public compliance data, filtering 800 acquisition targets down to a 280-lead qualified shortlist --- a 35\% precision rate against the fund's revenue criteria.
 		\end{rSectionEntry}
 
+		% Add project entries below as pools are locked
 		\begin{rSectionEntry}
-			{MindMosaic}
-			{Aug 2025 -- May 2026}
-			{Software Engineering Intern}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
 			{}
-			{East Lansing, MI}
+			{Remote}
 
-			\item Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Java Spring Boot, Neo4j, and PostgreSQL stack.
-			\item Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48\% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
-			\item Designed a dual-database layer that keeps transactional records in PostgreSQL while serving relationship-heavy reads from Neo4j, routing each query class to the store that answers it fastest instead of forcing one engine to do both jobs.
-			\item Owned the Spring Boot backend serving the platform's core CRUD and graph-traversal APIs, structuring endpoints around the dual-store model so the client never has to know which database backs a given read.
-			\item Authored an AWS deployment script and managed the environment as code with Terraform, replacing a manual 30-minute multi-service bring-up with a single-command, version-controlled provision.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{Robostangs (FRC Team 548)}
-			{Jun 2023 -- May 2024}
-			{Software Captain}
-			{}
-			{Northville, MI}
-
-			\item Led the software and electrical teams (5 and 6 engineers) for a competition robot that reached the FIRST World Championship and placed top 16 in its division in Houston, the program's strongest world-stage finish since 2014.
-			\item Delivered the team's first multi-piece autonomous routine, chaining vision-corrected driving paths with timed intake-and-shoot actions so the robot scored multiple game pieces with no driver input during the autonomous period.
-			\item Anchored auto-aim on real-time, vision-corrected localization that fused two AprilTag cameras with swerve odometry on a dedicated 250Hz Java thread with latency compensation, holding pose accurate during aggressive motion.
-			\item Hardened pose estimation against bad vision data by gating camera measurements on tag count, target area, and angular velocity before fusing them, rejecting estimates that would otherwise poison the localization filter.
-			\item Engineered graceful sensor-failure handling so the most match-critical mechanism falls back to an internal encoder and stays operable through a sensor loss instead of bricking mid-match, surfaced as an alert rather than a silent failure.
-			\item Built shoot-from-anywhere aiming that maps target distance to arm angle through a regression model, keeping candidate models swappable behind one interface so the team could A/B them against measured shot data.
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to the Whisper backend were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Eliminated a 27\% audio upload failure rate by building fault-tolerant RxJS logic that detects expired S3 presigned URLs and regenerates them mid-flight, and handles MIME-type negotiation for raw WAV files that Angular's HTTP client rejected silently.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	\begin{rSection}{P}{rojects}
-		\begin{rSectionEntry}
-			{fliks}
-			{\href{https://github.com/fliks-gg}{github.com/fliks-gg}}
-			{Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards}
-			{Line test}
-			{}
-
-			\item Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
-			\item Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
-			\item Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box.
-			\item Architected an ML rating service that grades each clip independently and shows its verdict beside the crowd's, with those crowdsourced ratings serving as the labeled data the classifier trains on.
-			\item Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{Dadei}
-			{\href{https://dadei.app}{dadei.app}}
-			{Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions}
-			{Line test}
-			{}
-
-			\item Routed all model-proposed side effects through one approval chokepoint with a cancelable countdown, giving every irreversible action one auditable seam between the LLM and the outside world.
-			\item Built a React client that streams microphone audio up over a WebSocket with client-side Web Audio processing, receiving incremental live captions back in under 300ms as the backend transcribes each utterance.
-			\item Decoupled background workers from the live FastAPI service behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that pub/sub dropped.
-			\item Engineered a no-merge-first speaker-ID model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity, attributing 96\% of utterances to the correct speaker.
-			\item Trained a custom wake-word model to 90\% recall at under one false accept per hour, gating the command pipeline so the assistant only opens the mic on demand instead of continuously streaming audio.
-			\item Solved the same-room, multi-mic problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election on SNR, clarity, and cadence, cutting duplicate transcription by ~50\%.
-			\item Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, keeping interactive commands responsive while bulk transcription stays cheap.
-			\item Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap, grounding each proposal under a fixed token budget.
-			\item Root-caused the worker queue's silent exit-zero death on a Redis drop, then added a health check that detects it and a three-layer restart that recovers it, running the Python backend as two services from one Docker image.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{WizViz}
-			{\href{https://devpost.com/software/wizviz}{devpost.com/software/wizviz}}
-			{Webcam fighting game driven by real-time body-gesture recognition, winner of the Interactive Media track at SpartaHack X}
-			{Line test}
-			{}
-
-			\item Stabilized noisy per-frame pose output by accumulating every frame's gesture classification across the turn window and taking the dominant sustained gesture, instead of reading a single jittery frame at the turn boundary.
-			\item Classified five distinct combat gestures from body landmarks with a scale-invariant geometric model normalized by torso length, making detection work across players and camera distances without any labeled training data.
-			\item Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, sustaining 60 FPS with sub-20ms input lag instead of blocking on per-frame detection.
-			\item Supported both local two-player, splitting players by landmark position across the frame with zero extra cameras, and single-player against a finite-state opponent that rests, defends, heals, or finishes by game state.
-		\end{rSectionEntry}
+		% Add project entries as each context.md pool is locked (Lead-Gen Agent, Granular Synthesizer, etc.)
 	\end{rSection}
 
 \end{document}

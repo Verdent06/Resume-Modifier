@@ -4,13 +4,13 @@ cleanup.py — remove LaTeX and pipeline transient files from application folder
 
 USAGE
     # after each xelatex compile (keeps .tex and .pdf)
-    python scripts/cleanup.py clean --tex "applications/…/Ankur Desai Resume.tex"
+    python scripts/cleanup.py clean --tex "applications/…/Vedant Desai Resume.tex"
 
     # also drop .pipeline/ mid-loop
-    python scripts/cleanup.py clean --tex "…/Ankur Desai Resume.tex" --pipeline
+    python scripts/cleanup.py clean --tex "…/Vedant Desai Resume.tex" --pipeline
 
     # final ship: LaTeX junk + .pipeline/ + legacy standalone JSON
-    python scripts/cleanup.py clean --tex "…/Ankur Desai Resume.tex" --ship
+    python scripts/cleanup.py clean --tex "…/Vedant Desai Resume.tex" --ship
 
     # maintenance: every resume under applications/
     python scripts/cleanup.py clean-tree --root applications
@@ -124,7 +124,7 @@ def run_prune_root(args) -> int:
 def run_clean_tree(args) -> int:
     root = Path(args.root).resolve()
     total: list[str] = []
-    for tex in sorted(root.rglob("Ankur Desai Resume.tex")):
+    for tex in sorted(root.rglob("Vedant Desai Resume.tex")):
         total.extend(clean_latex_artifacts(tex))
         if args.ship:
             total.extend(clean_pipeline_artifacts(tex.parent, ship=True))
@@ -139,7 +139,7 @@ def main() -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     cl = sub.add_parser("clean", help="remove LaTeX build artifacts beside the resume")
-    cl.add_argument("--tex", required=True, help="path to Ankur Desai Resume.tex")
+    cl.add_argument("--tex", required=True, help="path to Vedant Desai Resume.tex")
     cl.add_argument("--pipeline", action="store_true",
                     help="also remove .pipeline/ transient dir")
     cl.add_argument("--ship", action="store_true",

@@ -1,8 +1,8 @@
 # Candidate Context
 
-Canonical state for Ankur Desai's resume system. Headers, bullet pools, swap sets, and skills inventory. The writer agent reads this file; the grader does not.
+Canonical state for Vedant Desai's resume system. Headers, bullet pools, swap sets, and skills inventory. The writer agent reads this file; the grader does not.
 
-**Profile (the 7-second impression):** A CS systems engineer who owns the layer between intelligence (LLMs, models, agents) and reliable real-world action: real-time delivery, async orchestration, the human-approval/safety boundary, and the deployment discipline to ship it. Not a frontend dev, not a notebook-ML person, not a controls/SLAM specialist.
+**Profile (the 7-second impression):** A full-stack data and AI engineer with real-time C++ systems depth who ships production pipelines, voice-AI cost/latency wins, agentic B2B products, and hard real-time audio DSP — not notebook ML or pure frontend.
 
 Each entry carries a fixed **Lane**: the one distinct signal it contributes that no other entry can. Per-track scaling is volume control on lanes the target role rewards, not reassignment.
 
@@ -10,22 +10,22 @@ Each entry carries a fixed **Lane**: the one distinct signal it contributes that
 
 ## Identity
 
-- **Name:** Ankur Desai
-- **Phone:** (248) 657-3805
-- **Email:** [ardusa05@gmail.com](mailto:ardusa05@gmail.com)
-- **Portfolio:** [https://ardusa.dev/](https://ardusa.dev/)
-- **LinkedIn:** [https://linkedin.com/in/ardusa/](https://linkedin.com/in/ardusa/)
-- **GitHub:** [https://github.com/ardusa](https://github.com/ardusa)
+- **Name:** Vedant Desai
+- **Phone:** (248) 704-4852
+- **Email:** [vedantde@umich.edu](mailto:vedantde@umich.edu)
+- **Portfolio:** — (omit from resume header)
+- **LinkedIn:** [https://linkedin.com/in/vedantde06](https://linkedin.com/in/vedantde06)
+- **GitHub:** [https://github.com/Verdent06](https://github.com/Verdent06)
 
 ---
 
 ## Education
 
 ```
-Michigan State University                          Expected May 2028
-B.S. in Computer Science                           East Lansing, MI
-GPA: 3.5 / 4.0
-Coursework: Data Structures & Algorithms, Object Oriented Programming, Computer Architecture, Linear Algebra, Discrete Math
+University of Michigan                              Expected May 2028
+B.S. in Computer Science and Economics              Ann Arbor, MI
+GPA: 3.66 / 4.0
+Coursework: Data Structures & Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
 ```
 
 ---
@@ -35,8 +35,7 @@ Coursework: Data Structures & Algorithms, Object Oriented Programming, Computer 
 Flat dictionary. Unconditional within each set. Single-token swaps.
 
 ```yaml
-relational-databases: [PostgreSQL, MySQL]
-ci-cd-platforms: [GitHub Actions, GitLab CI/CD]
+llm-apis: [Gemini, Claude, OpenAI]
 ```
 
 ---
@@ -48,43 +47,43 @@ Master pools. The writer picks 3-5 buckets per resume and trims each to ~80 char
 ### Bucket: Languages
 
 ```
-Python, Java, Go, JavaScript/TypeScript, C++, SQL, Cypher, Bash
+Python, TypeScript, C++, SQL, HTML/CSS
 ```
 
 ### Bucket: Frameworks
 
 ```
-FastAPI, Spring Boot, Node.js, React, Next.js, Angular, Vue, Electron
+React, Angular, FastAPI, Flask, RxJS, JUCE
 ```
 
 ### Bucket: Databases
 
 ```
-PostgreSQL, Neo4j, Redis, pgvector
+PostgreSQL, Redis, pgvector
 ```
 
 ### Bucket: AI / ML
 
 ```
-PyTorch, Hugging Face, pyannote-audio, Whisper, Deepgram, Gemini, MediaPipe, OpenCV, RAG
+LangGraph, LangSmith, PyTorch, Pandas, RAG, Agentic Workflows, LLM-as-a-Judge, Silero VAD, ONNX Runtime
 ```
 
 ### Bucket: Cloud & Infrastructure
 
 ```
-AWS (EC2, S3, RDS), Docker, Terraform, GitHub Actions, CI/CD, Railway, Vercel, Supabase
+AWS (EC2, S3), Docker, Celery, Git
 ```
 
 ### Bucket: Robotics
 
 ```
-ROS2, Gazebo, WPILib, PathPlanner, AprilTag, RViz
+SolidWorks
 ```
 
 ### Bucket: Tools
 
 ```
-Git, Linux, Postman, Figma, ROSBag
+Playwright, Selenium, Web Workers, Asynchronous Queues, Google Maps API, VST3, AudioUnit, SIMD
 ```
 
 ---
@@ -95,169 +94,112 @@ Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied ver
 
 ---
 
-### Experience: Bopardikar Lab
+### Experience: Michigan Data Consulting (MDC)
 
-**Lane:** Research ceiling and the LLM-to-action safety boundary. The only entry that says "works on novel, safety-critical AI-robotics problems," anchoring the autonomy track's intellectual ceiling. Now also carries the portfolio's only defensible C++ surface (the verifier node) and a real-robot, sim-to-hardware validation signal on a physical RoboMaster EP Core.
+**Lane:** Client-facing data engineering and production delivery. The only entry that shows sole-contractor ownership of a Flask REST API on AWS EC2 shipped to a real nonprofit stakeholder (MCFN) inside a fixed engagement window — anchors the full-stack + data-pipeline track's "shipped to real users" signal.
 
 **Header:**
 
 ```
-Secure and Efficient Autonomous Systems Lab       May 2026 -- Present
-Undergraduate Research Assistant                  East Lansing, MI
+Michigan Data Consulting (MDC)                    Jan 2026 -- May 2026
+Data Engineer — Michigan Campaign Finance Network   Ann Arbor, MI
 ```
 
 **Bullet pool:**
 
 ```
-1. Stress-tested the security of an LLM-controlled robot, targeting the cheap per-step gate that screens its motion plans as the exact seam an attacker slips a harmful plan through, one innocent fragment at a time.
-2. Ran the node graph byte-identical in Gazebo and on a physical RoboMaster EP Core, driving the real robot over a custom C++ WiFi driver at a 30 Hz control loop with sub-20ms command latency.
-3. Built the verifier as a C++ ROS2 node running per-step geometric and semantic checks on each motion plan, integrating nav2's MPPI controller rather than hand-rolling one to keep the C++ work on security, not motion control.
-4. Reproduced a published adversarial-robotics attack loop (attacker, target, judge, syntax-checker) as the baseline, then drove the decomposition attack to an 80% success rate against the per-step triage gate.
-5. Reframed the contribution from building a defense to measuring one, arguing that a triage gate's cost savings and its attackability reduce to a single property: per-step versus whole-plan checking.
-6. Built the attacked defense as a steelman composed from multiple published safety architectures rather than a naive single classifier, so the decomposition attack lands on the strongest reasonable system, not a strawman.
+1. Replaced manual Michigan campaign-finance research — portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee — with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+2. Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+3. Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+4. Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract — from ingestion pipelines through REST endpoints on EC2 — with no backend team to share infrastructure, API design, or deployment ownership.
 ```
 
 ---
 
-### Experience: Claude Builder Club @ MSU
+### Experience: CaseStudyPrep.AI
 
-**Lane:** Founder leadership plus operational infrastructure. Carries two signals no project does: founding-and-growth leadership (0 to 150+) and multi-service provisioning/CI-CD ops at community scale. Compresses hard on the autonomy track. Also owns a custom-graphics frontend lane: a hand-built react-three-fiber 3D lineage graph plus React Query client-data architecture.
+**Lane:** Voice-AI systems and client-side performance engineering. Carries the only on-device inference signal (Silero VAD via ONNX), Web Workers / RxJS decoupling, and fault-tolerant S3 upload pipeline — the portfolio's real-time frontend + audio stack depth.
 
 **Header:**
 
 ```
-Claude Builder Club @ MSU                         Oct 2025 -- Present
-Co-Founder & Vice President                       East Lansing, MI
+CaseStudyPrep.AI                                  Dec 2025 -- May 2026
+Software Engineer Co-op (Voice AI)                  Remote
 ```
 
 **Bullet pool:**
 
 ```
-1. Co-founded and grew an MSU engineering community from zero to 150+ members, replacing a sprawl of spreadsheets, Slack threads, and manual invites with a single club-operations platform I designed and built.
-2. Automated member onboarding so an accepted applicant is provisioned into the right GitHub teams, Slack channels, Discord roles, and Google Drive access in a single flow, cutting onboarding from 15 minutes to seconds.
-3. Built event check-in as a single atomic database RPC that validates a QR token, records attendance, and awards points server-side, making door-time check-ins concurrency-safe and idempotent, sustaining 150+ check-ins per event.
-4. Built the club's mentorship lineage as an interactive 3D radial graph in react-three-fiber, hand-writing a proportional-arc layout that prevents edge crossings and a custom camera that autofits each family to the viewport.
-5. Pushed authorization into the database with row-level security so every table enforces access in Postgres regardless of what the client sends, letting new features ship without re-implementing per-endpoint auth, and scoped realtime subscriptions to that same filter so a member sees their own role or acceptance change live.
-6. Built a hands-off attendance-enforcement pipeline that runs a daily in-database cron job, resolves absentees, and posts targeted Slack reminders, automating a three-strikes rule that previously required manual tracking.
-7. Shipped the platform continuously from main on a GitHub Actions pipeline that applies database migrations and deploys edge functions on every push, taking the team from manual changes to reviewed continuous deploys.
-8. Tuned React Query cache tiers by data volatility across the dashboards, caching stable roles longer than fast-changing application queues to cut redundant refetches while keeping live data fresh.
+1. Eliminated the silent-audio problem in a voice-AI product — most frames sent to the Whisper backend were dead air — by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40%.
+2. Eliminated a 27% audio upload failure rate by building fault-tolerant RxJS logic that detects expired S3 presigned URLs and regenerates them mid-flight, and handles MIME-type negotiation for raw WAV files that Angular's HTTP client rejected silently.
+3. Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 ```
 
 ---
 
-### Experience: MindMosaic
+### Experience: Lyndbrook Capital
 
-**Lane:** Titled product delivery anchored on the Neo4j graph backend, the dual-database architecture, and the AWS deployment script plus Terraform/IaC. Carries shipped-to-real-users institutional weight. Not OAuth, not Postgres-as-the-star.
+**Lane:** Deal-sourcing and GTM data engineering for a boutique search fund. The only entry with pre-acquisition target generation (EPA ECHO, MassGIS, Google Maps cross-ref) and proprietary scoring algorithms — quant/GTM lane without fintech-exchange framing.
 
 **Header:**
 
 ```
-MindMosaic                                    Aug 2025 -- May 2026
-Software Engineering Intern                   East Lansing, MI
+Lyndbrook Capital                                   Feb 2026 -- Apr 2026
+Data Engineering Consultant                         Remote
 ```
 
 **Bullet pool:**
 
 ```
-1. Built and shipped an interactive knowledge-graph platform that keeps dense, interconnected content navigable as it grows, delivering a production MVP to real users on a polyglot Java Spring Boot, Neo4j, and PostgreSQL stack.
-2. Migrated hot read paths off recursive SQL self-joins onto a Neo4j graph layer so relationships stay first-class, cutting query latency 48% (850ms to 440ms) and making multi-hop traversals 3x faster than the equivalent SQL.
-3. Designed a dual-database layer that keeps transactional records in PostgreSQL while serving relationship-heavy reads from Neo4j, routing each query class to the store that answers it fastest instead of forcing one engine to do both jobs.
-4. Owned the Spring Boot backend serving the platform's core CRUD and graph-traversal APIs, structuring endpoints around the dual-store model so the client never has to know which database backs a given read.
-5. Authored an AWS deployment script and managed the environment as code with Terraform, replacing a manual 30-minute multi-service bring-up with a single-command, version-controlled provision.
+1. Contracted pre-LOI to build acquisition intelligence for a boutique search fund targeting water utility operators; aggregated EPA ECHO and MassGIS regulatory data into a unified PWSID entity database and delivered 800+ validated Day-1 acquisition targets within the engagement window.
+2. Automated off-market deal sourcing by aggregating 2,500+ legal entities from EPA compliance databases and cross-referencing Google Maps API data to surface unlisted acquisition targets, eliminating 15 hours of manual prospecting per week for the fund's Principal.
+3. Built a Review Velocity scoring algorithm that proxied fleet expansion and operational scale from public compliance data, filtering 800 acquisition targets down to a 280-lead qualified shortlist — a 35% precision rate against the fund's revenue criteria.
 ```
 
 ---
 
-### Experience: Robostangs
+### Project: Autonomous B2B Deal-Sourcing Agent
 
-**Lane:** Competition-robotics pedigree and the hardware-software boundary, plus software-captain leadership and a world-stage result. Holds the autonomy Experience slot until Bopardikar produces narratable output, then compresses to one line. Drops on the full-stack track.
+**Lane:** Agentic product depth and commercial validation. The only entry that owns LangGraph + LangSmith eval CI/CD, Redis/Celery workers, asyncpg DAL with embeddings, a closed paid pilot, and 4 live PE acquisition theses delivered to real search fund and mid-market PE clients — flagship agentic-systems signal.
 
 **Header:**
 
 ```
-Robostangs (FRC Team 548)                   Jun 2023 -- May 2024
-Software Captain                            Northville, MI
+Autonomous B2B Deal-Sourcing Agent  |  {tech derived from selected bullets}    github.com/Verdent06/Lead-Gen-Agentic-Pipeline
+Dockerized LangGraph pipeline for private equity acquisition sourcing — deployed across 4 live theses for search funds and mid-market PE clients
 ```
 
 **Bullet pool:**
 
 ```
-1. Led the software and electrical teams (5 and 6 engineers) for a competition robot that reached the FIRST World Championship and placed top 16 in its division in Houston, the program's strongest world-stage finish since 2014.
-2. Delivered the team's first multi-piece autonomous routine, chaining vision-corrected driving paths with timed intake-and-shoot actions so the robot scored multiple game pieces with no driver input during the autonomous period.
-3. Anchored auto-aim on real-time, vision-corrected localization that fused two AprilTag cameras with swerve odometry on a dedicated 250Hz Java thread with latency compensation, holding pose accurate during aggressive motion.
-4. Hardened pose estimation against bad vision data by gating camera measurements on tag count, target area, and angular velocity before fusing them, rejecting estimates that would otherwise poison the localization filter.
-5. Engineered graceful sensor-failure handling so the most match-critical mechanism falls back to an internal encoder and stays operable through a sensor loss instead of bricking mid-match, surfaced as an alert rather than a silent failure.
-6. Built shoot-from-anywhere aiming that maps target distance to arm angle through a regression model, keeping candidate models swappable behind one interface so the team could A/B them against measured shot data.
+1. Packaged a Dockerized LangGraph execution pipeline as a recurring B2B lead-gen product, cold-approached and closed a paid pilot with a consulting firm, and deployed Redis/Celery workers to autonomously aggregate and deliver qualified leads on a scheduled basis.
+2. Architected a custom asyncpg Data Access Layer storing OpenAI embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+3. Engineered a LangSmith eval pipeline with 20 adversarial business archetypes — manufacturers, SaaS tools, PE holding companies, and geographic mismatches the LLM otherwise passed — then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50% to 90%.
+4. Operationalized the pipeline for 4 live private equity acquisition theses — healthcare operators in California, HVAC distributors in Michigan and Ohio, landscaping companies in New Jersey, and environmental testing labs across the central US — each retargeted by editing thesis_config.yaml with zero code changes, and delivered qualified lead sets to search fund and middle-market PE clients after cold-email pitches.
+5. Engineered Node 3 as a pure-Python triangulated consensus gate — no LLM calls — that computes a 0–100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
+6. Built Node 5 as a fully deterministic succession-risk scoring engine — no LLM calls — that infers PE acquisition readiness from heuristic signals (founder operating status, PE backing, website stagnation, years in operation) into a configurable weighted 0–100 composite, then enriches each passing company with Hunter.io contact data before CSV export.
 ```
 
 ---
 
-### Project: fliks
+### Project: Granular Synthesizer Plugin
 
-**Lane:** Go concurrency and the self-hosted media pipeline, plus the ML validation layer. The only entry that owns Go deeply, and the only one carrying a crowd-to-model rating system.
+**Lane:** Hard real-time C++ systems and audio DSP. The only entry with JUCE, VST3/AU release binaries, lock-free SPSC UI-to-audio threading, custom slab memory pools, and granular synthesis at sample-rate precision — anchors low-latency/embedded-style systems depth the Python and web stack cannot carry.
 
 **Header:**
 
 ```
-fliks  |  {tech derived from selected bullets}    github.com/fliks-gg
-Multi-game platform that crowd-validates gameplay skill and mints shareable certification cards
+Granular Synthesizer Plugin  |  {tech derived from selected bullets}    {}
+Real-time audio DSP plugin built from scratch in C++/JUCE — sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries
 ```
 
 **Bullet pool:**
 
 ```
-1. Chose a single Go monolith over a microservice split, keeping auth, rate-limiting, and rating aggregation in-process because premature decomposition is the harder call to defend at pre-scale, one deploy unit against one datastore.
-2. Built a self-hosted video transcoding pipeline with a concurrent Go worker that pulls upload jobs, transcodes, and writes processed video back to object storage, owning the media path end to end instead of renting a managed service.
-3. Coordinated transcode jobs through a Postgres-backed queue using SELECT FOR UPDATE SKIP LOCKED instead of bolting on Redis or SQS, keeping the whole system on one datastore and one self-provisioned EC2 box.
-4. Architected an ML rating service that grades each clip independently and shows its verdict beside the crowd's, with those crowdsourced ratings serving as the labeled data the classifier trains on.
-5. Made ratings immutable and gated commenting behind a submitted rating, so the certification signal cannot be retroactively gamed and social participation feeds skill data instead of diluting it.
-```
-
----
-
-### Project: Dadei
-
-**Lane:** Flagship systems depth. The deepest engineering signal in the portfolio: real-time cross-process delivery, async orchestration, hybrid retrieval, agentic tool-calling, and the single human-approval action boundary that is the profile thesis made concrete. The React client (real-time streaming UI and the cancel-to-abort countdown) gives the entry its full-stack and frontend signal.
-
-**Header:**
-
-```
-Dadei  |  {tech derived from selected bullets}    dadei.app
-Ambient voice assistant that turns overheard conversation into human-approved calendar, email, and task actions
-```
-
-**Bullet pool:**
-
-```
-1. Routed all model-proposed side effects through one approval chokepoint with a cancelable countdown, giving every irreversible action one auditable seam between the LLM and the outside world.
-2. Built a React client that streams microphone audio up over a WebSocket with client-side Web Audio processing, receiving incremental live captions back in under 300ms as the backend transcribes each utterance.
-3. Decoupled background workers from the live FastAPI service behind a Redis Streams event bus with consumer groups, dead-letter routing after 5 retries, and stale-claim recovery, giving at-least-once delivery that pub/sub dropped.
-4. Engineered a no-merge-first speaker-ID model using an EMA voice centroid plus a bounded prototype bank with floor-and-margin gating, abstaining into a new identity on ambiguity, attributing 96% of utterances to the correct speaker.
-5. Trained a custom wake-word model to 90% recall at under one false accept per hour, gating the command pipeline so the assistant only opens the mic on demand instead of continuously streaming audio.
-6. Solved the same-room, multi-mic problem with two arbitration layers, a live utterance-owner election and a 400ms windowed quality election on SNR, clarity, and cadence, cutting duplicate transcription by ~50%.
-7. Split speech recognition into a Deepgram streaming path for live command latency and a batched Whisper path for ambient bulk transcription, keeping interactive commands responsive while bulk transcription stays cheap.
-8. Replaced single-signal context lookup with hybrid retrieval over pgvector that fuses vector similarity, lexical overlap, recency decay, and participant overlap, grounding each proposal under a fixed token budget.
-9. Root-caused the worker queue's silent exit-zero death on a Redis drop, then added a health check that detects it and a three-layer restart that recovers it, running the Python backend as two services from one Docker image.
-```
-
----
-
-### Project: WizViz
-
-**Lane:** Real-time computer vision and on-device inference, built under hackathon constraint. The only perception-adjacent, real-time-CV entry; carries a hackathon track win for credibility.
-
-**Header:**
-
-```
-WizViz  |  {tech derived from selected bullets}   devpost.com/software/wizviz
-Webcam fighting game driven by real-time body-gesture recognition, winner of the Interactive Media track at SpartaHack X
-```
-
-**Bullet pool:**
-
-```
-1. Stabilized noisy per-frame pose output by accumulating every frame's gesture classification across the turn window and taking the dominant sustained gesture, instead of reading a single jittery frame at the turn boundary.
-2. Classified five distinct combat gestures from body landmarks with a scale-invariant geometric model normalized by torso length, making detection work across players and camera distances without any labeled training data.
-3. Ran pose inference asynchronously off the render loop with a monotonic timestamp guard that drops out-of-order results, sustaining 60 FPS with sub-20ms input lag instead of blocking on per-frame detection.
-4. Supported both local two-player, splitting players by landmark position across the frame with zero extra cameras, and single-player against a finite-state opponent that rests, defends, heals, or finishes by game state.
+1. Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup — a fixed free-list that acquires and releases grain slots without touching the heap — so processBlock() never calls new or delete after prepareToPlay() completes.
+2. Wired UI-to-audio parameter delivery through a hand-rolled SPSC FIFO (64-slot fixed array, std::atomic<int> head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex — and routed WAV file handoff through a separate atomic shared_ptr swap, letting the UI thread publish a new sample without ever blocking processBlock().
+3. Built the granular engine around a fractional-accumulator scheduler that fires grains at density × (1 - overlap × 0.5) effective rate — each grain reads a random WAV offset at 2^(semitones/12) playback speed, windowed by a pre-computed 8,192-entry Gaussian LUT to eliminate click artifacts at grain edges, with all grain memory drawn from a per-voice pre-allocated pool.
+4. Implemented 16-voice polyphony with per-voice ADSR envelopes, pre-computing attack/decay/release rates as samples-per-step in prepareToPlay() to eliminate division inside the audio hot loop — and a voice-stealing algorithm that evicts the oldest active note by age counter when all 16 slots are busy, with each voice falling back to a sine oscillator until a WAV sample is loaded.
+5. Implemented a global post-mix delay on a power-of-two ring buffer (2^17 = 131,072 samples, O(1) bitmask addressing) with per-sample delay time smoothing — the read head steps ±1 sample per block toward the target delay value — eliminating the zipper noise audible when a user adjusts the delay knob during live playback.
+6. Configured CMake to compile VST3 and AU plugin bundles from a single JUCE codebase — targeting a macOS universal binary (arm64 + x86_64) so the plugin runs natively on Apple Silicon and Intel — and audited every processBlock() code path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before cutting release builds.
 ```

@@ -36,8 +36,8 @@ resume/
             ├── company.md
             └── {role}/
                 ├── persona.md
-                ├── Ankur Desai Resume.tex
-                ├── Ankur Desai Resume.pdf
+                ├── Vedant Desai Resume.tex
+                ├── Vedant Desai Resume.pdf
                 └── grade.md          ← canonical screen review + likelihood
 ```
 
@@ -121,9 +121,9 @@ Run from repo root:
 
 ```bash
 .venv/bin/python scripts/validate.py gates \
-  --tex "applications/2027/foo/bar/Ankur Desai Resume.tex" \
+  --tex "applications/2027/foo/bar/Vedant Desai Resume.tex" \
   --inputs applications/2027/foo/bar/.pipeline/gate_inputs.json \
-  --pdf "applications/2027/foo/bar/Ankur Desai Resume.pdf" \
+  --pdf "applications/2027/foo/bar/Vedant Desai Resume.pdf" \
   --phase loop
   # --out optional: defaults to gate_report.json beside --inputs under .pipeline/
 
@@ -147,7 +147,7 @@ Run from repo root:
 | `prune-root` | Remove stray `gate_*.json` / `demerits.json` from repo root |
 
 ```bash
-.venv/bin/python scripts/cleanup.py clean --tex "applications/…/Ankur Desai Resume.tex"
+.venv/bin/python scripts/cleanup.py clean --tex "applications/…/Vedant Desai Resume.tex"
 .venv/bin/python scripts/cleanup.py clean-tree --root applications
 .venv/bin/python scripts/cleanup.py prune-root
 ```
