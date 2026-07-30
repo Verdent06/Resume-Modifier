@@ -158,27 +158,48 @@ Data Engineering Consultant                         Remote
 
 ---
 
-### Project: Autonomous B2B Deal-Sourcing Agent
+### Project: Vylet
 
-**Lane:** Agentic product depth and commercial validation. The only entry that owns LangGraph + LangSmith eval CI/CD, Redis/Celery workers, asyncpg DAL with embeddings, a closed paid pilot, and 4 live PE acquisition theses delivered to real search fund and mid-market PE clients — flagship agentic-systems signal.
+**Lane:** Live commercial product with paying clients and closed-loop pipeline
+metrics — the only entry with a shipped product, external revenue, and a
+diagnosed/fixed defect with a before/after number, not just architecture.
 
 **Header:**
 
-```
-Autonomous B2B Deal-Sourcing Agent  |  {tech derived from selected bullets}    github.com/Verdent06/Lead-Gen-Agentic-Pipeline
-Dockerized LangGraph pipeline for private equity acquisition sourcing — deployed across 4 live theses for search funds and mid-market PE clients
-```
+Vylet | {tech derived from selected bullets} vyletdata.com
+Automated lead-sourcing platform for PE/search-fund acquisition prospecting
+— live product generating $1,500 MRR across three paying clients
 
 **Bullet pool:**
 
-```
-1. Packaged a Dockerized LangGraph execution pipeline as a recurring B2B lead-gen product, cold-approached and closed a paid pilot with a consulting firm, and deployed Redis/Celery workers to autonomously aggregate and deliver qualified leads on a scheduled basis.
-2. Architected a custom asyncpg Data Access Layer storing OpenAI embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
-3. Engineered a LangSmith eval pipeline with 20 adversarial business archetypes — manufacturers, SaaS tools, PE holding companies, and geographic mismatches the LLM otherwise passed — then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50% to 90%.
-4. Operationalized the pipeline for 4 live private equity acquisition theses — healthcare operators in California, HVAC distributors in Michigan and Ohio, landscaping companies in New Jersey, and environmental testing labs across the central US — each retargeted by editing thesis_config.yaml with zero code changes, and delivered qualified lead sets to search fund and middle-market PE clients after cold-email pitches.
-5. Engineered Node 3 as a pure-Python triangulated consensus gate — no LLM calls — that computes a 0–100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
-6. Built Node 5 as a fully deterministic succession-risk scoring engine — no LLM calls — that infers PE acquisition readiness from heuristic signals (founder operating status, PE backing, website stagnation, years in operation) into a configurable weighted 0–100 composite, then enriches each passing company with Hunter.io contact data before CSV export.
-```
+1. Launched Vylet (vyletdata.com), automating a diligence process that takes
+   ~30 minutes of manual research per business into a pipeline generating
+   30 scored leads in 30 minutes — a 30x speedup — with Redis/Celery workers
+   delivering leads to clients on a recurring schedule.
+
+2. Diagnosed a name-collision defect in ownership-verification logic that
+   was incorrectly rejecting valid acquisition targets sharing a name with
+   an unrelated business elsewhere; the fix lifted the pipeline's lead-
+   qualification rate from 79% to 89% with zero change to sourcing volume.
+
+3. Grew Vylet from 1 to 3 paying subscription clients within six weeks of
+   launch — spanning workforce-software, landscaping, and geography-first
+   sourcing engagements — generating $1,500 in monthly recurring revenue.
+
+4. Shipped a geography-first discovery mode decoupled from a pre-set
+   vertical, surfacing ~30 leads/month in niche verticals — custard shops,
+   bowling alleys — structurally invisible to vertical-first discovery.
+
+5. Engineered a LangSmith eval pipeline spanning 20 adversarial business
+   test cases across 13 archetype labels — manufacturers, SaaS tools, PE
+   holding companies, geographic mismatches — then layered deterministic
+   Pydantic consensus gates to lift extraction faithfulness from 50% to 90%.
+
+6. Engineered Node 3 as a pure-Python triangulated consensus gate — no LLM
+   calls — that computes a 0–100 lead score by fuzzy-matching the pipeline
+   query, state business registry, and live website crawl in a three-way
+   weakest-link check, then hard-fails leads on legal status, industry,
+   geography, or independence before the score threshold applies.
 
 ---
 
