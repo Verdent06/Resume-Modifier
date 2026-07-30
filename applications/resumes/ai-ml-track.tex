@@ -1,0 +1,112 @@
+%% ============================================================================
+%%  applications/resumes/ai-ml-track.tex  —  AI / ML TRACK BASE RESUME
+%% ----------------------------------------------------------------------------
+%%  One of 3-4 targeted track resumes (not per-JD tailoring). Doctrine:
+%%    reference/resume.md §14  —  lead with end-to-end ML/AI workflow, math in
+%%    coursework, keywords through real use, third-party validation (GitHub,
+%%    Kaggle, research). MLOps is a bonus for interns; don't fake prod scale.
+%%    reference/recruiting.md §13  —  Applied ML is the largest bucket; DS&A
+%%    still gates the OA; loops add ML design / error-analysis rounds.
+%%
+%%  AI/ML intern signal stack (2026 market, beyond classic model.fit()):
+%%    RAG E2E, agentic workflows (LangGraph), vector DB + embeddings literacy,
+%%    notebook → production (FastAPI/Docker), eval harnesses, GitHub proof.
+%%
+%%  SECTION ORDER (resume.md I.3): Education → Experience → Projects → Skills.
+%%  WITHIN sections: order by impact density for THIS track, not chronology.
+%%
+%%  rSectionEntry: {name}{dates}{tagline/role/link}{technologies}{location}
+%%    - Experiences: param 4 = {}. Projects: param 4 = tech stack line.
+%%    - Lead-Gen promoted to Experience (I.5): no dates in pool → GitHub in
+%%      param 2 (dates slot, same as Project render); descriptor in param 3.
+%%  rSet: {bucket label}{comma-separated items} — ~80 chars after label.
+%%
+%%  Class path: one level up to applications/template.cls
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed) --------------------------------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Discrete Mathematics, Calculus III
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE ---------------------------------------------------------
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Autonomous B2B Deal-Sourcing Agent}
+			{\href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{github.com/Verdent06/Lead-Gen-Agentic-Pipeline}}
+			{Dockerized LangGraph pipeline for private equity acquisition sourcing --- deployed across 4 live theses for search funds and mid-market PE clients}
+			{}
+			{}
+
+			\item Engineered a LangSmith eval pipeline with 20 adversarial business archetypes --- manufacturers, SaaS tools, PE holding companies, and geographic mismatches the LLM otherwise passed --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
+			\item Packaged a Dockerized LangGraph execution pipeline as a recurring B2B lead-gen product, cold-approached and closed a paid pilot with a consulting firm, and deployed Redis/Celery workers to autonomously aggregate and deliver qualified leads on a scheduled basis.
+			\item Architected a custom asyncpg Data Access Layer storing OpenAI embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to the Whisper backend were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Eliminated a 27\% audio upload failure rate by building fault-tolerant RxJS logic that detects expired S3 presigned URLs and regenerates them mid-flight, and handles MIME-type negotiation for raw WAV files that Angular's HTTP client rejected silently.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
+			{}
+			{Ann Arbor, MI}
+
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS -----------------------------------------------------------
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE, VST3, AU, CMake}
+			{}
+
+			\item Configured CMake to compile VST3 and AU plugin bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) so the plugin runs natively on Apple Silicon and Intel --- and audited every processBlock() code path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before cutting release builds.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS -------------------------------------------------
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{AI / ML}{LangGraph, LangSmith, Silero VAD, ONNX Runtime, Pandas}
+		\end{rSet}
+		\begin{rSet}{Languages}{Python, C++}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Flask, Angular, RxJS, JUCE}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Redis, Celery, Git}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

@@ -1,0 +1,30 @@
+{
+  "jd_languages": ["Python", "JavaScript"],
+  "jd_required_keywords": [
+    "Python",
+    "JavaScript",
+    "Git",
+    "AWS",
+    "GCP",
+    "backend services",
+    "full stack",
+    "cloud workflows",
+    "APIs",
+    "Docker",
+    "correctness",
+    "auditability",
+    "performance",
+    "AI workflows",
+    "governance"
+  ],
+  "candidate_languages": ["Python", "TypeScript", "C++", "SQL", "HTML/CSS"],
+  "exempt_entries": [],
+  "protected_entries": ["Autonomous B2B Deal-Sourcing Agent"],
+  "lead_signal_window": 2,
+  "min_entries": 3,
+  "iter1_counts": {
+    "Autonomous B2B Deal-Sourcing Agent": 4,
+    "CaseStudyPrep.AI": 3,
+    "Michigan Data Consulting (MDC)": 2
+  }
+}

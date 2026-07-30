@@ -189,7 +189,7 @@ Dockerized LangGraph pipeline for private equity acquisition sourcing — deploy
 **Header:**
 
 ```
-Granular Synthesizer Plugin  |  {tech derived from selected bullets}    {}
+Granular Synthesizer Plugin  |  {tech derived from selected bullets}    github.com/Verdent06/granular-synth
 Real-time audio DSP plugin built from scratch in C++/JUCE — sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries
 ```
 

@@ -1,0 +1,104 @@
+{
+  "hard_gates_pass": true,
+  "metric_density": {
+    "ratio": 0.667,
+    "metric_free_entries": [
+      "Autonomous B2B Deal-Sourcing Agent"
+    ],
+    "exempt_entries_applied": []
+  },
+  "gates": [
+    {
+      "name": "required_languages",
+      "hard": true,
+      "passed": true,
+      "detail": "All JD languages the candidate has are present: ['python']."
+    },
+    {
+      "name": "no_orphans",
+      "hard": true,
+      "passed": true,
+      "detail": "No orphaned framework/library skills."
+    },
+    {
+      "name": "no_bullet_deletion",
+      "hard": true,
+      "passed": true,
+      "detail": "No entry shrank below baseline."
+    },
+    {
+      "name": "min_entries",
+      "hard": true,
+      "passed": true,
+      "detail": "3 entries (floor 3)."
+    },
+    {
+      "name": "protected_depth",
+      "hard": true,
+      "passed": true,
+      "detail": "Protected entries retain depth."
+    },
+    {
+      "name": "lead_signal",
+      "hard": true,
+      "passed": true,
+      "detail": "Differentiator entry in top 2: ['Autonomous B2B Deal-Sourcing Agent']."
+    },
+    {
+      "name": "fit_protection",
+      "hard": true,
+      "passed": true,
+      "detail": "Skipped (loop phase)."
+    },
+    {
+      "name": "page_fill",
+      "hard": true,
+      "passed": true,
+      "detail": "One page, 94% filled."
+    }
+  ],
+  "entries_parsed": [
+    {
+      "name": "Autonomous B2B Deal-Sourcing Agent",
+      "section": "projects",
+      "bullets": 4
+    },
+    {
+      "name": "CaseStudyPrep.AI",
+      "section": "experience",
+      "bullets": 3
+    },
+    {
+      "name": "Michigan Data Consulting (MDC)",
+      "section": "experience",
+      "bullets": 2
+    }
+  ],
+  "skills_parsed": {
+    "languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "frameworks \\& cloud": [
+      "Flask",
+      "Angular",
+      "RxJS",
+      "LangGraph",
+      "LangSmith",
+      "Pydantic",
+      "AWS",
+      "Docker",
+      "Celery",
+      "Redis",
+      "Git"
+    ],
+    "ai / ml": [
+      "Silero VAD",
+      "ONNX Runtime",
+      "Pandas"
+    ],
+    "tools": [
+      "Web Workers"
+    ]
+  }
+}
