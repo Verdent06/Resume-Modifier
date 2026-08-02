@@ -92,6 +92,8 @@ Playwright, Selenium, Web Workers, Asynchronous Queues, Google Maps API, VST3, A
 
 Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied verbatim into the resume; swap-set substitutions are the only modification permitted. Experience entries carry dates; project entries carry a live link instead of a date so they can be ordered by relevance, not recency. Each project also carries a one-line descriptor that renders below the name (the rSectionEntry tagline slot, param #3), giving the at-a-glance "what it is." Because the descriptor carries identity, a project's lead bullet leads with its strongest engineering decision, never a re-description of the project. Experiences have no descriptor slot (the tagline holds the role), so an experience's first bullet still establishes what was built.
 
+**Bullet length ceiling (going forward, this pool only — not retroactive).** `resume.md` §4 targets "two tight lines" qualitatively; quantified against `template.cls`'s actual rendering (10pt CMU Serif, 0.4in margins), that template wraps bullet body text at **~115–120 characters/line**, measured directly off compiled output. Two tight lines ≈ **230–240 characters total**. When writing or editing a bullet for this pool going forward, target that ceiling — three-line bullets should be the exception (a bullet earning its extra depth), not the default. Existing bullets were not audited/trimmed against this number retroactively; several run 250–380 characters (3 lines). Re-tighten opportunistically when an entry is touched for other reasons, not as a standalone pass.
+
 ---
 
 ### Experience: Michigan Data Consulting (MDC)
@@ -130,8 +132,8 @@ Software Engineer Co-op (Voice AI)                  Remote
 **Bullet pool:**
 
 ```
-1. Eliminated the silent-audio problem in a voice-AI product — most frames sent to the Whisper backend were dead air — by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40%.
-2. Eliminated a 27% audio upload failure rate by building fault-tolerant RxJS logic that detects expired S3 presigned URLs and regenerates them mid-flight, and handles MIME-type negotiation for raw WAV files that Angular's HTTP client rejected silently.
+1. Eliminated the silent-audio problem in a voice-AI product — most frames sent to Whisper were dead air — by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40%.
+2. Eliminated a 27% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
 3. Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 ```
 
@@ -172,10 +174,10 @@ Automated lead-sourcing platform for PE/search-fund acquisition prospecting
 
 **Bullet pool:**
 
-1. Launched Vylet (vyletdata.com), automating a diligence process that takes
-   ~30 minutes of manual research per business into a pipeline generating
-   30 scored leads in 30 minutes — a 30x speedup — with Redis/Celery workers
-   delivering leads to clients on a recurring schedule.
+1. Launched Vylet, automating a ~30-minute manual research process per
+   business into a Dockerized LangGraph pipeline generating 30 scored
+   leads in 30 minutes — a 30x speedup — with Redis/Celery workers
+   delivering leads on a recurring schedule.
 
 2. Diagnosed a name-collision defect in ownership-verification logic that
    was incorrectly rejecting valid acquisition targets sharing a name with
@@ -201,6 +203,12 @@ Automated lead-sourcing platform for PE/search-fund acquisition prospecting
    weakest-link check, then hard-fails leads on legal status, industry,
    geography, or independence before the score threshold applies.
 
+7. Architected a custom asyncpg Data Access Layer storing Gemini embeddings
+   alongside source records; engineered injection-safe SQL timestamp
+   validation that detects stale entries and triggers automatic
+   re-scrapes, keeping the lead database fresh without manual
+   intervention.
+
 ---
 
 ### Project: Granular Synthesizer Plugin
@@ -224,3 +232,40 @@ Real-time audio DSP plugin built from scratch in C++/JUCE — sine oscillator th
 5. Implemented a global post-mix delay on a power-of-two ring buffer (2^17 = 131,072 samples, O(1) bitmask addressing) with per-sample delay time smoothing — the read head steps ±1 sample per block toward the target delay value — eliminating the zipper noise audible when a user adjusts the delay knob during live playback.
 6. Configured CMake to compile VST3 and AU plugin bundles from a single JUCE codebase — targeting a macOS universal binary (arm64 + x86_64) so the plugin runs natively on Apple Silicon and Intel — and audited every processBlock() code path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before cutting release builds.
 ```
+
+### Project: MatchStream — Real-Time Robot Telemetry & Analytics Platform
+
+**Lane:** Only entry demonstrating Java/Spring Boot backend engineering and a
+relational database (PostgreSQL) — closes the Java/Spring/SQL gap nothing
+else in the pool carries. High school (senior season), FRC Team 1234, core
+member of a multi-person software subteam — not solo work; framing must
+reflect team context, not sole ownership.
+
+**Header:**
+
+MatchStream --- Real-Time Robot Telemetry & Analytics Platform | FRC Team 1234
+Java, Spring Boot, WebSocket, PostgreSQL, React, WPILib
+
+**Bullet pool:**
+
+1. As a core member of FRC Team 1234's software subteam, architected a 3-tier
+   telemetry pipeline (WPILib robot --- Java/Spring Boot ingestion service ---
+   React dashboard) streaming live subsystem state at 50Hz with end-to-end
+   latency under 45ms, replacing manual post-match debugging with real-time
+   observability.
+
+2. Built a NetworkTables4-based ingestion service sustaining 2,500 messages/sec
+   under load testing with p99 processing latency under 8ms, maintaining
+   99.6% uptime with zero data loss across 2 radio dropout events in a
+   3-hour practice session.
+
+3. Ran a closed-loop tuning workflow on dashboard-captured telemetry, reducing
+   autonomous path position error 64% (14cm to 5cm) and mechanism settling
+   time 38% (1.7s to 1.05s) through iterative PID/feedforward tuning.
+
+4. Wrote 52 JUnit tests across robot (WPILib simulation) and backend, reaching
+   82% branch coverage, integrated into a GitHub Actions CI pipeline.
+
+5. Designed threshold-based anomaly detection that flagged 5 hardware issues
+   across 10 practice sessions, including one motor pre-failure caught before
+   it caused a match-critical stall.

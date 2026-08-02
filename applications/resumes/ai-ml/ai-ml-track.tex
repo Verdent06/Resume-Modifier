@@ -43,22 +43,23 @@
 			{Ann Arbor, MI}
 
 			\item \textbf{GPA:} 3.66 / 4.0
-			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Discrete Mathematics, Calculus III
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Discrete Math, Calc III
 		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- EXPERIENCE ---------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{Autonomous B2B Deal-Sourcing Agent}
-			{\href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{github.com/Verdent06/Lead-Gen-Agentic-Pipeline}}
-			{Dockerized LangGraph pipeline for private equity acquisition sourcing --- deployed across 4 live theses for search funds and mid-market PE clients}
+			{Vylet}
+			{\href{https://vyletdata.com}{vyletdata.com} $\vert$ \href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{GitHub}}
+			{Automated lead-sourcing platform for PE/search-fund acquisition prospecting --- live product generating \$1,500 MRR across three paying clients}
 			{}
 			{}
 
-			\item Engineered a LangSmith eval pipeline with 20 adversarial business archetypes --- manufacturers, SaaS tools, PE holding companies, and geographic mismatches the LLM otherwise passed --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
-			\item Packaged a Dockerized LangGraph execution pipeline as a recurring B2B lead-gen product, cold-approached and closed a paid pilot with a consulting firm, and deployed Redis/Celery workers to autonomously aggregate and deliver qualified leads on a scheduled basis.
-			\item Architected a custom asyncpg Data Access Layer storing OpenAI embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+			\item Launched Vylet, automating a ~30-minute manual research process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers delivering leads on a recurring schedule.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
+			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -68,8 +69,9 @@
 			{}
 			{Remote}
 
-			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to the Whisper backend were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
-			\item Eliminated a 27\% audio upload failure rate by building fault-tolerant RxJS logic that detects expired S3 presigned URLs and regenerates them mid-flight, and handles MIME-type negotiation for raw WAV files that Angular's HTTP client rejected silently.
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -93,7 +95,7 @@
 			{C++, JUCE, VST3, AU, CMake}
 			{}
 
-			\item Configured CMake to compile VST3 and AU plugin bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) so the plugin runs natively on Apple Silicon and Intel --- and audited every processBlock() code path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before cutting release builds.
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
 		\end{rSectionEntry}
 	\end{rSection}
 
