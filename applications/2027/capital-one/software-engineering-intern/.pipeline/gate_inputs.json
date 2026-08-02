@@ -1,0 +1,9 @@
+{
+  "exempt_entries": ["MatchStream"],
+  "iter1_counts": {
+    "Vylet": 4,
+    "CaseStudyPrep.AI": 3,
+    "Michigan Data Consulting (MDC)": 2,
+    "MatchStream": 3
+  }
+}

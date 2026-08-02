@@ -174,40 +174,37 @@ Automated lead-sourcing platform for PE/search-fund acquisition prospecting
 
 **Bullet pool:**
 
-1. Launched Vylet, automating a ~30-minute manual research process per
-   business into a Dockerized LangGraph pipeline generating 30 scored
-   leads in 30 minutes — a 30x speedup — with Redis/Celery workers
-   delivering leads on a recurring schedule.
+1.  Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
 
-2. Diagnosed a name-collision defect in ownership-verification logic that
-   was incorrectly rejecting valid acquisition targets sharing a name with
-   an unrelated business elsewhere; the fix lifted the pipeline's lead-
-   qualification rate from 79% to 89% with zero change to sourcing volume.
+2.  Diagnosed a name-collision defect in ownership-verification logic that
+    was incorrectly rejecting valid acquisition targets sharing a name with
+    an unrelated business elsewhere; the fix lifted the pipeline's lead-
+    qualification rate from 79% to 89% with zero change to sourcing volume.
 
-3. Grew Vylet from 1 to 3 paying subscription clients within six weeks of
-   launch — spanning workforce-software, landscaping, and geography-first
-   sourcing engagements — generating $1,500 in monthly recurring revenue.
+3.  Grew Vylet from 1 to 3 paying subscription clients within six weeks of
+    launch — spanning workforce-software, landscaping, and geography-first
+    sourcing engagements — generating $1,500 in monthly recurring revenue.
 
-4. Shipped a geography-first discovery mode decoupled from a pre-set
-   vertical, surfacing ~30 leads/month in niche verticals — custard shops,
-   bowling alleys — structurally invisible to vertical-first discovery.
+4.  Shipped a geography-first discovery mode decoupled from a pre-set
+    vertical, surfacing ~30 leads/month in niche verticals — custard shops,
+    bowling alleys — structurally invisible to vertical-first discovery.
 
-5. Engineered a LangSmith eval pipeline spanning 20 adversarial business
-   test cases across 13 archetype labels — manufacturers, SaaS tools, PE
-   holding companies, geographic mismatches — then layered deterministic
-   Pydantic consensus gates to lift extraction faithfulness from 50% to 90%.
+5.  Engineered a LangSmith eval pipeline spanning 20 adversarial business
+    test cases across 13 archetype labels — manufacturers, SaaS tools, PE
+    holding companies, geographic mismatches — then layered deterministic
+    Pydantic consensus gates to lift extraction faithfulness from 50% to 90%.
 
-6. Engineered Node 3 as a pure-Python triangulated consensus gate — no LLM
-   calls — that computes a 0–100 lead score by fuzzy-matching the pipeline
-   query, state business registry, and live website crawl in a three-way
-   weakest-link check, then hard-fails leads on legal status, industry,
-   geography, or independence before the score threshold applies.
+6.  Engineered Node 3 as a pure-Python triangulated consensus gate — no LLM
+    calls — that computes a 0–100 lead score by fuzzy-matching the pipeline
+    query, state business registry, and live website crawl in a three-way
+    weakest-link check, then hard-fails leads on legal status, industry,
+    geography, or independence before the score threshold applies.
 
-7. Architected a custom asyncpg Data Access Layer storing Gemini embeddings
-   alongside source records; engineered injection-safe SQL timestamp
-   validation that detects stale entries and triggers automatic
-   re-scrapes, keeping the lead database fresh without manual
-   intervention.
+7.  Architected a custom asyncpg Data Access Layer storing Gemini embeddings
+    alongside source records; engineered injection-safe SQL timestamp
+    validation that detects stale entries and triggers automatic
+    re-scrapes, keeping the lead database fresh without manual
+    intervention.
 
 ---
 
@@ -248,23 +245,20 @@ Java, Spring Boot, WebSocket, PostgreSQL, React, WPILib
 
 **Bullet pool:**
 
-1. As a core member of FRC Team 1234's software subteam, architected a 3-tier
-   telemetry pipeline (WPILib robot --- Java/Spring Boot ingestion service ---
-   React dashboard) streaming live subsystem state at 50Hz with end-to-end
-   latency under 45ms, replacing manual post-match debugging with real-time
-   observability.
+1. As a core member of FRC Team 1234's software subteam, replaced post-match
+   robot debugging with a Java/Spring Boot telemetry pipeline streaming live
+   subsystem state to a React dashboard at 50Hz, under 45ms latency.
 
 2. Built a NetworkTables4-based ingestion service sustaining 2,500 messages/sec
-   under load testing with p99 processing latency under 8ms, maintaining
-   99.6% uptime with zero data loss across 2 radio dropout events in a
-   3-hour practice session.
+   under load testing with p99 processing latency under 8ms and zero data
+   loss across 2 radio dropout events over 3 hours.
 
 3. Ran a closed-loop tuning workflow on dashboard-captured telemetry, reducing
    autonomous path position error 64% (14cm to 5cm) and mechanism settling
    time 38% (1.7s to 1.05s) through iterative PID/feedforward tuning.
 
-4. Wrote 52 JUnit tests across robot (WPILib simulation) and backend, reaching
-   82% branch coverage, integrated into a GitHub Actions CI pipeline.
+4. Wrote 52 JUnit tests across robot (WPILib simulation) and backend logic,
+   integrated into a GitHub Actions CI pipeline running on every push.
 
 5. Designed threshold-based anomaly detection that flagged 5 hardware issues
    across 10 practice sessions, including one motor pre-failure caught before
