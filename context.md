@@ -71,7 +71,7 @@ LangGraph, LangSmith, PyTorch, Pandas, RAG, Agentic Workflows, LLM-as-a-Judge, S
 ### Bucket: Cloud & Infrastructure
 
 ```
-AWS (EC2, S3), Docker, Celery, Git
+AWS (EC2, S3), Docker, Celery, Git, GitHub Actions
 ```
 
 ### Bucket: Robotics
@@ -168,9 +168,9 @@ diagnosed/fixed defect with a before/after number, not just architecture.
 
 **Header:**
 
-Vylet | {tech derived from selected bullets} vyletdata.com
-Automated lead-sourcing platform for PE/search-fund acquisition prospecting
-— live product generating $1,500 MRR across three paying clients
+Vylet | May 2026 -- Present | {tech derived from selected bullets} vyletdata.com
+Founder --- Automated lead-sourcing platform for PE/search-fund acquisition
+prospecting — live product generating $1,500 MRR across three paying clients
 
 **Bullet pool:**
 
@@ -230,7 +230,65 @@ Real-time audio DSP plugin built from scratch in C++/JUCE — sine oscillator th
 6. Configured CMake to compile VST3 and AU plugin bundles from a single JUCE codebase — targeting a macOS universal binary (arm64 + x86_64) so the plugin runs natively on Apple Silicon and Intel — and audited every processBlock() code path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before cutting release builds.
 ```
 
-### Project: MatchStream — Real-Time Robot Telemetry & Analytics Platform
+### Project: SignalWeaver
+
+**Lane:** The only entry demonstrating actual model fine-tuning (not just
+API/agentic orchestration like Vylet) — a real LoRA adaptation of an open-
+weight LLM plus a statistically rigorous regression model, both validated
+with proper held-out evaluation. Also the only entry that closes the
+`pgvector` orphan in the Databases skills bucket, and the only single
+project spanning all four stack layers end-to-end: FastAPI backend,
+pgvector-based semantic search, a 5-node LangGraph agentic pipeline, and a
+React/TypeScript frontend.
+
+**Header:**
+
+SignalWeaver --- Multi-signal financial research platform combining
+fundamentals, macro indicators, and news sentiment (research assistant;
+not investment advice)
+
+**Bullet pool:**
+
+<!--
+  Metrics source: logs/metrics/metrics_2026-08-04.jsonl
+  Clean batch = afternoon runs (ts >= 2026-08-04T17:26Z).
+-->
+
+1. Lifted financial-sentiment classification accuracy from 81% to 96% by
+   LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct
+   model on 3,454 Financial PhraseBank entries, evaluated on a held-out
+   test set.
+
+2. Built a linear regression combining fundamental, embedding-based
+   sentiment, and LLM-derived sentiment signals into a composite return-
+   prediction score; validated out-of-sample (3.39% R^2, consistent with
+   the low single-digit R^2 typical of real return-prediction literature)
+   to confirm the model wasn't just fitting noise.
+
+3. Built a FastAPI service wrapping fundamentals, MPNet sentiment, and
+   regression logic behind async REST endpoints; instrumented end-to-end
+   /analyze at 9.1s p50 / 15.2s p99 across 90 successful runs on 90
+   distinct tickers.
+
+4. Implemented semantic search over stored financial news with pgvector
+   cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms
+   p99 over 90 queries returning top-5 or top-10 matches.
+
+5. Orchestrated a 5-node LangGraph pipeline (fetch → classify → embed →
+   score → explain) with per-node timing from the same 90-run batch:
+   fetch 7.3s p50, classify 1.1s p50 (~29ms/article over 40-article
+   batches), embed 1.1s p50, score under 1ms p50, explain 3ms p50 —
+   fetch dominated wall time (~80% of p50 latency).
+
+6. Built a React/TypeScript dashboard for composite scores and
+   fundamental/sentiment/macro breakdowns; used it to analyze 90
+   distinct tickers with scores persisted to Postgres for history views.
+
+7. Containerized the stack with Docker Compose (API + Postgres/pgvector +
+   nginx frontend) and a GitHub Actions CI pipeline (frontend build,
+   pytest, API image build on main).
+
+<!-- ### Project: MatchStream — Real-Time Robot Telemetry & Analytics Platform
 
 **Lane:** Only entry demonstrating Java/Spring Boot backend engineering and a
 relational database (PostgreSQL) — closes the Java/Spring/SQL gap nothing
@@ -240,12 +298,12 @@ reflect team context, not sole ownership.
 
 **Header:**
 
-MatchStream --- Real-Time Robot Telemetry & Analytics Platform | FRC Team 1234
+MatchStream --- Real-Time Robot Telemetry & Analytics Platform | FRC Team 548
 Java, Spring Boot, WebSocket, PostgreSQL, React, WPILib
 
 **Bullet pool:**
 
-1. As a core member of FRC Team 1234's software subteam, replaced post-match
+1. As a core member of FRC Team 548's software subteam, replaced post-match
    robot debugging with a Java/Spring Boot telemetry pipeline streaming live
    subsystem state to a React dashboard at 50Hz, under 45ms latency.
 
@@ -262,4 +320,4 @@ Java, Spring Boot, WebSocket, PostgreSQL, React, WPILib
 
 5. Designed threshold-based anomaly detection that flagged 5 hardware issues
    across 10 practice sessions, including one motor pre-failure caught before
-   it caused a match-critical stall.
+   it caused a match-critical stall. -->

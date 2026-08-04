@@ -5,8 +5,8 @@
 
 \LoadClass{article}
 
-\usepackage[parfill]{parskip}
 
+\usepackage[parfill]{parskip}
 \usepackage{array}
 \usepackage{ifthen}
 \usepackage{graphicx}

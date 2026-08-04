@@ -1,32 +1,30 @@
 %% ============================================================================
-%%  applications/resumes/ai-ml-track.tex  —  AI / ML TRACK BASE RESUME
+%%  applications/2027/tiktok/software-engineering-intern/Vedant Desai Resume.tex
 %% ----------------------------------------------------------------------------
-%%  One of 3-4 targeted track resumes (not per-JD tailoring). Doctrine:
-%%    reference/resume.md §14  —  lead with end-to-end ML/AI workflow, math in
-%%    coursework, keywords through real use, third-party validation (GitHub,
-%%    Kaggle, research). MLOps is a bonus for interns; don't fake prod scale.
-%%    reference/recruiting.md §13  —  Applied ML is the largest bucket; DS&A
-%%    still gates the OA; loops add ML design / error-analysis rounds.
+%%  Initial re-pipeline rebalance for TikTok SWE Intern — Agentic Creation (TTEP).
+%%  screen_track = full-stack; differentiator = agentic/LLM-orchestration
+%%  systems (agent servers, prompt/skill workflows, MCP tooling, KB/RAG).
+%%  track_divergence = true — leads with full-stack spine (frontend, backend/
+%%  API, data layer via CaseStudyPrep, MDC, SignalWeaver) while keeping
+%%  agentic depth prominent at the top (Vylet leads: pipeline, eval harness,
+%%  name-collision fix, asyncpg DAL). Projects: SignalWeaver
+%%  (LangGraph + pgvector RAG + FastAPI + React) — MatchStream retired.
+%%  4-entry structure (min_entries=4). Lyndbrook and Granular Synth omitted.
+%%  iter-2 grading-response: Vylet #3/#4 → pool #2+#7 (agentic eng depth);
+%%  MDC → pool #1+#3 (metric ETL + Flask); dropped Skills C++ (no bullet
+%%  evidence; gate only requires Python from JD∩inventory).
+%%  gate-fix page_fill: collapsed SignalWeaver tagline; trimmed Skills to
+%%  Languages+Frameworks (AI/ML keywords remain in bullets) to fit one page.
+%%  iter-3 grading-response: Vylet #4 pool #7 → pool #4 (metricked
+%%  geography-first discovery, ~30 leads/month; shorter for page budget).
+%%  Dates defect out_of_rails — Project: Vylet header has no date range.
 %%
-%%  AI/ML intern signal stack (2026 market, beyond classic model.fit()):
-%%    RAG E2E, agentic workflows (LangGraph), vector DB + embeddings literacy,
-%%    notebook → production (FastAPI/Docker), eval harnesses, GitHub proof.
-%%
-%%  SECTION ORDER (resume.md I.3): Education → Experience → Projects → Skills.
-%%  WITHIN sections: order by impact density for THIS track, not chronology.
-%%
-%%  rSectionEntry: {name}{dates}{tagline/role/link}{technologies}{location}
-%%    - Experiences: param 4 = {}. Projects: param 4 = tech stack line.
-%%    - Lead-Gen promoted to Experience (I.5): no dates in pool → GitHub in
-%%      param 2 (dates slot, same as Project render); descriptor in param 3.
-%%  rSet: {bucket label}{comma-separated items} — ~80 chars after label.
-%%
-%%  Class path: one level up to applications/template.cls
+%%  Class path: three levels up to applications/template.cls.
 %% ============================================================================
 
 \documentclass[
 	11pt
-]{../../template}
+]{../../../template}
 
 \name{Vedant Desai}
 \contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
@@ -43,11 +41,11 @@
 			{Ann Arbor, MI}
 
 			\item \textbf{GPA:} 3.66 / 4.0
-			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Discrete Math, Calc III
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Discrete Mathematics
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- EXPERIENCE ---------------------------------------------------------
+	% ---- EXPERIENCE -----------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
 			{Vylet}
@@ -58,8 +56,8 @@
 
 			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
 			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
-			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
-			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Shipped a geography-first discovery mode decoupled from a pre-set vertical, surfacing ~30 leads/month in niche verticals --- custard shops, bowling alleys --- structurally invisible to vertical-first discovery.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -89,25 +87,24 @@
 	% ---- PROJECTS -----------------------------------------------------------
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
-			{C++, JUCE, VST3, AU, CMake}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{}
+			{LangGraph, FastAPI, pgvector, React, TypeScript}
 			{}
 
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Orchestrated a 5-node LangGraph pipeline (fetch $\rightarrow$ classify $\rightarrow$ embed $\rightarrow$ score $\rightarrow$ explain) with per-node timing from the same 90-run batch: fetch 7.3s p50, classify 1.1s p50 ($\sim$29ms/article over 40-article batches), embed 1.1s p50, score under 1ms p50, explain 3ms p50 --- fetch dominated wall time ($\sim$80\% of p50 latency).
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
+			\item Built a FastAPI service wrapping fundamentals, MPNet sentiment, and regression logic behind async REST endpoints; instrumented end-to-end /analyze at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 distinct tickers.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{AI / ML}{LangGraph, LangSmith, Silero VAD, ONNX Runtime, Pandas}
+		\begin{rSet}{Languages}{Python, TypeScript, SQL}
 		\end{rSet}
-		\begin{rSet}{Languages}{Python, C++}
-		\end{rSet}
-		\begin{rSet}{Frameworks}{Flask, Angular, RxJS, JUCE}
-		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Redis, Celery, Git}
+		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS}
 		\end{rSet}
 	\end{rSection}
 

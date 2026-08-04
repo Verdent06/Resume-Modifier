@@ -1,0 +1,26 @@
+{
+  "action": "continue",
+  "out_of_rails": [
+    {
+      "entry": "resume",
+      "defect": "AI-assisted-dev habit absent",
+      "why": "No pool bullet describes using AI coding tools (generation/refactor/test) with validation/ownership; only LLM-product build bullets exist (Vylet/CaseStudyPrep), which persona distinguishes from the developer-habit differentiator",
+      "attempted": [
+        "Scanned full context.md pool for Copilot/Cursor/ChatGPT/codegen/AI-assisted-dev language — zero hits",
+        "Checked swap sets — only llm-apis (Gemini/Claude/OpenAI) for product APIs, no bridge to coding-tool habit",
+        "Confirmed no other entry can supply this signal without inventing prose",
+        "Re-confirmed iter-4: still zero pool hits for AI coding-tool habit"
+      ]
+    },
+    {
+      "entry": "Vylet",
+      "defect": "missing dates",
+      "why": "context.md Vylet header has no date range (project-style entry with links/tagline only); inventing dates is forbidden",
+      "attempted": [
+        "Checked context.md Vylet header and entry metadata — no start/end dates present",
+        "Left date fields empty rather than invent; kept link slot consistent with other applications",
+        "Re-confirmed iter-4: Vylet header still date-less"
+      ]
+    }
+  ]
+}

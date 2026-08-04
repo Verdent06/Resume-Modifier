@@ -1,0 +1,7 @@
+{
+  "defects": [
+    {"entry":"resume","severity":"minor","defect":"AI-assisted-dev habit absent","why":"Persona differentiator and JD preferred signal — prompting/validation of AI coding tools with ownership — has zero evidence on the page; core full-stack bar still clears without it"},
+    {"entry":"Michigan Data Consulting (MDC)","severity":"minor","defect":"metric-free","why":"Both bullets narrate sole-engineer Flask/EC2 delivery and stakeholder scoping but land no sized impact (throughput, users, latency, contract outcome) a screen can weigh"},
+    {"entry":"Vylet","severity":"minor","defect":"missing dates","why":"Experience entry with links where a date range should be — timeline unclear next to dated co-op and MDC roles, weakens skim credibility"}
+  ]
+}

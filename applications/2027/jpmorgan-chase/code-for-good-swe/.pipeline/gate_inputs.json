@@ -1,0 +1,23 @@
+{
+  "jd_languages": [],
+  "jd_required_keywords": [
+    "secure coding",
+    "software",
+    "automation",
+    "testing",
+    "collaboration",
+    "AI development tools",
+    "SDLC"
+  ],
+  "candidate_languages": ["Python", "TypeScript", "C++", "SQL", "HTML/CSS"],
+  "exempt_entries": [],
+  "protected_entries": ["Vylet"],
+  "lead_signal_window": 0,
+  "min_entries": 4,
+  "iter1_counts": {
+    "Vylet": 4,
+    "CaseStudyPrep.AI": 3,
+    "Michigan Data Consulting (MDC)": 2,
+    "Granular Synthesizer Plugin": 2
+  }
+}

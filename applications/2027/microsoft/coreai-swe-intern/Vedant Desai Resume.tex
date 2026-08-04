@@ -1,14 +1,10 @@
 %% ============================================================================
-%%  applications/2027/capital-one/software-engineering-intern/resume.tex
+%%  applications/2027/microsoft/coreai-swe-intern/Vedant Desai Resume.tex
 %% ----------------------------------------------------------------------------
-%%  One-off tailored copy of applications/resumes/full-stack/full-stack-track.tex
-%%  for Capital One SWE Intern only. Experience section is untouched from the
-%%  base full-stack track. Projects swaps Granular Synthesizer Plugin for
-%%  MatchStream (3 of 5 pool bullets: architecture hook, throughput/latency
-%%  rigor, testing/CI) to close the Java/Spring/SQL gap and the CI/CD gap
-%%  flagged in applications/2027/ctgt/software-engineering-intern/.pipeline/
-%%  grader_iter1_report.txt. NOT propagated back into the general track pool.
-%%
+%%  Initial tailor for Microsoft CoreAI SWE Intern — copied from AI/ML track
+%%  base. Experience untouched (Vylet #1). Projects: REPLACE Granular
+%%  Synthesizer Plugin with SignalWeaver (bullets 1–2 only: LoRA fine-tune +
+%%  linear regression). Tech-stack covers PyTorch/scikit-learn orphans.
 %%  Class path: three levels up to applications/template.cls.
 %% ============================================================================
 
@@ -35,7 +31,7 @@
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- EXPERIENCE (untouched from full-stack-track.tex) -------------------
+	% ---- EXPERIENCE ---------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
 			{Vylet}
@@ -45,9 +41,9 @@
 			{}
 
 			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
-			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
 			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
-			\item Engineered Node 3 as a pure-Python triangulated consensus gate --- no LLM calls --- that computes a 0--100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -59,7 +55,6 @@
 
 			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
 			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
-			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -74,30 +69,30 @@
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- PROJECTS (Capital-One-specific: MatchStream replaces Granular Synth) -
+	% ---- PROJECTS -----------------------------------------------------------
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{MatchStream}
-			{FRC Team 548}
-			{Real-time robot telemetry and analytics platform for FRC competition robotics.}
-			{Java, Spring Boot, WebSocket, PostgreSQL, React, WPILib}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{}
+			{PyTorch, scikit-learn, Transformers, LoRA, LangGraph}
 			{}
 
-			\item As a core member of FRC Team 548's software subteam, replaced post-match robot debugging with a Java/Spring Boot telemetry pipeline streaming live subsystem state to a React dashboard at 50Hz, under 45ms latency.
-			\item Built a NetworkTables4-based ingestion service sustaining 2,500 messages/sec under load testing with p99 processing latency under 8ms and zero data loss across 2 radio dropout events over 3 hours.
-			\item Wrote 52 JUnit tests across robot (WPILib sim) and backend logic in a GitHub Actions CI pipeline triggered on push.
+			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
+			\item Built a linear regression combining fundamental, embedding-based sentiment, and LLM-derived sentiment signals into a composite return-prediction score; validated out-of-sample (3.39\% $R^{2}$, consistent with the low single-digit $R^{2}$ typical of real return-prediction literature) to confirm the model wasn't just fitting noise.
+			\item Orchestrated a 5-node LangGraph pipeline (fetch $\rightarrow$ classify $\rightarrow$ embed $\rightarrow$ score $\rightarrow$ explain) with per-node timing from the same 90-run batch: fetch 7.3s p50, classify 1.1s p50 ($\sim$29ms/article over 40-article batches), embed 1.1s p50, score under 1ms p50, explain 3ms p50 --- fetch dominated wall time ($\sim$80\% of p50 latency).
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- TECHNICAL SKILLS (Capital-One-specific additions) -----------------
+	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL, Java}
+		\begin{rSet}{AI / ML}{LangGraph, LangSmith, Silero VAD, ONNX Runtime, Pandas, PyTorch, scikit-learn}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Flask, Angular, RxJS, React, Spring Boot}
+		\begin{rSet}{Languages}{Python, C++}
 		\end{rSet}
-		\begin{rSet}{Databases}{asyncpg, PostgreSQL}
+		\begin{rSet}{Frameworks}{Flask, Angular, RxJS}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2), Docker, Redis, Celery, Git}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Redis, Celery, Git}
 		\end{rSet}
 	\end{rSection}
 
