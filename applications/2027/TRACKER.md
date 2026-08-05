@@ -10,6 +10,8 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Company | Role | Date Applied | Status | Track | Score |
 | ------- | ---- | ------------ | ------ | ----- | ----- |
 | TikTok | Software Engineer Intern — Agentic Creation (TTEP) | 2026-08-04 | Applied | full-stack+agentic/LLM-orchestration | 5.0 |
+| SpaceX | Software Engineering Intern/Co-op (Summer 2027) | 2026-08-05 | Applied | full-stack+aerospace/real-time/mission-critical/embedded-adjacent | 8.0 |
+| Chicago Trading Company (CTC) | Software Engineering Internship — Summer 2027 | 2026-08-05 | Applied | full-stack | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -17,6 +19,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 1
+- **Total applied:** 3
 - **Interviews:** 0
 - **Offers:** 0

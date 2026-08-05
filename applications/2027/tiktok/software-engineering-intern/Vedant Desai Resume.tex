@@ -50,14 +50,14 @@
 		\begin{rSectionEntry}
 			{Vylet}
 			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com} $\vert$ \href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{GitHub}}
-			{Founder --- Automated lead-sourcing platform for PE/search-fund acquisition prospecting --- live product generating \$1,500 MRR across three paying clients}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
 			{}
 			{}
 
 			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
-			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
-			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
-			\item Shipped a geography-first discovery mode decoupled from a pre-set vertical, surfacing ~30 leads/month in niche verticals --- custard shops, bowling alleys --- structurally invisible to vertical-first discovery.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels, then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
+			\item Diagnosed a name-collision defect that rejected valid targets sharing a name with an unrelated business; the fix lifted lead-qualification from 79\% to 89\% with zero change to sourcing volume.
+			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -95,8 +95,8 @@
 
 			\item Orchestrated a 5-node LangGraph pipeline (fetch $\rightarrow$ classify $\rightarrow$ embed $\rightarrow$ score $\rightarrow$ explain) with per-node timing from the same 90-run batch: fetch 7.3s p50, classify 1.1s p50 ($\sim$29ms/article over 40-article batches), embed 1.1s p50, score under 1ms p50, explain 3ms p50 --- fetch dominated wall time ($\sim$80\% of p50 latency).
 			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
-			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
-			\item Built a FastAPI service wrapping fundamentals, MPNet sentiment, and regression logic behind async REST endpoints; instrumented end-to-end /analyze at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 distinct tickers.
+			\item Built a React/TypeScript dashboard for composite score breakdowns; analyzed 90 distinct tickers with scores persisted to Postgres for history views.
+			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -105,6 +105,12 @@
 		\begin{rSet}{Languages}{Python, TypeScript, SQL}
 		\end{rSet}
 		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS}
+		\end{rSet}
+		\begin{rSet}{AI / ML}{LangGraph, LangSmith, Silero VAD, ONNX Runtime, Pandas}
+		\end{rSet}
+		\begin{rSet}{Databases}{pgvector, PostgreSQL}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2), Docker, Redis, Celery, Git}
 		\end{rSet}
 	\end{rSection}
 

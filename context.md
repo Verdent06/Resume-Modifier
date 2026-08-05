@@ -168,9 +168,9 @@ diagnosed/fixed defect with a before/after number, not just architecture.
 
 **Header:**
 
-Vylet | May 2026 -- Present | {tech derived from selected bullets} vyletdata.com
-Founder --- Automated lead-sourcing platform for PE/search-fund acquisition
-prospecting — live product generating $1,500 MRR across three paying clients
+Vylet | Feb 2026 -- Present | {tech derived from selected bullets} vyletdata.com
+Founder --- Automated lead-sourcing platform for PE/search-fund; live
+product generating $1,500 MRR across three paying clients
 
 **Bullet pool:**
 
@@ -265,10 +265,10 @@ not investment advice)
    the low single-digit R^2 typical of real return-prediction literature)
    to confirm the model wasn't just fitting noise.
 
-3. Built a FastAPI service wrapping fundamentals, MPNet sentiment, and
-   regression logic behind async REST endpoints; instrumented end-to-end
-   /analyze at 9.1s p50 / 15.2s p99 across 90 successful runs on 90
-   distinct tickers.
+3. Served composite financial-research scores through async REST endpoints
+   (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic,
+   instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful
+   runs on 90 tickers.
 
 4. Implemented semantic search over stored financial news with pgvector
    cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms
