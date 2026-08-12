@@ -53,6 +53,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Arcfield | Software Engineering Intern | 2026-06-27 | Applied | full-stack+defense-integration | 5.0 |
 | Xaira Therapeutics | Lab Automation - Vision AI Engineer Intern | 2026-06-27 | Applied | ai-ml+embodied-robotics | 0.0 |
 | Tesla | Internship, Commercial UI Software Engineer, Energy Engineering (Fall 2026) | 2026-06-27 | Applied | full-stack+energy-iot | 1.0 |
+| EffiGov | Software Engineer Intern (Fall 2026) | 2026-08-12 | Applied | full-stack+voice-ai | 7.0 |
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
@@ -66,6 +67,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 44
-- **OA conversion:** — 0/44
-- **Interview conversion:** — 0/44
+- **Total applied:** 45
+- **OA conversion:** — 0/45
+- **Interview conversion:** — 0/45
