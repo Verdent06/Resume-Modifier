@@ -28,6 +28,8 @@ import shutil
 import sys
 from pathlib import Path
 
+RESUME_FILENAME = "Vedant Desai Resume.tex"
+
 _LATEX_ARTIFACT_SUFFIXES = (
     ".aux", ".bbl", ".blg", ".brf", ".dvi", ".fdb_latexmk", ".fls",
     ".idx", ".ilg", ".ind", ".lof", ".log", ".lot", ".nav", ".out",
@@ -123,8 +125,9 @@ def run_prune_root(args) -> int:
 
 def run_clean_tree(args) -> int:
     root = Path(args.root).resolve()
+    filename = args.filename or RESUME_FILENAME
     total: list[str] = []
-    for tex in sorted(root.rglob("Vedant Desai Resume.tex")):
+    for tex in sorted(root.rglob(filename)):
         total.extend(clean_latex_artifacts(tex))
         if args.ship:
             total.extend(clean_pipeline_artifacts(tex.parent, ship=True))
@@ -150,6 +153,12 @@ def main() -> int:
     ct = sub.add_parser("clean-tree", help="recursive clean under an applications root")
     ct.add_argument("--root", required=True, help="e.g. applications/")
     ct.add_argument("--ship", action="store_true", help="also remove pipeline + legacy JSON")
+    ct.add_argument(
+        "--filename", "--name",
+        dest="filename",
+        default=RESUME_FILENAME,
+        help=f"resume .tex basename to match under --root (default: {RESUME_FILENAME})",
+    )
     ct.set_defaults(func=run_clean_tree)
 
     pr = sub.add_parser("prune-root", help="remove stray pipeline JSON from repo root")

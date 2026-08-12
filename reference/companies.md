@@ -1,6 +1,6 @@
 # SWE Internship Tier List — 2026
 
-### MSU CS Students Targeting Big Tech
+### University of Michigan CS Students Targeting Big Tech
 
 > **How to read this:** Interview column format: `Rounds · LC Difficulty · OA Platform · System Design? · Primary Bottleneck · Est. Offer Rate`
 
@@ -67,7 +67,7 @@
 
 ## B-TIER — Good / Solid Resume Addition
 
-*Respected names, decent comp ($32–55/hr), opens doors. Realistic targets for MSU with strong application. Mass apply here.*
+*Respected names, decent comp ($32–55/hr), opens doors. Realistic targets for a strong UMich CS application. Mass apply here.*
 
 
 | Company                       | Location                       | Notes                                                                               | Interview Process                                                                            |
@@ -160,8 +160,8 @@
 | **Lockheed Martin**           | Multiple                      | World's largest defense; 1,300+ interns/yr; bureaucratic; SWE signal is weak          | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                |
 | **Booz Allen Hamilton**       | McLean                        | Gov consulting; $52/hr advertised but role is often not pure SWE                      | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~20–25%                       |
 | **Leidos**                    | Reston, VA                    | Gov IT; ~$40/hr; cleared work                                                         | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%                                |
-| **Ford Motor Company**        | Dearborn, MI                  | Huge intern program; AV/EV software tracks; MSU research partnership                  | 1–2 rds · Easy · No OA · No · Bottleneck: resume · ~5–10%                                 |
-| **General Motors**            | Detroit, Warren, MI           | Top MSU employer; Ultifi platform; real embedded/platform work                        | 2 rds · Easy · HireVue · No · Bottleneck: HireVue · ~8–12%                                |
+| **Ford Motor Company**        | Dearborn, MI                  | Huge intern program; AV/EV software tracks; university research partnerships          | 1–2 rds · Easy · No OA · No · Bottleneck: resume · ~5–10%                                 |
+| **General Motors**            | Detroit, Warren, MI           | Top Michigan employer; Ultifi platform; real embedded/platform work                   | 2 rds · Easy · HireVue · No · Bottleneck: HireVue · ~8–12%                                |
 | **Stellantis**                | Auburn Hills, MI              | Jeep/Ram/Chrysler platform work; large program                                        | 2 rds · Easy · No OA · No · Bottleneck: resume · ~10–15%                                  |
 | **Bosch**                     | Plymouth/Farmington Hills, MI | Automotive tech; German company; strong embedded work                                 | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–20%                                |
 | **Continental**               | Auburn Hills, MI              | Automotive supplier; ADAS and software teams                                          | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
@@ -174,9 +174,9 @@
 | **May Mobility**              | Ann Arbor, MI                 | Autonomous shuttles; UMich-heavy pipeline; tiny cohort                                | 3 rds · Low/Practical · No OA · No · Bottleneck: getting an interview · Very small cohort |
 | **Censys**                    | Ann Arbor, MI                 | Security; UMich spinoff; real eng work                                                | 2–3 rds · Easy–Med · No OA · No · Bottleneck: tech rounds · ~15–20%                       |
 | **Atomic Object**             | Ann Arbor / Grand Rapids, MI  | Software consultancy; real client work; good mentorship                               | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
-| **TechSmith**                 | Okemos, MI                    | Camtasia/Snagit; literally next to MSU; excellent first internship                    | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%                                  |
+| **TechSmith**                 | Okemos, MI                    | Camtasia/Snagit; mid-Michigan software shop; excellent first internship               | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%                                  |
 | **Dow Chemical**              | Midland, MI                   | Fortune 500; real SWE for data/infra roles                                            | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
-| **State Farm**                | Bloomington, IL               | Insurance tech; strong MSU pipeline; real SWE work                                    | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–20%                                |
+| **State Farm**                | Bloomington, IL               | Insurance tech; strong campus recruiting pipeline; real SWE work                      | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–20%                                |
 | **Target (Tech)**             | Minneapolis                   | Retail tech; real SWE program; not a store job                                        | 2–3 rds · Easy · HackerRank · No · Bottleneck: OA · ~15–20%                               |
 | **Walmart Labs**              | Bentonville, Sunnyvale        | Scale is genuinely real; Sunnyvale office > Bentonville signal                        | 3 rds · Easy–Med · HackerRank · No · Bottleneck: tech rounds · ~10–15%                    |
 | **Fidelity**                  | Boston                        | Finance; large SWE team                                                               | 3 rds · Easy–Med · HackerRank · No · Bottleneck: OA · ~10–15%                             |
@@ -215,7 +215,7 @@
 | **Visteon**                       | Van Buren Township, MI | Cockpit electronics                                         | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%            |
 | **Lear**                          | Southfield, MI         | Automotive seating/electrical                               | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
 | **United Wholesale Mortgage**     | Pontiac, MI            | Mortgage tech; real SWE                                     | 2 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%            |
-| **Dewpoint**                      | Lansing, MI            | IT services; MSU pipeline                                   | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
+| **Dewpoint**                      | Lansing, MI            | IT services; Lansing-area consulting                        | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
 | **Auto-Owners Insurance**         | Lansing, MI            | Insurance tech                                              | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
 | **Jackson National Life**         | Lansing, MI            | Insurance/finance                                           | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%            |
 | **DTE Energy**                    | Detroit, MI            | Utility tech                                                | 2 rds · Easy · No OA · No · Bottleneck: resume · ~30–40%            |
@@ -225,7 +225,6 @@
 | **Refraction AI**                 | Ann Arbor, MI          | Delivery robots; very small team                            | 2–3 rds · Low/Practical · No OA · No · Bottleneck: resume · ~15–20% |
 | **Llamasoft (Coupa)**             | Ann Arbor, MI          | Supply chain AI; Coupa acquisition                          | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–25%          |
 | **Benzinga**                      | Detroit, MI            | Fintech/media; small startup                                | 2 rds · Easy · No OA · No · Bottleneck: resume · ~30–40%            |
-| **MSU IT Services**               | East Lansing, MI       | On-campus; easiest access of anything on this list          | 1 rd · Easy · No OA · No · Bottleneck: resume · ~40–60%             |
 | Regional banks / local healthcare | Michigan               | IT departments; not always pure SWE                         | 1–2 rds · Easy · No OA · No · Bottleneck: resume · ~35–50%          |
 | Federal / state agencies          | Multiple               | Slow, clearance-heavy, bureaucratic. USDS is the exception. | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~25–40%          |
 
