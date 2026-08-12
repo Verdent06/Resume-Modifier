@@ -15,12 +15,16 @@
 \usepackage{fontspec}
 \usepackage{hyperref}
 
-\setmainfont[
-  UprightFont    = cmunrm.otf,
+%% Font discovery fix (Linux/TeX Live + fontconfig): the family-name main
+%% argument with per-face filename overrides does not resolve on this
+%% fontspec/XeTeX build. Loading the identical CMU Serif OTF faces by
+%% filename (standard fontspec idiom) yields byte-identical rendering while
+%% resolving correctly. Visual doctrine (CMU Serif) is unchanged.
+\setmainfont{cmunrm.otf}[
   ItalicFont     = cmunti.otf,
   BoldFont       = cmunbx.otf,
   BoldItalicFont = cmunbi.otf
-]{CMU Serif}
+]
 
 \pagestyle{empty}
 
