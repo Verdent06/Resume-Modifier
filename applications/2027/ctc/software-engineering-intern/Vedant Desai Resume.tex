@@ -1,29 +1,10 @@
 %% ============================================================================
-%%  applications/resumes/full-stack-track.tex  —  GENERAL SWE / FULL-STACK BASE
+%%  applications/2027/ctc/software-engineering-intern/Vedant Desai Resume.tex
 %% ----------------------------------------------------------------------------
-%%  One of 3-4 targeted track resumes (not per-JD tailoring). Doctrine:
-%%    reference/resume.md §12  —  lead with a genuinely engineered, shippable
-%%    product; keywords through use (frontend, backend, APIs, a database,
-%%    cloud, CI/CD); signal = breadth across the stack + depth in one layer.
-%%    reference/recruiting.md §11  —  tests general CS fundamentals + shipping
-%%    end-to-end (frontend, backend, API, data, deploy); DS&A still gates.
-%%
-%%  Full-stack screen gaps this resume is built to close (per the CTGT grade,
-%%  applications/2027/ctgt/software-engineering-intern/.pipeline/
-%%  grader_iter1_report.txt, run against a full-stack-flavored persona):
-%%    - "data stores absent" (major)      -> Vylet's asyncpg DAL bullet
-%%    - "JS/TS buried below fold" (major) -> CaseStudyPrep.AI as Experience #2
-%%
-%%  SECTION ORDER (resume.md I.3): Education → Experience → Projects → Skills.
-%%  WITHIN sections: order by impact density for THIS track, not chronology.
-%%
-%%  rSectionEntry: {name}{dates}{tagline/role/link}{technologies}{location}
-%%    - Experiences: param 4 = {}. Projects: param 4 = tech stack line.
-%%    - Vylet promoted to Experience (I.5, same precedent as ai-ml-track): no
-%%      dates in pool → link in param 2 (dates slot); descriptor in param 3.
-%%  rSet: {bucket label}{comma-separated items} — ~80 chars after label.
-%%
-%%  Class path: one level up to applications/template.cls
+%%  CTC SE Intern Summer 2027 — seeded from full-stack-track.tex.
+%%  Structure (a): Experience = Vylet → CaseStudyPrep → MDC; Projects =
+%%  Granular Synth (moved out of Experience; GitHub-link = Project tell).
+%%  Class path: three levels up to applications/template.cls.
 %% ============================================================================
 
 \documentclass[
@@ -52,14 +33,15 @@
 	% ---- EXPERIENCE ---------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
-			{C++, JUCE, VST3, AU}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com} $\vert$ \href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{GitHub}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund acquisition prospecting --- live product generating \$1,500 MRR across three paying clients}
+			{}
 			{}
 
-			\item Implemented 16-voice polyphony with per-voice ADSR envelopes, pre-computing attack/decay/release rates as samples-per-step in prepareToPlay() to eliminate division inside the audio hot loop --- and a voice-stealing algorithm that evicts the oldest active note by age counter when all 16 slots are busy, with each voice falling back to a sine oscillator until a WAV sample is loaded.
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
+			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -86,17 +68,19 @@
 			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
 			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
 		\end{rSectionEntry}
+	\end{rSection}
 
+	% ---- PROJECTS -----------------------------------------------------------
+	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Vylet}
-			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com} $\vert$ \href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{GitHub}}
-			{Founder --- Automated lead-sourcing platform for PE/search-fund acquisition prospecting --- live product generating \$1,500 MRR across three paying clients}
-			{}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE, VST3, AU}
 			{}
 
-			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
-			\item Shipped a geography-first discovery mode decoupled from a pre-set vertical, surfacing ~30 leads/month in niche verticals --- custard shops, bowling alleys --- structurally invisible to vertical-first discovery.
-			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio parameter delivery through a hand-rolled lock-free SPSC FIFO so slider changes reach the audio thread without a mutex.
 		\end{rSectionEntry}
 	\end{rSection}
 

@@ -21,6 +21,12 @@
 %%      param 2 (dates slot, same as Project render); descriptor in param 3.
 %%  rSet: {bucket label}{comma-separated items} — ~80 chars after label.
 %%
+%%  Projects: SignalWeaver (LoRA fine-tune, pgvector search, regression) —
+%%    Granular Synth retired from the base pool; its LangGraph/FastAPI/React
+%%    bullets stay reserved for JD-tailored copies to avoid duplicating
+%%    Vylet's agentic signal here. Vylet asyncpg bullet cut for page fit;
+%%    vector-store signal now carried by SignalWeaver bullet 2.
+%%
 %%  Class path: one level up to applications/template.cls
 %% ============================================================================
 
@@ -59,7 +65,6 @@
 			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
 			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
 			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
-			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -89,23 +94,27 @@
 	% ---- PROJECTS -----------------------------------------------------------
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
-			{C++, JUCE, VST3, AU, CMake}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
+			{PyTorch, Transformers, LoRA, scikit-learn, pgvector}
 			{}
 
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Built a linear regression combining fundamental, embedding-based sentiment, and LLM-derived sentiment signals into a composite return-prediction score; validated out-of-sample (3.39\% $R^{2}$, consistent with the low single-digit $R^{2}$ typical of real return-prediction literature) to confirm the model wasn't just fitting noise.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{AI / ML}{LangGraph, LangSmith, Silero VAD, ONNX Runtime, Pandas}
+		\begin{rSet}{AI / ML}{PyTorch, scikit-learn, LangGraph, LangSmith, Silero VAD, ONNX Runtime, Pandas}
 		\end{rSet}
 		\begin{rSet}{Languages}{Python, C++}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Flask, Angular, RxJS, JUCE}
+		\begin{rSet}{Frameworks}{Flask, Angular, RxJS}
+		\end{rSet}
+		\begin{rSet}{Databases}{pgvector}
 		\end{rSet}
 		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Redis, Celery, Git}
 		\end{rSet}

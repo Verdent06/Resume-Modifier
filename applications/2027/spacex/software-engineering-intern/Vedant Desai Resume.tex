@@ -1,21 +1,19 @@
 %% ============================================================================
 %%  applications/2027/spacex/software-engineering-intern/Vedant Desai Resume.tex
 %% ----------------------------------------------------------------------------
-%%  grading-response iter-3 (demerits.json):
-%%    - minor CaseStudyPrep ML-product lead → reorder to pool #3 lead
-%%      (Web Worker / <5ms / 60 FPS), then #2, then #1
-%%    - minor Granular metric-free / SignalWeaver thin unit-testing:
-%%      no in-rails fix this pass (pool gaps); continue for CaseStudyPrep grade
-%%  Floors: CaseStudyPrep=3, MDC=3, Granular=3, SignalWeaver=3; min_entries=4
-%%  Protected top-2: CaseStudyPrep + Granular
-%% ----------------------------------------------------------------------------
+%%  Post-ship user fix pass:
+%%    - contact: umich email + GitHub restored; template.tex stale gmail fixed
+%%    - Experience: CaseStudyPrep → Vylet → MDC (Vylet top-2; Granular out)
+%%    - Projects: Granular only (tagline restored); SignalWeaver removed
+%%    - Skills: drop FastAPI/React/GitHub Actions; no AI/ML bucket
+%% ============================================================================
 
 \documentclass[
 	11pt
 ]{../../../template}
 
 \name{Vedant Desai}
-\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852  \\ verdent06@gmail.com \\ \href{https://linkedin.com/in/vedantde06/}{linkedin.com/in/vedantde06}}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
 
 \begin{document}
 
@@ -33,7 +31,7 @@
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
+	% ---- EXPERIENCE ---------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
 			{CaseStudyPrep.AI}
@@ -48,15 +46,15 @@
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com} $\vert$ \href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{GitHub}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund acquisition prospecting --- live product generating \$1,500 MRR across three paying clients}
 			{}
-			{C++, JUCE, VST3, AU}
 			{}
 
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
-			\item Wired UI-to-audio parameter delivery through a hand-rolled SPSC FIFO (64-slot fixed array, std::atomic<int> head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV file handoff through a separate atomic shared\_ptr swap, letting the UI thread publish a new sample without ever blocking processBlock().
-			\item Configured CMake to compile VST3 and AU plugin bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) so the plugin runs natively on Apple Silicon and Intel --- and audited every processBlock() code path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before cutting release builds.
+			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -72,28 +70,27 @@
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- PROJECTS (writer fills from context.md pool) -----------------------
+	% ---- PROJECTS -----------------------------------------------------------
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{SignalWeaver}
-			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
-			{}
-			{FastAPI, React, TypeScript, PostgreSQL, Docker}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE, VST3, AU}
 			{}
 
-			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
-			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
-			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- TECHNICAL SKILLS (writer picks 3-5 buckets from context.md) --------
+	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
 		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL, HTML/CSS}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Angular, Flask, FastAPI, React, RxJS, JUCE}
+		\begin{rSet}{Frameworks}{Angular, Flask, RxJS, JUCE}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Git, GitHub Actions}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Git}
 		\end{rSet}
 	\end{rSection}
 
