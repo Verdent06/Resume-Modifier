@@ -20,6 +20,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Quadrillion | Software Engineering Intern | 2026-08-13 | Applied | full-stack+agentic-AI/ml-infra | 8.0 |
 | Axon | Software Engineer Intern | 2026-08-13 | Applied | full-stack | 8.0 |
 | LPL Financial | Software Engineer Intern | 2026-08-13 | Applied | full-stack | 10.0 |
+| DV Trading | Software Engineer Intern | 2026-08-13 | Applied | full-stack | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -27,6 +28,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 11
+- **Total applied:** 12
 - **Interviews:** 0
 - **Offers:** 0
