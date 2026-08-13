@@ -1,0 +1,16 @@
+Dear Cloudflare Hiring Team,
+
+I'm applying for the Fall 2026 Software Engineering Internship in Austin. I'm a Computer Science and Economics student at the University of Michigan, and I spend most of my time building software where performance is the whole point, which is why Cloudflare's edge platform is where I most want to intern.
+
+The clearest example is a real-time granular synthesizer I built from scratch in C++/JUCE. The audio thread can't allocate or lock without producing an audible glitch, so I wrote a lock-free single-producer/single-consumer FIFO with acquire/release atomics to pass parameter changes from the UI thread, and pre-allocated a fixed per-voice memory pool so the processing callback never touches the heap after startup. Working inside a hard latency budget with no slow path is the same mindset Cloudflare Workers runs on at the edge.
+
+I also ship full-stack products end to end. I founded Vylet, a Dockerized LangGraph lead-sourcing pipeline backed by Redis/Celery workers that I've grown to $1,500 in monthly recurring revenue across three paying clients. Before that, at CaseStudyPrep.AI, I moved audio processing into a Web Worker to keep main-thread blocking under 5ms and ran Silero VAD client-side via ONNX Runtime to cut cloud inference costs 40%. My SignalWeaver project pairs a FastAPI backend and pgvector semantic search (49ms p50) with a React/TypeScript dashboard, containerized with Docker Compose and a GitHub Actions CI pipeline.
+
+I'd bring that mix of shipped-product ownership and low-latency systems instinct to the Workers developer platform. My systems work so far has been in C++ rather than Go or Rust, but the lock-free, zero-allocation reasoning carries over directly, and I'm eager to pick up Cloudflare's stack quickly.
+
+Thank you for your consideration. I'd welcome the chance to contribute to Cloudflare this fall.
+
+Sincerely,
+Vedant Desai
+vedantde@umich.edu | (248) 704-4852
+github.com/Verdent06 | linkedin.com/in/vedantde06
