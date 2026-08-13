@@ -15,6 +15,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | TIFIN | AI Engineering Intern, TIFIN.ai | 2026-08-12 | Applied | ai-ml | 7.0 |
 | Cotiviti | Intern – Agentic AI Research | 2026-08-12 | Applied | ai-ml | 2.0 |
 | ByteDance | Machine Learning Engineer Intern (AML-Engine-Orchestration) — 2027 Start | 2026-08-12 | Applied | dev-ops+ml-infra | 0.0 |
+| Wedge | Software Engineer Intern | 2026-08-13 | Applied | full-stack+agentic AI / healthcare AI agents | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -22,6 +23,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 6
+- **Total applied:** 7
 - **Interviews:** 0
 - **Offers:** 0
