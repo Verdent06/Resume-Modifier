@@ -28,6 +28,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Sentry | Software Engineer, Intern (Summer 2027) | 2026-08-13 | Applied | full-stack | 7.0 |
 | RTX (Raytheon) | Software Engineer Intern — Summer 2027 | 2026-08-13 | Applied | full-stack | 5.0 |
 | Samsara | Software Engineering Internship - San Francisco | 2026-08-13 | Applied | full-stack+IoT/build-for-scale+real-time/embedded | 8.0 |
+| Altamira Technologies | Software Development Intern - 2027 | 2026-08-13 | Applied | full-stack | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -35,6 +36,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 19
+- **Total applied:** 20
 - **Interviews:** 0
 - **Offers:** 0
