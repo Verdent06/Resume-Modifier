@@ -27,6 +27,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | RocketRide | AI Developer Intern | 2026-08-13 | Applied | ai-ml | 7.0 |
 | Sentry | Software Engineer, Intern (Summer 2027) | 2026-08-13 | Applied | full-stack | 7.0 |
 | RTX (Raytheon) | Software Engineer Intern — Summer 2027 | 2026-08-13 | Applied | full-stack | 5.0 |
+| Collins Aerospace (RTX) | Software Engineering Intern — Summer 2027 | 2026-08-13 | Applied | full-stack+real-time-C++/threaded-OOP | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -34,6 +35,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 18
+- **Total applied:** 19
 - **Interviews:** 0
 - **Offers:** 0
