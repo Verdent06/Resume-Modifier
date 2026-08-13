@@ -156,13 +156,19 @@ Run from repo root:
 
 ## Setup
 
-- **TeX:** `xelatex` on PATH
-- **Python:**
-
 ```bash
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
+bash scripts/setup.sh
 ```
+
+That installs (Linux) or verifies:
+
+- **XeLaTeX** (`texlive-xetex`) plus **Zapf Dingbats** (`texlive-fonts-recommended`, required by `hyperref`)
+- **CMU Serif** via fontconfig (`fonts-cmu` — Debian ships **TTF**, not `.otf`)
+- **Python venv** with `requirements.txt` (`pdfplumber`)
+
+`applications/template.cls` loads **CMU Serif by family name**. Do not restore `UprightFont = cmunrm.otf`: that form fails on TeX Live 2023 / fontspec even after `fonts-cmu` is installed, because the package has no OpenType files. MacTeX still resolves the same family (with an `.otf`/`.ttf` filename fallback).
+
+Cloud agents: `.cursor/environment.json` runs `scripts/setup.sh` on install.
 
 ---
 
