@@ -32,6 +32,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Collins Aerospace (RTX) | Software Engineering Intern — Summer 2027 | 2026-08-13 | Applied | full-stack+real-time-C++/threaded-OOP | 9.0 |
 | Belvedere Trading | Software Engineer Intern — Summer 2027 | 2026-08-13 | Applied | full-stack | 8.0 |
 | RTX / Raytheon | Software Engineer Intern — Summer 2027 | 2026-08-13 | Applied | full-stack | 7.0 |
+| Pylon | Software Engineer, Intern (Summer 2027) | 2026-08-13 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -39,6 +40,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 23
+- **Total applied:** 24
 - **Interviews:** 0
 - **Offers:** 0
