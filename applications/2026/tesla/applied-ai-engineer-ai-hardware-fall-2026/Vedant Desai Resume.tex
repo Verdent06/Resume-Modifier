@@ -1,0 +1,94 @@
+%% Vedant Desai Resume — Tesla Applied AI Engineer, AI Hardware (Fall 2026)
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Statistics and Data Analysis, Discrete Mathematics, Calculus III
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated the silent-audio problem in a voice-AI product — most frames sent to Whisper were dead air — by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{}
+			{Multi-signal financial research platform with fine-tuned LLM sentiment and agentic scoring}
+			{Python, PyTorch, LangGraph}
+			{}
+
+			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
+			\item Orchestrated a 5-node LangGraph pipeline (fetch $\rightarrow$ classify $\rightarrow$ embed $\rightarrow$ score $\rightarrow$ explain) with per-node timing from the same 90-run batch: fetch 7.3s p50, classify 1.1s p50 (~29ms/article over 40-article batches), embed 1.1s p50, score under 1ms p50, explain 3ms p50 --- fetch dominated wall time (~80\% of p50 latency).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{\href{https://vyletdata.com}{vyletdata.com}}
+			{Automated lead-sourcing platform; live product generating \$1,500 MRR across three paying clients}
+			{Python, LangGraph, Redis, Celery, Docker}
+			{}
+
+			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin in C++/JUCE with lock-free threading and VST3/AU binaries}
+			{C++, JUCE, SIMD, VST3}
+			{}
+
+			\item Implemented 16-voice polyphony with per-voice ADSR envelopes, pre-computing attack/decay/release rates as samples-per-step in prepareToPlay() to eliminate division inside the audio hot loop --- and a voice-stealing algorithm that evicts the oldest active note by age counter when all 16 slots are busy, with each voice falling back to a sine oscillator until a WAV sample is loaded.
+			\item Implemented a global post-mix delay on a power-of-two ring buffer (2\textasciicircum{}17 = 131,072 samples, O(1) bitmask addressing) with per-sample delay time smoothing --- the read head steps $\pm$1 sample per block toward the target delay value --- eliminating the zipper noise audible when a user adjusts the delay knob during live playback.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{}
+			{Campaign-finance data pipeline replacing manual PAC research for a nonprofit stakeholder}
+			{Python, Pandas, Flask, AWS EC2}
+			{}
+
+			\item Replaced manual Michigan campaign-finance research — portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee — with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, C++}
+		\end{rSet}
+		\begin{rSet}{AI / ML}{PyTorch, LangGraph, LangSmith, ONNX Runtime}
+		\end{rSet}
+		\begin{rSet}{Databases}{Redis}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{Docker, Celery, Git, AWS EC2}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
