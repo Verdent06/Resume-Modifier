@@ -39,6 +39,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | RTX / Raytheon (Tewksbury) | Software Development Intern (Summer 2027) | 2026-08-13 | Applied | full-stack+high-performance-C++/real-time | 7.0 |
 | Western Digital (WD) | Summer 2027 Intern — Software Engineering | 2026-08-13 | Applied | full-stack+storage/system-software | 9.0 |
 | PDT Partners | Summer 2027 Software Engineering Intern | 2026-08-13 | Applied | full-stack | 9.0 |
+| Citadel | Software Engineer – Intern (US) | 2026-08-13 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -46,6 +47,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 30
+- **Total applied:** 31
 - **Interviews:** 0
 - **Offers:** 0
