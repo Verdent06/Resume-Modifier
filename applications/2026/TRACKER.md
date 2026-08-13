@@ -58,6 +58,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Tesla | Internship, Applied AI Engineer, AI Hardware (Fall 2026) | 2026-08-12 | Applied | ai-ml | 0.0 |
 | Gesture | AI Full Stack Engineer Intern | 2026-08-13 | Applied | full-stack+agentic-ai | 1.0 |
 | Delta Air Lines | Innovation & AI Engineering Intern (Fall 2026) | 2026-08-13 | Applied | ai-ml | 5.0 |
+| Cloudflare | Software Engineer Intern (Fall 2026) | 2026-08-13 | Applied | full-stack+systems | 7.0 |
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
@@ -71,6 +72,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 49
+- **Total applied:** 50
 - **Interviews:** 0
 - **Offers:** 0
