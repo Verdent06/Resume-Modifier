@@ -16,6 +16,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Cotiviti | Intern – Agentic AI Research | 2026-08-12 | Applied | ai-ml | 2.0 |
 | ByteDance | Machine Learning Engineer Intern (AML-Engine-Orchestration) — 2027 Start | 2026-08-12 | Applied | dev-ops+ml-infra | 0.0 |
 | Wedge | Software Engineer Intern | 2026-08-13 | Applied | full-stack+agentic AI / healthcare AI agents | 8.0 |
+| Cohere | Software Engineering Intern | 2026-08-13 | Applied | full-stack+ai-ml/ml-infra | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -23,6 +24,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 7
+- **Total applied:** 8
 - **Interviews:** 0
 - **Offers:** 0
