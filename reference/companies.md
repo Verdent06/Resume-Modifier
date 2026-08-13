@@ -24,6 +24,7 @@
 | **Jane Street**                  | NYC                      | Quant; $25K+/mo; OCaml; brutal math-first bar                                | 4–5 rds · Hard · HackerRank · No (math-heavy) · Bottleneck: tech screen · <1%             |
 | **Citadel / Citadel Securities** | Chicago, NYC             | Quant; top comp; algo/math heavy                                             | 3–5 rds · Hard · HackerRank · No · Bottleneck: tech rounds · <1%                          |
 | **Two Sigma**                    | NYC                      | Quant; strong eng culture; Python/C++                                        | 4–5 rds · Hard · CodeSignal · Yes (systems) · Bottleneck: resume · <1%                    |
+| **PDT Partners**                 | NYC                      | Quant (systematic); C++/Python trading-lifecycle tech; $180k intern (ann.)   | 3–4 rds · Med–Hard · Remote coding (platform unpublished) · Light · Bottleneck: resume + tech · <1–2% |
 | **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                                    | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
 | **IMC Trading**                  | Chicago, NYC             | Quant; low-latency/algo; C++/Java/Python; $83–121/hr; housing + $25K sign-on | 3–4 rds · Med–Hard · HackerRank · No · Bottleneck: OA + tech rounds · ~1–2%               |
 
