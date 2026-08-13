@@ -1,7 +1,8 @@
 %% ============================================================================
 %%  applications/2027/belvedere-trading/software-engineer-intern/Vedant Desai Resume.tex
-%%  iter-1 (initial): Experience — MDC, CaseStudyPrep; Projects — Granular
-%%  (C++ low-latency anchor), SignalWeaver (financial-markets platform + full-stack/CI).
+%%  iter-3 (grading-response): MDC reordered — 800-hour ETL hook, Flask REST,
+%%  stakeholder ownership. Granular kept at zero-alloc / SPSC / CMake-audit
+%%  (16-voice closer overflowed; pool has no latency/throughput timing).
 %% ============================================================================
 
 \documentclass[
@@ -28,18 +29,6 @@
 
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{Michigan Data Consulting (MDC)}
-			{Jan 2026 -- May 2026}
-			{Data Engineer --- Michigan Campaign Finance Network}
-			{}
-			{Ann Arbor, MI}
-
-			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
-			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
-			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
 			{CaseStudyPrep.AI}
 			{Dec 2025 -- May 2026}
 			{Software Engineer Co-op (Voice AI)}
@@ -49,6 +38,18 @@
 			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
 			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
+			{}
+			{Ann Arbor, MI}
+
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -69,11 +70,11 @@
 			{SignalWeaver}
 			{}
 			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
-			{FastAPI, pgvector, PostgreSQL, Docker, GitHub Actions}
+			{FastAPI, pgvector, PostgreSQL}
 			{}
 
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
 			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
-			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -82,7 +83,7 @@
 		\end{rSet}
 		\begin{rSet}{Frameworks}{FastAPI, Flask, Angular, RxJS, JUCE}
 		\end{rSet}
-		\begin{rSet}{Databases \& Infrastructure}{PostgreSQL, pgvector, AWS (EC2), Docker, GitHub Actions}
+		\begin{rSet}{Databases \& Infrastructure}{PostgreSQL, pgvector, AWS (EC2)}
 		\end{rSet}
 	\end{rSection}
 
