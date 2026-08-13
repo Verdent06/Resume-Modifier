@@ -1,9 +1,9 @@
 %% ============================================================================
 %%  applications/2027/bae-systems/software-engineering-intern-iii/Vedant Desai Resume.tex
 %% ----------------------------------------------------------------------------
-%%  Iter-2 grading-response. Education/header untouched.
-%%  Granular: added SPSC lock-free + VST3/AU pool bullets (subtitle + depth).
-%%  MDC: Flask REST lead (SWE hook); ETL kept as the only numbered pool bullet.
+%%  Iter-3 grading-response. Education/header untouched.
+%%  Granular: MemoryPool + SPSC only (not CMake; pair overflowed). Skills: drop
+%%  Databases bucket for page budget. Vylet tagline unchanged (verbatim header).
 %% ============================================================================
 
 \documentclass[
@@ -71,12 +71,11 @@
 			{Granular Synthesizer Plugin}
 			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
 			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
-			{C++, JUCE, VST3, AU}
+			{C++, JUCE}
 			{}
 
 			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
 			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
-			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -96,8 +95,6 @@
 		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL, HTML/CSS}
 		\end{rSet}
 		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS, JUCE}
-		\end{rSet}
-		\begin{rSet}{Databases}{PostgreSQL, Redis}
 		\end{rSet}
 		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Celery, Git}
 		\end{rSet}
