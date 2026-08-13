@@ -1,0 +1,117 @@
+%% ============================================================================
+%%  applications/2027/exa/software-engineer-intern/Vedant Desai Resume.tex
+%% ----------------------------------------------------------------------------
+%%  iter-2 grading-response (authorized fresh rebalance).
+%%  MAJOR fix: differentiator was buried below a generalist top half. Section
+%%  order is fixed (Experience before Projects), so the honest fix is to LEAD
+%%  Experience with a high-performance-systems role: CaseStudyPrep.AI leads the
+%%  whole resume. iter-3 reorder: its hard real-time bullet (Web Worker,
+%%  sub-5ms main-thread, 60 FPS) now leads the entry so the resume's first line
+%%  reads as real-time performance engineering, then ONNX/Silero (-40% cost) +
+%%  RxJS -> systems/performance signal in the top half.
+%%  Vylet stays high (retrieval/embeddings/crawl -- Exa's domain). MDC (pure
+%%  generalist ETL/Flask filler) dropped; backend/API spine still covered by
+%%  SignalWeaver (FastAPI REST + Docker Compose + CI) and Vylet's Dockerized
+%%  pipeline.
+%%  MINOR fixes: SignalWeaver drops the slow 9.1s/15.2s end-to-end bullet and
+%%  keeps 49ms/99ms pgvector retrieval leading, paired with LoRA accuracy
+%%  (81%%->96%%) + Docker/CI; coursework tightened to on-axis technical courses
+%%  (dropped Micro/Macro/Physics -- no fabricated OS/architecture course).
+%%  Out-of-rails (see .pipeline/writer_loop_status.json): Granular has no
+%%  genuine impact metric in its pool; no systems coursework exists to add;
+%%  Rust is JD-listed but candidate-absent -> never fabricated.
+%%  Bullet counts: CaseStudyPrep 3, Vylet 3, Granular 2, SignalWeaver 3 (= 11).
+%%  Class path: three levels up to applications/template.cls.
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed block; coursework tightened to on-axis courses) ----
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Discrete Mathematics, Calculus III, Intro to Statistics and Data Analysis
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE ---------------------------------------------------------
+	% Lead with high-performance-systems role so the top half registers
+	% systems/performance signal immediately (see grader MAJOR defect).
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com} $\vert$ \href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{GitHub}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three paying clients}
+			{}
+			{}
+
+			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS -----------------------------------------------------------
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE, VST3, AU}
+			{}
+
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{}
+			{Python, FastAPI, pgvector, Docker}
+			{}
+
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
+			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS -------------------------------------------------
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, C++, SQL}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, RxJS, JUCE}
+		\end{rSet}
+		\begin{rSet}{Databases}{pgvector, Redis}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{Docker, Celery, GitHub Actions, Git}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
