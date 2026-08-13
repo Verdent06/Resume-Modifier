@@ -1,9 +1,8 @@
 %% ============================================================================
 %%  applications/2027/bae-systems/software-engineering-intern-iii/Vedant Desai Resume.tex
 %% ----------------------------------------------------------------------------
-%%  Iter-3 grading-response. Education/header untouched.
-%%  Granular: MemoryPool + SPSC only (not CMake; pair overflowed). Skills: drop
-%%  Databases bucket for page budget. Vylet tagline unchanged (verbatim header).
+%%  Gate-fix (page_fill): Granular MemoryPool only (iter1 floor = 1). Skills:
+%%  restore Databases {PostgreSQL, Redis}. Education/header untouched.
 %% ============================================================================
 
 \documentclass[
@@ -75,7 +74,6 @@
 			{}
 
 			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
-			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -95,6 +93,8 @@
 		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL, HTML/CSS}
 		\end{rSet}
 		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS, JUCE}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Redis}
 		\end{rSet}
 		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Celery, Git}
 		\end{rSet}
