@@ -1,4 +1,4 @@
-\ProvidesClass{resume}[03/22/2026 v9.1 Ankur's Resume Class]
+\ProvidesClass{resume}[08/13/2026 v9.2 Ankur's Resume Class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -15,12 +15,34 @@
 \usepackage{fontspec}
 \usepackage{hyperref}
 
-\setmainfont[
-  UprightFont    = cmunrm.otf,
-  ItalicFont     = cmunti.otf,
-  BoldFont       = cmunbx.otf,
-  BoldItalicFont = cmunbi.otf
-]{CMU Serif}
+% Load CMU Serif by fontconfig family name. Do not pin UprightFont=cmunrm.otf:
+% Debian/Ubuntu fonts-cmu ships TTF only, and fontspec's family-name + per-face
+% .otf override fails on TeX Live 2023/XeTeX ("font cmunrm.otf cannot be found")
+% even when CMU Serif is installed. MacTeX still finds the same family, or the
+% OTF/TTF filename fallbacks below.
+\IfFontExistsTF{CMU Serif}{%
+  \setmainfont{CMU Serif}%
+}{%
+  \IfFontExistsTF{cmunrm.otf}{%
+    \setmainfont{cmunrm.otf}[
+      ItalicFont     = cmunti.otf,
+      BoldFont       = cmunbx.otf,
+      BoldItalicFont = cmunbi.otf
+    ]%
+  }{%
+    \IfFontExistsTF{cmunrm.ttf}{%
+      \setmainfont{cmunrm.ttf}[
+        ItalicFont     = cmunti.ttf,
+        BoldFont       = cmunbx.ttf,
+        BoldItalicFont = cmunbi.ttf
+      ]%
+    }{%
+      \ClassError{resume}{%
+        CMU Serif not found. Install fonts-cmu (Linux) or CMU Unicode / MacTeX.%
+      }{}%
+    }%
+  }%
+}
 
 \pagestyle{empty}
 

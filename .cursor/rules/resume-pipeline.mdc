@@ -504,7 +504,7 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 - Never persist standalone JSON grading artifacts — fold them into `grade.md` and run `scripts/cleanup.py clean --ship`.
 - After ship, run `scripts/cleanup.py prune-root` from repo root to drop any stray pipeline JSON written outside `.pipeline/`.
 - Run `scripts/cleanup.py clean --tex` after every `xelatex` compile during the loop and fit checks.
-- Run all Python scripts via `.venv/bin/python` from repo root. If `.venv` is missing, create it (`python3 -m venv .venv`) and install `requirements.txt` before the pipeline.
+- Run all Python scripts via `.venv/bin/python` from repo root. If `.venv` or `xelatex` is missing, run `bash scripts/setup.sh` (Linux: `texlive-xetex`, `texlive-fonts-recommended`, `fonts-cmu`). `template.cls` loads CMU Serif by fontconfig family name — do not restore the `cmunrm.otf` face-file form.
 - Always run `scripts/validate.py check-report` before scoring; re-dispatch the grader on failure.
 - Keep `exempt_entries` honest and minimal — it is the one input that can soften the metric ceiling, and `scripts/validate.py` logs every exemption it applies.
 - Never pass `context.md` to the grader. Never edit doctrine files, `template.tex`, or `template.cls`.
