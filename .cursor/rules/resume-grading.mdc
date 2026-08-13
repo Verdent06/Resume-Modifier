@@ -45,7 +45,7 @@ Severity = **expected impact on the screen DECISION.** Not "what kind of defect"
 Types: stated eligibility miss for a gated role (wrong class year on the page); fabrication smell or internal inconsistency (dates that overlap impossibly, a title the bullets can't support, intern scope that reads invented); wrong role entirely (resume aimed at a different track than the JD); over one page or ATS-unparseable formatting; a hard required must-have wholly absent where the JD treats it as a filter.
 Anchors:
 - `{entry:"resume", severity:"emergency", defect:"second page", why:"two pages auto-deprioritizes an intern resume at screen"}`
-- `{entry:"MindMosaic", severity:"emergency", defect:"title/content mismatch", why:"'SWE Intern' with staff-level scope reads fabricated and triggers a no"}`
+- `{entry:"<experience-entry>", severity:"emergency", defect:"title/content mismatch", why:"'SWE Intern' with staff-level scope reads fabricated and triggers a no"}`
 
 ### MAJOR — materially lowers screen-pass odds (this entry isn't relevant / seems padded)
 Types: an entry reads irrelevant or like filler for this role; the lead entry is off-axis for the company/role; a core JD competency has zero evidence anywhere; the company-fit differentiator is weak or buried; an entry's content under-substantiates its title; a JD language listed in Skills with zero bullet evidence at a company where that language is a floor signal.

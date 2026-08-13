@@ -160,15 +160,16 @@ Data Engineering Consultant                         Remote
 
 ---
 
-### Project: Vylet
+### Experience: Vylet
 
-**Lane:** Live commercial product with paying clients and closed-loop pipeline
-metrics — the only entry with a shipped product, external revenue, and a
-diagnosed/fixed defect with a before/after number, not just architecture.
+**Lane:** Founded venture with paying clients and closed-loop pipeline
+metrics — the only titled experience carrying founder/owner signal:
+external revenue, product ownership end-to-end, and a diagnosed/fixed
+defect with a before/after number, not just architecture.
 
 **Header:**
 
-Vylet | Feb 2026 -- Present | {tech derived from selected bullets} vyletdata.com
+Vylet | May 2026 -- Present | {tech derived from selected bullets} vyletdata.com
 Founder --- Automated lead-sourcing platform for PE/search-fund; live
 product generating $1,500 MRR across three paying clients
 

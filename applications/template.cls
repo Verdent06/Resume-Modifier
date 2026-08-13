@@ -1,4 +1,4 @@
-\ProvidesClass{resume}[08/13/2026 v9.2 Ankur's Resume Class]
+\ProvidesClass{resume}[08/13/2026 v9.2 Vedant's Resume Class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
