@@ -1,0 +1,89 @@
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed; writer does not modify) --------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three paying clients}
+			{Python, LangGraph, LangSmith, Redis}
+			{}
+
+			\item Launched Vylet, automating a $\sim$30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+		\end{rSectionEntry}
+
+	\end{rSection}
+
+	% ---- PROJECTS (writer fills from context.md pool) -----------------------
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
+			{Python, PyTorch, LoRA, pgvector, PostgreSQL, Docker, GitHub Actions}
+			{}
+
+			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE}
+			{}
+
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS (writer picks 3-5 buckets from context.md) --------
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{AI / ML}{LangGraph, LangSmith, PyTorch, Agentic Workflows, ONNX Runtime}
+		\end{rSet}
+		\begin{rSet}{Languages}{Python, C++, SQL}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Redis, pgvector}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{Docker, GitHub Actions, Celery}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
