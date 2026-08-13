@@ -54,6 +54,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Xaira Therapeutics | Lab Automation - Vision AI Engineer Intern | 2026-06-27 | Applied | ai-ml+embodied-robotics | 0.0 |
 | Tesla | Internship, Commercial UI Software Engineer, Energy Engineering (Fall 2026) | 2026-06-27 | Applied | full-stack+energy-iot | 1.0 |
 | Tesla | Internship, Software Engineer, AI Inference Co Design (Fall 2026/Winter 2027) | 2026-08-11 | Applied | ai-ml+autonomy | 0.0 |
+| EffiGov | Software Engineer Intern (Fall 2026) | 2026-08-12 | Applied | full-stack+voice-ai | 7.0 |
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
@@ -67,6 +68,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 45
+- **Total applied:** 46
 - **Interviews:** 0
 - **Offers:** 0
