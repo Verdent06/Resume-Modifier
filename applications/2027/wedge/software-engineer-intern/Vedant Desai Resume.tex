@@ -1,0 +1,94 @@
+%% ============================================================================
+%%  applications/2027/wedge/software-engineer-intern/Vedant Desai Resume.tex
+%%  Wedge Software Engineer Intern Summer 2027 — full-stack spine + agentic AI.
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed) --------------------------------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Discrete Mathematics, Calculus III
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE ---------------------------------------------------------
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
+			{}
+			{Ann Arbor, MI}
+
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{Feb 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund acquisition prospecting --- live product generating \$1,500 MRR across three paying clients}
+			{}
+			{}
+
+			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS -----------------------------------------------------------
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment}
+			{Python, FastAPI, PostgreSQL, pgvector, React, TypeScript, Docker, LangGraph}
+			{}
+
+			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
+			\item Orchestrated a 5-node LangGraph pipeline (fetch $\rightarrow$ classify $\rightarrow$ embed $\rightarrow$ score $\rightarrow$ explain) with per-node timing from the same 90-run batch: fetch 7.3s p50, classify 1.1s p50 (~29ms/article over 40-article batches), embed 1.1s p50, score under 1ms p50, explain 3ms p50 --- fetch dominated wall time (~80\% of p50 latency).
+			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS -------------------------------------------------
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, TypeScript, SQL}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Flask, FastAPI, React, LangGraph, Angular}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, pgvector, Redis}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2), Docker, Git, GitHub Actions, Celery}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
