@@ -60,6 +60,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Delta Air Lines | Innovation & AI Engineering Intern (Fall 2026) | 2026-08-13 | Applied | ai-ml | 5.0 |
 | Cloudflare | Software Engineer Intern (Fall 2026) | 2026-08-13 | Applied | full-stack+systems | 7.0 |
 | ProNexus | Gen AI/Backend Software Engineer Intern (Python) | 2026-08-13 | Applied | full-stack+agentic-ai | 9.0 |
+| The Imagine Group | AI Solutions Intern | 2026-08-13 | Applied | ai-ml | 0.0 |
 
 **Status:** Applied / OA Sent / OA Completed / Phone Screen / Final Round / Offer / Rejected / Ghosted
 
@@ -73,6 +74,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 51
+- **Total applied:** 52
 - **Interviews:** 0
 - **Offers:** 0
