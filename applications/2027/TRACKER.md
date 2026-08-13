@@ -13,6 +13,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | SpaceX | Software Engineering Intern/Co-op (Summer 2027) | 2026-08-05 | Applied | full-stack+aerospace/real-time/mission-critical/embedded-adjacent | 8.0 |
 | Chicago Trading Company (CTC) | Software Engineering Internship — Summer 2027 | 2026-08-05 | Applied | full-stack | 9.0 |
 | TIFIN | AI Engineering Intern, TIFIN.ai | 2026-08-12 | Applied | ai-ml | 7.0 |
+| Cotiviti | Intern – Agentic AI Research | 2026-08-12 | Applied | ai-ml | 2.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -20,6 +21,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 4
+- **Total applied:** 5
 - **Interviews:** 0
 - **Offers:** 0
