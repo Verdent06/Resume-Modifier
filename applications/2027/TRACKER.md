@@ -33,6 +33,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Belvedere Trading | Software Engineer Intern — Summer 2027 | 2026-08-13 | Applied | full-stack | 8.0 |
 | RTX / Raytheon | Software Engineer Intern — Summer 2027 | 2026-08-13 | Applied | full-stack | 7.0 |
 | Pylon | Software Engineer, Intern (Summer 2027) | 2026-08-13 | Applied | full-stack | 8.0 |
+| Citadel Securities | Software Engineer – Intern (US) | 2026-08-13 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -40,6 +41,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 24
+- **Total applied:** 25
 - **Interviews:** 0
 - **Offers:** 0
