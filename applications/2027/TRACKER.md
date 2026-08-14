@@ -49,6 +49,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | GE Vernova | Engineering Intern — Power Conversion & Storage AI Tool Developer (Summer 2027) | 2026-08-14 | Applied | ai-ml | 9.0 |
 | Interactive Brokers | Software Developer Summer Internship – 2027 | 2026-08-14 | Applied | full-stack | 8.0 |
 | IBM | Software Developer Intern 2027 | 2026-08-14 | Applied | full-stack | 8.0 |
+| Appian | Software Engineering Intern | 2026-08-14 | Applied | full-stack+AI-powered process automation / enterprise workflow platform | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -56,6 +57,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 40
+- **Total applied:** 41
 - **Interviews:** 0
 - **Offers:** 0
