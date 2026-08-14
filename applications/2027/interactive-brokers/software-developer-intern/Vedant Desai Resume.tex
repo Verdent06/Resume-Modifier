@@ -1,6 +1,6 @@
 %% ============================================================================
 %%  applications/2027/interactive-brokers/software-developer-intern
-%%  Vedant Desai Resume.tex — writer initial (iter-1)
+%%  Vedant Desai Resume.tex — writer grading-response (iter-2)
 %%  Spine: Python production shipping (MDC) + real-time performance (CSP)
 %%  + C++ hot-path systems (Granular) + financial-data flavor (SignalWeaver).
 %%  No Java; MatchStream omitted; Vylet/Lyndbrook omitted (agentic / GTM lanes).
@@ -74,11 +74,11 @@
 			{SignalWeaver}
 			{}
 			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
-			{FastAPI, pgvector}
+			{pgvector, Docker Compose, GitHub Actions}
 			{}
 
-			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
 			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -86,11 +86,9 @@
 	\begin{rSection}{T}{echnical Skills}
 		\begin{rSet}{Languages}{Python, C++, TypeScript, SQL}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{FastAPI, Flask, Angular, RxJS, JUCE}
+		\begin{rSet}{Frameworks}{Flask, Angular, RxJS, JUCE}
 		\end{rSet}
-		\begin{rSet}{Databases}{pgvector}
-		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Git}
+		\begin{rSet}{Databases \& Infrastructure}{pgvector, AWS (EC2, S3), Git}
 		\end{rSet}
 	\end{rSection}
 

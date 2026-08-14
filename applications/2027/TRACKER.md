@@ -47,6 +47,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Optiver | Software Engineer Intern (Summer 2027 – Chicago) | 2026-08-14 | Applied | full-stack | 9.0 |
 | Castleton Commodities International | Full-Stack Software Engineer Internship (Summer 2027) | 2026-08-14 | Applied | full-stack | 10.0 |
 | GE Vernova | Engineering Intern — Power Conversion & Storage AI Tool Developer (Summer 2027) | 2026-08-14 | Applied | ai-ml | 9.0 |
+| Interactive Brokers | Software Developer Summer Internship – 2027 | 2026-08-14 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -54,6 +55,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 38
+- **Total applied:** 39
 - **Interviews:** 0
 - **Offers:** 0
