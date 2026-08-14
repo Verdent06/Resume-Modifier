@@ -1,0 +1,11 @@
+{
+  "loop_target_met": false,
+  "weighted_demerits": 3,
+  "display_score": 7.0,
+  "counts": {
+    "major": 0,
+    "minor": 3,
+    "emergency": 0
+  },
+  "coerced_defects": []
+}

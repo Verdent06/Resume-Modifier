@@ -1,0 +1,104 @@
+{
+  "hard_gates_pass": true,
+  "metric_density": {
+    "ratio": 1.0,
+    "metric_free_entries": [],
+    "exempt_entries_applied": []
+  },
+  "gates": [
+    {
+      "name": "required_languages",
+      "hard": true,
+      "passed": true,
+      "detail": "All JD languages the candidate has are present: []."
+    },
+    {
+      "name": "no_orphans",
+      "hard": true,
+      "passed": true,
+      "detail": "No orphaned framework/library skills."
+    },
+    {
+      "name": "no_bullet_deletion",
+      "hard": true,
+      "passed": true,
+      "detail": "No entry shrank below baseline."
+    },
+    {
+      "name": "min_entries",
+      "hard": true,
+      "passed": true,
+      "detail": "4 entries (floor 4)."
+    },
+    {
+      "name": "protected_depth",
+      "hard": true,
+      "passed": true,
+      "detail": "Protected entries retain depth."
+    },
+    {
+      "name": "lead_signal",
+      "hard": true,
+      "passed": true,
+      "detail": "Skipped (no divergence / window=0)."
+    },
+    {
+      "name": "fit_protection",
+      "hard": true,
+      "passed": true,
+      "detail": "Skipped (loop phase)."
+    },
+    {
+      "name": "page_fill",
+      "hard": true,
+      "passed": true,
+      "detail": "One page, 95% filled."
+    }
+  ],
+  "entries_parsed": [
+    {
+      "name": "Vylet",
+      "section": "experience",
+      "bullets": 3
+    },
+    {
+      "name": "Lyndbrook Capital",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "Michigan Data Consulting (MDC)",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "SignalWeaver",
+      "section": "projects",
+      "bullets": 2
+    }
+  ],
+  "skills_parsed": {
+    "languages": [
+      "Python",
+      "SQL"
+    ],
+    "ai / ml": [
+      "LangGraph",
+      "LangSmith",
+      "Pandas"
+    ],
+    "frameworks": [
+      "Flask"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Redis",
+      "pgvector"
+    ],
+    "cloud \\& infrastructure": [
+      "AWS (EC2)",
+      "Docker",
+      "Celery"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "defects": [
+    {"entry": "Vylet", "severity": "minor", "defect": "metric-free architecture closer", "why": "The asyncpg DAL / Gemini-embeddings / stale-entry re-scrape bullet ends on 'fresh without manual intervention' with no number, so the screen cannot size the freshness or reliability win next to the 30x and 50%→90% lines above it."},
+    {"entry": "SignalWeaver", "severity": "minor", "defect": "latency dump, no impact", "why": "Both bullets are p50/p99 timings from a 90-run batch (fetch 7.3s, search 49ms) with no accuracy, faithfulness, or user-facing outcome — reads as a profiler log, not a tool an NPI engineer would adopt."},
+    {"entry": "resume", "severity": "minor", "defect": "industrial NPI / energy-tooling differentiator absent", "why": "Every entry is PE lead-sourcing, search-fund utilities, campaign finance, or financial research; the page never shows document templates, engineering-doc pipelines, or tools shipped to design/application engineers on energy hardware."}
+  ]
+}
