@@ -4,6 +4,10 @@
 %%  Iter-1 fill from context.md pool. Education/header untouched.
 %%  Spine: MDC (Flask/AWS/Python) + CSP (JS-family test/debug) + Vylet (SQL/ship).
 %%  Differentiator: Granular in Experience slot 2 (C++ memory/concurrency/release).
+%%  gate-fix page_fill retry: SignalWeaver one bullet (pgvector semantic
+%%  search); stack pgvector; Frameworks trimmed (no React/FastAPI orphans).
+%%  iter-3 grading-response: revert Granular 1+2+6 (CMake/processBlock audit);
+%%  MDC third bullet pool 4 (stakeholder/sole-engineer); SignalWeaver stays 1.
 %% ============================================================================
 
 \documentclass[
@@ -40,13 +44,13 @@
 
 			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at $\sim$2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating $\sim$800 hours of manual pulls across 400 tracked PACs.
 			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
-			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
 			{Granular Synthesizer Plugin}
 			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{}
 			{C++, JUCE, VST3, AU}
 			{}
 
@@ -83,12 +87,11 @@
 		\begin{rSectionEntry}
 			{SignalWeaver}
 			{}
-			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
-			{FastAPI, React, TypeScript, PostgreSQL}
+			{}
+			{pgvector}
 			{}
 
-			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
-			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -96,9 +99,7 @@
 	\begin{rSection}{T}{echnical Skills}
 		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL, HTML/CSS}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS, JUCE}
-		\end{rSet}
-		\begin{rSet}{Databases}{PostgreSQL, Redis}
+		\begin{rSet}{Frameworks}{Flask, Angular, RxJS, JUCE}
 		\end{rSet}
 		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Celery, Git}
 		\end{rSet}
