@@ -52,6 +52,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Appian | Software Engineering Intern | 2026-08-14 | Applied | full-stack+AI-powered process automation / enterprise workflow platform | 10.0 |
 | Virtu Financial | 2027 Internship - Software Engineer | 2026-08-14 | Applied | full-stack | 9.0 |
 | Notion | Software Engineer Intern | 2026-08-14 | Applied | full-stack | 10.0 |
+| RTX / Applied Signal Technology | Software Engineering Intern (Summer 2027) | 2026-08-14 | Applied | full-stack+SIGINT/advanced-communications | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -59,6 +60,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 43
+- **Total applied:** 44
 - **Interviews:** 0
 - **Offers:** 0
