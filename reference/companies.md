@@ -200,6 +200,7 @@
 | **Home Depot**                | Atlanta                       | Retail tech                                                                           | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~15–25%                                |
 | **Meijer (HQ)**               | Grand Rapids, MI              | Retail tech; Michigan-based; local advantage                                          | 2 rds · Easy · No OA · No · Bottleneck: resume · ~25–35%                                  |
 | **Blue Cross Blue Shield MI** | Detroit, MI                   | Healthcare IT                                                                         | 2–3 rds · Easy · No OA · No · Bottleneck: resume · ~20–30%                                |
+| **McKesson (CoverMyMeds)**    | Columbus, OH                   | Healthcare prior-auth SaaS (CMM); Fortune 10 parent; catch-all Technology Intern (SWE / platform / SRE / cloud / data / security / tech BA); intern $16.50–27.50/hr; no housing, relocation, or visa help; Workday; apply by posted close | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~15–25% |
 
 
 ---
