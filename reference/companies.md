@@ -28,6 +28,7 @@
 | **HRT (Hudson River Trading)**   | NYC, Chicago             | Quant; systems focus; C++                                                    | 4–5 rds · Hard · Custom OA · No · Bottleneck: tech rounds · <0.5%                         |
 | **IMC Trading**                  | Chicago, NYC             | Quant; low-latency/algo; C++/Java/Python; $83–121/hr; housing + $25K sign-on | 3–4 rds · Med–Hard · HackerRank · No · Bottleneck: OA + tech rounds · ~1–2%               |
 | **Optiver**                      | Chicago, Austin, AMS     | Quant; options market-making; C++/Python/Java SWE intern; $80k base + housing/flights | 4–5 rds · Med–Hard · HackerRank (coding+CS MCQ+Zap-N) · Light · Bottleneck: OA + tech · ~1–2% |
+| **Virtu Financial**              | NYC, Austin              | Electronic market-making / HFT; proprietary low-latency C++/Python/Java trading systems; SWE intern $5–5.8k/wk + housing/sign-on (~$125/hr NYC 2026) | Resume → HackerRank OA (5Q / 75min, Easy–Med) → HR + brainteaser → 2–3 tech · Light · Bottleneck: resume + OA · ~1–2% |
 
 ---
 
