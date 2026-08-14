@@ -43,6 +43,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | BAE Systems | Software Engineering Intern III, Summer 2027 (Onsite) | 2026-08-13 | Applied | full-stack | 9.0 |
 | Medtronic | Software Engineering Intern – Summer 2027 | 2026-08-13 | Applied | full-stack+medical-device/regulated-software-quality | 9.0 |
 | McKesson (CoverMyMeds) | CMM Technology Intern - Summer 2027 | 2026-08-14 | Applied | full-stack+healthcare-prior-auth/partner-solutions | 9.0 |
+| Gulfstream Aerospace (GD) | Summer 2027 - IEF - Advanced Structures and Materials (ASMI) - College Associate Intern | 2026-08-14 | Applied | full-stack | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -50,6 +51,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 34
+- **Total applied:** 35
 - **Interviews:** 0
 - **Offers:** 0
