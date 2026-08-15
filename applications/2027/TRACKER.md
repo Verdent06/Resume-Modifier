@@ -55,6 +55,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | RTX / Applied Signal Technology | Software Engineering Intern (Summer 2027) | 2026-08-14 | Applied | full-stack+SIGINT/advanced-communications | 7.0 |
 | Hypercubic | Software Engineering Internship | 2026-08-14 | Applied | full-stack+agentic AI / COBOL-mainframe modernization / program analysis | 9.0 |
 | JPMorgan Chase | 2027 Data & AI Program – Summer Internship – Analyst | 2026-08-15 | Applied | ai-ml+fintech-backend | 7.0 |
+| Boeing | Boeing Summer 2027 Internship Program (Paid) – Data Analytics Intern | 2026-08-15 | Applied | ai-ml | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -62,6 +63,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 46
+- **Total applied:** 47
 - **Interviews:** 0
 - **Offers:** 0
