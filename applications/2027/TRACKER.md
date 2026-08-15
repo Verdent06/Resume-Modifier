@@ -57,6 +57,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | JPMorgan Chase | 2027 Data & AI Program – Summer Internship – Analyst | 2026-08-15 | Applied | ai-ml+fintech-backend | 7.0 |
 | Boeing | Boeing Summer 2027 Internship Program (Paid) – Data Analytics Intern | 2026-08-15 | Applied | ai-ml | 8.0 |
 | Mortenson | Data Analytics & Insights Intern | 2026-08-15 | Applied | ai-ml+construction/EPC operational analytics / business-intelligence | 8.0 |
+| WEC Energy Group (We Energies) | Intern - Renewables Data Analytics | 2026-08-15 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -64,6 +65,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 48
+- **Total applied:** 49
 - **Interviews:** 0
 - **Offers:** 0
