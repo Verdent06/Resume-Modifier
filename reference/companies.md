@@ -63,6 +63,7 @@
 | **Applied Intuition**  | Sunnyvale                  | AV simulation; $6B+ val; C++ heavy; feeds into AV/robotics career                                                                 | 3–4 rds · Med–Hard · No OA · Yes (AV systems) · Bottleneck: tech rounds · ~3–5%                              |
 | **Waymo**              | Mountain View              | AV; Alphabet lineage; elite eng bar; strongest AV name                                                                            | 4 rds · Med–Hard · HackerRank · Yes · Bottleneck: tech rounds · ~3–5%                                        |
 | **Anysphere (Cursor)** | San Francisco              | AI code editor; $20B val; $1B ARR in 24 months; white-hot signal                                                                  | 3–4 rds · Med–Hard · No standard OA · Yes · Bottleneck: resume · <2%                                         |
+| **Replit**                    | Foster City, CA            | Agentic software creation / cloud browser IDE; $9B val (Series D Mar 2026, $400M); targeting $1B ARR; 50M+ users; intern hybrid Foster City (Mon/Wed/Fri HQ); TypeScript/Python/Go; practical Replit-native loop not LC | 3–5 rds · Practical (Replit editor) · Timed Replit challenge (historical apply gate) / no third-party OA · Light · Bottleneck: resume + project day · <3% |
 
 
 ---
