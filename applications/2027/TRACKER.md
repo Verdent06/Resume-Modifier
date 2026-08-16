@@ -58,6 +58,10 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Boeing | Boeing Summer 2027 Internship Program (Paid) – Data Analytics Intern | 2026-08-15 | Applied | ai-ml | 8.0 |
 | Mortenson | Data Analytics & Insights Intern | 2026-08-15 | Applied | ai-ml+construction/EPC operational analytics / business-intelligence | 8.0 |
 | WEC Energy Group (We Energies) | Intern - Renewables Data Analytics | 2026-08-15 | Applied | ai-ml | 10.0 |
+| Anduril Industries | 2027 Software Engineer Intern | 2026-08-15 | Applied | full-stack+autonomy/mission-critical defense | 8.0 |
+| Valeo | Software Engineer Intern | 2026-08-15 | Applied | full-stack+automotive-SDV/embedded-C++/hw-sw | 5.0 |
+| Neuralink | Software Engineer Intern, Implant | 2026-08-15 | Applied | full-stack+BCI/medical-device/safety-critical/firmware-adjacent | 9.0 |
+| IBM | Intern Data Engineers - AI & Analytics - 2027 | 2026-08-15 | Applied | ai-ml | 8.0 |
 | Replit | Software Engineer Intern | 2026-08-16 | Applied | full-stack+agentic software creation / AI-powered cloud IDE / developer-tools + AI-agent infra | 10.0 |
 | GE Aerospace | Engines Engineering Intern – Computer or Software Engineering – US – Summer 2027 | 2026-08-17 | Applied | full-stack+aerospace/mission-critical/real-time/embedded-adjacent | 9.0 |
 
@@ -67,6 +71,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 51
+- **Total applied:** 55
 - **Interviews:** 0
 - **Offers:** 0

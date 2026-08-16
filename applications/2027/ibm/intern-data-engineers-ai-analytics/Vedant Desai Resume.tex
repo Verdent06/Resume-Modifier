@@ -1,0 +1,93 @@
+%% ============================================================================
+%%  applications/2027/ibm/intern-data-engineers-ai-analytics
+%%  Class path: ../../../template (do not change). Education + header fixed.
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed) --------------------------------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Discrete Math, Calc III
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE ---------------------------------------------------------
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
+			{}
+			{Ann Arbor, MI}
+
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at $\sim$2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating $\sim$800 hours of manual pulls across 400 tracked PACs.
+			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three paying clients}
+			{}
+			{}
+
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Launched Vylet, automating a $\sim$30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Lyndbrook Capital}
+			{Feb 2026 -- Apr 2026}
+			{Data Engineering Consultant}
+			{}
+			{Remote}
+
+			\item Contracted pre-LOI to build acquisition intelligence for a boutique search fund targeting water utility operators; aggregated EPA ECHO and MassGIS regulatory data into a unified PWSID entity database and delivered 800+ validated Day-1 acquisition targets within the engagement window.
+			\item Automated off-market deal sourcing by aggregating 2,500+ legal entities from EPA compliance databases and cross-referencing Google Maps API data to surface unlisted acquisition targets, eliminating 15 hours of manual prospecting per week for the fund's Principal.
+			\item Built a Review Velocity scoring algorithm that proxied fleet expansion and operational scale from public compliance data, filtering 800 acquisition targets down to a 280-lead qualified shortlist --- a 35\% precision rate against the fund's revenue criteria.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS -----------------------------------------------------------
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{}
+			{FastAPI, React, Postgres, pgvector}
+			{}
+
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
+			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS -------------------------------------------------
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, SQL}
+		\end{rSet}
+		\begin{rSet}{AI / ML}{Pandas, LangGraph}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2), Docker, Celery}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
