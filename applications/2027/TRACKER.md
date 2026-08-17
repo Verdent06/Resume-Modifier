@@ -64,6 +64,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | IBM | Intern Data Engineers - AI & Analytics - 2027 | 2026-08-15 | Applied | ai-ml | 8.0 |
 | Replit | Software Engineer Intern | 2026-08-16 | Applied | full-stack+agentic software creation / AI-powered cloud IDE / developer-tools + AI-agent infra | 10.0 |
 | GE Aerospace | Engines Engineering Intern – Computer or Software Engineering – US – Summer 2027 | 2026-08-17 | Applied | full-stack+aerospace/mission-critical/real-time/embedded-adjacent | 9.0 |
+| Datadog | Software Engineering Intern (Winter) | 2026-08-17 | Applied | full-stack+observability/high-scale telemetry/cloud monitoring | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -71,6 +72,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 55
+- **Total applied:** 56
 - **Interviews:** 0
 - **Offers:** 0
