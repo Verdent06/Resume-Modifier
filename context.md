@@ -244,9 +244,14 @@ React/TypeScript frontend.
 
 **Header:**
 
+```
+SignalWeaver  |  {tech derived from selected bullets}    github.com/Verdent06/SignalWeaver
 SignalWeaver --- Multi-signal financial research platform combining
 fundamentals, macro indicators, and news sentiment (research assistant;
 not investment advice)
+```
+
+**GitHub:** [https://github.com/Verdent06/SignalWeaver](https://github.com/Verdent06/SignalWeaver)
 
 **Bullet pool:**
 
