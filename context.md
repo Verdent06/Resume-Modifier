@@ -171,7 +171,7 @@ defect with a before/after number, not just architecture.
 
 Vylet | May 2026 -- Present | {tech derived from selected bullets} vyletdata.com
 Founder --- Automated lead-sourcing platform for PE/search-fund; live
-product generating $1,500 MRR across three paying clients
+product generating $1,500 MRR across three clients
 
 **Bullet pool:**
 

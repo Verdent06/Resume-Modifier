@@ -1,0 +1,37 @@
+{
+  "jd_languages": [],
+  "jd_required_keywords": [
+    "data structures",
+    "algorithms",
+    "software design",
+    "production systems",
+    "distributed systems",
+    "reliability",
+    "scalability",
+    "performance",
+    "observability",
+    "metrics",
+    "logs",
+    "real-time",
+    "Kubernetes",
+    "cloud-native",
+    "backend",
+    "frontend",
+    "infrastructure",
+    "data engineering",
+    "developer platforms",
+    "AI-assisted tools"
+  ],
+  "candidate_languages": ["Python", "TypeScript", "C++", "SQL", "HTML/CSS"],
+  "exempt_entries": [],
+  "protected_entries": ["CaseStudyPrep.AI", "Granular Synthesizer Plugin"],
+  "lead_signal_window": 2,
+  "min_entries": 5,
+  "iter1_counts": {
+    "Vylet": 3,
+    "CaseStudyPrep.AI": 3,
+    "Michigan Data Consulting (MDC)": 2,
+    "SignalWeaver": 3,
+    "Granular Synthesizer Plugin": 2
+  }
+}

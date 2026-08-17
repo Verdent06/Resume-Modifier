@@ -1,0 +1,114 @@
+{
+  "hard_gates_pass": false,
+  "metric_density": {
+    "ratio": 0.6,
+    "metric_free_entries": [
+      "SignalWeaver",
+      "Granular Synthesizer Plugin"
+    ],
+    "exempt_entries_applied": []
+  },
+  "gates": [
+    {
+      "name": "required_languages",
+      "hard": true,
+      "passed": true,
+      "detail": "All JD languages the candidate has are present: []."
+    },
+    {
+      "name": "no_orphans",
+      "hard": true,
+      "passed": true,
+      "detail": "No orphaned framework/library skills."
+    },
+    {
+      "name": "no_bullet_deletion",
+      "hard": true,
+      "passed": true,
+      "detail": "No entry shrank below baseline."
+    },
+    {
+      "name": "min_entries",
+      "hard": true,
+      "passed": true,
+      "detail": "5 entries (floor 5)."
+    },
+    {
+      "name": "protected_depth",
+      "hard": true,
+      "passed": true,
+      "detail": "Protected entries retain depth."
+    },
+    {
+      "name": "lead_signal",
+      "hard": true,
+      "passed": true,
+      "detail": "Differentiator entry in top 2: ['CaseStudyPrep.AI']."
+    },
+    {
+      "name": "fit_protection",
+      "hard": true,
+      "passed": true,
+      "detail": "Skipped (loop phase)."
+    },
+    {
+      "name": "page_fill",
+      "hard": true,
+      "passed": false,
+      "detail": "2 pages; must be exactly 1 (overflow)."
+    }
+  ],
+  "entries_parsed": [
+    {
+      "name": "Vylet",
+      "section": "experience",
+      "bullets": 3
+    },
+    {
+      "name": "CaseStudyPrep.AI",
+      "section": "experience",
+      "bullets": 3
+    },
+    {
+      "name": "Michigan Data Consulting (MDC)",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "SignalWeaver",
+      "section": "projects",
+      "bullets": 3
+    },
+    {
+      "name": "Granular Synthesizer Plugin",
+      "section": "projects",
+      "bullets": 2
+    }
+  ],
+  "skills_parsed": {
+    "languages": [
+      "Python",
+      "TypeScript",
+      "C++"
+    ],
+    "frameworks": [
+      "React",
+      "Angular",
+      "FastAPI",
+      "Flask",
+      "RxJS",
+      "JUCE"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Redis",
+      "pgvector"
+    ],
+    "cloud \\& infrastructure": [
+      "AWS (EC2, S3)",
+      "Docker",
+      "Celery",
+      "GitHub Actions"
+    ]
+  }
+}
