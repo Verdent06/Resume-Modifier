@@ -65,6 +65,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Replit | Software Engineer Intern | 2026-08-16 | Applied | full-stack+agentic software creation / AI-powered cloud IDE / developer-tools + AI-agent infra | 10.0 |
 | GE Aerospace | Engines Engineering Intern – Computer or Software Engineering – US – Summer 2027 | 2026-08-17 | Applied | full-stack+aerospace/mission-critical/real-time/embedded-adjacent | 9.0 |
 | Datadog | Software Engineering Intern (Winter) | 2026-08-17 | Applied | full-stack+observability/high-scale telemetry/cloud monitoring | 8.0 |
+| American Express | Software Engineer Intern | 2026-08-19 | Applied | full-stack | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -72,6 +73,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 56
+- **Total applied:** 57
 - **Interviews:** 0
 - **Offers:** 0
