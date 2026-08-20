@@ -72,6 +72,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Deutsche Bank | Deutsche Bank Internship Program - Technology, Data and Innovation (TDI) - New York 2027 | 2026-08-20 | Applied | full-stack+fintech-backend/bank-IT-modernization | 10.0 |
 | Dimensional Fund Advisors | Internship in Global Client Group - Data and Tools (Undergraduate & Master's) | 2026-08-20 | Applied | ai-ml+systematic-AM / GCG sales-ops / CRM-ecosystem data tools | 9.0 |
 | Garda Capital Partners | Software Engineer Intern | 2026-08-20 | Applied | full-stack | 8.0 |
+| Vanguard | College to Corporate IT Internship - Data Analyst (NC) | 2026-08-20 | Applied | ai-ml+client-owned asset management / investor-outcomes analytics | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -79,6 +80,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 63
+- **Total applied:** 64
 - **Interviews:** 0
 - **Offers:** 0
