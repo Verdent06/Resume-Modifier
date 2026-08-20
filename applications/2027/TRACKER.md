@@ -71,6 +71,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Deloitte | Consultative Offerings — Summer Scholar — Data & AI Solutions Engineering | 2026-08-19 | Applied | ai-ml+consulting/forward-deployed | 9.0 |
 | Deutsche Bank | Deutsche Bank Internship Program - Technology, Data and Innovation (TDI) - New York 2027 | 2026-08-20 | Applied | full-stack+fintech-backend/bank-IT-modernization | 10.0 |
 | Dimensional Fund Advisors | Internship in Global Client Group - Data and Tools (Undergraduate & Master's) | 2026-08-20 | Applied | ai-ml+systematic-AM / GCG sales-ops / CRM-ecosystem data tools | 9.0 |
+| Garda Capital Partners | Software Engineer Intern | 2026-08-20 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -78,6 +79,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 62
+- **Total applied:** 63
 - **Interviews:** 0
 - **Offers:** 0
