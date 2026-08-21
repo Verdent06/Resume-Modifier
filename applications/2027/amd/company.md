@@ -1,39 +1,44 @@
-# Advanced Micro Devices, Inc
+# AMD
 
-AMD designs CPUs, GPUs, and AI accelerators — Ryzen and EPYC processors, Radeon graphics, and Instinct accelerators — as the public-market chip competitor to NVIDIA. Hardware is the brand; intern seats span silicon, firmware, software, and (this req) applied data analysis on performance, quality, and product data, not a chip-design internship. `reference/companies.md` B-TIER Notes: strong intern program, B for SWE not chip engineering; this 2027 Undergrad Data Analyst Intern/co-op (req 90895) is a data seat at a semiconductor company.
+AMD designs CPUs, GPUs, and adaptive SoCs — Ryzen and EPYC on the CPU side, Radeon and Instinct on graphics and AI accelerators — and competes directly with NVIDIA in accelerated computing while remaining a full-stack silicon company. Intern SWE seats sit across application software, tools, drivers, and platform enablement, not a single chip-design desk. `reference/companies.md` B-TIER Notes flag that competition and a strong intern program, and rate AMD **B for SWE, not chip engineering**: the 2027 undergrad SWE posting (req **90891**) is a generic polyglot SWE catch-all (apps, SDLC, scripts, debug), not an RTL or physical-design req. A separate 2027 Undergrad Data Analyst Intern/co-op (req **90895**) is an applied-data seat on performance, quality, and product data — not chip design and not the SWE intern spine.
 
 ## Quick Facts
 
-- **Tier:** B-TIER (`reference/companies.md`) — hardware/semiconductor peer to Intel/Qualcomm; solid intern brand, not FAANG SWE prestige
-- **HQ / offices:** Santa Clara, CA (HQ / Augustine Drive campus). This req: **San Jose, CA or Santa Clara, CA** (page: Santa Clara 2485 Augustine Drive 95054; short_location Multiple). Other intern hubs: Austin TX (highest volume, Extern), Fort Collins CO, Markham ON
-- **Valuation / signal:** Public (NASDAQ: AMD); CPU/GPU/AI-accelerator competitor to NVIDIA; intern prestige is B for SWE, not chip-design lottery (`companies.md`: ~5–8%)
-- **Product focus:** High-performance compute silicon and software — Ryzen, EPYC, Radeon, Instinct; this intern analyzes data, performance, and quality around that stack, not RTL
-- **Intern comp (2027 Undergrad Data Analyst Intern/co-op):** unpublished on this posting (JSON-LD salary 0). Directional analog only: Extern AMD intern guide (July 2026) ~$38–$42/hr undergrad technical + ~$3K–$4.5K housing stipend. Do not treat as JD-listed pay
-- **Work model:** Full-time 40 hrs/week, hybrid or onsite for the term. Summer Internship semester students: **May 24, 2027 – August 13, 2027**. Quarter analog June 21 – September 10, 2027. Co-op windows also listed (Spring/Summer Jan 15 – Aug 13, 2027; Summer/Fall May 24 or June 21 – Dec 10, 2027). Existing vacancy (posted 2026-08-20)
-- **Clearance / eligibility:** Currently enrolled in a US-based university undergrad in Data Analytics, Data Engineering, Computer Engineering, Electrical Engineering, Computer Science, or related. **This role is not eligible for visa sponsorship.** AMD may use AI to screen applicants.
+- **Tier:** B-TIER — Good / Solid Resume Addition (`reference/companies.md`)
+- **HQ / offices:** Santa Clara, CA (HQ). Also Austin, TX (highest intern volume per program guides). Both 2027 undergrad reqs: San Jose, CA or Santa Clara, CA (DA page: Santa Clara 2485 Augustine Drive 95054).
+- **Valuation / signal:** Public (NASDAQ: AMD); CPU/GPU competitor to NVIDIA; intern SWE prestige is solid B, not S-tier GPU lottery (`companies.md`: ~5–8%)
+- **Product focus:** x86 CPUs, GPUs, and AI accelerators — plus the software that builds, tests, and ships them
+- **Intern comp (2027 Undergrad Software Engineer Intern/Co-op, req 90891):** USD $64,064.00/Yr – $96,096.00/Yr (JD)
+- **Intern comp (2027 Undergrad Data Analyst Intern/co-op, req 90895):** unpublished on that posting (JSON-LD salary 0). Directional analog only: Extern AMD intern guide (July 2026) ~$38–$42/hr undergrad technical + housing stipend. Do not treat as JD-listed pay
+- **Work model:** Paid full-time 40 hrs/week; hybrid or onsite for the full term. Terms: Spring/Summer Co-op Jan 15–Aug 13 2027; Summer intern May 24–Aug 13 2027 (semester) / Jun 21–Sep 10 2027 (quarter); Summer/Fall co-op May 24–Dec 10 2027 (semester). Both postings are existing vacancies (posted 2026-08-20).
+- **Clearance / eligibility:** Currently enrolled US-based university, Undergrad. SWE (90891): CE/EE/CS or related. DA (90895): Data Analytics, Data Engineering, Computer Engineering, Electrical Engineering, Computer Science, or related. **Neither role is eligible for visa sponsorship.** AMD may use AI to screen applicants.
 
 ## Interview Process
 
 | Stage | Format | Notes |
 | ----- | ------ | ----- |
-| Resume screen | Human + iCIMS (campus-amd.icims.com) / Phenom careers.amd.com | Rolling; posted **2026-08-20**; Santa Clara/San Jose seats fill early (Extern: top locations often by late October). Apply in the first wave (`recruiting.md` Part II intern) |
-| OA | No standard OA (`companies.md`; Extern: most US intern roles) | Team-dependent coding/MCQ reported on some SWE/campus loops — not the default for this DA posting |
-| Recruiter screen | Phone (~30 min, Extern analog) | Enrollment, work auth / no sponsorship, location (SJ/SC hybrid or onsite 40 hrs), why AMD, why data |
-| Tech / hiring-manager | 3–4 rds total (`companies.md`); Extern analog is recruiter + 45–60 min Teams tech/behavioral | For this DA seat: SQL/Python fluency, statistical/performance analysis, project deep-dive — not RTL/Verilog. SWE intern loops still skew C/C++ + architecture; do not import that bar onto a Data Analyst req |
-| Behavioral | STAR; AMD values (Achievement, Innovation, Collaboration, Integrity — Extern) | Filter round (`recruiting.md` §6). Stakeholder reporting / dashboards analog |
+| Resume screen | Human + ATS (careers.amd.com Phenom / campus iCIMS) | Catch-all intern postings; recruiter routes into a software or data team if the page fits. Rolling; Santa Clara/San Jose seats fill early (Extern: top locations often by late October) |
+| OA | No standard OA (`companies.md`) | Official student FAQ: recruiter screen then hiring team. US intern guides: no standardized coding test for most US roles; campus/India drives may add MCQs. Do not assume a LeetCode OA for the DA posting |
+| Recruiter screen | Phone (~30 min, Extern analog) | Enrollment, work auth / no sponsorship, location (SJ/SC hybrid or onsite 40 hrs), team routing. SWE: C/C++ or Python flexibility. DA: why data |
+| Tech / hiring-team | 1–2 interviews (Teams); 3–4 rds total in `companies.md` | SWE: Medium DS&A, C/C++ or Python, OS/architecture, project deep-dive, debugging. DA: SQL/Python fluency, statistical/performance analysis, project deep-dive — do not import the C/C++ SWE bar onto req 90895 |
+| Behavioral | Folded into tech or a short values pass | Achievement, Innovation, Collaboration, Integrity (candidate-reported / Extern); intern behavioral is a filter (`recruiting.md` §6) |
 
-**Estimated funnel:** 3–4 rounds · Medium · No standard OA · No intern sys design · Bottleneck: tech rounds · ~5–8% (`reference/companies.md` AMD SWE row). Web delta: Extern 2027–28 intern guide describes a shorter 2-round loop (recruiter + Teams) and <2% for *technical/engineering* intern seats; lead with the B-tier row for this DA intern, treat Extern as directional process shape not a rewrite of the SWE funnel.
+**Estimated funnel:** 3–4 rounds · Medium · No standard OA · No intern sys design · Bottleneck: tech rounds · ~5–8% (`reference/companies.md` AMD row). Web delta: Extern 2027–28 intern guide describes a shorter 2-round loop (recruiter + Teams) and <2% for *technical/engineering* intern seats; lead with the B-tier row, treat Extern as directional process shape.
 
 ## Stack & Hiring Signal
 
-- **Languages:** JD lists Python, SQL, R, Java as “if you have knowledge… strongly encourage,” not hard requirements. Do not invent R, Java, Snowflake, Tableau/Tableu, Power BI, Kubernetes, Azure/AKS, Oracle, or SQL Server. Python/SQL/Pandas count only through real use (`resume.md` keyword-through-use)
-- **Domains:** Applied data analysis, statistical analysis, performance analysis, QA, data interpretation; raw data → PoC/prototype/solution with viz; training toward prescriptive/predictive modeling; reports/presentations/dashboards. Semiconductor / HPC identity is company context — this is not a chip-design intern
-- **What wins:** End-to-end ingest → pipeline → insight/KPI or score → measured outcome (`resume.md` Part III §14 / `recruiting.md` Part III §13), plus visible performance-analysis or systems-adjacent depth so the page is memorable at a chip company. iCIMS knockouts (enrollment, no sponsorship) are absolute (`recruiting.md` §8)
+- **Languages (SWE 90891):** C/C++, Python, JavaScript, Java, Perl, PowerShell, Linux shell — encouraged, not all required (JD)
+- **Languages (DA 90895):** Python, SQL, R, Java as “if you have knowledge… strongly encourage,” not hard requirements. Do not invent R, Java, Snowflake, Tableau/Tableu, Power BI, Kubernetes, Azure/AKS, Oracle, or SQL Server. Python/SQL/Pandas count only through real use (`resume.md` keyword-through-use)
+- **Domains:** SWE: application software (design/build/test/deploy); automation; debugging; UNIX/Linux; databases; cloud (Azure named); web frameworks; Git; PC/CPU architecture as placement-adjacent. DA: applied data analysis, statistical/performance analysis, QA, interpretation; raw data → PoC/prototype with viz; training toward prescriptive/predictive modeling; reports/dashboards. Semiconductor / HPC identity is company context — neither req is a chip-design intern
+- **What wins (SWE):** A full-stack intern spine (`resume.md` Part III §12 / `recruiting.md` Part III §11) with JD languages shown in bullets (especially Python and C++), plus visible systems / performance / real-time / embedded-adjacent depth. Do not invent Azure, Java, Perl, PowerShell, Django, Rails, Spring Boot, MongoDB, MySQL, Perforce, or UML.
+- **What wins (DA):** End-to-end ingest → pipeline → insight/KPI or score → measured outcome (`resume.md` Part III §14 / `recruiting.md` Part III §13), plus visible performance-analysis or systems-adjacent depth. iCIMS knockouts (enrollment, no sponsorship) are absolute (`recruiting.md` §8). Bottleneck after the PDF is tech rounds (`companies.md`).
 
 ## Sources
 
-- JD: 2027 Undergrad Data Analyst Intern/co-op — req **90895** — https://careers.amd.com/careers-home/jobs/90895
+- JD: 2027 Undergrad Software Engineer Intern/Co-op (req **90891**) — https://careers.amd.com/jobs/90891
+- JD: 2027 Undergrad Data Analyst Intern/co-op (req **90895**) — https://careers.amd.com/careers-home/jobs/90895
 - Apply ATS (do not use from this agent): https://campus-amd.icims.com/jobs/90895/login
-- `reference/companies.md` B-TIER AMD row (interview format, bottleneck, acceptance estimate, chip-competition Notes)
-- Extern AMD Internship 2027–2028 guide (July 2026): rolling calendar, ~$38–$42/hr undergrad technical analog, no standard US OA, recruiter + Teams loop
-- `reference/recruiting.md` Part II §8 (intern eligibility/timing), Part III §13 (applied ML / data)
+- AMD Student Programs FAQ (recruiter screen → hiring team; no standard OA named) — https://www.amd.com/en/corporate/careers/student-programs.html
+- `reference/companies.md` B-TIER AMD row (interview format, bottleneck, acceptance estimate, Notes)
+- `reference/recruiting.md` Part I §1 (knockouts), Part II §8 (intern eligibility/timing), Part III §11 (general SWE), Part III §13 (applied ML / data)
+- Extern AMD internship guide (US intern: no standardized OA; recruiter + tech/behavioral; ~$38–$42/hr undergrad technical analog) — https://www.extern.com/post/amd-internship-guide
