@@ -31,7 +31,15 @@ Visible on the job page:
 | Career-site chrome (NOT this job's apply questionnaire): "What are your preferred work location(s)?" / "What departments are you interested in?" | San Jose or Santa Clara; data / analytics if a department list appears — do not invent options |
 | Generic Phenom apply chrome (i18n; not confirmed as this req's questionnaire): Cover Letter, Résumé, LinkedIn, First Name, Last Name, Email, Phone, Transcript / Portfolio | Use knockout table + cover letter below if those fields appear |
 
-Workday/iCIMS account-create fields were **not** visible without login. Do not invent them.
+iCIMS first screen (visible after APPLY NOW, **before** an account exists — stop here):
+
+| Visible iCIMS text | How to treat it |
+| --- | --- |
+| "Please enter your email to begin the application process" | vedantde@umich.edu |
+| AMD Applicant Data Privacy Statement (links to AMD Global Notice for Applicants and AMD Privacy Policy) | Read; then check the box |
+| Checkbox: "I have read and understand the AMD Global Notice for Applicants and the AMD Privacy Policy. I accept" | Check to continue. Do not proceed further from this agent. |
+
+Logged-in screening questions were **not** visible. Do **not** invent them.
 
 ---
 
@@ -58,6 +66,7 @@ Workday/iCIMS account-create fields were **not** visible without login. Do not i
 | Class standing | Junior (Fall 2026); rising senior during Summer 2027 |
 | How did you hear about this role? | **Other** / job board you actually used. No AMD contact in `network.md` |
 | Languages / tools you can interview in | **Python, SQL, Pandas, Flask, PostgreSQL.** Do **not** check Snowflake, Databricks, Copilot, Fusion, Tableau, Power BI, Kubernetes, Azure, AKS, Oracle, SQL Server, R, or Java |
+| Pay (if asked) | Accept the posted intern band **USD $64,064.00–$96,096.00/Yr** (Hiring Target Min/Max on the posting) |
 
 ---
 

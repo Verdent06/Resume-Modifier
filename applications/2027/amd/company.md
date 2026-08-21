@@ -9,7 +9,7 @@ AMD designs CPUs, GPUs, and adaptive SoCs — Ryzen and EPYC on the CPU side, Ra
 - **Valuation / signal:** Public (NASDAQ: AMD); CPU/GPU competitor to NVIDIA; intern SWE prestige is solid B, not S-tier GPU lottery (`companies.md`: ~5–8%)
 - **Product focus:** x86 CPUs, GPUs, and AI accelerators — plus the software that builds, tests, and ships them
 - **Intern comp (2027 Undergrad Software Engineer Intern/Co-op, req 90891):** USD $64,064.00/Yr – $96,096.00/Yr (JD)
-- **Intern comp (2027 Undergrad Data Analyst Intern/co-op, req 90895):** unpublished on that posting (JSON-LD salary 0). Directional analog only: Extern AMD intern guide (July 2026) ~$38–$42/hr undergrad technical + housing stipend. Do not treat as JD-listed pay
+- **Intern comp (2027 Undergrad Data Analyst Intern/co-op, req 90895):** USD $64,064.00/Yr – $96,096.00/Yr (Hiring Target Min/Max on the careers.amd.com posting). JSON-LD `baseSalary` was 0/0; the visible page band matches the SWE intern req 90891 range. Extern analog (~$38–$42/hr undergrad technical + housing stipend) is directional only.
 - **Work model:** Paid full-time 40 hrs/week; hybrid or onsite for the full term. Terms: Spring/Summer Co-op Jan 15–Aug 13 2027; Summer intern May 24–Aug 13 2027 (semester) / Jun 21–Sep 10 2027 (quarter); Summer/Fall co-op May 24–Dec 10 2027 (semester). Both postings are existing vacancies (posted 2026-08-20).
 - **Clearance / eligibility:** Currently enrolled US-based university, Undergrad. SWE (90891): CE/EE/CS or related. DA (90895): Data Analytics, Data Engineering, Computer Engineering, Electrical Engineering, Computer Science, or related. **Neither role is eligible for visa sponsorship.** AMD may use AI to screen applicants.
 

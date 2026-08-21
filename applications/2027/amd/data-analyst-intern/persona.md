@@ -4,7 +4,7 @@ Recruiter lens shared by the writer and grader. Abstract bar signals only — no
 
 ## Role Summary
 
-A paid Summer 2027 **hybrid or onsite** internship/co-op at **AMD** as an **Undergrad Data Analyst Intern/co-op** in **San Jose, CA or Santa Clara, CA** — requisition **90895**. Posted August 20, 2026 on careers.amd.com (Phenom) with apply on campus iCIMS (`campus-amd.icims.com`). Category: Student / Intern / Temp. Existing vacancy. Full-time **40 hours/week**. Term for semester students: **May 24, 2027 – August 13, 2027** (Michigan is semester). Co-op windows also listed. Comp is unpublished on this JD (JSON-LD 0); Extern analog for AMD undergrad technical ~$38–$42/hr + housing stipend (directional only — not JD pay).
+A paid Summer 2027 **hybrid or onsite** internship/co-op at **AMD** as an **Undergrad Data Analyst Intern/co-op** in **San Jose, CA or Santa Clara, CA** — requisition **90895**. Posted August 20, 2026 on careers.amd.com (Phenom) with apply on campus iCIMS (`campus-amd.icims.com`). Category: Student / Intern / Temp. Existing vacancy. Full-time **40 hours/week**. Term for semester students: **May 24, 2027 – August 13, 2027** (Michigan is semester). Co-op windows also listed. Comp on the posting: **USD $64,064.00/Yr – $96,096.00/Yr** (Hiring Target Min/Max). JSON-LD `baseSalary` was 0; Extern analog ~$38–$42/hr + housing stipend is directional only.
 
 **This is the Undergrad Data Analyst intern/co-op, not a Masters Data Analyst intern and not an ML intern.** Do not import a research-scientist spine, a chip-design / RTL intern spine, or a generic SWE intern spine.
 
