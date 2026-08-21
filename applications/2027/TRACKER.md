@@ -76,6 +76,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | AMD | 2027 Undergrad Software Engineer Intern/Co-op | 2026-08-21 | Applied | full-stack+semiconductor/CPU-adjacent | 9.0 |
 | AMD | 2027 Undergrad Data Analyst Intern/co-op | 2026-08-21 | Applied | ai-ml+semiconductor / high-performance computing | 8.0 |
 | Blackstone | 2027 Blackstone Data Engineer Summer Analyst | 2026-08-21 | Applied | ai-ml | 8.0 |
+| Zipline | Software Engineer Intern (Summer 2027) | 2026-08-21 | Applied | full-stack+autonomy | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -83,6 +84,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 67
+- **Total applied:** 68
 - **Interviews:** 0
 - **Offers:** 0
