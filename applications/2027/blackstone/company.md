@@ -31,11 +31,17 @@ Blackstone is the world's largest alternative asset manager (~$1.3T AUM; firm si
 - **Domains:** ETL/ELT data pipelines across business units; AWS-hosted Python services; containerized microservices (Docker); warehouse-backed analysis. JD also names Snowflake, Prefect, Terraform, Gitlab, RDS, ECS, Lambda, IaC — familiarity/preferred. Honest inventory is Python, Pandas, SQL, AWS (EC2, S3), Docker only for those clouds/tools.
 - **What wins:** Because the bottleneck is resume + fit (`companies.md`; `recruiting.md` intern funnel), a one-page PDF that shows ingest → transform (ETL/ELT, Pandas) → SQL/quality → serve on AWS/Docker, with OOP and pipeline ownership visible in bullets, not Skills-only. Do not lead as generic SWE (that is req 45021) or notebook ML / Data Science. Do not claim Snowflake, Prefect, Terraform, Gitlab, RDS, ECS, or Lambda.
 
+## Also: Software Engineer Summer Analyst (req 45021)
+
+Same Miami / June 2027 / $125k annualized / Fall 2027–Spring 2028 / GPA + grad month/year on the PDF. This req is generic BXTI intern SWE — applications, services, APIs, cloud-native/platform work, automation, firm-approved AI-assisted development — **not** Data Engineer 45022 and **not** Data Science. Official students page: first-round video with a Blackstone team member, then face-to-face; cover letters not necessary. The 45021 posting showed Apply only (no screening questions without clicking Apply). Honest JD hits: Python, TypeScript, SQL, React, AWS, Docker. Do not invent C#, Node.js, Terraform, GitLab, Java, Snowflake, Databricks, Copilot, Fusion, or Tableau.
+
 ## Sources
 
-- JD: https://blackstone.wd1.myworkdayjobs.com/blackstone_campus_careers/job/Miami/XMLNAME-2027-Blackstone-Technology-and-Innovations--Data-Engineer-Summer-Analyst_45022 (req 45022; pulled 2026-08-21)
+- JD (SWE 45021): https://blackstone.wd1.myworkdayjobs.com/blackstone_campus_careers/job/Miami/XMLNAME-2027-Blackstone-Software-Engineer-Summer-Analyst_45021
+- JD (DE 45022): https://blackstone.wd1.myworkdayjobs.com/blackstone_campus_careers/job/Miami/XMLNAME-2027-Blackstone-Technology-and-Innovations--Data-Engineer-Summer-Analyst_45022 (pulled 2026-08-21)
+- Official students page (Summer Analyst ~10 weeks; juniors apply; first-round video then face-to-face; cover letter not necessary): https://www.blackstone.com/careers/students/
 - https://www.blackstone.com/ (AUM, strategies)
-- `reference/companies.md` B-TIER Blackstone row (interview format, bottleneck, acceptance estimate, Miami / $125k / not 45021)
-- `reference/recruiting.md` Part II §8 (intern eligibility / timing), Part III §13 (applied data / ML; pipelines)
+- `reference/companies.md` B-TIER Blackstone row (both campus reqs; bottleneck: resume; ~5–8%)
+- `reference/recruiting.md` Part II §8 (intern eligibility / timing), Part III §11 (general SWE), Part III §13 (applied data / pipelines)
 - HackerRank blog: Blackstone uses HackerRank for developer hiring (directional process confirmation)
 - techinterview.org Blackstone BXTI 2026 guide (directional: recruiter → HackerRank Easy–Med → tech video → Superday; Python/SQL)
