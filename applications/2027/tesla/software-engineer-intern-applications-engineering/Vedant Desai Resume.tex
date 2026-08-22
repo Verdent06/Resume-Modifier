@@ -1,27 +1,8 @@
 %% ============================================================================
 %%  applications/template.tex  —  SKELETON RESUME (single source template)
 %% ----------------------------------------------------------------------------
-%%  This is the ONLY resume template. The orchestrator copies this file into a
-%%  position folder, then the writer fills the Experience / Projects / Skills
-%%  sections from the context.md bullet pool. It replaces the old per-track
-%%  templates (full-stack / ai-ml / dev-ops) — track is now a doctrine-routing
-%%  label, not a file choice, so any track (including robotics/autonomy) fills
-%%  this same skeleton.
-%%
-%%  WHAT IS FIXED (do not change): header (\name, \contact) and Education.
-%%  WHAT GETS FILLED: Experience entries, Projects entries, Technical Skills.
-%%
-%%  rSectionEntry signature — 5 positional params, ALWAYS supply all 5 braces:
-%%     {1 name}{2 dates}{3 tagline/role/link}{4 technologies}{5 location}
-%%     - param 4 (technologies) renders after the name with a " | " separator;
-%%       leave it {} for experiences, fill it for projects (the tech-stack line).
-%%     - any unused param is an empty {}.
-%%  rSet signature — {1 bucket label}{2 comma-separated items}.
-%%
-%%  PATH NOTE: this template sits at resume/applications/template.tex, beside
-%%  template.cls, so the class path is just `template`. On copy into
-%%  applications/{year}/{company}/{role}/, the orchestrator rewrites it to
-%%  ../../../template (three levels up to applications/, where template.cls lives).
+%%  Tesla Applications Engineering intern (req 280820) — iter-1 initial.
+%%  full-stack + infra/services spine; EV internal-tools differentiator.
 %% ============================================================================
 
 \documentclass[
@@ -48,59 +29,78 @@
 	\end{rSection}
 
 	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
-	% Order by impact density for THIS role, not chronology (see resume.md I.3).
-	% First bullet of each entry is the hook: lead with the problem/outcome,
-	% not the technology (see resume.md I.4). 2-3 bullets per experience.
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{Organization Name}
-			{Start -- End}
-			{Role / Title}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
 			{}
-			{City, ST}
+			{Ann Arbor, MI}
 
-			\item Led [project/team/process], resulting in [impact or recognition].
-			\item Built [system/solution], enabling [key outcome].
-			\item Improved [process/feature], increasing [metric] by [result].
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
 		\end{rSectionEntry}
 
-		% \begin{rSectionEntry}{...}{...}{...}{}{...}
-		%   \item {...}
-		% \end{rSectionEntry}
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
+			{}
+			{}
+
+			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- PROJECTS (writer fills from context.md pool) -----------------------
-	% 1-2 bullets each. Tech-stack line goes in param 4 (derived from the bullets
-	% selected for this project). Optional live link goes in param 3 as \href.
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Project Name --- One-line descriptor}
-			{\href{https://example.com}{example.com}}
-			{Hook bullet: what the project does and the problem it solves.}
-			{Language, Framework, Database, Infra}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
+			{Python, FastAPI, React, TypeScript, PostgreSQL, Docker}
 			{}
 
-			\item {Evidence bullet — a key engineering decision with a metric.}
-			\item {Evidence bullet — the architectural choice and what it enabled.}
-			\item {Evidence bullet — the deeper implementation detail with a tied metric.}
+			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
+			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
+			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
 		\end{rSectionEntry}
 
-		% \begin{rSectionEntry}{...}{...}{}{Tech, Stack, Here}{}
-		%   \item {...}
-		% \end{rSectionEntry}
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE}
+			{}
+
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
+		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- TECHNICAL SKILLS (writer picks 3-5 buckets from context.md) --------
-	% ~80 char limit per line after the label. Trim tail items to fit; promote a
-	% tail item only if it is a hard ATS keyword from the JD (see resume.md I.5).
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Item, Item, Item, Item, Item}
+		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL, HTML/CSS}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Item, Item, Item, Item}
+		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS, JUCE}
 		\end{rSet}
-		\begin{rSet}{Databases}{Item, Item, Item}
+		\begin{rSet}{Databases}{PostgreSQL, Redis}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{Item, Item, Item, Item}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Celery, Git, GitHub Actions}
 		\end{rSet}
 	\end{rSection}
 
