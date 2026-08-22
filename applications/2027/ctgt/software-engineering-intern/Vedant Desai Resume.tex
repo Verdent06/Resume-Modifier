@@ -43,38 +43,21 @@
 			{Ann Arbor, MI}
 
 			\item \textbf{GPA:} 3.66 / 4.0
-			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Discrete Mathematics, Calculus III
-		\end{rSectionEntry}
-	\end{rSection}
-
-	% ---- PROJECTS (writer fills from context.md pool) -----------------------
-	\begin{rSection}{P}{rojects}
-		\begin{rSectionEntry}
-			{Autonomous B2B Deal-Sourcing Agent}
-			{\href{https://github.com/Verdent06/Lead-Gen-Agentic-Pipeline}{github.com/Verdent06/Lead-Gen-Agentic-Pipeline}}
-			{Dockerized LangGraph pipeline for private equity acquisition sourcing --- deployed across 4 live theses for search funds and mid-market PE clients}
-			{Python, LangGraph, LangSmith, Docker, Celery, Pydantic}
-			{}
-
-			\item Engineered a LangSmith eval pipeline with 20 adversarial business archetypes --- manufacturers, SaaS tools, PE holding companies, and geographic mismatches the LLM otherwise passed --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
-			\item Engineered Node 3 as a pure-Python triangulated consensus gate that computes a 0--100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
-			\item Built Node 5 as a fully deterministic succession-risk scoring engine without LLM calls that infers PE acquisition readiness from heuristic signals (founder operating status, PE backing, website stagnation, years in operation) into a configurable weighted 0--100 composite, then enriches each passing company with Hunter.io contact data before CSV export.
-			\item Packaged a Dockerized LangGraph execution pipeline as a recurring B2B lead-gen product, cold-approached and closed a paid pilot with a consulting firm, and deployed Redis/Celery workers to autonomously aggregate and deliver qualified leads on a scheduled basis.
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
 		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{CaseStudyPrep.AI}
-			{Dec 2025 -- May 2026}
-			{Software Engineer Co-op (Voice AI)}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
 			{}
-			{Remote}
+			{}
 
-			\item Eliminated a 27\% audio upload failure rate by building fault-tolerant RxJS logic that detects expired S3 presigned URLs and regenerates them mid-flight, and handles MIME-type negotiation for raw WAV files that Angular's HTTP client rejected silently.
-			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
-			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to the Whisper backend were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -84,8 +67,44 @@
 			{}
 			{Ann Arbor, MI}
 
-			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
 			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Lyndbrook Capital}
+			{Feb 2026 -- Apr 2026}
+			{Data Engineering Consultant}
+			{}
+			{Remote}
+
+			\item Contracted pre-LOI to build acquisition intelligence for a boutique search fund targeting water utility operators; aggregated EPA ECHO and MassGIS regulatory data into a unified PWSID entity database and delivered 800+ validated Day-1 acquisition targets within the engagement window.
+			\item Automated off-market deal sourcing by aggregating 2,500+ legal entities from EPA compliance databases and cross-referencing Google Maps API data to surface unlisted acquisition targets, eliminating 15 hours of manual prospecting per week for the fund's Principal.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS (writer fills from context.md pool) -----------------------
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
+			{React, TypeScript, pgvector, PostgreSQL}
+			{}
+
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -93,11 +112,11 @@
 	\begin{rSection}{T}{echnical Skills}
 		\begin{rSet}{Languages}{Python, TypeScript}
 		\end{rSet}
-		\begin{rSet}{Frameworks \& Cloud}{Flask, Angular, RxJS, LangGraph, LangSmith, Pydantic, AWS, Docker, Celery, Redis, Git}
+		\begin{rSet}{Frameworks}{Flask, React, Angular, RxJS, LangGraph, Pydantic, LangSmith}
 		\end{rSet}
-		\begin{rSet}{AI / ML}{Silero VAD, ONNX Runtime, Pandas}
+		\begin{rSet}{Databases}{Redis, pgvector, PostgreSQL}
 		\end{rSet}
-		\begin{rSet}{Tools}{Web Workers}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Celery, Git}
 		\end{rSet}
 	\end{rSection}
 
