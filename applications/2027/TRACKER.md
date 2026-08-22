@@ -88,6 +88,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | General Matter | Summer 2027 Internship - Software Engineering | 2026-08-22 | Applied | full-stack+nuclear-enrichment / mission-critical hardware-adjacent | 9.0 |
 | Tesla | Software Engineer Intern — Engineering Automation, Vehicle Engineering | 2026-08-22 | Applied | full-stack | 9.0 |
 | Rippling | Software Engineer Intern - Backend Focused - Winter 2027 | 2026-08-22 | Applied | full-stack+compound HR/IT/Finance workforce platform / employee-graph backend | 9.0 |
+| Palantir Technologies | Software Engineer, Internship | 2026-08-22 | Applied | full-stack+defense/gov + operational data platforms | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -95,6 +96,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 79
+- **Total applied:** 80
 - **Interviews:** 0
 - **Offers:** 0
