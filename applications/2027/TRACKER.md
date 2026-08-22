@@ -85,6 +85,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Zipline | Software Engineer Intern (Spring 2027) | 2026-08-22 | Applied | full-stack+autonomy | 8.0 |
 | SpaceX | Software Engineering Intern/Co-op — Spring 2027 | 2026-08-22 | Applied | full-stack+aerospace / real-time / mission-critical / embedded-adjacent systems | 8.0 |
 | Notion | Software Engineer Intern (Winter 2027) | 2026-08-22 | Applied | full-stack | 10.0 |
+| General Matter | Summer 2027 Internship - Software Engineering | 2026-08-22 | Applied | full-stack+nuclear-enrichment / mission-critical hardware-adjacent | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -92,6 +93,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 76
+- **Total applied:** 77
 - **Interviews:** 0
 - **Offers:** 0
