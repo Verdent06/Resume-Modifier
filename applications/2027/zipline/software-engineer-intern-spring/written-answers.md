@@ -1,0 +1,5 @@
+Spring 2027 · January–April 2027 · South San Francisco onsite. Distinct from Summer 2027. Grounded in `persona.md` (full-stack spine, autonomy/autonomous-logistics differentiator, React/TypeScript as the honest React Native mapping, Go not a knockout). No invented projects or metrics.
+
+# Why are you interested in becoming a Software Engineer Intern?
+
+I want to own user-facing features on a product people actually use — Zipline's consumer mobile and web apps, from design through deploy — at a company whose system is already flying autonomous deliveries, not a toy logistics demo. Closest analog I have: CaseStudyPrep (27% upload-failure recovery, on-device VAD, sub-5ms UI-thread offload) plus Python services I shipped myself (MDC Flask/EC2 to a nonprofit; Vylet Docker/Redis/Celery with a 79%→89% qualification fix). I do not have React Native or Go. I have React/TypeScript (SignalWeaver) and Python backends, and C++ that cannot allocate on the audio thread (granular-synth). I can be in South San Francisco full-time January–April 2027; UMich CS + Economics, Expected May 2028, GPA 3.66.
