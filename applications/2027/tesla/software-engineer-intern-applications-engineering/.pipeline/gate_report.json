@@ -1,0 +1,108 @@
+{
+  "hard_gates_pass": true,
+  "metric_density": {
+    "ratio": 1.0,
+    "metric_free_entries": [],
+    "exempt_entries_applied": []
+  },
+  "gates": [
+    {
+      "name": "required_languages",
+      "hard": true,
+      "passed": true,
+      "detail": "All JD languages the candidate has are present: ['c++', 'python']."
+    },
+    {
+      "name": "no_orphans",
+      "hard": true,
+      "passed": true,
+      "detail": "No orphaned framework/library skills."
+    },
+    {
+      "name": "no_bullet_deletion",
+      "hard": true,
+      "passed": true,
+      "detail": "No entry shrank below baseline."
+    },
+    {
+      "name": "min_entries",
+      "hard": true,
+      "passed": true,
+      "detail": "4 entries (floor 4)."
+    },
+    {
+      "name": "protected_depth",
+      "hard": true,
+      "passed": true,
+      "detail": "Protected entries retain depth."
+    },
+    {
+      "name": "lead_signal",
+      "hard": true,
+      "passed": true,
+      "detail": "Differentiator entry in top 2: ['Michigan Data Consulting (MDC)', 'Vylet']."
+    },
+    {
+      "name": "fit_protection",
+      "hard": true,
+      "passed": true,
+      "detail": "Skipped (loop phase)."
+    },
+    {
+      "name": "page_fill",
+      "hard": true,
+      "passed": true,
+      "detail": "One page, 95% filled."
+    }
+  ],
+  "entries_parsed": [
+    {
+      "name": "Michigan Data Consulting (MDC)",
+      "section": "experience",
+      "bullets": 3
+    },
+    {
+      "name": "Vylet",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "CaseStudyPrep.AI",
+      "section": "experience",
+      "bullets": 3
+    },
+    {
+      "name": "SignalWeaver",
+      "section": "projects",
+      "bullets": 4
+    }
+  ],
+  "skills_parsed": {
+    "languages": [
+      "Python",
+      "TypeScript",
+      "C++",
+      "SQL",
+      "HTML/CSS"
+    ],
+    "frameworks": [
+      "React",
+      "Angular",
+      "FastAPI",
+      "Flask",
+      "RxJS"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Redis",
+      "pgvector"
+    ],
+    "cloud \\& infrastructure": [
+      "AWS (EC2, S3)",
+      "Docker",
+      "Celery",
+      "Git",
+      "GitHub Actions"
+    ]
+  }
+}

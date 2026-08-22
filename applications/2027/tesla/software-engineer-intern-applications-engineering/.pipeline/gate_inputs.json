@@ -20,12 +20,11 @@
     "SignalWeaver"
   ],
   "lead_signal_window": 2,
-  "min_entries": 5,
+  "min_entries": 4,
   "iter1_counts": {
     "Michigan Data Consulting (MDC)": 3,
-    "Vylet": 3,
-    "CaseStudyPrep.AI": 2,
-    "SignalWeaver": 3,
-    "Granular Synthesizer Plugin": 2
+    "Vylet": 2,
+    "CaseStudyPrep.AI": 3,
+    "SignalWeaver": 4
   }
 }

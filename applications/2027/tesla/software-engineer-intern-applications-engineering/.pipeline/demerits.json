@@ -1,0 +1,6 @@
+{
+  "defects": [
+    {"entry": "resume", "severity": "minor", "defect": "C++ skills-only", "why": "C++ is listed under Languages with zero bullet or project evidence; Tesla names C/C++ as a floor option and a recruiter who scans polyglot proof will treat the Skills-line claim as unbacked"},
+    {"entry": "CaseStudyPrep.AI", "severity": "minor", "defect": "voice-AI/ONNX closer", "why": "The co-op's last bullet is Silero VAD via ONNX Runtime cutting Whisper inference cost 40% — an on-device ML/inference closer on an Applications Engineering infra/services screen, so a skim can bucket this entry as voice-AI rather than production web/S3 services"}
+  ]
+}
