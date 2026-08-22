@@ -81,6 +81,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Figma | Software Engineer Intern (Winter 2027) | 2026-08-21 | Applied | full-stack+real-time collaborative design platform / product engineering | 9.0 |
 | Databricks | Software Engineering Intern (2027 Start) – Winter | 2026-08-21 | Applied | full-stack+data/AI infrastructure / lakehouse platform | 9.0 |
 | Old Mission | Software Engineer – 2027 Internship Program (June Start) | 2026-08-22 | Applied | full-stack | 9.0 |
+| Composio | Fullstack Engineering Internship, Product Team (Fall 2026 & Winter 2027) | 2026-08-22 | Applied | full-stack+agent-tool infra / AI-native product (built with AND for LMs) | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -88,6 +89,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 72
+- **Total applied:** 73
 - **Interviews:** 0
 - **Offers:** 0
