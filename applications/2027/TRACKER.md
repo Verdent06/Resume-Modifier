@@ -80,6 +80,15 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Zipline | Software Engineer Intern (Summer 2027) | 2026-08-21 | Applied | full-stack+autonomy | 8.0 |
 | Figma | Software Engineer Intern (Winter 2027) | 2026-08-21 | Applied | full-stack+real-time collaborative design platform / product engineering | 9.0 |
 | Databricks | Software Engineering Intern (2027 Start) – Winter | 2026-08-21 | Applied | full-stack+data/AI infrastructure / lakehouse platform | 9.0 |
+| Old Mission | Software Engineer – 2027 Internship Program (June Start) | 2026-08-22 | Applied | full-stack | 9.0 |
+| Composio | Fullstack Engineering Internship, Product Team (Fall 2026 & Winter 2027) | 2026-08-22 | Applied | full-stack+agent-tool infra / AI-native product (built with AND for LMs) | 10.0 |
+| Zipline | Software Engineer Intern (Spring 2027) | 2026-08-22 | Applied | full-stack+autonomy | 8.0 |
+| SpaceX | Software Engineering Intern/Co-op — Spring 2027 | 2026-08-22 | Applied | full-stack+aerospace / real-time / mission-critical / embedded-adjacent systems | 8.0 |
+| Notion | Software Engineer Intern (Winter 2027) | 2026-08-22 | Applied | full-stack | 10.0 |
+| General Matter | Summer 2027 Internship - Software Engineering | 2026-08-22 | Applied | full-stack+nuclear-enrichment / mission-critical hardware-adjacent | 9.0 |
+| Tesla | Software Engineer Intern — Engineering Automation, Vehicle Engineering | 2026-08-22 | Applied | full-stack | 9.0 |
+| Rippling | Software Engineer Intern - Backend Focused - Winter 2027 | 2026-08-22 | Applied | full-stack+compound HR/IT/Finance workforce platform / employee-graph backend | 9.0 |
+| Palantir Technologies | Software Engineer, Internship | 2026-08-22 | Applied | full-stack+defense/gov + operational data platforms | 9.0 |
 | Tesla | Software Engineer Intern, Applications Engineering | 2026-08-22 | Applied | full-stack+EV/vehicle-engineering-internal-tools-infra | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -88,6 +97,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 72
+- **Total applied:** 81
 - **Interviews:** 0
 - **Offers:** 0
