@@ -83,6 +83,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Old Mission | Software Engineer – 2027 Internship Program (June Start) | 2026-08-22 | Applied | full-stack | 9.0 |
 | Composio | Fullstack Engineering Internship, Product Team (Fall 2026 & Winter 2027) | 2026-08-22 | Applied | full-stack+agent-tool infra / AI-native product (built with AND for LMs) | 10.0 |
 | Zipline | Software Engineer Intern (Spring 2027) | 2026-08-22 | Applied | full-stack+autonomy | 8.0 |
+| SpaceX | Software Engineering Intern/Co-op — Spring 2027 | 2026-08-22 | Applied | full-stack+aerospace / real-time / mission-critical / embedded-adjacent systems | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -90,6 +91,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 74
+- **Total applied:** 75
 - **Interviews:** 0
 - **Offers:** 0
