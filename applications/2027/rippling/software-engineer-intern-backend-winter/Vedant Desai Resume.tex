@@ -1,0 +1,96 @@
+%% ============================================================================
+%%  applications/2027/rippling/software-engineer-intern-backend-winter
+%%  Vedant Desai Resume.tex — writer iter-1 (initial)
+%%  full-stack spine, backend-weighted; compound-platform / employee-graph flavor
+%%  no invented HRIS/payroll/App Studio; Python through use; no JS/HTML/CSS stuffing
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ vedantde@umich.edu \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed; writer does not modify) --------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE ---------------------------------------------------------
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
+			{}
+			{Ann Arbor, MI}
+
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
+			{}
+			{}
+
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+			\item Engineered Node 3 as a pure-Python triangulated consensus gate --- no LLM calls --- that computes a 0--100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- PROJECTS -----------------------------------------------------------
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
+			{Python, FastAPI, PostgreSQL, pgvector, Docker}
+			{}
+
+			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
+			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS -------------------------------------------------
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, TypeScript, SQL}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{FastAPI, Flask, Angular, RxJS}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, pgvector}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2, S3), Docker, Git, GitHub Actions}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
