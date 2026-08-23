@@ -91,6 +91,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Palantir Technologies | Software Engineer, Internship | 2026-08-22 | Applied | full-stack+defense/gov + operational data platforms | 9.0 |
 | Tesla | Software Engineer Intern, Applications Engineering | 2026-08-22 | Applied | full-stack+EV/vehicle-engineering-internal-tools-infra | 9.0 |
 | CTGT | Software Engineering Intern (Summer 2027) | 2026-08-22 | Applied | full-stack+AI-governance | 7.0 |
+| Mastercard | Software Engineer Intern, Summer 2027 – United States | 2026-08-23 | Applied | full-stack+payments/fintech-backend/high-scale-secure-transaction-systems | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -98,6 +99,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 82
+- **Total applied:** 83
 - **Interviews:** 0
 - **Offers:** 0
