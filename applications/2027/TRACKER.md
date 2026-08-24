@@ -93,6 +93,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Tesla | Software Engineer Intern, Applications Engineering | 2026-08-22 | Applied | full-stack+EV/vehicle-engineering-internal-tools-infra | 9.0 |
 | CTGT | Software Engineering Intern (Summer 2027) | 2026-08-22 | Applied | full-stack+AI-governance | 7.0 |
 | Mastercard | Software Engineer Intern, Summer 2027 – United States | 2026-08-23 | Applied | full-stack+payments/fintech-backend/high-scale-secure-transaction-systems | 10.0 |
+| AbbVie | 2027 Business Technology Solutions Intern - Data & Software Engineering (Undergraduate) | 2026-08-24 | Applied | full-stack+pharma enterprise BTS / data-infra for science and business | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
