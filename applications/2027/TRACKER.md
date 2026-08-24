@@ -94,6 +94,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | CTGT | Software Engineering Intern (Summer 2027) | 2026-08-22 | Applied | full-stack+AI-governance | 7.0 |
 | Mastercard | Software Engineer Intern, Summer 2027 – United States | 2026-08-23 | Applied | full-stack+payments/fintech-backend/high-scale-secure-transaction-systems | 10.0 |
 | AbbVie | 2027 Business Technology Solutions Intern - Data & Software Engineering (Undergraduate) | 2026-08-24 | Applied | full-stack+pharma enterprise BTS / data-infra for science and business | 10.0 |
+| Fifth Third Bank | Software Engineer Co-Op - Enterprise Finance Applications - Summer 2027 | 2026-08-24 | Applied | full-stack+fintech-backend/bank-IT modernization | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -101,6 +102,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 85
+- **Total applied:** 86
 - **Interviews:** 0
 - **Offers:** 0
