@@ -1,0 +1,16 @@
+{
+  "jd_languages": ["JavaScript", "Python", "SQL"],
+  "jd_required_keywords": ["front-end", "web development", "JavaScript", "Python", "SQL", "Angular", "React", "AWS", "databases", "dashboards"],
+  "candidate_languages": ["Python", "TypeScript", "C++", "SQL", "HTML/CSS"],
+  "exempt_entries": [],
+  "protected_entries": ["Michigan Data Consulting (MDC)", "SignalWeaver"],
+  "lead_signal_window": 2,
+  "min_entries": 5,
+  "iter1_counts": {
+    "Michigan Data Consulting (MDC)": 2,
+    "CaseStudyPrep.AI": 2,
+    "Vylet": 2,
+    "Lyndbrook Capital": 2,
+    "SignalWeaver": 2
+  }
+}

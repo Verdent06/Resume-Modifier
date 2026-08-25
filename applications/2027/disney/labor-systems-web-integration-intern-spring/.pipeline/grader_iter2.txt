@@ -1,0 +1,29 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RESUME GRADING REPORT (DEMERIT MODEL)
+Role: Labor Systems Web Integration Intern, Spring 2027 at The Walt Disney Company
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+REVIEWER PERSONA
+Parks Ops / Experience Integration screener on a resume-gated B-tier professional-intern req. Bar is an eligible junior who already ships front-end web plus Python and/or SQL in real systems, with Angular or React in bullets (not Skills-only), a GitHub on the page, and a production API/database/dashboard analog — without inventing Kronos/UKG or pivoting to notebook ML because Workday filed this under analytics.
+
+DEFECTS  (machine-read by scripts/validate.py demerits — valid JSON, this block only)
+```json
+{
+  "defects": [
+    {"entry": "Lyndbrook Capital", "severity": "major", "defect": "off-axis PE consulting, no web layer", "why": "Data Engineering Consultant bullets are EPA/MassGIS acquisition scoring for a search fund (800 targets → 280-lead shortlist, 35% precision) with no UI, API, dashboard, or reporting product — filler on a Parks labor-systems web-integration screen"},
+    {"entry": "Vylet", "severity": "minor", "defect": "agentic pipeline, no web UI", "why": "Live $1,500 MRR product, but the two bullets are a Gemini-embeddings asyncpg DAL and a Dockerized LangGraph/Celery pipeline — no front-end, REST surface, or dashboard for a web-integration read"},
+    {"entry": "SignalWeaver", "severity": "minor", "defect": "personal-use dashboard, no external users", "why": "React/TypeScript dashboard plus Docker/nginx/GitHub Actions match the JD stack, but the witness is 'analyze 90 distinct tickers' for the author and the CI bullet lists Compose/pytest/image build with no shipped-outcome metric"}
+  ]
+}
+```
+
+WHAT WOULD TAKE THIS TO THE NEXT LEVEL
+- Lyndbrook Capital is a two-month search-fund scoring engagement sitting in Experience with no web, API, or reporting UI — I skip it, and it makes the spine look padded.
+- Vylet is a real paid product, but the bullets read embeddings/LangGraph, not the web app this team ships.
+- SignalWeaver is the React dashboard I want, but 90 tickers of personal research plus an unquantified CI line do not prove anyone else used it.
+
+LIKELIHOOD ESTIMATE
+─────────────────────
+Resume Screen Pass:  High — Eligible May 2028, GitHub on the page, and Flask/AWS, Angular/RxJS, SQL, and a React dashboard all appear through use, not Skills-only.
+Overall Hire Odds:   Medium — Disney Experiences Parks intern is resume-bottlenecked at ~8–15% with a named phone screen and a behavioral filter; paper clears the web-integration floor, but there is no operator-facing tool analog and a possible Easy–Med coding screen still sits downstream if they follow the corporate intern pattern.
+What Moves the Needle (outside the resume): Apply in this first wave before the 2026-08-31 close; a referral plus a short behavioral journal for the phone screen (filter round, not a differentiator).

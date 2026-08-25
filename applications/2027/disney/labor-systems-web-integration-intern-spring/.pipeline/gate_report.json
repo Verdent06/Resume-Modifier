@@ -1,0 +1,113 @@
+{
+  "hard_gates_pass": true,
+  "metric_density": {
+    "ratio": 0.6,
+    "metric_free_entries": [
+      "Lyndbrook Capital",
+      "SignalWeaver"
+    ],
+    "exempt_entries_applied": []
+  },
+  "gates": [
+    {
+      "name": "required_languages",
+      "hard": true,
+      "passed": true,
+      "detail": "All JD languages the candidate has are present: ['python', 'sql']."
+    },
+    {
+      "name": "no_orphans",
+      "hard": true,
+      "passed": true,
+      "detail": "No orphaned framework/library skills."
+    },
+    {
+      "name": "no_bullet_deletion",
+      "hard": true,
+      "passed": true,
+      "detail": "No entry shrank below baseline."
+    },
+    {
+      "name": "min_entries",
+      "hard": true,
+      "passed": true,
+      "detail": "5 entries (floor 5)."
+    },
+    {
+      "name": "protected_depth",
+      "hard": true,
+      "passed": true,
+      "detail": "Protected entries retain depth."
+    },
+    {
+      "name": "lead_signal",
+      "hard": true,
+      "passed": true,
+      "detail": "Differentiator entry in top 2: ['Michigan Data Consulting (MDC)']."
+    },
+    {
+      "name": "fit_protection",
+      "hard": true,
+      "passed": true,
+      "detail": "Skipped (loop phase)."
+    },
+    {
+      "name": "page_fill",
+      "hard": true,
+      "passed": true,
+      "detail": "One page, 96% filled."
+    }
+  ],
+  "entries_parsed": [
+    {
+      "name": "Michigan Data Consulting (MDC)",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "CaseStudyPrep.AI",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "Vylet",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "Lyndbrook Capital",
+      "section": "experience",
+      "bullets": 2
+    },
+    {
+      "name": "SignalWeaver",
+      "section": "projects",
+      "bullets": 2
+    }
+  ],
+  "skills_parsed": {
+    "languages": [
+      "Python",
+      "TypeScript",
+      "SQL",
+      "HTML/CSS"
+    ],
+    "frameworks": [
+      "Angular",
+      "React",
+      "Flask",
+      "RxJS"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Redis"
+    ],
+    "cloud \\& infrastructure": [
+      "AWS (EC2, S3)",
+      "Docker",
+      "Celery",
+      "Git",
+      "GitHub Actions"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "defects": [
+    {"entry": "Lyndbrook Capital", "severity": "major", "defect": "off-axis PE consulting, no web layer", "why": "Data Engineering Consultant bullets are EPA/MassGIS acquisition scoring for a search fund (800 targets → 280-lead shortlist, 35% precision) with no UI, API, dashboard, or reporting product — filler on a Parks labor-systems web-integration screen"},
+    {"entry": "Vylet", "severity": "minor", "defect": "agentic pipeline, no web UI", "why": "Live $1,500 MRR product, but the two bullets are a Gemini-embeddings asyncpg DAL and a Dockerized LangGraph/Celery pipeline — no front-end, REST surface, or dashboard for a web-integration read"},
+    {"entry": "SignalWeaver", "severity": "minor", "defect": "personal-use dashboard, no external users", "why": "React/TypeScript dashboard plus Docker/nginx/GitHub Actions match the JD stack, but the witness is 'analyze 90 distinct tickers' for the author and the CI bullet lists Compose/pytest/image build with no shipped-outcome metric"}
+  ]
+}

@@ -1,0 +1,27 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RESUME GRADING REPORT (DEMERIT MODEL)
+Role: Labor Systems Web Integration Intern, Spring 2027 at The Walt Disney Company
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+REVIEWER PERSONA
+Parks Ops / Experience Integration screener on Disney Experiences Labor Systems (B-tier Professional Intern; resume is the binding gate). I am hiring a junior/senior who already ships front-end web plus Python/SQL APIs, has GitHub on the page, and can defend Angular or React without inventing Cast WFM products. I pass production APIs, databases, dashboards, and stakeholder-delivered tools; I bounce on skills-only frameworks, ML-research leads, and missing GitHub.
+
+DEFECTS  (machine-read by scripts/validate.py demerits — valid JSON, this block only)
+```json
+{
+  "defects": [
+    {"entry": "CaseStudyPrep.AI", "severity": "minor", "defect": "Angular only as MIME aside", "why": "Preferred Angular appears once as 'WAV files Angular silently rejected' inside an RxJS/S3 audio-debug bullet; both bullets are upload recovery and a 60 FPS inference visualizer — no component, module, or dashboard a Labor Systems web team can probe"},
+    {"entry": "Lyndbrook Capital", "severity": "minor", "defect": "off-axis, no web", "why": "Both bullets are PE acquisition-intel (EPA ECHO/MassGIS PWSID entity DB, Google Maps prospecting) with no UI, REST service, or web framework — a Web Integration skim gets database aggregation, not labor-systems web"}
+  ]
+}
+```
+
+WHAT WOULD TAKE THIS TO THE NEXT LEVEL
+- CaseStudyPrep’s Angular proof is a MIME-rejection aside on a Voice AI audio co-op; I need an owned Angular (or clearly owned) web UI, not a 60 FPS inference visualizer, if this team is Angular-first.
+- Lyndbrook is a two-month search-fund data scrape with no web surface; that slot does not help a Parks labor-systems web-integration screen.
+
+LIKELIHOOD ESTIMATE
+─────────────────────
+Resume Screen Pass:  High — Eligible May 2028 junior, GitHub on the page, production Flask/AWS API, React/TypeScript dashboard, Python/SQL through use, and preferred-stack names in bullets clear this resume-first Parks screen.
+Overall Hire Odds:   Medium — Disney Experiences / Parks is B-tier with resume as the intern bottleneck (~8–15%); this page should get a human read, but the named phone screen, a possible Easy–Med HackerRank on corporate SWE loops, and behavioral as a filter round still eliminate. Orlando housing/transport and a six-month onsite window are extra knockout conversation, not resume defects.
+What Moves the Needle (outside the resume): Apply before the 2026-08-31 close (first wave; req posted 2026-08-24). A Parks/UMich referral (HM > recruiter > engineer) plus STAR stories and Easy–Med DS&A if a coding screen appears.
