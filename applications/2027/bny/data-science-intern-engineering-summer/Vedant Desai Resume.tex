@@ -63,7 +63,7 @@
 			{}
 
 			\item Launched Vylet, automating a $\sim$30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
-			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+			\item Engineered Node 3 as a pure-Python triangulated consensus gate --- no LLM calls --- that computes a 0--100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
