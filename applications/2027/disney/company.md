@@ -1,38 +1,43 @@
 # The Walt Disney Company
 
-The Walt Disney Company (NYSE: DIS) is a Fortune-class public entertainment company. This intern sits in Parks & Experiences at Walt Disney World — a Parks Professional Internship, not Disney Streaming SWE (~$42/hr). Placement is under Worldwide Safety, Health, Engineer & Sourcing (WSHES), with Safety Assurance as the primary business; the posting is multidisciplinary and candidates may be routed to Quality Engineering, Worldwide Safety & Assurance, Engineering Services, Textile Engineering Services, Central Shops, Global Engineering & Technology, or Facility Asset Management. Day-to-day software work is safety-analytics/metrics, ride and show process-control services, and hardware–software interface issues — guest-facing park operations, not a streaming product org.
+The Walt Disney Company (NYSE: DIS) is a Fortune-class public entertainment company. Parks & Experiences Professional Internships at Walt Disney World are not Disney Streaming SWE (~$42/hr). Two Spring 2027 Lake Buena Vista reqs share this file:
+
+- **WDW CS/CE Interns (req 10158145)** — WSHES / Safety Assurance multidisciplinary routing (quality engineering, safety analytics, ride/show process-control, Engineering Services, Facility Asset Management).
+- **Labor Systems Web Integration Intern (req 10158184)** — Park Ops / Experience Integration (DLR). Cast labor-management web apps (workload, scheduling, time, deployment). Do not mix stacks or personas across these two.
 
 ## Quick Facts
 
 - **Tier:** B-tier (`reference/companies.md` — Parks Professional Internship; solid brand, resume-gated; not a FAANG SWE prestige seat)
-- **HQ / offices:** Burbank, CA (corporate HQ). This req: Lake Buena Vista, FL (Walt Disney World), onsite.
-- **Valuation / signal:** Public (NYSE: DIS); Fortune-class Parks & Experiences brand. This seat is Parks CS/CE, not Streaming SDE.
-- **Product focus:** Walt Disney World park operations software — safety-trend analytics, ride/show process-control, quality/engineering services, facility asset systems
-- **Intern comp (2027 WDW CS/CE):** $31/hr undergraduate; $36/hr graduate (Orlando FL)
-- **Work model:** Paid onsite internship, January–June 2027, full-time weekdays with occasional weekends/holidays, up to 40 hrs; traditional 8am–5pm bulk, early mornings or late nights possible. Limited housing through American Campus Communities. Reliable transportation required. Disney Look appearance guidelines.
-- **Clearance / eligibility:** Junior, Senior, or Graduate student status by arrival; enrolled in accredited 4-year CS/CE/SE/Data Science (or related) taking at least one class at application (or currently in a Disney College Program / internship). GPA 3.0+ preferred (unrounded, on transcript). Unrestricted work authorization. 18+. Current Disney program participants capped at 12 consecutive months across internships/programs. Posted 2026-08-24; closes 2026-08-31.
+- **HQ / offices:** Burbank, CA (corporate HQ). Both reqs: **Lake Buena Vista, FL** (Walt Disney World), primarily onsite.
+- **Valuation / signal:** Public (NYSE: DIS); Fortune-class Parks & Experiences brand. These seats are Parks internships, not Streaming SDE.
+- **Product focus (10158145):** Walt Disney World park operations software — safety-trend analytics, ride/show process-control, quality/engineering services, facility asset systems
+- **Product focus (10158184):** Cast labor-management web apps — scheduling, time, deployment, reporting — plus sustainment of databases and dashboards
+- **Intern comp (2027 Parks PI, Orlando):** $31/hr undergraduate (both JDs); WDW CS/CE also lists $36/hr graduate
+- **Work model:** Paid full-time **January–June 2027**. Labor Systems: Monday–Friday 40 hours, own housing/transport. WDW CS/CE: weekdays with occasional weekends/holidays; limited ACC housing. Disney Look appearance guidelines.
+- **Clearance / eligibility:** Enrolled, 18+, unrestricted work authorization. WDW CS/CE: Junior/Senior/Graduate by arrival; GPA 3.0+ preferred. Labor Systems: Junior or Senior preferred; **GitHub required on the resume**. Both posted 2026-08-24; **close 2026-08-31**.
 
 ## Interview Process
 
 | Stage | Format | Notes |
 | ----- | ------ | ----- |
-| Resume screen | Human + ATS (Workday) | Binding filter for this Parks CS/CE req. One-week posting window. |
-| Recruiter phone | 20–30 min | Work auth, motivation, project alignment. Fit conversation, not a coding test. |
-| OA | HackerRank for tech tracks (2–3 LC-medium, 45–90m) | Parks CS/CE may skip if routed to non-SDE teams (`companies.md`). |
-| Virtual onsite | Coding + behavioral | Guest-Centric / Why Disney. Light intern system design. |
-| Behavioral | Guest-Centric Engineering | Collaboration, adaptability, guest impact — later-loop filter, not the PDF gate. |
+| Apply | Workday (`disneycareer`) | Account required; no guest apply |
+| Resume screen | Human + ATS | Binding intern gate for Parks PI. One-week posting window |
+| Recruiter phone | 20–30 min | Work auth, motivation, Orlando logistics, Why Disney. Labor Systems JD names a phone interview |
+| OA | HackerRank for some tech tracks (2–3 LC-medium) **[directional]** | WDW CS/CE may skip if routed to non-SDE teams. Labor Systems OA **unpublished** — treat Easy–Med DS&A as possible if invited |
+| Hiring team | Phone/virtual coding + behavioral | Guest-Centric / Why Disney. No intern sys design published for Labor Systems |
 
-**Estimated funnel:** Resume (Workday) → recruiter phone → HackerRank (tech; may skip) → virtual onsite · Easy–Med · HackerRank (tech) · Light · Bottleneck: resume · ~5–10% **[directional]**
+**Estimated funnel:** Resume → recruiter phone → possible HackerRank → HM · Easy–Med · Bottleneck: resume · WDW CS/CE ~5–10% · Labor Systems ~8–15% **[directional]**
 
 ## Stack & Hiring Signal
 
-- **Languages:** JD may-use list is C++, C#, Python, Node.js. Hard required skills are OOP + Microsoft Office. Preferred: SQL/databases, Git, Docker/containers, CI/CD, cloud (AWS/GCP/Azure), Linux, TDD/BDD, PowerApps/PowerAutomate. Prior Disney College Program is preferred, not a floor.
-- **Domains:** Safety analytics and metrics across Disney Experiences; ride/show process-control software; hardware–software interface debugging; quality engineering; facility/asset and engineering services. Multidisciplinary routing — not a single team stack.
-- **What wins:** Because the bottleneck is the resume (`recruiting.md` intern funnel; B-tier Parks PI), a one-page PDF that proves OOP and JD languages through use (C++/Python; SQL where real), shipped software with a deploy path, and parks-adjacent discipline (process-control / real-time systems / safety-style data-metrics / HW–SW interfaces) passes this screen. Do not invent C#, Node.js, PowerApps, a Disney College Program, ride-vehicle fabrication, or ROS. Guest-Centric behavioral matters after the PDF, not instead of it.
+- **WDW CS/CE (10158145):** may-use C++, C#, Python, Node.js; OOP + Microsoft Office required. Preferred SQL, Git, Docker, CI/CD, cloud, Linux. Do not invent C#, Node.js, PowerApps, a Disney College Program, or ROS.
+- **Labor Systems (10158184):** required front-end web plus JavaScript, Python, **and/or** SQL. Preferred Angular or React, AWS/cloud, data-science *concepts*. Honest hits: TypeScript/Angular, React, Python REST, SQL/Postgres, AWS EC2/S3. **Do not invent Java, Spring, Node, Snowflake, Databricks, Tableau, Copilot, Fusion, or Sentry.** Posting category "Data Science and Analytics Intern" is ATS taxonomy, not an ML-research screen.
 
 ## Sources
 
-- JD: https://disney.wd5.myworkdayjobs.com/disneycareer/job/Lake-Buena-Vista-FL-USA/WDW-Computer-Science---Computer-Engineering-Interns--Spring-2027_10158145 (req 10158145, posted 2026-08-24, closes 2026-08-31)
-- `reference/companies.md` B-Tier Disney (The Walt Disney Company) row (interview format, bottleneck, acceptance estimate)
-- Extern Disney Internship 2027–2028 guide (Workday, recruiter 20–30m, HackerRank for tech, Guest-Centric / Why Disney — directional; Parks CS/CE may skip OA per companies.md)
-- Johnny Mai, Disney SDE intern interview guide 2026 (Streaming/SDE loop shape; not this Parks CS/CE posting — directional contrast only)
+- JD 10158145: https://disney.wd5.myworkdayjobs.com/disneycareer/job/Lake-Buena-Vista-FL-USA/WDW-Computer-Science---Computer-Engineering-Interns--Spring-2027_10158145
+- JD 10158184: https://disney.wd5.myworkdayjobs.com/disneycareer/job/Lake-Buena-Vista-FL-USA/Labor-Systems-Web-Integration-Intern--Spring-2027_10158184
+- `reference/companies.md` B-tier Disney (The Walt Disney Company) row
+- Extern Disney Internship 2027–2028 guide (Workday, recruiter 20–30m, HackerRank for tech) **[directional]**
+- Disney Careers recruiter podcast (resume → recruiter screen → hiring team) **[directional]**
+- `reference/recruiting.md` Part II §8, Part III §11
