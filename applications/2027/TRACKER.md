@@ -100,6 +100,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | The Walt Disney Company | WDW Computer Science / Computer Engineering Interns, Spring 2027 | 2026-08-25 | Applied | full-stack+parks ops / ride-show process-control / safety-analytics / hardware-software interfaces | 9.0 |
 | Medpace | Python Intern - Summer 2027 | 2026-08-25 | Applied | full-stack+enterprise BI / CRO data products | 10.0 |
 | The Walt Disney Company | Labor Systems Web Integration Intern, Spring 2027 | 2026-08-25 | Applied | full-stack+parks labor-systems / workforce-ops web apps | 6.0 |
+| BNY | 2027 Summer Internship Program - Software Engineer Intern - Engineering (Developer) | 2026-08-25 | Applied | full-stack+fintech-backend/custody-bank | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -107,6 +108,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 91
+- **Total applied:** 92
 - **Interviews:** 0
 - **Offers:** 0
