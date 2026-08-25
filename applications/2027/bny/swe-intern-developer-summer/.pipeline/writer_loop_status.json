@@ -1,0 +1,16 @@
+{
+  "action": "continue",
+  "out_of_rails": [
+    {
+      "entry": "resume",
+      "defect": "CSS not through-use",
+      "why": "No pool bullet names CSS, HTML, or a styling decision; swap sets cannot bridge. HTML/CSS already on the Languages line as inventory requires.",
+      "attempted": [
+        "Scanned full context.md pools (MDC, CaseStudyPrep.AI, Lyndbrook, Vylet, Granular Synthesizer, SignalWeaver) — zero bullets mention CSS, HTML, or a styling decision",
+        "Closest UI lines already on the page: SignalWeaver 'React/TypeScript dashboard' and CaseStudyPrep.AI 'audio visualizer at 60 FPS' — neither names CSS/HTML/styling",
+        "Checked swap sets — only llm-apis (Gemini/Claude/OpenAI); no CSS/HTML bridge",
+        "Skills already lists HTML/CSS; cannot invent a CSS bullet or add CSS to a project tech-stack line not derived from selected bullets"
+      ]
+    }
+  ]
+}
