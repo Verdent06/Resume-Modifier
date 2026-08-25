@@ -98,6 +98,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Ecolab | Digital & AI Technology Intern | 2026-08-24 | Applied | full-stack | 8.0 |
 | Audax Group | Data Engineer CO-OP | 2026-08-25 | Applied | ai-ml | 10.0 |
 | The Walt Disney Company | WDW Computer Science / Computer Engineering Interns, Spring 2027 | 2026-08-25 | Applied | full-stack+parks ops / ride-show process-control / safety-analytics / hardware-software interfaces | 9.0 |
+| Medpace | Python Intern - Summer 2027 | 2026-08-25 | Applied | full-stack+enterprise BI / CRO data products | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -105,6 +106,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 89
+- **Total applied:** 90
 - **Interviews:** 0
 - **Offers:** 0
