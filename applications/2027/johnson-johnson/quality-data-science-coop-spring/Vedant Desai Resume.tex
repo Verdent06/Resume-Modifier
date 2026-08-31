@@ -2,8 +2,7 @@
 %%  applications/2027/johnson-johnson/quality-data-science-coop-spring
 %%  Class path: ../../../template (do not change). Education + header fixed.
 %%  Spine: ai-ml (MDC Excel/Pandas ETL → rankings → Flask API).
-%%  Differentiator: Lyndbrook regulatory/compliance data + Vylet eval/quality
-%%  gates; Granular real-time safety checklist as SDLC/validation analog.
+%%  Differentiator: Lyndbrook regulatory/compliance data + Vylet eval/quality gates.
 %%  Honest stack only — no R, Snowflake, Databricks, Tableau, Power BI,
 %%  Copilot, Fusion, FDA, or medical-device internships.
 %% ============================================================================
@@ -83,21 +82,11 @@
 			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
 		\end{rSectionEntry}
 
-		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{}
-			{C++, JUCE, CMake, VST3, AU}
-			{}
-
-			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
-		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, SQL, C++}
+		\begin{rSet}{Languages}{Python, SQL}
 		\end{rSet}
 		\begin{rSet}{AI / ML}{Pandas, LangGraph, LangSmith}
 		\end{rSet}
