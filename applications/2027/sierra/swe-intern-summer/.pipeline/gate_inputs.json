@@ -1,0 +1,15 @@
+{
+  "jd_languages": ["TypeScript", "Go"],
+  "jd_required_keywords": ["eval frameworks", "RAG", "prompt engineering", "agent tooling", "LLM"],
+  "candidate_languages": ["Python", "TypeScript", "C++", "SQL", "HTML/CSS"],
+  "exempt_entries": [],
+  "protected_entries": ["Vylet"],
+  "lead_signal_window": 2,
+  "min_entries": 4,
+  "iter1_counts": {
+    "Vylet": 3,
+    "CaseStudyPrep.AI": 2,
+    "Michigan Data Consulting (MDC)": 2,
+    "SignalWeaver": 3
+  }
+}
