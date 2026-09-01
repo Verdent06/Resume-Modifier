@@ -1,0 +1,6 @@
+{
+  "defects": [
+    {"entry": "Michigan Data Consulting (MDC)", "severity": "minor", "defect": "metric-free API bullet", "why": "Flask REST API on EC2 is the full-stack shipping hook but the line has no number; recruiter cannot size production impact in ~7 seconds"},
+    {"entry": "resume", "severity": "minor", "defect": "no customer-experience domain", "why": "Sierra builds enterprise CX agents; the page is PE lead-sourcing, campaign-finance, voice-AI, and financial research — agent/eval/RAG engineering is present but no CX or customer-support adjacency"}
+  ]
+}

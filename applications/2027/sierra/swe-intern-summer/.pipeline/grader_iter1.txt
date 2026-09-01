@@ -1,0 +1,27 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RESUME GRADING REPORT (DEMERIT MODEL)
+Role: Intern, Agent Development (Summer 2027) at Sierra
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+REVIEWER PERSONA
+Sierra A-tier intern recruiter on Ashby. I need an intern who already ships production-shaped product and AI-agent systems — evals, RAG, or agent tooling in bullets — and can own a scoped feature from design through ship. Bar is directional <3–5%; the PDF is a real bottleneck (human reads early). I screen for a full-stack SWE spine (API + a frontend language through use) with production LLM/agent evidence in the top half, not notebook ML and not a prompt-playground.
+
+DEFECTS  (machine-read by scripts/validate.py demerits — valid JSON, this block only)
+```json
+{
+  "defects": [
+    {"entry": "Michigan Data Consulting (MDC)", "severity": "minor", "defect": "metric-free API bullet", "why": "Flask REST API on EC2 is the full-stack shipping hook but the line has no number; recruiter cannot size production impact in ~7 seconds"},
+    {"entry": "resume", "severity": "minor", "defect": "no customer-experience domain", "why": "Sierra builds enterprise CX agents; the page is PE lead-sourcing, campaign-finance, voice-AI, and financial research — agent/eval/RAG engineering is present but no CX or customer-support adjacency"}
+  ]
+}
+```
+
+WHAT WOULD TAKE THIS TO THE NEXT LEVEL
+- MDC's Flask/EC2 line is the production-API proof I want, but without a metric I cannot size the ship — it reads as architecture, not impact.
+- Nothing on the page sits next to customer experience or support workflows, so a rushed skim can bucket this as PE/fintech agents rather than CX-agent intern.
+
+LIKELIHOOD ESTIMATE
+─────────────────────
+Resume Screen Pass:  High — Vylet leads with LangGraph + LangSmith evals and paying clients; TypeScript/React and pgvector search are in bullets; one clean page.
+Overall Hire Odds:   Medium — A-tier Ashby funnel with resume + practical bottleneck; take-home/online is LC med–hard plus agent design, then onsite coding + agent sys design + values. Strong PDF still has to clear a small intern class (<3–5% directional).
+What Moves the Needle (outside the resume): Apply immediately (rolling Ashby; resume is the first real filter). Prep LC medium–hard plus a walkthrough of the LangGraph/eval harness and the React/TypeScript + pgvector path. Values stories for Trust / Customer Obsession / Craftsmanship.
