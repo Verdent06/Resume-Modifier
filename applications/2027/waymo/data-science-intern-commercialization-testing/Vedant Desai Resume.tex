@@ -1,27 +1,10 @@
 %% ============================================================================
-%%  applications/template.tex  —  SKELETON RESUME (single source template)
-%% ----------------------------------------------------------------------------
-%%  This is the ONLY resume template. The orchestrator copies this file into a
-%%  position folder, then the writer fills the Experience / Projects / Skills
-%%  sections from the context.md bullet pool. It replaces the old per-track
-%%  templates (full-stack / ai-ml / dev-ops) — track is now a doctrine-routing
-%%  label, not a file choice, so any track (including robotics/autonomy) fills
-%%  this same skeleton.
-%%
-%%  WHAT IS FIXED (do not change): header (\name, \contact) and Education.
-%%  WHAT GETS FILLED: Experience entries, Projects entries, Technical Skills.
-%%
-%%  rSectionEntry signature — 5 positional params, ALWAYS supply all 5 braces:
-%%     {1 name}{2 dates}{3 tagline/role/link}{4 technologies}{5 location}
-%%     - param 4 (technologies) renders after the name with a " | " separator;
-%%       leave it {} for experiences, fill it for projects (the tech-stack line).
-%%     - any unused param is an empty {}.
-%%  rSet signature — {1 bucket label}{2 comma-separated items}.
-%%
-%%  PATH NOTE: this template sits at resume/applications/template.tex, beside
-%%  template.cls, so the class path is just `template`. On copy into
-%%  applications/{year}/{company}/{role}/, the orchestrator rewrites it to
-%%  ../../../template (three levels up to applications/, where template.cls lives).
+%%  applications/2027/waymo/data-science-intern-commercialization-testing
+%%  Class path: ../../../template (do not change). Education + header fixed.
+%%  Spine: ai-ml applied DS (ingest → method → measured output).
+%%  Differentiator: autonomy / AV (fleet/ops/test-adjacent analytics).
+%%  Honest stack only — no Snowflake, Databricks, Tableau, Copilot, Fusion,
+%%  Sentry. No invented Bayesian / SIL/HIL / survival analysis.
 %% ============================================================================
 
 \documentclass[
@@ -47,60 +30,74 @@
 		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
-	% Order by impact density for THIS role, not chronology (see resume.md I.3).
-	% First bullet of each entry is the hook: lead with the problem/outcome,
-	% not the technology (see resume.md I.4). 2-3 bullets per experience.
+	% ---- EXPERIENCE ---------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{Organization Name}
-			{Start -- End}
-			{Role / Title}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
 			{}
-			{City, ST}
+			{Ann Arbor, MI}
 
-			\item Led [project/team/process], resulting in [impact or recognition].
-			\item Built [system/solution], enabling [key outcome].
-			\item Improved [process/feature], increasing [metric] by [result].
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at $\sim$2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating $\sim$800 hours of manual pulls across 400 tracked PACs.
+			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
 		\end{rSectionEntry}
 
-		% \begin{rSectionEntry}{...}{...}{...}{}{...}
-		%   \item {...}
-		% \end{rSectionEntry}
+		\begin{rSectionEntry}
+			{Lyndbrook Capital}
+			{Feb 2026 -- Apr 2026}
+			{Data Engineering Consultant}
+			{}
+			{Remote}
+
+			\item Contracted pre-LOI to build acquisition intelligence for a boutique search fund targeting water utility operators; aggregated EPA ECHO and MassGIS regulatory data into a unified PWSID entity database and delivered 800+ validated Day-1 acquisition targets within the engagement window.
+			\item Built a Review Velocity scoring algorithm that proxied fleet expansion and operational scale from public compliance data, filtering 800 acquisition targets down to a 280-lead qualified shortlist --- a 35\% precision rate against the fund's revenue criteria.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
+			{}
+			{}
+
+			\item Launched Vylet, automating a $\sim$30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+		\end{rSectionEntry}
 	\end{rSection}
 
-	% ---- PROJECTS (writer fills from context.md pool) -----------------------
-	% 1-2 bullets each. Tech-stack line goes in param 4 (derived from the bullets
-	% selected for this project). Optional live link goes in param 3 as \href.
+	% ---- PROJECTS -----------------------------------------------------------
 	\begin{rSection}{P}{rojects}
 		\begin{rSectionEntry}
-			{Project Name --- One-line descriptor}
-			{\href{https://example.com}{example.com}}
-			{Hook bullet: what the project does and the problem it solves.}
-			{Language, Framework, Database, Infra}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
+			{LoRA}
 			{}
 
-			\item {Evidence bullet — a key engineering decision with a metric.}
-			\item {Evidence bullet — the architectural choice and what it enabled.}
-			\item {Evidence bullet — the deeper implementation detail with a tied metric.}
+			\item Built a linear regression combining fundamental, embedding-based sentiment, and LLM-derived sentiment signals into a composite return-prediction score; validated out-of-sample (3.39\% $R^{2}$, consistent with the low single-digit $R^{2}$ typical of real return-prediction literature) to confirm the model wasn't just fitting noise.
+			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
 		\end{rSectionEntry}
-
-		% \begin{rSectionEntry}{...}{...}{}{Tech, Stack, Here}{}
-		%   \item {...}
-		% \end{rSectionEntry}
 	\end{rSection}
 
-	% ---- TECHNICAL SKILLS (writer picks 3-5 buckets from context.md) --------
-	% ~80 char limit per line after the label. Trim tail items to fit; promote a
-	% tail item only if it is a hard ATS keyword from the JD (see resume.md I.5).
+	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Item, Item, Item, Item, Item}
+		\begin{rSet}{Languages}{Python, SQL}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Item, Item, Item, Item}
+		\begin{rSet}{AI / ML}{Pandas, LangGraph, Silero VAD, ONNX Runtime}
 		\end{rSet}
-		\begin{rSet}{Databases}{Item, Item, Item}
-		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{Item, Item, Item, Item}
+		\begin{rSet}{Cloud \& Infrastructure}{Flask, Redis, AWS (EC2), Docker, Celery}
 		\end{rSet}
 	\end{rSection}
 
