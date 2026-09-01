@@ -13,9 +13,13 @@ Each entry carries a fixed **Lane**: the one distinct signal it contributes that
 - **Name:** Vedant Desai
 - **Phone:** (248) 704-4852
 - **Email:** [vedantde@umich.edu](mailto:vedantde@umich.edu)
+- **Application email (forms):** verdent06@gmail.com — use on Greenhouse/Workday when the packet specifies; resume header stays `vedantde@umich.edu` from `applications/template.tex`
 - **Portfolio:** — (omit from resume header)
 - **LinkedIn:** [https://linkedin.com/in/vedantde06](https://linkedin.com/in/vedantde06)
 - **GitHub:** [https://github.com/Verdent06](https://github.com/Verdent06)
+- **Class standing:** Junior (not sophomore). UMich start 08/31/2025. Expected graduation **May 2028** (never 2029). Available Summer 2027, not Fall 2026. Can relocate to SF.
+- **Work authorization:** US citizen; authorized to work in the US; will not require sponsorship.
+- **Internships completed:** 1 (CaseStudyPrep.AI). Credits: 96.
 
 ---
 

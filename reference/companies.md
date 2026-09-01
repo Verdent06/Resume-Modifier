@@ -164,6 +164,7 @@
 | **Qualtrics**                 | Multiple (Ann Arbor office)    | Experience management; SAP-backed SaaS; real engineering                            | 3 rds · Easy–Med · HackerRank · No · Bottleneck: OA · ~10–15%                                |
 | **Dell**                      | Austin, Round Rock             | Hardware + software; large program; not exciting signal                             | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~10–15%                          |
 | **HP / HPE**                  | Palo Alto, Houston             | Split companies; both have SWE programs                                             | 2–3 rds · Easy · No standard OA · No · Bottleneck: resume · ~10–15%                          |
+| **HP IQ**                     | San Francisco                  | HP's AI innovation lab (not HP/HPE campus SWE). Cloud Services intern (Greenhouse 6111955004) is device-cloud backend — Spring Boot preferred; hardware-software + AI assistants/conference-room devices. **Master's/PhD listed essential** (undergrad is a knockout). Sibling AML Platform (6114781004) is PyTorch/on-device inference — do not mix reqs. $45–51/hr; Summer 2027 May/June–Aug/Sept. | 2–3 rds · Easy · No standard OA published · No · Bottleneck: resume + degree-level knockout · ~10–15% |
 
 
 ---
