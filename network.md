@@ -4,6 +4,7 @@ Contacts for referrals, informational chats, and follow-ups. Update when you add
 
 | Name | Company | Title | Email | Phone | LinkedIn |
 | ---- | ------- | ----- | ----- | ----- | -------- |
+| Alex (alexybz) | Google | | alexybz@google.com | | |
 | David Yu | YouLearn | Founder | david@youlearn.ai | | [Profile](https://www.linkedin.com/in/david-yu-871202244/) |
 | Josh Curl | Hightouch | CTO | josh@hightouch.com | | [Profile](https://www.linkedin.com/in/joshcurl/) |
 | Adam Proschek | Deepgram | Tech Lead Manager (Retail) | adam.proschek@deepgram.com | | [Profile](https://www.linkedin.com/in/aproschek/) |
