@@ -1,9 +1,8 @@
 %% ============================================================================
 %%  applications/2027/hermeus/swe-intern-modeling-sim/Vedant Desai Resume.tex
-%%  Writer iter-1: robotics/sim spine for 6DOF SITL M&S intern (LA).
-%%  Experience: CSP (real-time) → MDC (Pandas/validation) → Vylet (eval/numerical).
-%%  Projects: Granular (C++ real-time / numerical scheduler) → SignalWeaver (held-out validation).
-%%  No Julia (not in inventory). Class path: ../../../template. Email: verdent06@gmail.com.
+%%  Writer iter-1 (fresh rebalance): robotics/sim spine for LA 6DOF SITL.
+%%  Experience lead: Granular (C++ real-time numerical) → MDC (Pandas) → CSP (real-time).
+%%  Omit SignalWeaver, Vylet, Lyndbrook. No Julia. Email: verdent06@gmail.com.
 %% ============================================================================
 
 \documentclass[
@@ -32,15 +31,18 @@
 	% ---- EXPERIENCE ---------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
-			{CaseStudyPrep.AI}
-			{Dec 2025 -- May 2026}
-			{Software Engineer Co-op (Voice AI)}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE, VST3, AU}
 			{}
-			{Remote}
 
-			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
-			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
-			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+			\item Built the granular engine around a fractional-accumulator scheduler that fires grains at density $\times$ (1 - overlap $\times$ 0.5) effective rate --- each grain reads a random WAV offset at $2^{(\textrm{semitones}/12)}$ playback speed, windowed by a pre-computed 8,192-entry Gaussian LUT to eliminate click artifacts at grain edges, with all grain memory drawn from a per-voice pre-allocated pool.
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
+			\item Implemented 16-voice polyphony with per-voice ADSR envelopes, pre-computing attack/decay/release rates as samples-per-step in prepareToPlay() to eliminate division inside the audio hot loop --- and a voice-stealing algorithm that evicts the oldest active note by age counter when all 16 slots are busy, with each voice falling back to a sine oscillator until a WAV sample is loaded.
+			\item Implemented a global post-mix delay on a power-of-two ring buffer ($2^{17}$ = 131,072 samples, O(1) bitmask addressing) with per-sample delay time smoothing --- the read head steps $\pm$1 sample per block toward the target delay value --- eliminating the zipper noise audible when a user adjusts the delay knob during live playback.
+			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -52,50 +54,26 @@
 
 			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
 			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
-			{Vylet}
-			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
-			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
 			{}
-			{}
+			{Remote}
 
-			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
-			\item Engineered Node 3 as a pure-Python triangulated consensus gate --- no LLM calls --- that computes a 0--100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
-		\end{rSectionEntry}
-	\end{rSection}
-
-	% ---- PROJECTS -----------------------------------------------------------
-	\begin{rSection}{P}{rojects}
-		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{}
-			{C++, JUCE}
-			{}
-
-			\item Built the granular engine around a fractional-accumulator scheduler that fires grains at density $\times$ (1 - overlap $\times$ 0.5) effective rate --- each grain reads a random WAV offset at $2^{(\textrm{semitones}/12)}$ playback speed, windowed by a pre-computed 8,192-entry Gaussian LUT to eliminate click artifacts at grain edges, with all grain memory drawn from a per-voice pre-allocated pool.
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
-			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{SignalWeaver}
-			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
-			{}
-			{Python, LoRA}
-			{}
-
-			\item Lifted financial-sentiment classification accuracy from 81\% to 96\% by LoRA fine-tuning a quantized meta-llama/Meta-Llama-3.1-8B-Instruct model on 3,454 Financial PhraseBank entries, evaluated on a held-out test set.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
 		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL}
+		\begin{rSet}{Languages}{Python, C++, TypeScript, SQL}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{Angular, RxJS, JUCE}
+		\begin{rSet}{Frameworks}{JUCE, Flask}
 		\end{rSet}
 		\begin{rSet}{AI / ML}{Pandas, ONNX Runtime, Silero VAD}
 		\end{rSet}
