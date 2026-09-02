@@ -75,9 +75,9 @@
 			{C++, JUCE}
 			{}
 
+			\item Built the granular engine around a fractional-accumulator scheduler that fires grains at density $\times$ (1 - overlap $\times$ 0.5) effective rate --- each grain reads a random WAV offset at $2^{(\textrm{semitones}/12)}$ playback speed, windowed by a pre-computed 8,192-entry Gaussian LUT to eliminate click artifacts at grain edges, with all grain memory drawn from a per-voice pre-allocated pool.
 			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
 			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
-			\item Built the granular engine around a fractional-accumulator scheduler that fires grains at density $\times$ (1 - overlap $\times$ 0.5) effective rate --- each grain reads a random WAV offset at $2^{(\textrm{semitones}/12)}$ playback speed, windowed by a pre-computed 8,192-entry Gaussian LUT to eliminate click artifacts at grain edges, with all grain memory drawn from a per-voice pre-allocated pool.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
