@@ -102,7 +102,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | The Walt Disney Company | Labor Systems Web Integration Intern, Spring 2027 | 2026-08-25 | Applied | full-stack+parks labor-systems / workforce-ops web apps | 6.0 |
 | BNY | 2027 Summer Internship Program - Software Engineer Intern - Engineering (Developer) | 2026-08-25 | Applied | full-stack+fintech-backend/custody-bank | 8.0 |
 | BNY | 2027 Summer Internship Program - Data Science Intern (Engineering) | 2026-08-25 | Applied | ai-ml | 8.0 |
-| Hermeus | Software Engineering Intern (Modeling & Simulation) | 2026-09-02 | Applied | robotics | 0.0 |
+| Hermeus | Software Engineering Intern (Modeling & Simulation) | 2026-09-02 | Applied | robotics | 4.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
