@@ -38,3 +38,9 @@ General Matter enriches uranium. Founded in 2024 by Scott Nolan (former SpaceX M
 - PR Newswire, 2026-01-07: https://www.prnewswire.com/news-releases/us-department-of-energy-awards-900-million-contract-to-general-matter-to-supply-domestic-high-assay-low-enriched-uranium-302655690.html
 - World Nuclear News, 2025-04-23 (stealth exit, Series A, Thiel board, LA team size): https://www.world-nuclear-news.org/articles/us-uranium-enrichment-startup-emerges-from-stealth
 - Wikipedia (founding, Series A ~$50M, Paducah lease): https://en.wikipedia.org/wiki/General_Matter
+
+## Embedded Intern (5377131008)
+
+Summer 2027 Internship – Embedded Software Engineering (Greenhouse 5377131008). Same HQ/comp/term as the SWE intern req: onsite South Bay LA, $32–$46/hr by class standing, monthly housing stipend, overtime eligible, 12 weeks (form also offers Fall 2026 / Spring 2027). Intern writes safety-critical software that commands actuators and processes high-speed sensor data on enrichment hardware. **Stack (this JD):** firmware in C/C++, Rust, and/or PLC; DAQ, state machines, control architectures; automated build/test/validation; lab instrumentation (oscilloscopes, logic analyzers, protocol analyzers); preferred PCBA bring-up, DSP, protocol debugging, PLC/SCADA. Same clearance-eligibility and commute knockouts as 5377118008. Literal screen remains general SWE (current CS/CE/EE student + one of C/C++/Golang/Python/Rust + general low-level understanding); company-fit signal is industrial embedded / safety-critical firmware next to plant hardware — not ROS robotics (`resume.md` §15).
+
+- JD: https://job-boards.greenhouse.io/generalmatter/jobs/5377131008
