@@ -61,7 +61,7 @@
 
 			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at $\sim$2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating $\sim$800 hours of manual pulls across 400 tracked PACs.
 			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
-			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -73,7 +73,6 @@
 
 			\item Contracted pre-LOI to build acquisition intelligence for a boutique search fund targeting water utility operators; aggregated EPA ECHO and MassGIS regulatory data into a unified PWSID entity database and delivered 800+ validated Day-1 acquisition targets within the engagement window.
 			\item Built a Review Velocity scoring algorithm that proxied fleet expansion and operational scale from public compliance data, filtering 800 acquisition targets down to a 280-lead qualified shortlist --- a 35\% precision rate against the fund's revenue criteria.
-			\item Automated off-market deal sourcing by aggregating 2,500+ legal entities from EPA compliance databases and cross-referencing Google Maps API data to surface unlisted acquisition targets, eliminating 15 hours of manual prospecting per week for the fund's Principal.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -114,11 +113,11 @@
 		\end{rSet}
 		\begin{rSet}{AI / ML}{Pandas, LangGraph}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{React, FastAPI}
+		\begin{rSet}{Frameworks}{Flask, React, FastAPI}
 		\end{rSet}
 		\begin{rSet}{Databases}{PostgreSQL, Redis}
 		\end{rSet}
-		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2), Docker, Celery}
+		\begin{rSet}{Cloud \& Infrastructure}{Docker, Celery}
 		\end{rSet}
 	\end{rSection}
 
