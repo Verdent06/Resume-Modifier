@@ -1,0 +1,34 @@
+{
+  "jd_languages": [
+    "SQL",
+    "Python"
+  ],
+  "jd_required_keywords": [
+    "SQL",
+    "Python",
+    "data visualization",
+    "PowerBI",
+    "quantitative analysis",
+    "business intelligence"
+  ],
+  "candidate_languages": [
+    "Python",
+    "TypeScript",
+    "C++",
+    "SQL",
+    "HTML/CSS"
+  ],
+  "exempt_entries": [],
+  "protected_entries": [
+    "Michigan Data Consulting (MDC)",
+    "Lyndbrook Capital"
+  ],
+  "lead_signal_window": 2,
+  "min_entries": 4,
+  "iter1_counts": {
+    "Michigan Data Consulting (MDC)": 3,
+    "Lyndbrook Capital": 3,
+    "Vylet": 2,
+    "SignalWeaver": 3
+  }
+}
