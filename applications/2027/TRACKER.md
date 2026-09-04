@@ -107,6 +107,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Skillz Inc | Co-op, Software Engineer | 2026-09-04 | Applied | full-stack+payments-infra/real-money-gaming | 10.0 |
 | Saab, Inc. | Software Engineering Co-Op (Summer 2027) | 2026-09-04 | Applied | full-stack+air-traffic-management/surveillance-software | 8.0 |
 | Innovative Systems | Intern/Co-op- Summer 2027 - Software Engineering | 2026-09-04 | Applied | full-stack+enterprise data-quality/AML-KYC compliance | 9.0 |
+| The Exploration Company | Summer 2027 Internship (Software) | 2026-09-04 | Applied | full-stack+aerospace/crewed-vehicle/mission-critical | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -114,6 +115,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 98
+- **Total applied:** 99
 - **Interviews:** 0
 - **Offers:** 0
