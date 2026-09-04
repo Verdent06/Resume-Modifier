@@ -1,0 +1,9 @@
+# SHA-256 — Vedant Desai Resume.pdf
+
+File: `applications/2027/apex/ground-software-intern-summer-2027/Vedant Desai Resume.pdf`
+
+```
+78e9875f096de3c95024a3c04d437ccaf41d89657d60fb16bf2bddac4f970555
+```
+
+Computed 2026-09-04 with SHA-256 over the shipped one-page PDF (44,592 bytes). Re-hash after any recompile before attaching to Ashby.
