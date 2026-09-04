@@ -109,6 +109,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Innovative Systems | Intern/Co-op- Summer 2027 - Software Engineering | 2026-09-04 | Applied | full-stack+enterprise data-quality/AML-KYC compliance | 9.0 |
 | The Exploration Company | Summer 2027 Internship (Software) | 2026-09-04 | Applied | full-stack+aerospace/crewed-vehicle/mission-critical | 9.0 |
 | Apex | Ground Software Engineering Internship (Spring or Summer 2027) | 2026-09-04 | Applied | full-stack+aerospace/satellite-bus/ground-ops | 8.0 |
+| Primer | Software Engineer Intern, Full Stack — Summer 2027 | 2026-09-04 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -116,6 +117,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 100
+- **Total applied:** 101
 - **Interviews:** 0
 - **Offers:** 0

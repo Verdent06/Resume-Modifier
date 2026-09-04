@@ -32,6 +32,18 @@
 	% ---- EXPERIENCE ---------------------------------------------------------
 	\begin{rSection}{E}{xperience}
 		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
+			{}
+			{Ann Arbor, MI}
+
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
+			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
 			{Vylet}
 			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
 			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
@@ -41,18 +53,6 @@
 			\item Launched Vylet, automating a ~30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
 			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
 			\item Grew Vylet from 1 to 3 paying subscription clients within six weeks of launch --- spanning workforce-software, landscaping, and geography-first sourcing engagements --- generating \$1,500 in monthly recurring revenue.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{Michigan Data Consulting (MDC)}
-			{Jan 2026 -- May 2026}
-			{Data Engineer --- Michigan Campaign Finance Network}
-			{}
-			{Ann Arbor, MI}
-
-			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at ~2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating ~800 hours of manual pulls across 400 tracked PACs.
-			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
-			\item Scoped technical delivery directly with MCFN stakeholders as the only engineer on contract --- from ingestion pipelines through REST endpoints on EC2 --- with no backend team to share infrastructure, API design, or deployment ownership.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -73,31 +73,22 @@
 			{SignalWeaver}
 			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
 			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
-			{FastAPI, React, TypeScript, PostgreSQL, Docker, GitHub Actions}
+			{React, TypeScript, FastAPI, PostgreSQL}
 			{}
 
 			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
 			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
+			\item Implemented semantic search over stored financial news with pgvector cosine similarity (768-d MPNet embeddings), hitting 49ms p50 / 99ms p99 over 90 queries returning top-5 or top-10 matches.
 			\item Containerized the stack with Docker Compose (API + Postgres/pgvector + nginx frontend) and a GitHub Actions CI pipeline (frontend build, pytest, API image build on main).
 		\end{rSectionEntry}
 
-		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
-			{JUCE, VST3, AU, CMake}
-			{}
-
-			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
-			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
-		\end{rSectionEntry}
 	\end{rSection}
 
 	% ---- TECHNICAL SKILLS -------------------------------------------------
 	\begin{rSection}{T}{echnical Skills}
-		\begin{rSet}{Languages}{Python, TypeScript, C++, SQL, HTML/CSS}
+		\begin{rSet}{Languages}{Python, TypeScript, SQL, HTML/CSS}
 		\end{rSet}
-		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS, JUCE}
+		\begin{rSet}{Frameworks}{React, Angular, FastAPI, Flask, RxJS}
 		\end{rSet}
 		\begin{rSet}{Databases}{PostgreSQL, Redis, pgvector}
 		\end{rSet}
