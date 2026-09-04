@@ -104,6 +104,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | BNY | 2027 Summer Internship Program - Data Science Intern (Engineering) | 2026-08-25 | Applied | ai-ml | 8.0 |
 | Transcard Payments | Software Engineer Intern — Summer 2027 | 2026-09-03 | Applied | full-stack+payments/fintech-backend/payment-orchestration | 7.0 |
 | Skyward | Software Engineer - Intern | 2026-09-04 | Applied | full-stack+k-12-sis/education-admin | 7.0 |
+| Skillz Inc | Co-op, Software Engineer | 2026-09-04 | Applied | full-stack+payments-infra/real-money-gaming | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -111,6 +112,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 95
+- **Total applied:** 96
 - **Interviews:** 0
 - **Offers:** 0

@@ -21,3 +21,7 @@ Resume/project fit against the live Greenhouse JD (`8168006` / TAH-296) vs `cont
 JD + Greenhouse: enrolled at program start **and** graduate **no more than 1 year after the program begins**. Program begins **January 11, 2027** → graduation by **January 11, 2028**. Candidate graduates **May 2028**. Honest answer on that Yes/No is **No**. Binary knockouts are auto-reject (`recruiting.md` Part I §1). Do **not** answer Yes.
 
 **Stop: no.** Continue full pipeline + `written-answers.md` (user requested the packet; flag the window on the form).
+
+## SHA-256
+
+`6859aa5721d6a52ae6e0e27e29ee392f118fd496532fe52a75a4789d4ce6a9f6` (`Vedant Desai Resume.pdf`)
