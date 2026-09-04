@@ -1,0 +1,40 @@
+{
+  "jd_languages": [
+    "TypeScript"
+  ],
+  "jd_required_keywords": [
+    "TypeScript",
+    "React",
+    "Postgres",
+    "PostgreSQL",
+    "full-stack",
+    "API",
+    "production",
+    "code review",
+    "GraphQL",
+    "Node",
+    "Next",
+    "Prisma",
+    "Relay"
+  ],
+  "candidate_languages": [
+    "Python",
+    "TypeScript",
+    "C++",
+    "SQL",
+    "HTML/CSS"
+  ],
+  "exempt_entries": [],
+  "protected_entries": [
+    "Vylet"
+  ],
+  "lead_signal_window": 0,
+  "min_entries": 5,
+  "iter1_counts": {
+    "Vylet": 3,
+    "Michigan Data Consulting (MDC)": 3,
+    "CaseStudyPrep.AI": 2,
+    "SignalWeaver": 3,
+    "Granular Synthesizer Plugin": 2
+  }
+}
