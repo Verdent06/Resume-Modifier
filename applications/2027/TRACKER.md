@@ -113,6 +113,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | DriveTime (Family of Brands) | Software Engineer Intern (Summer 2027) | 2026-09-04 | Applied | full-stack+auto-finance / used-car sales-finance-servicing | 5.0 |
 | Johns Hopkins APL (JHU APL) | 2027 Internship - Sensor Systems/Data Analytics | 2026-09-04 | Applied | ai-ml | 8.0 |
 | Principal Financial Group | Software Engineer Internship - Charlotte, NC (Summer 2027) | 2026-09-04 | Applied | full-stack+fintech-backend/retirement-insurance-platforms | 9.0 |
+| Kodiak Robotics | Winter 2027 Intern, Data Engineering | 2026-09-06 | Applied | ai-ml+autonomous-trucking/robotics-safety-data-platform | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -120,6 +121,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 104
+- **Total applied:** 105
 - **Interviews:** 0
 - **Offers:** 0
