@@ -115,6 +115,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Principal Financial Group | Software Engineer Internship - Charlotte, NC (Summer 2027) | 2026-09-04 | Applied | full-stack+fintech-backend/retirement-insurance-platforms | 9.0 |
 | Kodiak Robotics | Winter 2027 Intern, Data Engineering | 2026-09-06 | Applied | ai-ml+autonomous-trucking/robotics-safety-data-platform | 10.0 |
 | ID.me | Summer Intern 2027 - Software Development Engineer Intern | 2026-09-06 | Applied | full-stack | 9.0 |
+| PayPal | Software Engineer Intern (Summer 2027) | 2026-09-06 | Applied | full-stack+payments/fintech-backend/high-scale-connected-payment-systems | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -122,6 +123,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 106
+- **Total applied:** 107
 - **Interviews:** 0
 - **Offers:** 0
