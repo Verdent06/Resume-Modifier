@@ -123,12 +123,14 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | CACI | Software Engineer Intern - Summer 2027 | 2026-09-06 | Applied | full-stack+radar/SAR/remote-sensing | 8.0 |
 | ENFOS | Software Engineer Intern (Summer 2027) | 2026-09-06 | Applied | full-stack+enterprise environmental-obligation SaaS / ARO-ERO subledger | 9.0 |
 
+| Rivian and Volkswagen Group Technologies | Software Engineering Intern - Applications, Infotainment & Mobile (January - August 2027) | 2026-09-06 | Applied | full-stack+automotive-SDV-infotainment/in-vehicle-apps | 8.0 |
+
 **Status:** Applied / Interviewing / Offer / Rejected
 
 ---
 
 ## Summary Stats
 
-- **Total applied:** 113
+- **Total applied:** 114
 - **Interviews:** 0
 - **Offers:** 0
