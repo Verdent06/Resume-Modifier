@@ -125,6 +125,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 | Rivian and Volkswagen Group Technologies | Software Engineering Intern - Applications, Infotainment & Mobile (January - August 2027) | 2026-09-06 | Applied | full-stack+automotive-SDV-infotainment/in-vehicle-apps | 8.0 |
 | CIBC | 2027 Summer Intern - Software Engineering | 2026-09-06 | Applied | full-stack+fintech-backend/bank-IT | 10.0 |
+| Schonfeld | 2027 Business Analytics Intern | 2026-09-06 | Applied | ai-ml+multi-manager hedge fund / BA serving risk-trading-accounting-ops-BD | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -132,6 +133,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 115
+- **Total applied:** 116
 - **Interviews:** 0
 - **Offers:** 0
