@@ -128,8 +128,8 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Wipfli | Data & Analytics Consulting Internship - Summer 2027 | 2026-09-06 | Applied | ai-ml+mid-market-advisory-consulting/client-facing-BI | 8.0 |
 | Hy-Vee | Data Analytics Intern - Summer 2027 | 2026-09-06 | Applied | ai-ml+retail-grocery/in-store-digital-customer-analytics | 9.0 |
 | Applied Materials | Summer 2027 Global Technical Learning Center Data Analyst Intern- Bachelor's/Master's (Albany, NY) | 2026-09-06 | Applied | ai-ml+semiconductor capital equipment / GTLC training-ops analytics | 8.0 |
-
 | Apex | Simulation Software Engineering Internship (Spring or Summer 2027) | 2026-09-06 | Applied | robotics | 7.0 |
+| Hy-Vee | Digital Software Engineering Intern - Summer 2027 | 2026-09-06 | Applied | full-stack+grocery-digital/e-commerce/retail-business-applications | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -137,6 +137,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 120
+- **Total applied:** 121
 - **Interviews:** 0
 - **Offers:** 0
