@@ -1,0 +1,5 @@
+# SHA-256 — Vedant Desai Resume.pdf
+
+`d8869e22d505f5b286f4f7ebd6abe451c4be657266b9d41dde540ecf9146fbda`
+
+Computed 2026-09-06 with SHA-256 over the shipped one-page PDF (45200 bytes). Re-hash after any recompile before attaching to Eightfold.
