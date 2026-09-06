@@ -118,6 +118,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | PayPal | Software Engineer Intern (Summer 2027) | 2026-09-06 | Applied | full-stack+payments/fintech-backend/high-scale-connected-payment-systems | 10.0 |
 | Scale AI | Software Engineering Intern (Summer 2027) | 2026-09-06 | Applied | full-stack+AI-data-platform/applied-pipelines | 8.0 |
 | Keysight Technologies | Full Stack Intern (Summer 2027) | 2026-09-06 | Applied | full-stack | 8.0 |
+
 **Status:** Applied / Interviewing / Offer / Rejected
 
 ---
