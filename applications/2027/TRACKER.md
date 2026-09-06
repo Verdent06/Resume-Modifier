@@ -126,6 +126,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | CIBC | 2027 Summer Intern - Software Engineering | 2026-09-06 | Applied | full-stack+fintech-backend/bank-IT | 10.0 |
 | Schonfeld | 2027 Business Analytics Intern | 2026-09-06 | Applied | ai-ml+multi-manager hedge fund / BA serving risk-trading-accounting-ops-BD | 9.0 |
 | Wipfli | Data & Analytics Consulting Internship - Summer 2027 | 2026-09-06 | Applied | ai-ml+mid-market-advisory-consulting/client-facing-BI | 8.0 |
+| Hy-Vee | Data Analytics Intern - Summer 2027 | 2026-09-06 | Applied | ai-ml+retail-grocery/in-store-digital-customer-analytics | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -133,6 +134,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 117
+- **Total applied:** 118
 - **Interviews:** 0
 - **Offers:** 0
