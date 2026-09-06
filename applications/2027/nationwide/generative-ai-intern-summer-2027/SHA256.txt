@@ -1,0 +1,5 @@
+# SHA-256 — Vedant Desai Resume.pdf
+
+`3b6fdee2ab21905311ebf8deb9aa8f1295d0182bf0571a45c6300c48f62892c6`
+
+Computed 2026-09-06 with SHA-256 over the shipped one-page PDF. Re-hash after any recompile before attaching to Workday.
