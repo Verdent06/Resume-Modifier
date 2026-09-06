@@ -1,8 +1,8 @@
 # WORTH_IT
 
-**Verdict: YES** (skill/project fit). **Form knockout exists** — see below; do not lie on Greenhouse.
+**Verdict: YES** (8 / 10 skill fit). **Form knockout exists** — see below; do not lie on Greenhouse. User override 2026-09-06: apply anyway; keep the honest **No**.
 
-Resume/project fit against the live Greenhouse JD (`8168006` / TAH-296) vs `context.md` pool. Eligibility is computed separately: GPA 3.66 ≥ 3.3; CS bachelor's enrolled; US citizen / no sponsorship; Winter 2027 term available (not Fall); Las Vegas relocate **Yes**. Graduation window is the binding form gate.
+Resume/project fit against the live Greenhouse JD (`8168006` / TAH-296, recaptured 2026-09-06) vs `context.md` pool. Eligibility is computed separately: GPA 3.66 ≥ 3.3; CS bachelor's enrolled; US citizen / no sponsorship; Winter 2027 term available (not Fall); Las Vegas relocate **Yes**. Graduation window is the binding form gate.
 
 ## Reasons
 
@@ -14,13 +14,13 @@ Resume/project fit against the live Greenhouse JD (`8168006` / TAH-296) vs `cont
 
 4. **Named gaps stay honest.** No Java, Go, Kubernetes, Jenkins, Terraform, Snowflake, Databricks, Tableau, Copilot, Fusion, Sentry, PCI, or payment-processor SDKs in the pool. Familiarity with payments / distributed transactions is **preferred**, not exclusive. Do not invent them.
 
-5. **Calibration.** Skillz is C-tier (`companies.md`); intern bottleneck is the Greenhouse resume (HackerRank is a full-time analog; intern OA unpublished). Req first published 2026-09-03 (`recruiting.md` §8 first wave). $32/hr, 5 days onsite Las Vegas, relocation support. No Skillz contact in `network.md`.
+5. **Calibration.** Skillz is C-tier (`companies.md`); intern bottleneck is the Greenhouse resume (HackerRank is a full-time analog; intern OA unpublished). Req first published 2026-09-03 (`recruiting.md` §8 first wave). $32/hr, 5 days onsite Las Vegas, relocation support. No Skillz contact in `network.md`. Pipeline `grade.md`: **10.0 / 10** (0 demerits) — PDF screen is clean; the form is the fail.
 
 ## Knockout (do not hide)
 
 JD + Greenhouse: enrolled at program start **and** graduate **no more than 1 year after the program begins**. Program begins **January 11, 2027** → graduation by **January 11, 2028**. Candidate graduates **May 2028**. Honest answer on that Yes/No is **No**. Binary knockouts are auto-reject (`recruiting.md` Part I §1). Do **not** answer Yes.
 
-**Stop: no.** Continue full pipeline + `written-answers.md` (user requested the packet; flag the window on the form).
+**Stop: no.** Packet + `written-answers.md` + `company-notes.md` for apply-anyway. Flag the window on the form.
 
 ## SHA-256
 

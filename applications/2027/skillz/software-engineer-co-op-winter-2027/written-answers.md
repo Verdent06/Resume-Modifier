@@ -1,6 +1,6 @@
 # Skillz Inc — Co-op, Software Engineer, Winter 2027 (Las Vegas, Greenhouse 8168006 / TAH-296) · Written Application Answers
 
-Draft answers for the public Greenhouse apply flow. Labels and dropdowns captured from `https://boards-api.greenhouse.io/v1/boards/skillzinc/jobs/8168006?questions=true` on 2026-09-04 (job `id` 8168006; `requisition_id` TAH-296; `first_published` 2026-09-03; `education` = `education_required`). Grounded in `persona.md` (full-stack SWE co-op on payment-infra / real-money player flows — **not** RZR ads, **not** Beamable LiveOps, **not** a game-client seat) and `context.md` metrics only.
+Draft answers for the public Greenhouse apply flow. Labels and dropdowns recaptured from `https://boards-api.greenhouse.io/v1/boards/skillzinc/jobs/8168006?questions=true` and the live apply page `https://job-boards.greenhouse.io/skillzinc/jobs/8168006` on **2026-09-06** (job `id` 8168006; `requisition_id` TAH-296; `first_published` 2026-09-03; `updated_at` 2026-09-03; `education` = `education_required`). Grounded in `persona.md` (full-stack SWE co-op on payment-infra / real-money player flows — **not** RZR ads, **not** Beamable LiveOps, **not** a game-client seat) and `context.md` metrics only.
 
 **Do not invent:** Java, Go, Kubernetes, Jenkins, Terraform, Snowflake, Databricks, Tableau, Copilot, Fusion, Sentry, PCI, payment-processor SDKs, Skillz platform, card rails.
 
@@ -11,37 +11,43 @@ Draft answers for the public Greenhouse apply flow. Labels and dropdowns capture
 Apply: https://job-boards.greenhouse.io/skillzinc/jobs/8168006
 Resume: `applications/2027/skillz/software-engineer-co-op-winter-2027/Vedant Desai Resume.pdf`
 
+**SHA-256:** `6859aa5721d6a52ae6e0e27e29ee392f118fd496532fe52a75a4789d4ce6a9f6`
+
+**Form kit (this apply only):** email **verdent06@gmail.com**. Resume PDF header still uses the umich address from `context.md`; that is expected. Phone **248-704-4852**. Address **49032 Freestone Dr, Northville, MI 48168** (ZIP **48168**). U.S. citizen, no sponsorship. GPA **3.66**. Expected **May 2028**. Class standing on forms: **Junior**. LinkedIn https://www.linkedin.com/in/vedantde06 · GitHub https://github.com/Verdent06. SAT **1510** if asked. DOB **12/16/2006** if asked. Valid US driver’s license: **Yes** if asked. Work-authorized: **Yes**.
+
 ---
 
 ## Knockouts (read first)
 
-1. **Binding — graduation window.** "Will you be enrolled as a student at the start of the program and graduate no more than 1 year after the program begins?" Program begins **January 11, 2027** → graduate by **January 11, 2028**. Expected **May 2028** is after that date. Answer **No**. Do not answer Yes. Binary knockouts auto-reject (`recruiting.md` Part I §1; `WORTH_IT.md`).
+1. **Binding — graduation window.** "Will you be enrolled as a student at the start of the program and graduate no more than 1 year after the program begins?" Program begins **January 11, 2027** → graduate by **January 11, 2028**. Expected **May 2028** is after that date. Answer **No**. Do not answer Yes. Binary knockouts auto-reject (`recruiting.md` Part I §1; `WORTH_IT.md`). User is applying anyway; still answer honestly.
 2. GPA 3.66 ≥ 3.3 — clears.
 3. CS bachelor's enrolled — clears.
 4. Onsite Las Vegas 5 days / 40h for Jan 11–Aug 20 2027 — **Yes** (relocate from Northville, MI).
 5. Work authorization / no future sponsorship — **Yes** / **No**.
 
-Country on the public board (HTML): **United States**.
+Country on the public board (HTML): **United States**. Location (City) / Greenhouse `Location`: **Northville, Michigan, United States** (current city, not Las Vegas).
 
 ---
 
 ## Knockout / structured fields (fill exactly)
 
-Exact Greenhouse labels. `*` = `required: true` on the API.
+Exact Greenhouse labels. `*` = `required: true` on the API. Live page also shows **Country** next to Phone and **Location (City)** / Locate me (API `location_questions`: Location, Latitude, Longitude — not in the public `questions` array). Some labels have a trailing space or trailing newline on the API; the visible text is what is shown here.
 
 | Field (exact label) | Required | Answer |
 | --- | --- | --- |
 | First Name | * | Vedant |
 | Last Name | * | Desai |
 | Email | * | **verdent06@gmail.com** |
+| Country | live page | **United States** |
 | Phone | * | 248-704-4852 |
-| Resume/CV | * | `applications/2027/skillz/software-engineer-co-op-winter-2027/Vedant Desai Resume.pdf` |
+| Location (City) | live page / `Location` * | **Northville, Michigan, United States** (current city). Do **not** put Las Vegas here — that is the job site. |
+| Resume/CV | * | `applications/2027/skillz/software-engineer-co-op-winter-2027/Vedant Desai Resume.pdf` (pdf/doc/docx/txt/rtf) |
 | Will you be enrolled as a student at the start of the program and graduate no more than 1 year after the program begins? Please note this is the requirement of the program. | * | **No** (May 2028 is after Jan 11 2028). This is the binding knockout. Do not answer Yes. Live options: Yes, No. |
-| LinkedIn Profile | * | https://linkedin.com/in/vedantde06 |
+| LinkedIn Profile | * | https://www.linkedin.com/in/vedantde06 |
 | This Co-Op requires being onsite 5 days a week (40 hours/week) at our Las Vegas office for the full duration of the program. Are you able to meet this requirement? Please also confirm with your university before your initial call with us that you're able to complete the full program. | * | Yes — I can be onsite in Las Vegas 5 days/week, 40 hours/week, January 11–August 20, 2027. I will confirm with the University of Michigan before any initial call. Relocation: Yes. |
 | University name | * | University of Michigan |
 | Current GPA | * | 3.66 / 4.0 |
-| How did you hear about us? | * | **Job Boards (e.g., LinkedIn, Indeed, Monster, Glassdoor)** — no Skillz contact in `network.md`. Do **not** pick Employee Referral. Live options include Recruiter Reached Out, Company Website, Job Boards, Company’s Social Media, Employee Referral, University/College Career Fair, Industry Conference/Event, Online Advertisement, Print Advertisement, Email Newsletter, Word of Mouth. |
+| How did you hear about us? | * | **Job Boards (e.g., LinkedIn, Indeed, Monster, Glassdoor)** — no Skillz contact in `network.md`. Do **not** pick Employee Referral. Live options: Recruiter Reached Out, Company Website, Job Boards (e.g., LinkedIn, Indeed, Monster, Glassdoor), Company’s Social Media (e.g., LinkedIn, Facebook, Twitter), Employee Referral, University/College Career Fair, Industry Conference/Event, Online Advertisement (e.g., LinkedIn, YouTube, Instagram, Facebook, Twitter), Print Advertisement (e.g., newspapers, magazines), Email Newsletter, Word of Mouth. |
 | Why are you interested in joining our team? | * | Paste the short “why Skillz” below. Helper text: they review this with the hiring manager. |
 | Do you currently know or have a personal connection with anyone who works here? If so please specify who. (Optional) | | **No** / leave blank — none in `network.md` |
 | What is your desired compensation? | * | **$32/hour** (posted starting compensation; do not bid above) |
@@ -55,26 +61,35 @@ Greenhouse also requires the **Education** widget (`education_required`):
 
 | Education widget | Answer |
 | --- | --- |
-| School | University of Michigan |
-| Degree | Bachelor's |
+| School | University of Michigan (typeahead: Michigan → **University of Michigan** / Ann Arbor. Do not pick Dearborn/Flint/MSU.) |
+| Degree | Bachelor's / Bachelor of Science |
 | Discipline | Computer Science (dual CS + Economics — pick CS if one) |
-| End date year | 2028 |
+| Start date | **August 2025** (if a day is required: **08/31/2025**) |
+| End date year | **May 2028** (expected; Did you graduate? **No**) |
+
+If a second education row is required: **Northville High School**, Northville MI, graduated **05/19/2025**.
 
 If a later step asks fields not on this public form:
 
 | If asked | Answer |
 | --- | --- |
 | Address | 49032 Freestone Dr, Northville, MI 48168 |
+| ZIP | **48168** |
 | GitHub | https://github.com/Verdent06 |
 | GPA | **3.66 / 4.0** |
-| Class standing | Junior (Expected May 2028; Jan 2027 is junior-year winter) |
+| Class standing | **Junior** (Expected May 2028; Jan 2027 is junior-year winter) |
+| Credits | **~96 credits by Summer 2027** |
 | US citizen | **Yes** |
+| Work authorized | **Yes** — US citizen; authorized for any US employer; no CPT/OPT/H-1B now or later |
 | SAT | **1510** |
 | Date of birth | **12/16/2006** |
+| Valid US driver’s license | **Yes** |
+| High school | Northville High School, graduated **05/19/2025** |
+| University start | **08/31/2025** |
 | Country | United States |
-| Work authorization | US citizen; authorized for any US employer; no CPT/OPT/H-1B now or later |
 | Availability | Winter 2027 term **available** (not Fall). Jan 11–Aug 20 2027 |
 | Relocate Las Vegas | **Yes** |
+| Website | https://github.com/Verdent06 |
 
 Voluntary EEO / disability / veteran (if shown): **I do not want to answer** / **Decline To Self Identify** unless you choose to self-ID. Not used in hiring.
 
@@ -109,16 +124,17 @@ I want a Winter 2027 co-op writing backend services and APIs next to a payments/
 
 MDC: Requests + Pandas ETL + Flask REST on AWS EC2 (~800 hours / 400 PACs). Vylet: injection-safe SQL freshness, 79% → 89% defect fix, Docker/Redis/Celery pipeline (30x). CaseStudyPrep: 27% S3 upload-failure recovery. SignalWeaver: FastAPI REST + React/TypeScript + GitHub Actions/pytest.
 
-No Java or Go in my inventory — I would ramp on the team’s server-side languages. US citizen; no sponsorship. I can be onsite in Las Vegas 5 days/week, 40 hours/week, January 11–August 20, 2027. Expected May 2028 (GPA 3.66). I do not meet the “graduate no more than 1 year after the program begins” rule; I am answering that question No.
+No Java or Go in my inventory — I would ramp on the team’s server-side languages. US citizen; no sponsorship. I can be onsite in Las Vegas 5 days/week, 40 hours/week, January 11–August 20, 2027. Junior; Expected May 2028 (GPA 3.66). I do not meet the “graduate no more than 1 year after the program begins” rule; I am answering that question No.
 
 ---
 
 ## Notes for the applicant (not for submission)
 
-- **Email is `verdent06@gmail.com` on every Greenhouse field.** Do not type `vedantde@umich.edu`.
-- **Graduation window is No.** May 2028 > Jan 11 2028. Do not “clarify in the essay” into a Yes.
+- **Email is `verdent06@gmail.com` on every Greenhouse field.** Autofill will try `vedantde@umich.edu` from the PDF header — change it.
+- **Graduation window is No.** May 2028 > Jan 11 2028. Do not “clarify in the essay” into a Yes. Applying despite this knockout is a user choice; the form answer stays No.
+- **Location (City) is Northville, MI.** Job site is Las Vegas. Reside-in-required-location = **No**; relocate = **Yes**.
 - **Comp is $32/hour.** Posted starting compensation; do not bid above.
 - **How you heard:** Job Boards. No Skillz contact in `network.md`.
 - **Do not claim Java, Go, Kubernetes, Jenkins, Terraform, PCI, card rails, or Skillz platform experience.** Java/Go are “or similar”; absence is honest (`persona.md`).
 - **Cover letter is optional.** Skip it if you are speed-applying; the PDF is the screen (`recruiting.md` Greenhouse/human-read). Paste the letter if you attach one.
-- **Funnel:** resume-first (`company.md`); unpublished intern OA (HackerRank is a full-time analog). Apply in this first-wave window (posted 2026-09-03) only if still submitting despite the knockout.
+- **Funnel:** resume-first (`company.md`); unpublished intern OA (HackerRank is a full-time analog). first_published 2026-09-03.

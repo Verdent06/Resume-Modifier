@@ -104,7 +104,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | BNY | 2027 Summer Internship Program - Data Science Intern (Engineering) | 2026-08-25 | Applied | ai-ml | 8.0 |
 | Transcard Payments | Software Engineer Intern — Summer 2027 | 2026-09-03 | Applied | full-stack+payments/fintech-backend/payment-orchestration | 7.0 |
 | Skyward | Software Engineer - Intern | 2026-09-04 | Applied | full-stack+k-12-sis/education-admin | 7.0 |
-| Skillz Inc | Co-op, Software Engineer | 2026-09-04 | Applied | full-stack+payments-infra/real-money-gaming | 10.0 |
+| Skillz Inc | Co-op, Software Engineer | 2026-09-06 | Applied | full-stack+payments-infra/real-money-gaming | 10.0 |
 | Saab, Inc. | Software Engineering Co-Op (Summer 2027) | 2026-09-04 | Applied | full-stack+air-traffic-management/surveillance-software | 8.0 |
 | Innovative Systems | Intern/Co-op- Summer 2027 - Software Engineering | 2026-09-04 | Applied | full-stack+enterprise data-quality/AML-KYC compliance | 9.0 |
 | The Exploration Company | Summer 2027 Internship (Software) | 2026-09-04 | Applied | full-stack+aerospace/crewed-vehicle/mission-critical | 9.0 |
