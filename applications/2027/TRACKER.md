@@ -130,6 +130,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Applied Materials | Summer 2027 Global Technical Learning Center Data Analyst Intern- Bachelor's/Master's (Albany, NY) | 2026-09-06 | Applied | ai-ml+semiconductor capital equipment / GTLC training-ops analytics | 8.0 |
 | Apex | Simulation Software Engineering Internship (Spring or Summer 2027) | 2026-09-06 | Applied | robotics | 7.0 |
 | Hy-Vee | Digital Software Engineering Intern - Summer 2027 | 2026-09-06 | Applied | full-stack+grocery-digital/e-commerce/retail-business-applications | 9.0 |
+| RSM US LLP | Application Development Intern - Summer 2027 | 2026-09-06 | Applied | full-stack+consulting/client-facing-application-development | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -137,6 +138,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 121
+- **Total applied:** 122
 - **Interviews:** 0
 - **Offers:** 0
