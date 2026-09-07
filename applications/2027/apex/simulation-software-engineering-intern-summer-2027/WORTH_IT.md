@@ -16,4 +16,6 @@ Resume/project fit against `persona.md` Screen Criteria vs `context.md` pool —
 
 5. **Calibration.** B-tier (`companies.md`); intern $45/hr; bottleneck resume + tech (~5–8% directional). Apply-early intern funnel (`recruiting.md` §8). Named gaps (SITL/HITL/6DOF, modeling, embedded, ROS) are honest.
 
-**Stop: no — unless they enforce the written Fall 2026 / Spring 2027 window against May 2028.** Continue full packet + `written-answers.md`. State Summer 2027 and Expected May 2028 honestly in Why Apex.
+**Stop: no — unless they enforce the written Fall 2026 / Spring 2027 window against May 2028.** Prior skip was this window, not skill fit. User is applying anyway (2026-09-07). Continue full packet + `written-answers.md`. State Summer 2027 and Expected May 2028 honestly in Why Apex.
+
+**Re-verified 2026-09-07:** Ashby `d3e21f84` still listed; JD text unchanged (C/C++, 6DOF/SITL/HITL, Fall 2026 or Spring 2027); `$45/hr`; form labels unchanged. Resume SHA reused (`d5b6f4bb…`). Packet only — do not submit from this agent.

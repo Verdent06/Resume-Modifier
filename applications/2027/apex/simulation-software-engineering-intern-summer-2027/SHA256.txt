@@ -6,4 +6,4 @@ File: `applications/2027/apex/simulation-software-engineering-intern-summer-2027
 d5b6f4bbc49d5acd27691df715106eb438125122854cca69a097d8cc92073ca2
 ```
 
-Computed 2026-09-06 with SHA-256 over the shipped one-page PDF (44,650 bytes). Re-hash after any recompile before attaching to Ashby.
+Computed 2026-09-06 with SHA-256 over the shipped one-page PDF (44,650 bytes). Re-verified **2026-09-07**: same path, same 44,650 bytes, same digest — **reuse; do not recompile**. Re-hash only after a future recompile before attaching to Ashby.

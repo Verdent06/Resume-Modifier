@@ -14,7 +14,9 @@ SHA-256: `d5b6f4bbc49d5acd27691df715106eb438125122854cca69a097d8cc92073ca2`
 
 This is **Summer 2027 only**, not Spring 2027. **Not** the Ground Software twin (`2d5ad921-241f-4e7a-b9ff-9d01763da88c`). **Not** Embedded Systems.
 
-Form fields captured from Ashby `applicationForm` GraphQL on 2026-09-06 (form id `b68f080c-92a4-4085-bc85-bee890318f2f`). `*` = required.
+Form fields captured from Ashby `applicationForm` GraphQL on 2026-09-06; **re-verified 2026-09-07** (`fieldEntries` + `isRequired`). Labels and required flags unchanged. Form render ids rotate — ignore stale render UUIDs. `*` = required.
+
+**Apply-anyway:** prior skip was the JD graduation window (Fall 2026 / Spring 2027 vs Expected May 2028). Paste pack for the user to submit. **Do not submit from this agent.** Not the Ground Software twin.
 
 ---
 

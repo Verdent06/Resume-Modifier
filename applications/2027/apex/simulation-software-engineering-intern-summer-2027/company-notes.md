@@ -5,7 +5,7 @@ Apply packet for Ashby posting `d3e21f84-3637-4521-833d-fd07b3ca5f2e`. **Not** t
 Apply: https://jobs.ashbyhq.com/apex-technology-inc/d3e21f84-3637-4521-833d-fd07b3ca5f2e/application
 Company intel: `applications/2027/apex/company.md` (write-once; Ground Software brief — Simulation deltas live here)
 Persona (essay lens): `persona.md`
-Grade: `grade.md` · Worth-it: `WORTH_IT.md` (YES, 7/10)
+Grade: `grade.md` · Worth-it: `WORTH_IT.md` (YES, 7/10) · SHA-256: `d5b6f4bbc49d5acd27691df715106eb438125122854cca69a097d8cc92073ca2` (reused 2026-09-07; PDF not recompiled)
 
 ## What Apex is
 
@@ -39,9 +39,11 @@ Productized satellite buses (Aries / Nova / Comet) manufactured at Factory One, 
 
 Ashby resume → recruiter → HM → practical/coding assessment (OA **unpublished** for Simulation) → LA onsite → offer. Bottleneck: resume + tech. ~5–8% **[directional]**. Embedded intern reports (sibling, directional): 2 LC-medium / 70m, then coding + light sys design + behavioral.
 
-## Ashby form map (live GraphQL, 2026-09-06)
+## Ashby form map (live GraphQL)
 
-Form id `b68f080c-92a4-4085-bc85-bee890318f2f`. Same org form as Ground Software.
+Captured 2026-09-06; **re-verified 2026-09-07** on `jobs.ashbyhq.com/api/non-user-graphql` (`applicationForm.fieldEntries` + `isRequired`). Field **labels and required flags unchanged**. Form *render* ids rotate per query — do not treat `b68f080c-92a4-4085-bc85-bee890318f2f` as a stable form definition. Same org form as Ground Software.
+
+**Apply-anyway (2026-09-07):** prior skip was the written Fall 2026 / Spring 2027 window vs Expected May 2028. User wants this packet submitted by them — **do not submit from this agent**. Tracker already has the 2026-09-06 Simulation row; do not duplicate.
 
 **About You:** Full Name*, Preferred First Name, Resume*, Email*, Phone*, Location*, Current Employer (opt).
 **Links:** LinkedIn URL*, GitHub URL (opt).
