@@ -136,6 +136,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Xcel Energy | Power Generation Analytics Intern- CO | 2026-09-07 | Applied | ai-ml | 10.0 |
 | Simon Property Group | Intern - Front End Developer (Computer Science, Web Development, or Information Sciences Majors) | 2026-09-07 | Applied | full-stack+retail-REIT digital/WCAG accessibility UX | 7.0 |
 | Tokyo Electron (TEL) | Business Intelligence Analyst Summer 2027 Intern | 2026-09-07 | Applied | ai-ml+semiconductor-capital-equipment / sales-service operations BI | 8.0 |
+| Xcel Energy | Reliability Data Analyst Intern- CO | 2026-09-07 | Applied | ai-ml+electric-distribution reliability / utility operations analytics | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -143,6 +144,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 127
+- **Total applied:** 128
 - **Interviews:** 0
 - **Offers:** 0
