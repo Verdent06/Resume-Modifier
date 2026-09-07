@@ -138,6 +138,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Tokyo Electron (TEL) | Business Intelligence Analyst Summer 2027 Intern | 2026-09-07 | Applied | ai-ml+semiconductor-capital-equipment / sales-service operations BI | 8.0 |
 | Xcel Energy | Reliability Data Analyst Intern- CO | 2026-09-07 | Applied | ai-ml+electric-distribution reliability / utility operations analytics | 10.0 |
 | NXP Semiconductors | Data Analytics Engineer Intern - Summer 2027 | 2026-09-07 | Applied | ai-ml+semiconductor / engineering-ops analytics | 9.0 |
+| Xcel Energy | AI Solutions Development Intern CO, MN | 2026-09-07 | Applied | ai-ml | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -145,6 +146,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 129
+- **Total applied:** 130
 - **Interviews:** 0
 - **Offers:** 0
