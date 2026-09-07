@@ -132,6 +132,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Hy-Vee | Digital Software Engineering Intern - Summer 2027 | 2026-09-06 | Applied | full-stack+grocery-digital/e-commerce/retail-business-applications | 9.0 |
 | RSM US LLP | Application Development Intern - Summer 2027 | 2026-09-06 | Applied | full-stack+consulting/client-facing-application-development | 9.0 |
 | Cox Automotive | Software Engineering Intern - Summer 2027 (North Hills, NY) | 2026-09-06 | Applied | dev-ops+automotive-marketplace | 8.0 |
+| Dropbox | Software Engineering Intern (Summer 2027) | 2026-09-07 | Applied | full-stack+collaboration/file-sync/distributed-storage | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -139,6 +140,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 123
+- **Total applied:** 124
 - **Interviews:** 0
 - **Offers:** 0
