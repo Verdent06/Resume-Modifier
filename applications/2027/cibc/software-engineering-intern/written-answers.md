@@ -16,6 +16,8 @@ Resume: `applications/2027/cibc/software-engineering-intern/Vedant Desai Resume.
 
 Posted 2026-09-04. Workday `endDate` **2026-10-23**. Apply now only if you accept the graduation-window knockout (`recruiting.md` §8 first wave). Questionnaire id is present; Workday wizard returned **HTTP 406 without an account**. Do not invent extra essay prompts.
 
+**Live recapture 2026-09-07** (Workday CXS JSON + Chrome dump-dom on the job URL): still req **2618322**, Chicago **70 W Madison St Fl 8**, **$36–$40/hr** IL (not Simplify’s $47), `endDate` **2026-10-23**, graduation window **December 2026–June 2027**, no visa sponsorship, 40h Temporary (Fixed Term). Apply wizard still **HTTP 406** without an account. **This agent did not submit.** Parent decides submit vs skip.
+
 **This is not** the Northeastern-only 2027 Spring Term Software Engineer Co-op (Chicago).
 
 ---

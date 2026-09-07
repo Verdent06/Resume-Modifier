@@ -12,6 +12,7 @@ Toronto-based Big Five bank; CIBC US is the Chicago commercial / personal / weal
 - **ATS:** Workday **2618322** · https://cibc.wd3.myworkdayjobs.com/search/job/Chicago-IL/XMLNAME-2027-Summer-Intern---Software-Engineering_2618322-1
 - **Apply:** https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Chicago-IL/2027-Summer-Intern---Software-Engineering_2618322-1/apply
 - **Posted:** 2026-09-04 · Workday `endDate` **2026-10-23** — first wave (`recruiting.md` Part II §8)
+- **Live recapture 2026-09-07:** CXS + Chrome dump-dom still match this req (pay **$36–$40/hr** IL, window Dec 2026–June 2027, no sponsorship). **Not submitted.**
 - **Work:** Python; SQL/Oracle as database knowledge; SDLC; test/debug; AI and security tools as assets. Arrangement discussed at interview
 - **Not:** Northeastern-only Spring 2027 co-op twin
 

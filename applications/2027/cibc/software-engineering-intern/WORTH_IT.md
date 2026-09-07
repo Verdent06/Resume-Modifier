@@ -2,7 +2,7 @@
 
 **Verdict: YES** (skill/project fit — 8 / 10). **Form knockout exists** — see below; do not lie on Workday.
 
-Resume/project fit against the live Workday JD (req **2618322**, 2027 Summer Intern - Software Engineering, Chicago) vs `context.md` pool. Eligibility is computed separately and **fails**: Expected May 2028 vs JD window **December 2026–June 2027**. US citizen / no sponsorship **clears**. CS major **clears**. GPA unstated. Chicago relocate **Yes**.
+Resume/project fit against the live Workday JD (req **2618322**, 2027 Summer Intern - Software Engineering, Chicago) vs `context.md` pool. Recaptured **2026-09-07** (CXS + browser DOM): same window, pay, and no-sponsorship line. Eligibility is computed separately and **fails**: Expected May 2028 vs JD window **December 2026–June 2027**. US citizen / no sponsorship **clears**. CS major **clears**. GPA unstated. Chicago relocate **Yes**.
 
 ## Reasons
 
