@@ -1,6 +1,6 @@
 # Xcel Energy — intern notes (Summer 2027 AI Solutions Development Intern, CO/MN)
 
-Intern-facing packet notes for Workday **JR116329**. Not a rewrite of `company.md`. Cite `company.md` / `companies.md` / `recruiting.md` in shorthand.
+Intern-facing packet notes for Workday **JR116329**. Not a rewrite of `company.md` (that file is write-once from Power Generation Analytics **JR115734** / ESA — Henderson). Cite `company.md` / `companies.md` / `recruiting.md` in shorthand. This intern is Enterprise AI Enablement in Denver or Minneapolis, not ESA fleet analytics.
 
 ## What Xcel Energy builds
 
@@ -13,7 +13,7 @@ Fortune 500 regulated electric and natural gas utility (Nasdaq:XEL, Minneapolis 
 - **ATS:** Workday **JR116329** · https://xcelenergy.wd1.myworkdayjobs.com/External/job/Denver-CO-80205/AI-Solutions-Development-Intern-CO--MN_JR116329-1
 - **Posted:** 2026-09-07 · Workday `endDate` **2026-10-16** · JD deadline **10/15/26** — first wave (`recruiting.md` Part II §8)
 - **Work:** AI solutions and agents, automation/workflow, analytics, documentation, stakeholder demos, AI-tool maintenance
-- **Not this packet:** AI Enablement Intern CO, MN · AI & Automation Intern-CO **JR115739** · Power Generation Analytics Intern-CO **JR115734** (Henderson; separate folder)
+- **Not this packet:** AI Enablement Intern CO, MN · AI & Automation Intern-CO **JR115739** · Power Generation Analytics Intern-CO **JR115734** · Reliability Data Analyst Intern-CO **JR115833** (separate folders)
 
 ## Stack they hire vs what Vedant has
 

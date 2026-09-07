@@ -15,7 +15,7 @@ Resume: `applications/2027/xcel-energy/ai-solutions-development-intern/Vedant De
 
 Posted 2026-09-07. Workday `endDate` **2026-10-16**. JD deadline **10/15/26**. Apply now (`recruiting.md` §8 first wave). Later Workday wizard pages were **not visible without creating an account**. Do not invent extra essay prompts.
 
-**This is not** AI Enablement Intern CO, MN, **not** AI & Automation Intern-CO **JR115739**, and **not** Power Generation Analytics Intern-CO **JR115734**.
+**This is not** AI Enablement Intern CO, MN, **not** AI & Automation Intern-CO **JR115739**, not Power Generation Analytics Intern-CO **JR115734**, and **not** Reliability Data Analyst Intern-CO **JR115833**.
 
 ---
 
