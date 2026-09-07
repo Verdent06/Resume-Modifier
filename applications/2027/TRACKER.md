@@ -134,6 +134,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Cox Automotive | Software Engineering Intern - Summer 2027 (North Hills, NY) | 2026-09-06 | Applied | dev-ops+automotive-marketplace | 8.0 |
 | Dropbox | Software Engineering Intern (Summer 2027) | 2026-09-07 | Applied | full-stack+collaboration/file-sync/distributed-storage | 10.0 |
 | Xcel Energy | Power Generation Analytics Intern- CO | 2026-09-07 | Applied | ai-ml | 10.0 |
+| Simon Property Group | Intern - Front End Developer (Computer Science, Web Development, or Information Sciences Majors) | 2026-09-07 | Applied | full-stack+retail-REIT digital/WCAG accessibility UX | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -141,6 +142,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 125
+- **Total applied:** 126
 - **Interviews:** 0
 - **Offers:** 0
