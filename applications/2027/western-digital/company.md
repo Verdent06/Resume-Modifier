@@ -17,8 +17,9 @@ Western Digital builds the storage systems behind hyperscale data centers, cloud
 | Stage | Format | Notes |
 | ----- | ------ | ----- |
 | Resume screen | Human + ATS (SmartRecruiters) | Official FAQ: applications reviewed against the JD; recruiter outreach if selected. Catch-all posting — team match happens after the screen. Apply early (posted ~Aug 2026; anticipated close 10/20/26). |
+| Recruiter questions | SmartRecruiters form email ("Questions Regarding Your Application") | Observed 2026-09-08 (~26 days after apply). Recruiter-initiated knockout/clarifying form — In Review, **not** the recruiter phone. Official FAQ still treats "selected" as invite to interview with a recruiter. |
 | OA | None on US careers FAQ | Official process is recruiter → hiring manager. Some firmware/campus loops (esp. non-US) report a C/C++ + OS + DSA OA — treat as team-dependent, not the posted US intern default. |
-| Recruiter screen | Phone | Fit, enrollment, location, why storage |
+| Recruiter screen | Phone | Fit, enrollment, location, why storage — this is the first interview round per WD FAQ |
 | Hiring manager / technical | 1–2 interviews | Coding/DSA and/or role-depth (C/C++ systems, apps, data) plus behavioral STAR |
 
 **Estimated funnel:** 2–3 rounds · Easy–Med · No standard OA · No intern system design · Bottleneck: resume · ~8–12%
