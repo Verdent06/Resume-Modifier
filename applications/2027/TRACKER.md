@@ -145,6 +145,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | C.H. Robinson | Software Engineering Internship 2027 | 2026-09-09 | Applied | full-stack+logistics marketplace / Navisphere / Lean AI supply-chain + enterprise automation/agents | 8.0 |
 | Peraton | Summer 2027 Software Engineer Intern | 2026-09-09 | Applied | full-stack+national-security-IRAD | 9.0 |
 | Dick's Sporting Goods | Software Engineering - Summer 2027 Corporate Internship | 2026-09-09 | Applied | full-stack | 8.0 |
+| Dimensional Fund Advisors | Internship in Technology - Software Engineer | 2026-09-09 | Applied | full-stack+systematic-AM / science-driven investment technology / fintech-backend | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -152,6 +153,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 136
+- **Total applied:** 137
 - **Interviews:** 0
 - **Offers:** 0
