@@ -140,6 +140,9 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | NXP Semiconductors | Data Analytics Engineer Intern - Summer 2027 | 2026-09-07 | Applied | ai-ml+semiconductor / engineering-ops analytics | 9.0 |
 | Xcel Energy | AI Solutions Development Intern CO, MN | 2026-09-07 | Applied | ai-ml | 8.0 |
 | ICF International | 2027 Summer Intern, Software Developer (Reston, VA) | 2026-09-07 | Applied | full-stack+consulting/enterprise-application-delivery | 9.0 |
+| Motorola Solutions | Software Engineering Intern - Summer 2027 | 2026-09-09 | Applied | full-stack+mission-critical-public-safety-radio-cloud | 9.0 |
+| United Launch Alliance | Software Engineering Internship Summer 2027 | 2026-09-09 | Applied | full-stack+aerospace/launch-vehicle/mission-critical/embedded-adjacent | 9.0 |
+| C.H. Robinson | Software Engineering Internship 2027 | 2026-09-09 | Applied | full-stack+logistics marketplace / Navisphere / Lean AI supply-chain + enterprise automation/agents | 8.0 |
 | Peraton | Summer 2027 Software Engineer Intern | 2026-09-09 | Applied | full-stack+national-security-IRAD | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -148,6 +151,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 132
+- **Total applied:** 135
 - **Interviews:** 0
 - **Offers:** 0
