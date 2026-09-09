@@ -1,0 +1,5 @@
+{
+  "defects": [
+    {"entry": "Granular Synthesizer Plugin", "severity": "minor", "defect": "metric-free", "why": "lock-free SPSC, zero-alloc processBlock, and a CMake real-time safety audit are the C++/OOP signal, but none sizes callback latency, xruns, or CPU"}
+  ]
+}
