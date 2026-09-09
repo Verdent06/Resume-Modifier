@@ -144,6 +144,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | United Launch Alliance | Software Engineering Internship Summer 2027 | 2026-09-09 | Applied | full-stack+aerospace/launch-vehicle/mission-critical/embedded-adjacent | 9.0 |
 | C.H. Robinson | Software Engineering Internship 2027 | 2026-09-09 | Applied | full-stack+logistics marketplace / Navisphere / Lean AI supply-chain + enterprise automation/agents | 8.0 |
 | Peraton | Summer 2027 Software Engineer Intern | 2026-09-09 | Applied | full-stack+national-security-IRAD | 9.0 |
+| Dick's Sporting Goods | Software Engineering - Summer 2027 Corporate Internship | 2026-09-09 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -151,6 +152,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 135
+- **Total applied:** 136
 - **Interviews:** 0
 - **Offers:** 0
