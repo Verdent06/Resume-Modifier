@@ -148,6 +148,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Dimensional Fund Advisors | Internship in Technology - Software Engineer | 2026-09-09 | Applied | full-stack+systematic-AM / science-driven investment technology / fintech-backend | 9.0 |
 | Merck (MSD) | 2027 Future Talent Program — Standardizing Automation Scripting Practices Through AI-Enabled Knowledge Repository — Intern | 2026-09-09 | Applied | ai-ml | 8.0 |
 | DICK'S Sporting Goods | Data Analytics & Engineering - Summer 2027 Internship | 2026-09-09 | Applied | ai-ml+omni-channel-retail/data-platforms-BI | 8.0 |
+| Leidos | Software Developer Intern | 2026-09-09 | Applied | full-stack+mission-software/intel-cleared-gov-IT/CABA | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -155,6 +156,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 139
+- **Total applied:** 140
 - **Interviews:** 0
 - **Offers:** 0

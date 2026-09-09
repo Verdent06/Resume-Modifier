@@ -1,7 +1,7 @@
 %% ============================================================================
 %%  applications/2027/leidos/software-developer-intern/Vedant Desai Resume.tex
 %% ----------------------------------------------------------------------------
-%%  write · 2027/leidos/software-developer-intern · iter-1 (initial)
+%%  write · 2027/leidos/software-developer-intern · ship (peak; SPSC restored)
 %%  Spine: MDC (Python + Flask/AWS). Differentiator: Granular slot-2 (C++ OOP).
 %%  SignalWeaver = FastAPI + pytest CI, not LoRA. No Java / Snowflake /
 %%  Databricks / Copilot / Fusion / Tableau. Header: template umich email.
@@ -53,7 +53,7 @@
 
 			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
 			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
-			\item Built the granular engine around a fractional-accumulator scheduler that fires grains at density $\times$ (1 - overlap $\times$ 0.5) effective rate --- each grain reads a random WAV offset at $2^{(\textrm{semitones}/12)}$ playback speed, windowed by a pre-computed 8,192-entry Gaussian LUT to eliminate click artifacts at grain edges, with all grain memory drawn from a per-voice pre-allocated pool.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
