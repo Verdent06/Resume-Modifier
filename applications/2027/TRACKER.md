@@ -150,6 +150,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | DICK'S Sporting Goods | Data Analytics & Engineering - Summer 2027 Internship | 2026-09-09 | Applied | ai-ml+omni-channel-retail/data-platforms-BI | 8.0 |
 | OnePay | Software Engineer, Intern | 2026-09-09 | Applied | full-stack+consumer-fintech/embedded-finance/fintech-backend | 10.0 |
 | Coinbase | Software Engineer Intern | 2026-09-09 | Applied | full-stack | 10.0 |
+| CHAOS Industries | 2027 Summer- Software Engineer Intern | 2026-09-09 | Applied | full-stack+real-time/embedded-adjacent/defense sensor-sync/CDN | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -157,6 +158,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 141
+- **Total applied:** 142
 - **Interviews:** 0
 - **Offers:** 0
