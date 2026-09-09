@@ -149,6 +149,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Merck (MSD) | 2027 Future Talent Program — Standardizing Automation Scripting Practices Through AI-Enabled Knowledge Repository — Intern | 2026-09-09 | Applied | ai-ml | 8.0 |
 | DICK'S Sporting Goods | Data Analytics & Engineering - Summer 2027 Internship | 2026-09-09 | Applied | ai-ml+omni-channel-retail/data-platforms-BI | 8.0 |
 | OnePay | Software Engineer, Intern | 2026-09-09 | Applied | full-stack+consumer-fintech/embedded-finance/fintech-backend | 10.0 |
+| Coinbase | Software Engineer Intern | 2026-09-09 | Applied | full-stack | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -156,6 +157,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 140
+- **Total applied:** 141
 - **Interviews:** 0
 - **Offers:** 0
