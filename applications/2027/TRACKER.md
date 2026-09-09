@@ -153,6 +153,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | CHAOS Industries | 2027 Summer- Software Engineer Intern | 2026-09-09 | Applied | full-stack+real-time/embedded-adjacent/defense sensor-sync/CDN | 9.0 |
 | Revel | Internship: Full Stack Software Engineer | 2026-09-09 | Applied | full-stack+hardware-control / aerospace-industrial C2 | 9.0 |
 | Leidos | Software Developer Intern | 2026-09-09 | Applied | full-stack+mission-software/intel-cleared-gov-IT/CABA | 9.0 |
+| Moog Inc. | Intern, Software Engineering | 2026-09-09 | Applied | full-stack+avionics/flight-systems/mission-critical | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -160,6 +161,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 144
+- **Total applied:** 145
 - **Interviews:** 0
 - **Offers:** 0
