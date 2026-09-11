@@ -12,13 +12,13 @@ Job: https://www.zipline.com/open-roles/7990632003?gh_jid=7990632003
 Apply: https://boards.greenhouse.io/embed/job_app?token=7990632003
 Resume: `applications/2027/zipline/data-analytics-intern-summer/Vedant Desai Resume.pdf`
 
-**SHA-256:** `f2690275f12396ca8c0d699f9e9771a517e1621425516525b2372d05962bd3d2`
+**SHA-256:** `a1c0e7c8b4f8af85c49029403d49278a7aa8f6053018c8ecb6fbfe40c33bb3e3`
 
 **Pulled from the live posting (2026-09-11):** Zipline · **Data Analytics Intern (Summer 2027)** · Integration, Quality & Manufacturing Engineering (IQME) · South San Francisco, California, USA · full-time in-person May/June–August/September 2027 · comp unlisted · **unable to sponsor work visas** · **max three (3) applications in a 30-day period**.
 
 This is **Summer 2027**. The availability question on the form may say "spring" while the dates are May/June–August/September 2027.
 
-**Greenhouse identity:** match the email already used on Zipline SWE Summer + Spring. Sibling packet used `vedantde@umich.edu`. Use that so Greenhouse does not split the candidate. PDF header is also `vedantde@umich.edu`.
+**Form / PDF email MUST be `verdent06@gmail.com`.** Never `vedantde@umich.edu` on this Greenhouse form, the PDF header, or the cover letter. An older Zipline SWE packet used umich — do not continue that. Autofill may still pull umich from a prior Greenhouse profile; overwrite to **verdent06@gmail.com**.
 
 ---
 
@@ -42,7 +42,7 @@ Questions below are the exact labels on the live Greenhouse embed (token **79906
 | First Name * | Vedant |
 | Last Name * | Desai |
 | Preferred First Name | (leave blank) |
-| Email * | **vedantde@umich.edu** (same Greenhouse identity as Zipline SWE Summer/Spring). Autofill should match the PDF. Do **not** switch to `verdent06@gmail.com` on this company unless that is what you already used on the SWE apps. |
+| Email * | **verdent06@gmail.com** (never `vedantde@umich.edu`). PDF header matches. Overwrite Autofill if it inserts umich. |
 | Country * | United States |
 | Phone * | (248) 704-4852 |
 | Location (City) * | Ann Arbor, MI (education city on the PDF). Current address if they ask later: Northville, MI. Willing to sit **South San Francisco onsite** for the term. |
@@ -67,7 +67,7 @@ There is **no** "Why Zipline / why this intern" textarea on this analytics form 
 ## Cover letter (paste if attaching)
 
 Vedant Desai
-(248) 704-4852 · vedantde@umich.edu
+(248) 704-4852 · verdent06@gmail.com
 linkedin.com/in/vedantde06 · github.com/Verdent06
 
 Zipline — Data Analytics Intern (Summer 2027)
@@ -113,4 +113,5 @@ I have not used Mode, Sigma, Tableau, Snowflake, or Databricks. US citizen; no s
 - **Funnel:** Greenhouse human screen → recruiter (onsite SSF, dates, auth) → likely SQL/Python/reporting take-home + project defense (`company.md` sibling; no standard LC OA). Bottleneck is the take-home, not LeetCode. Prep one ingest→KPI path (MDC) and one quality path (Vylet).
 - **Referral:** no Zipline contact in `network.md`. Do not pick Employee Referral.
 - **Cap:** third Zipline application in 30 days. Allowed; do not add a fourth.
+- **Email is `verdent06@gmail.com` on the PDF and every Greenhouse field.** Never `vedantde@umich.edu`. Do not copy the older SWE packet.
 - **Do not apply from this agent.**
