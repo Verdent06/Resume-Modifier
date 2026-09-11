@@ -12,7 +12,7 @@ Each entry carries a fixed **Lane**: the one distinct signal it contributes that
 
 - **Name:** Vedant Desai
 - **Phone:** (248) 704-4852
-- **Email:** [vedantde@umich.edu](mailto:vedantde@umich.edu) (resume header). Form-kit apply email: **verdent06@gmail.com**.
+- **Email:** **verdent06@gmail.com** (resume PDF header and every ATS / Greenhouse / form-kit field). Never `vedantde@umich.edu`.
 - **Address:** 49032 Freestone Dr, Northville, MI 48168
 - **Citizenship / work auth:** U.S. citizen; clearance-eligible; no visa sponsorship needed or wanted
 - **Class standing:** Junior (Expected May 2028). Summer 2027 internships = rising junior / after sophomore year.
