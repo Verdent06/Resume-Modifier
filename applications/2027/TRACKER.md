@@ -158,6 +158,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Two Sigma | Software Engineering Internship (Summer 2027) | 2026-09-09 | Applied | full-stack+fintech-backend/low-latency | 8.0 |
 | Coinbase | Data Engineer Intern | 2026-09-09 | Applied | ai-ml+crypto / fintech-backend / exchange-platform data | 10.0 |
 | Semgrep | Software Engineer Intern, Cloud Platform | 2026-09-09 | Applied | full-stack+appsec / developer-security platform | 10.0 |
+| Zipline | Data Analytics Intern (Summer 2027) | 2026-09-11 | Applied | ai-ml+IQME factory-floor manufacturing analytics / autonomous logistics | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -165,6 +166,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 149
+- **Total applied:** 150
 - **Interviews:** 0
 - **Offers:** 0
