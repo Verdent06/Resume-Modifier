@@ -13,6 +13,8 @@ https://wd3.myworkdaysite.com/recruiting/brevanhoward/BH_ExternalCareers/job/New
 
 **This agent did not submit.** The public page has **Apply only**. **No form questions were visible without clicking Apply.** Workday questionnaire (`questionnaireId` `426b40bffb5e1001ae6b8c3d0f8f0000`) + apply/start returned **HTTP 406** without an account. This packet does **not** click Apply and does **not** submit. Use the standard Workday identity/knockouts below if the wizard asks them after Apply. Do not invent extra Workday fields as if they were on the page. Paste the cover letter only if a later wizard step has a box.
 
+**SHA-256 (PDF):** `6e691d5f22934926367f52620edbf5e7b592eacf59531f373cb9ea06023dae1e`
+
 **Sibling JR101591 Systematic Trading (quant/research) is a different role — do not mix packets.** JD: you may only submit **one** application to the Summer Internship Program globally.
 
 ---
