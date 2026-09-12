@@ -164,6 +164,8 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Wellington Management | Technology Undergraduate Summer Internship | 2026-09-11 | Applied | full-stack+investment-management-tech | 10.0 |
 | Brevan Howard | 2027 Summer Internship Program – Systematic Trading Technology Software Engineer, New York | 2026-09-11 | Applied | full-stack | 6.0 |
 | AArete | Data Architecture & Engineering Intern (Summer 2027) | 2026-09-11 | Applied | ai-ml | 10.0 |
+| Tanium | Software Engineering Intern – Summer 2027 | 2026-09-12 | Applied | full-stack | 10.0 |
+| DiligenceVault | AI Engineer Intern | 2026-09-12 | Applied | ai-ml | 9.0 |
 | Wellmark | Data Analytics & Governance Internship | 2026-09-12 | Applied | ai-ml+health-insurance-data-governance/warehouse-quality | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -172,6 +174,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 156
+- **Total applied:** 158
 - **Interviews:** 0
 - **Offers:** 0
