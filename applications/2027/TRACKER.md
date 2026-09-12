@@ -167,6 +167,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Tanium | Software Engineering Intern – Summer 2027 | 2026-09-12 | Applied | full-stack | 10.0 |
 | DiligenceVault | AI Engineer Intern | 2026-09-12 | Applied | ai-ml | 9.0 |
 | Wellmark | Data Analytics & Governance Internship | 2026-09-12 | Applied | ai-ml+health-insurance-data-governance/warehouse-quality | 10.0 |
+| The Toro Company | Enterprise Analytics Intern | 2026-09-12 | Applied | ai-ml+enterprise-insights | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -174,6 +175,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 158
+- **Total applied:** 159
 - **Interviews:** 0
 - **Offers:** 0
