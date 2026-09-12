@@ -172,6 +172,8 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Walmart | Summer 2027 Intern:: Software Engineer II | 2026-09-12 | Applied | ai-ml+retail-scale | 10.0 |
 | Citizens | Data Engineer Summer 2027 Intern (ETS) | 2026-09-12 | Applied | ai-ml | 10.0 |
 | Citizens | Software Engineer Summer 2027 Intern — Enterprise Technology & Security Summer Internship Program | 2026-09-12 | Applied | full-stack+fintech-backend | 9.0 |
+| Citizens | Data Engineer Summer 2027 Intern | ETS | 2026-09-12 | Applied | ai-ml | 10.0 |
+| Wellmark | Software Engineer Internship – User Experience Team | 2026-09-12 | Applied | full-stack | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -179,6 +181,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 163
+- **Total applied:** 165
 - **Interviews:** 0
 - **Offers:** 0
