@@ -15,7 +15,7 @@ Each entry carries a fixed **Lane**: the one distinct signal it contributes that
 - **Email:** **verdent06@gmail.com** (resume PDF header and every ATS / Greenhouse / form-kit field). Never `vedantde@umich.edu`.
 - **Address:** 49032 Freestone Dr, Northville, MI 48168
 - **Citizenship / work auth:** U.S. citizen; clearance-eligible; no visa sponsorship needed or wanted
-- **Class standing:** Sophomore (Expected May 2029). Summer 2027 internships = rising junior / after sophomore year.
+- **Class standing:** Junior (Expected May 2028). Summer 2027 internships = rising junior / after sophomore year.
 - **Portfolio:** — (omit from resume header)
 - **LinkedIn:** [https://linkedin.com/in/vedantde06](https://linkedin.com/in/vedantde06)
 - **GitHub:** [https://github.com/Verdent06](https://github.com/Verdent06)
@@ -25,7 +25,7 @@ Each entry carries a fixed **Lane**: the one distinct signal it contributes that
 ## Education
 
 ```
-University of Michigan                              Expected May 2029
+University of Michigan                              Expected May 2028
 B.S. in Computer Science and Economics              Ann Arbor, MI
 GPA: 3.66 / 4.0
 Coursework: Data Structures & Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
@@ -195,7 +195,7 @@ defect with a before/after number, not just architecture.
 
 Vylet | May 2026 -- Present | {tech derived from selected bullets} vyletdata.com
 Founder --- Automated lead-sourcing platform for PE/search-fund; live
-product generating 4-figure MRR across three clients
+product generating $1,500 MRR across three clients
 
 **Bullet pool:**
 
@@ -208,7 +208,7 @@ product generating 4-figure MRR across three clients
 
 3.  Grew Vylet from 1 to 3 paying subscription clients within six weeks of
     launch — spanning workforce-software, landscaping, and geography-first
-    sourcing engagements — generating 4-figure monthly recurring revenue.
+    sourcing engagements — generating $1,500 in monthly recurring revenue.
 
 4.  Shipped a geography-first discovery mode decoupled from a pre-set
     vertical, surfacing ~30 leads/month in niche verticals — custard shops,
