@@ -99,6 +99,27 @@ Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied ver
 
 ---
 
+### Experience: SpaceXAI Campus Lead Ambassador
+
+**Lane:** Campus org / AI community building. The only titled campus-leadership entry: SpaceXAI Campus Lead Ambassador at Michigan — HQ onboarding, student-facing event programming, and a campus feedback channel. Not employment and not a SWE internship; leadership / community-building signal only. No invented headcount, attendance, or conversion metrics.
+
+**Header:**
+
+```
+SpaceXAI                                          Fall 2026 -- Present
+Campus Lead Ambassador                              Ann Arbor, MI
+```
+
+**Bullet pool:**
+
+```
+1. Selected as SpaceXAI Campus Lead Ambassador at the University of Michigan to bring the product onto campus through student-facing events and an AI builder community — not a software-engineering internship.
+2. Spent an onboarding weekend at headquarters with other Campus Leads planning Michigan programming, then partnered with Michigan co-lead Nesa Shamdasani to design UMich events students would actually show up for.
+3. Opened a campus feedback channel for event ideas and student asks so Michigan programming is driven by what students want to see, rather than a pre-set corporate playbook.
+```
+
+---
+
 ### Experience: Michigan Data Consulting (MDC)
 
 **Lane:** Client-facing data engineering and production delivery. The only entry that shows sole-contractor ownership of a Flask REST API on AWS EC2 shipped to a real nonprofit stakeholder (MCFN) inside a fixed engagement window — anchors the full-stack + data-pipeline track's "shipped to real users" signal.
