@@ -175,6 +175,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Citizens | Data Engineer Summer 2027 Intern | ETS | 2026-09-12 | Applied | ai-ml | 10.0 |
 | Wellmark | Software Engineer Internship – User Experience Team | 2026-09-12 | Applied | full-stack | 10.0 |
 | TD Bank | 2027 Spring Co-op - Global Technology & Solutions - Software Engineer (SWE) | 2026-09-12 | Applied | full-stack+bank-IT/GTS + applied-AI | 10.0 |
+| Lyft | Data Analyst Intern (Summer 2027) | 2026-09-13 | Applied | ai-ml+urban mobility / bikeshare ops analytics for city partners | 9.0 |
 | Klaviyo | Software Engineer Co-op (Spring 2027) | 2026-09-13 | Applied | full-stack+e-commerce-marketing-automation/CDP/high-scale-messaging+data-platform | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -183,6 +184,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 167
+- **Total applied:** 168
 - **Interviews:** 0
 - **Offers:** 0
