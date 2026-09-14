@@ -187,6 +187,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Klaviyo | Software Engineer Intern (Summer 2027) | 2026-09-13 | Applied | full-stack+e-commerce-marketing-automation/B2C-CRM | 10.0 |
 | TD Bank | 2027 Summer Internship Program - Global Technology & Solutions - Data Engineer | 2026-09-14 | Applied | ai-ml+GTS bank-IT / US retail-bank data | 10.0 |
 | Xcimer Energy | Summer 2027 Internship - Computational and Software Engineering | 2026-09-14 | Applied | full-stack+inertial fusion / laser IFE / computational simulations | 7.0 |
+| TD Bank | 2027 Summer Internship Program - Global Technology & Solutions - Software Engineer (SWE) | 2026-09-14 | Applied | full-stack+bank-IT/GTS + applied-AI interest | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -194,6 +195,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 178
+- **Total applied:** 179
 - **Interviews:** 0
 - **Offers:** 0
