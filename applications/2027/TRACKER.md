@@ -191,6 +191,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Amgen | Undergrad Intern – Software Engineer – Amgen’s Technology & Medical Organizations (Summer 2027) | 2026-09-14 | Applied | full-stack+biotech/enterprise-medical-IT | 10.0 |
 | Robinhood | Software Engineering Intern, Backend (Summer 2027) | 2026-09-16 | Applied | full-stack | 9.0 |
 | Entergy | Student Intern AI Summer 2027 | 2026-09-16 | Applied | ai-ml | 8.0 |
+| Superhuman | Software Engineering Intern - Summer 2027 | 2026-09-16 | Applied | full-stack | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -198,7 +199,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 182
+- **Total applied:** 183
 - **Interviews:** 0
 - **Offers:** 0
 
