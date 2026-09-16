@@ -190,6 +190,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | TD Bank | 2027 Summer Internship Program - Global Technology & Solutions - Software Engineer (SWE) | 2026-09-14 | Applied | full-stack+bank-IT/GTS + applied-AI interest | 10.0 |
 | Amgen | Undergrad Intern – Software Engineer – Amgen’s Technology & Medical Organizations (Summer 2027) | 2026-09-14 | Applied | full-stack+biotech/enterprise-medical-IT | 10.0 |
 | Robinhood | Software Engineering Intern, Backend (Summer 2027) | 2026-09-16 | Applied | full-stack | 9.0 |
+| Entergy | Student Intern AI Summer 2027 | 2026-09-16 | Applied | ai-ml | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -197,7 +198,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 181
+- **Total applied:** 182
 - **Interviews:** 0
 - **Offers:** 0
 
