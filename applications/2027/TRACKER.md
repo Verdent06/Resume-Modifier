@@ -194,6 +194,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Superhuman | Software Engineering Intern - Summer 2027 | 2026-09-16 | Applied | full-stack | 10.0 |
 | Duolingo | Software Engineer, Intern | 2026-09-16 | Applied | full-stack | 8.0 |
 | apexanalytix | Data Analyst Intern (Summer 2027) | 2026-09-16 | Applied | ai-ml+procure-to-pay/supplier-DW-QA | 10.0 |
+| Duolingo | Software Engineer, Thrive Intern | 2026-09-16 | Applied | full-stack+edtech/consumer language-learning/experimentation | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -201,7 +202,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 185
+- **Total applied:** 186
 - **Interviews:** 0
 - **Offers:** 0
 
