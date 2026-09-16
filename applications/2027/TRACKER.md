@@ -197,6 +197,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Duolingo | Software Engineer, Thrive Intern | 2026-09-16 | Applied | full-stack+edtech/consumer language-learning/experimentation | 9.0 |
 | apexanalytix | Data Engineering Intern (Summer 2027) | 2026-09-16 | Applied | ai-ml | 10.0 |
 | DoorDash | Software Engineer, Intern (Summer 2027) - US | 2026-09-16 | Applied | full-stack+on-demand-logistics/three-sided-marketplace | 8.0 |
+| Plastipak Packaging | Software Engineering Intern - Summer 2027 | 2026-09-16 | Applied | full-stack+manufacturing/industrial-data-integration/plant-applications | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -204,7 +205,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 188
+- **Total applied:** 189
 - **Interviews:** 0
 - **Offers:** 0
 
