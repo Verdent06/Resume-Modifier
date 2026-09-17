@@ -204,6 +204,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | The Aerospace Corporation | 2027 Aerospace Software Engineer Undergraduate Intern | 2026-09-17 | Applied | full-stack+flight-software-IV&V/real-time-embedded/mission-critical | 9.0 |
 | Workshop | Software Engineer Intern (Summer 2027) | 2026-09-17 | Applied | full-stack+internal-comms/employee-campaign-saas | 8.0 |
 | Stand Out For Good, Inc | Spring 2027 IT Data Intern | 2026-09-17 | Applied | ai-ml | 10.0 |
+| Avis Budget Group | Accelerate - Data Analytics Intern Summer 2027 | 2026-09-17 | Applied | ai-ml+fleet / mobility ops analytics (rental debt, damage, risk; stakeholder data profiling on a vehicle-rental network) | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
