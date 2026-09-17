@@ -205,6 +205,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Workshop | Software Engineer Intern (Summer 2027) | 2026-09-17 | Applied | full-stack+internal-comms/employee-campaign-saas | 8.0 |
 | Stand Out For Good, Inc | Spring 2027 IT Data Intern | 2026-09-17 | Applied | ai-ml | 10.0 |
 | Avis Budget Group | Accelerate - Data Analytics Intern Summer 2027 | 2026-09-17 | Applied | ai-ml+fleet / mobility ops analytics (rental debt, damage, risk; stakeholder data profiling on a vehicle-rental network) | 9.0 |
+| Acxiom | Intern - Data Engineer | 2026-09-17 | Applied | ai-ml | 10.0 |
 | Blue Cross Blue Shield of Louisiana (Louisiana Blue) | CW Healthcare Data Science Intern (Spring 2027) | 2026-09-17 | Applied | ai-ml+healthcare-payer-analytics | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -213,7 +214,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 197
+- **Total applied:** 198
 - **Interviews:** 0
 - **Offers:** 0
 
