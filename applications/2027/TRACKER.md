@@ -207,6 +207,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Avis Budget Group | Accelerate - Data Analytics Intern Summer 2027 | 2026-09-17 | Applied | ai-ml+fleet / mobility ops analytics (rental debt, damage, risk; stakeholder data profiling on a vehicle-rental network) | 9.0 |
 | Acxiom | Intern - Data Engineer | 2026-09-17 | Applied | ai-ml | 10.0 |
 | Blue Cross Blue Shield of Louisiana (Louisiana Blue) | CW Healthcare Data Science Intern (Spring 2027) | 2026-09-17 | Applied | ai-ml+healthcare-payer-analytics | 8.0 |
+| Electric Boat (General Dynamics) | Information Technology, Software Engineering, & Computer Science - 2027 Summer Internship | 2026-09-17 | Applied | full-stack+nuclear-submarine-OEM-IT/CAD-PLM | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -214,7 +215,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 198
+- **Total applied:** 199
 - **Interviews:** 0
 - **Offers:** 0
 
