@@ -208,6 +208,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Acxiom | Intern - Data Engineer | 2026-09-17 | Applied | ai-ml | 10.0 |
 | Blue Cross Blue Shield of Louisiana (Louisiana Blue) | CW Healthcare Data Science Intern (Spring 2027) | 2026-09-17 | Applied | ai-ml+healthcare-payer-analytics | 8.0 |
 | Electric Boat (General Dynamics) | Information Technology, Software Engineering, & Computer Science - 2027 Summer Internship | 2026-09-17 | Applied | full-stack+nuclear-submarine-OEM-IT/CAD-PLM | 7.0 |
+| Amazon | Software Development Engineer Internship - Summer -2027 (USA) | 2026-09-17 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -215,7 +216,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 199
+- **Total applied:** 200
 - **Interviews:** 0
 - **Offers:** 0
 
