@@ -201,6 +201,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Visa | Software Engineer, Intern - 2027 Austin, TX | 2026-09-17 | Applied | full-stack+payments/fintech-backend/high-scale transaction systems | 10.0 |
 | National Life Group | IT Application Development Intern (Inforce) – Summer 2027 | 2026-09-17 | Applied | full-stack+insurance-inforce / enterprise policy-admin applications | 10.0 |
 | Tokyo Electron (TEL) | Decision Analysis & AI Summer 2027 Intern | 2026-09-17 | Applied | ai-ml | 9.0 |
+| Workshop | Software Engineer Intern (Summer 2027) | 2026-09-17 | Applied | full-stack+internal-comms/employee-campaign-saas | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -208,7 +209,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 192
+- **Total applied:** 193
 - **Interviews:** 0
 - **Offers:** 0
 
