@@ -199,6 +199,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | DoorDash | Software Engineer, Intern (Summer 2027) - US | 2026-09-16 | Applied | full-stack+on-demand-logistics/three-sided-marketplace | 8.0 |
 | Plastipak Packaging | Software Engineering Intern - Summer 2027 | 2026-09-16 | Applied | full-stack+manufacturing/industrial-data-integration/plant-applications | 9.0 |
 | Visa | Software Engineer, Intern - 2027 Austin, TX | 2026-09-17 | Applied | full-stack+payments/fintech-backend/high-scale transaction systems | 10.0 |
+| National Life Group | IT Application Development Intern (Inforce) – Summer 2027 | 2026-09-17 | Applied | full-stack+insurance-inforce / enterprise policy-admin applications | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -206,7 +207,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 190
+- **Total applied:** 191
 - **Interviews:** 0
 - **Offers:** 0
 
