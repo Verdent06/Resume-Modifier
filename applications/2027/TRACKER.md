@@ -212,6 +212,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | FIS | Intern, Data Analytics and AI, FIS University Program | 2026-09-18 | Applied | ai-ml+payments-fintech | 8.0 |
 | Geneva Trading | AI Engineer Internship - Summer 2027 | 2026-09-18 | Applied | ai-ml+prop-trading/performance-sensitive-markets | 10.0 |
 | Republic Airways | Data Analytics Intern - Summer 2027 | 2026-09-18 | Applied | ai-ml | 9.0 |
+| FIS | Intern, Software Engineer, FIS University Program | 2026-09-18 | Applied | full-stack+fintech-backend / banking+payments software | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -219,7 +220,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 203
+- **Total applied:** 204
 - **Interviews:** 0
 - **Offers:** 0
 
