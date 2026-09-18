@@ -211,6 +211,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Amazon | Software Development Engineer Internship - Summer -2027 (USA) | 2026-09-17 | Applied | full-stack | 8.0 |
 | FIS | Intern, Data Analytics and AI, FIS University Program | 2026-09-18 | Applied | ai-ml+payments-fintech | 8.0 |
 | Geneva Trading | AI Engineer Internship - Summer 2027 | 2026-09-18 | Applied | ai-ml+prop-trading/performance-sensitive-markets | 10.0 |
+| Republic Airways | Data Analytics Intern - Summer 2027 | 2026-09-18 | Applied | ai-ml | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -218,7 +219,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 202
+- **Total applied:** 203
 - **Interviews:** 0
 - **Offers:** 0
 
