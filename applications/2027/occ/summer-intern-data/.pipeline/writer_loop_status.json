@@ -1,4 +1,26 @@
 {
-  "action": "continue",
-  "out_of_rails": []
+  "action": "peak",
+  "out_of_rails": [
+    {
+      "entry": "Vylet",
+      "defect": "SQL/DAL is operational, not warehouse analytics",
+      "why": "No verbatim pool bullet anywhere shows JOIN/aggregate SQL against a warehouse-shaped multi-source store with a sized impact. The only SQL-through-use line in the entire pool is Vylet #7 (asyncpg DAL + injection-safe timestamp validation / re-scrape), already on the page and already graded twice as operational freshness, not analytical SQL. Swap set is llm-apis only (Gemini/Claude/OpenAI) and cannot invent warehouse SQL. Adding a third Vylet bullet would overflow a 95%-full page and still would not close the defect.",
+      "attempted": [
+        "Vylet #7 'Architected a custom asyncpg DAL' — on page as SQL lead (iter-1 and iter-2); grader still flags freshness/re-scrape, no JOIN/aggregate, no sized impact",
+        "Vylet #2 'Diagnosed a name-collision defect' — on page; 79%→89% qualification metric, no SQL",
+        "Vylet #1 'Launched Vylet, automating a ~30-minute' — LangGraph/Docker/Redis/Celery 30x; no SQL",
+        "Vylet #3 'Grew Vylet from 1 to 3 paying' — $1,500 MRR; no SQL",
+        "Vylet #4 'Shipped a geography-first discovery' — ~30 leads/month; no SQL",
+        "Vylet #5 'Engineered a LangSmith eval pipeline' — 50%→90% faithfulness; no SQL",
+        "Vylet #6 'Engineered Node 3 as a pure-Python' — triangulated consensus / 0–100 score; no SQL",
+        "MDC #1–2 Pandas ETL + 'deterministic aggregation engine' — Python aggregates/ranked PAC report, not SQL JOINs (grader already locates aggregations here)",
+        "Lyndbrook #1–3 EPA/MassGIS entity DB + Review Velocity scoring — Python multi-source/scoring, not warehouse SQL (grader already locates aggregations here)",
+        "SignalWeaver #4 pgvector cosine similarity + #6 'scores persisted to Postgres' — now on page; vector search / persist, not JOIN/aggregate warehouse SQL",
+        "SignalWeaver #2 linear regression + #1 LoRA (graded iter-1/2) — analytics/ML, not SQL",
+        "Swap sets — llm-apis only; no PostgreSQL→warehouse-SQL or Pandas→SQL JOIN bridge",
+        "Add third Vylet bullet — unused #1/3/4/5/6 have no analytical SQL; page already 95% fill / 1 page, would overflow without closing the defect",
+        "Drop or rewrite the DAL bullet — deletion forbidden below iter-1 depth; rewrite forbidden; would remove the only SQL-through-use"
+      ]
+    }
+  ]
 }
