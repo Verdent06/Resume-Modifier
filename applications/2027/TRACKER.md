@@ -220,6 +220,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | REV Robotics | Software Engineering INTERN 2027 | 2026-09-18 | Applied | full-stack+educational-robotics/embedded-firmware/student-libraries | 8.0 |
 | Generac | Data Science Intern - Summer 2027 | 2026-09-18 | Applied | ai-ml | 10.0 |
 | Great American Insurance Company | Catastrophe Modeling & Data Analytics Intern (Spring 2027) | 2026-09-18 | Applied | ai-ml+P&C-reinsurance/catastrophe-risk-modeling/geospatial | 9.0 |
+| Lennox International | AI & Analytics Intern — Summer 2027 | 2026-09-18 | Applied | ai-ml+HVAC/climate-control AI product-management | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -227,7 +228,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 211
+- **Total applied:** 212
 - **Interviews:** 0
 - **Offers:** 0
 
