@@ -222,6 +222,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Great American Insurance Company | Catastrophe Modeling & Data Analytics Intern (Spring 2027) | 2026-09-18 | Applied | ai-ml+P&C-reinsurance/catastrophe-risk-modeling/geospatial | 9.0 |
 | Lennox International | AI & Analytics Intern — Summer 2027 | 2026-09-18 | Applied | ai-ml+HVAC/climate-control AI product-management | 8.0 |
 | Bosch (Robert Bosch LLC) | AI Engineering Intern (October 2026 – August 2027) | 2026-09-18 | Applied | ai-ml+automotive-embedded/vehicle-motion | 9.0 |
+| Smith+Nephew | Intern Robotics Software Engineering | 2026-09-18 | Applied | full-stack+surgical-robotics-NPD/medical-device-QMS | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -229,7 +230,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 213
+- **Total applied:** 214
 - **Interviews:** 0
 - **Offers:** 0
 
