@@ -217,6 +217,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | W. R. Berkley | Software Developer (Java) Intern | June 2027 | 2026-09-18 | Applied | full-stack+insurance policy-admin / P&C underwriting platforms | 10.0 |
 | Tower Research Capital | Software Engineer Intern (Summer 2027) | 2026-09-18 | Applied | full-stack+low-latency / HFT trading-systems / market-data infra | 8.0 |
 | The Options Clearing Corporation (OCC) | Summer Intern - Data | 2026-09-18 | Applied | ai-ml+sifmu-clearing/market-infrastructure/fintech-backend | 8.0 |
+| REV Robotics | Software Engineering INTERN 2027 | 2026-09-18 | Applied | full-stack+educational-robotics/embedded-firmware/student-libraries | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -224,7 +225,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 208
+- **Total applied:** 209
 - **Interviews:** 0
 - **Offers:** 0
 

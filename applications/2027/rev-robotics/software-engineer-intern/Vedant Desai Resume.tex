@@ -1,0 +1,87 @@
+%% ============================================================================
+%%  applications/2027/rev-robotics/software-engineer-intern/Vedant Desai Resume.tex
+%%  Writer iter-1 (initial). screen_track=full-stack; differentiator=
+%%  educational robotics / embedded firmware / student libraries / FIRST hardware;
+%%  track_divergence=true. Granular leads (C++ real-time). CSP = TypeScript +
+%%  debug. Vylet = independent test/eval. MDC/Lyndbrook omitted (not employers).
+%%  No C/Java/LabVIEW/FIRST/firmware/ROS/Snowflake/Databricks/Tableau/Copilot/Fusion.
+%%  Header email: verdent06@gmail.com
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ verdent06@gmail.com \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed; writer does not modify) --------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE ---------------------------------------------------------
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE, CMake, VST3, AU}
+			{}
+
+			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
+			\item Implemented 16-voice polyphony with per-voice ADSR envelopes, pre-computing attack/decay/release rates as samples-per-step in prepareToPlay() to eliminate division inside the audio hot loop --- and a voice-stealing algorithm that evicts the oldest active note by age counter when all 16 slots are busy, with each voice falling back to a sine oscillator until a WAV sample is loaded.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{CaseStudyPrep.AI}
+			{Dec 2025 -- May 2026}
+			{Software Engineer Co-op (Voice AI)}
+			{}
+			{Remote}
+
+			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
+			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
+			\item Eliminated the silent-audio problem in a voice-AI product --- most frames sent to Whisper were dead air --- by running Silero VAD client-side via ONNX Runtime, filtering silence before upload and cutting cloud inference costs by 40\%.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
+			{}
+			{}
+
+			\item Diagnosed a name-collision defect in ownership-verification logic that was incorrectly rejecting valid acquisition targets sharing a name with an unrelated business elsewhere; the fix lifted the pipeline's lead-qualification rate from 79\% to 89\% with zero change to sourcing volume.
+			\item Engineered a LangSmith eval pipeline spanning 20 adversarial business test cases across 13 archetype labels --- manufacturers, SaaS tools, PE holding companies, geographic mismatches --- then layered deterministic Pydantic consensus gates to lift extraction faithfulness from 50\% to 90\%.
+			\item Launched Vylet, automating a $\sim$30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Engineered Node 3 as a pure-Python triangulated consensus gate --- no LLM calls --- that computes a 0--100 lead score by fuzzy-matching the pipeline query, state business registry, and live website crawl in a three-way weakest-link check, then hard-fails leads on legal status, industry, geography, or independence before the score threshold applies.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS -------------------------------------------------
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{TypeScript, C++, Python}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Angular, RxJS, JUCE}
+		\end{rSet}
+		\begin{rSet}{Databases}{Redis}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{Docker, Git}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}
