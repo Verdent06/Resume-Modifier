@@ -219,6 +219,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | The Options Clearing Corporation (OCC) | Summer Intern - Data | 2026-09-18 | Applied | ai-ml+sifmu-clearing/market-infrastructure/fintech-backend | 8.0 |
 | REV Robotics | Software Engineering INTERN 2027 | 2026-09-18 | Applied | full-stack+educational-robotics/embedded-firmware/student-libraries | 8.0 |
 | Generac | Data Science Intern - Summer 2027 | 2026-09-18 | Applied | ai-ml | 10.0 |
+| Great American Insurance Company | Catastrophe Modeling & Data Analytics Intern (Spring 2027) | 2026-09-18 | Applied | ai-ml+P&C-reinsurance/catastrophe-risk-modeling/geospatial | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -226,7 +227,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 210
+- **Total applied:** 211
 - **Interviews:** 0
 - **Offers:** 0
 
