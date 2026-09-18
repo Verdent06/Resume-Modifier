@@ -214,6 +214,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Republic Airways | Data Analytics Intern - Summer 2027 | 2026-09-18 | Applied | ai-ml | 9.0 |
 | FIS | Intern, Software Engineer, FIS University Program | 2026-09-18 | Applied | full-stack+fintech-backend / banking+payments software | 8.0 |
 | Northwestern Mutual | Investment Data & Analytics Intern, Summer 2027 | 2026-09-18 | Applied | ai-ml+investment-management reporting / cross-asset analytics for a mutual insurer's Managed Investment Business | 8.0 |
+| W. R. Berkley | Software Developer (Java) Intern | June 2027 | 2026-09-18 | Applied | full-stack+insurance policy-admin / P&C underwriting platforms | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -221,7 +222,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 205
+- **Total applied:** 206
 - **Interviews:** 0
 - **Offers:** 0
 
