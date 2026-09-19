@@ -221,6 +221,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Boston Scientific | Data Science Co-op — Spring or Summer 2027 | 2026-09-18 | Applied | ai-ml+medical-device-manufacturing/process-development-analytics | 8.0 |
 | Smith+Nephew | Intern AI Center of Excellence Data Science | 2026-09-18 | Applied | ai-ml | 8.0 |
 | Collier Aerospace | AI Feature Development Intern - NCSG (Summer 2027) | 2026-09-18 | Applied | ai-ml+aerospace-CAE/HyperX-.NET | 8.0 |
+| Together AI | Software Engineer Intern (Winter 2027) | 2026-09-19 | Applied | full-stack+ml-infra/inference-cloud | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -228,6 +229,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 212
+- **Total applied:** 213
 - **Interviews:** 0
 - **Offers:** 0
