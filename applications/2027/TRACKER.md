@@ -224,6 +224,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Centene | Data and Analytics Summer 2027 Intern (Undergraduate) | 2026-09-19 | Applied | ai-ml+managed-care-payer | 10.0 |
 | MetOx International | Data Science Intern (Spring 2027) | 2026-09-19 | Applied | ai-ml+industrial / manufacturing operations analytics on HTS production | 8.0 |
 | CME Group | Software Engineering Internship - Summer 2027 | 2026-09-19 | Applied | full-stack+ultra-low-latency/electronic-trading | 8.0 |
+| Together AI | Software Engineer Intern (Summer 2027) | 2026-09-19 | Applied | full-stack+ml-infra / AI-native-cloud / inference-infra | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -231,6 +232,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 215
+- **Total applied:** 216
 - **Interviews:** 0
 - **Offers:** 0
