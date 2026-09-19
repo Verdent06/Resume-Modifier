@@ -222,6 +222,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Smith+Nephew | Intern AI Center of Excellence Data Science | 2026-09-18 | Applied | ai-ml | 8.0 |
 | Collier Aerospace | AI Feature Development Intern - NCSG (Summer 2027) | 2026-09-18 | Applied | ai-ml+aerospace-CAE/HyperX-.NET | 8.0 |
 | Centene | Data and Analytics Summer 2027 Intern (Undergraduate) | 2026-09-19 | Applied | ai-ml+managed-care-payer | 10.0 |
+| MetOx International | Data Science Intern (Spring 2027) | 2026-09-19 | Applied | ai-ml+industrial / manufacturing operations analytics on HTS production | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -229,6 +230,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 213
+- **Total applied:** 214
 - **Interviews:** 0
 - **Offers:** 0
