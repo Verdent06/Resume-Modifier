@@ -226,6 +226,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | CME Group | Software Engineering Internship - Summer 2027 | 2026-09-19 | Applied | full-stack+ultra-low-latency/electronic-trading | 8.0 |
 | Together AI | Software Engineer Intern (Summer 2027) | 2026-09-19 | Applied | full-stack+ml-infra / AI-native-cloud / inference-infra | 9.0 |
 | Athene | Software Developer Internship | 2026-09-19 | Applied | full-stack+fintech-backend/retirement-annuity-platforms | 9.0 |
+| CoBank | Software Engineer Intern — Summer 2027 | 2026-09-19 | Applied | full-stack+fintech-backend / farm-credit cooperative lending platforms | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -233,6 +234,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 217
+- **Total applied:** 218
 - **Interviews:** 0
 - **Offers:** 0
