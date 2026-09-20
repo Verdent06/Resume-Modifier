@@ -234,6 +234,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Gemini | Software Engineering Intern (Winter 2027) | 2026-09-20 | Applied | full-stack | 10.0 |
 | Gordon Food Service | Software Engineer Internship | 2026-09-20 | Applied | full-stack+foodservice-eCommerce/Gordon-Ordering/GCP | 9.0 |
 | Dayton Freight | Software Developer Intern | 2026-09-20 | Applied | full-stack+regional LTL / internal enterprise IT (API/EDI; freight operations systems) | 10.0 |
+| Rubrik | Software Engineering Winter Internship | 2026-09-20 | Applied | full-stack | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -241,6 +242,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 225
+- **Total applied:** 226
 - **Interviews:** 0
 - **Offers:** 0
