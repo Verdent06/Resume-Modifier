@@ -232,6 +232,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Together AI | Software Engineer Intern (Winter 2027) | 2026-09-19 | Applied | full-stack+ml-infra/inference-cloud | 8.0 |
 | Rivian | Engineering Intern - Supply Chain Data, AI and Business Intelligence (Spring 2027 Co-op) | 2026-09-20 | Applied | ai-ml | 10.0 |
 | Gemini | Software Engineering Intern (Winter 2027) | 2026-09-20 | Applied | full-stack | 10.0 |
+| Gordon Food Service | Software Engineer Internship | 2026-09-20 | Applied | full-stack+foodservice-eCommerce/Gordon-Ordering/GCP | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -239,6 +240,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 223
+- **Total applied:** 224
 - **Interviews:** 0
 - **Offers:** 0
