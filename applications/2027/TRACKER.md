@@ -237,6 +237,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Rubrik | Software Engineering Winter Internship | 2026-09-20 | Applied | full-stack | 9.0 |
 | Epic Games | Tools Programmer Intern | 2026-09-20 | Applied | full-stack+Unreal Engine content-architecture tooling (packaging/distribution/streaming; editor toolchain; C++ tool systems) | 9.0 |
 | Bot Auto | Intern, Software Engineer AI Agents (Winter 2027) | 2026-09-20 | Applied | ai-ml+autonomous-trucking/fleet-ops | 9.0 |
+| Fable (Fable Security) | Software Engineering Intern | 2026-09-20 | Applied | full-stack | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -244,6 +245,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 228
+- **Total applied:** 229
 - **Interviews:** 0
 - **Offers:** 0
