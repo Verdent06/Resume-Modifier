@@ -236,6 +236,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Dayton Freight | Software Developer Intern | 2026-09-20 | Applied | full-stack+regional LTL / internal enterprise IT (API/EDI; freight operations systems) | 10.0 |
 | Rubrik | Software Engineering Winter Internship | 2026-09-20 | Applied | full-stack | 9.0 |
 | Epic Games | Tools Programmer Intern | 2026-09-20 | Applied | full-stack+Unreal Engine content-architecture tooling (packaging/distribution/streaming; editor toolchain; C++ tool systems) | 9.0 |
+| Bot Auto | Intern, Software Engineer AI Agents (Winter 2027) | 2026-09-20 | Applied | ai-ml+autonomous-trucking/fleet-ops | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -243,6 +244,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 227
+- **Total applied:** 228
 - **Interviews:** 0
 - **Offers:** 0
