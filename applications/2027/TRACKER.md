@@ -230,6 +230,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Transamerica | Data Analytics Intern (Spring 2027, Full-time Hours) | 2026-09-19 | Applied | ai-ml+finance-transformation / insurance-retirement enterprise data (Aegon US) | 8.0 |
 | American Family Insurance | Internal Data and Analytics Intern - Summer 2027 | 2026-09-19 | Applied | ai-ml | 5.0 |
 | Together AI | Software Engineer Intern (Winter 2027) | 2026-09-19 | Applied | full-stack+ml-infra/inference-cloud | 8.0 |
+| Rivian | Engineering Intern - Supply Chain Data, AI and Business Intelligence (Spring 2027 Co-op) | 2026-09-20 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -237,6 +238,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 221
+- **Total applied:** 222
 - **Interviews:** 0
 - **Offers:** 0
