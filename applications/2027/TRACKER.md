@@ -243,6 +243,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Thrivent | Associate Software Engineer - Junior Intern Summer 2027 | 2026-09-21 | Applied | full-stack+fintech-backend | 9.0 |
 | Nokia | Software Development Co-op - AI Assisted | 2026-09-21 | Applied | full-stack+Core Networks / telecom / AI-assisted PDLC | 7.0 |
 | Persona | Software Engineer, Intern (Summer 2027) | 2026-09-21 | Applied | full-stack | 10.0 |
+| GM Financial | Intern - Software Development Engineer (SDE Intern, Summer 2027) | 2026-09-21 | Applied | full-stack | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -250,6 +251,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 234
+- **Total applied:** 235
 - **Interviews:** 0
 - **Offers:** 0
