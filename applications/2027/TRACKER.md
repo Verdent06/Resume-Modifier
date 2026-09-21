@@ -239,6 +239,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Bot Auto | Intern, Software Engineer AI Agents (Winter 2027) | 2026-09-20 | Applied | ai-ml+autonomous-trucking/fleet-ops | 9.0 |
 | Fable (Fable Security) | Software Engineering Intern | 2026-09-20 | Applied | full-stack | 9.0 |
 | Honeywell Technologies | Data Science Co-Op — Spring/Summer 2027 | 2026-09-21 | Applied | ai-ml+industrial-automation/honeywell-forge/pittsford-building-automation-access-control-analytics | 8.0 |
+| Tyler Technologies | Software Development Intern, Summer 2027 | 2026-09-21 | Applied | full-stack+civic-services / municipal EnerGov (permitting, licensing, code compliance, community development) | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
