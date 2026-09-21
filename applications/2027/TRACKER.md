@@ -245,6 +245,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Persona | Software Engineer, Intern (Summer 2027) | 2026-09-21 | Applied | full-stack | 10.0 |
 | GM Financial | Intern - Software Development Engineer (SDE Intern, Summer 2027) | 2026-09-21 | Applied | full-stack | 8.0 |
 | Howmet Aerospace | Intern – Artificial Intelligence (IT) | 2026-09-21 | Applied | ai-ml+industrial-manufacturing-process-AI | 8.0 |
+| Lazard | 2027 Software Engineer Summer Internship | 2026-09-21 | Applied | full-stack+applied-AI/data-pipelines | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -252,6 +253,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 236
+- **Total applied:** 237
 - **Interviews:** 0
 - **Offers:** 0
