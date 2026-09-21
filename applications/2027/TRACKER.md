@@ -249,6 +249,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Honeywell | Software Engineer Co-Op - Spring/Summer 2027 | 2026-09-21 | Applied | full-stack+physical-security/LenelS2-building-security | 8.0 |
 | Upbound Group | Software Engineer Intern (Summer 2027) | 2026-09-21 | Applied | full-stack | 8.0 |
 | Mercury | Software Engineering Intern - Spring 2027 | 2026-09-21 | Applied | full-stack+fintech-backend/banking-for-startups/typed-product-quality | 10.0 |
+| AutoZone | AutoZone 2027 Summer Internship – Data Science | 2026-09-21 | Applied | ai-ml+auto-parts-retail/SSC-operations-analytics | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -256,6 +257,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 240
+- **Total applied:** 241
 - **Interviews:** 0
 - **Offers:** 0
