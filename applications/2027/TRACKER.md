@@ -251,6 +251,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Mercury | Software Engineering Intern - Spring 2027 | 2026-09-21 | Applied | full-stack+fintech-backend/banking-for-startups/typed-product-quality | 10.0 |
 | AutoZone | AutoZone 2027 Summer Internship – Data Science | 2026-09-21 | Applied | ai-ml+auto-parts-retail/SSC-operations-analytics | 9.0 |
 | Lazard | 2027 AI Engineer Summer Internship | 2026-09-21 | Applied | ai-ml | 8.0 |
+| Upbound Group | Customer Performance Analytics Intern Summer 2027 | 2026-09-21 | Applied | ai-ml+customer-lifecycle / journey analytics (transaction + clickstream + CRM) for lease-to-own / consumer-finance (Acima, RAC, Brigit) | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -258,6 +259,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 242
+- **Total applied:** 243
 - **Interviews:** 0
 - **Offers:** 0
