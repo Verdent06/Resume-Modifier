@@ -57,7 +57,7 @@ After the subagent returns: read the artifacts yourself, then synthesize for the
 
 - Strategy, timeline, company Q&A, interview prep (after tracker update) — read doctrine here, answer directly.
 - Tracker status/score backfill when you already have `grade.md` — edit `TRACKER.md` yourself.
-- Bullet drafting in `context.md` — read `reference/resume.md` + `context.md` here; only spawn pipeline when a full application is requested.
+- Bullet drafting in `context.md` — follow `.cursor/skills/context-entry/SKILL.md` (read it in full first). Do not spawn the pipeline; a full application is the only pipeline trigger.
 
 ---
 
