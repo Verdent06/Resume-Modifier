@@ -263,6 +263,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Philips | Intern – AI Engineer, Enterprise AI & Workflow Automation – Plymouth, MN – Summer 2027 | 2026-09-22 | Applied | ai-ml+healthtech-enterprise-informatics/workflow-automation | 9.0 |
 | Boston Scientific | Data Engineering Intern | 2026-09-22 | Applied | ai-ml | 8.0 |
 | Koch Industries (KBX) | Summer 2027 Business Analytics & Insights Intern | 2026-09-22 | Applied | ai-ml+KBX transportation/logistics ops analytics (Koch 3PL) | 9.0 |
+| General Motors | 2027 Summer Intern - Digital Product: Software Engineering | 2026-09-22 | Applied | full-stack+Ultifi/vehicle-digital-platforms/connected-services | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -270,6 +271,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 254
+- **Total applied:** 255
 - **Interviews:** 0
 - **Offers:** 0
