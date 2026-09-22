@@ -267,6 +267,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Live Oak Bank | Summer 2027 Intern: Software Engineering | 2026-09-22 | Applied | full-stack+fintech-backend/digital-small-business-banking | 10.0 |
 | UDig | Software Engineering Intern | 2026-09-22 | Applied | full-stack+boutique-tech-consulting/client-facing-delivery | 9.0 |
 | Commerce Bank | Intern - Data Analyst (Summer 2027) | 2026-09-22 | Applied | ai-ml | 9.0 |
+| Booz Allen Hamilton | University, 2027 Summer Games Software Developer Intern - McLean, VA | 2026-09-22 | Applied | full-stack+national-security-consulting/Summer-Games | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -274,6 +275,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 258
+- **Total applied:** 259
 - **Interviews:** 0
 - **Offers:** 0
