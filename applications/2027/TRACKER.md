@@ -270,6 +270,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Electronic Arts | Analytics Intern | 2026-09-22 | Applied | ai-ml+EA SPORTS gameplay/player-behavior analytics (Madden/College Football retention-engagement) | 9.0 |
 | Nebraska Medicine | Intern - Forward Deployed AI Engineer | 2026-09-22 | Applied | ai-ml+healthcare/Palantir-Foundry/forward-deployed | 9.0 |
 | GuideStone | Summer Intern - Software Developer | 2026-09-22 | Applied | full-stack+fintech-backend/retirement-services | 10.0 |
+| EMC Insurance | Intern- Data Science | 2026-09-22 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -277,6 +278,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 261
+- **Total applied:** 262
 - **Interviews:** 0
 - **Offers:** 0
