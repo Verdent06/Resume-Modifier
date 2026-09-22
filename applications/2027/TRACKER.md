@@ -257,6 +257,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Lazard | 2027 Data Engineer Summer Internship | 2026-09-21 | Applied | ai-ml | 9.0 |
 | The Walt Disney Company | Decision Science Undergraduate Intern, Spring 2027 | 2026-09-22 | Applied | ai-ml+disney-ddsi / yield-revenue-forecasting-pricing-optimization | 8.0 |
 | GE HealthCare | Software Engineering Summer Intern 2027 | 2026-09-22 | Applied | full-stack+medical-device/surgery-imaging/regulated-software-quality | 9.0 |
+| Zimmer Biomet | 2027 Summer Intern, Data Mesh Platform | 2026-09-22 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -264,6 +265,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 248
+- **Total applied:** 249
 - **Interviews:** 0
 - **Offers:** 0
