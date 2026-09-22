@@ -255,6 +255,15 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Acima (Upbound Group) | Software Engineer Intern (Summer 2027, Draper) | 2026-09-21 | Applied | full-stack | 8.0 |
 | Fidelity Investments | Summer 2027 Undergraduate Internship - Software | 2026-09-21 | Applied | full-stack+asset-management/fintech-backend | 10.0 |
 | Lazard | 2027 Data Engineer Summer Internship | 2026-09-21 | Applied | ai-ml | 9.0 |
+| The Walt Disney Company | Decision Science Undergraduate Intern, Spring 2027 | 2026-09-22 | Applied | ai-ml+disney-ddsi / yield-revenue-forecasting-pricing-optimization | 8.0 |
+| GE HealthCare | Software Engineering Summer Intern 2027 | 2026-09-22 | Applied | full-stack+medical-device/surgery-imaging/regulated-software-quality | 9.0 |
+| Zimmer Biomet | 2027 Summer Intern, Data Mesh Platform | 2026-09-22 | Applied | ai-ml | 10.0 |
+| Erie Insurance | Intern II (Data) | 2026-09-22 | Applied | ai-ml | 10.0 |
+| Resultant | Data & Analytics Consultant Intern - Summer 2027 (Hybrid in Indianapolis) | 2026-09-22 | Applied | ai-ml+outcomes-consulting/client-facing-data-analytics | 8.0 |
+| Philips | Intern – AI Engineer, Enterprise AI & Workflow Automation – Plymouth, MN – Summer 2027 | 2026-09-22 | Applied | ai-ml+healthtech-enterprise-informatics/workflow-automation | 9.0 |
+| Boston Scientific | Data Engineering Intern | 2026-09-22 | Applied | ai-ml | 8.0 |
+| Koch Industries (KBX) | Summer 2027 Business Analytics & Insights Intern | 2026-09-22 | Applied | ai-ml+KBX transportation/logistics ops analytics (Koch 3PL) | 9.0 |
+| General Motors | 2027 Summer Intern - Digital Product: Software Engineering | 2026-09-22 | Applied | full-stack+Ultifi/vehicle-digital-platforms/connected-services | 8.0 |
 | Live Oak Bank | Summer 2027 Intern: Software Engineering | 2026-09-22 | Applied | full-stack+fintech-backend/digital-small-business-banking | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -263,6 +272,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 247
+- **Total applied:** 256
 - **Interviews:** 0
 - **Offers:** 0
