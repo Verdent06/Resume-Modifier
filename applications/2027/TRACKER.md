@@ -265,6 +265,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Koch Industries (KBX) | Summer 2027 Business Analytics & Insights Intern | 2026-09-22 | Applied | ai-ml+KBX transportation/logistics ops analytics (Koch 3PL) | 9.0 |
 | General Motors | 2027 Summer Intern - Digital Product: Software Engineering | 2026-09-22 | Applied | full-stack+Ultifi/vehicle-digital-platforms/connected-services | 8.0 |
 | Live Oak Bank | Summer 2027 Intern: Software Engineering | 2026-09-22 | Applied | full-stack+fintech-backend/digital-small-business-banking | 10.0 |
+| UDig | Software Engineering Intern | 2026-09-22 | Applied | full-stack+boutique-tech-consulting/client-facing-delivery | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -272,6 +273,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 256
+- **Total applied:** 257
 - **Interviews:** 0
 - **Offers:** 0
