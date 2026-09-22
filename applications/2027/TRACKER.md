@@ -260,6 +260,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Zimmer Biomet | 2027 Summer Intern, Data Mesh Platform | 2026-09-22 | Applied | ai-ml | 10.0 |
 | Erie Insurance | Intern II (Data) | 2026-09-22 | Applied | ai-ml | 10.0 |
 | Resultant | Data & Analytics Consultant Intern - Summer 2027 (Hybrid in Indianapolis) | 2026-09-22 | Applied | ai-ml+outcomes-consulting/client-facing-data-analytics | 8.0 |
+| Philips | Intern – AI Engineer, Enterprise AI & Workflow Automation – Plymouth, MN – Summer 2027 | 2026-09-22 | Applied | ai-ml+healthtech-enterprise-informatics/workflow-automation | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -267,6 +268,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 251
+- **Total applied:** 252
 - **Interviews:** 0
 - **Offers:** 0
