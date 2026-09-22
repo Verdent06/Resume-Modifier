@@ -268,6 +268,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | UDig | Software Engineering Intern | 2026-09-22 | Applied | full-stack+boutique-tech-consulting/client-facing-delivery | 9.0 |
 | Commerce Bank | Intern - Data Analyst (Summer 2027) | 2026-09-22 | Applied | ai-ml | 9.0 |
 | Electronic Arts | Analytics Intern | 2026-09-22 | Applied | ai-ml+EA SPORTS gameplay/player-behavior analytics (Madden/College Football retention-engagement) | 9.0 |
+| Nebraska Medicine | Intern - Forward Deployed AI Engineer | 2026-09-22 | Applied | ai-ml+healthcare/Palantir-Foundry/forward-deployed | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -275,6 +276,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 259
+- **Total applied:** 260
 - **Interviews:** 0
 - **Offers:** 0
