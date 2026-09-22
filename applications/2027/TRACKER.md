@@ -256,6 +256,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Fidelity Investments | Summer 2027 Undergraduate Internship - Software | 2026-09-21 | Applied | full-stack+asset-management/fintech-backend | 10.0 |
 | Lazard | 2027 Data Engineer Summer Internship | 2026-09-21 | Applied | ai-ml | 9.0 |
 | The Walt Disney Company | Decision Science Undergraduate Intern, Spring 2027 | 2026-09-22 | Applied | ai-ml+disney-ddsi / yield-revenue-forecasting-pricing-optimization | 8.0 |
+| GE HealthCare | Software Engineering Summer Intern 2027 | 2026-09-22 | Applied | full-stack+medical-device/surgery-imaging/regulated-software-quality | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -263,6 +264,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 247
+- **Total applied:** 248
 - **Interviews:** 0
 - **Offers:** 0
