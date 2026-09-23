@@ -278,6 +278,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Grow Therapy | Software Engineering Intern (Summer 2027) | 2026-09-23 | Applied | full-stack | 10.0 |
 | Northrop Grumman | 2027 Software Engineer Intern - San Diego CA | 2026-09-23 | Applied | full-stack+mission-systems/NIC/real-time-embedded-adjacent | 8.0 |
 | West Bend Insurance | Summer 2027 Intern - IT Data Engineer | 2026-09-23 | Applied | ai-ml | 10.0 |
+| Hudson River Trading | Data Scientist Intern - 2027 | 2026-09-23 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -285,6 +286,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 269
+- **Total applied:** 270
 - **Interviews:** 0
 - **Offers:** 0
