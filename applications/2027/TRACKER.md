@@ -272,6 +272,9 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | GuideStone | Summer Intern - Software Developer | 2026-09-22 | Applied | full-stack+fintech-backend/retirement-services | 10.0 |
 | EMC Insurance | Intern- Data Science | 2026-09-22 | Applied | ai-ml | 10.0 |
 | Booz Allen Hamilton | University, 2027 Summer Games Software Developer Intern - McLean, VA | 2026-09-22 | Applied | full-stack+national-security-consulting/Summer-Games | 9.0 |
+| Rippling | Software Engineer Intern - Backend Focused - Summer 2027 | 2026-09-23 | Applied | full-stack | 9.0 |
+| Royal Bank of Canada | Software Development Intern — Wealth Management Technology (Summer 2027) | 2026-09-23 | Applied | full-stack | 10.0 |
+| USAA | AI/ML Engineer Intern | 2026-09-23 | Applied | ai-ml | 9.0 |
 | Grow Therapy | Software Engineering Intern (Summer 2027) | 2026-09-23 | Applied | full-stack | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -280,6 +283,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 264
+- **Total applied:** 267
 - **Interviews:** 0
 - **Offers:** 0
