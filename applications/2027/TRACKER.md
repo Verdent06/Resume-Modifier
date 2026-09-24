@@ -284,6 +284,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Excellus BCBS | College Intern - Summer 2027 - Software Engineering (Multiple Openings Available) | 2026-09-23 | Applied | full-stack+healthcare-payer/pharmacy-benefits | 9.0 |
 | Astranis | Software Engineer Backend Intern (Summer 2027) | 2026-09-23 | Applied | full-stack+aerospace/GEO-satellite/mission-critical/fleet-ops | 8.0 |
 | State Farm | Summer 2027 Intern - HR&D - Software Developer | 2026-09-24 | Applied | full-stack+insurance-tech/HR&D-workforce-technology/process-automation | 10.0 |
+| Qumulo | Software Development Engineer Intern (Seattle, 2027) | 2026-09-24 | Applied | full-stack+distributed-storage/systems-software | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -291,6 +292,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 275
+- **Total applied:** 276
 - **Interviews:** 0
 - **Offers:** 0
