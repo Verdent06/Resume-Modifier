@@ -291,6 +291,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Zekelman Industries | Intern, Business Intelligence | 2026-09-24 | Applied | ai-ml | 10.0 |
 | Enterprise Holdings | Intern - Data Engineer (EFM IT) | 2026-09-24 | Applied | ai-ml | 10.0 |
 | Sonos, Inc. | Software Engineering Co-op (Signal Processing) | 2026-09-24 | Applied | full-stack+consumer-audio/DSP/embedded-adjacent | 9.0 |
+| Arconic | Software Developer Intern | 2026-09-24 | Applied | full-stack+manufacturing-enterprise-IT | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -298,6 +299,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 282
+- **Total applied:** 283
 - **Interviews:** 0
 - **Offers:** 0
