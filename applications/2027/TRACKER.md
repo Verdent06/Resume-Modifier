@@ -286,6 +286,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | State Farm | Summer 2027 Intern - HR&D - Software Developer | 2026-09-24 | Applied | full-stack+insurance-tech/HR&D-workforce-technology/process-automation | 10.0 |
 | Qumulo | Software Development Engineer Intern (Seattle, 2027) | 2026-09-24 | Applied | full-stack+distributed-storage/systems-software | 8.0 |
 | Symbotic | Co-op - Software Engineer (Spring 2027) | 2026-09-24 | Applied | full-stack+warehouse-robotics/fleet-orchestration/real-time | 5.0 |
+| Jabil | Data Engineering Intern | 2026-09-24 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -293,6 +294,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 277
+- **Total applied:** 278
 - **Interviews:** 0
 - **Offers:** 0
