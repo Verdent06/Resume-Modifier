@@ -293,6 +293,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Sonos, Inc. | Software Engineering Co-op (Signal Processing) | 2026-09-24 | Applied | full-stack+consumer-audio/DSP/embedded-adjacent | 9.0 |
 | Arconic | Software Developer Intern | 2026-09-24 | Applied | full-stack+manufacturing-enterprise-IT | 9.0 |
 | Biogen | Co-op, Data Science | 2026-09-25 | Applied | ai-ml+biopharma-R&D/SPARQ-TADI-regulatory-quality-safety-analytics | 8.0 |
+| DRW | Spring 2027 City Scholars Software Developer Intern | 2026-09-25 | Applied | full-stack+market-data-infra | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -300,6 +301,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 284
+- **Total applied:** 285
 - **Interviews:** 0
 - **Offers:** 0
