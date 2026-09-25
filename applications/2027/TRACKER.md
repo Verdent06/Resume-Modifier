@@ -297,6 +297,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Genesis Molecular AI | Software Engineer Intern - 2027 | 2026-09-25 | Applied | full-stack+molecular-AI/ml-infra | 10.0 |
 | Radiance Technologies | Software Engineer Intern Spring/Summer 2027 | 2026-09-25 | Applied | full-stack+NASIC/air-and-space-intelligence | 8.0 |
 | CHS | Data Analyst Intern | 2026-09-25 | Applied | ai-ml+agribusiness transportation/supply-chain ops analytics | 9.0 |
+| Snowflake | Software Engineer Intern (Core, Infrastructure & Security) — Spring 2027 | 2026-09-25 | Applied | full-stack+data-infra/core-systems | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -304,6 +305,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 288
+- **Total applied:** 289
 - **Interviews:** 0
 - **Offers:** 0
