@@ -301,6 +301,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | FOX | Spring 2027 FOX News Media Internship Program - Data Analytics - New York | 2026-09-25 | Applied | ai-ml+news-media programming analytics / BI | 9.0 |
 | First Citizens BancShares | 2027 IT Summer Intern - Software Developer (Raleigh, NC) | 2026-09-25 | Applied | full-stack+bank-IT/regional-commercial-bank-platforms | 9.0 |
 | Lutron Electronics | Spring 2027 - Software Engineering Co-Op | 2026-09-25 | Applied | full-stack+lighting-control/shading-application-software | 8.0 |
+| Snowflake | Software Engineer Intern (Database Engineering) - Spring 2027 | 2026-09-25 | Applied | full-stack+database-engine/query-processing/high-performance-C++-systems | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -308,6 +309,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 292
+- **Total applied:** 293
 - **Interviews:** 0
 - **Offers:** 0
