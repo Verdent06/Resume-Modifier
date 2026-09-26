@@ -306,6 +306,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | American Century Investments | Enterprise Data Intern | 2026-09-26 | Applied | ai-ml | 10.0 |
 | GCM Grosvenor | 2027 Fund Data Reporting and Analytics Summer Intern | 2026-09-26 | Applied | ai-ml+PE/infra/RE/credit fund-performance reporting | 10.0 |
 | Pacific Life | Summer 2027 Software Engineering Internship | 2026-09-26 | Applied | full-stack+insurance-tech/life-annuity-platforms/enterprise-digital-transformation | 10.0 |
+| Red Ventures | 2027 Launch Program: Data Science Intern | 2026-09-26 | Applied | ai-ml+digital-media/performance-marketing | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -313,6 +314,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 297
+- **Total applied:** 298
 - **Interviews:** 0
 - **Offers:** 0
