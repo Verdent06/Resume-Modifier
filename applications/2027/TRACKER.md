@@ -302,6 +302,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | First Citizens BancShares | 2027 IT Summer Intern - Software Developer (Raleigh, NC) | 2026-09-25 | Applied | full-stack+bank-IT/regional-commercial-bank-platforms | 9.0 |
 | Lutron Electronics | Spring 2027 - Software Engineering Co-Op | 2026-09-25 | Applied | full-stack+lighting-control/shading-application-software | 8.0 |
 | Snowflake | Software Engineer Intern (Database Engineering) - Spring 2027 | 2026-09-25 | Applied | full-stack+database-engine/query-processing/high-performance-C++-systems | 8.0 |
+| Western National Insurance | IT Data Engineering Intern | 2026-09-26 | Applied | ai-ml | 10.0 |
 | American Century Investments | Enterprise Data Intern | 2026-09-26 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -310,6 +311,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 294
+- **Total applied:** 295
 - **Interviews:** 0
 - **Offers:** 0
