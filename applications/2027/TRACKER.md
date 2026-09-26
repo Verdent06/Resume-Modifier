@@ -309,6 +309,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Red Ventures | 2027 Launch Program: Data Science Intern | 2026-09-26 | Applied | ai-ml+digital-media/performance-marketing | 9.0 |
 | Waymo | 2027 Summer Intern, BS, Software Engineer, Driver Refinement Foundations | 2026-09-26 | Applied | full-stack+autonomy/AV-reasoning-platform | 8.0 |
 | American Century Investments | Software Developer Intern | 2026-09-26 | Applied | full-stack+asset-management-IT | 8.0 |
+| Rockwell Automation | Intern, AI Software Engineering (June-August 2027) | 2026-09-26 | Applied | ai-ml+industrial-automation-software | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -316,6 +317,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 300
+- **Total applied:** 301
 - **Interviews:** 0
 - **Offers:** 0
