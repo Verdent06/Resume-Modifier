@@ -304,6 +304,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Snowflake | Software Engineer Intern (Database Engineering) - Spring 2027 | 2026-09-25 | Applied | full-stack+database-engine/query-processing/high-performance-C++-systems | 8.0 |
 | Western National Insurance | IT Data Engineering Intern | 2026-09-26 | Applied | ai-ml | 10.0 |
 | American Century Investments | Enterprise Data Intern | 2026-09-26 | Applied | ai-ml | 10.0 |
+| GCM Grosvenor | 2027 Fund Data Reporting and Analytics Summer Intern | 2026-09-26 | Applied | ai-ml+PE/infra/RE/credit fund-performance reporting | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -311,6 +312,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 295
+- **Total applied:** 296
 - **Interviews:** 0
 - **Offers:** 0
