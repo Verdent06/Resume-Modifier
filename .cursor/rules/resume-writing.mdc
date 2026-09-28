@@ -39,7 +39,7 @@ The orchestrator dispatches you in exactly one mode per turn. **Do not carry cha
 
 ## What You Can Do
 
-1. **Fill the skeleton** — place pool bullets into Experience/Projects, any subset, any order.
+1. **Fill the skeleton** — place pool bullets into Experience/Projects. Order entries within a section by impact density; do not move a `### Project:` entry into Experience or an `### Experience:` entry into Projects.
 2. **Pick bullets** from each entry's pool.
 3. **Apply swap-set substitutions** consistently within an entry.
 4. **Pick 3-5 skills buckets** and trim by JD relevance to the ~80-char line. **Include every language the candidate has that the JD lists.**
@@ -61,7 +61,8 @@ That is the complete list.
 - **Include thin entries just to fill the page** — sacrifice breadth before depth (`reference/resume.md` §3 pyramid).
 - **Resolve page pressure by hollowing high-signal entries while low-signal entries remain.**
 - **Resolve a metric, grading, or gate task by deleting a bullet, or by dropping any entry below its iteration-1 bullet count** (loop phase). Fix a metric gap by *swapping in* a metric-bearing pool bullet. If the entry's pool has none, record out-of-rails. Deletion is never the answer in the loop.
-- **Modify the Education block or header.** Add a section or entry not in the skeleton/`context.md`. Modify metrics inside bullets.
+- **Reclassify a project as an experience (or the reverse).** `context.md` section labels are fixed. Granular Synthesizer Plugin, SignalWeaver, and any other `### Project:` entry stay under Projects — even when they are the differentiator or needed for lead-signal / top-N prominence. Lead the Projects section instead.
+- **Modify the Education block or header.** Add a section or entry not in the skeleton/`context.md`. Modify metrics inside bullets. Exception: a coach-authorized education sync from an updated `context.md` Education block.
 - **Edit `context.md`, `reference/resume.md`, `reference/recruiting.md`, `template.cls`, or `template.tex`.**
 - **Shrink font, spacing, or margins** to fit a page.
 

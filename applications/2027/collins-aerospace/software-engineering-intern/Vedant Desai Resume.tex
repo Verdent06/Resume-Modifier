@@ -3,7 +3,7 @@
 %% ----------------------------------------------------------------------------
 %%  Iter-1 fill from context.md pool. Education/header untouched.
 %%  Spine: CaseStudyPrep (real-time production) + MDC (Python full-stack).
-%%  Differentiator: Granular Synthesizer Plugin in top-2 (C++ lock-free / OOP).
+%%  Differentiator: Granular Synthesizer Plugin leads Projects (C++ lock-free / OOP).
 %% ============================================================================
 
 \documentclass[
@@ -25,7 +25,7 @@
 			{Ann Arbor, MI}
 
 			\item \textbf{GPA:} 3.66 / 4.0
-			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Linear Algebra for Machine Learning, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -40,18 +40,6 @@
 
 			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
-			{C++, JUCE, VST3, AU}
-			{}
-
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
-			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
-			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -79,6 +67,18 @@
 
 	% ---- PROJECTS -----------------------------------------------------------
 	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{Real-time audio DSP plugin built from scratch in C++/JUCE --- sine oscillator through full granular engine with lock-free threading and release-ready VST3/AU binaries}
+			{C++, JUCE, VST3, AU}
+			{}
+
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool<Grain, 64> slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
+			\item Configured CMake to compile VST3 and AU bundles from a single JUCE codebase --- targeting a macOS universal binary (arm64 + x86\_64) for native Apple Silicon and Intel --- and audited every processBlock() path against a real-time safety checklist confirming zero heap allocations and zero lock acquisitions before release builds.
+		\end{rSectionEntry}
+
 		\begin{rSectionEntry}
 			{SignalWeaver}
 			{}

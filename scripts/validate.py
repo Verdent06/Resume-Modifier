@@ -262,6 +262,24 @@ def _norm(s: str) -> str:
     return re.sub(r"[^a-z0-9+#. ]", "", s.lower()).strip()
 
 
+def _entry_stem(s: str) -> str:
+    """Match parse_resume name splitting (em-dash / --- / ' - ')."""
+    name = re.split(r"\s*(?:---|—|\s-\s)\s*", s, maxsplit=1)[0].strip()
+    return _norm(name)
+
+
+_CONTEXT_PROJECT_RE = re.compile(r"^### Project:\s*(.+?)\s*$", re.MULTILINE)
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+
+
+def load_context_project_names(context_path: Path | None = None) -> list[str]:
+    """Names from context.md `### Project:` headings (not HTML-commented lines)."""
+    path = Path(context_path) if context_path else _REPO_ROOT / "context.md"
+    if not path.is_file():
+        return []
+    return [m.group(1).strip() for m in _CONTEXT_PROJECT_RE.finditer(path.read_text(encoding="utf-8"))]
+
+
 def gate_required_languages(pr: ParsedResume, jd_langs, cand_langs) -> GateResult:
     """Every JD-listed language the candidate possesses MUST appear in Skills.
     Languages are never reconciled away and are never orphans (the inverse bug
@@ -381,30 +399,71 @@ def gate_protected_depth(pr: ParsedResume, protected) -> GateResult:
     return GateResult("protected_depth", True, True, "Protected entries retain depth.")
 
 
-def gate_lead_signal(pr: ParsedResume, protected, window: int) -> GateResult:
+def gate_section_membership(pr: ParsedResume, project_names) -> GateResult:
+    """Hard gate: context.md `### Project:` entries must not render under Experience."""
+    proj = {_entry_stem(x) for x in (project_names or []) if x}
+    if not proj:
+        return GateResult(
+            "section_membership", True, True,
+            "Skipped (no context.md ### Project: names).",
+        )
+    violations = [
+        e.name for e in pr.entries
+        if e.section.startswith("experience") and _norm(e.name) in proj
+    ]
+    if violations:
+        return GateResult(
+            "section_membership", True, False,
+            f"Project-typed entries rendered under Experience: {violations}. "
+            f"context.md ### Project: names must stay in Projects.",
+        )
+    return GateResult("section_membership", True, True, "No project entries in Experience.")
+
+
+def gate_lead_signal(pr: ParsedResume, protected, window: int, project_names=None) -> GateResult:
     """Tuple/divergence gate. When the company's engineering identity diverges
     from the JD's screen track (e.g. a generic SWE req at an autonomy company),
     the orchestrator marks the differentiator-aligned entries as protected and
-    sets `lead_signal_window` > 0. At least one protected entry must then appear
-    within the top `window` entries (document order). This is the deterministic
-    floor under the company-fit differentiator — it stops a full-stack spine from
-    burying the autonomy entry at the bottom, which is exactly how the track flip
-    produced an off-axis resume last round. The grader still judges *which*
-    generalist entry leads; this only guarantees the differentiator is prominent,
-    not buried."""
+    sets `lead_signal_window` > 0. At least one protected entry must then be
+    prominent — experience-typed in the top `window` of document order,
+    project-typed in the top `window` of Projects (never by transplanting a
+    project into Experience). The grader still judges *which* generalist entry
+    leads; this only guarantees the differentiator is prominent, not buried."""
     if not window or not protected:
         return GateResult("lead_signal", True, True, "Skipped (no divergence / window=0).")
     prot = {_norm(x) for x in protected}
-    top = pr.entries[:window]
-    if any(_norm(e.name) in prot for e in top):
-        present = [e.name for e in top if _norm(e.name) in prot]
+    proj = {_entry_stem(x) for x in (project_names or []) if x}
+    project_prot = {p for p in prot if p in proj}
+    experience_prot = prot - project_prot
+
+    prominent = []
+    if experience_prot:
+        top = pr.entries[:window]
+        prominent.extend(e.name for e in top if _norm(e.name) in experience_prot)
+    if project_prot:
+        projects = [e for e in pr.entries if e.section.startswith("project")]
+        prominent.extend(e.name for e in projects[:window] if _norm(e.name) in project_prot)
+
+    if prominent:
         return GateResult("lead_signal", True, True,
-                          f"Differentiator entry in top {window}: {present}.")
+                          f"Differentiator prominent: {list(dict.fromkeys(prominent))}.")
+
+    detail_bits = []
+    if experience_prot:
+        top_names = [e.name for e in pr.entries[:window]]
+        detail_bits.append(
+            f"experience-typed protected not in document top {window} ({top_names})"
+        )
+    if project_prot:
+        proj_names = [e.name for e in pr.entries if e.section.startswith("project")]
+        detail_bits.append(
+            f"project-typed protected not in Projects top {window} "
+            f"(Projects: {proj_names[:window]})"
+        )
     return GateResult(
         "lead_signal", True, False,
-        f"No differentiator/protected entry in the top {window} slots "
-        f"(top {window}: {[e.name for e in top]}). The company-fit signal is buried; "
-        f"move a protected entry up. Spine may lead, but the differentiator sits near it.",
+        f"{'; '.join(detail_bits)}. The company-fit signal is buried; "
+        f"lead Projects with a project differentiator (do not move it into Experience).",
     )
 
 
@@ -737,6 +796,7 @@ def run_gates(args) -> int:
     tex = Path(args.tex).read_text(encoding="utf-8")
     gi = json.loads(Path(args.inputs).read_text(encoding="utf-8"))
     pr = parse_resume(tex)
+    project_names = load_context_project_names()
 
     gates = [
         gate_required_languages(pr, gi.get("jd_languages", []), gi.get("candidate_languages", [])),
@@ -744,7 +804,8 @@ def run_gates(args) -> int:
         gate_no_bullet_deletion(pr, gi.get("iter1_counts", {}), args.phase),
         gate_min_entries(pr, gi.get("min_entries", 4)),
         gate_protected_depth(pr, gi.get("protected_entries", [])),
-        gate_lead_signal(pr, gi.get("protected_entries", []), gi.get("lead_signal_window", 0)),
+        gate_section_membership(pr, project_names),
+        gate_lead_signal(pr, gi.get("protected_entries", []), gi.get("lead_signal_window", 0), project_names),
         gate_fit_protection(pr, gi.get("prefit_counts", {}), gi.get("protected_entries", []), args.phase),
         gate_page_fill(pr, args.pdf, gi.get("min_fill", PAGE_MIN_FILL)),
     ]

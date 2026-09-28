@@ -27,8 +27,8 @@ Each entry carries a fixed **Lane**: the one distinct signal it contributes that
 ```
 University of Michigan                              Expected May 2028
 B.S. in Computer Science and Economics              Ann Arbor, MI
-GPA: 3.66 / 4.0
-Coursework: Data Structures & Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
+GPA: 3.7 / 4.0
+Coursework: Data Structures & Algorithms, Foundations of Computer Science, Discrete Mathematics, Calculus III, Physics (Mechanics), Microeconomics, Macroeconomics
 ```
 
 ---
@@ -94,6 +94,8 @@ Playwright, Selenium, Web Workers, Asynchronous Queues, Google Maps API, VST3, A
 ## Canonical Entries
 
 Each entry has a fixed header, a Lane, and a bullet pool. Bullets are copied verbatim into the resume; swap-set substitutions are the only modification permitted. Experience entries carry dates; project entries carry a live link instead of a date so they can be ordered by relevance, not recency. Each project also carries a one-line descriptor that renders below the name (the rSectionEntry tagline slot, param #3), giving the at-a-glance "what it is." Because the descriptor carries identity, a project's lead bullet leads with its strongest engineering decision, never a re-description of the project. Experiences have no descriptor slot (the tagline holds the role), so an experience's first bullet still establishes what was built.
+
+**Section membership is fixed — never reclassify.** `### Experience:` entries render only under Experience. `### Project:` entries render only under Projects. Do not promote Granular Synthesizer Plugin, SignalWeaver, or any other project into Experience to satisfy lead-signal, top-N, or differentiator prominence. If a project is the differentiator, it leads the Projects section. Titled roles (MDC, CaseStudyPrep.AI, Lyndbrook, Vylet) stay in Experience.
 
 **Bullet length ceiling (going forward, this pool only — not retroactive).** `resume.md` §4 targets "two tight lines" qualitatively; quantified against `template.cls`'s actual rendering (10pt CMU Serif, 0.4in margins), that template wraps bullet body text at **~115–120 characters/line**, measured directly off compiled output. Two tight lines ≈ **230–240 characters total**. When writing or editing a bullet for this pool going forward, target that ceiling — three-line bullets should be the exception (a bullet earning its extra depth), not the default. Existing bullets were not audited/trimmed against this number retroactively; several run 250–380 characters (3 lines). Re-tighten opportunistically when an entry is touched for other reasons, not as a standalone pass.
 

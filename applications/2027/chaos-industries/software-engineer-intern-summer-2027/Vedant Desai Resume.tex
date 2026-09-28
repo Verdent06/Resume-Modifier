@@ -1,7 +1,7 @@
 %% ============================================================================
 %%  applications/2027/chaos-industries/software-engineer-intern-summer-2027
 %%  Iter-1 fill from context.md pool. Education/header untouched.
-%%  Spine: CSP (frontend + real-time). Differentiator: Granular in top-2 (C++ RT).
+%%  Spine: CSP (frontend + real-time). Differentiator: Granular leads Projects (C++ RT).
 %%  MDC = Flask/AWS storage-adjacent. SignalWeaver = pgvector storage + React.
 %%  No Java/JAX/C-as-C/firmware/ROS/Snowflake/Databricks/Copilot/Fusion/Tableau.
 %% ============================================================================
@@ -25,7 +25,7 @@
 			{Ann Arbor, MI}
 
 			\item \textbf{GPA:} 3.66 / 4.0
-			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Linear Algebra for Machine Learning, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
 		\end{rSectionEntry}
 	\end{rSection}
 
@@ -40,17 +40,6 @@
 
 			\item Moved audio processing off the UI thread into a Web Worker with an async stream handoff, reducing main-thread blocking time to under 5ms and keeping the real-time audio visualizer at a smooth 60 FPS during active inference.
 			\item Eliminated a 27\% audio upload failure rate with fault-tolerant RxJS logic that detects expired S3 presigned URLs, regenerates them mid-flight, and negotiates MIME types for WAV files Angular silently rejected.
-		\end{rSectionEntry}
-
-		\begin{rSectionEntry}
-			{Granular Synthesizer Plugin}
-			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
-			{}
-			{C++, JUCE, VST3, AU}
-			{}
-
-			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
-			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
 		\end{rSectionEntry}
 
 		\begin{rSectionEntry}
@@ -78,6 +67,17 @@
 
 	% ---- PROJECTS -----------------------------------------------------------
 	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{Granular Synthesizer Plugin}
+			{\href{https://github.com/Verdent06/granular-synth}{github.com/Verdent06/granular-synth}}
+			{}
+			{C++, JUCE, VST3, AU}
+			{}
+
+			\item Enforced the audio thread's zero-allocation constraint by pre-allocating a MemoryPool\textless{}Grain, 64\textgreater{} slab per voice at plugin startup --- a fixed free-list that acquires and releases grain slots without touching the heap --- so processBlock() never calls new or delete after prepareToPlay() completes.
+			\item Wired UI-to-audio delivery through a hand-rolled SPSC FIFO (64-slot fixed array, atomic head/tail with acquire/release ordering) so slider changes reach the audio thread without a mutex --- and routed WAV handoff via atomic shared\_ptr swap so the UI thread never blocks processBlock().
+		\end{rSectionEntry}
+
 		\begin{rSectionEntry}
 			{SignalWeaver}
 			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
