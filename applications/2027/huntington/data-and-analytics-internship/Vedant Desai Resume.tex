@@ -1,0 +1,124 @@
+%% ============================================================================
+%%  applications/template.tex  —  SKELETON RESUME (single source template)
+%% ----------------------------------------------------------------------------
+%%  This is the ONLY resume template. The orchestrator copies this file into a
+%%  position folder, then the writer fills the Experience / Projects / Skills
+%%  sections from the context.md bullet pool. It replaces the old per-track
+%%  templates (full-stack / ai-ml / dev-ops) — track is now a doctrine-routing
+%%  label, not a file choice, so any track (including robotics/autonomy) fills
+%%  this same skeleton.
+%%
+%%  WHAT IS FIXED (do not change): header (\name, \contact) and Education.
+%%  WHAT GETS FILLED: Experience entries, Projects entries, Technical Skills.
+%%
+%%  rSectionEntry signature — 5 positional params, ALWAYS supply all 5 braces:
+%%     {1 name}{2 dates}{3 tagline/role/link}{4 technologies}{5 location}
+%%     - param 4 (technologies) renders after the name with a " | " separator;
+%%       leave it {} for experiences, fill it for projects (the tech-stack line).
+%%     - any unused param is an empty {}.
+%%  rSet signature — {1 bucket label}{2 comma-separated items}.
+%%
+%%  PATH NOTE: this template sits at resume/applications/template.tex, beside
+%%  template.cls, so the class path is just `template`. On copy into
+%%  applications/{year}/{company}/{role}/, the orchestrator rewrites it to
+%%  ../../../template (three levels up to applications/, where template.cls lives).
+%% ============================================================================
+
+\documentclass[
+	11pt
+]{../../../template}
+
+\name{Vedant Desai}
+\contact{(248) $\hspace{-0.1em}$ 704 $\hspace{-0.4em}$ -- $\hspace{-0.4em}$ 4852 \\ verdent06@gmail.com \\ \href{https://github.com/Verdent06}{github.com/Verdent06} \\ \href{https://linkedin.com/in/vedantde06}{linkedin.com/in/vedantde06}}
+
+\begin{document}
+
+	% ---- EDUCATION (fixed; writer does not modify) --------------------------
+	\begin{rSection}{E}{ducation}
+		\begin{rSectionEntry}
+			{University of Michigan}
+			{Expected May 2028}
+			{B.S. in Computer Science and Economics}
+			{}
+			{Ann Arbor, MI}
+
+			\item \textbf{GPA:} 3.66 / 4.0
+			\item \textbf{Coursework:} Data Structures \& Algorithms, Intro to Statistics and Data Analysis, Microeconomics, Macroeconomics, Discrete Mathematics, Calculus III, Physics (Mechanics)
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- EXPERIENCE (writer fills from context.md pool) ---------------------
+	% Order by impact density for THIS role, not chronology (see resume.md I.3).
+	% First bullet of each entry is the hook: lead with the problem/outcome,
+	% not the technology (see resume.md I.4). 2-3 bullets per experience.
+	\begin{rSection}{E}{xperience}
+		\begin{rSectionEntry}
+			{Michigan Data Consulting (MDC)}
+			{Jan 2026 -- May 2026}
+			{Data Engineer --- Michigan Campaign Finance Network}
+			{}
+			{Ann Arbor, MI}
+
+			\item Replaced manual Michigan campaign-finance research --- portal searches capped by the Bureau of Elections, irregular Excel exports, hand normalization at $\sim$2 hours per committee --- with a Requests + Pandas ETL that ingests filings directly, eliminating $\sim$800 hours of manual pulls across 400 tracked PACs.
+			\item Architected a deterministic aggregation engine that parses those exports, normalizes irregular contribution amounts, and ranks PACs by total funding volume so researchers stop rebuilding spreadsheets to surface top spenders.
+			\item Delivered a production Flask REST API on AWS EC2 as the sole engineer on a 5-month MCFN contract, wiring ingested data and PAC rankings into the nonprofit's public-facing research workflow.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Lyndbrook Capital}
+			{Feb 2026 -- Apr 2026}
+			{Data Engineering Consultant}
+			{}
+			{Remote}
+
+			\item Contracted pre-LOI to build acquisition intelligence for a boutique search fund targeting water utility operators; aggregated EPA ECHO and MassGIS regulatory data into a unified PWSID entity database and delivered 800+ validated Day-1 acquisition targets within the engagement window.
+			\item Automated off-market deal sourcing by aggregating 2,500+ legal entities from EPA compliance databases and cross-referencing Google Maps API data to surface unlisted acquisition targets, eliminating 15 hours of manual prospecting per week for the fund's Principal.
+			\item Built a Review Velocity scoring algorithm that proxied fleet expansion and operational scale from public compliance data, filtering 800 acquisition targets down to a 280-lead qualified shortlist --- a 35\% precision rate against the fund's revenue criteria.
+		\end{rSectionEntry}
+
+		\begin{rSectionEntry}
+			{Vylet}
+			{May 2026 -- Present $\vert$ \href{https://vyletdata.com}{vyletdata.com}}
+			{Founder --- Automated lead-sourcing platform for PE/search-fund; live product generating \$1,500 MRR across three clients}
+			{}
+			{}
+
+			\item Launched Vylet, automating a $\sim$30-minute manual process per business into a Dockerized LangGraph pipeline generating 30 scored leads in 30 minutes --- a 30x speedup --- with Redis/Celery workers on a recurring cycle.
+			\item Architected a custom asyncpg Data Access Layer storing Gemini embeddings alongside source records; engineered injection-safe SQL timestamp validation that detects stale entries and triggers automatic re-scrapes, keeping the lead database fresh without manual intervention.
+		\end{rSectionEntry}
+
+	\end{rSection}
+
+	% ---- PROJECTS (writer fills from context.md pool) -----------------------
+	% 1-2 bullets each. Tech-stack line goes in param 4 (derived from the bullets
+	% selected for this project). Optional live link goes in param 3 as \href.
+	\begin{rSection}{P}{rojects}
+		\begin{rSectionEntry}
+			{SignalWeaver}
+			{\href{https://github.com/Verdent06/SignalWeaver}{github.com/Verdent06/SignalWeaver}}
+			{Multi-signal financial research platform combining fundamentals, macro indicators, and news sentiment (research assistant; not investment advice)}
+			{React, TypeScript, FastAPI, PostgreSQL}
+			{}
+
+			\item Built a React/TypeScript dashboard for composite scores and fundamental/sentiment/macro breakdowns; used it to analyze 90 distinct tickers with scores persisted to Postgres for history views.
+			\item Served composite financial-research scores through async REST endpoints (FastAPI) wrapping fundamentals, MPNet sentiment, and regression logic, instrumented end-to-end at 9.1s p50 / 15.2s p99 across 90 successful runs on 90 tickers.
+		\end{rSectionEntry}
+	\end{rSection}
+
+	% ---- TECHNICAL SKILLS (writer picks 3-5 buckets from context.md) --------
+	% ~80 char limit per line after the label. Trim tail items to fit; promote a
+	% tail item only if it is a hard ATS keyword from the JD (see resume.md I.5).
+	\begin{rSection}{T}{echnical Skills}
+		\begin{rSet}{Languages}{Python, SQL}
+		\end{rSet}
+		\begin{rSet}{AI / ML}{Pandas, LangGraph}
+		\end{rSet}
+		\begin{rSet}{Frameworks}{Flask, React, FastAPI}
+		\end{rSet}
+		\begin{rSet}{Databases}{PostgreSQL, Redis}
+		\end{rSet}
+		\begin{rSet}{Cloud \& Infrastructure}{AWS (EC2), Docker, Celery}
+		\end{rSet}
+	\end{rSection}
+
+\end{document}

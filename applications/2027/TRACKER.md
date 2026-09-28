@@ -221,7 +221,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Boston Scientific | Data Science Co-op — Spring or Summer 2027 | 2026-09-18 | Applied | ai-ml+medical-device-manufacturing/process-development-analytics | 8.0 |
 | Smith+Nephew | Intern AI Center of Excellence Data Science | 2026-09-18 | Applied | ai-ml | 8.0 |
 | Collier Aerospace | AI Feature Development Intern - NCSG (Summer 2027) | 2026-09-18 | Applied | ai-ml+aerospace-CAE/HyperX-.NET | 8.0 |
-| Centene | Data and Analytics Summer 2027 Intern (Undergraduate) | 2026-09-19 | Applied | ai-ml+managed-care-payer | 10.0 |
+| Centene | Data and Analytics Summer 2027 Intern (Undergraduate) | 2026-09-19 | Interviewing | ai-ml+managed-care-payer | 10.0 |
 | MetOx International | Data Science Intern (Spring 2027) | 2026-09-19 | Applied | ai-ml+industrial / manufacturing operations analytics on HTS production | 8.0 |
 | CME Group | Software Engineering Internship - Summer 2027 | 2026-09-19 | Applied | full-stack+ultra-low-latency/electronic-trading | 8.0 |
 | Together AI | Software Engineer Intern (Summer 2027) | 2026-09-19 | Applied | full-stack+ml-infra / AI-native-cloud / inference-infra | 9.0 |
@@ -312,6 +312,46 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Rockwell Automation | Intern, AI Software Engineering (June-August 2027) | 2026-09-26 | Applied | ai-ml+industrial-automation-software | 9.0 |
 | Cencora | Software Intern | 2026-09-26 | Applied | full-stack+warehouse-automation/pharma-distribution-MHE | 5.0 |
 | Pacific Life | Summer 2027 Data Engineering Internship | 2026-09-26 | Applied | ai-ml | 10.0 |
+| Adobe | 2027 Intern - Machine Learning Engineer | 2026-09-01 | Applied | ai-ml | 9.0 |
+| Atlassian | Software Engineer Intern, 2027 Summer U.S. | 2026-09-02 | Applied | full-stack | 10.0 |
+| C3 AI | Software Engineer Intern (Summer 2027) | 2026-09-01 | Applied | full-stack+enterprise-AI-platform | 10.0 |
+| The Walt Disney Company | Software Engineering Intern, Spring 2027 | 2026-08-31 | Applied | full-stack+contact-center / Disney Experiences guest-support web apps | 5.0 |
+| DraftKings | Software Engineer Intern (Summer 2027) | 2026-09-01 | Applied | full-stack+consumer sports-tech / regulated iGaming / real-time sportsbook platform | 10.0 |
+| Eulerity | Backend Developer Intern | 2026-09-02 | Applied | full-stack+marketing-automation / agentic-marketing | 5.0 |
+| Fab2 | Fab Software Engineering Intern - Winter | 2026-08-31 | Applied | full-stack+software-defined-fab / hardware-adjacent process-control | 8.0 |
+| Garmin | Software Engineer Intern — Summer 2027 (Chandler, AZ) | 2026-09-01 | Applied | full-stack+embedded/consumer-hardware/C++-systems/aviation | 9.0 |
+| GE Aerospace | Applied AI Engineer Intern – Summer 2027 (May/June Start) | 2026-08-31 | Applied | ai-ml | 7.0 |
+| General Matter | Summer 2027 Internship - Embedded Software Engineering | 2026-09-03 | Applied | full-stack+nuclear-enrichment / safety-critical embedded-adjacent | 8.0 |
+| Google | Software Engineering Intern, BS, Summer 2027 | 2026-09-01 | Applied | full-stack+large-scale/distributed-systems | 8.0 |
+| Hadrian | Data Science/ Data Engineer Intern | 2026-09-03 | Applied | ai-ml | 8.0 |
+| Hadrian | Software Engineer Intern | 2026-09-03 | Applied | full-stack+autonomous-factory/aerospace-defense-manufacturing | 9.0 |
+| Hermeus | Software Engineering Intern (HIL) — Spring/Summer 2027 | 2026-09-02 | Applied | robotics | 5.0 |
+| Hermeus | Software Engineering Intern (Modeling & Simulation) | 2026-09-02 | Applied | robotics | 4.0 |
+| The Home Depot | 2027 Summer Internship - Data Science & Analytics | 2026-09-01 | Applied | ai-ml | 9.0 |
+| The Home Depot | 2027 Summer Internship - Software Engineering | 2026-09-01 | Applied | full-stack | 6.0 |
+| HP IQ | Software Engineer Intern, Cloud Services | 2026-09-01 | Applied | full-stack+device-cloud / AI-hardware ecosystem | 9.0 |
+| Huntington | Summer 2027 Data and Analytics Internship | 2026-08-31 | Applied | ai-ml+super-regional bank / retail+commercial banking / Midwest fintech-adjacent | 9.0 |
+| Intel | Software Engineering - Intern, Bachelor's | 2026-09-03 | Applied | full-stack+semiconductor/silicon-adjacent | 9.0 |
+| Johnson & Johnson | Quality Data Science Co-op- Spring 2027 | 2026-08-31 | Applied | ai-ml+medical-device-quality | 10.0 |
+| K2 Space | Software Engineering Intern – Summer 2027 | 2026-09-01 | Applied | full-stack+high-power satellite flight software / real-time / fault-tolerant / mission-critical | 7.0 |
+| Medline | Software Engineering Intern - Summer 2027 | 2026-09-02 | Applied | full-stack+healthcare-supply-chain/WMS+e-commerce | 9.0 |
+| Momentive | Summer 2027 Intern - Enterprise Reporting & Analytics - Data Science | 2026-09-03 | Applied | ai-ml | 10.0 |
+| Nike | NIKE, Inc. Software Engineering Undergraduate Internship | 2026-09-01 | Applied | full-stack | 8.0 |
+| Northern Trust | Technology Intern – Data Science and Analytics | 2026-09-02 | Applied | ai-ml | 8.0 |
+| Northern Trust | Technology Intern – Software Engineering | 2026-09-02 | Applied | full-stack+fintech-backend / custody-wealth asset-servicing platforms | 8.0 |
+| Northwood Space | Software Engineering Intern (2027 Summer Internship) | 2026-08-31 | Applied | full-stack+space-infra / phased-array ground-station network / data-plane / distributed systems / networking | 9.0 |
+| Qorvo | Full-Stack Web Developer Intern | 2026-08-31 | Applied | full-stack+RF/power semiconductor / HPA engineering-docs platform | 9.0 |
+| Remarcable | Full Stack Developer (Student Co-op) | 2026-09-02 | Applied | full-stack | 9.0 |
+| RSM US LLP | Enterprise Data Integration and Migration Consulting Intern – Summer 2027 | 2026-09-03 | Applied | full-stack+consulting/client-facing-EDIM | 10.0 |
+| RTX / Raytheon ASDS (Aurora) | Software Engineering Intern (Summer 2027) | 2026-09-01 | Applied | full-stack+satellite-ground/space-C2/DevSecOps-AWS | 5.0 |
+| Sierra | Intern, Agent Development (Summer 2027) | 2026-09-01 | Applied | full-stack+production AI agents for enterprise customer experience | 8.0 |
+| Southwest Airlines | Spring 2027 Software Engineering Internships | 2026-09-01 | Applied | full-stack+airline operations / mission-critical ops + enterprise integrations | 9.0 |
+| Steel Dynamics | Software Development Intern | 2026-09-02 | Applied | full-stack | 6.0 |
+| Stripe | Software Engineer, Intern (Summer or Winter) | 2026-09-01 | Applied | full-stack+fintech-backend | 10.0 |
+| Transcard Payments | 2027 - Artificial Intelligence Intern | 2026-09-03 | Applied | ai-ml | 9.0 |
+| Universal Health Services (UHS) | Software Engineer Intern — Data Analytics | 2026-09-02 | Applied | ai-ml+hospital-IS / healthcare operations analytics | 10.0 |
+| United Airlines | Intern - Tech Ops Analytics & Business Intelligence (Summer 2027) | 2026-09-03 | Applied | ai-ml+airline-tech-ops-maintenance-analytics | 9.0 |
+| Waymo | 2027 Summer Intern, MS/PhD, Data Science - Commercialization Testing | 2026-09-01 | Applied | ai-ml+autonomy | 3.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -319,6 +359,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 303
-- **Interviews:** 0
+- **Total applied:** 343
+- **Interviews:** 1
 - **Offers:** 0
