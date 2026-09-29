@@ -352,6 +352,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Universal Health Services (UHS) | Software Engineer Intern — Data Analytics | 2026-09-02 | Applied | ai-ml+hospital-IS / healthcare operations analytics | 10.0 |
 | United Airlines | Intern - Tech Ops Analytics & Business Intelligence (Summer 2027) | 2026-09-03 | Applied | ai-ml+airline-tech-ops-maintenance-analytics | 9.0 |
 | Waymo | 2027 Summer Intern, MS/PhD, Data Science - Commercialization Testing | 2026-09-01 | Applied | ai-ml+autonomy | 3.0 |
+| Verizon Communications | Network and Technology: Data Science Summer 2027 Internship | 2026-09-29 | Applied | ai-ml+telecom/fiber-field-ops | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -359,6 +360,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 343
+- **Total applied:** 344
 - **Interviews:** 1
-- **Offers:** 0
+- **Offers:** 0 |
