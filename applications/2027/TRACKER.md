@@ -354,6 +354,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Waymo | 2027 Summer Intern, MS/PhD, Data Science - Commercialization Testing | 2026-09-01 | Applied | ai-ml+autonomy | 3.0 |
 | Verizon Communications | Network and Technology: Data Science Summer 2027 Internship | 2026-09-29 | Applied | ai-ml+telecom/fiber-field-ops | 8.0 |
 | Verizon Communications | Business Intelligence Intern — Fiber Engineering & Operations (Summer 2027) | 2026-09-29 | Applied | ai-ml | 10.0 |
+| Verizon Communications | Data Scientist Intern — Fiber Engineering & Operations (Irving V Teamer / R-1101386) | 2026-09-29 | Applied | ai-ml+telecom/fiber-field-ops | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -361,6 +362,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 345
+- **Total applied:** 346
 - **Interviews:** 1
-- **Offers:** 0 |
+- **Offers:** 0
