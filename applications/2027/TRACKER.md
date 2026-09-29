@@ -353,6 +353,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | United Airlines | Intern - Tech Ops Analytics & Business Intelligence (Summer 2027) | 2026-09-03 | Applied | ai-ml+airline-tech-ops-maintenance-analytics | 9.0 |
 | Waymo | 2027 Summer Intern, MS/PhD, Data Science - Commercialization Testing | 2026-09-01 | Applied | ai-ml+autonomy | 3.0 |
 | Verizon Communications | Network and Technology: Data Science Summer 2027 Internship | 2026-09-29 | Applied | ai-ml+telecom/fiber-field-ops | 8.0 |
+| Verizon Communications | Business Intelligence Intern — Fiber Engineering & Operations (Summer 2027) | 2026-09-29 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -360,6 +361,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 344
+- **Total applied:** 345
 - **Interviews:** 1
 - **Offers:** 0 |

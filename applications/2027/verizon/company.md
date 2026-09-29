@@ -34,7 +34,7 @@ Verizon Communications Inc. (NYSE: **VZ**) is a U.S. wireless, fiber, and enterp
 ## Sibling (do not mix)
 
 - **This packet:** Workday **R-1101384** **Verizon Network and Technology: Data Science Summer 2027 Internship**, Fiber Engineering & Operations, Irving TX, close **2026-10-03**
-- **Not this packet:** Irving V Teamer for a Day **R-1101386** (close 2026-10-01); NT Business Intelligence intern **R-1101387**; Consumer Group AI/ML Engineering intern **R-1100605** (Basking Ridge; $27/hr analog)
+- **Not this packet:** Irving V Teamer for a Day **R-1101386** (close 2026-10-01); NT Business Intelligence intern **R-1101387** (`applications/2027/verizon/business-intelligence-intern/`); Consumer Group AI/ML Engineering intern **R-1100605** (Basking Ridge; $27/hr analog)
 
 ## Sources
 
