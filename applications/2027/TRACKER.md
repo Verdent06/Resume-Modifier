@@ -362,6 +362,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Acuity Inc. | Finance AI Engineering Intern - Onsite | 2026-09-30 | Applied | ai-ml+industrial-tech finance-transformation / lighting + intelligent-spaces (ABL/AIS) | 9.0 |
 | Q2 Software, Inc. | 2027 Summer Internship - Software Engineer | 2026-09-30 | Applied | full-stack+fintech-backend/digital-banking-platform | 10.0 |
 | Q2 Software, Inc. (Q2 Holdings) | 2027 Summer Internship - Machine Learning Engineer | 2026-09-30 | Applied | ai-ml | 8.0 |
+| Q2 Software, Inc. | 2027 Summer Internship - Data Science | 2026-09-30 | Applied | ai-ml+fintech-backend | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -369,6 +370,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 353
+- **Total applied:** 354
 - **Interviews:** 1
 - **Offers:** 0
