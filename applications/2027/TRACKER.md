@@ -356,6 +356,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Verizon Communications | Business Intelligence Intern — Fiber Engineering & Operations (Summer 2027) | 2026-09-29 | Applied | ai-ml | 10.0 |
 | Verizon Communications | Data Scientist Intern — Fiber Engineering & Operations (Irving V Teamer / R-1101386) | 2026-09-29 | Applied | ai-ml+telecom/fiber-field-ops | 9.0 |
 | Perchwell | Data Analytics Engineering Intern | 2026-09-30 | Applied | ai-ml | 8.0 |
+| Iridium Communications | Iridium Software Engineering Internship – Summer 2027 | 2026-09-30 | Applied | full-stack+satellite-comms / LEO ground-systems / mission-critical network software | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -363,6 +364,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 347
+- **Total applied:** 348
 - **Interviews:** 1
 - **Offers:** 0
