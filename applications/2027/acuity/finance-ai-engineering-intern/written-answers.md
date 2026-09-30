@@ -18,7 +18,7 @@ SSO: https://career4.successfactors.com (company **AcuityBrands**, `career_job_r
 
 Resume: `applications/2027/acuity/finance-ai-engineering-intern/Vedant Desai Resume.pdf`
 
-**SHA-256:** `2ab8b672245397c9ab20dc62a932a5a46844c815d6a1b8ee82479b85671efb6b`
+**SHA-256:** `78fea496dd2fa2701be15633ce123d0d32dbce0ac47aa46e586ea8e35adc8e4b`
 
 Posted **2026-09-29** (`itemprop=datePosted`). Apply now (`recruiting.md` §8 first wave). Comp unpublished on this req (sibling intern JDs **$36,000–$64,800** annualized **[directional, other reqs — do not print as this req's pay]**). Airtable **`rec9iaJoE8fSzOQVP`**.
 
