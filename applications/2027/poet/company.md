@@ -1,40 +1,56 @@
 # POET
 
-POET is a privately held bioethanol and sustainable-bioproducts company (Broin lineage; founded **1987**). It is the world's largest producer and marketer of bioethanol (JD) and a leader in plant-based alternatives to fossil fuels. Corporate copy on sibling intern JDs: **34** bioprocessing facilities across **eight** states, **more than 2,400** team members, **more than 140** patents, and bioproducts that include high-quality animal feed, corn oil, green asphalt rejuvenator, purified alcohol, and renewable CO2. HQ is **4615 North Lewis Avenue, Sioux Falls, SD 57104**. Third-party **~$8B** annual revenue **[directional, sibling intern JDs]**. This intern is Workday **R101787** **Data Engineering Intern - Summer 2027** on the Data Engineering team — plant-sensor, commodity-market, financial, and logistics data — **not** Process Engineering Intern **R101679**, **not** Research Intern **R101732**, **not** Finance Intern **R101668**, and **not** Procurement Intern **R101756**.
+POET is a privately held bioethanol / bioprocessing company (founded **1987**, Scotland, SD; founder & CEO **Jeff Broin**; Broin lineage; legal names include POET, LLC / POET Biorefining). Official about page and sibling intern JDs: world’s largest producer and marketer of bioethanol and a leader in sustainable bioproducts; HQ **4615 North Lewis Avenue, Sioux Falls, SD 57104**; **34–35** Midwest bioprocessing facilities across **eight** states; three corporate offices; four terminals; **~2,400–2,600** team members; **>140** U.S. patents. Products: bioethanol, distillers grains / animal feed, corn fermented protein, distillers corn oil, bioCO2 / dry ice, purified alcohol, asphalt rejuvenator. Third-party **~$8B** annual revenue **[directional]**. Sioux Falls HQ houses Design & Construction, public affairs, research, and bioproducts sales/marketing. Wichita, KS handles biofuels distribution / POET Pure Line.
+
+**Two 2027 Never Satisfied intern packets under this folder — do not mix:**
+
+1. **This SWE packet:** Workday **R101786** **Software Developer Intern - Summer 2027** — Sioux Falls software engineering team; custom in-house applications, bugs, integrations, SDLC with analysts and business partners. Folder: `software-developer-intern/`.
+2. **DE sibling:** Workday **R101787** **Data Engineering Intern - Summer 2027** — pipelines over plant-sensor, commodity-market, financial, and logistics data. Folder: `data-engineering-intern/`.
+
+Neither is Process Engineering Intern **R101679**, Research Intern **R101732**, Finance Intern **R101668**, Procurement Intern **R101756**, the Never Satisfied Scholarship, a Wichita logistics intern, or FTE Developer I.
 
 ## Quick Facts
 
-- **Tier:** C-tier (`reference/companies.md` — largest bioethanol producer; legitimate Never Satisfied intern program; limited national SWE brand. Peer of Jabil DE / CHS DA / Gulfstream intern)
-- **HQ / offices:** Sioux Falls, SD HQ. This intern: **onsite Sioux Falls** open-concept office. Also Wichita, KS and bioprocessing sites (`poet.com/neversatisfied`)
-- **Valuation / signal:** Privately held (no public 10-K). World's largest bioethanol producer (JD). **34** plants / **8** states / **>2,400** team members / **>140** patents (sibling intern JDs). Third-party **~$8B** revenue **[directional]**
-- **Product focus:** Bioethanol + bioproducts. This intern is **applied data engineering** over industrial plant sensors, commodity markets, financial systems, and logistics — not process engineering, not lab research, not finance modeling
-- **Intern comp (2027 Data Engineering Intern, R101787):** unlisted on this req. C-tier intern **$22–38/hr** band. Glassdoor sibling Sioux Falls intern estimates **$36k–$59k** annualized **[directional]**. Official: competitive wage by discipline, years of education, and experience; interns are **not** on the traditional benefit package (wellness / on-site fitness / cold-weather gear listed)
-- **Work model:** Paid **FULL_TIME** intern (Workday `timeType`). **On-site Sioux Falls, SD.** Never Satisfied program: **10–12 weeks** from mid- to late May; plant tours, networking, intern presentation to leadership. Posted **2026-09-30** (`startDate`; JSON-LD `datePosted` **2026-09-30**; campus boards: recruitment began **2026-09-28**, listing expires **2027-01-01**). Interns **selected by November 1**
-- **Clearance / eligibility:** Currently pursuing Associate's or Bachelor's in Computer Science, Information Systems, Data Science, Engineering, or related. **No GPA and no visa line on this JD.** Official intern FAQ: freshman–senior; good academic standing; **legally entitled to work in the US** (international students eligible only if already authorized; student obtains visa). US citizen clears. **Not** Process Engineering / Research / Finance / Procurement intern siblings
+- **Tier:** C-TIER (`reference/companies.md`) — legitimate Never Satisfied intern program; limited national SWE brand. SWE intern peers Plastipak / Arconic IT Applications; DE intern peers Jabil DE / CHS DA
+- **HQ / offices:** **4615 North Lewis Avenue, Sioux Falls, SD 57104**. Also Wichita, KS. Both IT interns: **Sioux Falls onsite only** (not remote)
+- **Valuation / signal:** Private; no audited public 10-K. Official: ~2,400–2,600 team members; 34–35 plants; >140 patents. LinkedIn / sibling JDs directional **~$8B** revenue
+- **Product focus (R101786):** Custom enterprise / operations applications — features, bugs, integrations, SDLC with application analysts and business partners
+- **Intern comp (2027 Software Developer Intern, R101786):** Unlisted. C-tier intern $22–38/hr band. Official intern FAQ: competitive wage by discipline, years of education, and prior experience; no traditional benefits; wellness + on-site fitness / cold-weather gear reimbursements. Glassdoor sibling Sioux Falls intern estimates **$36k–$59k** annualized **[directional]**
+- **Work model:** Paid Never Satisfied Internship; **Summer 2027**; **full time**; **onsite Sioux Falls**. Program FAQ: mid- to late May, **10–12 weeks**; intern orientation + Never Satisfied Summit; present to POET leadership. Posted **2026-09-30**. Centre College mirror: recruitment began **2026-09-28**, listing expires **2027-01-01**. JD: interns selected by **November 1st**
+- **Clearance / eligibility (R101786):** High school diploma or equivalent; currently pursuing CS / software engineering / MIS / related. Live JD prints **no** GPA, class-year, or visa line. Program FAQ: freshman–senior at an accredited 2- or 4-year school; good academic standing; legally entitled to work in the US (international students must obtain their own visa). **US citizen; no sponsorship needed**
 
 ## Interview Process
 
 | Stage | Format | Notes |
 | ----- | ------ | ----- |
-| Resume screen | Human + Workday ATS (`poet.wd1` / `POET`) | Bottleneck. Req **R101787**. `includeResumeParsing: true`. `questionnaireId` `16d5b562c17410019d7dff2241910000` (HTTP **406** without an account). Apply in the first wave (`recruiting.md` Part II §8) — selected by **November 1** |
-| Recruiter / hiring manager | Phone | Official intern FAQ: applications reviewed in the fall; qualified candidates contacted by a POET recruiter or hiring manager; selected candidates **interviewed by phone**; offers typically by year-end |
-| On-campus (optional) | Campus interview | FAQ: POET may hold on-campus interviews at select schools; UMich is **not** named. Still apply on Workday |
-| Behavioral | Filter round | Teamwork / ask questions / customer-service mindset on the JD — not a culture-fit differentiator (`recruiting.md` §6) |
+| Resume screen | Workday ATS (`poet.wd1` / **POET**; `includeResumeParsing: true`; `questionnaireId` `16d5b562c17410019d7dff2241910000`) | Mid-size / non-tech-tech is resume-first (`recruiting.md` Part I §5). Posted 2026-09-30 — first wave (`recruiting.md` Part II §8). Selection target **Nov 1** |
+| Recruiter / HM | Phone | Official intern FAQ: apps reviewed in the fall; qualified candidates contacted by recruiter or HM; phone interview; offers typically by year-end |
+| Technical | Unpublished intern loop | C-tier industrial analog (Plastipak / Arconic / Howmet): Easy project walk + STAR. Do **not** invent HackerRank/CodeSignal |
+| Behavioral | Filter throughout | Mentor, business-partner translation, ask-for-help (`recruiting.md` §6) |
 
-**Estimated funnel:** Workday resume → phone interview · intern OA unpublished — do **not** invent HackerRank/CodeSignal · No intern sys design · Bottleneck: **resume** + Sioux Falls onsite relocate · ~15–25% **[directional, C-tier peer of Jabil DE / CHS DA / Gulfstream intern]**
+**Estimated funnel (R101786):** Workday resume → recruiter/HM phone → unpublished Easy project walk + STAR · intern OA unpublished · No intern sys design · Bottleneck: **resume** · ~20–30% **[directional, C-tier peer of Plastipak / Arconic IT Applications]**
 
 ## Stack & Hiring Signal
 
-- **Languages:** Required: **SQL** + relational databases. Preferred: **Python, SQL, PowerShell, C#, Java, or similar**. Candidate inventory overlap: **Python, SQL**. Do **not** invent PowerShell, C#, or Java.
-- **Domains:** Enterprise data engineering over **plant sensors, commodity markets, financial systems, logistics**. Pipelines, quality, automation, APIs, orchestration, documentation. Not ML research, not process engineering, not finance intern.
-- **What wins:** SQL and Python through use in ingest → transform / ETL → quality or validation → serve (API, database, or stakeholder consumer) with a witness metric; messy operational / Excel-source analog; automation of a manual data process; documentation / non-technical stakeholder analog. Resume is the gate (`recruiting.md`: mid-size / non-tech-tech is resume-first). Do not invent Snowflake, Databricks, Tableau, Copilot, Fusion, SCADA, or Microsoft Office as a technical skill.
+- **Languages (R101786):** **Interest in learning C# and .NET** (experience helpful, **not required**). **SQL** / relational databases (Microsoft SQL Server a plus). Web front-end + back-end. Visual Studio and source control as learning targets. FTE Developer I analog (Built In, Sioux Falls): .NET / C# / ASP.NET / Visual Studio, SQL, MVC / Blazor / .NET Core / Web APIs / JavaScript plus — company intel, not intern knockouts. **Do not invent** C#, .NET, ASP.NET, SQL Server, Visual Studio, Blazor, MVC, Snowflake, Databricks, Tableau, Copilot, Fusion, plant-floor OT/PLC.
+- **Domains:** Bioethanol enterprise / operations software at Sioux Falls HQ — custom apps, integrations, bug/support work with analysts and end users. Not FAANG product eng, not a bioprocess/chemistry intern, not the DE intern sibling.
+- **What wins:** Full-stack web/enterprise SWE through use (SQL, HTML/CSS, JS-family/React, Git/CI, shipped apps, testing) plus evidence of translating a business process into software, investigating a defect, and documenting/shipping — without claiming C#/.NET/SQL Server. C# absence is not an emergency if TypeScript/Python/SQL are demonstrated in bullets. Resume is the intern gate (`recruiting.md` Part I §5 mid-size / non-tech-tech; Part II §8 intern knockouts). Dual CS + Economics, GPA 3.66, Expected May 2028, US citizen / no-sponsor, Sioux Falls onsite yes.
+
+## Sibling (do not mix)
+
+- **This packet:** Workday **R101786** **Software Developer Intern - Summer 2027**, Sioux Falls HQ software engineering team (`software-developer-intern/`).
+- **DE sibling:** Workday **R101787** **Data Engineering Intern - Summer 2027** (`data-engineering-intern/`).
+- **Not this packet:** Never Satisfied **Scholarship**. Wichita distribution / POET Pure Line intern. Process Engineering **R101679** / Research **R101732** / Finance **R101668** / Procurement **R101756**. FTE **Developer I**. Plant-floor OT/PLC.
 
 ## Sources
 
-- JD: https://poet.wd1.myworkdayjobs.com/POET/job/Sioux-Falls-SD/Data-Engineering-Intern_R101787 (Workday **R101787**)
-- Never Satisfied intern FAQ (term, class-year, work-auth, phone interview): https://poet.com/neversatisfied
-- Campus board expire **2027-01-01** / recruitment began **2026-09-28**: https://careers.centre.edu/jobs/poet-r101787-data-engineering-intern/
-- HQ: https://www.cbinsights.com/company/poet-2
-- Sibling intern JDs (34 plants / 8 states / >2,400 / >140 patents / ~$8B **[directional]**): Finance Intern **R101668**, Process Engineering Intern **R101679**
-- `reference/companies.md` C-tier POET row
-- `reference/recruiting.md` Part I §5 (mid-size / non-tech-tech resume-first); Part II §8 (intern eligibility/timing); Part III §13 (applied ML/data: ship pipelines); §6 (behavioral as filter)
+- SWE JD / apply: https://poet.wd1.myworkdayjobs.com/POET/job/Sioux-Falls-SD/Software-Developer-Intern_R101786-1 (Workday **R101786**; CXS extracted 2026-09-30)
+- SWE CXS: https://poet.wd1.myworkdayjobs.com/wday/cxs/poet/POET/job/Sioux-Falls-SD/Software-Developer-Intern_R101786-1
+- DE sibling: https://poet.wd1.myworkdayjobs.com/POET/job/Sioux-Falls-SD/Data-Engineering-Intern_R101787
+- Intern program: https://poet.com/neversatisfied
+- About: https://poet.com/about
+- HQ address: https://www.cbinsights.com/company/poet-2
+- Centre College SWE mirror (expire **2027-01-01**): https://careers.centre.edu/jobs/poet-r101786-software-developer-intern/
+- Built In Developer I analog: https://builtin.com/job/developer-i/10192670
+- `reference/companies.md` C-TIER POET rows (R101786 SWE + R101787 DE)
+- `reference/recruiting.md` Part I §1 / §5 (knockouts; mid-size resume-first), Part II §8 (intern eligibility/timing), Part III §11 (general SWE / full-stack)

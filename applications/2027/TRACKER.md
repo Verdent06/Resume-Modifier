@@ -370,6 +370,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Itron, Inc. | Intern - Data Science, Distributed Intelligence | 2026-09-30 | Applied | ai-ml | 10.0 |
 | MFS | Spring 2027 Jr Software Engineer Co-op (January - June) | 2026-09-30 | Applied | full-stack+asset-management-IT / LCERM | 9.0 |
 | H&R Block | Financial Services Data Analytics Intern — Kansas City MO — Summer 2027 | 2026-09-30 | Applied | ai-ml | 10.0 |
+| POET | Software Developer Intern - Summer 2027 | 2026-09-30 | Applied | full-stack+bioethanol-enterprise-ops-software | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -377,6 +378,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 361
+- **Total applied:** 362
 - **Interviews:** 1
 - **Offers:** 0
