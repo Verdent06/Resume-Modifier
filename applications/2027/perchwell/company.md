@@ -32,7 +32,8 @@ Perchwell is the modern residential real-estate listings, data, and workflow pla
 
 ## Sources
 
-- JD: https://jobs.ashbyhq.com/Perchwell/9d34fc9d-e235-44fc-bdf9-42e75223839a (Ashby **`9d34fc9d-e235-44fc-bdf9-42e75223839a`**)
+- JD (this file's intern): https://jobs.ashbyhq.com/Perchwell/9d34fc9d-e235-44fc-bdf9-42e75223839a (Ashby **`9d34fc9d-e235-44fc-bdf9-42e75223839a`** Data Analytics Engineering Intern)
+- SWE intern twin (do not mix): https://jobs.ashbyhq.com/Perchwell/194eec78-26db-4d8e-850f-a99ea2733e9f · packet `applications/2027/perchwell/software-engineer-intern/`
 - Built In NYC mirror: https://www.builtinnyc.com/job/data-analytics-engineering-intern/11417756
 - Press kit: https://www.perchwell.com/about/press-kit (founded 2015, NYC HQ, MLS/brokerage platform)
 - Series A: https://www.perchwell.com/blog/perchwell-raises-15-million-series-a-to-scale-its-real-estate-data-and-workflow-platform-nationally (Founders Fund, Dec 2021; REBNY RLS)
