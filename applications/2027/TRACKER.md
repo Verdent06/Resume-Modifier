@@ -360,6 +360,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Enova | Software Engineer Internship Summer 2027 (Hybrid) | 2026-09-30 | Applied | full-stack+fintech-backend | 9.0 |
 | Acuity Inc. | Finance AI Engineering Intern - Onsite | 2026-09-30 | Applied | ai-ml+industrial-tech finance-transformation / lighting + intelligent-spaces (ABL/AIS) | 9.0 |
 | Q2 Software, Inc. | 2027 Summer Internship - Software Engineer | 2026-09-30 | Applied | full-stack+fintech-backend/digital-banking-platform | 10.0 |
+| Q2 Software, Inc. (Q2 Holdings) | 2027 Summer Internship - Machine Learning Engineer | 2026-09-30 | Applied | ai-ml | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -367,6 +368,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 351
+- **Total applied:** 352
 - **Interviews:** 1
 - **Offers:** 0
