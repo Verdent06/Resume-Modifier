@@ -365,6 +365,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Q2 Software, Inc. | 2027 Summer Internship - Data Science | 2026-09-30 | Applied | ai-ml+fintech-backend | 10.0 |
 | Westinghouse Electric Company | Software Developer Intern - Tools & Apps | 2026-09-30 | Applied | full-stack+nuclear-I&C-engineering-tools/safety-critical | 7.0 |
 | POET | Data Engineering Intern - Summer 2027 | 2026-09-30 | Applied | ai-ml | 10.0 |
+| Amca | Software Engineering Internship (Summer 2027) | 2026-09-30 | Applied | full-stack+manufacturing-software/factory-tools/document-digitization | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -372,6 +373,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 356
+- **Total applied:** 357
 - **Interviews:** 1
 - **Offers:** 0
