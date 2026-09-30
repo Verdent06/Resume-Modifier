@@ -369,6 +369,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 352
+- **Total applied:** 353
 - **Interviews:** 1
 - **Offers:** 0
