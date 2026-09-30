@@ -368,6 +368,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Amca | Software Engineering Internship (Summer 2027) | 2026-09-30 | Applied | full-stack+manufacturing-software/factory-tools/document-digitization | 8.0 |
 | MFS Investment Management | Spring 2027 Investment Data Engineer Co-op (January - June) | 2026-09-30 | Applied | ai-ml | 10.0 |
 | Itron, Inc. | Intern - Data Science, Distributed Intelligence | 2026-09-30 | Applied | ai-ml | 10.0 |
+| MFS | Spring 2027 Jr Software Engineer Co-op (January - June) | 2026-09-30 | Applied | full-stack+asset-management-IT / LCERM | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -375,6 +376,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 359
+- **Total applied:** 360
 - **Interviews:** 1
 - **Offers:** 0
