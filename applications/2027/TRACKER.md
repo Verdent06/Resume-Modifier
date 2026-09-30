@@ -359,6 +359,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Iridium Communications | Iridium Software Engineering Internship – Summer 2027 | 2026-09-30 | Applied | full-stack+satellite-comms / LEO ground-systems / mission-critical network software | 8.0 |
 | Enova | Software Engineer Internship Summer 2027 (Hybrid) | 2026-09-30 | Applied | full-stack+fintech-backend | 9.0 |
 | Acuity Inc. | Finance AI Engineering Intern - Onsite | 2026-09-30 | Applied | ai-ml+industrial-tech finance-transformation / lighting + intelligent-spaces (ABL/AIS) | 9.0 |
+| Q2 Software, Inc. | 2027 Summer Internship - Software Engineer | 2026-09-30 | Applied | full-stack+fintech-backend/digital-banking-platform | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -366,6 +367,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 350
+- **Total applied:** 351
 - **Interviews:** 1
 - **Offers:** 0
