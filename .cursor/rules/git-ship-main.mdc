@@ -1,0 +1,28 @@
+---
+description: Hard git ship rule for every Resume-Modifier packet — main only, never a branch or PR.
+globs:
+alwaysApply: true
+---
+
+# Git ship — main only (hard rule)
+
+Vedant / App Man require every application packet to land on **`main` only**.
+
+## Required
+- Commit packet files under `applications/` **directly to `main`**.
+- `git checkout main`, pull latest, commit, **`git push origin main`**.
+- Report the **commit SHA on main** and the folder path when done.
+
+## Forbidden
+- Do **not** create a feature/worktree/cloud branch (no `cursor/*`, no `agent/*`, no dated branches).
+- Do **not** open a pull request.
+- Do **not** leave the packet only on a side branch.
+
+## If the platform already put you on a side branch
+1. Finish the packet files locally.
+2. Checkout `main`, merge or cherry-pick your commits onto `main` (fast-forward preferred).
+3. Push `main`.
+4. Delete the side branch on the remote if you created it.
+5. Do **not** open a PR to finish — merging yourself onto `main` is the finish.
+
+Packets stay in the repo. Never email paste packs. Do not submit the job application from this agent.
