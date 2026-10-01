@@ -508,3 +508,10 @@ See grade.md for demerits, misreads, interview angles, and funnel odds.
 - Always run `scripts/validate.py check-report` before scoring; re-dispatch the grader on failure.
 - Keep `exempt_entries` honest and minimal — it is the one input that can soften the metric ceiling, and `scripts/validate.py` logs every exemption it applies.
 - Never pass `context.md` to the grader. Never edit doctrine files, `template.tex`, or `template.cls`.
+
+## Git ship (hard — App Man / Vedant)
+
+- Commit every packet **directly to `main`**. Push `origin main`. Report the main commit SHA.
+- **Never** create a feature/cloud branch. **Never** open a pull request.
+- If the Cursor platform already checked out a side branch: finish files, merge/cherry-pick onto `main`, push `main`, delete the side branch. Do not leave the packet only on a branch and do not open a PR.
+- See alwaysApply rule `.cursor/rules/git-ship-main.mdc`.
