@@ -373,6 +373,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | POET | Software Developer Intern - Summer 2027 | 2026-09-30 | Applied | full-stack+bioethanol-enterprise-ops-software | 9.0 |
 | Noblis | Summer 2027 - Data Science and Innovation Intern | 2026-10-01 | Applied | ai-ml+IC/federal-consulting/LMSS | 10.0 |
 | Muon Space | Flight Software Engineering Intern (Summer 2027) | 2026-10-01 | Applied | full-stack+aerospace/LEO-satellite/flight-software/real-time | 8.0 |
+| Patch My PC | Software Engineering Intern – Summer 2027 | 2026-10-01 | Applied | full-stack | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -380,6 +381,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 364
+- **Total applied:** 365
 - **Interviews:** 1
 - **Offers:** 0
