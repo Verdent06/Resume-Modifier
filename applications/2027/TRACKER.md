@@ -376,6 +376,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Patch My PC | Software Engineering Intern – Summer 2027 | 2026-10-01 | Applied | full-stack | 10.0 |
 | ITT | Data Analytics / AI Intern (Summer 2027) | 2026-10-01 | Applied | ai-ml | 10.0 |
 | Dallas Fort Worth International Airport | 2027 Undergraduate Summer Internship – Enterprise Data & Analytics | 2026-10-01 | Applied | ai-ml+airport-enterprise-analytics-CoE | 9.0 |
+| Dow Chemical Company | Data Engineer / Data Platform Engineer Intern — Champaign IL — Spring 2027 | 2026-10-01 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -383,6 +384,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 367
+- **Total applied:** 368
 - **Interviews:** 1
 - **Offers:** 0
