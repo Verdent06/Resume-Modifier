@@ -378,6 +378,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Dallas Fort Worth International Airport | 2027 Undergraduate Summer Internship – Enterprise Data & Analytics | 2026-10-01 | Applied | ai-ml+airport-enterprise-analytics-CoE | 9.0 |
 | Dow Chemical Company | Data Engineer / Data Platform Engineer Intern — Champaign IL — Spring 2027 | 2026-10-01 | Applied | ai-ml | 10.0 |
 | Assurant | Summer 2027 Intern: Software Engineering Intern | 2026-10-01 | Applied | full-stack+insurance-tech / connected-consumer protection / enterprise Agile application delivery | 10.0 |
+| Marvell | AI-Native Development Platform Engineer Intern, MS - Summer 2027 | 2026-10-01 | Applied | dev-ops | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -385,6 +386,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 369
+- **Total applied:** 370
 - **Interviews:** 1
 - **Offers:** 0
