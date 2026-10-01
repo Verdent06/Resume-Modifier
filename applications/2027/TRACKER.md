@@ -371,6 +371,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | MFS | Spring 2027 Jr Software Engineer Co-op (January - June) | 2026-09-30 | Applied | full-stack+asset-management-IT / LCERM | 9.0 |
 | H&R Block | Financial Services Data Analytics Intern — Kansas City MO — Summer 2027 | 2026-09-30 | Applied | ai-ml | 10.0 |
 | POET | Software Developer Intern - Summer 2027 | 2026-09-30 | Applied | full-stack+bioethanol-enterprise-ops-software | 9.0 |
+| Assurant | Summer 2027 Intern: Software Engineering Intern | 2026-10-01 | Applied | full-stack+insurance-tech / connected-consumer protection / enterprise Agile application delivery | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -378,6 +379,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 362
+- **Total applied:** 363
 - **Interviews:** 1
 - **Offers:** 0
