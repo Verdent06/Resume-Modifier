@@ -384,6 +384,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Intuit | Summer 2027: Business Data Analyst Intern, Strategy & Planning | 2026-10-02 | Applied | ai-ml+consumer-fintech Strategy & Planning | 9.0 |
 | SeatGeek | Data Analyst Intern (Summer 2027) | 2026-10-02 | Applied | ai-ml+live-events ticketing marketplace / fan+venue product analytics | 9.0 |
 | Glean | Software Engineer, Intern (Summer 2027) | 2026-10-02 | Applied | full-stack+work-AI/enterprise-search | 10.0 |
+| Riot Games | Software Engineering Intern - Summer 2027 (Remote) | 2026-10-02 | Applied | full-stack+live-game/player-facing-real-time | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -391,6 +392,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 375
+- **Total applied:** 376
 - **Interviews:** 1
 - **Offers:** 0
