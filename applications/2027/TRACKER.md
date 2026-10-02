@@ -379,6 +379,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Dow Chemical Company | Data Engineer / Data Platform Engineer Intern — Champaign IL — Spring 2027 | 2026-10-01 | Applied | ai-ml | 10.0 |
 | Assurant | Summer 2027 Intern: Software Engineering Intern | 2026-10-01 | Applied | full-stack+insurance-tech / connected-consumer protection / enterprise Agile application delivery | 10.0 |
 | Marvell | AI-Native Development Platform Engineer Intern, MS - Summer 2027 | 2026-10-01 | Applied | dev-ops | 10.0 |
+| SAS Institute | Summer 2027 - Software Development and Testing Intern | 2026-10-02 | Applied | full-stack+analytics/data-AI software platform (Viya)+product-quality/testing | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -386,6 +387,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 370
+- **Total applied:** 371
 - **Interviews:** 1
 - **Offers:** 0
