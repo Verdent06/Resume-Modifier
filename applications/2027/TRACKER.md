@@ -382,6 +382,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Pinterest | Software Engineer Intern 2027 (USA) | 2026-10-02 | Applied | full-stack+visual-discovery/recommendation-ML | 10.0 |
 | Corgan | Software Development Intern — Dallas, TX — Summer 2027 | 2026-10-02 | Applied | full-stack | 10.0 |
 | Intuit | Summer 2027: Business Data Analyst Intern, Strategy & Planning | 2026-10-02 | Applied | ai-ml+consumer-fintech Strategy & Planning | 9.0 |
+| SeatGeek | Data Analyst Intern (Summer 2027) | 2026-10-02 | Applied | ai-ml+live-events ticketing marketplace / fan+venue product analytics | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -389,6 +390,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 373
+- **Total applied:** 374
 - **Interviews:** 1
 - **Offers:** 0
