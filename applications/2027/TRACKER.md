@@ -389,6 +389,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | The Federal Reserve System | Summer 2027 Intern-Computer Science and Software Engineering | 2026-10-02 | Applied | full-stack+public-mission / regulatory-bank / central-bank operations | 10.0 |
 | CoStar Group | Embedded Software Engineering Intern | 2026-10-02 | Applied | ai-ml+Matterport hardware / camera-LiDAR sensor-test | 8.0 |
 | SAS Institute | Summer 2027 - Software Development and Testing Intern | 2026-10-02 | Applied | full-stack+analytics/data-AI software platform (Viya)+product-quality/testing | 10.0 |
+| Regeneron Pharmaceuticals | 2027 Co-op Data Science & Digital Innovation (Preclinical Manufacturing & Research IT) | 2026-10-02 | Applied | ai-ml+preclinical-manufacturing/research-IT | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -396,6 +397,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 380
+- **Total applied:** 381
 - **Interviews:** 1
 - **Offers:** 0
