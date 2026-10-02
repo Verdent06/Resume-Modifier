@@ -379,6 +379,15 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Dow Chemical Company | Data Engineer / Data Platform Engineer Intern — Champaign IL — Spring 2027 | 2026-10-01 | Applied | ai-ml | 10.0 |
 | Assurant | Summer 2027 Intern: Software Engineering Intern | 2026-10-01 | Applied | full-stack+insurance-tech / connected-consumer protection / enterprise Agile application delivery | 10.0 |
 | Marvell | AI-Native Development Platform Engineer Intern, MS - Summer 2027 | 2026-10-01 | Applied | dev-ops | 10.0 |
+| Pinterest | Software Engineer Intern 2027 (USA) | 2026-10-02 | Applied | full-stack+visual-discovery/recommendation-ML | 10.0 |
+| Corgan | Software Development Intern — Dallas, TX — Summer 2027 | 2026-10-02 | Applied | full-stack | 10.0 |
+| Intuit | Summer 2027: Business Data Analyst Intern, Strategy & Planning | 2026-10-02 | Applied | ai-ml+consumer-fintech Strategy & Planning | 9.0 |
+| SeatGeek | Data Analyst Intern (Summer 2027) | 2026-10-02 | Applied | ai-ml+live-events ticketing marketplace / fan+venue product analytics | 9.0 |
+| Glean | Software Engineer, Intern (Summer 2027) | 2026-10-02 | Applied | full-stack+work-AI/enterprise-search | 10.0 |
+| Riot Games | Software Engineering Intern - Summer 2027 (Remote) | 2026-10-02 | Applied | full-stack+live-game/player-facing-real-time | 9.0 |
+| HMH | AI & Automation Development Intern | 2026-10-02 | Applied | ai-ml+industrial drilling-equipment IT / oilfield digital solutions | 9.0 |
+| The Federal Reserve System | Summer 2027 Intern-Computer Science and Software Engineering | 2026-10-02 | Applied | full-stack+public-mission / regulatory-bank / central-bank operations | 10.0 |
+| CoStar Group | Embedded Software Engineering Intern | 2026-10-02 | Applied | ai-ml+Matterport hardware / camera-LiDAR sensor-test | 8.0 |
 | SAS Institute | Summer 2027 - Software Development and Testing Intern | 2026-10-02 | Applied | full-stack+analytics/data-AI software platform (Viya)+product-quality/testing | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
@@ -387,6 +396,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 371
+- **Total applied:** 380
 - **Interviews:** 1
 - **Offers:** 0
