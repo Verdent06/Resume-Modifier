@@ -390,6 +390,10 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | CoStar Group | Embedded Software Engineering Intern | 2026-10-02 | Applied | ai-ml+Matterport hardware / camera-LiDAR sensor-test | 8.0 |
 | SAS Institute | Summer 2027 - Software Development and Testing Intern | 2026-10-02 | Applied | full-stack+analytics/data-AI software platform (Viya)+product-quality/testing | 10.0 |
 | Regeneron Pharmaceuticals | 2027 Co-op Data Science & Digital Innovation (Preclinical Manufacturing & Research IT) | 2026-10-02 | Applied | ai-ml+preclinical-manufacturing/research-IT | 10.0 |
+| Stand Together | KIP Spring 2027 - Analytics Intern - Illinois Policy Institute | 2026-10-02 | Applied | ai-ml+policy-nonprofit-analytics / Illinois Policy Institute | 9.0 |
+| The Cigna Group | Product Analytics Summer Intern - Start Date: May 24, 2027 | 2026-10-02 | Applied | ai-ml+healthcare-product-analytics | 8.0 |
+| Mindex | Software Engineer Co-Op - On-site | 2026-10-02 | Applied | full-stack+Rochester custom-software / SOW consulting + K-12 SIS | 8.0 |
+| Primient | Digital Data & Analytics Intern - Summer 2027 | 2026-10-02 | Applied | ai-ml | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -397,6 +401,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 381
+- **Total applied:** 385
 - **Interviews:** 1
 - **Offers:** 0
