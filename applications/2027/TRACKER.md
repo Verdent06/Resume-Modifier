@@ -394,6 +394,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | The Cigna Group | Product Analytics Summer Intern - Start Date: May 24, 2027 | 2026-10-02 | Applied | ai-ml+healthcare-product-analytics | 8.0 |
 | Mindex | Software Engineer Co-Op - On-site | 2026-10-02 | Applied | full-stack+Rochester custom-software / SOW consulting + K-12 SIS | 8.0 |
 | Primient | Digital Data & Analytics Intern - Summer 2027 | 2026-10-02 | Applied | ai-ml | 9.0 |
+| SpaceXAI | Summer 2027 Software Engineering Internship/Co-op | 2026-10-02 | Applied | full-stack+frontier AI lab / Grok + Starmind / ml-infra | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -401,6 +402,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 385
+- **Total applied:** 386
 - **Interviews:** 1
 - **Offers:** 0
