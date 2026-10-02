@@ -387,6 +387,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Riot Games | Software Engineering Intern - Summer 2027 (Remote) | 2026-10-02 | Applied | full-stack+live-game/player-facing-real-time | 9.0 |
 | HMH | AI & Automation Development Intern | 2026-10-02 | Applied | ai-ml+industrial drilling-equipment IT / oilfield digital solutions | 9.0 |
 | The Federal Reserve System | Summer 2027 Intern-Computer Science and Software Engineering | 2026-10-02 | Applied | full-stack+public-mission / regulatory-bank / central-bank operations | 10.0 |
+| CoStar Group | Embedded Software Engineering Intern | 2026-10-02 | Applied | ai-ml+Matterport hardware / camera-LiDAR sensor-test | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -394,6 +395,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 378
+- **Total applied:** 379
 - **Interviews:** 1
 - **Offers:** 0
