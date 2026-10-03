@@ -400,6 +400,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Elevance Health | Data Analytics Undergraduate Intern - Summer 2027 | 2026-10-03 | Applied | ai-ml+healthcare-payer-DPAIO | 8.0 |
 | Affirm | Software Engineer (Machine Learning) Intern (Summer 2027) | 2026-10-03 | Applied | full-stack+fintech-backend / consumer-credit + applied-ML-in-checkout | 8.0 |
 | Harvey | Software Engineering Intern (Summer 2027) — San Francisco | 2026-10-03 | Applied | full-stack+legal-AI/enterprise-agents | 10.0 |
+| Arc | Software Engineering Intern | 2026-10-03 | Applied | full-stack+electric-marine/hardware-adjacent | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -407,6 +408,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 391
+- **Total applied:** 392
 - **Interviews:** 1
 - **Offers:** 0
