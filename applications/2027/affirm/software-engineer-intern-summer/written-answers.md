@@ -14,7 +14,7 @@ Resume: `applications/2027/affirm/software-engineer-intern-summer/Vedant Desai R
 
 **SHA-256:** `e614b8c8a99280403d3a173c1937ffe866766b8c4f1e757cc764e7b93a3d4804`
 
-Posted **2026-10-02** (`first_published`). Role: **Software Engineer Intern (Summer 2027)** · Consumer Engineering · Greenhouse loc **San Francisco, California, United States**. **12–16 weeks**. Comp: **$55.00/hr** / **$9,500/mo** (set, no range). Remote-first company; SF listed; in-person onboarding. Airtable: [`recL05kTsLCOIQkiU`](https://airtable.com/appkjmb1lqI38B5dG/tbld48HBTeRo4WpcG/recL05kTsLCOIQkiU) (GrokBot Applications). Source: **GitHub/SimplifyJobs**. Status stays **In Progress** until a human actually submits.
+**Not** Software Engineer (Machine Learning) Intern Greenhouse **8008645003** / **JR104421**. That is a sibling packet.
 
 No cover letter field. No free-text “why Affirm” essay on the public form. **Do not invent essay prompts.**
 
