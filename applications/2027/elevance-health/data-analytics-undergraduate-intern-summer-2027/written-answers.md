@@ -16,7 +16,7 @@ Apply: https://elevancehealth.wd1.myworkdayjobs.com/en-US/ELV-ET/job/GA-ATLANTA-
 
 Resume: `applications/2027/elevance-health/data-analytics-undergraduate-intern-summer-2027/Vedant Desai Resume.pdf`
 
-**SHA-256:** `a7ecf09b55be17783a5c4e50c294732cb520084cf24c32229b1864baf3b15948`
+**SHA-256:** `96c13a1a2342fd02d22cd7685189327ca0fc026ae92ca5865b70bcec26ab5d53`
 
 Airtable: `recIO88jJvpAG32Mn` (GrokBot Applications). Status at packet time: **In Progress**. Source: **GitHub/SimplifyJobs**. This agent does not submit and does not email.
 
@@ -108,7 +108,7 @@ Binary knockouts auto-reject (`recruiting.md` Part I §1). Do not lie on locatio
 - **Lyndbrook = consulting on the PDF; do not add as a third W-2 job.**
 - **SpaceXAI Campus Lead Ambassador = extracurricular if asked.**
 - **Awards / honors: None.**
-- Education: UMich B.S. CS + Economics, Expected May 2028, GPA 3.66, Junior.
+- Education: UMich B.S. CS + Economics, Expected May 2028, GPA 3.7, Junior.
 - Languages you can defend: **Python, SQL** (on this PDF). TypeScript/React if they ask about the dashboard. **Do not check Excel, Power BI, Tableau, Java, Azure, Adobe Analytics.**
 
 ---
@@ -146,7 +146,7 @@ After Autofill: confirm email is **verdent06@gmail.com**. If MDC lands under Wor
 | School or University * | **University of Michigan** (University of Michigan-Ann Arbor if the typeahead has it) |
 | Degree * | **Bachelor of Science (BS)** |
 | Field of Study | **Computer Science** (add **Economics** if a second row / dual-degree field is required) |
-| Overall Result (GPA) | **3.66** |
+| Overall Result (GPA) | **3.7** |
 | From | **08/2025** (started **08/31/2025**) |
 | To (Actual or Expected) | **05/2028** |
 | Currently enrolled | **Yes** |
@@ -220,7 +220,7 @@ Elevance Health — Data Analytics Undergraduate Intern - Summer 2027 (Workday J
 Digital Platforms and AI Organization (DPAIO)
 Chicago, Atlanta, Indianapolis, Richmond, or Mason (hybrid)
 
-I am applying for the Summer 2027 Data Analytics Undergraduate Intern seat — Workday JR209076 — on DPAIO, not Actuarial Intern, not Internal Audit, and not a SWE intern. I am a B.S. Computer Science and Economics student at the University of Michigan (Expected May 2028, GPA 3.66, Junior). I can work 40 hours/week from May 17 to August 6, 2027, hybrid one to two days per week in Chicago (closest hub) or Atlanta / Indianapolis / Richmond / Mason, and I return to Michigan afterward. I am a U.S. citizen and will not need visa sponsorship now or in the future.
+I am applying for the Summer 2027 Data Analytics Undergraduate Intern seat — Workday JR209076 — on DPAIO, not Actuarial Intern, not Internal Audit, and not a SWE intern. I am a B.S. Computer Science and Economics student at the University of Michigan (Expected May 2028, GPA 3.7, Junior). I can work 40 hours/week from May 17 to August 6, 2027, hybrid one to two days per week in Chicago (closest hub) or Atlanta / Indianapolis / Richmond / Mason, and I return to Michigan afterward. I am a U.S. citizen and will not need visa sponsorship now or in the future.
 
 I want this seat because the work is collecting, cleaning, analyzing, and visualizing data so a business partner can use the insight — digital strategy, consumer insights, reporting tools — not a generic SWE rotation and not actuarial.
 
@@ -241,7 +241,7 @@ Vedant Desai
 
 ## Short paste blurb (if the form has a small text box)
 
-I'm a Computer Science & Economics student at Michigan (Expected May 2028, GPA 3.66, Junior) applying to Data Analytics Undergraduate Intern JR209076 — DPAIO, hybrid Chicago or Atlanta / Indianapolis / Richmond / Mason from May 17 to August 6, 2027 — not Actuarial and not SWE. I ship analytics: Pandas ETL on irregular Excel filings that cut ~800 hours of pulls across 400 PACs, a Flask report API for MCFN, a 800→280 scored shortlist at 35% precision, and a React/Postgres dashboard. SQL on my resume is freshness/validation; ranking was Pandas. I have not used Power BI, Tableau, Java, or Excel as an interview tool. U.S. citizen; no sponsorship. I will relocate for the term.
+I'm a Computer Science & Economics student at Michigan (Expected May 2028, GPA 3.7, Junior) applying to Data Analytics Undergraduate Intern JR209076 — DPAIO, hybrid Chicago or Atlanta / Indianapolis / Richmond / Mason from May 17 to August 6, 2027 — not Actuarial and not SWE. I ship analytics: Pandas ETL on irregular Excel filings that cut ~800 hours of pulls across 400 PACs, a Flask report API for MCFN, a 800→280 scored shortlist at 35% precision, and a React/Postgres dashboard. SQL on my resume is freshness/validation; ranking was Pandas. I have not used Power BI, Tableau, Java, or Excel as an interview tool. U.S. citizen; no sponsorship. I will relocate for the term.
 
 ---
 
