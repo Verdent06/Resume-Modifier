@@ -12,7 +12,7 @@ Apply (human only): https://job-boards.greenhouse.io/affirm/jobs/8011590003
 
 Resume: `applications/2027/affirm/software-engineer-intern-summer/Vedant Desai Resume.pdf`
 
-**SHA-256:** `e614b8c8a99280403d3a173c1937ffe866766b8c4f1e757cc764e7b93a3d4804`
+**SHA-256:** `a3a116bec3e8cabfebc9580c1d156a1cff637aced5c113f29413a572a07ba386`
 
 **Not** Software Engineer (Machine Learning) Intern Greenhouse **8008645003** / **JR104421**. That is a sibling packet.
 
