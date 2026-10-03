@@ -403,6 +403,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Arc | Software Engineering Intern | 2026-10-03 | Applied | full-stack+electric-marine/hardware-adjacent | 8.0 |
 | Affirm | Software Engineer Intern (Summer 2027) | 2026-10-03 | Applied | full-stack+consumer-fintech / BNPL / fintech-backend | 9.0 |
 | Bose | Data Science Co-Op (NLP & GenAI) | 2026-10-03 | Applied | ai-ml+consumer-audio | 10.0 |
+| New York Mets | Intern, Data Science | 2026-10-03 | Applied | ai-ml+MLB baseball-ops statistical modeling | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -410,6 +411,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 394
+- **Total applied:** 395
 - **Interviews:** 1
 - **Offers:** 0
