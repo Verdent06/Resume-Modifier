@@ -17,7 +17,7 @@ Draft answers for Greenhouse job **5252108007** / req **1300** / internal **4687
 
 Apply: https://job-boards.greenhouse.io/xai/jobs/5252108007
 Resume: `applications/2027/spacexai/software-engineering-intern-spring/Vedant Desai Resume.pdf`
-SHA-256: `49c0fb9ec9282ce300ecb17d37a07d33bf59b1b0376b31994b084f65c14eba03`
+SHA-256: `6ad9952cade8483421001f837af653be4228db3703bc62cfba1ce3a9ca76362f`
 
 **Pulled from the live Greenhouse questions API** on **2026-10-03**. Labels below are exact. `demographic_questions` is null; `compliance` injects voluntary Veteran / Race / Gender (EEOC). `location_questions` has hidden lat/long plus Location. Cover Letter is **optional**. Education widget: school / degree / discipline / start month+year / end month+year all **required**.
 
@@ -71,7 +71,7 @@ Questions below are the exact labels on the live Greenhouse apply form for job *
 | GitHub Profile | | https://github.com/Verdent06 |
 | X Profile | | **Leave blank** (no handle in `context.md` — do not invent). |
 | Please select the month you will be able to start your internship. | * | **January** (live dropdown: January / February / March — matches JD "beginning in January or March 2027"). Prefer January so the 12-week onsite covers Winter 2027. Do **not** pick February unless January is actually impossible. |
-| GPA (Undergraduate) | * | **3.66** (4.0 scale). Matches the PDF. Description: convert to 4.0; N/A if none. Do not use context.md's 3.7. |
+| GPA (Undergraduate) | * | **3.7** (4.0 scale). Matches the PDF. Unrounded source is 3.66; applications round to 3.7 (`context.md`, confirmed 2026-10-02). Description: convert to 4.0; N/A if none. |
 | SAT Score | * | **1510**. Description: 1600 or 2400 scale; write "Did not take" if not taken. |
 | ACT Score | * | **Did not take** |
 | Your Location | * | Northville, MI (mailing) / Ann Arbor, MI (school city on resume). Relocating to Palo Alto, CA for the term. Be consistent and honest. |
@@ -110,7 +110,7 @@ My second is the CaseStudyPrep.AI voice-AI co-op. Most frames we sent to Whisper
 
 ## Availability
 
-Spring **2027**, paid, **full-time onsite Palo Alto**, **≥12 consecutive weeks beginning January or March 2027**. Prefer start **January 2027**. Returning to Michigan after the term (Expected May 2028 — Fall 2027 and Winter 2028 remain). GPA **3.66**. U.S. citizen; no sponsorship. Comp: accept posted **$34/hr** Junior/Senior rate. Relocation: **yes**.
+Spring **2027**, paid, **full-time onsite Palo Alto**, **≥12 consecutive weeks beginning January or March 2027**. Prefer start **January 2027**. Returning to Michigan after the term (Expected May 2028 — Fall 2027 and Winter 2028 remain). GPA **3.7**. U.S. citizen; no sponsorship. Comp: accept posted **$34/hr** Junior/Senior rate. Relocation: **yes**.
 
 ---
 

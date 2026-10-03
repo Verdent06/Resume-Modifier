@@ -17,7 +17,7 @@ Draft answers for Greenhouse job **5255111007** / req **1308** / internal **4688
 
 Apply: https://job-boards.greenhouse.io/xai/jobs/5255111007
 Resume: `applications/2027/spacexai/software-engineering-intern-summer/Vedant Desai Resume.pdf`
-SHA-256: `7745581d4118d3af7b4a492049d5377ec9623e63e7d42e0b2f1f2e4f8e1567f3`
+SHA-256: `104aae593f5b86d772be71e327eccbfae7d76eab89bd9d13d9c42af390d0dcca`
 
 **Pulled from the live Greenhouse questions API** on **2026-10-02**. Labels below are exact. `*` = required. `demographic_questions` is null; `compliance` injects voluntary Veteran / Race / Gender (EEOC). `location_questions` has hidden lat/long plus Location. Cover Letter is **optional**.
 
@@ -63,14 +63,14 @@ Questions below are the exact labels on the live Greenhouse apply form for job *
 | GitHub Profile | | https://github.com/Verdent06 |
 | X Profile | | **Leave blank** (no handle in `context.md` — do not invent). |
 | Please select the month you will be able to start your internship. | * | **See knockout #6.** JD: May or June 2027. Live dropdown 2026-10-02: January / February / March only. Prefer **May** if it exists at apply time. Do not pick January. |
-| GPA (Undergraduate) | * | **3.66** (4.0 scale). Matches the PDF. Description: convert to 4.0; N/A if none. Do not use context.md's 3.7. |
+| GPA (Undergraduate) | * | **3.7** (4.0 scale). Matches the PDF. Unrounded source is 3.66; applications round to 3.7 (`context.md`, confirmed 2026-10-02). Description: convert to 4.0; N/A if none. |
 | SAT Score | * | **1510**. Description: 1600 or 2400 scale; write "Did not take" if not taken. |
 | ACT Score | * | **Did not take** |
 | Your Location | * | Northville, MI (mailing) / Ann Arbor, MI (school city on resume). Relocating to Palo Alto, CA for the term. Be consistent and honest. |
 | If working in the US, will you now, or in the future, require sponsorship for employment visa status (e.g., H-1B visa) to legally work in the US? | * | **No** |
 | Have you worked with us before? | * | **I have never worked for SpaceX, SpaceXAI, xAI, X, or Twitter**. Campus Lead Ambassador is extracurricular, **not** intern or employee. Do not pick intern or employee options. |
 | How did you hear about us? | * | **Company careers page / website** (no SpaceXAI/xAI referral in `network.md` — do not invent a referral). |
-| School / degree (Greenhouse `education_required` widget) | * | University of Michigan · B.S. Computer Science and Economics · start **08/31/2025** · end **May 2028** (Expected). **Junior**. GPA **3.66**. |
+| School / degree (Greenhouse `education_required` widget) | * | University of Michigan · B.S. Computer Science and Economics · start **08/31/2025** · end **May 2028** (Expected). **Junior**. GPA **3.7**. |
 | Current company | | **University of Michigan** |
 | Work history if asked | | CaseStudyPrep.AI (Software Engineer Co-op, Voice AI); Vylet (Founder). MDC = extracurricular campus club. SpaceXAI Campus Lead Ambassador = extracurricular. Awards = None. MatchStream = never. |
 | Pay if asked | | **$34/hr** (Junior/Senior rate on the JD). |
@@ -100,7 +100,7 @@ My second is the CaseStudyPrep.AI voice-AI co-op. Most frames we sent to Whisper
 
 ## Availability
 
-Summer **2027**, paid, **full-time onsite Palo Alto**, **≥12 consecutive weeks beginning May or June 2027**. Prefer start **May 2027** (UMich winter term is over). Returning to Michigan for Fall 2027 (Expected May 2028). GPA **3.66**. U.S. citizen; no sponsorship. Comp: accept posted **$34/hr** Junior/Senior rate. Relocation: **yes**.
+Summer **2027**, paid, **full-time onsite Palo Alto**, **≥12 consecutive weeks beginning May or June 2027**. Prefer start **May 2027** (UMich winter term is over). Returning to Michigan for Fall 2027 (Expected May 2028). GPA **3.7**. U.S. citizen; no sponsorship. Comp: accept posted **$34/hr** Junior/Senior rate. Relocation: **yes**.
 
 ---
 

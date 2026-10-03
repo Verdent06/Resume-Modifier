@@ -24,6 +24,8 @@ Each entry carries a fixed **Lane**: the one distinct signal it contributes that
 
 ## Education
 
+Unrounded undergraduate GPA is **3.66 / 4.0** (confirmed 2026-10-02). Applications and the resume PDF round it to **3.7 / 4.0**. Do not invent a different GPA.
+
 ```
 University of Michigan                              Expected May 2028
 B.S. in Computer Science and Economics              Ann Arbor, MI
