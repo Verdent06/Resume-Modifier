@@ -8,7 +8,7 @@ Draft answers for Greenhouse job **8008645003** / req **JR104421** / internal **
 
 Apply: https://job-boards.greenhouse.io/affirm/jobs/8008645003
 Resume: `applications/2027/affirm/software-engineer-intern-machine-learning/Vedant Desai Resume.pdf`
-SHA-256: `150cfb3c4b139f302d9bcadca07455311051325b48504ece4a8e71db848fe311`
+SHA-256: `6566a32696d20e8a600fedccc52819e820f9736c2ae78c27abada4871d888dbf`
 
 **Pulled from the live Greenhouse questions API + job-board HTML** on 2026-10-03. Labels below are exact. `*` = required. Hidden `longitude` / `latitude` are filled by the Location picker — do not type them.
 
@@ -58,7 +58,7 @@ Questions below are the exact labels on the live Greenhouse apply form for job *
 | End date month | * | May |
 | End date year | * | 2028 |
 
-GPA is not on this form. PDF: **3.66 / 4.0**. Add another education row only if you have a second school — you do not.
+GPA is not on this form. PDF: **3.7 / 4.0**. Add another education row only if you have a second school — you do not.
 
 ### Custom questions (exact API labels)
 
@@ -115,7 +115,7 @@ Privacy notice: clicking Submit acknowledges Affirm's Global Candidate Privacy N
 | --- | --- |
 | Address | 49032 Freestone Dr, Northville, MI 48168 |
 | Preferred location | **San Francisco, CA** (JD listing). Willing to relocate for Summer 2027. Confirm hybrid vs remote-first with the recruiter — do not invent already-in-SF. |
-| GPA | **3.66 / 4.0** |
+| GPA | **3.7 / 4.0** |
 | Class standing | Junior (Expected May 2028); intern after junior year / rising senior |
 | US citizen | **Yes** |
 | Work authorization | US citizen; authorized for any US employer; no CPT/OPT/H-1B now or later |
@@ -131,7 +131,7 @@ I want a Summer 2027 SWE intern seat on Checkout shipping production code — AP
 
 Closest analog: Vylet (Dockerized LangGraph scoring, LangSmith eval 50%→90%, 79%→89% qualification defect) and MDC (Flask REST on AWS EC2 + campaign-finance ETL). SignalWeaver is the honest LoRA + FastAPI + pytest CI story. I interview in Python. I do not know Java or Kotlin yet.
 
-US citizen; no sponsorship now or later. Expected May 2028 (GPA 3.66); returning Fall 2027. I can relocate to San Francisco for the intern term if the team is office-based.
+US citizen; no sponsorship now or later. Expected May 2028 (GPA 3.7); returning Fall 2027. I can relocate to San Francisco for the intern term if the team is office-based.
 
 ---
 
