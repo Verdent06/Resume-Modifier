@@ -2,7 +2,7 @@
 
 Packet for Greenhouse **5442881008** / req **I246** / internal **4557185008**. Do not submit from this agent. Do not email `verdent06@gmail.com`. App Man downloads via `gh`.
 
-- Resume: `Vedant Desai Resume.pdf` (header **verdent06@gmail.com**; SHA-256 `e51336459f6cb14a7559d483ce60b152cfb8845464bfed0a7c426eddf843e79a`)
+- Resume: `Vedant Desai Resume.pdf` (header **verdent06@gmail.com**; SHA-256 `d59061838c1324a92a092d3af3675a5057c7def2e8bd2682821e196c01f06566`)
 - Form Q&A: `written-answers.md` (live Greenhouse `?questions=true`, 2026-10-03)
 - Screen report: `grade.md` (8.0 / 10)
 - Recruiter lens: `persona.md`

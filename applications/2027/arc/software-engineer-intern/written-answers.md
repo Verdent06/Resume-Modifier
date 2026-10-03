@@ -17,7 +17,7 @@ Draft answers for Greenhouse job **5442881008** / req **I246** / internal **4557
 
 Apply: https://job-boards.greenhouse.io/arcboatcompany/jobs/5442881008
 Resume: `applications/2027/arc/software-engineer-intern/Vedant Desai Resume.pdf`
-SHA-256: `e51336459f6cb14a7559d483ce60b152cfb8845464bfed0a7c426eddf843e79a`
+SHA-256: `d59061838c1324a92a092d3af3675a5057c7def2e8bd2682821e196c01f06566`
 
 **Pulled from the live Greenhouse questions API** on **2026-10-03**. Labels below are exact. `*` = required. `education` is null (no education widget in the API). `location_questions` is empty. Cover Letter is **optional**. Resume/CV is **optional in the API** — still attach the PDF. `compliance` injects voluntary Veteran / Race / Gender (EEOC). `demographic_questions` is the U.S. Standard Demographic Questions survey (voluntary).
 
@@ -73,13 +73,13 @@ API shows a trailing newline on the work-auth label (`Are you legally authorized
 
 | If asked | Answer |
 | --- | --- |
-| School / degree | University of Michigan · B.S. Computer Science and Economics · start **08/31/2025** · end **May 2028** (Expected). **Junior**. GPA **3.66**. |
+| School / degree | University of Michigan · B.S. Computer Science and Economics · start **08/31/2025** · end **May 2028** (Expected). **Junior**. GPA **3.7** (unrounded **3.66**; PDF and forms use **3.7**). |
 | Current company | **University of Michigan** |
 | Work history | CaseStudyPrep.AI (Software Engineer Co-op, Voice AI, Dec 2025–May 2026); Vylet (Founder, May 2026–Present). MDC = extracurricular campus club. SpaceXAI Campus Lead Ambassador = extracurricular. Awards = None. MatchStream = never. |
 | GitHub | https://github.com/Verdent06 |
 | Website | https://vyletdata.com |
 | Location / city | **Northville, Michigan, United States** (mailing). School city on resume is Ann Arbor. Relocating to Torrance for the term. Do not spoof a CA home address. |
-| GPA | **3.66 / 4.0** (matches the PDF; do not use context.md's 3.7) |
+| GPA | **3.7 / 4.0** (matches the PDF; unrounded 3.66 — do not type 3.66 on a rounded field) |
 | Availability | **June 14–August 20, 2027**, full-time, onsite Torrance |
 | Willing to relocate to Torrance | **Yes** |
 | Returning to school after internship | **Yes** — Fall 2027 and Winter 2028 remain (Expected May 2028) |
@@ -121,7 +121,7 @@ linkedin.com/in/vedantde06 · github.com/Verdent06
 Arc Boat Company — Software Engineering Intern
 Torrance, CA (onsite) · June 14–August 20, 2027
 
-I am applying for the Summer 2027 Software Engineering Intern role in Torrance. I am a B.S. Computer Science and Economics student at the University of Michigan (Expected May 2028, GPA 3.66). I can work onsite for the full June 14–August 20 term, I am a U.S. citizen, and I will not need visa sponsorship.
+I am applying for the Summer 2027 Software Engineering Intern role in Torrance. I am a B.S. Computer Science and Economics student at the University of Michigan (Expected May 2028, GPA 3.7). I can work onsite for the full June 14–August 20 term, I am a U.S. citizen, and I will not need visa sponsorship.
 
 Arc's intern seat is catch-all SWE on a boat: infotainment, mobile, backend, or firmware, with end-to-end ownership. That is the work I already do. I do not have STM32 or a marine internship. I do have production ownership, operational debugging, TypeScript/Python services, and C++ that cannot miss a real-time deadline.
 
@@ -145,6 +145,6 @@ Vedant Desai
 - **Do not claim STM32, React Native, C, Java, or a boating résumé.** Honest: Python, TypeScript, C++, SQL, React, Angular, Flask, AWS, Docker, Git.
 - **Jobs on the form = Vylet + CaseStudyPrep only.** MDC stays extracurricular.
 - **No Arc contact in `network.md`.** How you heard: Job Board / GitHub / Simplify. Not employee referral.
-- **Funnel:** resume is the bottleneck (`persona.md` / `companies.md`). No published OA. Prep STAR (CaseStudyPrep 27% upload; Vylet 79%→89% RCA; Granular zero-alloc `processBlock`) and a Flask/EC2 + React walkthrough. Confirm US citizen, GPA 3.66, May 2028, Torrance June 14–August 20, sponsorship **No**.
+- **Funnel:** resume is the bottleneck (`persona.md` / `companies.md`). No published OA. Prep STAR (CaseStudyPrep 27% upload; Vylet 79%→89% RCA; Granular zero-alloc `processBlock`) and a Flask/EC2 + React walkthrough. Confirm US citizen, GPA 3.7, May 2028, Torrance June 14–August 20, sponsorship **No**.
 - **Airtable `recUYlHpVo4H7vzh6` stays In Progress until a human submits.**
 - **This agent did not submit.**
