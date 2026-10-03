@@ -31,7 +31,7 @@ Apply: https://boseallaboutme.wd503.myworkdayjobs.com/en-US/Bose_Careers/job/US-
 
 Resume: `applications/2027/bose/data-science-coop-nlp-genai/Vedant Desai Resume.pdf`
 
-**SHA-256:** `7bd68ddb40cc368c8d1f7f9e0c7b834378f0cec2c29b708aa9ed3753b60830b7`
+**SHA-256:** `d85bfea044930df9a833564b48d68fa8d513c47025cc23c8c035952ce9af05e4`
 
 Posted **2026-10-02** (`startDate`). Live `postedOn` **Posted Today** at capture **2026-10-03**. Workday `includeResumeParsing: true`. `canApply: true`. `questionnaireId` `c230582dcc241001c2e3a6aa90720000`. CXS `/apply` and `/questionnaire/{id}` returned **HTTP 406** without an account. **This agent did not create an account and did not submit.**
 
@@ -168,7 +168,7 @@ Autofill may parse Ann Arbor from Education → use **Northville**.
 | School or University * | **University of Michigan** (if typeahead has University of Michigan-Ann Arbor, take it) |
 | Degree * | **Bachelor of Science (BS)** |
 | Field of Study | **Computer Science** (dual CS + Economics is on the PDF; add Economics only if a second row is required) |
-| Overall Result (GPA) | **3.66** (matches the PDF; `context.md` also lists 3.7 — do not type a number that disagrees with the PDF you upload) |
+| Overall Result (GPA) | **3.7** (matches the PDF / `context.md`) |
 | From | **08/2025** (started **08/31/2025**) |
 | To (Actual or Expected) | **05/2028** (if year-only: **2028**) |
 | Currently enrolled | **Yes** |
@@ -209,7 +209,7 @@ CXS questionnaire **HTTP 406**. If a later step shows these (or the JD qualifica
 | SAT (if asked) | **1510** |
 | Class standing / year in school | **Junior** (Expected May 2028). Winter 2027 co-op start is after freshman year + Fall 2026; `context.md`: Junior / Summer 2027 = rising junior |
 | Graduation date | **May 2028** |
-| GPA | **3.66** |
+| GPA | **3.7** |
 | Major | **Computer Science** (and Economics) |
 | Available January 11 – June 25, 2027 / 6-month co-op / full-time? | **Yes** — relocate from Northville, MI. Return to Michigan Fall 2027 |
 | Preferred location | **Framingham, MA**. Atlanta yes if that is the seat. Do not pick Lisboa unless they require a location radio and Framingham/Atlanta are gone |
@@ -240,7 +240,7 @@ Bose Corporation — Data and Analytics Center of Excellence
 
 Re: Data Science Co-Op (NLP & GenAI) (Workday R29251)
 
-I am applying to the Data Science Co-Op (NLP & GenAI) on Bose's Data and Analytics Center of Excellence for January 11 – June 25, 2027. I want six months on NLP/GenAI and evaluated models for business partners — not an acoustics hardware co-op and not Product Compliance R29255. I am a B.S. Computer Science and Economics student at the University of Michigan (Expected May 2028, GPA 3.66). I am a U.S. citizen and will not need visa sponsorship. I can be in Framingham (or Atlanta if that is the team) for the term and return to Michigan in Fall 2027.
+I am applying to the Data Science Co-Op (NLP & GenAI) on Bose's Data and Analytics Center of Excellence for January 11 – June 25, 2027. I want six months on NLP/GenAI and evaluated models for business partners — not an acoustics hardware co-op and not Product Compliance R29255. I am a B.S. Computer Science and Economics student at the University of Michigan (Expected May 2028, GPA 3.7). I am a U.S. citizen and will not need visa sponsorship. I can be in Framingham (or Atlanta if that is the team) for the term and return to Michigan in Fall 2027.
 
 What I can defend:
 
@@ -261,7 +261,7 @@ I want the Jan 11–June 25, 2027 Data Science Co-Op (NLP & GenAI) on Bose's D&A
 
 Vylet: Dockerized LangGraph + LangSmith eval (50% → 90%) + OpenAI embeddings with SQL freshness. SignalWeaver: LoRA Llama 3.1 81% → 96% held-out; pgvector semantic search 49ms p50; OOS linear regression. MDC (extracurricular on the form): Requests + Pandas ETL + Flask on EC2 (~800 hours / 400 PACs). CaseStudyPrep: on-device ONNX VAD (40% inference-cost cut).
 
-I have not used scikit-learn, Databricks, Snowflake, LangChain, Hugging Face, MLflow, or Streamlit. US citizen; no sponsorship. Framingham (or Atlanta) yes. Expected May 2028 (GPA 3.66).
+I have not used scikit-learn, Databricks, Snowflake, LangChain, Hugging Face, MLflow, or Streamlit. US citizen; no sponsorship. Framingham (or Atlanta) yes. Expected May 2028 (GPA 3.7).
 
 ---
 
