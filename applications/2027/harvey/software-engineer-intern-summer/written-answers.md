@@ -4,14 +4,14 @@ Paste-ready answers for the live Ashby apply form. Labels captured **2026-10-03*
 
 **Do not invent:** Java, Go, Kubernetes, Harvey Vault/Assistant/Agents product usage, Claude Code, Codex, a legal internship, Snowflake, Databricks, Copilot.
 
-**Form-kit email MUST be `verdent06@gmail.com`. Never `vedantde@umich.edu`.** PDF header is the same gmail. Phone **248-704-4852**. Address **49032 Freestone Dr, Northville, MI 48168**. US citizen, no sponsorship. GPA **3.66**. Expected **May 2028**. LinkedIn https://linkedin.com/in/vedantde06 · GitHub https://github.com/Verdent06.
+**Form-kit email MUST be `verdent06@gmail.com`. Never `vedantde@umich.edu`.** PDF header is the same gmail. Phone **248-704-4852**. Address **49032 Freestone Dr, Northville, MI 48168**. US citizen, no sponsorship. GPA **3.7**. Expected **May 2028**. LinkedIn https://linkedin.com/in/vedantde06 · GitHub https://github.com/Verdent06.
 
 **Do not submit from this agent. Do not click Ashby Submit. Do not email verdent06@gmail.com or any address with this pack.** App Man downloads via `gh`.
 
 Apply: https://jobs.ashbyhq.com/harvey/3a34578d-d42e-45bb-ac5c-0c3357e8cbb7/application?embed=true
 Listing: https://jobs.ashbyhq.com/harvey/3a34578d-d42e-45bb-ac5c-0c3357e8cbb7
 Resume: `applications/2027/harvey/software-engineer-intern-summer/Vedant Desai Resume.pdf`
-SHA-256: `3045f97877411ea40f629f20232a553970cd59edf4cffe86f98dcbb0169ab754`
+SHA-256: `c4a1167582b0279f81ae21505757e0f8b1ed0080e239913a5e4aaec46fcda62a`
 
 **Live posting (2026-10-03):** Harvey · **Software Engineering Intern (Summer 2027)** · Engineering · **San Francisco** · Hybrid · **$62–$72 per hour** · published **2026-10-02** · `applicationDeadline` **2026-10-25T07:00:00.000Z**. 12 or 16 weeks. Relocation support. Hybrid **3 days/week** in the listed office.
 
