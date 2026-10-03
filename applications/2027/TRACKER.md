@@ -399,6 +399,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | SpaceXAI | Spring 2027 Software Engineering Internship/Co-op | 2026-10-03 | Applied | full-stack+frontier AI lab / Grok + Starmind / ml-infra | 8.0 |
 | Elevance Health | Data Analytics Undergraduate Intern - Summer 2027 | 2026-10-03 | Applied | ai-ml+healthcare-payer-DPAIO | 8.0 |
 | Affirm | Software Engineer (Machine Learning) Intern (Summer 2027) | 2026-10-03 | Applied | full-stack+fintech-backend / consumer-credit + applied-ML-in-checkout | 8.0 |
+| Harvey | Software Engineering Intern (Summer 2027) — San Francisco | 2026-10-03 | Applied | full-stack+legal-AI/enterprise-agents | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -406,6 +407,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 390
+- **Total applied:** 391
 - **Interviews:** 1
 - **Offers:** 0
