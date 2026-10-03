@@ -4,14 +4,14 @@ Paste-ready answers for the live Ashby apply form. Labels captured **2026-10-03*
 
 **Do not invent:** Java, Go, Kubernetes, Harvey Vault/Assistant usage, Copilot, Snowflake, Databricks, a Harvey internship, a legal internship, Claude Code/Codex as daily inventory (Cursor is the honest AI IDE).
 
-**Form-kit email MUST be `verdent06@gmail.com`. Never `vedantde@umich.edu`.** PDF header is the same gmail. Phone **248-704-4852**. Address **49032 Freestone Dr, Northville, MI 48168**. US citizen, no sponsorship. GPA **3.66**. Expected **May 2028**. LinkedIn https://linkedin.com/in/vedantde06 · GitHub https://github.com/Verdent06.
+**Form-kit email MUST be `verdent06@gmail.com`. Never `vedantde@umich.edu`.** PDF header is the same gmail. Phone **248-704-4852**. Address **49032 Freestone Dr, Northville, MI 48168**. US citizen, no sponsorship. GPA **3.7**. Expected **May 2028**. LinkedIn https://linkedin.com/in/vedantde06 · GitHub https://github.com/Verdent06.
 
 **Do not submit from this agent. Do not click Ashby Submit. Do not email verdent06@gmail.com or any address with this pack.** App Man downloads via `gh`.
 
 Apply: https://jobs.ashbyhq.com/harvey/06d64648-b84b-48ae-94a2-d9c06dfdcb5d/application?embed=true
 Listing: https://jobs.ashbyhq.com/harvey/06d64648-b84b-48ae-94a2-d9c06dfdcb5d
 Resume: `applications/2027/harvey/software-engineering-intern-summer/Vedant Desai Resume.pdf`
-SHA-256: `2339b3e1b9f9c37b32e2ca22f2fb461ac234e466ac7fe4a036b8ca65b8359e7e`
+SHA-256: `c87d4c9fe1c2232fd5713ed20fb85575960908152f202b36ddc1ee17b75ad340`
 
 Airtable: `rec5ASC37htdmF43u` (GrokBot Applications; Source **GitHub/SimplifyJobs**; Status stays **In Progress** until a human submits).
 
@@ -75,7 +75,7 @@ I want Summer 2027 in New York owning a scoped project that ships to production 
 
 Closest analog I can defend: at Vylet I shipped a live product (Dockerized LangGraph + Redis/Celery; 30 scored leads in 30 minutes vs ~30 minutes of manual work), built a LangSmith eval harness that lifted extraction faithfulness from 50% to 90% with deterministic Pydantic consensus gates, and diagnosed a name-collision defect that was rejecting valid targets — the fix lifted qualification from 79% to 89% with no change in sourcing volume. At CaseStudyPrep.AI (titled SWE co-op) I cut cloud inference cost 40% with client-side Silero VAD via ONNX Runtime and recovered a 27% audio upload failure path. SignalWeaver is the retrieval sample: pgvector cosine search at 49ms p50 over 90 queries, FastAPI serving, a React/TypeScript dashboard, Docker Compose + GitHub Actions CI.
 
-I have not shipped on a legal-AI product, and I do not claim Harvey's stack, Java, or Go. Inventory is Python and TypeScript. I use Cursor daily the way the posting asks — generate, then read the diff and own quality, AI-generated or not. I can be in the New York office 3 days/week for a 12-week summer 2027 cohort (May 25–August 13 or June 8–August 27); UMich B.S. Computer Science and Economics, Expected May 2028, GPA 3.66; U.S. citizen, no sponsorship.
+I have not shipped on a legal-AI product, and I do not claim Harvey's stack, Java, or Go. Inventory is Python and TypeScript. I use Cursor daily the way the posting asks — generate, then read the diff and own quality, AI-generated or not. I can be in the New York office 3 days/week for a 12-week summer 2027 cohort (May 25–August 13 or June 8–August 27); UMich B.S. Computer Science and Economics, Expected May 2028, GPA 3.7; U.S. citizen, no sponsorship.
 
 ---
 
@@ -84,7 +84,7 @@ I have not shipped on a legal-AI product, and I do not claim Harvey's stack, Jav
 | If asked | Answer |
 | --- | --- |
 | Address | 49032 Freestone Dr, Northville, MI 48168 |
-| School / degree | University of Michigan · B.S. Computer Science and Economics · GPA 3.66 / 4.0 · Expected May 2028 · still enrolled |
+| School / degree | University of Michigan · B.S. Computer Science and Economics · GPA 3.7 / 4.0 · Expected May 2028 · still enrolled |
 | Class standing | Junior (Expected May 2028) |
 | US citizen | **Yes** |
 | Work authorization notes | US citizen; authorized for any US employer; no CPT/OPT/H-1B now or later |

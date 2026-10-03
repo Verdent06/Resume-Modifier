@@ -31,7 +31,7 @@ No demerits — clean screen.
 
 ## Likelihood
 
-- **Resume screen:** High — eligible May 2028 CS/Econ 3.66; Python/TypeScript through use; titled SWE co-op; Docker/Redis/Celery product with eval and a named bug fix; pgvector retrieval + FastAPI + React/CI
+- **Resume screen:** High — eligible May 2028 CS/Econ 3.7; Python/TypeScript through use; titled SWE co-op; Docker/Redis/Celery product with eval and a named bug fix; pgvector retrieval + FastAPI + React/CI
 - **Overall hire odds:** Medium — A-tier legal-AI intern, bottleneck is the resume then unpublished AI-assisted tech (~2–5% directional, Glean/Perplexity intern peer). Cold Ashby; no named OA; legal-domain pull is a later-round test
 - **Funnel filters:** Ashby knockouts (auth, sponsorship, hybrid relocate, internship count) → resume → recruiter → AI-assisted 60-min coding · Medium · no named intern OA · light intern sys design unpublished · NYC hybrid 3 days/week · deadline 2026-10-25
 - **Outside the resume:** Apply before **2026-10-25**. Form email **verdent06@gmail.com**. Work types **Applied AI / FDE (NY)** + **Frontend (NY, TOR)**. Locations **New York, NY** (+ SF if willing). Cohorts May 25–Aug 13 and/or Jun 8–Aug 27 2027. How heard: Job Board / Simplify. No Harvey contact in `network.md`. Packet only — see `written-answers.md`
