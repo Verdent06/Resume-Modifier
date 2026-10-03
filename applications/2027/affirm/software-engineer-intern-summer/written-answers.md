@@ -2,7 +2,7 @@
 
 Draft answers for Greenhouse job **8011590003** / req **JR104423** / internal **5892815003**. Labels and dropdowns captured from the live page `https://job-boards.greenhouse.io/affirm/jobs/8011590003` and `https://boards-api.greenhouse.io/v1/boards/affirm/jobs/8011590003?questions=true` on **2026-10-03**. Grounded in `persona.md` (full-stack spine + consumer-fintech / BNPL / fintech-backend differentiator), `grade.md` Interview angles, and `context.md` only.
 
-**Form-kit email MUST be `verdent06@gmail.com`. Never `vedantde@umich.edu`.** Phone **(248) 704-4852**. Address **49032 Freestone Dr, Northville, MI 48168**. US citizen; **no visa sponsorship now or later**. **Junior**, Expected **May 2028**, GPA **3.66**. LinkedIn https://linkedin.com/in/vedantde06 · GitHub https://github.com/Verdent06.
+**Form-kit email MUST be `verdent06@gmail.com`. Never `vedantde@umich.edu`.** Phone **(248) 704-4852**. Address **49032 Freestone Dr, Northville, MI 48168**. US citizen; **no visa sponsorship now or later**. **Junior**, Expected **May 2028**, GPA **3.7**. LinkedIn https://linkedin.com/in/vedantde06 · GitHub https://github.com/Verdent06.
 
 **Do not invent:** Java, AngularJS, Kafka, Go, an Affirm internship, BNPL/ledger/underwriting claims, Granular runtime/xrun numbers.
 
@@ -90,7 +90,7 @@ Do not invent a new story. Use `grade.md` Interview angles.
 
 Short paste if a small additional-info box appears:
 
-UMich CS+Econ, Expected May 2028, GPA 3.66, Junior, US citizen, no sponsorship. Summer 2027 SWE intern (JR104423) — ship-to-production APIs/UIs, not ML research. Python/TypeScript/C++. Shipped Flask REST on EC2, Angular/S3 upload recovery (27%), Docker/Redis/Celery, FastAPI + React + pytest CI, C++ real-time release. Willing to do the SF-listed / remote-first intern term; home is Northville, MI.
+UMich CS+Econ, Expected May 2028, GPA 3.7, Junior, US citizen, no sponsorship. Summer 2027 SWE intern (JR104423) — ship-to-production APIs/UIs, not ML research. Python/TypeScript/C++. Shipped Flask REST on EC2, Angular/S3 upload recovery (27%), Docker/Redis/Celery, FastAPI + React + pytest CI, C++ real-time release. Willing to do the SF-listed / remote-first intern term; home is Northville, MI.
 
 ---
 
