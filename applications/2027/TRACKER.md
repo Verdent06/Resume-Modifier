@@ -405,6 +405,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Bose | Data Science Co-Op (NLP & GenAI) | 2026-10-03 | Applied | ai-ml+consumer-audio | 10.0 |
 | New York Mets | Intern, Data Science | 2026-10-03 | Applied | ai-ml+MLB baseball-ops statistical modeling | 8.0 |
 | HNTB | Intern - AI Business Process Developer (Summer 2027) | 2026-10-04 | Applied | ai-ml+infrastructure / AEC consulting / transportation-infrastructure delivery | 8.0 |
+| Quantum Signal AI | Software Engineering Intern – Tools and Prototypes | 2026-10-05 | Applied | full-stack+automotive R&D / vehicle-tooling / compiled-language prototypes | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -412,6 +413,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 396
+- **Total applied:** 397
 - **Interviews:** 1
 - **Offers:** 0
