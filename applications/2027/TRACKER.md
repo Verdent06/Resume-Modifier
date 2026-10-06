@@ -411,6 +411,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | IDEMIA | Software Engineer Internship - Summer 2027 | 2026-10-06 | Applied | full-stack+biometrics-identity/public-security | 7.0 |
 | LexisNexis Risk Solutions | Data Science Intern | 2026-10-06 | Applied | ai-ml | 9.0 |
 | LexisNexis Risk Solutions | Data Analyst Intern | 2026-10-06 | Applied | ai-ml+enterprise-BI / risk-data (AML-identity-fraud) / BTO migration reporting | 9.0 |
+| Khan Academy | Software Engineer Intern (Summer 2027) | 2026-10-06 | Applied | full-stack | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -418,6 +419,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 402
+- **Total applied:** 403
 - **Interviews:** 1
 - **Offers:** 0
