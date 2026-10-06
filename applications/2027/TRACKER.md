@@ -415,7 +415,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | General Motors | 2027 Summer Intern, AI/ML Engineer, Mapping | 2026-10-06 | Applied | ai-ml+Ultifi/vehicle-software/connected-vehicle+Mapping | 8.0 |
 | Midland States Bank | Intern - AI Solutions Engineer | 2026-10-06 | Applied | ai-ml+community-bank applied-AI platform / workflow-automation | 8.0 |
 | Cadence Solutions | Software Engineering Intern — Remote US — Summer 2027 | 2026-10-06 | Applied | full-stack+clinical-AI/healthcare-agents | 10.0 |
-
+| Space Dynamics Laboratory | Software Engineer Intern - Software, AI, & Machine Learning (Job 9712) | 2026-10-06 | Applied | ai-ml+national-security space / SMS satellite-sensor-ground / flight-software-adjacent | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -423,6 +423,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 406
+- **Total applied:** 407
 - **Interviews:** 1
 - **Offers:** 0
