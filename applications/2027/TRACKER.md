@@ -409,6 +409,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Corning | Engineering Data Analyst Intern - Summer 2027 | 2026-10-06 | Applied | ai-ml+optical-communications manufacturing / PDM | 10.0 |
 | Expedia Group | Software Development Engineering Intern - 2027 - Austin, San Jose, Seattle | 2026-10-06 | Applied | full-stack | 10.0 |
 | IDEMIA | Software Engineer Internship - Summer 2027 | 2026-10-06 | Applied | full-stack+biometrics-identity/public-security | 7.0 |
+| LexisNexis Risk Solutions | Data Science Intern | 2026-10-06 | Applied | ai-ml | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -416,6 +417,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 400
+- **Total applied:** 401
 - **Interviews:** 1
 - **Offers:** 0
