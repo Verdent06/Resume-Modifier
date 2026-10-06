@@ -418,6 +418,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Space Dynamics Laboratory | Software Engineer Intern - Software, AI, & Machine Learning (Job 9712) | 2026-10-06 | Applied | ai-ml+national-security space / SMS satellite-sensor-ground / flight-software-adjacent | 9.0 |
 | Innovative Defense Technologies | Software Engineer Intern — Mount Laurel, NJ — Summer 2027 | 2026-10-06 | Applied | full-stack | 9.0 |
 | Astera Labs | Packaging Automation & Data Engineering Intern (Spring 2027 - January Start) | 2026-10-06 | Applied | ai-ml | 10.0 |
+| FHLBank Chicago | Summer Internship - AI Intern | 2026-10-06 | Applied | ai-ml+housing-finance-GSE / member-bank funding | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -425,6 +426,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 409
+- **Total applied:** 410
 - **Interviews:** 1
 - **Offers:** 0
