@@ -419,6 +419,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Innovative Defense Technologies | Software Engineer Intern — Mount Laurel, NJ — Summer 2027 | 2026-10-06 | Applied | full-stack | 9.0 |
 | Astera Labs | Packaging Automation & Data Engineering Intern (Spring 2027 - January Start) | 2026-10-06 | Applied | ai-ml | 10.0 |
 | FHLBank Chicago | Summer Internship - AI Intern | 2026-10-06 | Applied | ai-ml+housing-finance-GSE / member-bank funding | 8.0 |
+| Tradeweb | Summer 2027 Data Management Internship | 2026-10-06 | Applied | ai-ml+electronic-trading/securities-reference-data | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -426,6 +427,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 410
+- **Total applied:** 411
 - **Interviews:** 1
 - **Offers:** 0
