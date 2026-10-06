@@ -407,6 +407,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | HNTB | Intern - AI Business Process Developer (Summer 2027) | 2026-10-04 | Applied | ai-ml+infrastructure / AEC consulting / transportation-infrastructure delivery | 8.0 |
 | Quantum Signal AI | Software Engineering Intern – Tools and Prototypes | 2026-10-05 | Applied | full-stack+automotive R&D / vehicle-tooling / compiled-language prototypes | 7.0 |
 | Corning | Engineering Data Analyst Intern - Summer 2027 | 2026-10-06 | Applied | ai-ml+optical-communications manufacturing / PDM | 10.0 |
+| Expedia Group | Software Development Engineering Intern - 2027 - Austin, San Jose, Seattle | 2026-10-06 | Applied | full-stack | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -414,6 +415,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 398
+- **Total applied:** 399
 - **Interviews:** 1
 - **Offers:** 0
