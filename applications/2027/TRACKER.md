@@ -413,6 +413,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | LexisNexis Risk Solutions | Data Analyst Intern | 2026-10-06 | Applied | ai-ml+enterprise-BI / risk-data (AML-identity-fraud) / BTO migration reporting | 9.0 |
 | Khan Academy | Software Engineer Intern (Summer 2027) | 2026-10-06 | Applied | full-stack | 9.0 |
 | General Motors | 2027 Summer Intern, AI/ML Engineer, Mapping | 2026-10-06 | Applied | ai-ml+Ultifi/vehicle-software/connected-vehicle+Mapping | 8.0 |
+| Midland States Bank | Intern - AI Solutions Engineer | 2026-10-06 | Applied | ai-ml+community-bank applied-AI platform / workflow-automation | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -420,6 +421,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 404
+- **Total applied:** 405
 - **Interviews:** 1
 - **Offers:** 0
