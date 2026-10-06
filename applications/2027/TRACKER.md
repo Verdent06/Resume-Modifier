@@ -414,6 +414,8 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Khan Academy | Software Engineer Intern (Summer 2027) | 2026-10-06 | Applied | full-stack | 9.0 |
 | General Motors | 2027 Summer Intern, AI/ML Engineer, Mapping | 2026-10-06 | Applied | ai-ml+Ultifi/vehicle-software/connected-vehicle+Mapping | 8.0 |
 | Midland States Bank | Intern - AI Solutions Engineer | 2026-10-06 | Applied | ai-ml+community-bank applied-AI platform / workflow-automation | 8.0 |
+| Cadence Solutions | Software Engineering Intern — Remote US — Summer 2027 | 2026-10-06 | Applied | full-stack+clinical-AI/healthcare-agents | 10.0 |
+
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -421,6 +423,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 405
+- **Total applied:** 406
 - **Interviews:** 1
 - **Offers:** 0
