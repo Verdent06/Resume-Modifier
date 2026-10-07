@@ -420,6 +420,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Astera Labs | Packaging Automation & Data Engineering Intern (Spring 2027 - January Start) | 2026-10-06 | Applied | ai-ml | 10.0 |
 | FHLBank Chicago | Summer Internship - AI Intern | 2026-10-06 | Applied | ai-ml+housing-finance-GSE / member-bank funding | 8.0 |
 | Tradeweb | Summer 2027 Data Management Internship | 2026-10-06 | Applied | ai-ml+electronic-trading/securities-reference-data | 9.0 |
+| ABB | AI Engineering, Business Systems Intern- Summer 2027 | 2026-10-07 | Applied | ai-ml+industrial-IS-business-systems | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -427,6 +428,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 411
+- **Total applied:** 412
 - **Interviews:** 1
 - **Offers:** 0
