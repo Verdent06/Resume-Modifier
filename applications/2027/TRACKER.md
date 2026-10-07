@@ -427,6 +427,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | F5 | Software Development Engineer Intern (Seattle, WA) | 2026-10-07 | Applied | full-stack | 10.0 |
 | ABB | AI Engineering, Business Systems Intern- Summer 2027 | 2026-10-07 | Applied | ai-ml+industrial-IS-business-systems | 9.0 |
 | Sigma Computing | Software Engineering Intern (Summer 2027) | 2026-10-07 | Applied | full-stack | 10.0 |
+| Auto-Owners Insurance | Business Intelligence Engineering Intern - Summer 2027 | 2026-10-07 | Applied | ai-ml | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -434,6 +435,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 418
+- **Total applied:** 419
 - **Interviews:** 1
 - **Offers:** 0
