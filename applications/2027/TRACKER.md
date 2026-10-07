@@ -423,6 +423,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Courier Health | Software Engineering Intern (Summer 2027) | 2026-10-07 | Applied | full-stack+biopharma-patient-experience | 10.0 |
 | Niantic Spatial | Software Engineering Intern (Summer 2027) | 2026-10-07 | Applied | full-stack+physical-AI/geospatial-VPS | 8.0 |
 | Meta | Data Scientist Intern, Product Analytics (Summer 2027) | 2026-10-07 | Applied | ai-ml | 10.0 |
+| Everpure (Pure Storage) | Software Engineer Intern (Summer 2027) | 2026-10-07 | Applied | full-stack+storage/high-performance-C++ | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -430,6 +431,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 414
+- **Total applied:** 415
 - **Interviews:** 1
 - **Offers:** 0
