@@ -430,6 +430,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Auto-Owners Insurance | Business Intelligence Engineering Intern - Summer 2027 | 2026-10-07 | Applied | ai-ml | 9.0 |
 | S&C Electric Company | Software Engineer Intern | 2026-10-07 | Applied | full-stack+manufacturing-MES/grid-equipment | 8.0 |
 | Apple Bank | 2027 Summer Intern- IT Data, Analytics, & Automation | 2026-10-08 | Applied | ai-ml | 9.0 |
+| Dow Jones | Summer 2027 Internship Program – Data Analyst Intern | 2026-10-08 | Applied | ai-ml+news/business-information Data Management | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -437,6 +438,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 421
+- **Total applied:** 422
 - **Interviews:** 1
 - **Offers:** 0
