@@ -448,6 +448,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Jones Lang LaSalle (JLL) | AI Intern Summer 2027 Internship - Los Angeles, CA | 2026-10-09 | Applied | ai-ml+CRE/Work-Dynamics-governance | 8.0 |
 | ICF International | 2027 Summer Intern, Data Engineer (Reston, VA or Remote) | 2026-10-09 | Applied | ai-ml+consulting/client-facing-data-delivery | 8.0 |
 | Mastercard | Data Engineering Intern, Summer 2027 | 2026-10-09 | Applied | ai-ml | 8.0 |
+| General Motors | 2027 Summer Intern – Autonomous Driving Software Engineer (Bachelor's & Master's) | 2026-10-09 | Applied | full-stack+autonomy/AV-platform/safety-critical-vehicle-software | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -455,6 +456,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 439
+- **Total applied:** 440
 - **Interviews:** 1
 - **Offers:** 0
