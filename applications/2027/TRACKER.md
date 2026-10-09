@@ -443,6 +443,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Nissan | AI Agent Architect Intern — Summer 2027 (Farmington Hills, MI) | 2026-10-09 | Applied | ai-ml+automotive-enterprise-data-ai | 9.0 |
 | Tesla | Data Analyst Intern – People Products (Winter/Spring 2027) | 2026-10-09 | Applied | ai-ml | 9.0 |
 | Amazon | Business Intelligence Engineer Internship - 2027 (US) | 2026-10-09 | Applied | ai-ml | 9.0 |
+| 7-Eleven | AI Engineer Intern (R26_5974) — Irving, TX — Summer 2027 | 2026-10-09 | Applied | ai-ml+convenience-retail-ai-platform | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -450,6 +451,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 434
+- **Total applied:** 435
 - **Interviews:** 1
 - **Offers:** 0
