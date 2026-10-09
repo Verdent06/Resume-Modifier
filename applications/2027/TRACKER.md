@@ -435,6 +435,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Amazon | Data Engineer Internship - 2027 (US) | 2026-10-09 | Applied | ai-ml | 9.0 |
 | Figure | Middleware Intern [Winter 2027] | 2026-10-09 | Applied | robotics | 5.0 |
 | SoloPulse | Software Engineer Intern/Co-op - Spring 2027 | 2026-10-09 | Applied | full-stack+dual-use-radar/low-latency/autonomy | 7.0 |
+| Tesla | Software Integration Engineer Intern – Service Tooling | 2026-10-09 | Applied | full-stack+EV/robotaxi-service-tooling | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -442,6 +443,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 426
+- **Total applied:** 427
 - **Interviews:** 1
 - **Offers:** 0
