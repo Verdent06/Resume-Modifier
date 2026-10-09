@@ -434,6 +434,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | IMC Trading | Machine Learning Engineer Intern - Summer 2027 | 2026-10-09 | Applied | ai-ml+quant/HFT | 10.0 |
 | Amazon | Data Engineer Internship - 2027 (US) | 2026-10-09 | Applied | ai-ml | 9.0 |
 | Figure | Middleware Intern [Winter 2027] | 2026-10-09 | Applied | robotics | 5.0 |
+| SoloPulse | Software Engineer Intern/Co-op - Spring 2027 | 2026-10-09 | Applied | full-stack+dual-use-radar/low-latency/autonomy | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -441,6 +442,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 425
+- **Total applied:** 426
 - **Interviews:** 1
 - **Offers:** 0
