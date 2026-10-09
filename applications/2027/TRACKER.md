@@ -433,6 +433,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Dow Jones | Summer 2027 Internship Program – Data Analyst Intern | 2026-10-08 | Applied | ai-ml+news/business-information Data Management | 8.0 |
 | IMC Trading | Machine Learning Engineer Intern - Summer 2027 | 2026-10-09 | Applied | ai-ml+quant/HFT | 10.0 |
 | Amazon | Data Engineer Internship - 2027 (US) | 2026-10-09 | Applied | ai-ml | 9.0 |
+| Figure | Middleware Intern [Winter 2027] | 2026-10-09 | Applied | robotics | 5.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -440,6 +441,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 424
+- **Total applied:** 425
 - **Interviews:** 1
 - **Offers:** 0
