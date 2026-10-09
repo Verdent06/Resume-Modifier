@@ -440,6 +440,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Electronic Arts | Software Engineer Intern | 2026-10-09 | Applied | ai-ml | 10.0 |
 | Replit | Software Engineer Intern — Winter 2027 | 2026-10-09 | Applied | full-stack+agentic software creation / AI-powered cloud IDE / developer-tools + AI-agent infra | 10.0 |
 | Dow Jones | Summer 2027 Internship Program – Software Engineering Intern | 2026-10-09 | Applied | full-stack | 10.0 |
+| Nissan | AI Agent Architect Intern — Summer 2027 (Farmington Hills, MI) | 2026-10-09 | Applied | ai-ml+automotive-enterprise-data-ai | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -447,6 +448,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 431
+- **Total applied:** 432
 - **Interviews:** 1
 - **Offers:** 0
