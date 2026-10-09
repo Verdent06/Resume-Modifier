@@ -437,6 +437,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | SoloPulse | Software Engineer Intern/Co-op - Spring 2027 | 2026-10-09 | Applied | full-stack+dual-use-radar/low-latency/autonomy | 7.0 |
 | Tesla | Software Integration Engineer Intern – Service Tooling | 2026-10-09 | Applied | full-stack+EV/robotaxi-service-tooling | 8.0 |
 | Viget | Software Developer Intern (2027) | 2026-10-09 | Applied | full-stack+digital product agency / designer+engineer client delivery | 9.0 |
+| Electronic Arts | Software Engineer Intern | 2026-10-09 | Applied | ai-ml | 10.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -444,6 +445,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 428
+- **Total applied:** 429
 - **Interviews:** 1
 - **Offers:** 0
