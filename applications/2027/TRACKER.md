@@ -445,6 +445,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Amazon | Business Intelligence Engineer Internship - 2027 (US) | 2026-10-09 | Applied | ai-ml | 9.0 |
 | 7-Eleven | AI Engineer Intern (R26_5974) — Irving, TX — Summer 2027 | 2026-10-09 | Applied | ai-ml+convenience-retail-ai-platform | 8.0 |
 | Papa John's | 2027 Summer Intern – Data Science | 2026-10-09 | Applied | ai-ml+QSR / pizza-delivery retail business analytics | 9.0 |
+| Jones Lang LaSalle (JLL) | AI Intern Summer 2027 Internship - Los Angeles, CA | 2026-10-09 | Applied | ai-ml+CRE/Work-Dynamics-governance | 8.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -452,6 +453,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 436
+- **Total applied:** 437
 - **Interviews:** 1
 - **Offers:** 0
