@@ -454,6 +454,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Nissan | Manufacturing Digital Data Intern — Summer 2027 (Decherd, TN) | 2026-10-10 | Applied | ai-ml+automotive-OEM-manufacturing-ops-data | 6.0 |
 | GlobalFoundries | Software Engineering Intern (Summer 2027) | 2026-10-10 | Applied | full-stack+semiconductor/RISC-V/performance-tuning | 8.0 |
 | Rivet Industries | Intern, Software Engineering (Summer 2027) | 2026-10-10 | Applied | robotics | 7.0 |
+| American Family Insurance | Summer 2027 Intern - Data Analyst | 2026-10-10 | Applied | ai-ml | 9.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -461,6 +462,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 445
+- **Total applied:** 446
 - **Interviews:** 1
 - **Offers:** 0
