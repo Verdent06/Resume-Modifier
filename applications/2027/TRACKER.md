@@ -453,6 +453,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Georgia-Pacific (Koch) | Georgia-Pacific Data Science Internship - Atlanta, GA (Summer 2027) | 2026-10-10 | Applied | ai-ml+GP manufacturing/industrial-ops DS (paper, packaging, mills) | 9.0 |
 | Nissan | Manufacturing Digital Data Intern — Summer 2027 (Decherd, TN) | 2026-10-10 | Applied | ai-ml+automotive-OEM-manufacturing-ops-data | 6.0 |
 | GlobalFoundries | Software Engineering Intern (Summer 2027) | 2026-10-10 | Applied | full-stack+semiconductor/RISC-V/performance-tuning | 8.0 |
+| Rivet Industries | Intern, Software Engineering (Summer 2027) | 2026-10-10 | Applied | robotics | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -460,6 +461,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 444
+- **Total applied:** 445
 - **Interviews:** 1
 - **Offers:** 0
