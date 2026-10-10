@@ -33,7 +33,8 @@ Nissan Motor Co., Ltd. is a Yokohama-headquartered global automaker (TSE: **7201
 ## Sibling packets (do not mix)
 
 - **This packet:** Workday **R00214218** **AI Agent Architect - Summer 2027 - Farmington Hills, MI**. Folder: `applications/2027/nissan/ai-agent-architect-intern/`
-- **Not this packet:** R&D Intern Summer 2027 Farmington Hills / Stanfield AZ (**R00214305** — vehicle R&D); Digital Products & AI Strategy Intern Franklin TN; Aftersales AI Innovation Intern Franklin TN; manufacturing / supply-chain / design intern siblings
+- **Sibling packet (do not mix):** Workday **R00214881** **Manufacturing Digital Data Intern - Summer 2027 - Decherd, TN** (Decherd Powertrain Assembly; operations data / dashboards / SQL). Folder: `applications/2027/nissan/manufacturing-digital-data-intern/`
+- **Not this packet:** R&D Intern Summer 2027 Farmington Hills / Stanfield AZ (**R00214305** — vehicle R&D); Digital Products & AI Strategy Intern Franklin TN; Aftersales AI Innovation Intern Franklin TN; Process / Raw Materials / Quality intern siblings at Decherd
 
 ## Sources
 
