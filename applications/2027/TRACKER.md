@@ -457,6 +457,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | American Family Insurance | Summer 2027 Intern - Data Analyst | 2026-10-10 | Applied | ai-ml | 9.0 |
 | Walgreens | Data Science Intern | 2026-10-10 | Applied | ai-ml | 9.0 |
 | Johnson Controls | Software Engineering Co-Op | 2026-10-11 | Applied | full-stack+advanced manufacturing / firmware / machine-control / hardware-integration | 7.0 |
+| Rugged Robotics | Robotic Software Intern/Co-op (Spring or Summer 2027) | 2026-10-11 | Applied | robotics | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -464,6 +465,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 448
+- **Total applied:** 449
 - **Interviews:** 1
 - **Offers:** 0
