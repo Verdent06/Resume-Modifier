@@ -458,6 +458,7 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 | Walgreens | Data Science Intern | 2026-10-10 | Applied | ai-ml | 9.0 |
 | Johnson Controls | Software Engineering Co-Op | 2026-10-11 | Applied | full-stack+advanced manufacturing / firmware / machine-control / hardware-integration | 7.0 |
 | Rugged Robotics | Robotic Software Intern/Co-op (Spring or Summer 2027) | 2026-10-11 | Applied | robotics | 7.0 |
+| Johns Hopkins APL (JHU APL) | 2027 Internship - Data Science & Autonomous Systems - Critical Infrastructure Protection | 2026-10-11 | Applied | ai-ml+CIP/trusted-autonomy | 7.0 |
 
 **Status:** Applied / Interviewing / Offer / Rejected
 
@@ -465,6 +466,6 @@ Fill in honestly — the more data here, the more accurate the grading agent's o
 
 ## Summary Stats
 
-- **Total applied:** 449
+- **Total applied:** 450
 - **Interviews:** 1
 - **Offers:** 0
